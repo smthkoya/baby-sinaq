@@ -11,8 +11,7 @@ const inputMin = document.querySelector(".min");
 const inputMax = document.querySelector(".max");
 const inputCount = document.querySelector(".input-count");
 const homePage = document.querySelector(".home");
-const quizPage = document.querySelector(".quiz");
-
+const quizPage = document.getElementById("quiz-page"); // ИСПОЛЬЗУЕМ НОВЫЙ ID ИЗ index.html
 const startButton = document.getElementById("start");
 
 const questionNumberDisplay = document.getElementById("question-number-display");
@@ -26,13 +25,12 @@ const incorrectAnswersSection = document.getElementById("incorrect");
 const mainButtonContainer = document.getElementById("btn");
 const allQuestionsContainer = document.getElementById("all-questions-container");
 const incorrectAnswersTitle = document.getElementById("incorrect-answers-title");
-const showCorrectCheckbox = document.getElementById("show-correct-checkbox");
+const showCorrectCheckbox = document.getElementById("show-correct-checkbox"); 
 
 const subjectSelect = document.getElementById("subject-select");
 
-// ************ Добавление для темной темы ************
 const themeToggleButton = document.getElementById('theme-toggle');
-const body = document.body; // Получаем доступ к body
+const body = document.body;
 
 // --- Функции загрузки данных и инициализации UI ---
 
@@ -43,8 +41,6 @@ async function initializeQuizData() {
     let selectedSubjectFile = "questions_data_mining.txt";
     if (subjectSelect) {
         selectedSubjectFile = subjectSelect.value;
-    } else {
-        console.warn("subjectSelect не найден. Используется значение по умолчанию.");
     }
     
     try {
@@ -71,17 +67,13 @@ async function initializeQuizData() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // ************ Сначала загружаем настройки темы ************
     loadThemeSetting(); 
-    
-    // ************ Затем загружаем остальные пользовательские настройки ************
     loadUserSettings();
     initializeQuizData();
     
-    // ************ Устанавливаем начальное состояние видимости страниц ************
-    // Гарантируем, что homePage видна, а остальные скрыты при загрузке
+    // Начальное состояние: видна только домашняя страница
     homePage.classList.remove("hide");
-    homePage.style.display = 'block'; // Убедимся, что она отображается
+    homePage.style.display = 'block';
 
     quizPage.classList.add("hide");
     quizPage.style.display = 'none';
@@ -92,8 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mainButtonContainer.classList.add("hide"); // Кнопки "Далее/Назад" скрыты на главной
     mainButtonContainer.style.display = 'none';
 
-    // Элементы викторины (номер вопроса, контент, кнопки ответов) должны быть скрыты на старте
-    questionNumberDisplay.classList.add('hide');
+    questionNumberDisplay.classList.add('hide'); // Элементы викторины также скрыты
     questionNumberDisplay.style.display = 'none';
     questionContentArea.classList.add('hide');
     questionContentArea.style.display = 'none';
@@ -110,8 +101,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     showCorrectCheckbox.addEventListener("change", saveUserSettings);
 
-    // ************ Обработчик для кнопки переключения темы ************
-    themeToggleButton.addEventListener('click', toggleTheme);
+    if (themeToggleButton) {
+        themeToggleButton.addEventListener('click', toggleTheme);
+    } else {
+        console.warn("Кнопка переключения темы с ID 'theme-toggle' не найдена.");
+    }
 });
 
 function saveUserSettingsAndReloadData() {
@@ -145,19 +139,14 @@ function loadUserSettings() {
     }
 }
 
-// ************ Функции для сохранения/загрузки темы ************
 function loadThemeSetting() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         body.classList.add('dark-mode');
-    } else if (savedTheme === 'light') {
+    } else { 
         body.classList.remove('dark-mode');
-    } else {
-        // Если тема не сохранена, проверяем системные настройки
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            body.classList.add('dark-mode');
-        } else {
-            body.classList.remove('dark-mode');
+        if (savedTheme === null) { 
+            localStorage.setItem('theme', 'light');
         }
     }
 }
@@ -178,7 +167,6 @@ startButton.addEventListener("click", () => {
         return;
     }
 
-    // Мгновенное скрытие home и показ quiz
     homePage.classList.add("hide");
     homePage.style.display = 'none';
     
@@ -280,7 +268,6 @@ function startQuiz() {
     mainButtonContainer.classList.remove("hide");
     mainButtonContainer.style.display = 'flex';
 
-    // Элементы вопроса сразу видны, без задержки
     questionNumberDisplay.classList.remove('hide');
     questionContentArea.classList.remove('hide');
     answerButtonsContainer.classList.remove('hide');
@@ -317,7 +304,6 @@ function resetState() {
 }
 
 function showQuestion() {
-    // Вопросы теперь меняются мгновенно
     resetState();
     questionNumberDisplay.textContent = "";
     questionContentArea.innerHTML = "";
@@ -355,8 +341,10 @@ function showQuestion() {
             button.dataset.correct = "true";
         }
 
+        // Если пользователь уже выбрал ответ для этого вопроса, подсвечиваем его
         if (userSelectedAnswers[currentQuizQuestionIndex] === answer.originalIndex) {
             button.classList.add("selected");
+            // Если чекбокс "Показать правильный ответ" включен, сразу показываем правильность/неправильность
             if (showCorrectCheckbox.checked) {
                 if (answer.correct) {
                     button.classList.add("correct");
@@ -371,13 +359,17 @@ function showQuestion() {
         );
     });
 
+    // После создания кнопок, если ответ уже выбран, отключаем их и подсвечиваем
     if (userSelectedAnswers[currentQuizQuestionIndex] !== null) {
         Array.from(answerButtonsContainer.children).forEach((button) => {
-            button.disabled = true;
+            button.disabled = true; // Отключаем все кнопки
             if (showCorrectCheckbox.checked) {
+                // Дополнительная проверка: всегда показываем правильный ответ зеленым
                 if (button.dataset.correct === "true") {
                     button.classList.add("correct");
-                } else if (button.classList.contains("selected") && button.dataset.correct !== "true") {
+                } 
+                // И если это был выбранный пользователем неправильный ответ, красим его красным
+                if (button.classList.contains("selected") && button.dataset.correct !== "true") {
                     button.classList.add("incorrect");
                 }
             }
@@ -404,6 +396,8 @@ function selectAnswer(selectedAnswerIndex, shuffledAnswers) {
 
     const isCorrect = selectedAnswer.correct;
 
+    // Обновляем incorrectAnswers: удаляем, если вопрос был в неправильных и стал правильным,
+    // или добавляем/обновляем, если он неправильный.
     incorrectAnswers = incorrectAnswers.filter(q => q.question !== quizQuestions[currentQuizQuestionIndex].question);
 
     if (isCorrect) {
@@ -420,6 +414,7 @@ function selectAnswer(selectedAnswerIndex, shuffledAnswers) {
         });
     }
 
+    // Отключаем все кнопки и показываем правильные/неправильные ответы после выбора
     Array.from(answerButtonsContainer.children).forEach((button, btnIndex) => {
         button.disabled = true;
         const originalAnswerOfButton = shuffledAnswers[btnIndex];
@@ -433,6 +428,7 @@ function selectAnswer(selectedAnswerIndex, shuffledAnswers) {
         }
     });
 
+    // Пересчет очков
     score = 0;
     for (let i = 0; i < quizQuestions.length; i++) {
         const question = quizQuestions[i];
@@ -453,7 +449,6 @@ function selectAnswer(selectedAnswerIndex, shuffledAnswers) {
 function showQuizResult() {
     resetState();
 
-    // Мгновенное скрытие элементов вопроса
     questionNumberDisplay.classList.add("hide");
     questionContentArea.classList.add("hide");
     answerButtonsContainer.classList.add("hide");
@@ -462,7 +457,7 @@ function showQuizResult() {
     questionContentArea.style.display = 'none';
     answerButtonsContainer.style.display = 'none';
 
-    questionNumberDisplay.textContent = ""; // Очищаем для результата
+    questionNumberDisplay.textContent = "";
     questionContentArea.innerHTML = `Вы набрали ${score} из ${quizQuestions.length}!`;
     
     mainButtonContainer.classList.remove("hide");
@@ -472,7 +467,6 @@ function showQuizResult() {
     backButton.textContent = "Показать неправильные";
     nextButton.style.display = "block";
 
-    // Показываем область контента результата мгновенно
     questionContentArea.classList.remove("hide");
     questionContentArea.style.display = 'block';
 
@@ -521,8 +515,8 @@ function updateNavigationButtonsVisibility() {
 nextButton.addEventListener("click", () => {
     if (currentQuizQuestionIndex < quizQuestions.length) {
         handleNextQuestion();
-    } else { // Если на экране результатов (кнопка "Играть снова")
-        // Мгновенное скрытие quiz, показ home
+    } else { 
+        // Если тест завершен и нажата "Играть снова"
         quizPage.classList.add("hide");
         quizPage.style.display = 'none';
 
@@ -532,52 +526,43 @@ nextButton.addEventListener("click", () => {
         incorrectAnswersSection.classList.add("hide");
         incorrectAnswersSection.style.display = 'none';
 
-        mainButtonContainer.classList.add("hide"); // Скрываем кнопки навигации
+        mainButtonContainer.classList.add("hide"); // Скрываем кнопки на главной
         mainButtonContainer.style.display = 'none';
         
-        // Сбрасываем display у элементов вопросов, чтобы они снова появились при старте викторины
+        // Убедимся, что элементы викторины скрыты на главной
         questionNumberDisplay.style.display = 'none';
         questionContentArea.style.display = 'none';
         answerButtonsContainer.style.display = 'none';
-
-        // Убедимся, что классы анимации удалены для чистоты (хотя они уже не используются)
-        questionNumberDisplay.classList.remove('hide'); 
-        questionContentArea.classList.remove('hide');   
-        answerButtonsContainer.classList.remove('hide');
         
         initializeQuizData();
     }
 });
 
 backButton.addEventListener("click", () => {
-    if (currentQuizQuestionIndex === quizQuestions.length && quizQuestions.length > 0) {
-        // Мгновенное скрытие основных элементов викторины, показ incorrect
-        questionNumberDisplay.classList.add('hide');
-        questionContentArea.classList.add('hide');
-        answerButtonsContainer.classList.add('hide');
-        mainButtonContainer.classList.add('hide'); // Скрываем кнопки "Далее/Назад"
+    if (currentQuizQuestionIndex === quizQuestions.length && quizQuestions.length > 0) { 
+        // Если мы на экране результатов и нажата "Показать неправильные"
+        quizPage.classList.add("hide"); // Скрываем страницу викторины
+        quizPage.style.display = 'none';
 
-        questionNumberDisplay.style.display = 'none';
-        questionContentArea.style.display = 'none';
-        answerButtonsContainer.style.display = 'none';
+        mainButtonContainer.classList.add("hide"); // Скрываем кнопки "Далее/Назад"
         mainButtonContainer.style.display = 'none';
 
         incorrectAnswersTitle.textContent = "Неправильные ответы:";
         incorrectAnswersSection.classList.remove("hide");
-        incorrectAnswersSection.style.display = 'block';
+        incorrectAnswersSection.style.display = 'block'; // ПОКАЗЫВАЕМ секцию неправильных ответов
 
-        // Кнопка "Вернуться на главную" должна быть видна здесь
-        showIncorrectAnswersButton.style.display = 'block';
+        showIncorrectAnswersButton.style.display = 'block'; // Кнопка "Вернуться на главную"
 
         displayIncorrectAnswers();
     } else if (currentQuizQuestionIndex > 0) {
+        // Если мы в процессе викторины и нажата "Назад"
         handlePreviousQuestion();
     }
 });
 
 // --- Функции для отображения неправильных ответов ---
 function displayIncorrectAnswers() {
-    allQuestionsContainer.innerHTML = "";
+    allQuestionsContainer.innerHTML = ""; // Очищаем контейнер перед заполнением
 
     const storedIncorrects = JSON.parse(localStorage.getItem("incorrects") || "[]");
     if (storedIncorrects.length === 0) {
@@ -611,15 +596,19 @@ function displayIncorrectAnswers() {
         questionData.answers.forEach(answer => {
             const answerButton = document.createElement("button");
             answerButton.classList.add("btn");
-            answerButton.disabled = true;
+            answerButton.disabled = true; // Делаем кнопки неактивными в режиме просмотра
 
             addMediaToElement(answer.text, answerButton);
 
-            if (answer.correct) {
-                answerButton.classList.add("correct");
-            }
-            if (answer.originalIndex === questionData.userSelectedOriginalIndex && !answer.correct) {
-                answerButton.classList.add("incorrect");
+            // ДОБАВЛЕНА ЛОГИКА ДЛЯ ПОДСВЕТКИ ОТВЕТОВ
+            if (showCorrectCheckbox.checked) { // Проверяем, включен ли чекбокс "Показать правильный ответ"
+                if (answer.correct) {
+                    answerButton.classList.add("correct"); // Правильный ответ - зеленый
+                }
+                // Если это был ответ пользователя И он был неправильным, красим в красный
+                if (answer.originalIndex === questionData.userSelectedOriginalIndex && !answer.correct) {
+                    answerButton.classList.add("incorrect"); // Неправильный ответ пользователя - красный
+                }
             }
             answersList.appendChild(answerButton);
         });
@@ -627,30 +616,24 @@ function displayIncorrectAnswers() {
         allQuestionsContainer.appendChild(questionItemContainer);
     });
 }
-
 showIncorrectAnswersButton.addEventListener("click", () => {
-    // Мгновенное скрытие incorrect, показ home
-    incorrectAnswersSection.classList.add("hide");
+    // При нажатии "Вернуться на главную" на экране неправильных ответов:
+    incorrectAnswersSection.classList.add("hide"); 
     incorrectAnswersSection.style.display = 'none';
 
-    quizPage.classList.add("hide"); // Убедимся, что quizPage тоже скрыта перед возвратом на home
+    quizPage.classList.add("hide"); 
     quizPage.style.display = 'none';
 
-    homePage.classList.remove("hide");
+    homePage.classList.remove("hide"); 
     homePage.style.display = 'block';
 
-    mainButtonContainer.classList.add("hide"); // mainButtonContainer должен быть скрыт на главной странице
+    mainButtonContainer.classList.add("hide"); // Скрываем кнопки навигации при возврате на главную
     mainButtonContainer.style.display = 'none';
     
-    // Сбрасываем display у элементов вопросов
+    // Убедимся, что элементы викторины скрыты
     questionNumberDisplay.style.display = 'none';
     questionContentArea.style.display = 'none';
     answerButtonsContainer.style.display = 'none';
-
-    // Убедимся, что классы hide удалены для чистоты
-    questionNumberDisplay.classList.remove('hide');
-    questionContentArea.classList.remove('hide');
-    answerButtonsContainer.classList.remove('hide');
     
-    initializeQuizData();
+    initializeQuizData(); // Перезагружаем данные для выбранного предмета
 });

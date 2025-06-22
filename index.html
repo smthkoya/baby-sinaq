@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Baby sinaq</title>
+    <title>Приложение Викторина</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,8 +18,10 @@
   </head>
   <body>
     <div class="app">
-      <h1>Сынаг малыш</h1>
+      <h1>Викторина для Unec</h1>
       <button id="theme-toggle">Переключить тему</button>
+
+      <br />
       <br />
 
       <div class="home" id="home">
@@ -55,12 +57,8 @@
         />
         <div class="checkbox-option">
           <label class="checkbox-inline">
-            <input
-              type="checkbox"
-              id="show-correct-checkbox"
-              value=""
-              checked
-            />Показать правильный ответ
+            <input type="checkbox" id="show-correct-checkbox" checked />Показать
+            правильный ответ
           </label>
         </div>
         <br />
@@ -70,7 +68,7 @@
         <button id="start" class="start-button" disabled>Начать</button>
       </div>
 
-      <div class="quiz hide">
+      <div class="quiz hide" id="quiz-page">
         <div class="question-display-container">
           <h2 id="question-number-display"></h2>
           <div id="question-content"></div>
@@ -80,6 +78,7 @@
         <br />
         <div class="button" id="btn">
           <button id="back-btn" class="nav-button">Назад</button>
+
           <button id="next-btn" class="nav-button">Далее</button>
         </div>
       </div>

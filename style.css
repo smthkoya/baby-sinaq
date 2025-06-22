@@ -519,3 +519,16 @@ body {
     padding: 0 20px;
   }
 }
+/* Стили для правильного ответа */
+.btn.correct {
+  background-color: #22c55e;
+  color: #fff;
+  border-color: #fff; /* Добавлено, чтобы рамка тоже была зеленой */
+}
+
+/* Стили для неправильного ответа, выбранного пользователем */
+.btn.incorrect {
+  background-color: #d32f2f;
+  color: #fff;
+  border-color: #fff; /* Добавлено, чтобы рамка тоже была красной */
+}
