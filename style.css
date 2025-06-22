@@ -1,0 +1,521 @@
+/* Переменные для цветовой схемы */
+:root {
+  /* Светлая тема (по умолчанию) */
+  --bg-color: #f0f2f5; /* Фон страницы */
+  --app-bg-color: #fff; /* Фон контейнера приложения */
+  --text-color: #333; /* Основной текст */
+  --header-color: #6a5acd; /* Заголовки */
+  --border-color: #d8bfd8; /* Бордюры и разделители */
+  --input-bg-color: #f0f8ff; /* Фон полей ввода */
+  --input-border-color: #b19cd9; /* Бордюр полей ввода */
+  --select-bg-color: #f0f8ff; /* Фон выпадающего списка */
+  --select-border-color: #d8bfd8; /* Бордюр выпадающего списка */
+  --button-bg-color: #9370db; /* Фон основных кнопок */
+  --button-hover-bg-color: #8a2be2; /* Фон основных кнопок при наведении */
+  --button-text-color: #fff; /* Цвет текста основных кнопок */
+  --btn-answer-bg-color: #f0f8ff; /* Фон кнопок ответов */
+  --btn-answer-text-color: #483d8b; /* Цвет текста кнопок ответов */
+  --btn-answer-border-color: #d8bfd8; /* Бордюр кнопок ответов */
+  --selected-bg-color: #dda0dd; /* Выбранная кнопка */
+  --selected-border-color: #b19cd9;
+  --correct-bg-color: #bbf7d0; /* Правильный ответ */
+  --correct-border-color: #22c55e;
+  --incorrect-bg-color: #ffd2d2; /* Неправильный ответ */
+  --incorrect-border-color: #ef4444;
+  --incorrect-item-bg: #f8f4ff; /* Фон элемента неправильного ответа */
+  --incorrect-item-border: #e0d9f0; /* Бордюр элемента неправильного ответа */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Цвет тени */
+  --image-shadow-color: rgba(186, 85, 211, 0.15); /* Цвет тени изображений */
+}
+
+/* Класс для принудительного включения темной темы (если пользователь выберет) */
+body.dark-mode {
+  --bg-color: #282c34;
+  --app-bg-color: #33373e;
+  --text-color: #e0e0e0;
+  --header-color: #b19cd9;
+  --border-color: #4e555f;
+  --input-bg-color: #3d4249;
+  --input-border-color: #5a606a;
+  --select-bg-color: #3d4249;
+  --select-border-color: #5a606a;
+  --button-bg-color: #8a2be2;
+  --button-hover-bg-color: #9932cc;
+  --button-text-color: #fff;
+  --btn-answer-bg-color: #3d4249;
+  --btn-answer-text-color: #e0e0e0;
+  --btn-answer-border-color: #5a606a;
+  --selected-bg-color: #7b68ee;
+  --selected-border-color: #6a5acd;
+  --correct-bg-color: #4caf50;
+  --correct-border-color: #388e3c;
+  --incorrect-bg-color: #e57373;
+  --incorrect-border-color: #d32f2f;
+  --incorrect-item-bg: #444951;
+  --incorrect-item-border: #5a606a;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --image-shadow-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color); /* Используем переменную для фона */
+  color: var(--text-color); /* Применяем основной цвет текста */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Выравнивание сверху */
+  min-height: 100vh; /* Минимальная высота, чтобы фон занимал весь экран */
+  padding: 20px; /* Общий отступ по краям для маленьких экранов */
+  transition: background-color 0.3s ease; /* Плавный переход для фона при смене темы */
+}
+
+/* Стили для кнопки переключения темы */
+#theme-toggle {
+  /* position: fixed; Фиксированное позиционирование */
+  top: 10%; /* Отступ от верхнего края */
+  right: 25%; /* Отступ от правого края */
+  z-index: 1000; /* Убедимся, что кнопка поверх других элементов */
+
+  /* Используем те же переменные, что и для nav-button */
+  background: var(--button-bg-color);
+  color: var(--button-text-color);
+  font-weight: 500;
+  border: 0;
+  padding: 8px 15px; /* Уменьшаем padding для компактности */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em; /* Немного уменьшаем шрифт */
+  transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: var(--button-hover-bg-color);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; /* Уменьшаем padding для маленьких экранов */
+
+  width: 100%; /* Занимает всю доступную ширину */
+  max-width: 800px; /* Максимальная ширина приложения */
+  margin: 0; /* Убираем auto margin, так как body уже центрирует */
+  background-color: var(
+    --app-bg-color
+  ); /* Используем переменную для фона приложения */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow-color); /* Используем переменную для тени */
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Плавный переход */
+}
+
+.app h1 {
+  text-align: center;
+  font-size: 1.8em; /* Относительный размер шрифта */
+  margin-bottom: 20px; /* Отступ снизу */
+  color: var(--header-color); /* Используем переменную для заголовков */
+}
+
+/* Секция выбора предмета */
+.subject-selection {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.subject-select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--select-border-color); /* Используем переменную */
+  border-radius: 6px;
+  font-size: 1em; /* Относительный размер шрифта */
+  color: var(
+    --btn-answer-text-color
+  ); /* Используем переменную для цвета текста */
+  background-color: var(--select-bg-color); /* Используем переменную для фона */
+  cursor: pointer;
+  -webkit-appearance: none; /* Убираем стандартный стиль для Chrome/Safari */
+  -moz-appearance: none; /* Убираем стандартный стиль для Firefox */
+  appearance: none; /* Убираем стандартный стиль */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.7em top 50%;
+  background-size: 1.2em auto;
+}
+
+.subject-select:focus {
+  outline: none;
+  border-color: var(--button-bg-color); /* Используем переменную */
+  box-shadow: 0 0 5px var(--button-bg-color); /* Используем переменную */
+}
+
+/* Группа ввода (от, до) */
+.input-group {
+  display: flex;
+  flex-direction: column; /* Элементы будут стековаться на маленьких экранах */
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Поля ввода (min, max, count) */
+.input-label {
+  color: var(--header-color); /* Используем переменную */
+  font-size: 1em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.min,
+.max,
+.input-count {
+  border: 2px solid var(--input-border-color); /* Используем переменную */
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 1em;
+  width: 100%; /* Занимают 100% ширины родителя */
+  color: var(--text-color); /* Используем переменную */
+  background-color: var(--input-bg-color); /* Используем переменную */
+}
+.input-count {
+  margin-bottom: 20px;
+}
+
+/* Кнопка "Начать" */
+#start.start-button {
+  background: var(--button-bg-color); /* Используем переменную */
+  color: var(--button-text-color); /* Используем переменную */
+  font-weight: 500;
+  width: 100%; /* Занимает всю ширину на мобильных */
+  max-width: 200px; /* Ограничиваем максимальную ширину на больших экранах */
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  align-self: center;
+  display: block;
+}
+
+#start.start-button:hover:not([disabled]) {
+  background: var(--button-hover-bg-color); /* Используем переменную */
+}
+
+#start.start-button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Checkbox */
+.checkbox-option {
+  margin-top: 10px;
+  color: var(--text-color); /* Используем переменную */
+  font-size: 1em;
+}
+
+.checkbox-inline input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: var(--button-bg-color); /* Цвет галочки */
+}
+
+/* Стили для кнопок ответов */
+.btn {
+  background: var(--btn-answer-bg-color); /* Используем переменную */
+  font-size: 1em;
+  color: var(--btn-answer-text-color); /* Используем переменную */
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid var(--btn-answer-border-color); /* Используем переменную */
+  padding: 12px;
+  text-align: left;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 8px 0;
+}
+.btn img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.btn:hover:not([disabled]) {
+  background: var(
+    --input-bg-color
+  ); /* Более светлый фон при наведении (переменная) */
+  color: var(--btn-answer-text-color);
+}
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Навигационные кнопки (Далее, Назад) */
+.button#btn {
+  display: flex;
+  flex-direction: column; /* По умолчанию стекуются */
+  gap: 15px; /* Уменьшаем зазор */
+  margin-top: 20px; /* Уменьшаем отступ */
+  width: 100%;
+}
+
+.nav-button {
+  background: var(--button-bg-color); /* Используем переменную */
+  color: var(--button-text-color); /* Используем переменную */
+  font-weight: 500;
+  width: 100%; /* Занимают всю ширину на мобильных */
+  max-width: 250px; /* Ограничиваем на больших экранах */
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Центрируем кнопки внутри flex-контейнера */
+}
+
+.nav-button:hover {
+  background: var(--button-hover-bg-color); /* Используем переменную */
+}
+
+/* Секция неправильных ответов */
+#incorrect {
+  margin-top: 30px; /* Уменьшаем отступ */
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px; /* Уменьшаем padding для маленьких экранов */
+}
+
+#incorrect h1 {
+  font-size: 1.5em;
+  color: var(--header-color); /* Используем переменную */
+  font-weight: 600;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--border-color); /* Используем переменную */
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#all-questions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Уменьшаем зазор */
+}
+
+.incorrect-question-item {
+  background: var(--incorrect-item-bg); /* Используем переменную */
+  border: 1px solid var(--incorrect-item-border); /* Используем переменную */
+  border-radius: 8px;
+  padding: 15px; /* Уменьшаем padding */
+  box-shadow: 0 1px 4px var(--shadow-color); /* Используем переменную */
+}
+
+.incorrect-question-title {
+  font-size: 1.1em;
+  color: var(--text-color); /* Используем переменную */
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.incorrect-question-title img.question-image-small {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+.incorrect-answers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.incorrect-answers-list .btn {
+  pointer-events: none;
+  background: var(
+    --btn-answer-bg-color
+  ); /* Чтобы они не были как обычные кнопки */
+  border-color: var(--btn-answer-border-color);
+  color: var(--btn-answer-text-color);
+}
+
+.play-again-button {
+  background: var(--button-bg-color); /* Используем переменную */
+  color: var(--button-text-color); /* Используем переменную */
+  font-weight: 500;
+  width: 100%; /* Занимает всю ширину */
+  max-width: 200px; /* Ограничиваем на больших экранах */
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease;
+}
+
+.play-again-button:hover {
+  background: var(--button-hover-bg-color); /* Используем переменную */
+}
+
+/* Состояния кнопок */
+.selected {
+  background: var(--selected-bg-color); /* Используем переменную */
+  border-color: var(--selected-border-color); /* Используем переменную */
+  color: var(--button-text-color); /* Выбранный текст может быть белым */
+}
+
+.correct {
+  background: var(--correct-bg-color); /* Используем переменную */
+  border-color: var(--correct-border-color); /* Используем переменную */
+  color: var(--btn-answer-text-color); /* Или темным, если фон светлый */
+}
+.incorrect {
+  background: var(--incorrect-bg-color); /* Используем переменную */
+  border-color: var(--incorrect-border-color); /* Используем переменную */
+  color: var(--btn-answer-text-color); /* Или темным */
+}
+
+/* Скрытые элементы */
+.hide {
+  display: none; /* Удалили !important */
+}
+
+/* Изображение вопроса на странице викторины */
+.question-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 15px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--image-shadow-color); /* Используем переменную */
+}
+
+/* ****** Стили для фиксированной ширины контейнера вопросов (Quiz) ****** */
+.quiz {
+  width: 100%; /* Занимает 100% ширины родительского .app */
+  max-width: 760px; /* Установите желаемую максимальную ширину для контейнера викторины (800px - 2*20px padding .app) */
+  padding: 0 10px; /* Например, внутренние отступы, чтобы контент не прилипал к краям quiz */
+  box-sizing: border-box; /* Важно, чтобы padding не увеличивал ширину */
+}
+
+/* Убедимся, что элементы внутри quiz не вызывают его расширение */
+.question-display-container,
+#question-content,
+#answer-buttons,
+#btn {
+  width: 100%; /* Эти элементы должны заполнять всю ширину родительского .quiz */
+}
+
+/* Для вопросов в режиме просмотра неправильных ответов */
+#all-questions-container {
+  width: 100%;
+}
+.incorrect-question-item {
+  width: 100%;
+}
+
+/* ****************** Медиа-запросы для адаптивности ****************** */
+
+/* Для планшетов и десктопов (ширина от 600px) */
+@media (min-width: 600px) {
+  body {
+    padding: 30px; /* Увеличиваем общий отступ */
+  }
+
+  /* Добавляем отступ для body, чтобы контент не перекрывался кнопкой темы */
+  body {
+    padding-top: 60px; /* Увеличиваем, если кнопка большая, или если верхний контент близко */
+  }
+
+  .app {
+    padding: 30px; /* Увеличиваем padding для app */
+  }
+
+  .app h1 {
+    font-size: 2.2em; /* Увеличиваем размер заголовка */
+  }
+
+  /* Группа ввода (от, до) - делаем в одну строку */
+  .input-group {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .input-label {
+    flex-shrink: 0; /* Не сжимать метку */
+  }
+
+  .min,
+  .max,
+  .input-count {
+    flex-grow: 1; /* Позволяем полям ввода расти */
+  }
+
+  .input-count {
+    width: auto; /* Автоматическая ширина, чтобы flex-grow работал */
+    margin-bottom: 0; /* Убираем нижний отступ */
+  }
+
+  #start.start-button,
+  .play-again-button {
+    width: auto; /* Кнопки могут иметь авто-ширину */
+    min-width: 150px; /* Минимальная ширина */
+  }
+
+  .nav-button {
+    width: 150px; /* Устанавливаем фиксированную ширину для навигационных кнопок */
+  }
+
+  .button#btn {
+    flex-direction: row; /* Навигационные кнопки в ряд */
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .quiz {
+    max-width: 740px; /* Корректируем максимальную ширину quiz под padding .app */
+    padding: 0 15px; /* Увеличиваем padding для quiz */
+  }
+
+  #incorrect {
+    padding: 0 30px; /* Увеличиваем padding для incorrect */
+  }
+}
+
+/* Для больших десктопов (ширина от 900px, если нужно) */
+@media (min-width: 900px) {
+  .app {
+    padding: 40px;
+  }
+
+  .app h1 {
+    font-size: 2.5em;
+  }
+
+  .quiz {
+    max-width: 720px; /* 800 - 2*40 = 720 */
+    padding: 0 20px;
+  }
+}

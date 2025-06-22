@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baby sinaq</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <h1>Сынаг малыш</h1>
+      <button id="theme-toggle">Переключить тему</button>
+      <br />
+
+      <div class="home" id="home">
+        <div class="subject-selection">
+          <p class="input-label">Выберите предмет:</p>
+          <select id="subject-select" class="subject-select">
+            <option value="questions_data_mining.txt">Data Mining</option>
+            <option value="questions_iot.txt">IoT</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <p class="input-label">Вопросы от:</p>
+          <input
+            type="number"
+            class="min"
+            placeholder="Начальный номер вопроса"
+            value="1"
+          />
+          <p class="input-label">до:</p>
+          <input
+            type="number"
+            class="max"
+            placeholder="Конечный номер вопроса"
+            value=""
+          />
+        </div>
+        <input
+          type="number"
+          class="input-count"
+          placeholder="Сколько вопросов вы хотите изучить?"
+          value="50"
+        />
+        <div class="checkbox-option">
+          <label class="checkbox-inline">
+            <input
+              type="checkbox"
+              id="show-correct-checkbox"
+              value=""
+              checked
+            />Показать правильный ответ
+          </label>
+        </div>
+        <br />
+        <br />
+        <br />
+
+        <button id="start" class="start-button" disabled>Начать</button>
+      </div>
+
+      <div class="quiz hide">
+        <div class="question-display-container">
+          <h2 id="question-number-display"></h2>
+          <div id="question-content"></div>
+        </div>
+
+        <div id="answer-buttons"></div>
+        <br />
+        <div class="button" id="btn">
+          <button id="next-btn" class="nav-button">Далее</button>
+          <button id="back-btn" class="nav-button">Назад</button>
+        </div>
+      </div>
+
+      <div id="incorrect" class="hide">
+        <h1 id="incorrect-answers-title">Неправильные ответы</h1>
+        <div id="all-questions-container"></div>
+        <button id="show-incorrect-answers" class="play-again-button">
+          Вернуться на главную
+        </button>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
