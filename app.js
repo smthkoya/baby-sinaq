@@ -68,7 +68,7 @@ async function initializeQuizData() {
   startButton.disabled = true;
   inputMax.value = t("loading");
 
-  let selectedSubjectFile = "questions_data_mining.txt";
+  let selectedSubjectFile = "python";
   if (subjectSelect) {
     selectedSubjectFile = subjectSelect.value;
   }
@@ -218,7 +218,7 @@ function saveUserSettings() {
     min: inputMin.value,
     max: inputMax.value,
     count: inputCount.value,
-    subject: subjectSelect ? subjectSelect.value : "questions_data_mining.txt",
+    subject: subjectSelect ? subjectSelect.value : "python",
     module: moduleSelect ? moduleSelect.value : ALL_MODULES_VALUE,
     showCorrect: showCorrectCheckbox.checked,
   };
@@ -234,7 +234,7 @@ function loadUserSettings() {
     }
     inputCount.value = settings.count || "50";
     if (subjectSelect) {
-      subjectSelect.value = settings.subject || "questions_data_mining.txt";
+      subjectSelect.value = settings.subject || "python";
     }
     if (moduleSelect) {
       moduleSelect.value = settings.module || ALL_MODULES_VALUE;

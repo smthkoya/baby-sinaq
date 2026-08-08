@@ -130,7 +130,7 @@ export const translations = {
 };
 
 const LANG_STORAGE_KEY = "quizLang";
-const DEFAULT_LANG = "ru";
+const DEFAULT_LANG = "en";
 
 // Текущий выбранный язык / current selected language
 export function getLang() {
