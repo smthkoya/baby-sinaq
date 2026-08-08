@@ -232,7 +232,7 @@ function loadUserSettings() {
     if (inputMax) {
       inputMax.value = settings.max || "";
     }
-    inputCount.value = settings.count || "50";
+    inputCount.value = settings.count || "20";
     if (subjectSelect) {
       subjectSelect.value = settings.subject || "python";
     }
