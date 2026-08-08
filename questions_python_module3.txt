@@ -1,0 +1,101 @@
+Module 3 Quiz — Answer Key (no answer markup in source; answered from general knowledge)
+1. In which year was the Cyber Kill Chain introduced?
+• 2005
+• 2008
+√ 2011
+• 2015
+2. What is the main goal of the reconnaissance stage?
+• Maintain persistence
+• Deliver malware
+√ Gather information about the target
+• Execute exploits
+3. Which stage of the Cyber Kill Chain focuses on creating or selecting the attack?
+√ Weaponization
+• Exploitation
+• Installation
+• Delivery
+4. Which of the following is a common delivery vector?
+• Patch management
+√ Phishing emails
+• Log analysis
+• Hash collisions
+5. Which type of reconnaissance uses publicly available information without direct interaction?
+√ Passive reconnaissance
+• Exploit reconnaissance
+• Active reconnaissance
+• Internal reconnaissance
+6. What happens during the Actions on Objectives stage?
+√ The attacker executes the final goals of the attack
+• The attacker gathers public information
+• The payload is delivered
+• The system is patched
+7. Which tool or technique is associated with maintaining persistence?
+• Firewall rules
+• Encryption at rest
+• Backups
+√ Rootkits
+8. What is the Cyber Kill Chain?
+• A network defense framework
+• A penetration testing methodology only
+√ A model describing the sequential stages of a cyberattack
+• A malware detection tool
+9. What is the purpose of Command and Control (C&C)?
+• Prevent attacker access
+• Identify vulnerabilities
+• Encrypt stolen data
+√ Provide remote control and tasking of compromised systems
+10. What is the main goal of the installation stage?
+• Initial information gathering
+• User awareness bypass
+√ Payload injection and persistence
+• Network scanning
+11. Which of the following is listed as a positive motivation for cyberattacks? (verify — ambiguous, see note)
+• Risk assessment
+• Compliance auditing
+√ Lateral movement
+• Software updates
+12. Which activity is an example of active reconnaissance?
+• Searching social media profiles
+• Reviewing company job postings
+√ Port scanning a target network
+• Reading public DNS records
+13. Which tool is explicitly mentioned as an example used during weaponization?
+• Splunk
+• Snort
+• Wireshark
+√ Metasploit
+14. Which of the following is an example of exploitation?
+• Performing DNS enumeration
+• Sending a phishing email
+√ Abusing unpatched software vulnerabilities
+• Installing a rootkit
+15. What occurs during the exploitation stage?
+• The attacker communicates with C2 servers
+• Data is encrypted for ransom
+√ A vulnerability is triggered to gain execution or access
+• The attacker cleans logs
+16. What is the primary purpose of the delivery stage?
+• Establishing persistence
+√ Transmitting the weaponized payload to the target
+• Triggering a vulnerability
+• Exfiltrating data
+17. Why is the Cyber Kill Chain useful to defenders?
+√ It helps visualize attacks and identify where to disrupt them
+• It guarantees prevention of attacks
+• It replaces all other security models
+• It focuses only on malware analysis
+18. Who developed the Cyber Kill Chain model?
+• ISO
+• MITRE
+√ Lockheed Martin
+• NIST
+19. Which associated model combines the Cyber Kill Chain with MITRE ATT&CK?
+• MITRE D3FEND
+• NIST CSF
+• Pyramid of Pain
+√ Unified Kill Chain
+20. What activity is commonly performed during the C&C stage?
+• User training
+√ Delivering additional capabilities
+• Vulnerability scanning
+• Data classification

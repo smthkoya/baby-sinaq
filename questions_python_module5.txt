@@ -1,0 +1,101 @@
+Module 5 Quiz — Answer Key
+1. What is a challenge of live acquisition?
+• Inability to collect volatile data
+√ Risk of altering evidence
+• Excessive storage requirements
+• Limited tool availability
+2. Which certification is related to digital forensics?
+• CEH
+• PMP
+√ EnCase Certified Examiner (EnCE)
+• CISSP
+3. Which organization is listed as an international reference for digital forensics?
+• OWASP
+• ITU
+√ ENFSI
+• NATO
+4. Which type of digital evidence is lost when a system is powered off?
+• Non-volatile evidence
+√ Volatile evidence
+• Historical evidence
+• Archived evidence
+5. Which phase includes documenting findings according to court requirements?
+√ Documentation and Reporting
+• Evidence Collection
+• Data Acquisition
+• Containment
+6. Which digital forensics phase involves seizing devices and preserving evidence?
+• Data Analysis
+• Evidence Assessment
+• Documentation
+√ Search and Secure
+7. Which phase focuses on examining collected data to identify relevant evidence?
+√ Data Analysis
+• First Response
+• Preparation
+• Expert Testimony
+8. Why is digital forensics important for legal compliance?
+√ It ensures evidence is legally admissible
+• It replaces legal counsel
+• It encrypts sensitive data
+• It automates reporting
+9. Which of the following is an example of volatile evidence?
+• Files on a USB drive
+• Database records
+• Emails stored on disk
+√ Data in RAM
+10. What is one primary goal of digital forensics?
+√ Uncovering evidence and reconstructing events
+• Improving system availability
+• Blocking network traffic
+• Replacing incident response teams
+11. What is static (dead) acquisition?
+• Real-time network capture
+• Capturing RAM contents
+√ Bit-by-bit imaging of powered-off storage media
+• Monitoring active sessions
+12. Which data should be collected first according to the Order of Volatility?
+• Backups
+• Hard drive images
+√ Running processes and active connections
+• Archived logs
+13. What is the Order of Volatility?
+• A storage encryption standard
+• A legal ranking of evidence importance
+√ A guideline for prioritizing evidence collection based on how quickly data is lost
+• A malware classification system
+14. What does non-volatile evidence include?
+• Active network connections
+• Temporary memory buffers
+√ Files stored on hard drives
+• Running processes
+15. Which NIST document defines incident response guidance?
+• NIST SP 800-53
+• NIST CSF
+• NIST SP 800-171
+√ NIST SP 800-61
+16. What is the main goal of the containment phase in incident response?
+• Identify attackers
+√ Stop the incident from causing further damage
+• Preserve volatile evidence
+• Produce compliance reports
+17. What is incident response (IR)?
+• Long-term risk management
+√ Steps to prepare for, detect, contain, and recover from incidents
+• A threat intelligence framework
+• A forensic imaging process
+18. What is digital forensics according to the module?
+• Automated malware detection
+√ The process of identifying, collecting, preserving, analyzing, and presenting electronic data in a legally admissible way
+• The analysis of network performance issues
+• The process of preventing cyberattacks
+19. What characterizes live (hot) acquisition?
+• No risk of data alteration
+√ The system is running and volatile data is captured
+• Only disk data is collected
+• The device is powered off
+20. What role does an expert witness play?
+• Performing live acquisition
+√ Presenting and validating evidence in court
+• Approving forensic tools
+• Managing incident communications

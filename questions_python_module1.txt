@@ -1,0 +1,101 @@
+Module 1 Quiz — Answer Key
+1. Which activity is classified as a security incident?
+√ Deleting a database internally
+• Passive system monitoring
+• Sharing credentials without impact
+• Installing authorized software
+2. How is privacy defined in the context of cybersecurity?
+• Preventing all data collection
+• Encrypting only financial data
+• Hiding all data from users
+√ Controlling how personal information is stored, shared, and used
+3. What does confidentiality ensure in the CIA Triad?
+• Data is always available
+• Data is not altered
+• Systems recover quickly
+√ Only authorized entities can access data
+4. What is cyberwarfare primarily defined as?
+√ Coordinated cyber-attacks by nation-states to achieve strategic objectives
+• Random cybercrime activities
+• Defensive network monitoring
+• Individual hacking for profit
+5. Which threat actor category represents nation-state actors?
+• Script kiddies
+√ Advanced Persistent Threats
+• Hacktivists
+• Cyber criminals
+6. Why does cyberspace matter today according to the module?
+• It is limited to government use
+• It is mainly used for entertainment
+• It replaces all physical infrastructure
+√ It underpins economic, social, and national security activities
+7. Which web evolution stage is characterized by blockchain-driven decentralization?
+• Web 1.0
+• Web 4.0
+• Web 2.0
+√ Web 3.0
+8. What is the difference between a vulnerability and an exploit?
+• An exploit is a weakness; a vulnerability is a defense
+√ A vulnerability is a weakness; an exploit is a tool to use it
+• They are the same concept
+• Both are types of malware
+9. Which perspective defines cyberspace as a domain comparable to land, sea, air, and space?
+√ Military strategic domain
+• Civilian governance
+• Operational security
+• Technical infrastructure-based
+10. Which of the following is NOT part of the CIA Triad?
+• Integrity
+• Confidentiality
+√ Accountability
+• Availability
+11. What best describes cyberspace according to the document?
+• A physical network of cables and hardware only
+√ An electronic medium of a global computer network facilitating online communications
+• A private corporate information system
+• A military-only communications environment
+12. Which malware type is designed to encrypt data and demand payment?
+• Spyware
+√ Ransomware
+• Worm
+• Adware
+13. Which organization is NOT listed as an authoritative source defining cyberspace?
+• NIST
+• ISO/IEC
+• NATO
+√ World Economic Forum
+14. What was the primary goal of the Stuxnet attack?
+• Steal financial data
+• Disrupt social media platforms
+• Conduct mass surveillance
+√ Destroy the Iranian nuclear program
+15. What makes cyberspace a unique warfare domain?
+• Exclusive use by military forces
+√ Low-cost, high-impact attacks crossing borders instantly
+• Dependence on physical distance
+• High cost and slow execution
+16. Which method was used by Stuxnet for initial infection?
+• Cloud service compromise
+• Website exploit
+• Email phishing
+√ USB drive
+17. Which of the following is NOT a target of cyberwarfare?
+√ Personal gaming accounts only
+• Government networks
+• Military systems
+• Critical infrastructure
+18. Which statement best explains why cybersecurity is challenging?
+√ Attackers and defenders are in a constant arms race
+• Users always follow security rules
+• Software is designed primarily for security
+• Security tools are always effective
+19. What best describes a white hat hacker?
+• A hacker with no technical skills
+√ An ethical hacker who helps improve security
+• An illegal attacker for profit
+• A hacker motivated by ideology only
+20. What is the main purpose of cybersecurity according to the document?
+• To eliminate all cyber threats permanently
+√ To identify, assess, and handle cyber risks
+• To monitor employee productivity
+• To replace IT departments

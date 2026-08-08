@@ -1,0 +1,485 @@
+
+1. What is the "Assumption of Breach" philosophy?
+• The belief that every breach is fully preventable with firewalls.
+• The assumption that insider threats represent the only real risk.
+• A policy requiring formal breach notification within seventy-two hours.
+√ The premise that advanced attackers have already bypassed existing defenses.
+
+2. What is the primary function of TAXII?
+• An encryption standard applied specifically to endpoint device data.
+• A framework used for classifying various threat actor motivations.
+• A structured language used for describing malware behavior patterns.
+√ A secure transport protocol for sharing intelligence between organizations.
+
+3. Which bias describes the tendency to rely too heavily on the first piece of information encountered?
+• Confirmation Bias
+• Hindsight Bias
+√ Anchoring Bias
+• Availability Bias
+
+4. What does the "Processing and Exploitation" phase of the intelligence cycle involve?
+√ Converting chaotic raw data into a clean, structured, normalized format.
+• Defining specific priority intelligence requirements before collection efforts begin.
+• Disseminating finished, polished reports directly to key organizational stakeholders.
+• Collecting raw, unfiltered data continuously from various open-source feeds.
+
+5. What are the three core pillars of true Cyber Threat Intelligence (CTI)?
+• Volume, Variety, and Velocity.
+√ Relevance, Timeliness, and Accuracy.
+• Speed, Secrecy, and Scale.
+• Confidentiality, Integrity, and Availability.
+
+6. What does "PIR" stand for in the context of the Intelligence Cycle?
+• Periodic Intelligence Report
+• Primary Incident Response
+• Protected Information Registry
+√ Priority Intelligence Requirements
+
+7. Which level of CTI focuses on high-level, macro views for business risk and long-term trends?
+• Operational
+• Technical
+• Tactical
+√ Strategic
+
+8. Which of the following is considered a foundational prerequisite for Threat Hunting?
+• A signed non-disclosure agreement covering all third-party vendors involved.
+• A dedicated public relations team handling external media inquiries.
+• A quarterly penetration test report summarizing recent findings briefly.
+√ Comprehensive telemetry and centralized logging through a SIEM platform.
+
+9. What is the primary mission of the Operational level of CTI?
+• Configuring individual firewall rules and specific network signatures manually.
+• Briefing the board of directors on broad geopolitical risk trends.
+√ Mapping the behaviors, methodologies, and tools used by threat actors.
+• Setting long-term corporate risk budgets across multiple fiscal years.
+
+10. What is an example of Open Source Intelligence (OSINT)?
+• Recruiting confidential human sources embedded inside a criminal organization.
+√ Leveraging public security research blogs and government advisories like CISA.
+• Intercepting encrypted communications exchanged privately between known adversary operators.
+• Purchasing covert access to closed, invite-only dark web criminal forums.
+
+11. What is the primary function of STIX?
+• A proprietary sandbox tool for detonating suspicious executable files.
+√ An open, JSON-based language for describing threats and their relationships.
+• A licensed firewall standard for filtering malicious network traffic.
+• A closed, XML-based protocol for encrypting sensitive threat feeds.
+
+12. What is the primary outcome of a successful Threat Hunt?
+√ Evicting the attacker and creating permanent automated detection rules.
+• Closing out the SOC ticket queue for that particular day.
+• Purchasing new security tools recommended following the recent incident.
+• Generating a compliance certificate intended for external security auditors.
+
+13. Who is the primary target audience for Tactical Intelligence?
+√ SOC analysts and firewall or network engineering teams.
+• External regulators and independent third-party compliance auditors.
+• The general public along with mainstream news media outlets.
+• The board of directors and senior C-suite executives.
+
+14. What is a "Fin-Crim" group?
+• An insider threat individual motivated primarily by personal revenge.
+• A nation-state group primarily focused on long-term espionage operations.
+• A hacktivist collective pursuing disruptive, ideologically motivated political change.
+√ A profit-driven criminal syndicate focused on monetization via ransomware.
+
+15. Which metric measures the reduction in the time taken to find an adversary?
+√ Mean Time to Detect (MTTD)
+• Mean Time to Contain (MTTC)
+• Mean Time to Respond (MTTR)
+• Mean Time Between Failures (MTBF)
+
+16. What is a primary objective of Cyber Threat Intelligence (CTI)?
+• To generate routine compliance reports required for various external auditors.
+• To fully replace the need for a security operations center team.
+√ To provide context on attackers and their methods, enabling proactive defense.
+• To automatically patch every vulnerability without any human review process.
+
+17. What is "Stacking" in the context of threat hunting?
+√ A technique grouping similar data to isolate rare, frequency-based outliers.
+• A way to prioritize incoming tickets within a busy SOC queue.
+• A process for patching multiple vulnerable systems all at once.
+• A method for encrypting stored log files while they remain at rest.
+
+18. What is a key purpose of the Intelligence Cycle?
+• To guarantee a complete absence of any false positive alerts.
+• To eliminate the need for any human analyst involvement entirely.
+• To fully automate incident response without any analyst oversight.
+√ To ensure intelligence is constantly refined based on ongoing feedback.
+
+19. How does CTI contribute to Threat Hunting?
+• It focuses solely on scheduling routine patch management activities.
+• It fully replaces the need for skilled human threat hunters.
+• It only provides after-action reports for compliance and auditing.
+√ It acts as radar, providing hypotheses and indicators for hunts.
+
+20. Which of the following describes "Data" in the context of threat intelligence?
+• Confirmed, documented patterns describing specific adversary tools and techniques.
+• Refined, corroborated conclusions ready for senior executive decision-making.
+√ Unstructured, uncontextualized elements like raw logs or IP addresses.
+• Validated indicators presented with full analytical context and confidence.
+
+
+
+21. Which level of CTI focuses on high-level, macro views for business risk and long-term trends?
+• Tactical
+• Technical
+• Operational
+√ Strategic
+
+22. What does "PIR" stand for in the context of the Intelligence Cycle?
+√ Priority Intelligence Requirements
+• Periodic Intelligence Report
+• Protected Information Registry
+• Primary Incident Response
+
+23. Which metric measures the reduction in the time taken to find an adversary?
+• Mean Time to Contain (MTTC)
+• Mean Time to Respond (MTTR)
+• Mean Time Between Failures (MTBF)
+√ Mean Time to Detect (MTTD)
+
+24. What is the primary function of STIX?
+• A closed, XML-based protocol for encrypting sensitive threat feeds.
+√ An open, JSON-based language for describing threats and their relationships.
+• A proprietary sandbox tool for detonating suspicious executable files.
+• A licensed firewall standard for filtering malicious network traffic.
+
+25. What is the primary outcome of a successful Threat Hunt?
+• Purchasing new security tools recommended following the recent incident.
+• Generating a compliance certificate intended for external security auditors.
+√ Evicting the attacker and creating permanent automated detection rules.
+• Closing out the SOC ticket queue for that particular day.
+
+26. What is a key purpose of the Intelligence Cycle?
+• To eliminate the need for any human analyst involvement entirely.
+• To guarantee a complete absence of any false positive alerts.
+• To fully automate incident response without any analyst oversight.
+√ To ensure intelligence is constantly refined based on ongoing feedback.
+
+27. What is the primary mission of the Operational level of CTI?
+√ Mapping the behaviors, methodologies, and tools used by threat actors.
+• Setting long-term corporate risk budgets across multiple fiscal years.
+• Configuring individual firewall rules and specific network signatures manually.
+• Briefing the board of directors on broad geopolitical risk trends.
+
+28. Who is the primary target audience for Tactical Intelligence?
+• External regulators and independent third-party compliance auditors.
+√ SOC analysts and firewall or network engineering teams.
+• The board of directors and senior C-suite executives.
+• The general public along with mainstream news media outlets.
+
+29. What is the primary function of TAXII?
+• A framework used for classifying various threat actor motivations.
+• A structured language used for describing malware behavior patterns.
+• An encryption standard applied specifically to endpoint device data.
+√ A secure transport protocol for sharing intelligence between organizations.
+
+30. What is "Stacking" in the context of threat hunting?
+• A method for encrypting stored log files while they remain at rest.
+√ A technique grouping similar data to isolate rare, frequency-based outliers.
+• A way to prioritize incoming tickets within a busy SOC queue.
+• A process for patching multiple vulnerable systems all at once.
+
+31. Which bias describes the tendency to rely too heavily on the first piece of information encountered?
+• Availability Bias
+• Confirmation Bias
+√ Anchoring Bias
+• Hindsight Bias
+
+32. Which of the following is considered a foundational prerequisite for Threat Hunting?
+√ Comprehensive telemetry and centralized logging through a SIEM platform.
+• A quarterly penetration test report summarizing recent findings briefly.
+• A dedicated public relations team handling external media inquiries.
+• A signed non-disclosure agreement covering all third-party vendors involved.
+
+33. How does CTI contribute to Threat Hunting?
+√ It acts as radar, providing hypotheses and indicators for hunts.
+• It fully replaces the need for skilled human threat hunters.
+• It only provides after-action reports for compliance and auditing.
+• It focuses solely on scheduling routine patch management activities.
+
+34. What is a primary objective of Cyber Threat Intelligence (CTI)?
+• To automatically patch every vulnerability without any human review process.
+• To generate routine compliance reports required for various external auditors.
+√ To provide context on attackers and their methods, enabling proactive defense.
+• To fully replace the need for a security operations center team.
+
+35. What does the "Processing and Exploitation" phase of the intelligence cycle involve?
+√ Converting chaotic raw data into a clean, structured, normalized format.
+• Defining specific priority intelligence requirements before collection efforts begin.
+• Disseminating finished, polished reports directly to key organizational stakeholders.
+• Collecting raw, unfiltered data continuously from various open-source feeds.
+
+36. What is the "Assumption of Breach" philosophy?
+√ The premise that advanced attackers have already bypassed existing defenses.
+• The assumption that insider threats represent the only real risk.
+• A policy requiring formal breach notification within seventy-two hours.
+• The belief that every breach is fully preventable with firewalls.
+
+37. What is a "Fin-Crim" group?
+√ A profit-driven criminal syndicate focused on monetization via ransomware.
+• A nation-state group primarily focused on long-term espionage operations.
+• A hacktivist collective pursuing disruptive, ideologically motivated political change.
+• An insider threat individual motivated primarily by personal revenge.
+
+38. What is an example of Open Source Intelligence (OSINT)?
+√ Leveraging public security research blogs and government advisories like CISA.
+• Purchasing covert access to closed, invite-only dark web criminal forums.
+• Intercepting encrypted communications exchanged privately between known adversary operators.
+• Recruiting confidential human sources embedded inside a criminal organization.
+
+39. What are the three core pillars of true Cyber Threat Intelligence (CTI)?
+• Confidentiality, Integrity, and Availability.
+• Volume, Variety, and Velocity.
+• Speed, Secrecy, and Scale.
+√ Relevance, Timeliness, and Accuracy.
+
+40. Which of the following describes "Data" in the context of threat intelligence?
+√ Unstructured, uncontextualized elements like raw logs or IP addresses.
+• Validated indicators presented with full analytical context and confidence.
+• Refined, corroborated conclusions ready for senior executive decision-making.
+• Confirmed, documented patterns describing specific adversary tools and techniques.
+
+
+
+41. Which of the following is considered a foundational prerequisite for Threat Hunting?
+√ Comprehensive telemetry and centralized logging through a SIEM platform.
+• A signed non-disclosure agreement covering all third-party vendors involved.
+• A quarterly penetration test report summarizing recent findings briefly.
+• A dedicated public relations team handling external media inquiries.
+
+42. What does "PIR" stand for in the context of the Intelligence Cycle?
+• Protected Information Registry
+√ Priority Intelligence Requirements
+• Periodic Intelligence Report
+• Primary Incident Response
+
+43. What is the primary mission of the Operational level of CTI?
+• Briefing the board of directors on broad geopolitical risk trends.
+√ Mapping the behaviors, methodologies, and tools used by threat actors.
+• Configuring individual firewall rules and specific network signatures manually.
+• Setting long-term corporate risk budgets across multiple fiscal years.
+
+44. What is the primary function of STIX?
+• A licensed firewall standard for filtering malicious network traffic.
+• A closed, XML-based protocol for encrypting sensitive threat feeds.
+• A proprietary sandbox tool for detonating suspicious executable files.
+√ An open, JSON-based language for describing threats and their relationships.
+
+45. Which metric measures the reduction in the time taken to find an adversary?
+√ Mean Time to Detect (MTTD)
+• Mean Time to Respond (MTTR)
+• Mean Time to Contain (MTTC)
+• Mean Time Between Failures (MTBF)
+
+46. Which bias describes the tendency to rely too heavily on the first piece of information encountered?
+• Hindsight Bias
+√ Anchoring Bias
+• Confirmation Bias
+• Availability Bias
+
+47. What is an example of Open Source Intelligence (OSINT)?
+√ Leveraging public security research blogs and government advisories like CISA.
+• Recruiting confidential human sources embedded inside a criminal organization.
+• Intercepting encrypted communications exchanged privately between known adversary operators.
+• Purchasing covert access to closed, invite-only dark web criminal forums.
+
+48. How does CTI contribute to Threat Hunting?
+• It fully replaces the need for skilled human threat hunters.
+• It only provides after-action reports for compliance and auditing.
+• It focuses solely on scheduling routine patch management activities.
+√ It acts as radar, providing hypotheses and indicators for hunts.
+
+49. Who is the primary target audience for Tactical Intelligence?
+• The board of directors and senior C-suite executives.
+√ SOC analysts and firewall or network engineering teams.
+• External regulators and independent third-party compliance auditors.
+• The general public along with mainstream news media outlets.
+
+50. What is "Stacking" in the context of threat hunting?
+√ A technique grouping similar data to isolate rare, frequency-based outliers.
+• A method for encrypting stored log files while they remain at rest.
+• A way to prioritize incoming tickets within a busy SOC queue.
+• A process for patching multiple vulnerable systems all at once.
+
+51. What is the primary outcome of a successful Threat Hunt?
+• Closing out the SOC ticket queue for that particular day.
+• Purchasing new security tools recommended following the recent incident.
+• Generating a compliance certificate intended for external security auditors.
+√ Evicting the attacker and creating permanent automated detection rules.
+
+52. Which of the following describes "Data" in the context of threat intelligence?
+√ Unstructured, uncontextualized elements like raw logs or IP addresses.
+• Refined, corroborated conclusions ready for senior executive decision-making.
+• Confirmed, documented patterns describing specific adversary tools and techniques.
+• Validated indicators presented with full analytical context and confidence.
+
+53. What is the primary function of TAXII?
+√ A secure transport protocol for sharing intelligence between organizations.
+• A structured language used for describing malware behavior patterns.
+• A framework used for classifying various threat actor motivations.
+• An encryption standard applied specifically to endpoint device data.
+
+54. What does the "Processing and Exploitation" phase of the intelligence cycle involve?
+• Disseminating finished, polished reports directly to key organizational stakeholders.
+√ Converting chaotic raw data into a clean, structured, normalized format.
+• Defining specific priority intelligence requirements before collection efforts begin.
+• Collecting raw, unfiltered data continuously from various open-source feeds.
+
+55. What is a key purpose of the Intelligence Cycle?
+√ To ensure intelligence is constantly refined based on ongoing feedback.
+• To eliminate the need for any human analyst involvement entirely.
+• To fully automate incident response without any analyst oversight.
+• To guarantee a complete absence of any false positive alerts.
+
+56. What is the "Assumption of Breach" philosophy?
+• The assumption that insider threats represent the only real risk.
+√ The premise that advanced attackers have already bypassed existing defenses.
+• A policy requiring formal breach notification within seventy-two hours.
+• The belief that every breach is fully preventable with firewalls.
+
+57. What is a "Fin-Crim" group?
+√ A profit-driven criminal syndicate focused on monetization via ransomware.
+• A nation-state group primarily focused on long-term espionage operations.
+• A hacktivist collective pursuing disruptive, ideologically motivated political change.
+• An insider threat individual motivated primarily by personal revenge.
+
+58. What is a primary objective of Cyber Threat Intelligence (CTI)?
+• To generate routine compliance reports required for various external auditors.
+• To automatically patch every vulnerability without any human review process.
+• To fully replace the need for a security operations center team.
+√ To provide context on attackers and their methods, enabling proactive defense.
+
+59. Which level of CTI focuses on high-level, macro views for business risk and long-term trends?
+• Tactical
+• Operational
+• Technical
+√ Strategic
+
+60. What are the three core pillars of true Cyber Threat Intelligence (CTI)?
+• Confidentiality, Integrity, and Availability.
+• Speed, Secrecy, and Scale.
+√ Relevance, Timeliness, and Accuracy.
+• Volume, Variety, and Velocity.
+
+
+61. What is a "Fin-Crim" group?
+• An insider threat individual motivated primarily by personal revenge.
+√ A profit-driven criminal syndicate focused on monetization via ransomware.
+• A nation-state group primarily focused on long-term espionage operations.
+• A hacktivist collective pursuing disruptive, ideologically motivated political change.
+
+62. Who is the primary target audience for Tactical Intelligence?
+• The board of directors and senior C-suite executives.
+• The general public along with mainstream news media outlets.
+√ SOC analysts and firewall or network engineering teams.
+• External regulators and independent third-party compliance auditors.
+
+63. Which bias describes the tendency to rely too heavily on the first piece of information encountered?
+√ Anchoring Bias
+• Hindsight Bias
+• Availability Bias
+• Confirmation Bias
+
+64. What is the "Assumption of Breach" philosophy?
+• The belief that every breach is fully preventable with firewalls.
+• The assumption that insider threats represent the only real risk.
+• A policy requiring formal breach notification within seventy-two hours.
+√ The premise that advanced attackers have already bypassed existing defenses.
+
+65. What is the primary function of TAXII?
+• An encryption standard applied specifically to endpoint device data.
+√ A secure transport protocol for sharing intelligence between organizations.
+• A framework used for classifying various threat actor motivations.
+• A structured language used for describing malware behavior patterns.
+
+66. Which level of CTI focuses on high-level, macro views for business risk and long-term trends?
+• Tactical
+√ Strategic
+• Technical
+• Operational
+
+67. Which metric measures the reduction in the time taken to find an adversary?
+• Mean Time to Respond (MTTR)
+√ Mean Time to Detect (MTTD)
+• Mean Time Between Failures (MTBF)
+• Mean Time to Contain (MTTC)
+
+68. What is a primary objective of Cyber Threat Intelligence (CTI)?
+√ To provide context on attackers and their methods, enabling proactive defense.
+• To generate routine compliance reports required for various external auditors.
+• To fully replace the need for a security operations center team.
+• To automatically patch every vulnerability without any human review process.
+
+69. What is the primary function of STIX?
+• A proprietary sandbox tool for detonating suspicious executable files.
+√ An open, JSON-based language for describing threats and their relationships.
+• A closed, XML-based protocol for encrypting sensitive threat feeds.
+• A licensed firewall standard for filtering malicious network traffic.
+
+70. How does CTI contribute to Threat Hunting?
+√ It acts as radar, providing hypotheses and indicators for hunts.
+• It focuses solely on scheduling routine patch management activities.
+• It only provides after-action reports for compliance and auditing.
+• It fully replaces the need for skilled human threat hunters.
+
+71. What does "PIR" stand for in the context of the Intelligence Cycle?
+• Protected Information Registry
+√ Priority Intelligence Requirements
+• Primary Incident Response
+• Periodic Intelligence Report
+
+72. What is an example of Open Source Intelligence (OSINT)?
+√ Leveraging public security research blogs and government advisories like CISA.
+• Intercepting encrypted communications exchanged privately between known adversary operators.
+• Recruiting confidential human sources embedded inside a criminal organization.
+• Purchasing covert access to closed, invite-only dark web criminal forums.
+
+73. What does the "Processing and Exploitation" phase of the intelligence cycle involve?
+• Collecting raw, unfiltered data continuously from various open-source feeds.
+• Defining specific priority intelligence requirements before collection efforts begin.
+√ Converting chaotic raw data into a clean, structured, normalized format.
+• Disseminating finished, polished reports directly to key organizational stakeholders.
+
+74. What is "Stacking" in the context of threat hunting?
+√ A technique grouping similar data to isolate rare, frequency-based outliers.
+• A method for encrypting stored log files while they remain at rest.
+• A way to prioritize incoming tickets within a busy SOC queue.
+• A process for patching multiple vulnerable systems all at once.
+
+75. What is a key purpose of the Intelligence Cycle?
+√ To ensure intelligence is constantly refined based on ongoing feedback.
+• To eliminate the need for any human analyst involvement entirely.
+• To guarantee a complete absence of any false positive alerts.
+• To fully automate incident response without any analyst oversight.
+
+76. What is the primary outcome of a successful Threat Hunt?
+• Generating a compliance certificate intended for external security auditors.
+• Closing out the SOC ticket queue for that particular day.
+• Purchasing new security tools recommended following the recent incident.
+√ Evicting the attacker and creating permanent automated detection rules.
+
+77. What are the three core pillars of true Cyber Threat Intelligence (CTI)?
+• Volume, Variety, and Velocity.
+√ Relevance, Timeliness, and Accuracy.
+• Speed, Secrecy, and Scale.
+• Confidentiality, Integrity, and Availability.
+
+78. Which of the following describes "Data" in the context of threat intelligence?
+• Refined, corroborated conclusions ready for senior executive decision-making.
+• Confirmed, documented patterns describing specific adversary tools and techniques.
+√ Unstructured, uncontextualized elements like raw logs or IP addresses.
+• Validated indicators presented with full analytical context and confidence.
+
+79. Which of the following is considered a foundational prerequisite for Threat Hunting?
+√ Comprehensive telemetry and centralized logging through a SIEM platform.
+• A quarterly penetration test report summarizing recent findings briefly.
+• A dedicated public relations team handling external media inquiries.
+• A signed non-disclosure agreement covering all third-party vendors involved.
+
+80. What is the primary mission of the Operational level of CTI?
+• Configuring individual firewall rules and specific network signatures manually.
+• Setting long-term corporate risk budgets across multiple fiscal years.
+• Briefing the board of directors on broad geopolitical risk trends.
+√ Mapping the behaviors, methodologies, and tools used by threat actors.

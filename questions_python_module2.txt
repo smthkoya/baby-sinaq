@@ -1,0 +1,101 @@
+Module 2 Quiz — Answer Key
+1. Which control category includes encryption and authentication?
+• Integrity controls
+• Physical controls
+√ Technical controls
+• Administrative controls
+2. What is the main goal of availability?
+√ Ensure systems and data are accessible when needed
+• Hide sensitive information
+• Monitor user behavior
+• Prevent data modification
+3. Which law is mentioned as supporting integrity protection?
+• GDPR
+√ Sarbanes-Oxley Act (SOX)
+• Patriot Act
+• Computer Fraud and Abuse Act
+4. Which regulation is cited as an example for protecting Personally Identifiable Information (PII)?
+√ GDPR
+• SOX
+• HIPAA
+• PCI-DSS
+5. Which mechanism is emphasized as critical for protecting integrity? (verify — ambiguous, see note)
+• Firewalls
+√ Audits
+• Backups
+• Encryption
+6. What is the core idea of defense in depth?
+• Only perimeter defenses are needed
+√ Multiple layers of different security controls are used
+• One strong security control is sufficient
+• Security is handled only by IT teams
+7. Which defense-in-depth layer is considered the last line of defense?
+• Application security
+• Perimeter security
+• Host security
+√ Data security
+8. What is data classification used for?
+√ Determining how much protection information requires
+• Encrypting all data equally
+• Removing unnecessary data
+• Improving system performance
+9. What is the primary purpose of security controls?
+• Improve usability
+• Eliminate vulnerabilities entirely
+• Replace IT staff
+√ Prevent, detect, or respond to exploitation attempts
+10. Which of the following is a confidentiality defense?
+• Hashing
+• Backups
+• Load balancing
+√ Multi-Factor Authentication (MFA)
+11. What is Rowhammer an example of?
+√ A physical memory integrity attack
+• A network flood
+• A ransomware attack
+• A phishing technique
+12. What does the CIA Triad help organizations do?
+• Eliminate insider threats
+• Replace risk management processes
+√ Profile attacks and classify security measures
+• Automate compliance reporting
+13. Why is asset criticality important?
+√ To prioritize security efforts due to limited resources
+• To eliminate all risks
+• To comply only with legal requirements
+• To increase system performance
+14. What is considered an asset according to the module?
+• Only government-owned resources
+• Only digital information systems
+√ Anything containing economic value or future benefit
+• Only physical devices owned by an organization
+15. How is asset criticality primarily defined?
+• Likelihood of attack
+• Asset age
+√ Consequences of loss or degradation
+• Asset replacement cost
+16. Which framework is mentioned as a system of security controls?
+• ITIL
+• PMBOK
+√ NIST Cybersecurity Framework
+• COBIT
+17. Which of the following is an example of an intangible asset?
+• Servers
+√ Patents
+• Network switches
+• Vehicles
+18. Which type of control focuses on policies, standards, and procedures?
+• Technical
+• Availability
+• Physical
+√ Administrative
+19. What are attacks on confidentiality commonly called?
+• Exploits
+√ Breaches or data leaks
+• Sabotage
+• Intrusions
+20. Which attack specifically targets availability by overwhelming a system?
+• Spyware
+• Credential stuffing
+• SQL Injection
+√ Denial of Service (DoS)

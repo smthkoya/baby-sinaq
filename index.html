@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -18,36 +18,102 @@
   </head>
   <body>
     <div class="app">
-      <h1>Сынаг малыш</h1>
-      <button id="theme-toggle">Переключить тему</button>
+      <h1 data-i18n="app_heading">Сынаг малыш</h1>
+
+      <div class="top-toggles">
+        <button id="theme-toggle" data-i18n="theme_toggle">
+          Переключить тему
+        </button>
+        <button id="lang-toggle" data-i18n="lang_toggle">English</button>
+      </div>
 
       <br />
       <br />
 
       <div class="home" id="home">
         <div class="subject-selection">
-          <p class="input-label">Выберите предмет:</p>
+          <p class="input-label" data-i18n="select_subject_label">
+            Выберите предмет:
+          </p>
           <select id="subject-select" class="subject-select">
-            <option value="questions_data_mining.txt">Психология</option>
-            <option value="questions_iot.txt">Социология</option>
-            <option value="questions_3.txt">Азербайджанский</option>
-            <option value="questions_4.txt">Риски</option>
-            <option value="questions_5.txt">Питон</option>
+            <!-- <option value="questions_data_mining.txt" data-i18n="subject_psychology">Психология</option>
+            <option value="questions_iot.txt" data-i18n="subject_sociology">Социология</option>
+            <option value="questions_3.txt" data-i18n="subject_azerbaijani">Азербайджанский</option>
+            <option value="questions_4.txt" data-i18n="subject_risks">Риски</option> -->
+            <option value="python" data-i18n="subject_python" selected>
+              Intro to cyber
+            </option>
+          </select>
+        </div>
+
+        <div class="module-selection hide" id="module-selection">
+          <p class="input-label" data-i18n="select_module_label">
+            Выберите модуль:
+          </p>
+          <select id="module-select" class="subject-select">
+            <option value="__ALL__" data-i18n="all_modules_option">
+              Все модули (объединённо)
+            </option>
+            <option
+              value="questions_python_module1.txt"
+              data-i18n="python_module_1"
+            >
+              Модуль 1
+            </option>
+            <option
+              value="questions_python_module2.txt"
+              data-i18n="python_module_2"
+            >
+              Модуль 2
+            </option>
+            <option
+              value="questions_python_module3.txt"
+              data-i18n="python_module_3"
+            >
+              Модуль 3
+            </option>
+            <option
+              value="questions_python_module4.txt"
+              data-i18n="python_module_4"
+            >
+              Модуль 4
+            </option>
+            <option
+              value="questions_python_module5.txt"
+              data-i18n="python_module_5"
+            >
+              Модуль 5
+            </option>
+            <option
+              value="questions_python_module6.txt"
+              data-i18n="python_module_6"
+            >
+              Модуль 6
+            </option>
+            <!-- <option value="questions_python_module7.txt" data-i18n="python_module_7">Модуль 7</option> -->
+            <!-- <option value="questions_python_module8.txt" data-i18n="python_module_8">Модуль 8</option> -->
+            <option value="questions_module4_zaxra.txt">
+              Module 4 Addition
+            </option>
           </select>
         </div>
 
         <div class="input-group">
-          <p class="input-label">Вопросы от:</p>
+          <p class="input-label" data-i18n="questions_from_label">
+            Вопросы от:
+          </p>
           <input
             type="number"
             class="min"
+            data-i18n-placeholder="min_placeholder"
             placeholder="Начальный номер вопроса"
             value="1"
           />
-          <p class="input-label">до:</p>
+          <p class="input-label" data-i18n="to_label">до:</p>
           <input
             type="number"
             class="max"
+            data-i18n-placeholder="max_placeholder"
             placeholder="Конечный номер вопроса"
             value=""
           />
@@ -55,20 +121,30 @@
         <input
           type="number"
           class="input-count"
+          data-i18n-placeholder="count_placeholder"
           placeholder="Сколько вопросов вы хотите изучить?"
           value="50"
         />
         <div class="checkbox-option">
           <label class="checkbox-inline">
-            <input type="checkbox" id="show-correct-checkbox" checked />Показать
-            правильный ответ
+            <input type="checkbox" id="show-correct-checkbox" checked />
+            <span data-i18n="show_correct_label"
+              >Показать правильный ответ</span
+            >
           </label>
         </div>
         <br />
         <br />
         <br />
 
-        <button id="start" class="start-button" disabled>Начать</button>
+        <button
+          id="start"
+          class="start-button"
+          data-i18n="start_button"
+          disabled
+        >
+          Начать
+        </button>
       </div>
 
       <div class="quiz hide" id="quiz-page">
@@ -80,16 +156,26 @@
         <div id="answer-buttons"></div>
         <br />
         <div class="button" id="btn">
-          <button id="back-btn" class="nav-button">Назад</button>
+          <button id="back-btn" class="nav-button" data-i18n="back_button">
+            Назад
+          </button>
 
-          <button id="next-btn" class="nav-button">Далее</button>
+          <button id="next-btn" class="nav-button" data-i18n="next_button">
+            Далее
+          </button>
         </div>
       </div>
 
       <div id="incorrect" class="hide">
-        <h1 id="incorrect-answers-title">Неправильные ответы</h1>
+        <h1 id="incorrect-answers-title" data-i18n="incorrect_title">
+          Неправильные ответы
+        </h1>
         <div id="all-questions-container"></div>
-        <button id="show-incorrect-answers" class="play-again-button">
+        <button
+          id="show-incorrect-answers"
+          class="play-again-button"
+          data-i18n="return_home_button"
+        >
           Вернуться на главную
         </button>
       </div>

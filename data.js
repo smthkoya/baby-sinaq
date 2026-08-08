@@ -79,8 +79,9 @@ function parseQuestionsAndAnswers(lines) {
   return { questions, answers, correctFlags, answerCounts };
 }
 
-// ЭКСПОРТИРУЕМАЯ АСИНХРОННАЯ ФУНКЦИЯ ДЛЯ ЗАГРУЗКИ ДАННЫХ
-export async function loadQuizData(questionFilePath, imageDirectoryPath = "./output_images") {
+// Загружает и парсит один файл вопросов
+// Loads and parses a single question file
+async function loadSingleFile(questionFilePath, imageDirectoryPath) {
   const rawText = await fetchTextData(questionFilePath);
   const lines = rawText.split("\n").filter((line) => line.trim());
 
@@ -122,6 +123,24 @@ export async function loadQuizData(questionFilePath, imageDirectoryPath = "./out
     }
     finalImageQuestions.push([questionContent].concat(questionAnswersGrouped[i] || [])); // Ensure answers are an array
   }
-  
+
   return { image_question: finalImageQuestions, result: questionCorrectFlags };
+}
+
+// ЭКСПОРТИРУЕМАЯ АСИНХРОННАЯ ФУНКЦИЯ ДЛЯ ЗАГРУЗКИ ДАННЫХ
+// questionFilePath can be a single path (string) OR an array of paths — when it's
+// an array, every file is loaded and the questions are merged into one quiz.
+export async function loadQuizData(questionFilePath, imageDirectoryPath = "./output_images") {
+  const filePaths = Array.isArray(questionFilePath) ? questionFilePath : [questionFilePath];
+
+  const mergedImageQuestions = [];
+  const mergedResults = [];
+
+  for (const path of filePaths) {
+    const { image_question, result } = await loadSingleFile(path, imageDirectoryPath);
+    mergedImageQuestions.push(...image_question);
+    mergedResults.push(...result);
+  }
+
+  return { image_question: mergedImageQuestions, result: mergedResults };
 }

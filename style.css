@@ -76,11 +76,18 @@ body {
   transition: background-color 0.3s ease; /* Плавный переход для фона при смене темы */
 }
 
-/* Стили для кнопки переключения темы */
-#theme-toggle {
-  /* position: fixed; Фиксированное позиционирование */
-  top: 10%; /* Отступ от верхнего края */
-  right: 25%; /* Отступ от правого края */
+/* Обертка для кнопок переключения темы и языка */
+.top-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Стили для кнопки переключения темы и языка */
+#theme-toggle,
+#lang-toggle {
   z-index: 1000; /* Убедимся, что кнопка поверх других элементов */
 
   /* Используем те же переменные, что и для nav-button */
@@ -95,7 +102,8 @@ body {
   transition: background-color 0.3s ease;
 }
 
-#theme-toggle:hover {
+#theme-toggle:hover,
+#lang-toggle:hover {
   background: var(--button-hover-bg-color);
 }
 
@@ -126,7 +134,8 @@ body {
 }
 
 /* Секция выбора предмета */
-.subject-selection {
+.subject-selection,
+.module-selection {
   width: 100%;
   margin-bottom: 20px;
   display: flex;

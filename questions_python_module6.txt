@@ -1,0 +1,101 @@
+Module 6 Quiz — Answer Key
+1. What is the main goal of OSINT?
+• Encrypting sensitive data
+√ Producing meaningful insights to support decision-making
+• Blocking cyberattacks
+• Monitoring internal networks
+2. What does OSINT stand for?
+• Operational Signals Intelligence
+• Online Security Intelligence
+√ Open Source Intelligence
+• Open System Intelligence
+3. When did OSINT emerge formally as a concept?
+• During the Cold War
+√ During World War II
+• After the rise of social media
+• In the 1990s
+4. What is the Surface Web?
+• Anonymous networks only
+√ Content indexed by search engines
+• Illegal online marketplaces
+• The encrypted part of the internet
+5. What software is required to access most Dark Web sites?
+• VPN only
+• FTP clients
+• Standard web browsers
+√ Tor (The Onion Router)
+6. What is the Dark Web?
+• A public part of the internet
+• A social media platform
+√ A small part of the Deep Web requiring special software
+• The entire Deep Web
+7. How does Tor provide anonymity?
+√ By routing traffic through multiple encrypted layers
+• By using only private IP addresses
+• By hiding websites from search engines
+• By blocking all traffic
+8. Which type of content is found in the Deep Web?
+• Anonymous marketplaces
+• Hacking forums only
+√ Online banking portals
+• Public blogs
+9. What is the Deep Web?
+• A criminal-only network
+• A peer-to-peer network
+√ Content not indexed by search engines
+• A synonym for the Dark Web
+10. Which activity is a common application of OSINT?
+• Memory dumping
+• Disk forensics
+√ Reconnaissance on an organization
+• Malware reverse engineering
+11. Which network is an alternative dark net to Tor?
+• BGP
+√ I2P
+• DNS
+• SMTP
+12. Which Google operator restricts results to a specific website?
+• inurl:
+• filetype:
+√ site:
+• cache:
+13. What is OSINT primarily based on?
+• Intercepted communications
+√ Publicly available information
+• Classified government data
+• Encrypted network traffic
+14. What does the (D) label in the OSINT Framework indicate?
+• Download required
+• Data breach source
+• Dark web source
+√ Google Dork / Google Hacking
+15. What can Google dorks be used to find?
+• Encrypted dark web content
+√ Vulnerabilities and exposed confidential information
+• Internal corporate databases only
+• Only academic papers
+16. Which recommendation improves safety when accessing the Dark Web?
+• Use personal accounts
+√ Use VPN before Tor
+• Disable antivirus software
+• Download files freely
+17. What percentage of the internet does the Surface Web roughly represent?
+√ About 10%
+• About 90%
+• About 30%
+• About 50%
+18. What are Google operators?
+√ Special advanced search terms
+• Encryption algorithms
+• Network routing protocols
+• Dark web search engines
+19. What is the OSINT Framework?
+√ A collection of free tools for OSINT investigations
+• A classified intelligence database
+• A penetration testing framework
+• A malware analysis platform
+20. Which intelligence discipline focuses on publicly available sources?
+• GEOINT
+• SIGINT
+• HUMINT
+√ OSINT
