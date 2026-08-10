@@ -1,119 +1,119 @@
-1. What is the purpose of bug bounty programs?
-• Penalize attackers
-• Replace penetration testing
-• Enforce compliance
-√ Reward ethical disclosure of vulnerabilities
+1. What does cybersecurity risk represent?
+• Cost of security tools
+• Guaranteed system failure
+• Number of vulnerabilities
+√ Likelihood and impact of threats exploiting vulnerabilities
  
-2. Why is a methodology important in penetration testing?
-• To bypass defenses
-• To eliminate reporting
-√ To ensure tests are structured and repeatable
-• To increase attack speed
+2. What type of risk relates to fines and penalties for non-compliance?
+√ Regulatory risk
+• Operational risk
+• Technical risk
+• Strategic risk
  
-3. What is a known drawback of vulnerability scanners?
-√ They can produce false positives and false negatives
-• They always miss open ports
-• They replace manual testing
-• They cannot scan networks
+3. Which approach to risk evaluation relies on numerical and financial data?
+• Descriptive
+√ Quantitative
+• Subjective
+• Qualitative
  
-4. What occurs during the exploitation phase?
-• Scope definition
-√ Exploiting vulnerabilities to gain access
-• Log correlation
-• Policy review
+4. Why is GRC necessary for organizations?
+• To replace penetration testing
+√ To ensure regulatory compliance, reduce risk, and improve organizational trust
+• To reduce IT costs only
+• To centralize all IT functions
  
-5. What is the main purpose of the reporting phase?
-√ Provide actionable remediation guidance
-• Hide vulnerabilities
-• Disable exploited systems
-• Prove technical skill only
+5. Which framework focuses on information security management systems (ISMS)?
+√ ISO 27001
+• COBIT
+• ITIL
+• COSO
  
-6. Which tool is explicitly mentioned for vulnerability scanning?
-• Metasploit
-√ Nessus
-• Burp Suite
-• Hydra
+6. What is the purpose of risk monitoring?
+• Performing penetration tests
+√ Continuous tracking of risks and mitigation effectiveness
+• One-time risk assessment
+• Eliminating governance roles
  
-7. What characterizes a black-box penetration test?
-• Some internal access
-√ Zero prior knowledge
-• Full system knowledge
-• Insider credentials
+7. What is the main objective of compliance?
+• Replace governance processes
+√ Ensure adherence to laws, regulations, and standards
+• Detect malware
+• Improve system performance
  
-8. Which pentesting action field focuses on human behavior?
-• Web pentesting
-• Cloud pentesting
-√ People pentesting
-• Network pentesting
+8. Which responsibility belongs to the CISO?
+√ Cybersecurity risk management and policy alignment
+• Software development
+• Financial auditing
+• Marketing strategy
  
-9. Why are ethics critical in penetration testing?
-√ Pentesters may access sensitive information
-• Reports must be automated
-• Tests are always public
-• Tools are unreliable
+9. Who is primarily responsible for cybersecurity strategy at the executive level?
+• CIO
+• CRO
+• CTO
+√ CISO
  
-10. Why is client communication critical during post-exploitation?
-• To automate reports
-• To bypass controls
-• To expand scope freely
-√ To avoid legal and ethical issues
+10. What is the primary focus of the NIST Cybersecurity Framework?
+• IT service management
+• Financial reporting
+• Legal compliance only
+√ Risk-based cybersecurity management
  
-11. What is the purpose of post-exploitation?
-• Initial access
-• Legal authorization
-• Patch management
-√ Assess long-term impact and lateral movement
+11. What is the primary purpose of GRC in cybersecurity?
+• Eliminate all cyber threats
+• Replace technical security controls
+• Automate IT operations
+√ Align business objectives with risk management and regulatory requirements
  
-12. Which report is intended for non-technical stakeholders?
-• Vulnerability scan report
-√ Executive report
-• Log report
-• Technical report
+12. Which element is NOT part of the GRC triad?
+• Governance
+• Compliance
+√ Incident Response
+• Risk Management
  
-13. What is a Capture The Flag (CTF) exercise?
-• A malware distribution platform
-• A compliance audit
-• A logging framework
-√ A competitive security challenge environment
+13. What does CVSS provide?
+• Compliance checklists
+√ A numerical severity score for vulnerabilities
+• Audit reports
+• Governance metrics
  
-14. What is the primary goal of penetration testing?
-√ Improve an organization’s security posture
-• Replace security tools
-• Eliminate all vulnerabilities
-• Monitor employee behavior
+14. What does the GRC model emphasize?
+√ Alignment of people, processes, and technology
+• Replacement of management structures
+• Elimination of governance roles
+• Automation of compliance only
  
-15. Why did penetration testing emerge historically?
-• Because early systems prioritized security
-• To replace audits
-√ As a response to real-world exploitation of insecure systems
-• Due to regulatory pressure
+15. Which is NOT a common risk mitigation strategy?
+• Risk avoidance
+• Risk reduction
+√ Risk amplification
+• Risk transfer
  
-16. What best defines penetration testing according to the module?
-• A compliance validation process
-• Continuous network monitoring
-√ A security assessment where ethical hackers simulate real-world attacks
-• Automated vulnerability scanning only
+16. What is the difference between audits and certifications?
+• Audits are informal reviews
+• Certifications replace audits
+√ Audits assess compliance; certifications formally validate it
+• Audits validate people; certifications validate tools
  
-17. What is the goal of vulnerability analysis?
-√ Identify exploitable weaknesses
-• Train users
-• Patch systems
-• Remove malware
+17. What does GRC stand for?
+• Global Risk Control
+• General Risk Compliance
+• Governance, Regulation, and Control
+√ Governance, Risk, and Compliance
  
-18. Which activity belongs to the pre-engagement phase?
-• Data exfiltration
-• Privilege escalation
-√ Defining scope and rules of engagement
-• Exploiting vulnerabilities
+18. Which risk evaluation approach uses descriptive categories like high, medium, and low?
+• Statistical
+• Quantitative
+• Automated
+√ Qualitative
  
-19. What is the main objective of reconnaissance/intelligence gathering?
-• Install backdoors
-• Execute exploits
-• Deliver malware
-√ Identify open ports and weak spots
+19. Which framework was created by ISACA?
+• NIST CSF
+• ITIL
+√ COBIT
+• COSO
  
-20. Which phase focuses on identifying critical assets and attack paths?
-√ Threat Modeling
-• Post-exploitation
-• Reporting
-• Exploitation
+20. What is the main role of governance in GRC?
+• Identifying malware
+√ Defining policies, decision-making, and accountability
+• Performing audits
+• Technical vulnerability scanning
