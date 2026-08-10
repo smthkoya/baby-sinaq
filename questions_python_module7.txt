@@ -1,0 +1,119 @@
+1. What is the purpose of bug bounty programs?
+• Penalize attackers
+• Replace penetration testing
+• Enforce compliance
+√ Reward ethical disclosure of vulnerabilities
+ 
+2. Why is a methodology important in penetration testing?
+• To bypass defenses
+• To eliminate reporting
+√ To ensure tests are structured and repeatable
+• To increase attack speed
+ 
+3. What is a known drawback of vulnerability scanners?
+√ They can produce false positives and false negatives
+• They always miss open ports
+• They replace manual testing
+• They cannot scan networks
+ 
+4. What occurs during the exploitation phase?
+• Scope definition
+√ Exploiting vulnerabilities to gain access
+• Log correlation
+• Policy review
+ 
+5. What is the main purpose of the reporting phase?
+√ Provide actionable remediation guidance
+• Hide vulnerabilities
+• Disable exploited systems
+• Prove technical skill only
+ 
+6. Which tool is explicitly mentioned for vulnerability scanning?
+• Metasploit
+√ Nessus
+• Burp Suite
+• Hydra
+ 
+7. What characterizes a black-box penetration test?
+• Some internal access
+√ Zero prior knowledge
+• Full system knowledge
+• Insider credentials
+ 
+8. Which pentesting action field focuses on human behavior?
+• Web pentesting
+• Cloud pentesting
+√ People pentesting
+• Network pentesting
+ 
+9. Why are ethics critical in penetration testing?
+√ Pentesters may access sensitive information
+• Reports must be automated
+• Tests are always public
+• Tools are unreliable
+ 
+10. Why is client communication critical during post-exploitation?
+• To automate reports
+• To bypass controls
+• To expand scope freely
+√ To avoid legal and ethical issues
+ 
+11. What is the purpose of post-exploitation?
+• Initial access
+• Legal authorization
+• Patch management
+√ Assess long-term impact and lateral movement
+ 
+12. Which report is intended for non-technical stakeholders?
+• Vulnerability scan report
+√ Executive report
+• Log report
+• Technical report
+ 
+13. What is a Capture The Flag (CTF) exercise?
+• A malware distribution platform
+• A compliance audit
+• A logging framework
+√ A competitive security challenge environment
+ 
+14. What is the primary goal of penetration testing?
+√ Improve an organization’s security posture
+• Replace security tools
+• Eliminate all vulnerabilities
+• Monitor employee behavior
+ 
+15. Why did penetration testing emerge historically?
+• Because early systems prioritized security
+• To replace audits
+√ As a response to real-world exploitation of insecure systems
+• Due to regulatory pressure
+ 
+16. What best defines penetration testing according to the module?
+• A compliance validation process
+• Continuous network monitoring
+√ A security assessment where ethical hackers simulate real-world attacks
+• Automated vulnerability scanning only
+ 
+17. What is the goal of vulnerability analysis?
+√ Identify exploitable weaknesses
+• Train users
+• Patch systems
+• Remove malware
+ 
+18. Which activity belongs to the pre-engagement phase?
+• Data exfiltration
+• Privilege escalation
+√ Defining scope and rules of engagement
+• Exploiting vulnerabilities
+ 
+19. What is the main objective of reconnaissance/intelligence gathering?
+• Install backdoors
+• Execute exploits
+• Deliver malware
+√ Identify open ports and weak spots
+ 
+20. Which phase focuses on identifying critical assets and attack paths?
+√ Threat Modeling
+• Post-exploitation
+• Reporting
+• Exploitation
