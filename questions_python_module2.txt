@@ -1,101 +1,726 @@
-Module 2 Quiz — Answer Key
-1. Which control category includes encryption and authentication?
-• Integrity controls
-• Physical controls
-√ Technical controls
-• Administrative controls
-2. What is the main goal of availability?
-√ Ensure systems and data are accessible when needed
-• Hide sensitive information
-• Monitor user behavior
-• Prevent data modification
-3. Which law is mentioned as supporting integrity protection?
-• GDPR
-√ Sarbanes-Oxley Act (SOX)
-• Patriot Act
-• Computer Fraud and Abuse Act
-4. Which regulation is cited as an example for protecting Personally Identifiable Information (PII)?
-√ GDPR
-• SOX
-• HIPAA
-• PCI-DSS
-5. Which mechanism is emphasized as critical for protecting integrity? (verify — ambiguous, see note)
-• Firewalls
-√ Audits
-• Backups
+1. What is a log?
+
+√ A record of events or activities occurring within a system, application, or network
+• A firewall rule database
+• A network interface
+• An encryption algorithm
+
+2. Which information is typically found in logs?
+
+√ Timestamps and event descriptions
+• Only passwords
+• Only MAC addresses
+• Only firewall rules
+
+3. What are logs commonly used for?
+
+• Only backups
+√ Monitoring, auditing, and security
+• Only routing
+• Only encryption
+
+4. Which can be a source of logs?
+
+√ Operating systems
+• Only firewalls
+• Only routers
+• Only databases
+
+5. Which device can generate logs according to the module?
+
+√ Printer
+• Ethernet cable
+• Passive patch panel only
+• Power socket
+
+6. Which is an example of an application log source?
+
+√ Browser
+• Ethernet cable
+• Power supply
+• Keyboard
+
+7. Which activity can appear in account-related logs?
+
+√ Login and logout
+• CPU manufacturing
+• Cable installation
+• Disk formatting only
+
+8. What is the .log extension commonly used for?
+
+√ Generic plain-text log files
+• Windows executables
+• Images
+• Encrypted certificates
+
+9. Which extension commonly indicates an error log?
+
+• .access
+√ .err
+• .evtx
+• .out
+
+10. Which extension commonly indicates output logs?
+
+• .err
+√ .out
+• .syslog
+• .access
+
+11. Which extension is associated with debug logs?
+
+√ .debug
+• .exe
+• .dll
+• .jpg
+
+12. Which extension commonly represents access logs?
+
+• .debug
+√ .access
+• .out
+• .evtx
+
+13. Which extension is often used for Linux/Unix system logs?
+
+• .evtx
+√ .syslog
+• .docx
+• .exe
+
+14. Which extension is commonly associated with Windows Event Logs?
+
+• .syslog
+• .trace
+√ .evtx
+• .access
+
+15. Which information may appear in a log?
+
+√ User identification
+• Only IP addresses
+• Only file names
+• Only passwords
+
+16. Which field helps determine when an event occurred?
+
+√ Date and time
+• Severity only
+• Destination only
+• Service name only
+
+17. Which log field can indicate whether an operation succeeded?
+
+√ Success or failure indication
+• File extension
+• CPU architecture
+• Firewall vendor
+
+18. Which log field describes the importance or seriousness of an event?
+
+• Origin
+√ Severity
+• Destination
+• Username
+
+19. What is logging?
+
+√ The process of generating, storing, and processing logs
+• Only viewing logs
+• Only deleting logs
+• Only transmitting packets
+
+20. How is logging usually generated?
+
+√ Automatically by software applications and systems
+• Only manually
+• Only by administrators
+• Only after an incident
+
+21. What determines which events and formats are logged?
+
+√ The software application or system being used
+• The Ethernet cable
+• The ISP only
+• The keyboard layout
+
+22. What may sometimes be required before a device records desired activities?
+
+√ Logging must be enabled/configured
+• NAT must be disabled
+• The firewall must be removed
+• DHCP must be stopped
+
+23. What is logging transport?
+
+√ Sending logs to a centralized location for storage and analysis
+• Deleting old logs
+• Encrypting all network traffic
+• Changing firewall rules
+
+24. Which protocols may be used for file transfer of logs?
+
+√ FTP or SCP
+• ARP only
+• ICMP only
+• DHCP only
+
+25. What is Syslog?
+
+√ A standard protocol for sending log messages over a network
+• A firewall hardware type
+• An encryption algorithm
+• A NAT technique
+
+26. What does a log forwarder do?
+
+√ Collects log data from local log files
+• Blocks network connections
+• Assigns IP addresses
+• Creates VLANs
+
+27. How can APIs be used in logging?
+
+√ They can send log data directly to a centralized log management system
+• They can only delete logs
+• They replace IP addressing
+• They prevent all network traffic
+
+28. What is an advantage of cloud-based logging?
+
+√ It can eliminate the need for on-premises log management infrastructure
+• It prevents logs from being analyzed
+• It removes timestamps
+• It disables centralized storage
+
+29. Which protocols are identified in the lecture as basic protocols for log transport?
+
+• HTTP and HTTPS
+• FTP and TFTP
+√ SNMP or SYSLOG
+• ARP and ICMP
+
+30. Where can logs be stored?
+
+• Only locally
+• Only in the cloud
+√ Locally or in a centralized location
+• Only in RAM
+
+31. Which is a log storage method?
+
+√ Database storage
+• Packet filtering
+• Port forwarding
+• NAT traversal
+
+32. Which properties are especially important during log storage?
+
+√ Integrity, confidentiality, and access management
+• Only availability
+• Only speed
+• Only compression
+
+33. What is log normalization?
+
+√ Standardizing log data so it can be easily searched, analyzed, and compared
+• Encrypting all logs
+• Deleting duplicate logs
+• Converting logs into firewall rules
+
+34. What is parsing during log normalization?
+
+√ Identifying fields and values in raw log data
+• Deleting old entries
+• Encrypting timestamps
+• Blocking malicious users
+
+35. What is standardization in log normalization?
+
+√ Ensuring consistency across different log entries
+• Removing all metadata
+• Encrypting every entry
+• Creating firewall interfaces
+
+36. What is enrichment?
+
+√ Adding metadata to provide additional context
+• Deleting metadata
+• Compressing the log
+• Blocking the source IP
+
+37. Why is indexing performed after normalization?
+
+√ To enable fast searching and analysis
+• To hide logs
+• To disable monitoring
+• To create NAT rules
+
+38. According to the module, what happens to forensic validity when logs are normalized?
+
+• It improves automatically
+√ Normalization voids their validity for court evidence; evidence should be raw
+• Nothing ever changes
+• Logs become encrypted evidence
+
+This is a particularly exam-worthy detail because the slide explicitly states that forensic evidence should remain raw.
+
+39. Can log analysis be performed manually?
+
+√ Yes, it can be manual or automated
+• No, only automatically
+• Only on Windows
+• Only on firewalls
+
+40. What is filtering during log analysis?
+
+√ Removing irrelevant entries to focus on relevant data
+• Blocking network packets
+• Encrypting log files
+• Changing timestamps
+
+41. What is correlation in log analysis?
+
+√ Combining data from different sources to identify patterns and trends
+• Deleting duplicate files
+• Changing source IP addresses
+• Creating firewall interfaces
+
+42. What is visualization used for in log analysis?
+
+√ Making patterns and trends easier to identify
+• Encrypting data
+• Deleting logs
+• Preventing monitoring
+
+43. What does alerting provide?
+
+√ Notifications when specific events or patterns are detected
+• Automatic deletion of all logs
+• NAT translation
+• DHCP assignment
+
+44. What is log monitoring?
+
+√ Continuously or periodically tracking and analyzing log data
+• Creating only firewall rules
+• Deleting old logs
+• Assigning IP addresses
+
+45. What can log monitoring detect?
+
+√ Abnormal activities, potential threats, and system issues
+• Only successful logins
+• Only physical damage
+• Only DNS queries
+
+46. Which is an enterprise advantage of logging?
+
+√ Troubleshooting
+• Reduced network addressing
+• Elimination of security policies
+• Removal of authentication
+
+47. Which is another enterprise advantage of logging?
+
+√ Compliance
+• Disabling auditing
+• Eliminating monitoring
+• Preventing backups
+
+48. What is log management?
+
+√ The structured process governing log sources, collection, transport, storage, retention, monitoring, and visualization
+• Only reading individual log entries
+• Only deleting logs
+• Only generating logs
+
+49. What does log management define at a higher level?
+
+√ What to log, how, for how long, and why
+• Only which firewall to buy
+• Only IP addresses
+• Only user passwords
+
+50. Which statement best describes logging?
+
+√ Creating, transporting, storing, and analyzing logs
+• Only continuously watching logs
+• Only setting retention policies
+• Only configuring alerts
+
+51. Which statement best describes log monitoring?
+
+√ Continuously monitoring logs for performance or security reasons
+• Governing the entire enterprise logging lifecycle
+• Only generating logs
+• Only storing logs
+
+52. Which statement best describes log management?
+
+√ Governing how logs are generated, moved, stored, and used across the enterprise
+• Only reading firewall logs
+• Only generating events
+• Only monitoring CPU utilization
+
+53. What can logs help determine during an investigation?
+
+√ Root cause
+• Only IP configuration
+• Only password length
+• Only firewall model
+
+54. What can logs be used to reconstruct?
+
+√ A timeline of events
+• A physical network cable
+• A hard drive partition
+• A firewall appliance
+
+55. Which is a forensic use of logs?
+
+√ Detection of malicious activity
+• DHCP configuration
+• RAID creation
+• Cable management
+
+56. Which is another investigative use of logs?
+
+√ Compliance auditing
+• IP address conservation
+• Port forwarding
+• VLAN creation
+
+57. What is a common real-world problem in digital investigations?
+
+√ Evidence may not have been saved, may be overwritten, or may be deleted
+• Every system always retains all evidence
+• Logs cannot contain timestamps
+• Firewalls never create evidence
+
+58. Why is a modern firewall considered a security gateway?
+
+√ It acts as a central security enforcement point at a trust-zone boundary
+• It only assigns IP addresses
+• It only stores files
+• It replaces all endpoint security
+
+59. Which capability may a modern security gateway perform?
+
+√ Deep Packet Inspection
+• Only ARP
+• Only DHCP
+• Only switching
+
+60. Which capability helps modern firewalls make security decisions based on users and applications?
+
+√ Application and user awareness
+• RAID awareness
+• Cable awareness
+• BIOS awareness
+
+61. What do Traffic/Connection firewall logs record?
+
+√ Allowed, denied, or dropped connections
+• Only administrator changes
+• Only malware signatures
+• Only VPN authentication
+
+62. Which firewall logs contain detected attacks, malware, or exploit attempts?
+
+• Traffic logs
+√ Security/Threat logs
+• NAT logs
+• Administrative logs
+
+63. Which logs identify which firewall rule matched?
+
+√ Policy/Rule logs
+• VPN logs
+• System logs
+• DNS logs
+
+64. Which logs contain address and port translations?
+
+√ NAT logs
+• Authentication logs
+• Administrative logs
+• Security logs
+
+65. Which logs contain tunnel establishment and disconnection information?
+
+√ VPN logs
+• NAT logs
+• Traffic logs only
+• Administrative logs
+
+66. Which logs contain user login successes and failures?
+
+√ Authentication logs
+• NAT logs
+• System logs
+• Policy logs
+
+67. Which logs contain resource usage and interface status?
+
+√ System/Health logs
+• NAT logs
+• Authentication logs
+• VPN logs
+
+68. Which logs contain configuration changes and administrator logins?
+
+√ Administrative logs
+• NAT logs
+• Traffic logs
+• Authentication logs only
+
+Firewall log categories and the information they contain are listed explicitly in the lecture.
+
+69. If logs from different firewall vendors must be analyzed together, what should be done first?
+
+• Delete duplicates
+• Encrypt them
+√ Normalize them
+• Convert them into firewall rules
+
+70. How are basic firewall rules normally executed?
+
+√ Sequentially from top to bottom
+• Bottom to top
+• Randomly
+• Alphabetically
+
+71. What happens when a packet matches a firewall rule?
+
+√ The rule's action is executed
+• All rules are restarted
+• The firewall shuts down
+• The packet automatically becomes encrypted
+
+72. What happens to subsequent rules after the first match in a traditional sequential ruleset?
+
+√ They are ignored
+• They all execute
+• They move to the top
+• They are deleted
+
+73. What do most firewalls apply if no rule matches?
+
+√ Default implicit deny
+• Default allow
+• Automatic NAT
+• Automatic VPN
+
+The top-to-bottom evaluation, first-match behavior and implicit deny are specifically described in Module 2.
+
+74. Which is a basic element of a firewall rule?
+
+√ Priority
+• CPU usage
+• Disk size
+• Vendor name
+
+75. Which elements can define source and destination in a basic firewall rule?
+
+√ IP or port
+• Only username
+• Only MAC vendor
+• Only application version
+
+76. In a basic rule, when is the rule triggered?
+
+√ When all required conditions are true
+• When any condition is false
+• Only when NAT is enabled
+• Only when logging is disabled
+
+77. If one required condition in a basic rule is false, what happens?
+
+√ The rule is not executed
+• The rule always executes
+• The firewall reboots
+• All subsequent rules are deleted
+
+78. Which address is mentioned as potentially useful for bypassing poorly designed rule logic?
+
+• 8.8.8.8
+• 255.255.255.255
+√ 127.0.0.1 / localhost
+• 169.254.0.1
+
+79. What does the Interface field in an advanced firewall rule identify?
+
+√ The network interface to which the rule applies
+• The firewall manufacturer
+• The log storage system
+• The user's password
+
+80. What does a Schedule field provide?
+
+√ Time-based firewall rules
+• IP translation
+• Log normalization
 • Encryption
-6. What is the core idea of defense in depth?
-• Only perimeter defenses are needed
-√ Multiple layers of different security controls are used
-• One strong security control is sufficient
-• Security is handled only by IT teams
-7. Which defense-in-depth layer is considered the last line of defense?
-• Application security
-• Perimeter security
-• Host security
-√ Data security
-8. What is data classification used for?
-√ Determining how much protection information requires
-• Encrypting all data equally
-• Removing unnecessary data
-• Improving system performance
-9. What is the primary purpose of security controls?
-• Improve usability
-• Eliminate vulnerabilities entirely
-• Replace IT staff
-√ Prevent, detect, or respond to exploitation attempts
-10. Which of the following is a confidentiality defense?
-• Hashing
-• Backups
-• Load balancing
-√ Multi-Factor Authentication (MFA)
-11. What is Rowhammer an example of?
-√ A physical memory integrity attack
-• A network flood
-• A ransomware attack
-• A phishing technique
-12. What does the CIA Triad help organizations do?
-• Eliminate insider threats
-• Replace risk management processes
-√ Profile attacks and classify security measures
-• Automate compliance reporting
-13. Why is asset criticality important?
-√ To prioritize security efforts due to limited resources
-• To eliminate all risks
-• To comply only with legal requirements
-• To increase system performance
-14. What is considered an asset according to the module?
-• Only government-owned resources
-• Only digital information systems
-√ Anything containing economic value or future benefit
-• Only physical devices owned by an organization
-15. How is asset criticality primarily defined?
-• Likelihood of attack
-• Asset age
-√ Consequences of loss or degradation
-• Asset replacement cost
-16. Which framework is mentioned as a system of security controls?
-• ITIL
-• PMBOK
-√ NIST Cybersecurity Framework
-• COBIT
-17. Which of the following is an example of an intangible asset?
-• Servers
-√ Patents
-• Network switches
-• Vehicles
-18. Which type of control focuses on policies, standards, and procedures?
-• Technical
-• Availability
-• Physical
-√ Administrative
-19. What are attacks on confidentiality commonly called?
-• Exploits
-√ Breaches or data leaks
-• Sabotage
-• Intrusions
-20. Which attack specifically targets availability by overwhelming a system?
-• Spyware
-• Credential stuffing
-• SQL Injection
-√ Denial of Service (DoS)
+
+81. What does the User/Group field allow?
+
+√ Rules to apply to specific authenticated users or groups
+• NAT translation
+• Packet fragmentation
+• Log deletion
+
+82. What does the Logging field in a firewall rule determine?
+
+√ Whether matching traffic is recorded for auditing
+• Whether the firewall has Internet access
+• Whether NAT is enabled
+• Whether the user can change passwords
+
+83. Which is a comparison operator in complex firewall rules?
+
+√ Not equals (!=)
+• NAT
+• TCP
+• DHCP
+
+84. Which is a Boolean operator?
+
+√ AND
+• CIDR
+• TCP
+• HTTP
+
+85. Which Boolean operator is mentioned together with AND and OR?
+
+√ XOR
+• NAND only
+• XNOR only
+• NOR only
+
+86. What is CIDR used for in complex firewall rules?
+
+√ Masking/range specification
+• Log encryption
+• Authentication
+• VPN tunneling
+
+87. Which platforms may use more sophisticated rule operators?
+
+√ Cloud and WAF firewalls
+• Only basic packet filters
+• Only unmanaged switches
+• Only DHCP servers
+
+88. Do all modern firewall platforms strictly evaluate rules sequentially?
+
+• Yes, without exception
+√ No, some modern platforms use logical optimization and decision engines
+• Only Windows does not
+• Only Linux does not
+
+89. What can modern firewall systems use to improve rule evaluation performance?
+
+√ Decision trees or hash tables
+• Word documents
+• DNS records only
+• RAID arrays
+
+90. Where may default and implicit rules be enforced in modern systems?
+
+√ Outside the visible rule order
+• Only as rule number 1
+• Only at the bottom
+• They cannot exist
+
+91. What is whitelisting?
+
+√ Allowing only explicitly defined trusted entities
+• Allowing everything except known threats
+• Disabling firewall rules
+• Blocking only HTTP
+
+92. What is the default behavior of a whitelist model?
+
+√ Deny all except explicitly permitted traffic
+• Allow all
+• Allow only Internet traffic
+• Disable all logging
+
+93. Where is whitelisting particularly appropriate?
+
+√ High-security environments
+• Environments where everything should be trusted
+• Networks without security requirements
+• Only home Wi-Fi
+
+94. What is blacklisting?
+
+√ Allowing traffic except explicitly blocked entities
+• Blocking everything by default
+• Removing all firewall rules
+• Allowing only one host
+
+95. What is the default behavior of a blacklist model?
+
+√ Allow all unless traffic matches a deny rule
+• Deny everything
+• Disable all traffic
+• Allow only localhost
+
+96. Which principle recommends allowing only the minimum necessary traffic?
+
+√ Least Privilege Principle
+• Maximum Access Principle
+• Open Network Principle
+• First Match Principle
+
+97. What should be avoided when creating specific firewall rules?
+
+√ Broad rules such as “allow all”
+• Specific IP addresses
+• Specific ports
+• Specific protocols
+
+98. Why should firewall rules be documented?
+
+√ To simplify maintenance and audits
+• To disable monitoring
+• To increase attack surface
+• To bypass change management
+
+99. Which rules should generally be placed higher for optimization according to the lecture?
+
+√ Frequently used and restrictive rules
+• Obsolete rules
+• Disabled rules
+• Random rules
+
+100. Why should firewall rules be reviewed periodically?
+
+√ To remove or update outdated rules and reduce security risk
+• To increase the number of unnecessary rules
+• To disable logging
+• To remove documentation
+
+101. What should be used when adding, modifying, or deleting firewall rules?
+
+√ Change management/control process
+• Random modifications
+• Default credentials
+• Unrestricted access
+
+102. Which rules should especially have logging enabled?
+
+√ Critical rules
+• Only disabled rules
+• Only default rules
+• No rules
+
+103. Why should new firewall rules be tested before production deployment?
+
+√ To avoid disruptions
+• To remove all security controls
+• To disable logging
+• To increase attack surface
