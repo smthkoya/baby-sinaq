@@ -1,101 +1,565 @@
-Module 1 Quiz — Answer Key
-1. Which activity is classified as a security incident?
-√ Deleting a database internally
-• Passive system monitoring
-• Sharing credentials without impact
-• Installing authorized software
-2. How is privacy defined in the context of cybersecurity?
-• Preventing all data collection
-• Encrypting only financial data
-• Hiding all data from users
-√ Controlling how personal information is stored, shared, and used
-3. What does confidentiality ensure in the CIA Triad?
-• Data is always available
-• Data is not altered
-• Systems recover quickly
-√ Only authorized entities can access data
-4. What is cyberwarfare primarily defined as?
-√ Coordinated cyber-attacks by nation-states to achieve strategic objectives
-• Random cybercrime activities
-• Defensive network monitoring
-• Individual hacking for profit
-5. Which threat actor category represents nation-state actors?
-• Script kiddies
-√ Advanced Persistent Threats
-• Hacktivists
-• Cyber criminals
-6. Why does cyberspace matter today according to the module?
-• It is limited to government use
-• It is mainly used for entertainment
-• It replaces all physical infrastructure
-√ It underpins economic, social, and national security activities
-7. Which web evolution stage is characterized by blockchain-driven decentralization?
-• Web 1.0
-• Web 4.0
-• Web 2.0
-√ Web 3.0
-8. What is the difference between a vulnerability and an exploit?
-• An exploit is a weakness; a vulnerability is a defense
-√ A vulnerability is a weakness; an exploit is a tool to use it
-• They are the same concept
-• Both are types of malware
-9. Which perspective defines cyberspace as a domain comparable to land, sea, air, and space?
-√ Military strategic domain
-• Civilian governance
-• Operational security
-• Technical infrastructure-based
-10. Which of the following is NOT part of the CIA Triad?
-• Integrity
-• Confidentiality
-√ Accountability
-• Availability
-11. What best describes cyberspace according to the document?
-• A physical network of cables and hardware only
-√ An electronic medium of a global computer network facilitating online communications
-• A private corporate information system
-• A military-only communications environment
-12. Which malware type is designed to encrypt data and demand payment?
-• Spyware
-√ Ransomware
-• Worm
-• Adware
-13. Which organization is NOT listed as an authoritative source defining cyberspace?
-• NIST
-• ISO/IEC
-• NATO
-√ World Economic Forum
-14. What was the primary goal of the Stuxnet attack?
-• Steal financial data
-• Disrupt social media platforms
-• Conduct mass surveillance
-√ Destroy the Iranian nuclear program
-15. What makes cyberspace a unique warfare domain?
-• Exclusive use by military forces
-√ Low-cost, high-impact attacks crossing borders instantly
-• Dependence on physical distance
-• High cost and slow execution
-16. Which method was used by Stuxnet for initial infection?
-• Cloud service compromise
-• Website exploit
-• Email phishing
-√ USB drive
-17. Which of the following is NOT a target of cyberwarfare?
-√ Personal gaming accounts only
-• Government networks
-• Military systems
-• Critical infrastructure
-18. Which statement best explains why cybersecurity is challenging?
-√ Attackers and defenders are in a constant arms race
-• Users always follow security rules
-• Software is designed primarily for security
-• Security tools are always effective
-19. What best describes a white hat hacker?
-• A hacker with no technical skills
-√ An ethical hacker who helps improve security
-• An illegal attacker for profit
-• A hacker motivated by ideology only
-20. What is the main purpose of cybersecurity according to the document?
-• To eliminate all cyber threats permanently
-√ To identify, assess, and handle cyber risks
-• To monitor employee productivity
-• To replace IT departments
+1. What is a firewall?
+
+• A device used only to encrypt network traffic
+√ A security device that grants or denies access to resources based on specific criteria
+• A system used only to assign IP addresses
+• A protocol for transferring files
+
+2. Where can a firewall be placed?
+
+• Only between a LAN and the Internet
+• Only on a physical router
+√ In the network or locally on a host
+• Only inside a DMZ
+
+3. Why have firewalls evolved over time?
+
+• Because IPv4 addresses became larger
+√ Because cyber threats became increasingly complex and sophisticated
+• Because switches replaced routers
+• Because operating systems stopped supporting security
+
+4. Which appeared as part of firewall evolution?
+
+• DHCP filtering
+• DNS routing
+√ Stateful Inspection
+• RAID inspection
+
+5. Which of the following is listed as a modern stage of firewall evolution?
+
+• FTP firewall
+√ AI Enhanced firewall
+• Ethernet firewall
+• DNS firewall
+
+6. What are firewall interfaces?
+
+• Only physical Ethernet ports
+√ Logical or physical network boundaries where security policies are applied and traffic is controlled
+• Rules used to authenticate administrators
+• Databases containing firewall logs
+
+7. Which firewall interface normally represents the untrusted external network?
+
+√ WAN
+• LAN
+• DMZ
+• OPT
+
+8. Which firewall interface normally represents the trusted internal network?
+
+• WAN
+√ LAN
+• DMZ
+• Internet
+
+9. What is the purpose of a DMZ interface?
+
+• To contain only firewall administrators
+• To replace the WAN interface
+√ To provide a semi-trusted zone for public-facing services
+• To create encrypted VPN tunnels only
+
+10. What are OPT/VLAN interfaces commonly used for?
+
+• Only Internet connections
+√ Additional custom networks such as IoT, guests, servers, or management
+• Only DNS servers
+• Only firewall logging
+
+11. Can a host have multiple interfaces?
+
+• No, a host is limited to one interface
+√ Yes, and a host-based firewall may need to manage all of them
+• Only if it is a firewall appliance
+• Only when connected to a DMZ
+
+12. A host-based firewall rule may be bound to which of the following?
+
+√ A specific interface such as eth0 or wlan0
+• Only a public IP address
+• Only the WAN gateway
+• Only the MAC address of the router
+
+13. Which is an example of a network profile or zone used by a host firewall?
+
+• TCP vs UDP
+√ Trusted vs untrusted
+• IPv4 vs Ethernet
+• HTTP vs HTTPS
+
+14. What is a Policy/Rulebase?
+
+• A list of firewall administrators
+√ A database containing rules for access control
+• A database containing only blocked IP addresses
+• A list of active network sessions
+
+15. What is a firewall rule?
+
+• A record of an active connection
+√ Listed criteria permitting or denying access through a firewall
+• A type of network interface
+• A firewall hardware component
+
+16. What is a session in firewall terminology?
+
+• A firewall configuration backup
+• A single Ethernet frame
+√ An end-to-end virtual circuit between two devices
+• A list of firewall rules
+
+17. Which information can characterize a session?
+
+• Only source IP
+• Only destination port
+√ Source/destination IPs, ports, port types, and sequence numbers
+• Only MAC addresses
+
+18. What do ingress and egress describe?
+
+• The firewall operating system
+√ The direction of network traffic
+• The number of firewall rules
+• The encryption level of a connection
+
+19. Why can ingress/egress information be useful to a firewall?
+
+• It determines disk capacity
+√ It allows rules to be created based on traffic direction
+• It changes the MAC address automatically
+• It disables routing
+
+20. What does firewall stickiness typically refer to?
+
+• Blocking repeated connections
+√ Session persistence
+• Changing IP addresses after each packet
+• Deleting old firewall rules
+
+21. What happens when stickiness is used?
+
+• Every packet is sent to a different server
+√ Future packets from a client continue to be directed to the same server during the session
+• The firewall automatically blocks the client
+• NAT is disabled
+
+22. In which scenario is stickiness commonly used?
+
+• DNS poisoning
+√ Load balancing
+• Packet fragmentation
+• Port scanning
+
+23. Which is a firewall evasion technique?
+
+√ Fragmentation attack
+• Password expiration
+• RAID failure
+• DHCP starvation
+
+24. Which attack uses overlapping fragments?
+
+• SYN Flood
+√ Teardrop Attack
+• ICMP Flood
+• Default Credentials Attack
+
+25. Which is categorized as a DoS and resource exhaustion attack?
+
+√ SYN Flood
+• HTTP Header Manipulation
+• Source Routing
+• Firmware Tampering
+
+26. Which attack attempts to exhaust the firewall's connection tracking resources?
+
+• SQL Injection
+• Phishing
+√ State Table Exhaustion
+• Tailgating
+
+27. Which is an example of a firewall misconfiguration exploit?
+
+• SYN Flood
+√ Default Credentials Attack
+• Teardrop Attack
+• Buffer Overflow
+
+28. What is a risk of unrestricted outbound traffic?
+
+√ It represents a firewall misconfiguration that can be exploited
+• It automatically enables Zero Trust
+• It prevents malware communication
+• It blocks Internet access
+
+29. Which technique is listed as an application-layer firewall bypass?
+
+√ HTTP Header Manipulation
+• SYN Flood
+• Source Routing
+• State Table Exhaustion
+
+30. Which technique can make application traffic more difficult for a firewall to inspect?
+
+• Static routing
+√ Encrypted payloads
+• DHCP
+• VLAN tagging
+
+31. Which is a direct exploit against firewall software or hardware?
+
+• Weak rule-based filtering
+• ICMP Flood
+√ Buffer Overflow Attack
+• Protocol tunneling
+
+32. How are firewall types categorized in the module?
+
+• Only by hardware vendor
+√ By system protected, form factor, network placement, and data filtering method
+• Only by OSI layer
+• Only by network size
+
+The lecture explicitly uses these four main categories.
+
+33. Where is a network firewall typically positioned?
+
+• Inside an individual application
+√ Between trusted and untrusted networks
+• Only inside a database
+• Only on an endpoint
+
+34. What is the primary role of a network firewall?
+
+√ Monitor and control incoming and outgoing traffic using predefined rules
+• Assign usernames to devices
+• Store files
+• Replace network switches
+
+35. What is a host-based firewall?
+
+√ Software operating on an individual device
+• A physical device protecting an entire ISP
+• A type of network switch
+• A firewall used only in a DMZ
+
+36. Where is a host-based firewall installed?
+
+• Only on routers
+√ Directly on individual computers or devices
+• Only on Internet servers
+• Between two ISPs
+
+37. What is a hardware firewall?
+
+• A software service running in a browser
+√ A physical device placed between a computer/network and its Internet connection
+• A Windows log file
+• An application proxy only
+
+38. A hardware firewall operates:
+
+√ Independently of the host device
+• Only inside the host OS
+• Only through a web browser
+• Only when a VPN is active
+
+39. Where are software firewalls particularly useful?
+
+• Only physical data centers
+√ Virtual machines, cloud environments, and containers
+• Only unmanaged switches
+• Only home routers
+
+40. What does a perimeter firewall protect?
+
+√ The boundary between a private network and the public Internet
+• Traffic between processes on one computer only
+• Only database queries
+• Only wireless traffic
+
+41. Which firewall is considered a primary defense at the network boundary?
+
+√ Perimeter firewall
+• Internal firewall
+• Host interface
+• Circuit session
+
+42. What is the main focus of an internal firewall?
+
+• Internet traffic only
+√ Traffic between devices within the network
+• DNS resolution only
+• Physical access control
+
+43. Internal firewalls are particularly useful against:
+
+• Only threats that have never entered the network
+√ Threats that may already have penetrated perimeter defenses
+• Only physical theft
+• Only hardware failure
+
+44. What distinguishes a distributed firewall?
+
+• It operates only on one central router
+√ It operates across the network rather than being concentrated on a single device
+• It cannot enforce policies
+• It only filters HTTP
+
+45. Which statement correctly compares firewall placement?
+
+√ Perimeter firewalls protect boundaries, internal firewalls limit movement, and distributed firewalls enforce security at workloads
+• All three perform exactly the same role
+• Internal firewalls protect only the Internet boundary
+• Distributed firewalls work only with VPNs
+
+This exact distinction is emphasized in the comparison slide.
+
+46. What does a packet filtering firewall primarily inspect?
+
+• Application content and URLs
+√ Source/destination IP addresses and ports
+• User passwords
+• File contents only
+
+47. Does basic packet filtering perform stateful inspection?
+
+• Always
+√ No
+• Only for HTTP
+• Only for UDP
+
+48. At which OSI layer does a circuit-level gateway operate according to the module?
+
+• Layer 2
+• Layer 3
+• Layer 4
+√ Layer 5
+
+49. What does a circuit-level gateway primarily verify?
+
+• Packet payload contents
+√ Whether a network session/connection should be established
+• Malware signatures
+• File hashes
+
+50. Does a circuit-level gateway inspect specific packet content?
+
+√ No, it mainly evaluates the session
+• Yes, it always performs DPI
+• Only for ICMP
+• Only when NAT is disabled
+
+51. What happens if a circuit-level gateway allows a session?
+
+√ Traffic belonging to the session is granted
+• Every packet must be manually approved
+• NAT is disabled
+• The destination IP is deleted
+
+52. What does a stateful inspection firewall track?
+
+• Only IP addresses
+√ The state of active connections
+• Only URLs
+• Only usernames
+
+53. Which is an example of a connection state monitored by a stateful firewall?
+
+• Encrypted / decrypted
+√ Established / closed
+• Public / private
+• Hardware / software
+
+54. How does a stateful firewall differ from a circuit-level firewall?
+
+√ It analyzes packets together with connection states for more detailed decisions
+• It never tracks sessions
+• It only checks MAC addresses
+• It works exclusively at Layer 1
+
+55. What does WAF stand for?
+
+• Wide Area Firewall
+√ Web Application Firewall
+• Wireless Access Filter
+• Web Authentication Framework
+
+56. What does a WAF primarily protect?
+
+• Ethernet switches
+√ Web applications, web servers, and APIs
+• Physical firewall devices
+• DHCP servers only
+
+57. What traffic does a WAF primarily examine and filter?
+
+• ICMP
+• ARP
+√ HTTP traffic
+• Ethernet frames only
+
+58. Which attack can a WAF help protect against?
+
+√ SQL Injection
+• SYN cabling failure
+• ARP hardware failure
+• Disk fragmentation
+
+59. Which is another threat mentioned as being addressed by WAFs?
+
+√ Cross-Site Scripting (XSS)
+• Physical theft
+• DHCP lease expiration
+• CPU overheating
+
+60. What is another name for a proxy firewall?
+
+• Stateful router
+√ Application-level gateway
+• Network bridge
+• NAT overload
+
+61. At which OSI layer does a proxy firewall operate according to the lecture?
+
+• Layer 2
+• Layer 3
+• Layer 5
+√ Layer 7
+
+62. What makes a proxy firewall different from basic packet filtering?
+
+• It cannot inspect applications
+√ It understands application protocols such as HTTP, FTP and SMTP
+• It operates only on MAC addresses
+• It cannot enforce granular rules
+
+63. Which information can a proxy firewall inspect?
+
+• Only IP addresses
+√ URLs, headers, commands, content, and payload
+• Only Ethernet frame checksums
+• Only usernames
+
+64. What does NGFW stand for?
+
+√ Next Generation Firewall
+• Network Gateway Filtering Web
+• New General Firewall
+• Network Generation Framework
+
+65. What distinguishes an NGFW from a traditional firewall?
+
+• It removes packet filtering
+√ It combines multiple security capabilities beyond packet filtering and stateful inspection
+• It cannot perform NAT
+• It operates only as a host firewall
+
+66. Which traditional capabilities can an NGFW include?
+
+√ Packet filtering, stateful inspection, NAT, and VPN connectivity
+• Only antivirus
+• Only DNS
+• Only authentication
+
+67. Which security capability is integrated into NGFWs?
+
+• DHCP server
+√ Intrusion prevention
+• RAID management
+• File compression
+
+68. What does full-stack visibility in an NGFW help provide?
+
+√ Application identification and application-layer policy enforcement
+• Physical cable monitoring
+• Disk encryption only
+• DHCP address assignment
+
+69. Can an NGFW enforce policy independently from port and protocol?
+
+√ Yes
+• No
+• Only for ICMP
+• Only for FTP
+
+70. What is an example of external intelligence an NGFW may use?
+
+√ Blacklists, whitelists, Active Directory information, or geolocation
+• CPU temperature only
+• Disk partition tables only
+• DHCP lease duration only
+
+71. How can NGFW contribute to Zero Trust?
+
+√ By enforcing strict access controls and network segmentation
+• By allowing all internal traffic
+• By removing authentication
+• By disabling logging
+72. What does UTM stand for?
+√ Unified Threat Management
+• Universal Traffic Mapping
+• User Trust Monitoring
+• Unified Translation Method
+73. Why did UTM emerge?
+√ To provide a packaged defense system against increasingly diverse threats
+• To replace IP addressing
+• To provide only DHCP
+• To eliminate firewall rules
+74. Which technology may be included in a UTM?
+√ Antivirus
+• RAID
+• DHCP relay only
+• Ethernet switching only
+75. Which combination may be included in a UTM?
+√ IDS, IPS, VPN, spam filtering, and URL filtering
+• DNS, DHCP, RAID and FTP only
+• Only packet filtering
+• Only antivirus
+76. Which statement describes a difference between UTM and NGFW in the lecture?
+• NGFW contains no security tools
+√ UTM may contain a broader range of tools, while NGFW may be more customizable
+• UTM cannot perform security functions
+• They are completely unrelated technologies
+77. What is a human firewall?
+• A firewall physically operated by a person for each packet
+√ Employees educated and prepared to recognize and respond to cyberattacks
+• A hardware firewall connected to HR
+• A biometric firewall
+78. Which threat can a human firewall help detect?
+√ Phishing
+• CPU overload
+• Packet loss from faulty cables
+• RAID failure
+79. Which attack is specifically associated with human firewall awareness?
+• NAT overload
+√ Social engineering
+• Packet fragmentation only
+• Port exhaustion
+80. What is firewall architecture in the context of the lecture?
+√ Using several firewalls and potentially different firewall types together for better traffic filtering
+• The internal CPU design of a firewall
+• The format of firewall log files
+• A NAT translation table
+81. How are firewalls commonly managed in large enterprises?
+• Independently with no central control
+√ Centrally managed, layered, and automated
+• Only manually
+• Without security policies
+82. Which security principle is emphasized for enterprise firewalls?
+√ Zero Trust
+• Trust all internal devices
+• Allow all by default
+• Disable authentication
+83. What is the core idea of Zero Trust mentioned in the module?
+√ Never trust, always verify, and limit every connection
+• Trust all LAN traffic automatically
+• Block only Internet traffic
+• Allow users after one permanent authentication
+84. Which NIST model is associated with Zero Trust in the lecture?
+• NIST SP 800-61
+• NIST SP 800-53
+√ NIST SP 800-207
+• NIST SP 800-171
