@@ -9,12 +9,12 @@ const MODULE_SUBJECTS = {
     "questions_python_module1.txt",
     "questions_python_module2.txt",
     "questions_python_module3.txt",
-    // "questions_python_module4.txt",
-    // "questions_python_module5.txt",
-    // "questions_python_module6.txt",
-    // "questions_python_module7.txt",
-    // "questions_python_module8.txt",
-    // "question_module4_zaxra.txt",
+    "questions_python_module4.txt",
+    "questions_python_module5.txt",
+    "questions_python_module6.txt",
+    "questions_python_module7.txt",
+    "questions_python_module8.txt",
+    "question_module4_zaxra.txt",
   ],
 };
 const ALL_MODULES_VALUE = "__ALL__";
