@@ -11,7 +11,7 @@ export const translations = {
     subject_sociology: "Социология",
     subject_azerbaijani: "Азербайджанский",
     subject_risks: "Риски",
-    subject_python: "Intro to cyber",
+    subject_python: "Security Gateways",
 
     select_module_label: "Выберите модуль:",
     all_modules_option: "Все модули (объединённо)",
@@ -75,7 +75,7 @@ export const translations = {
     subject_sociology: "Sociology",
     subject_azerbaijani: "Azerbaijani",
     subject_risks: "Risks",
-    subject_python: "Intro to cyber",
+    subject_python: "Security Gateways",
 
     select_module_label: "Select a module:",
     all_modules_option: "All modules (merged)",
