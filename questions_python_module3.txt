@@ -1,101 +1,705 @@
-Module 3 Quiz — Answer Key (no answer markup in source; answered from general knowledge)
-1. In which year was the Cyber Kill Chain introduced?
-• 2005
-• 2008
-√ 2011
-• 2015
-2. What is the main goal of the reconnaissance stage?
-• Maintain persistence
-• Deliver malware
-√ Gather information about the target
-• Execute exploits
-3. Which stage of the Cyber Kill Chain focuses on creating or selecting the attack?
-√ Weaponization
-• Exploitation
-• Installation
-• Delivery
-4. Which of the following is a common delivery vector?
-• Patch management
-√ Phishing emails
-• Log analysis
-• Hash collisions
-5. Which type of reconnaissance uses publicly available information without direct interaction?
-√ Passive reconnaissance
-• Exploit reconnaissance
-• Active reconnaissance
-• Internal reconnaissance
-6. What happens during the Actions on Objectives stage?
-√ The attacker executes the final goals of the attack
-• The attacker gathers public information
-• The payload is delivered
-• The system is patched
-7. Which tool or technique is associated with maintaining persistence?
+1. What is NAT?
+
+√ A networking technique that modifies IP addresses in packet headers
+• A firewall hardware device
+• An application-layer protocol
+• A log analysis technique
+
+2. Where does NAT commonly occur?
+
+√ On a router or firewall
+• Only on a switch
+• Only inside a browser
+• Only on a DNS server
+
+3. What is a primary purpose of NAT?
+
+√ Allow multiple private devices to share a public IP address
+• Give every private device a unique public IP
+• Replace firewall rules
+• Encrypt all packets
+
+4. Which problem does NAT help reduce?
+
+√ IPv4 address consumption
+• CPU overheating
+• Disk fragmentation
+• Password reuse
+
+5. How can NAT provide a basic security enhancement?
+
+√ By hiding internal IP addresses
+• By encrypting every packet
+• By installing antivirus
+• By disabling all outbound traffic
+
+6. What does NAT provide in terms of network flexibility?
+
+√ Internal IP addresses can be managed without affecting external communications
+• Internal addresses must always match public addresses
+• All devices require unique public addresses
+• Private IP addresses cannot be changed
+
+7. What is a proxy?
+
+√ An intermediary system between a client and destination server
+• An IP translation technique only
+• A log file
+• A firewall rule operator
+
+8. Is a proxy described as a technique or a system in the lecture?
+
+• Technique only
+√ An intermediary system
+• Protocol only
+• IP address type
+
+9. What does a proxy do?
+
+√ Forwards requests and responses on behalf of a client
+• Assigns only IP addresses
+• Creates only firewall logs
+• Changes only MAC addresses
+
+10. Can a proxy be implemented as hardware?
+
+√ Yes, it can be software or hardware
+• No, software only
+• No, hardware only
+• Only as a cloud service
+
+11. How can proxies be categorized?
+
+√ Traffic direction, functionality, and purpose
+• Only IP version
+• Only firewall vendor
+• Only physical location
+
+12. At which layer does NAT operate according to the lecture?
+
+• Layer 2
+√ Layer 3
+• Layer 5
+• Layer 7
+
+13. Which statement best distinguishes NAT from a proxy?
+
+√ NAT is a Layer 3 technique, while a proxy is software/hardware capable of inspecting or controlling traffic at different layers
+• Both are exactly the same technology
+• A proxy only changes IP headers
+• NAT always inspects application payloads
+
+14. Which can inspect, modify, or control traffic at different layers?
+
+• NAT only
+√ Proxy
+• ARP
+• DHCP
+
+The lecture explicitly distinguishes NAT as a Layer 3 technique and proxy as software/hardware capable of inspecting or controlling traffic.
+
+15. What is Static NAT?
+
+√ A one-to-one mapping between a private and public IP address
+• Many private IPs mapped to one public IP using ports
+• Random public IP allocation from a pool
+• A VPN technology
+
+16. What mapping ratio is associated with Static NAT?
+
+√ 1:1
+• 1:100
+• 2:1
+• Many:many only
+
+17. Why does Static NAT not scale well for large networks?
+
+√ Each private IP requires a dedicated public IP
+• It cannot translate IP addresses
+• It only supports IPv6
+• It requires no public addresses
+
+18. What is Dynamic NAT?
+
+√ Mapping private addresses to a pool of available public addresses
+• Permanent one-to-one mapping only
+• Mapping based only on MAC addresses
+• A proxy protocol
+
+19. When does Dynamic NAT assign a public IP?
+
+√ When a device initiates an outbound connection
+• Only during boot
+• Only after an inbound attack
+• Never automatically
+
+20. Which NAT type maps multiple private IP addresses to one public IP using different ports?
+
+√ PAT
+• Static NAT
+• Dynamic NAT without ports
+• Double NAT
+
+21. PAT is a variation of:
+
+√ Dynamic NAT
+• Static routing
+• Proxy firewall
+• WAF
+
+22. What does PAT stand for?
+
+√ Port Address Translation
+• Private Address Transfer
+• Packet Access Translation
+• Protocol Address Tunneling
+
+23. What is another name for PAT?
+
+√ NAT Overload
+• NAT Underload
+• Static Routing
+• NAT Filtering
+
+24. Where is PAT commonly used?
+
+√ Home routers and corporate networks
+• Only supercomputers
+• Only web browsers
+• Only DNS servers
+
+25. How does PAT distinguish individual connections sharing one public IP?
+
+√ By using different port numbers
+• By using the same port for everything
+• By removing ports
+• By MAC address only
+
+26. What is Double NAT?
+
+√ NAT occurring one after another
+• NAT using exactly two ports
+• Static NAT with two users
+• NAT without translation
+
+27. What is NAT Traversal (NAT-T)?
+
+√ A technique for establishing direct connections between devices behind NAT
+• A firewall logging technique
+• A password attack
+• A bandwidth management method
+
+28. What is the first step of the NAT-T process described in the lecture?
+
+√ Both devices initiate outbound connections to a public server
+• Both devices disable NAT
+• The public server blocks both devices
+• Static port forwarding is configured
+
+29. What does the public server learn during NAT-T?
+
+√ The public IP and port used by each device
+• Private passwords
+• Firewall administrator credentials
+• MAC addresses only
+
+30. What is “hole punching” in NAT traversal?
+
+√ Devices send packets to each other's public IP and port to create an expected communication path through NAT
+• Physically opening ports on a router
+• Disabling the firewall
+• Deleting NAT tables
+
+31. What is established after successful hole punching?
+
+√ A direct communication channel between the devices
+• A new firewall administrator
+• A new VLAN
+• A new DNS server
+
+32. What can NAT-T avoid the need for?
+
+√ Static port forwarding
+• Public IP addresses entirely
+• Firewalls
+• Network connections
+
+33. What is a forwarded port?
+
+√ A public-facing router port visible from the Internet while its forwarding rule is active
+• A private port that cannot receive traffic
+• A firewall log
+• A VLAN identifier
+
+34. What does port forwarding do?
+
+√ Directs incoming traffic to a specific internal device
+• Blocks all incoming traffic
+• Encrypts every packet
+• Changes user credentials
+
+35. What is a security risk of port forwarding?
+
+√ A vulnerable internal service may become reachable by external attackers
+• It automatically blocks attackers
+• It removes Internet access
+• It eliminates all vulnerabilities
+
+36. Which is an advantage of NAT?
+
+√ IP Address Conservation
+• Guaranteed end-to-end connectivity
+• Unlimited scalability
+• Zero processing overhead
+
+37. Which NAT advantage allows private addresses to be freely assigned internally?
+
+√ Simplified Network Management
+• Port Exhaustion
+• End-to-End Breakage
+• Connection Limitation
+
+38. Which is a limitation of NAT?
+
+√ Breaks End-to-End Connectivity
+• IPv4 conservation
+• Hiding internal addresses
+• Network flexibility
+
+39. Which applications may experience problems because NAT breaks end-to-end connectivity?
+
+√ VoIP, online gaming, and IPsec
+• Text editors only
+• Calculators only
+• Offline applications only
+
+40. Why can NAT introduce performance overhead?
+
+√ NAT devices must track connections in a translation table
+• NAT eliminates connection tracking
+• NAT disables routing
+• NAT stores no state
+
+41. What can happen to NAT performance in high-traffic networks?
+
+√ Processing delays may occur
+• NAT becomes completely stateless
+• All private IPs become public
+• Ports disappear
+
+42. Why does PAT still have scalability limitations?
+
+√ A single public IP can support only a limited number of tracked connections/ports
+• PAT requires a public IP for every private device
+• PAT cannot use ports
+• PAT works only with IPv6
+
+43. Why can P2P applications have difficulties with NAT?
+
+√ NAT masks internal addresses, making direct peer connections more difficult
+• NAT exposes every internal IP
+• NAT automatically blocks all UDP
+• P2P never uses network connections
+
+The advantages and limitations—including address conservation, security, end-to-end connectivity problems, overhead, scalability and P2P issues—are all explicitly covered in the NAT lecture.
+
+44. How can NAT be abused through IP spoofing and masquerading?
+
+√ It can make the origin of malicious traffic harder to trace
+• It makes every attacker identifiable
+• It prevents IP modification
+• It automatically blocks spoofed traffic
+
+45. Why can NAT complicate IP-based security controls?
+
+√ Multiple devices may appear as one public IP
+• Every internal device receives a different public IP
+• NAT removes all IP addresses
+• NAT disables ACLs automatically
+
+46. How can NAT be combined with other technologies for anonymization?
+
+√ With VPNs or proxies
+• Only with DHCP
+• Only with ARP
+• Only with DNS
+
+47. Why can NAT create logging and tracking difficulties?
+
+√ Multiple devices share one public IP
+• NAT creates no connections
+• Every private device has a unique public IP
+• NAT removes timestamps
+
+48. Which security protocol can experience end-to-end problems because of NAT?
+
+√ IPsec
+• Ethernet
+• ARP
+• DHCP
+
+49. What can help IPsec operate through NAT?
+
+√ NAT Traversal (NAT-T)
+• Static routing only
+• ARP poisoning
+• DNS forwarding
+
+50. What is port exhaustion?
+
+√ Running out of available translated ports when many devices/connections share NAT resources
+• A firewall losing all Ethernet interfaces
+• A DNS cache problem
+• A password attack
+
+51. What security issue may occur if an attacker gains control of an assigned NAT port?
+
+√ Session hijacking
+• SQL normalization
+• Log rotation
+• DHCP renewal
+
+52. How does NAT work with firewall traffic filtering?
+
+√ It can help block unsolicited inbound traffic while allowing responses to established outbound connections
+• It automatically allows every inbound connection
+• It disables connection tracking
+• It replaces firewall policies entirely
+
+53. What is the role of firewall policies in a NAT environment?
+
+√ Define which traffic is allowed or denied
+• Assign private IP addresses
+• Replace NAT tables
+• Create passwords
+
+54. What does NAT hide from external sources?
+
+√ Internal network addresses
+• The public IP address
+• All port numbers
+• Every protocol
+
+55. What does connection tracking help a firewall determine?
+
+√ Whether inbound traffic belongs to a legitimate established session
+• The physical location of the user
+• The user's password
+• The disk size of the host
+
+56. What does NAT modify for connection tracking purposes?
+
+√ IP addresses and ports
+• Only usernames
+• Only MAC vendor names
+• Only log timestamps
+
+57. When does pre-processing NAT occur?
+
+√ Before firewall traffic processing/decision
+• Only after the packet reaches the destination
+• After all logging is deleted
+• After the firewall shuts down
+
+58. What can be translated during pre-processing NAT?
+
+√ Source or destination IP addresses
+• Only usernames
+• Only passwords
+• Only log timestamps
+
+59. When does post-processing NAT occur?
+
+√ After the firewall has made its traffic decision
+• Before traffic reaches the firewall
+• Before any IP address exists
+• Only during authentication
+
+60. What is an important purpose of post-processing NAT?
+
+√ Ensure translated traffic is routed correctly
+• Delete firewall rules
+• Disable routing
+• Remove IP headers
+
+61. Which scenarios are mentioned as potentially using post-processing NAT?
+
+√ VPNs and load balancing
+• Only DHCP
+• Only ARP
+• Only physical cabling
+
+62. What is mitmproxy designed to do according to the lecture?
+
+√ Intercept traffic and decrypt HTTPS communications
+• Assign IP addresses
+• Replace NAT entirely
+• Generate Windows logs
+
+63. What does mitmproxy configuration require in the example?
+
+√ Redirecting traffic to a specific port for processing
+• Disabling all ports
+• Removing firewall rules
+• Changing MAC addresses
+
+64. What is the main goal when creating firewall rules for NAT networks?
+
+√ Manage traffic flows securely while allowing necessary connections
+• Allow all traffic
+• Remove all NAT translations
+• Disable firewall filtering
+
+65. What should be defined before creating NAT firewall rules?
+
+√ Network topology
+• User passwords only
+• Firewall color
+• Log extension
+
+66. Which NAT rule type deals with source address translation?
+
+√ SNAT
+• DNAT
+• WAF
+• QoS
+
+67. Which NAT rule type deals with destination address translation?
+
+√ DNAT
+• SNAT
+• PAT only
+• IDS
+
+68. In the lecture's pre-processing example, where is traffic redirected?
+
+√ Port 8080 for WAF inspection
+• Port 22 for DNS
+• Port 53 for SSH
+• Port 443 for DHCP
+
+69. What is bandwidth management?
+
+√ Controlling and optimizing network traffic for efficient bandwidth use
+• Assigning public IP addresses
+• Deleting logs
+• Creating firewall administrators
+
+70. What can bandwidth management help prevent?
+
+√ Network congestion
+• Authentication
 • Firewall rules
-• Encryption at rest
-• Backups
-√ Rootkits
-8. What is the Cyber Kill Chain?
-• A network defense framework
-• A penetration testing methodology only
-√ A model describing the sequential stages of a cyberattack
-• A malware detection tool
-9. What is the purpose of Command and Control (C&C)?
-• Prevent attacker access
-• Identify vulnerabilities
-• Encrypt stolen data
-√ Provide remote control and tasking of compromised systems
-10. What is the main goal of the installation stage?
-• Initial information gathering
-• User awareness bypass
-√ Payload injection and persistence
-• Network scanning
-11. Which of the following is listed as a positive motivation for cyberattacks? (verify — ambiguous, see note)
-• Risk assessment
-• Compliance auditing
-√ Lateral movement
-• Software updates
-12. Which activity is an example of active reconnaissance?
-• Searching social media profiles
-• Reviewing company job postings
-√ Port scanning a target network
-• Reading public DNS records
-13. Which tool is explicitly mentioned as an example used during weaponization?
-• Splunk
-• Snort
-• Wireshark
-√ Metasploit
-14. Which of the following is an example of exploitation?
-• Performing DNS enumeration
-• Sending a phishing email
-√ Abusing unpatched software vulnerabilities
-• Installing a rootkit
-15. What occurs during the exploitation stage?
-• The attacker communicates with C2 servers
-• Data is encrypted for ransom
-√ A vulnerability is triggered to gain execution or access
-• The attacker cleans logs
-16. What is the primary purpose of the delivery stage?
-• Establishing persistence
-√ Transmitting the weaponized payload to the target
-• Triggering a vulnerability
-• Exfiltrating data
-17. Why is the Cyber Kill Chain useful to defenders?
-√ It helps visualize attacks and identify where to disrupt them
-• It guarantees prevention of attacks
-• It replaces all other security models
-• It focuses only on malware analysis
-18. Who developed the Cyber Kill Chain model?
-• ISO
-• MITRE
-√ Lockheed Martin
-• NIST
-19. Which associated model combines the Cyber Kill Chain with MITRE ATT&CK?
-• MITRE D3FEND
-• NIST CSF
-• Pyramid of Pain
-√ Unified Kill Chain
-20. What activity is commonly performed during the C&C stage?
-• User training
-√ Delivering additional capabilities
-• Vulnerability scanning
-• Data classification
+• Routing
+
+71. What can bandwidth management improve?
+
+√ Network performance
+• Password complexity only
+• Disk formatting
+• File permissions only
+
+72. What type of applications can bandwidth management prioritize?
+
+√ Critical applications
+• Only malicious applications
+• Only unused applications
+• Only local text editors
+
+73. How can bandwidth management potentially be abused?
+
+√ By reducing a connection almost to zero to create a DoS state
+• By increasing every user's bandwidth
+• By removing all firewall rules
+• By assigning private IP addresses
+
+74. What is Traffic Shaping?
+
+√ Regulating data flow by delaying packets exceeding a set rate
+• Blocking all packets permanently
+• Assigning IP addresses
+• Creating VPN tunnels
+
+75. What is the goal of Traffic Shaping?
+
+√ Maintain consistent traffic speeds
+• Remove all bandwidth limits
+• Disable QoS
+• Hide internal IPs
+
+76. What does QoS stand for?
+
+√ Quality of Service
+• Quantity of Security
+• Query of System
+• Quality of Session
+
+77. What does QoS do?
+
+√ Prioritizes important traffic over less critical traffic
+• Gives all traffic identical priority
+• Disables bandwidth management
+• Performs NAT translation
+
+78. Which traffic might QoS prioritize?
+
+√ VoIP and video conferencing
+• File downloads over every critical service
+• Only ARP
+• Only DNS cache entries
+
+79. What is Bandwidth Allocation?
+
+√ Reserving or limiting bandwidth for users, devices, or applications
+• Assigning IP addresses
+• Translating ports
+• Encrypting traffic
+
+80. What is Rate Limiting?
+
+√ Capping the maximum data rate for certain traffic
+• Guaranteeing unlimited bandwidth
+• Translating source IPs
+• Creating firewall logs
+
+81. What problem can rate limiting help prevent?
+
+√ Bandwidth hogging
+• NAT translation
+• Log normalization
+• Authentication
+
+82. What does Monitoring and Reporting in bandwidth management help identify?
+
+√ Heavy users and congested links
+• Only administrator passwords
+• Only firewall models
+• Only IP versions
+
+The module defines Traffic Shaping, QoS, Bandwidth Allocation, Rate Limiting and Monitoring/Reporting as the key bandwidth-management concepts.
+
+83. What is a throughput bottleneck?
+
+√ A condition where the firewall cannot process traffic fast enough
+• A lack of IP addresses only
+• A password failure
+• A DNS error
+
+84. What can a throughput bottleneck cause?
+
+√ Delays or packet loss
+• Automatic bandwidth increase
+• More available CPU
+• Unlimited connections
+
+85. What can increase the likelihood of a throughput bottleneck?
+
+√ High traffic volumes combined with complex rules or DPI
+• Having no traffic
+• Disabling all inspection
+• Using only one rule
+
+86. What firewall operations can contribute to CPU overload?
+
+√ DPI, logging, and encryption/decryption
+• Only changing the hostname
+• Only DHCP leasing
+• Only displaying the dashboard
+
+87. What can CPU overload cause?
+
+√ Performance degradation
+• Increased processing capacity
+• Unlimited sessions
+• Automatic NAT removal
+
+88. What causes a memory bottleneck?
+
+√ Insufficient memory to handle connections and session states
+• Too many public IP addresses
+• Too little logging
+• Too few firewall rules
+
+89. What can a severe memory bottleneck cause?
+
+√ Slowdowns or failures in packet processing
+• Unlimited packet processing
+• Automatic encryption
+• Faster connection tracking
+
+90. What is a connection limitation bottleneck?
+
+√ Reaching the firewall's maximum number of simultaneous connections
+• Having too many firewall administrators
+• Having too many public IPs
+• Using only TCP
+
+91. What may happen when the firewall reaches its simultaneous connection limit?
+
+√ New connections may be dropped or delayed
+• All connections become faster
+• NAT is automatically disabled
+• Firewall rules disappear
+
+92. What is a NAT translation bottleneck?
+
+√ Overload caused by managing translation tables for many devices
+• A failure to create user accounts
+• A DNS cache issue
+• An antivirus update problem
+
+93. What can a NAT translation bottleneck cause?
+
+√ Delays or dropped packets
+• Unlimited NAT capacity
+• Faster routing automatically
+• Removal of port limits
+
+94. Why can stateful inspection introduce latency?
+
+√ The firewall must track many active connections
+• It never tracks connections
+• It removes all session information
+• It operates without processing packets
+
+95. Which bottleneck is especially associated with deep packet inspection?
+
+√ CPU overload
+• IP address conservation
+• Port forwarding
+• Log normalization
+
+96. Which bottleneck specifically relates to the size of translation tables?
+
+√ NAT Translation Bottleneck
+• Throughput only
+• DNS bottleneck
+• Authentication bottleneck
+
+97. Which bottleneck relates directly to insufficient capacity for session states?
+
+√ Memory Bottleneck
+• Port forwarding
+• Bandwidth allocation
+• Static NAT
+
+98. Which bottleneck occurs when the firewall cannot keep up with the amount of traffic?
+
+√ Throughput Bottleneck
+• Authentication Bottleneck
+• Static NAT Bottleneck
+• DNS Translation Bottleneck
+
+99. Which bottleneck can result from monitoring very large numbers of active connections?
+
+√ Latency due to Stateful Inspection
+• Static NAT
+• Whitelisting
+• Log normalization
+
+100. Which statement best describes the relationship between NAT and a firewall?
+
+• NAT completely replaces firewall security policies
+• Firewall rules are unnecessary when NAT exists
+√ NAT can work alongside firewall policies and connection tracking to control traffic while hiding internal addressing
+• NAT automatically makes every connection secure
