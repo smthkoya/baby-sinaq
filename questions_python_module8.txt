@@ -1,119 +1,279 @@
-1. What does cybersecurity risk represent?
-• Cost of security tools
-• Guaranteed system failure
-• Number of vulnerabilities
-√ Likelihood and impact of threats exploiting vulnerabilities
- 
-2. What type of risk relates to fines and penalties for non-compliance?
-√ Regulatory risk
-• Operational risk
-• Technical risk
-• Strategic risk
- 
-3. Which approach to risk evaluation relies on numerical and financial data?
-• Descriptive
-√ Quantitative
-• Subjective
-• Qualitative
- 
-4. Why is GRC necessary for organizations?
-• To replace penetration testing
-√ To ensure regulatory compliance, reduce risk, and improve organizational trust
-• To reduce IT costs only
-• To centralize all IT functions
- 
-5. Which framework focuses on information security management systems (ISMS)?
-√ ISO 27001
-• COBIT
-• ITIL
-• COSO
- 
-6. What is the purpose of risk monitoring?
-• Performing penetration tests
-√ Continuous tracking of risks and mitigation effectiveness
-• One-time risk assessment
-• Eliminating governance roles
- 
-7. What is the main objective of compliance?
-• Replace governance processes
-√ Ensure adherence to laws, regulations, and standards
-• Detect malware
-• Improve system performance
- 
-8. Which responsibility belongs to the CISO?
-√ Cybersecurity risk management and policy alignment
-• Software development
-• Financial auditing
-• Marketing strategy
- 
-9. Who is primarily responsible for cybersecurity strategy at the executive level?
-• CIO
-• CRO
-• CTO
-√ CISO
- 
-10. What is the primary focus of the NIST Cybersecurity Framework?
-• IT service management
-• Financial reporting
-• Legal compliance only
-√ Risk-based cybersecurity management
- 
-11. What is the primary purpose of GRC in cybersecurity?
-• Eliminate all cyber threats
-• Replace technical security controls
-• Automate IT operations
-√ Align business objectives with risk management and regulatory requirements
- 
-12. Which element is NOT part of the GRC triad?
-• Governance
-• Compliance
-√ Incident Response
-• Risk Management
- 
-13. What does CVSS provide?
-• Compliance checklists
-√ A numerical severity score for vulnerabilities
-• Audit reports
-• Governance metrics
- 
-14. What does the GRC model emphasize?
-√ Alignment of people, processes, and technology
-• Replacement of management structures
-• Elimination of governance roles
-• Automation of compliance only
- 
-15. Which is NOT a common risk mitigation strategy?
-• Risk avoidance
-• Risk reduction
-√ Risk amplification
-• Risk transfer
- 
-16. What is the difference between audits and certifications?
-• Audits are informal reviews
-• Certifications replace audits
-√ Audits assess compliance; certifications formally validate it
-• Audits validate people; certifications validate tools
- 
-17. What does GRC stand for?
-• Global Risk Control
-• General Risk Compliance
-• Governance, Regulation, and Control
-√ Governance, Risk, and Compliance
- 
-18. Which risk evaluation approach uses descriptive categories like high, medium, and low?
-• Statistical
-• Quantitative
-• Automated
-√ Qualitative
- 
-19. Which framework was created by ISACA?
-• NIST CSF
-• ITIL
-√ COBIT
-• COSO
- 
-20. What is the main role of governance in GRC?
-• Identifying malware
-√ Defining policies, decision-making, and accountability
-• Performing audits
-• Technical vulnerability scanning
+    1. A company wants remote users to reach one internal web application without receiving routable access to the internal subnet. Which architecture best fits?
+    • Public IP exposure
+    • Flat VNet peering
+    • Traditional full-tunnel VPN
+    • Site-to-site VPN only
+    √ ZTNA
+
+    2. What is the core security difference between ZTNA and a traditional VPN?
+    • VPNs do not encrypt traffic
+    • ZTNA replaces the identity provider
+    √ ZTNA brokers access to specific applications instead of placing the user onto a routable network segment
+    • ZTNA works only with Microsoft 365
+    • ZTNA does not authenticate users
+
+    3. Which Microsoft service provides ZTNA-style private application access under Global Secure Access?
+    • Microsoft Entra Internet Access
+    • Azure Backup
+    • Azure DDoS Protection
+    √ Microsoft Entra Private Access
+    • Microsoft Purview
+
+    4. Which SASE component is specifically focused on controlling access to cloud applications and discovering shadow IT?
+    √ CASB
+    • DDoS protection
+    • SSPR
+    • Azure RBAC
+    • PIM
+
+    5. A guest user signs in with credentials managed by the partner organization. Where are those credentials actually maintained?
+    • In the guest object's extension attributes
+    • In the invitation email
+    • In the resource tenant's Key Vault
+    • In the Azure subscription
+    √ At the guest's home identity provider
+
+    6. What object is created in the resource tenant when a B2B guest is invited?
+    • A managed identity
+    • A new local password database
+    √ A guest user object that references the external identity
+    • An NSG rule
+    • A second Azure subscription
+
+    7. Why should external collaboration settings be configured before large-scale guest invitations?
+    • They assign VM login roles
+    • They replace PIM
+    • They create Azure Firewall routes
+    • They enable disk encryption
+    √ They define tenant-wide guardrails such as invite rights, access restrictions, domain controls, and OTP behavior
+
+    8. An administrator adds a partner domain to the collaboration deny list after several users from that domain have already redeemed invitations. What happens to those existing guests?
+    • They are immediately deleted
+    • They become members
+    √ They generally retain existing access; the deny list blocks new invitation redemption rather than automatically deleting them
+    • Their sessions are always revoked within one hour
+    • They are moved to a quarantine tenant
+
+    9. Which setting controls how much directory information guest users can read?
+    √ Guest user access restrictions
+    • Defender for Servers
+    • PIM activation duration
+    • Azure RBAC on the subscription
+    • Azure Firewall application rules
+
+    10. Which guest access restriction is the most restrictive?
+    • Guests are automatically Owners
+    • Guests can manage directory roles
+    √ Guests can access only properties and memberships of their own directory objects
+    • Guests have the same access as members
+    • Guests can read all groups and users
+
+    11. What is the purpose of cross-tenant access settings?
+    √ Define inbound/outbound B2B trust and access behavior for specific partner tenants
+    • Create Key Vault secrets
+    • Route internet traffic between VNets
+    • Assign software licenses
+    • Configure VM extensions
+
+    12. A partner tenant has already performed MFA. Which cross-tenant feature can let the resource tenant trust that MFA claim?
+    • Guest usage location
+    • Azure Firewall DNAT
+    √ Inbound trust settings for MFA
+    • Azure Policy exemption
+    • PIM approval
+
+    13. Which lifecycle sequence best describes healthy B2B guest governance?
+    • Invite → assign Owner → disable logging
+    • License → create subnet → delete tenant
+    • Federate → remove Conditional Access → archive
+    √ Invite → redeem → review → remove when no longer needed
+    • Create → promote to Global Admin → never review
+
+    14. Which current PowerShell cmdlet is used to create a B2B invitation through Microsoft Graph?
+    • Add-MailboxPermission
+    √ New-MgInvitation
+    • New-AzRoleAssignment
+    • New-MsolUser
+    • New-AzureADMSInvitation
+
+    15. Which Microsoft Graph permission is the least-privilege scope for creating B2B invitations?
+    • Directory.ReadWrite.All
+    • Group.ReadWrite.All
+    • Application.ReadWrite.All
+    • User.Read
+    √ User.Invite.All
+
+    16. Which portal path opens the bulk guest invitation operation?
+    • ID Governance > PIM > Bulk invite
+    √ Entra ID > Users > All users > Bulk operations > Bulk invite
+    • Defender portal > Users > Invite
+    • Protection > Identity Protection > Invitations
+    • Azure portal > Subscriptions > Guests
+
+    17. An external user has no Entra, Microsoft, Google, SAML, or WS-Fed identity. Which redemption method acts as the fallback?
+    √ Email one-time passcode
+    • Temporary Access Pass from your tenant
+    • FIDO2 security key only
+    • Local Windows password
+    • SMS sent by Azure Firewall
+
+    18. What changes when Google federation is configured for gmail.com guest users?
+    • They become local member users
+    √ They authenticate at Google instead of using the email one-time-passcode flow
+    • They receive Azure RBAC Owner automatically
+    • Conditional Access no longer applies
+    • Their passwords are copied into Entra ID
+
+    19. Which statement about federation is correct?
+    • Federation copies external passwords into Entra ID
+    • Federation disables Conditional Access
+    √ Federation changes where authentication occurs, but authorization and resource-tenant policies still remain with the resource organization
+    • Federation transfers all authorization to the external IdP
+    • Federation removes the need for guest objects
+
+    20. During Google federation setup, why must the authorized redirect URIs be registered correctly?
+    • They create the guest account password
+    • They control PIM approval
+    • They enable NSG statefulness
+    √ Google validates where OAuth responses may be sent back after authentication
+    • They define Azure RBAC scope
+
+    21. What is the main security problem with standing privileged access?
+    • It disables MFA
+    • It blocks audit logging
+    • It prevents users from signing in
+    • It makes licenses expire
+    √ A permanently privileged account is continuously valuable to attackers
+
+    22. In PIM, what does an eligible assignment mean?
+    • The role is disabled forever
+    • The user becomes a guest
+    • The role bypasses MFA
+    • The user has permanent active privileges
+    √ The user can activate the role when needed but does not hold its privileges continuously
+
+    23. Which controls can a PIM activation policy require?
+    • A public IP and NSG rule
+    • A password reset and license purchase
+    √ MFA, justification, ticket information, approval, and time limits
+    • A Google account and VPN
+    • A new subscription and storage account
+
+    24. Where is Privileged Identity Management located in the Entra admin center?
+    • External Identities only
+    • Protection > Authentication methods
+    • Monitoring & health only
+    • Billing
+    √ ID Governance
+
+    25. Why are emergency break-glass accounts deliberately excluded from PIM?
+    √ They must remain immediately usable when normal identity or privilege systems fail
+    • They must always be guest users
+    • They cannot be monitored
+    • PIM cannot support cloud-only accounts
+    • They are not privileged accounts
+
+    26. What does PIM primarily reduce?
+    • VM CPU utilization
+    √ Standing privilege and the time window in which high-level permissions are continuously available
+    • Network latency
+    • Password length
+    • Storage cost
+
+    27. Which feature packages groups, apps, and SharePoint roles into a requestable governed bundle?
+    • DCR
+    • Conditional Access named location
+    • NSG
+    • Azure Firewall policy
+    √ Entitlement management access package
+
+    28. What does an access-package policy govern?
+    • KQL table retention
+    • VM patch scheduling only
+    • Disk encryption keys
+    • Firewall DNAT rules
+    √ Who may request access, approval requirements, duration, and lifecycle behavior
+
+    29. Which feature periodically asks whether users should keep existing access?
+    • Password spray protection
+    √ Access reviews
+    • ZTNA broker
+    • Azure Bastion
+    • Key Vault soft delete
+
+    30. A contractor's project ended months ago but the guest account still has access. Which control would most directly help detect and remove that stale access?
+    • Azure DDoS Protection
+    • Resource pooling
+    √ Access reviews
+    • A larger subnet
+    • Password hash synchronization
+
+    31. What does Microsoft Entra ID Protection evaluate?
+    √ User risk and sign-in risk
+    • Only license compliance
+    • Only NSG rule priority
+    • Only storage encryption
+    • Only VM CPU usage
+
+    32. A sign-in comes from an anonymous IP with unusual behavior. Which signal is most relevant to risk-based Conditional Access?
+    • Subscription cost
+    • Resource-group name
+    • Guest usage location
+    • Storage account SKU
+    √ Sign-in risk
+
+    33. Which Conditional Access capability requires Entra ID P2 rather than only P1?
+    • Blocking legacy authentication
+    • Named locations only
+    • Basic MFA grant control
+    • Targeting a user group
+    √ Risk-based conditions using Identity Protection signals
+
+    34. Which statement best describes risk-based Conditional Access?
+    • It creates Azure Firewall routes
+    • It changes NSG priorities dynamically
+    • It replaces PIM role settings
+    • It encrypts disks based on risk
+    √ It can require stronger controls or block access when calculated user/sign-in risk is high
+
+    35. Which cross-cloud product is closest to Microsoft Entra Private Access for application-level private access?
+    • GCP Cloud Storage
+    • AWS Organizations
+    • Amazon GuardDuty
+    • AWS S3 Object Lock
+    √ AWS Verified Access
+
+    36. Which GCP technology is most closely associated with the BeyondCorp zero-trust access model?
+    • Cloud DNS
+    • Cloud Storage Nearline
+    √ Identity-Aware Proxy / BeyondCorp Enterprise
+    • Cloud SQL
+    • Cloud Armor only
+
+    37. A guest from a partner tenant authenticates successfully but is denied access by the resource tenant's policy. Which statement is correct?
+    • B2B guests bypass Conditional Access
+    • The guest's password must be copied locally
+    √ Authentication at the home IdP succeeded, but the resource tenant still controls authorization and Conditional Access decisions
+    • The home IdP automatically overrides resource-tenant policy
+    • The guest must become a member
+
+    38. Which event is best evidence that a PIM activation occurred?
+    • A DNS query
+    • A storage capacity metric
+    • A VM boot diagnostic
+    • An NSG flow log only
+    √ A logged privileged activation event in Entra audit/sign-in-related records
+
+    39. Why is identity described as the perimeter in this module?
+    • Identity replaces encryption
+    • Firewalls no longer exist
+    • Only administrators have identities
+    • Every cloud workload must be physically inside one office
+    √ Every access request still crosses authentication and authorization even when users and apps are outside the old corporate network
+
+    40. Which design most closely follows the module's approach to privileged access?
+    • No monitoring of break-glass accounts
+    √ Eligible-by-default roles with JIT activation, MFA, justification, expiry, and audit
+    • Guest accounts promoted to Owner
+    • Permanent Global Administrator for all engineers
+    • Shared administrator credentials
