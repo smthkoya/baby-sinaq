@@ -1,119 +1,279 @@
-1. What is the purpose of bug bounty programs?
-• Penalize attackers
-• Replace penetration testing
-• Enforce compliance
-√ Reward ethical disclosure of vulnerabilities
- 
-2. Why is a methodology important in penetration testing?
-• To bypass defenses
-• To eliminate reporting
-√ To ensure tests are structured and repeatable
-• To increase attack speed
- 
-3. What is a known drawback of vulnerability scanners?
-√ They can produce false positives and false negatives
-• They always miss open ports
-• They replace manual testing
-• They cannot scan networks
- 
-4. What occurs during the exploitation phase?
-• Scope definition
-√ Exploiting vulnerabilities to gain access
-• Log correlation
-• Policy review
- 
-5. What is the main purpose of the reporting phase?
-√ Provide actionable remediation guidance
-• Hide vulnerabilities
-• Disable exploited systems
-• Prove technical skill only
- 
-6. Which tool is explicitly mentioned for vulnerability scanning?
-• Metasploit
-√ Nessus
-• Burp Suite
-• Hydra
- 
-7. What characterizes a black-box penetration test?
-• Some internal access
-√ Zero prior knowledge
-• Full system knowledge
-• Insider credentials
- 
-8. Which pentesting action field focuses on human behavior?
-• Web pentesting
-• Cloud pentesting
-√ People pentesting
-• Network pentesting
- 
-9. Why are ethics critical in penetration testing?
-√ Pentesters may access sensitive information
-• Reports must be automated
-• Tests are always public
-• Tools are unreliable
- 
-10. Why is client communication critical during post-exploitation?
-• To automate reports
-• To bypass controls
-• To expand scope freely
-√ To avoid legal and ethical issues
- 
-11. What is the purpose of post-exploitation?
-• Initial access
-• Legal authorization
-• Patch management
-√ Assess long-term impact and lateral movement
- 
-12. Which report is intended for non-technical stakeholders?
-• Vulnerability scan report
-√ Executive report
-• Log report
-• Technical report
- 
-13. What is a Capture The Flag (CTF) exercise?
-• A malware distribution platform
-• A compliance audit
-• A logging framework
-√ A competitive security challenge environment
- 
-14. What is the primary goal of penetration testing?
-√ Improve an organization’s security posture
-• Replace security tools
-• Eliminate all vulnerabilities
-• Monitor employee behavior
- 
-15. Why did penetration testing emerge historically?
-• Because early systems prioritized security
-• To replace audits
-√ As a response to real-world exploitation of insecure systems
-• Due to regulatory pressure
- 
-16. What best defines penetration testing according to the module?
-• A compliance validation process
-• Continuous network monitoring
-√ A security assessment where ethical hackers simulate real-world attacks
-• Automated vulnerability scanning only
- 
-17. What is the goal of vulnerability analysis?
-√ Identify exploitable weaknesses
-• Train users
-• Patch systems
-• Remove malware
- 
-18. Which activity belongs to the pre-engagement phase?
-• Data exfiltration
-• Privilege escalation
-√ Defining scope and rules of engagement
-• Exploiting vulnerabilities
- 
-19. What is the main objective of reconnaissance/intelligence gathering?
-• Install backdoors
-• Execute exploits
-• Deliver malware
-√ Identify open ports and weak spots
- 
-20. Which phase focuses on identifying critical assets and attack paths?
-√ Threat Modeling
-• Post-exploitation
-• Reporting
-• Exploitation
+    1. A user signs in successfully to Azure but cannot start a VM. Which area should be investigated first?
+    • Tenant branding
+    √ Authorization through Azure RBAC
+    • Authentication methods registration
+    • DNS resolution
+    • Password reset policy
+
+    2. Which identity type is designed for an Azure VM to request tokens without storing credentials in code?
+    • Dynamic group
+    √ Managed identity
+    • Break-glass account
+    • Guest account
+    • Directory role
+
+    3. Which practice is recommended for privileged administrators?
+    √ Use a separate admin account protected with phishing-resistant MFA
+    • Assign permanent Global Administrator to all IT staff
+    • Disable MFA to avoid lockout
+    • Use the same account for email and administration
+    • Store break-glass credentials in a shared chat
+
+    4. Why are break-glass accounts excluded from Conditional Access policies?
+    • They exist only for billing
+    √ They must remain usable if Conditional Access or the identity provider is misconfigured or unavailable
+    • They do not support passwords
+    • They cannot be monitored
+    • They are automatically blocked from Azure
+
+    5. Which access-control model primarily assigns predefined roles to identities?
+    √ RBAC
+    • ZTNA
+    • OIDC
+    • SAML
+    • ABAC
+
+    6. A rule allows access only when the resource tag Project equals Alpha. Which model does this resemble most closely?
+    • Password hash synchronization
+    • RBAC only
+    √ ABAC
+    • SSPR
+    • SAML federation
+
+    7. Which three elements create an Azure RBAC role assignment?
+    • Action, token, device
+    • Group, SAML assertion, app registration
+    √ Security principal, role definition, scope
+    • Tenant, subscription, license
+    • User, password, resource group
+
+    8. A user receives Reader at subscription scope. What is the expected effect?
+    • Reader automatically grants Contributor at resource scope
+    • Reader applies only to one VM
+    √ Reader permissions are inherited by resource groups and resources below that subscription
+    • Reader can assign access to other users
+    • Reader grants directory administration
+
+    9. Which built-in Azure role can manage resources but cannot grant access to other users?
+    • Owner
+    √ Contributor
+    • Reader
+    • User Access Administrator
+    • Global Administrator
+
+    10. Which built-in Azure role can manage access assignments but does not itself provide resource-management permissions?
+    • Reader
+    √ User Access Administrator
+    • Virtual Machine Contributor
+    • Contributor
+    • Application Administrator
+
+    11. A Global Administrator cannot see subscription VMs. Which explanation is correct?
+    • The tenant must be deleted and recreated
+    √ Entra directory roles and Azure RBAC roles are separate authorization planes
+    • Global Administrators can only manage Linux VMs
+    • The VMs are hidden until a license is assigned
+    • Global Administrator works only after SSPR
+
+    12. What is the purpose of the Global Administrator 'elevate access' capability?
+    • Convert a Global Administrator into Owner permanently
+    • Turn on MFA for every user
+    • Create a new subscription
+    • Disable all RBAC assignments
+    √ Temporarily obtain User Access Administrator at root scope for Azure resource access management
+
+    13. In an SP-initiated SAML flow, what carries the signed assertion from the IdP to the service provider?
+    • The DNS resolver
+    • Azure Firewall
+    • The refresh token
+    √ The user's browser
+    • A direct server-to-server VPN
+
+    14. What is the primary purpose of SAML 2.0 in this module?
+    √ Federated browser SSO using signed XML assertions
+    • Filtering network traffic
+    • Synchronizing passwords
+    • Assigning Azure resource roles
+    • Encrypting virtual disks
+
+    15. OAuth 2.0 is primarily designed for what?
+    • Disk encryption
+    √ Delegated authorization
+    • Password hashing
+    • Network segmentation
+    • User authentication by itself
+
+    16. What does OpenID Connect add to OAuth 2.0?
+    • A SAML XML assertion only
+    • A firewall policy
+    • An Azure RBAC scope
+    √ An authentication layer and ID token
+    • A password hash
+
+    17. Which token is intended for an API such as Microsoft Graph?
+    • SAML metadata
+    • Refresh token
+    • ID token
+    • Password hash
+    √ Access token
+
+    18. Which token primarily tells an application who signed in?
+    • Access token
+    • Client secret
+    • SAML metadata
+    • Refresh token
+    √ ID token
+
+    19. What is the purpose of a refresh token?
+    • Replace the application ID
+    • Authorize an NSG rule
+    • Store the user's password
+    • Encrypt disk blocks
+    √ Obtain new tokens without forcing the user to sign in again each time
+
+    20. Which JWT claim identifies the intended audience of the token?
+    • iss
+    • exp
+    √ aud
+    • oid
+    • scp
+
+    21. An attacker uses username/password pairs leaked from another website against Microsoft 365. What is this attack?
+    • Golden ticket
+    • DDoS
+    • MFA fatigue
+    • Password spray
+    √ Credential stuffing
+
+    22. A user receives repeated MFA push prompts until they accidentally approve one. What is the attack?
+    • Credential stuffing
+    • Pass-the-hash
+    √ MFA fatigue
+    • SAML replay
+    • Brute-force hashing
+
+    23. Which Microsoft Authenticator feature directly reduces blind push-approval attacks?
+    • QR-code enrollment
+    • App passwords
+    • Usage location
+    • Cloud backup
+    √ Number matching
+
+    24. Which authentication method is designed to be phishing-resistant because it is cryptographically bound to the legitimate site?
+    • Email OTP
+    • Security questions
+    √ FIDO2/passkey
+    • Voice call
+    • SMS OTP
+
+    25. Where are allowed authentication methods configured in a modern Microsoft Entra tenant?
+    √ Protection > Authentication methods > Policies
+    • Subscriptions > Access control
+    • Azure portal > Cost Management
+    • Defender portal > Incidents
+    • Users > Per-user MFA only
+
+    26. What happens when Microsoft Authenticator is enabled in the Authentication methods policy but no Conditional Access rule requires MFA?
+    • Every user is immediately forced to use Authenticator
+    • Passwords are disabled tenant-wide
+    • SSPR is automatically disabled
+    √ The method becomes available, but MFA is not enforced just by enabling it
+    • All users become Global Administrators
+
+    27. Which Conditional Access configuration best represents an IF-THEN policy?
+    • IF a subnet is created, THEN hash the password
+    • IF a VM exists, THEN assign a license
+    • IF a token expires, THEN create a tenant
+    √ IF selected users access Office 365, THEN require MFA
+    • IF a user resets a password, THEN create an NSG
+
+    28. Before enforcing a new Conditional Access policy broadly, which approach is safest?
+    • Delete sign-in logs first
+    • Enable it for All users immediately
+    • Exclude all administrators permanently
+    • Use per-user MFA instead
+    √ Use report-only mode and the What If tool
+
+    29. Why should legacy authentication protocols be blocked when enforcing MFA?
+    • They encrypt traffic twice
+    • They bypass Azure RBAC scope inheritance
+    • They require PIM
+    √ They may not support modern MFA challenges
+    • They automatically grant Owner
+
+    30. Where is Self-Service Password Reset configured?
+    • Azure portal > Virtual machines
+    • Microsoft 365 admin center > Billing
+    • Azure Firewall Manager
+    √ Entra admin center > Protection > Password reset
+    • Defender portal > Action center
+
+    31. A company wants to pilot SSPR for one department before expanding it. Which SSPR scope is appropriate?
+    • None
+    √ Selected
+    • All
+    • Global Administrator only
+    • Subscription
+
+    32. Which Entra Connect feature allows a cloud SSPR reset to update an on-premises AD password?
+    • Cloud-only authentication
+    • Seamless SSO
+    √ Password writeback
+    • Device registration
+    • Password hash synchronization
+
+    33. Which hybrid sign-in method is the recommended default because authentication can continue in the cloud even if on-premises AD is unavailable?
+    √ Password hash synchronization
+    • Pass-through authentication
+    • NTLM passthrough
+    • RADIUS only
+    • AD FS federation
+
+    34. What is a key operational dependency of pass-through authentication?
+    • The tenant must use a .local verified domain
+    • All users must be guests
+    • A password hash must be stored in the cloud
+    √ On-premises authentication agents must be available
+    • SAML must be disabled
+
+    35. An on-premises AD forest uses contoso.local. What issue does this create for Entra sign-in names?
+    • The forest cannot synchronize at all
+    √ The suffix is not publicly verifiable, so users may receive an onmicrosoft.com fallback UPN unless a routable suffix is added
+    • All users automatically get Global Administrator
+    • The users become B2B guests
+    • The password hashes cannot sync
+
+    36. Which PowerShell command manually starts a delta synchronization cycle on an Entra Connect server?
+    • New-AzRoleAssignment
+    • Get-MgContext
+    • az login
+    √ Start-ADSyncSyncCycle -PolicyType Delta
+    • Connect-MgGraph -Scopes User.Read
+
+    37. Which statement about least privilege is most consistent with the module?
+    • Assign Owner directly to users for convenience
+    • Use custom roles for every task
+    • Always assign at management-group scope
+    √ Assign roles to groups, at the lowest workable scope, preferably using built-in roles
+    • Keep privileged roles permanent
+
+    38. A VM application needs to read only specific Key Vault secrets. Which design best follows least privilege?
+    √ Use a managed identity with a narrowly scoped role assignment
+    • Use a shared local admin account
+    • Store a Global Administrator password in code
+    • Give the VM Owner at subscription scope
+    • Disable Key Vault RBAC
+
+    39. Which cross-cloud mapping is most accurate for workload identities?
+    √ Azure managed identity ≈ AWS IAM role for a workload ≈ GCP service account
+    • Azure RBAC role ≈ AWS EC2 instance ≈ GCP VM
+    • Azure managed identity ≈ AWS Security Group ≈ GCP firewall rule
+    • Azure tenant ≈ AWS access key ≈ GCP bucket
+    • Azure guest ≈ AWS VPC ≈ GCP subnet
+
+    40. Which cross-cloud technology is closest in purpose to Entra Conditional Access for contextual access decisions?
+    • AWS S3 bucket versioning
+    • GCP Cloud Storage lifecycle rules
+    • AWS EBS snapshots
+    • Azure Disk Encryption
+    √ GCP Context-Aware Access / Access Levels
