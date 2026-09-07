@@ -1,101 +1,293 @@
-Module 6 Quiz — Answer Key
-1. What is the main goal of OSINT?
-• Encrypting sensitive data
-√ Producing meaningful insights to support decision-making
-• Blocking cyberattacks
-• Monitoring internal networks
-2. What does OSINT stand for?
-• Operational Signals Intelligence
-• Online Security Intelligence
-√ Open Source Intelligence
-• Open System Intelligence
-3. When did OSINT emerge formally as a concept?
-• During the Cold War
-√ During World War II
-• After the rise of social media
-• In the 1990s
-4. What is the Surface Web?
-• Anonymous networks only
-√ Content indexed by search engines
-• Illegal online marketplaces
-• The encrypted part of the internet
-5. What software is required to access most Dark Web sites?
-• VPN only
-• FTP clients
-• Standard web browsers
-√ Tor (The Onion Router)
-6. What is the Dark Web?
-• A public part of the internet
-• A social media platform
-√ A small part of the Deep Web requiring special software
-• The entire Deep Web
-7. How does Tor provide anonymity?
-√ By routing traffic through multiple encrypted layers
-• By using only private IP addresses
-• By hiding websites from search engines
-• By blocking all traffic
-8. Which type of content is found in the Deep Web?
-• Anonymous marketplaces
-• Hacking forums only
-√ Online banking portals
-• Public blogs
-9. What is the Deep Web?
-• A criminal-only network
-• A peer-to-peer network
-√ Content not indexed by search engines
-• A synonym for the Dark Web
-10. Which activity is a common application of OSINT?
-• Memory dumping
-• Disk forensics
-√ Reconnaissance on an organization
-• Malware reverse engineering
-11. Which network is an alternative dark net to Tor?
-• BGP
-√ I2P
-• DNS
-• SMTP
-12. Which Google operator restricts results to a specific website?
-• inurl:
-• filetype:
-√ site:
-• cache:
-13. What is OSINT primarily based on?
-• Intercepted communications
-√ Publicly available information
-• Classified government data
-• Encrypted network traffic
-14. What does the (D) label in the OSINT Framework indicate?
-• Download required
-• Data breach source
-• Dark web source
-√ Google Dork / Google Hacking
-15. What can Google dorks be used to find?
-• Encrypted dark web content
-√ Vulnerabilities and exposed confidential information
-• Internal corporate databases only
-• Only academic papers
-16. Which recommendation improves safety when accessing the Dark Web?
-• Use personal accounts
-√ Use VPN before Tor
-• Disable antivirus software
-• Download files freely
-17. What percentage of the internet does the Surface Web roughly represent?
-√ About 10%
-• About 90%
-• About 30%
-• About 50%
-18. What are Google operators?
-√ Special advanced search terms
-• Encryption algorithms
-• Network routing protocols
-• Dark web search engines
-19. What is the OSINT Framework?
-√ A collection of free tools for OSINT investigations
-• A classified intelligence database
-• A penetration testing framework
-• A malware analysis platform
-20. Which intelligence discipline focuses on publicly available sources?
-• GEOINT
-• SIGINT
-• HUMINT
-√ OSINT
+    1. A company moves a database from an on-premises SQL Server VM to Azure SQL Database. Which responsibility definitely remains with the customer?
+    • Patching the underlying host operating system
+    • Applying firmware updates to Microsoft storage hardware
+    √ Configuring authentication, network exposure, auditing, and data classification
+    • Replacing failed physical disks
+    • Maintaining the Azure datacenter power supply
+
+    2. A team can create virtual machines from the portal without opening a ticket. Which NIST cloud characteristic is being demonstrated?
+    √ On-demand self-service
+    • Measured service
+    • Resource pooling
+    • Broad network access
+    • Rapid elasticity
+
+    3. An application automatically adds ten instances during a traffic spike and removes them afterward. Which cloud characteristic is this?
+    √ Rapid elasticity
+    • Measured service
+    • Resource pooling
+    • Broad network access
+    • Community cloud
+
+    4. A cloud provider meters storage, CPU, and bandwidth usage for billing and reporting. Which NIST characteristic does this represent?
+    • On-demand self-service
+    • Hybrid cloud
+    • Resource pooling
+    √ Measured service
+    • Rapid elasticity
+
+    5. A government agency wants cloud-style automation but requires infrastructure dedicated to that agency only. Which deployment model fits best?
+    • Public cloud
+    √ Private cloud
+    • SaaS
+    • Community cloud
+    • Hybrid cloud
+
+    6. Several hospitals share a cloud built specifically for organizations with the same regulatory requirements. Which deployment model is this?
+    • Private cloud
+    • Hybrid cloud
+    • Multi-cloud
+    √ Community cloud
+    • Public cloud
+
+    7. Which workload is the clearest example of IaaS in Azure?
+    √ An Azure Virtual Machine where the customer patches the guest OS
+    • Microsoft 365 Exchange Online
+    • Azure SQL Database
+    • Microsoft Entra ID
+    • Azure App Service
+
+    8. Which statement best describes PaaS security responsibility?
+    √ The provider manages the OS/runtime, while the customer still secures code, data, identities, and service configuration
+    • The customer manages the physical datacenter and hypervisor
+    • The provider manages user permissions inside the customer's application
+    • The customer only pays the bill and has no configuration duties
+    • The provider owns all responsibility including data and identities
+
+    9. Which three responsibility areas remain with the customer even when using SaaS?
+    • Operating system, physical network, and datacenter
+    • Runtime, storage hardware, and power
+    √ Data, devices, and identities
+    • Physical hosts, hypervisor, and cooling
+    • Hypervisor, guest OS, and physical disks
+
+    10. An auditor asks how physical access to Azure servers is controlled. What evidence should the organization rely on?
+    • A Microsoft Entra sign-in log
+    • A customer visit to the Azure server room
+    • An NSG rule export
+    √ Provider audit reports such as SOC reports from the Service Trust Portal
+    • A customer-managed Key Vault key
+
+    11. Which statement about an Azure tenant and subscription is correct?
+    • Deleting a subscription automatically deletes the tenant
+    • Every subscription can authenticate against multiple tenants simultaneously
+    • Licenses are assigned to subscriptions rather than tenant identities
+    √ A tenant is an identity boundary; a subscription is a billing/resource container that trusts one tenant
+    • A subscription is the identity directory and a tenant is only for billing
+
+    12. An organization has one Entra tenant and five Azure subscriptions. Which statement is valid?
+    • The tenant cannot be used for Microsoft 365
+    • Each subscription must have its own separate Entra tenant
+    • Each subscription must use a different onmicrosoft.com domain
+    • The tenant can contain only one subscription
+    √ The tenant can provide identities to all five subscriptions
+
+    13. Where should an administrator primarily manage Azure virtual machines and virtual networks?
+    • Microsoft Defender portal only
+    √ Azure portal
+    • Microsoft 365 admin center
+    • Service Trust Portal
+    • Microsoft Entra admin center only
+
+    14. Where should an administrator primarily manage users, groups, directory roles, and Conditional Access?
+    • Service Trust Portal
+    √ Microsoft Entra admin center
+    • Azure Cost Management
+    • Azure Storage Explorer
+    • Microsoft 365 Defender only
+
+    15. A workload needs to access Azure resources without storing a password or client secret in code. Which identity type is preferred?
+    • Guest user
+    • Usage location
+    • Global Administrator
+    √ Managed identity
+    • Dynamic group
+
+    16. Which group membership model automatically adds users based on attributes such as department?
+    • Privileged membership
+    • Assigned membership
+    • Guest redemption
+    • Federated membership
+    √ Dynamic membership
+
+    17. A dynamic group rule uses user.objectid and fails validation. What is the most likely fix?
+    • Convert the rule to an NSG
+    √ Use the case-sensitive property name user.objectId
+    • Add a license to the group owner
+    • Remove the comparison operator
+    • Change the group to a Microsoft 365 group
+
+    18. A user has no usage location configured. What operational problem can this cause?
+    • The user cannot be placed in any security group
+    • The account becomes a guest
+    • The subscription loses trust in the tenant
+    √ License assignment can fail
+    • The tenant ID changes
+
+    19. Which security goal is primarily harmed if unauthorized users can read confidential customer records?
+    • Elasticity
+    • Availability
+    • Integrity
+    • Non-repudiation
+    √ Confidentiality
+
+    20. Which security goal is primarily harmed if an attacker silently changes financial records?
+    • Elasticity
+    • Scalability
+    • Availability
+    • Confidentiality
+    √ Integrity
+
+    21. A DDoS attack makes an application unreachable for customers. Which CIA objective is directly affected?
+    √ Availability
+    • Authorization
+    • Confidentiality
+    • Integrity
+    • Authentication
+
+    22. Why are two identical firewalls chained together not necessarily true defense in depth?
+    √ They repeat the same control layer rather than adding independent layers
+    • Defense in depth never uses firewalls
+    • Firewalls belong only to the physical layer
+    • Only encryption can be a security layer
+    • A second firewall always reduces confidentiality
+
+    23. Which sequence matches the seven-layer defense-in-depth model used in the module?
+    • Data, application, compute, network, perimeter, identity, physical
+    • Identity, physical, data, licensing, billing, network, backup
+    • Tenant, subscription, resource group, resource, tag, policy, lock
+    √ Physical, identity and access, perimeter, network, compute, application, data
+    • Reconnaissance, foothold, privilege, movement, exfiltration, recovery, audit
+
+    24. A designer assumes an attacker may already be inside the environment and therefore limits lateral movement with segmentation. Which Zero Trust principle is this?
+    • Use measured service
+    • On-demand self-service
+    • Resource pooling
+    √ Assume breach
+    • Verify explicitly
+
+    25. A privileged role is granted only for one hour and only at the required scope. Which Zero Trust principle is most directly demonstrated?
+    • Broad network access
+    • Assume breach
+    √ Use least-privilege access
+    • Measured service
+    • Resource pooling
+
+    26. Which set contains only the six Zero Trust pillars?
+    • Users, subscriptions, portals, billing, backups, regions
+    • Reconnaissance, foothold, escalation, movement, exfiltration, recovery
+    • IaaS, PaaS, SaaS, FaaS, DBaaS, CaaS
+    • Physical, legal, finance, HR, audit, procurement
+    √ Identities, devices, applications, data, infrastructure, networks
+
+    27. Which statement correctly distinguishes hashing from encryption?
+    • Hashing produces ciphertext that can be decrypted by administrators
+    • Both are always reversible
+    √ Hashing is one-way, while encryption is reversible with the correct key
+    • Hashing requires a decryption key and encryption does not
+    • Encryption is only for passwords and hashing is only for TLS
+
+    28. Why is a random salt added before hashing a password?
+    √ To make precomputed rainbow-table and dictionary hashes ineffective
+    • To allow the original password to be decrypted later
+    • To replace the need for access control
+    • To reduce the password length
+    • To make every user share the same hash
+
+    29. During a TLS session, what is the typical division of labor between asymmetric and symmetric cryptography?
+    √ Asymmetric cryptography protects the handshake/key exchange; symmetric cryptography encrypts bulk session traffic
+    • Symmetric cryptography signs certificates while asymmetric cryptography compresses traffic
+    • Symmetric cryptography performs authentication and asymmetric cryptography encrypts every packet
+    • Asymmetric cryptography is used only for stored passwords
+    • Only hashing is used after the TCP handshake
+
+    30. Which data state is protected by TLS 1.2+ on a service endpoint?
+    • Deleted data
+    √ Data in transit
+    • Data at rest
+    • Data in use
+    • Archived metadata only
+
+    31. An attacker obtains a valid user's password and reads data through the normal application interface. Why does default encryption at rest not stop this?
+    √ The service decrypts data for an authenticated user accessing it normally
+    • AES cannot protect cloud storage
+    • At-rest encryption disables identity controls
+    • Encryption at rest applies only to backups
+    • Encrypted disks automatically trust every IP address
+
+    32. Which attack pattern tries a small number of common passwords against a large number of accounts?
+    • Token replay
+    √ Password spray
+    • DDoS
+    • SQL injection
+    • Credential stuffing
+
+    33. Which attack reuses a valid stolen session token to access a service without repeating the full authentication flow?
+    • Password spray
+    √ Token replay
+    • SQL injection
+    • DDoS
+    • Dictionary attack
+
+    34. At which attack-timeline phase would network segmentation most directly limit the attacker?
+    • Initial access only
+    • Reconnaissance
+    • Exfiltration only
+    √ Lateral movement
+    • Recovery
+
+    35. Which control most directly reduces privilege-escalation risk in the course attack timeline?
+    • Measured billing
+    • A public CDN
+    √ Least privilege and time-limited privileged access
+    • Resource pooling
+    • A larger subnet
+
+    36. A cloud risk has high impact but low likelihood. Which statement about risk treatment is correct?
+    • Risk treatment is performed only after an incident
+    √ It still needs an explicit treatment decision such as mitigate, accept, transfer, or avoid
+    • Low likelihood means the risk must always be ignored
+    • High impact means the risk can only be transferred
+    • Every cloud risk must be accepted
+
+    37. Which formula is used as the basic risk model in the module?
+    • Risk = availability − confidentiality
+    √ Risk = likelihood × impact
+    • Risk = threats + controls
+    • Risk = cost ÷ users
+    • Risk = assets × licenses
+
+    38. In STRIDE, which category asks whether an attacker can impersonate another identity?
+    √ Spoofing
+    • Tampering
+    • Information disclosure
+    • Elevation of privilege
+    • Repudiation
+
+    39. Which framework is primarily a knowledge base of attacker tactics and techniques rather than a compliance checklist?
+    • SOC 2
+    • ISO/IEC 27001
+    • FedRAMP
+    √ MITRE ATT&CK
+    • PCI DSS
+
+    40. A requirement specifically concerns protection of personally identifiable information in public clouds. Which standard is the best fit?
+    • NIST SP 800-145
+    • ISO/IEC 27017
+    √ ISO/IEC 27018
+    • CIS Controls
+    • ISO 9001
+
+    41. Which NIST CSF 2.0 function was added as an explicit top-level function compared with the older five-function model?
+    √ Govern
+    • Recover
+    • Protect
+    • Respond
+    • Identify
+
+    42. Which mapping is the closest cross-cloud equivalent?
+    • Azure license ≈ AWS VPC ≈ GCP subnet
+    • Azure resource group ≈ AWS IAM user ≈ GCP user
+    • Azure tenant ≈ AWS EC2 instance ≈ GCP VM
+    • Azure NSG ≈ AWS Organizations OU ≈ GCP folder
+    √ Azure subscription ≈ AWS account ≈ GCP project
