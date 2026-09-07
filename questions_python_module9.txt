@@ -1,0 +1,335 @@
+    1. Which Azure telemetry stream records control-plane operations such as creating or deleting a resource?
+    √ Activity log
+    • Resource logs
+    • Defender XDR incidents
+    • Purview audit only
+    • Metrics only
+
+    2. Are Azure Activity logs available by default?
+    • Only on Linux VMs
+    • No, they require a diagnostic setting before any event exists
+    • Only with Defender for Servers Plan 2
+    √ Yes, with platform retention
+    • Only after Sentinel is enabled
+
+    3. A Key Vault secret is read, but the event is missing from Log Analytics. What is the most likely explanation?
+    • The workspace must be in the same resource group
+    • Defender XDR blocks the event
+    • KQL cannot query Key Vault events
+    √ A diagnostic setting for the resource logs was not configured
+    • The Activity log automatically discarded it
+
+    4. What is the purpose of a diagnostic setting?
+    • Create an Entra user
+    • Configure Conditional Access
+    √ Route platform/resource logs to destinations such as Log Analytics, storage, or Event Hub
+    • Encrypt VM disks
+    • Assign RBAC roles
+
+    5. Which component is the primary queryable data store for Azure Monitor logs?
+    • Azure Key Vault
+    • Azure Firewall policy
+    √ Log Analytics workspace
+    • Microsoft Entra tenant
+    • PIM
+
+    6. Which KQL operator is used to filter rows?
+    • summarize
+    • project-away only
+    • join only
+    √ where
+    • render
+
+    7. Which KQL operator groups and aggregates data, for example counting failures per user?
+    • extend
+    • take
+    • union
+    √ summarize
+    • where
+
+    8. What does ResultType != 0 generally represent in the SigninLogs examples used in the module?
+    • Successful sign-ins
+    • Role assignments
+    • MFA registration only
+    √ Failed sign-ins
+    • Disabled users
+
+    9. Which query pattern is best for finding accounts with the most failed sign-ins?
+    √ Filter failures, summarize count by user, then order descending
+    • Delete SigninLogs and query Heartbeat
+    • Query Metrics without grouping
+    • Use AzureActivity for password failures
+    • Filter only successful sign-ins
+
+    10. Why should the time filter usually appear early in a KQL query?
+    • KQL requires time filters syntactically first
+    √ It reduces the data scanned and improves performance/cost efficiency
+    • It disables retention
+    • It changes failed sign-ins into successful ones
+    • It encrypts the result
+
+    11. Which agent is the supported path for collecting VM telemetry in current Azure deployments?
+    • Log Analytics agent (MMA/OMS)
+    • AzureAD Connect agent
+    • Defender for Identity sensor
+    √ Azure Monitor Agent (AMA)
+    • Microsoft Monitoring Agent only
+
+    12. Why should new labs and deployments not use the legacy MMA/OMS agent?
+    • It cannot collect performance counters
+    • It requires Defender for Servers Plan 2
+    √ It is retired and no longer supported
+    • It supports only Windows
+    • It has no network connectivity
+
+    13. In a Data Collection Rule, which three internal blocks define collection?
+    • Agents, tables, and incidents
+    • Policies, workbooks, and alerts
+    • Connectors, playbooks, and hunts
+    • Metrics, costs, and tags
+    √ Data sources, destinations, and data flows
+
+    14. What additional element connects a DCR to the target resource?
+    • A guest invitation
+    √ A data collection rule association
+    • A PIM activation
+    • A Conditional Access grant
+    • An NSG application rule
+
+    15. What is the main purpose of Microsoft Defender for Cloud's CSPM capability?
+    √ Assess security posture, recommendations, and Secure Score across cloud resources
+    • Route packets between subnets
+    • Perform user password resets
+    • Replace all SIEM functions
+    • Provide employee email
+
+    16. Where are Defender for Cloud enhanced protection plans enabled?
+    • Sentinel > Content hub only
+    • Microsoft Entra > Authentication methods
+    • VM > Boot diagnostics
+    √ Environment settings > subscription > Defender plans
+    • Azure Policy > Exemptions only
+
+    17. Which formula best describes Secure Score in the module?
+    √ Earned control points divided by possible control points
+    • Logs divided by retention days
+    • Incidents divided by users
+    • Failed sign-ins multiplied by alerts
+    • Assets minus vulnerabilities
+
+    18. A control is worth 12 points and 75% of the covered resources are healthy. How many points does it contribute?
+    • 12
+    • 8
+    • 3
+    • 6
+    √ 9
+
+    19. Which Defender for Servers plan includes just-in-time VM access?
+    √ Plan 2
+    • Free CSPM only
+    • No Defender plan is required
+    • Defender for Cloud Apps
+    • Plan 1 only
+
+    20. What does an approved JIT VM access request create?
+    • A permanent public IP
+    √ A temporary high-priority NSG allow rule scoped to the requester's IP and time window
+    • A new local administrator
+    • A Conditional Access exclusion
+    • A new VNet
+
+    21. What security problem does JIT primarily address?
+    • Guest account lifecycle
+    • License assignment
+    √ Standing exposure of management ports such as RDP and SSH
+    • Unencrypted storage disks
+    • SAML certificate expiry
+
+    22. What is a Microsoft Defender XDR incident?
+    • A VM snapshot
+    • A Secure Score recommendation
+    √ A correlated collection of alerts and evidence describing one attack story
+    • A single Azure Activity log entry
+    • A scheduled KQL query
+
+    23. Which signals can Defender XDR correlate into one incident?
+    • Only Azure Firewall logs
+    • Only storage billing data
+    • Only Entra licenses
+    • Only Azure VM metrics
+    √ Endpoint, email, identity, and cloud-app signals
+
+    24. What is the first operational step in the incident-triage workflow described in the module?
+    • Delete all evidence
+    • Disable logging
+    • Run a penetration test
+    • Close the incident immediately
+    √ Acquire the incident and assign ownership
+
+    25. After scoping and verifying an incident, which action belongs to containment?
+    • Export billing data
+    • Increase log retention only
+    √ Isolate a device or suspend/revoke an account session
+    • Rename the incident
+    • Change the resource group
+
+    26. Where do automated remediation actions wait when analyst approval is required?
+    • Azure Policy compliance
+    • Activity log
+    √ Action center
+    • PIM
+    • Content hub
+
+    27. Which Microsoft product provides CASB capabilities such as shadow-IT discovery, app-risk scoring, and session control?
+    • Azure Firewall
+    • Microsoft Purview
+    • Azure Backup
+    • Microsoft Entra Connect
+    √ Microsoft Defender for Cloud Apps
+
+    28. Which product provides vendor-neutral SIEM/SOAR capabilities and custom analytics across many data sources?
+    • Azure Bastion
+    • Microsoft Purview
+    √ Microsoft Sentinel
+    • PIM
+    • Microsoft Defender XDR only
+
+    29. What is the role of a Sentinel data connector?
+    • Assign Azure RBAC
+    • Create guest invitations
+    • Enable SSPR
+    √ Ingest data from a source into the Sentinel/Log Analytics environment
+    • Encrypt data at rest
+
+    30. Why must the Azure Activity connector's policy assignment be made at subscription scope?
+    • Because Activity logs are tenant-wide only
+    • Because workspaces cannot exist in resource groups
+    • Because policies cannot target subscriptions
+    √ So control-plane events across the subscription are streamed to the workspace
+    • Because Sentinel requires Owner on every VM
+
+    31. What is the difference between a scheduled analytics rule and a hunting query in Sentinel?
+    • Analytics rules cannot use KQL
+    • Hunting always creates incidents automatically
+    √ A scheduled analytics rule automatically evaluates and can create alerts/incidents; hunting is analyst-driven exploration
+    • Hunting works only on AWS
+    • They are identical
+
+    32. What platform underlies Microsoft Sentinel playbooks?
+    √ Azure Logic Apps
+    • Power BI
+    • Azure Bastion
+    • Azure Functions only
+    • Entra Connect
+
+    33. A Sentinel automation rule exists, but it cannot run the playbook. Which permission is commonly missing?
+    √ Sentinel must be granted access to the playbook's resource group
+    • The VM must run Defender Plan 2
+    • Every analyst must be Global Administrator
+    • The workspace must disable RBAC
+    • The playbook must have a public IP
+
+    34. In a Logic App playbook, what are API connections used for?
+    • Set the tenant ID
+    • Define NSG priorities
+    • Encrypt workspace data
+    √ Authenticate connector actions to external or Microsoft services
+    • Create PIM eligible assignments
+
+    35. Which phase follows Detection & Analysis in the NIST SP 800-61 incident-response lifecycle?
+    • Threat modeling
+    √ Containment, eradication, and recovery
+    • Preparation
+    • Post-incident activity
+    • Risk acceptance
+
+    36. Why does cloud containment often start with identity actions?
+    √ A compromised cloud identity can access many services regardless of network location
+    • Cloud networks cannot be segmented
+    • VMs cannot be isolated
+    • Firewalls are prohibited
+    • Identity logs are never available
+
+    37. Which action best preserves forensic evidence before destructive remediation?
+    • Rotate every key before collecting evidence
+    • Clear the Activity log
+    • Disable all logging
+    • Immediately delete the compromised VM
+    √ Take snapshots and preserve relevant logs before rebuilding or deleting resources
+
+    38. What is the purpose of chain of custody in cloud forensics?
+    • Assign licenses
+    • Create firewall routes
+    √ Document who collected, handled, and transferred evidence so its integrity and provenance can be demonstrated
+    • Encrypt every VM with the same key
+    • Reduce storage costs
+
+    39. Which standard focuses on cloud-specific information-security controls and shared responsibilities?
+    • ISO 9001
+    • NIST SP 800-145
+    √ ISO/IEC 27017
+    • ISO/IEC 27018
+    • OWASP CRS
+
+    40. Which standard focuses specifically on protection of personally identifiable information in public clouds?
+    • SOC 1
+    √ ISO/IEC 27018
+    • ISO/IEC 27017
+    • NIST SP 800-61
+    • CIS Controls
+
+    41. A regulator asks for continuous evidence of alignment with standards such as PCI DSS. Which Defender for Cloud feature is most relevant?
+    • Action center
+    √ Regulatory compliance dashboard
+    • Azure Bastion
+    • Authentication methods policy
+    • PIM
+
+    42. Which type of SOC report evaluates operating effectiveness of controls over a period of time?
+    • PCI DSS attestation only
+    √ SOC 2 Type II
+    • SOC 1 Type I only
+    • SOC 2 Type I only
+    • ISO 9001
+
+    43. Which activity is generally prohibited in cloud-provider penetration-testing rules of engagement?
+    √ DDoS or other disruptive testing against provider infrastructure
+    • Reviewing your own security configuration
+    • Running approved vulnerability scans on your resources
+    • Scanning your own VM with permission
+    • Testing your own authorized web application
+
+    44. What does 'harvest now, decrypt later' describe?
+    √ Capturing encrypted data today in the hope future quantum capabilities can decrypt it
+    • Deleting logs now and restoring them later
+    • Caching KQL results
+    • Collecting passwords for immediate brute force
+    • Backing up data before ransomware
+
+    45. What is a practical first step toward post-quantum cryptography readiness?
+    • Replace every firewall immediately
+    • Delete old audit logs
+    √ Inventory cryptographic use and dependencies so migration priorities are known
+    • Move all workloads to one region
+    • Disable TLS
+
+    46. Which cross-cloud mapping is most accurate for platform monitoring?
+    • Azure Monitor ≈ AWS IAM ≈ GCP Cloud Identity
+    • Azure Monitor ≈ AWS Shield ≈ GCP Cloud Armor
+    • Azure Monitor ≈ AWS Organizations ≈ GCP folders
+    • Azure Monitor ≈ AWS KMS ≈ GCP Cloud KMS
+    √ Azure Monitor ≈ Amazon CloudWatch plus CloudTrail for control-plane audit ≈ GCP Cloud Monitoring/Logging
+
+    47. Which AWS service is closest to Defender for Cloud's posture-management role?
+    • Amazon S3
+    • Amazon SES
+    √ AWS Security Hub together with AWS Config
+    • AWS IAM Identity Center
+    • AWS Route 53
+
+    48. Which AWS service is closest to Defender for Servers threat detection in the module's cross-cloud mapping?
+    √ Amazon GuardDuty
+    • AWS WAF only
+    • AWS Organizations
+    • AWS CloudFormation
+    • Amazon RDS
