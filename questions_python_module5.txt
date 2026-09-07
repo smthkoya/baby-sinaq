@@ -1,101 +1,104 @@
-Module 5 Quiz — Answer Key
-1. What is a challenge of live acquisition?
-• Inability to collect volatile data
-√ Risk of altering evidence
-• Excessive storage requirements
-• Limited tool availability
-2. Which certification is related to digital forensics?
-• CEH
-• PMP
-√ EnCase Certified Examiner (EnCE)
-• CISSP
-3. Which organization is listed as an international reference for digital forensics?
-• OWASP
-• ITU
-√ ENFSI
-• NATO
-4. Which type of digital evidence is lost when a system is powered off?
-• Non-volatile evidence
-√ Volatile evidence
-• Historical evidence
-• Archived evidence
-5. Which phase includes documenting findings according to court requirements?
-√ Documentation and Reporting
-• Evidence Collection
-• Data Acquisition
-• Containment
-6. Which digital forensics phase involves seizing devices and preserving evidence?
-• Data Analysis
-• Evidence Assessment
-• Documentation
-√ Search and Secure
-7. Which phase focuses on examining collected data to identify relevant evidence?
-√ Data Analysis
-• First Response
-• Preparation
-• Expert Testimony
-8. Why is digital forensics important for legal compliance?
-√ It ensures evidence is legally admissible
-• It replaces legal counsel
-• It encrypts sensitive data
-• It automates reporting
-9. Which of the following is an example of volatile evidence?
-• Files on a USB drive
-• Database records
-• Emails stored on disk
-√ Data in RAM
-10. What is one primary goal of digital forensics?
-√ Uncovering evidence and reconstructing events
-• Improving system availability
-• Blocking network traffic
-• Replacing incident response teams
-11. What is static (dead) acquisition?
-• Real-time network capture
-• Capturing RAM contents
-√ Bit-by-bit imaging of powered-off storage media
-• Monitoring active sessions
-12. Which data should be collected first according to the Order of Volatility?
-• Backups
-• Hard drive images
-√ Running processes and active connections
-• Archived logs
-13. What is the Order of Volatility?
-• A storage encryption standard
-• A legal ranking of evidence importance
-√ A guideline for prioritizing evidence collection based on how quickly data is lost
-• A malware classification system
-14. What does non-volatile evidence include?
-• Active network connections
-• Temporary memory buffers
-√ Files stored on hard drives
-• Running processes
-15. Which NIST document defines incident response guidance?
-• NIST SP 800-53
-• NIST CSF
-• NIST SP 800-171
-√ NIST SP 800-61
-16. What is the main goal of the containment phase in incident response?
-• Identify attackers
-√ Stop the incident from causing further damage
-• Preserve volatile evidence
-• Produce compliance reports
-17. What is incident response (IR)?
-• Long-term risk management
-√ Steps to prepare for, detect, contain, and recover from incidents
-• A threat intelligence framework
-• A forensic imaging process
-18. What is digital forensics according to the module?
-• Automated malware detection
-√ The process of identifying, collecting, preserving, analyzing, and presenting electronic data in a legally admissible way
-• The analysis of network performance issues
-• The process of preventing cyberattacks
-19. What characterizes live (hot) acquisition?
-• No risk of data alteration
-√ The system is running and volatile data is captured
-• Only disk data is collected
-• The device is powered off
-20. What role does an expert witness play?
-• Performing live acquisition
-√ Presenting and validating evidence in court
-• Approving forensic tools
-• Managing incident communications
+    1. In a Data Collection Rule, which three configuration blocks define the collection pipeline?
+    • Agents, extensions, and policies
+    • Metrics, logs, and traces
+    • Triggers, actions, and connections
+    • Tables, queries, and alerts
+    √ Data sources, destinations, and data flows
+
+    2. Where do you enable Microsoft Defender for Cloud's enhanced security features, such as Defender for Servers?
+    • Azure Policy > Definitions
+    • Microsoft Entra admin center > Protection
+    • Microsoft Sentinel > Content hub
+    √ Environment settings > (subscription) > Defender plans
+    • The VM's Configuration page
+
+    3. Which capability requires Microsoft Defender for Servers Plan 2 rather than Plan 1?
+    • The Activity log
+    • Secure Score
+    • Security recommendations
+    • Microsoft Defender for Endpoint integration
+    √ Just-in-time VM access
+
+    4. Which product implements the CASB pillars — shadow IT discovery, app risk scoring, and session control — in the Microsoft stack?
+    • Microsoft Purview
+    √ Microsoft Defender for Cloud Apps
+    • Microsoft Entra ID Protection
+    • Microsoft Defender for Identity
+    • Azure Firewall Premium
+
+    5. A resource emits data-plane events, but nothing appears in your Log Analytics workspace. What is the most likely cause?
+    √ No diagnostic setting was created to route the resource logs
+    • The workspace is in a different resource group
+    • KQL cannot query data-plane events
+    • Resource logs require a Premium workspace tier
+    • The Activity log retention expired
+
+    6. What does the following KQL query return? SigninLogs | where ResultType != 0 | summarize count() by UserPrincipalName
+    • The list of disabled user accounts
+    √ The number of failed sign-ins per user
+    • Sign-in latency per user
+    • MFA registrations per user
+    • All successful sign-ins grouped by application
+
+    7. What does an approved just-in-time VM access request actually create?
+    • A new local administrator account on the VM
+    √ A temporary, high-priority NSG allow rule scoped to the requester's IP
+    • A Conditional Access policy exclusion
+    • A permanent firewall exception for the requester
+    • An Azure Bastion session
+
+    8. Sentinel automation cannot invoke your playbook even though the automation rule exists. Which grant is missing?
+    • A Conditional Access exclusion for the Logic App
+    √ Playbook permissions granting Sentinel access to the playbook's resource group
+    • Global Administrator on the playbook's managed identity
+    • A Defender for Servers Plan 2 license
+    • Owner rights for every analyst
+
+    9. Why must labs and production deployments use the Azure Monitor Agent instead of the Log Analytics (MMA/OMS) agent?
+    √ The Log Analytics agent is retired and no longer supported
+    • AMA works without any network connectivity
+    • MMA only supports Linux machines
+    • AMA is free while MMA is billed per node
+    • MMA cannot collect performance counters
+
+    10. In Microsoft Defender XDR, what is an incident?
+    √ A collection of correlated alerts and associated data that tell the story of one attack
+    • A scheduled KQL query
+    • A Secure Score recommendation
+    • Any failed sign-in event
+    • A single alert from one product
+
+    11. A security control worth 8 points applies to 20 virtual machines, of which 15 are healthy. How many points does this control contribute to Secure Score?
+    • 15
+    • 2
+    • 4
+    • 8
+    √ 6
+
+    12. Which statement correctly distinguishes Microsoft Defender for Cloud from Microsoft Defender XDR?
+    √ Defender for Cloud covers Azure, AWS, and GCP workload posture and protection; Defender XDR correlates endpoint,  email, identity, and app signals
+    • Defender for Cloud protects users and mailboxes; Defender XDR protects Azure resources
+    • Defender XDR is the free tier of Defender for Cloud
+    • Defender for Cloud is only available in the Defender portal
+    • They are two names for the same product
+
+    13. When connecting the Azure Activity data connector, at which scope must the Azure Policy assignment be made, and why?
+    • Workspace scope, because the data lands there
+    • Tenant scope, because Activity logs are tenant-wide
+    √ Subscription scope, so all control-plane events in the subscription stream to the workspace
+    • Resource group scope, to limit cost
+    • Management group scope, because policies cannot target subscriptions
+
+    14. Where do pending automated remediation actions from Defender XDR's automated investigations wait for analyst approval?
+    • The Content hub
+    √ The Action center
+    • Azure Policy compliance
+    • Workload protections
+    • The Activity log
+
+    15. According to NIST SP 800-61, which phase follows Detection & Analysis in the incident response lifecycle?
+    √ Containment, eradication, and recovery
+    • Notification and disclosure
+    • Post-incident activity
+    • Threat hunting
+    • Preparation
