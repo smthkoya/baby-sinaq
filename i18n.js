@@ -11,6 +11,7 @@ export const translations = {
     subject_sociology: "Социология",
     subject_azerbaijani: "Азербайджанский",
     subject_risks: "Риски",
+    subject_python: "Cloud",
 
 
     select_module_label: "Выберите модуль:",
@@ -75,6 +76,7 @@ export const translations = {
     subject_sociology: "Sociology",
     subject_azerbaijani: "Azerbaijani",
     subject_risks: "Risks",
+    subject_python: "Cloud",
  
 
     select_module_label: "Select a module:",
