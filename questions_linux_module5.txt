@@ -1,0 +1,305 @@
+1. What is a host in networking?
+• Only a router
+• Only a wireless laptop
+√ Any device that communicates with another device on a network
+• Only a server
+
+2. What is a network?
+√ A collection of two or more hosts able to communicate
+• A single disconnected file
+• A compression archive
+• A user group
+
+3. What is the Internet in the lecture?
+√ A publicly accessible network connecting millions of hosts worldwide
+• A package manager
+• A single router
+• A local shell only
+
+4. What does Wi-Fi refer to?
+• Only Ethernet cables
+√ Wireless networks
+• Only DNS
+• Only static IP addressing
+
+5. What is a service?
+• A filesystem permission
+• A compressed file
+√ A feature one host provides to another host
+• A user password
+
+6. What is a client?
+• A DHCP pool
+• A network mask
+• A router connecting networks
+√ A host accessing a server
+
+7. What is a router also called?
+• A hostname
+• A packet
+• A netmask
+√ A gateway
+
+8. What does a router do?
+√ Connects hosts from one network to another network
+• Compresses packets into tar files
+• Stores user passwords
+• Creates local files
+
+9. What is a network packet used for?
+• Creating Linux users
+√ Sending network communication between hosts
+• Storing file permissions
+• Mounting media
+
+10. What is an IP address?
+√ A unique number assigned to a host on a network
+• A shell variable
+• A file descriptor
+• A username
+
+11. What does a network mask define?
+• Which processes are compressed
+• Which users can use sudo
+• Which files are executable
+√ Which IP addresses are considered part of the same network
+
+12. What is a hostname?
+• A tar option
+• A file permission
+√ A human-understandable name for a host
+• A numeric GID
+
+13. What happens to hostnames before network packets are sent according to the lecture?
+√ They are translated into IP addresses
+• They are converted to UIDs
+• They are compressed with gzip
+• They are stored in /etc/shadow
+
+14. What does DHCP stand for?
+• Domain Host Connection Protocol
+√ Dynamic Host Configuration Protocol
+• Distributed Host Control Process
+• Dynamic Hardware Configuration Path
+
+15. What can a DHCP server assign according to the lecture?
+√ Hostnames, IP addresses, and other network information
+• Only user passwords
+• Only file permissions
+• Only CPU architecture
+
+16. What service does DNS provide in the lecture?
+√ Translation between IP addresses and hostnames
+• File compression
+• Permission changes
+• User creation
+
+17. What is Ethernet?
+• A password database
+• A shell scripting language
+• A package repository
+√ The most common way to physically connect hosts in a wired network
+
+18. What is TCP/IP?
+• A user and group database
+• A compression algorithm
+• A single Linux command
+√ A collection of protocols defining how network communication should occur
+
+19. What is a protocol?
+• A desktop icon
+√ A set of rules
+• A user password
+• A filesystem inode
+
+20. Which two questions are suggested before configuring a network device?
+• GUI or CLI, and gzip or bzip2
+• Read or write, and owner or group
+• Root or normal user, and tar or zip
+√ Wired or wireless, and DHCP or static address
+
+21. Which addressing style is described as typical for wired machines in the lecture?
+√ Statically assigned IP address
+• Only IPv6 link-local
+• Always DHCP only
+• No IP address
+
+22. Which addressing style is described as typical for wireless machines?
+√ An address from the DHCP pool
+• Only loopback
+• No address
+• Always static only
+
+23. Where do you go in the GUI to configure networking in the lecture?
+• Users, then Passwords
+√ System Settings, then Network
+• Text Editor, then File
+• Terminal, then History
+
+24. Which GUI tab is used to change key IPv4 values?
+√ IPv4 Settings
+• Security
+• Storage
+• Permissions
+
+25. Which method setting is changed to switch from manual addressing to DHCP?
+• Owner
+√ Method
+• Archive
+• Shell
+
+26. What is ifupdown?
+• A password service
+• A compression utility
+• A shell function
+√ The traditional network configuration system used in Ubuntu 16.04 Server
+
+27. Which file does ifupdown use for traditional network configuration?
+• /etc/passwd
+√ /etc/network/interfaces
+• /etc/sudoers
+• /etc/shadow
+
+28. Which commands apply settings from /etc/network/interfaces?
+• useradd and userdel
+• gzip and gunzip
+• chmod and chown
+√ ifup and ifdown
+
+29. Where may additional interface configuration files be stored?
+• /etc/skel/
+• /var/log/interfaces/
+• /home/network/
+√ /etc/network/interfaces.d/
+
+30. What is nmcli?
+√ A command-line tool for managing NetworkManager connections
+• A user account database
+• A compression format
+• A text editor
+
+31. What can nmcli do according to the lecture?
+• Only show CPU information
+√ Create, modify, activate, and troubleshoot network connections
+• Only compress files
+• Only manage groups
+
+32. Which command shows available network devices and their status?
+√ nmcli device status
+• hostname devices
+• ip user
+• nmcli user status
+
+33. What information can nmcli device status display?
+√ Device name, type, state, and associated connection
+• Only archive type
+• Only user passwords
+• Only file size
+
+34. Which command shows connections?
+• nmcli device add
+• hostname --connections
+• ip connection list-users
+√ nmcli connection show
+
+35. How do you view details of a specific connection?
+√ nmcli connection show <connection_name>
+• ss --connection-file
+• nmcli show user <name>
+• ip route <connection_name>
+
+36. Which nmcli setting indicates a static/manual IPv4 configuration?
+• ipv4.method auto
+• ipv4.method dns
+√ ipv4.method manual
+• ipv4.method disabled-only
+
+37. In the lecture example, what static IP is assigned to eth0?
+• 127.0.0.1/8
+• 8.8.8.8/32
+• 10.0.2.15/8
+√ 192.168.1.100/24
+
+38. In the lecture example, what gateway is defined?
+√ 192.168.1.1
+• 8.8.8.8
+• 127.0.0.1
+• 255.255.255.0
+
+39. Which command sets DNS servers for the eth0 connection in the lecture?
+• hostname dns eth0
+• ip dns add 8.8.8.8
+• nmcli connection delete eth0 dns
+√ nmcli connection modify eth0 ipv4.dns "8.8.8.8 1.1.1.1"
+
+40. Which command activates/applies the eth0 connection changes?
+• nmcli device delete eth0
+• nmcli connection down forever eth0
+√ nmcli connection up eth0
+• ip route flush all
+
+41. Which nmcli setting makes the device obtain an IPv4 address automatically via DHCP?
+• ipv4.method manual
+• ipv4.method static-only
+√ ipv4.method auto
+• ipv4.method off
+
+42. Which command is the modern replacement for ifconfig and route according to the lecture?
+• hostname
+• ping
+√ ip
+• ss
+
+43. Which command shows IP addresses/interfaces in the lecture?
+√ ip a
+• ip chmod
+• ip files
+• ip users
+
+44. Which command shows the routing table?
+• nmcli history
+• ip passwd
+• route-user
+√ ip route
+
+45. Which command checks or sets the system hostname?
+• ping
+√ hostname
+• grep
+• ss
+
+46. Which command tests connectivity for IPv4 and IPv6?
+• chmod
+√ ping
+• hostname
+• ss
+
+47. Which command displays active connections and replaces netstat?
+• pwd
+√ ss
+• who
+• ip
+
+48. What does ss -t show?
+• UDP sockets
+• Only listening sockets
+• Only numeric addresses
+√ TCP sockets
+
+49. What does ss -u show?
+• Only listening sockets
+√ UDP sockets
+• Only hostnames
+• TCP sockets
+
+50. What does ss -l show?
+√ Listening sockets only
+• All user accounts
+• Only symbolic links
+• Only UDP sockets
+
+51. What does ss -n do?
+• Show only hostnames
+√ Show numeric addresses without resolving DNS/service names
+• Create a network
+• Enable DHCP
