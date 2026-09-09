@@ -13,7 +13,6 @@ export const translations = {
     subject_risks: "Риски",
     subject_python: "Cloud",
 
-
     select_module_label: "Выберите модуль:",
     all_modules_option: "Все модули (объединённо)",
     python_module_1: "Модуль 1 AI according to the example",
@@ -24,6 +23,11 @@ export const translations = {
     python_module_6: "Модуль 1 AI",
     python_module_7: "Модуль 2 AI",
     python_module_8: "Модуль 3 AI",
+    python_module_9: "Модуль 4 AI",
+    python_module_10: "Модуль 5 AI",
+    security_gateways_module_4: "Модуль 4 — Аутентификация и контроль доступа",
+    security_gateways_module_5: "Модуль 5 — Частные сети",
+    security_gateways_module_6: "Модуль 6 — Атаки и защита",
 
     questions_from_label: "Вопросы от:",
     min_placeholder: "Начальный номер вопроса",
@@ -77,7 +81,6 @@ export const translations = {
     subject_azerbaijani: "Azerbaijani",
     subject_risks: "Risks",
     subject_python: "Cloud",
- 
 
     select_module_label: "Select a module:",
     all_modules_option: "All modules (merged)",
@@ -89,6 +92,11 @@ export const translations = {
     python_module_6: "Module 1 AI",
     python_module_7: "Module 2 AI",
     python_module_8: "Module 3 AI",
+    python_module_9: "Module 4 AI",
+    python_module_10: "Module 5 AI",
+    security_gateways_module_4: "Module 4 — Authentication & Access Control",
+    security_gateways_module_5: "Module 5 — Private Networks",
+    security_gateways_module_6: "Module 6 — Attacks & Defense",
 
     questions_from_label: "Questions from:",
     min_placeholder: "Starting question number",
@@ -134,6 +142,22 @@ export const translations = {
 const LANG_STORAGE_KEY = "quizLang";
 const DEFAULT_LANG = "en";
 
+const MODULE_TRANSLATION_KEYS = {
+  "questions_python_module1.txt": "python_module_1",
+  "questions_python_module2.txt": "python_module_2",
+  "questions_python_module3.txt": "python_module_3",
+  "questions_python_module4.txt": "python_module_4",
+  "questions_python_module5.txt": "python_module_5",
+  "questions_python_module6.txt": "python_module_6",
+  "questions_python_module7.txt": "python_module_7",
+  "questions_python_module8.txt": "python_module_8",
+  "questions_python_module9.txt": "python_module_9",
+  "questions_module4_zaxra.txt": "python_module_10",
+  "questions_security_gateways_module4.txt": "security_gateways_module_4",
+  "questions_security_gateways_module5.txt": "security_gateways_module_5",
+  "questions_security_gateways_module6.txt": "security_gateways_module_6",
+};
+
 // Текущий выбранный язык / current selected language
 export function getLang() {
   return localStorage.getItem(LANG_STORAGE_KEY) || DEFAULT_LANG;
@@ -163,6 +187,25 @@ export function t(key, params = {}) {
   return str;
 }
 
+function translateModuleOptions() {
+  const moduleSelect = document.getElementById("module-select");
+  if (!moduleSelect) return;
+
+  moduleSelect.querySelectorAll("option").forEach((option) => {
+    const translationKey = MODULE_TRANSLATION_KEYS[option.value];
+    if (translationKey) option.textContent = t(translationKey);
+  });
+}
+
+function observeModuleOptions() {
+  const moduleSelect = document.getElementById("module-select");
+  if (!moduleSelect || moduleSelect.dataset.i18nObserver === "true") return;
+
+  moduleSelect.dataset.i18nObserver = "true";
+  const observer = new MutationObserver(() => translateModuleOptions());
+  observer.observe(moduleSelect, { childList: true });
+}
+
 // Применяет переводы ко всем элементам с data-i18n / data-i18n-placeholder
 // Applies translations to every element with data-i18n / data-i18n-placeholder
 export function applyStaticTranslations() {
@@ -176,5 +219,7 @@ export function applyStaticTranslations() {
     el.setAttribute("placeholder", t(el.dataset.i18nPlaceholder));
   });
 
+  translateModuleOptions();
+  observeModuleOptions();
   document.documentElement.lang = getLang();
 }
