@@ -1,0 +1,665 @@
+1. What does a closed-source license normally allow a user to access?
+• Only the kernel source code
+• The full source code with unrestricted modification rights
+• Only documentation, not the executable
+√ The executable program or machine code, but not the source code
+
+2. What right is central to the open-source philosophy described in the lecture?
+• The right to prevent redistribution
+• The right to use software only on one computer
+√ Access to the source code and the ability to modify it
+• The right to hide all source code
+
+3. Why can open-source software evolve quickly according to the lecture?
+• Only one vendor is allowed to change it
+• Open-source software does not contain bugs
+• The source code is automatically rewritten every day
+√ Many programmers can read, modify, redistribute, and fix the code
+
+4. Under which license did Linus Torvalds place the Linux code according to the lecture?
+• MIT License only
+• BSD License only
+√ GNU General Public License version 2 (GPLv2)
+• Microsoft EULA
+
+5. Under GPLv2, what must happen to modifications of the source code?
+• They must always become proprietary
+• They may never be redistributed
+• They must be converted to the MIT license
+√ They must also be distributed under the same license
+
+6. According to the lecture, what may be charged for when distributing GPLv2 source code?
+• Any arbitrary license fee for the source code
+• Nothing at all, including distribution costs
+• A mandatory monthly subscription
+√ Costs related to distribution
+
+7. Which two organizations are highlighted as especially influential in open-source licensing?
+• Google and IBM
+• Microsoft and Apple
+√ The Free Software Foundation and the Open Source Initiative
+• Debian and Red Hat
+
+8. Who established the Free Software Foundation (FSF) in 1985?
+• Linus Torvalds
+• Dennis Ritchie
+√ Richard Stallman
+• Ken Thompson
+
+9. In the FSF context, what does the word "free" primarily mean?
+√ Freedom to share, study, and modify source code
+• Software may not be redistributed
+• Software must always cost zero dollars
+• Software can only be used for education
+
+10. What is the copyleft principle described in the lecture?
+• Only the original author may redistribute the program
+• Derivative works must use a proprietary EULA
+√ Modified or future versions must preserve the same freedoms of use
+• All modifications must become closed source
+
+11. Which licensing approach is associated with minimal restrictions on use, modification, and redistribution?
+• Copyleft-only licensing
+• Closed-source licensing
+• No-execution licensing
+√ Permissive licensing
+
+12. What does the BSD license require according to the lecture?
+• The software may only be used for research
+• Source code may never be redistributed
+• All derivative works must use GPLv2
+√ Copyright notices must be maintained and original-author endorsement must not be implied
+
+13. Which statement best describes the MIT license in the lecture?
+• It applies only to images and video
+• It forbids redistribution of binaries
+√ It is permissive, requires attribution and a disclaimer, and does not impose copyleft on derivatives
+• It requires all derivatives to use GPLv2
+
+14. Creative Commons licenses in the lecture are mainly presented for what kind of content?
+• Device drivers only
+• Package repositories only
+• Linux kernel modules only
+√ Non-software content such as text, images, and video
+
+15. What is an operating system?
+√ Software that manages hardware and software components and provides services
+• A physical CPU inside the computer
+• Only the command-line shell
+• A single application such as a browser
+
+16. Which task is listed as a responsibility of an operating system?
+• Writing all user applications
+√ Scheduling programs to run
+• Physically connecting Ethernet cables
+• Manufacturing the CPU
+
+17. What does the Linux kernel do?
+• It is only a desktop theme
+• It is a package repository
+• It is a web browser
+√ It is the core of the operating system and communicates directly with hardware
+
+18. What is GNU/Linux described as in the lecture?
+• A Windows compatibility layer
+• A single Linux desktop application
+√ The Linux kernel combined with GNU software that provides open-source UNIX-like tools
+• A proprietary mobile-only operating system
+
+19. Which Linux architecture component includes CPU, memory, block devices, and network adapters?
+• Package manager
+• Application programs
+• Core utilities
+√ Hardware
+
+20. Which Linux architecture component handles memory management, task scheduling, and file management?
+√ The kernel
+• The web browser
+• The desktop wallpaper
+• The package repository
+
+21. What are core utilities in the Linux architecture?
+√ Preinstalled software tools for various purposes, including shell programs
+• Only graphical games
+• Only firmware inside the CPU
+• Only physical storage devices
+
+22. Which is an example of an application program in the Linux architecture?
+√ A web browser
+• Kernel scheduler
+• RAM
+• CPU
+
+23. What is a Linux distribution?
+• Only the Linux kernel with nothing else
+• A hardware device
+• A single shell command
+√ The Linux kernel, tools, and a suite of bundled applications
+
+24. Why are there many Linux distributions?
+• Linux distributions cannot be customized
+• Every distribution must contain exactly the same software
+√ Individuals or groups can assemble Linux systems with different goals, GUIs, and software
+• Only Microsoft creates Linux distributions
+
+25. Which distribution philosophy is associated with free software in the lecture?
+• Kali Linux
+√ Debian
+• CentOS
+• Android
+
+26. Which distribution is described as focusing on performance and stability?
+• Kali Linux
+• Linux Mint
+√ CentOS
+• Android
+
+27. Which distribution is created for security operations?
+• Linux Mint
+• openSUSE
+• Ubuntu LTS
+√ Kali Linux
+
+28. Which package management system was invented by Debian according to the lecture?
+• yum based on .rpm only
+• Homebrew based on .dmg
+√ apt based on the .deb file format
+• Pacman based on .pkg only
+
+29. Which distribution is the most popular Debian-derived distribution mentioned in the lecture?
+• Android
+• Fedora
+√ Ubuntu
+• SUSE
+
+30. Linux Mint is described as a derivative of which distribution?
+√ Ubuntu
+• Fedora
+• RHEL
+• Slackware
+
+31. What does an Ubuntu LTS release provide?
+• No security updates
+√ Long-term security updates, critical fixes, stable APIs, and predictable package versions
+• Only beta packages
+• Daily breaking API changes
+
+32. Why are LTS releases preferred for servers and enterprises?
+√ They provide predictable behavior, long-term patching, and minimal downtime
+• They remove security updates
+• They intentionally use unstable packages
+• They require reinstalling every week
+
+33. Which Red Hat product is described as a stable distribution with long release and maintenance cycles?
+√ Red Hat Enterprise Linux (RHEL)
+• Kali Linux
+• Linux Mint
+• Android
+
+34. Which project is sponsored by Red Hat and focuses on newer software for personal desktop use?
+• Debian
+• Slackware
+√ Fedora
+• Kali
+
+35. How is CentOS characterized in the lecture?
+• A Debian-based penetration testing system
+• A mobile operating system from Google
+√ A free version of RHEL software without support
+• A proprietary Windows edition
+
+36. Scientific Linux is based on which distribution family?
+• Debian
+• Android
+• SUSE only
+√ Red Hat
+
+37. SUSE was originally derived from which distribution?
+• Debian
+√ Slackware
+• Fedora
+• Android
+
+38. What is openSUSE?
+√ A completely open, free SUSE version with multiple desktop packages
+• A Debian package manager
+• A proprietary Windows server
+• A mobile-only Linux kernel
+
+39. What is Android described as in the lecture?
+• A Red Hat server distribution
+√ A Google-powered platform for mobile users
+• A command-line-only hypervisor
+• A GNU desktop distribution identical to Debian
+
+40. Why is Android described as lacking traditional desktop GNU/Linux compatibility?
+• It only supports RPM packages
+• It has no Linux kernel
+• It cannot run on mobile hardware
+√ It lacks traditional GNU/Linux packages used on desktop systems
+
+41. Kali Linux is based on which distribution?
+• Slackware
+• Red Hat
+√ Debian
+• SUSE
+
+42. What is Kali Linux specifically designed for?
+• Audio production only
+• Office productivity only
+√ Security operations such as digital forensics and penetration testing
+• Database hosting only
+
+43. Who maintains and funds Kali Linux according to the lecture?
+• Mozilla
+• Microsoft
+• Apple
+√ Offensive Security
+
+44. Why is Linux commonly used in embedded systems?
+• It only supports desktop PCs
+√ Its flexibility and small size suit purpose-built hardware
+• It cannot be customized
+• It requires very large hardware resources
+
+45. Which is an example of an embedded system from the lecture?
+• A general-purpose office desktop only
+√ A smart TV
+• A manual page
+• A package repository
+
+46. What is DistroWatch used for?
+• Managing sudo privileges
+√ Reviewing and keeping up to date with Linux distributions
+• Compressing tar archives
+• Editing /etc/passwd
+
+47. When comparing distributions, what does the 'Role' criterion ask?
+• Which user has UID 0
+• How many passwords are stored
+• How many USB ports exist
+√ Whether it is aimed at desktop or server use and whether it provides GUI or CLI
+
+48. When comparing distributions, what does the 'Life Cycle' criterion examine?
+• Only the desktop wallpaper
+• Only disk size
+√ Release and maintenance model such as LTS, fixed, or rolling release
+• Only username format
+
+49. When comparing distributions, what does 'Compatibility' mean?
+• Ability to list hidden files
+√ Ability of later operating systems to work with software made for earlier versions
+• Ability to compress files
+• Ability to create users
+
+50. Why can distribution size matter especially for embedded systems?
+• Embedded systems always have unlimited storage
+• Linux size affects only web browsers
+• Size is unrelated to hardware
+√ Embedded devices may have limited storage and resources
+
+51. Which package-manager families are named as comparison criteria?
+• SSH, HTTP, and FTP
+• NTFS, FAT, and ext4
+• TCP, UDP, and ICMP
+√ Deb, RPM, and Pacman
+
+52. Why are hypervisors used in the Linux installation module?
+• To replace all network protocols
+• To edit only text files
+• To permanently disable host networking
+√ To create virtual environments for quickly simulating real-world scenarios
+
+53. Which VirtualBox networking modes are shown in the lecture?
+√ NAT, NAT Network, Bridged, and Internal
+• Static, Dynamic, Manual, and Automatic only
+• TCP, UDP, ICMP, and ARP
+• HTTP, HTTPS, FTP, and SSH
+
+54. Which file type is used for a full installation image in the lecture?
+√ .iso
+• .txt
+• .log
+• .ova
+
+55. Which file type is used to import a ready-made virtual machine?
+• .deb
+√ .ova
+• .gz
+• .iso
+
+56. What does OVA represent in the lecture?
+√ Open Virtualization Format
+• Online Versioning Application
+• Open Variable Archive
+• Operating Virtual Adapter
+
+57. What is the primary purpose of the ssh client?
+√ Logging into a remote machine and executing commands on it
+• Compressing local files
+• Creating local users only
+• Listing PCI devices
+
+58. Which syntax is shown for connecting with ssh?
+• ssh <file> > <user>
+• ssh -x <archive>
+• ssh <group>:<password>
+√ ssh <user>@<hostname|IP>
+
+59. Which command returns you from an SSH session to the local machine?
+• lsusb
+• apt update
+• pwd
+√ exit
+
+60. When connecting from the host to a VM behind a NAT network, what may need to be configured?
+• A sticky bit
+√ Port forwarding rules
+• A symbolic link
+• A new Linux kernel
+
+61. What happens after you accept a new SSH host fingerprint?
+• The remote password is stored in /etc/passwd
+• The VM is converted to bridged mode automatically
+• The SSH service is removed
+√ The remote machine's RSA key fingerprint is stored on the local system
+
+62. What happens on a later SSH connection if the remote fingerprint does not match the stored copy?
+• The connection is converted to FTP
+• The local user is deleted
+√ An error message is shown
+• The mismatch is silently ignored
+
+63. Which command enables the SSH service on Kali for future boots?
+• sudo systemctl delete ssh
+• ssh --disable
+√ sudo systemctl enable ssh
+• sudo apt purge ssh
+
+64. Which command starts the SSH service immediately?
+√ sudo systemctl start ssh
+• sudo systemctl stop ssh
+• sudo ssh install
+• sudo systemctl remove ssh
+
+65. Which command checks SSH service status?
+• ssh --fingerprint-only
+√ sudo systemctl status ssh
+• sudo apt status kernel
+• sudo systemctl rename ssh
+
+66. Which package is installed on Ubuntu in the lecture to provide an SSH server?
+• bind9
+• apache2
+√ openssh-server
+• mysql-server
+
+67. Which command installs the Ubuntu SSH server package non-interactively as shown?
+• sudo apt remove -y openssh-server
+• sudo yum install openssh-client
+√ sudo apt install -y openssh-server
+• sudo dpkg --delete ssh
+
+68. Before installing OpenSSH on the Ubuntu VM in the lecture, what temporary networking change is suggested?
+• Delete the VM
+• Disable every network adapter
+• Use Internal Network only
+√ Change the network adapter to NAT
+
+69. After finishing the Ubuntu SSH setup, what network setting should be restored?
+√ NAT Network – Linux course
+• Bridged-only without configuration
+• No network adapter
+• Host-only permanently
+
+70. Which is one of the four major characteristics of Linux listed in the lecture?
+• Linux has no distributions
+√ Linux embraces the CLI
+• Linux is closed source
+• Linux cannot run on networks
+
+71. Why does the Linux community promote the CLI?
+• It requires a mouse
+• It always uses more memory than a GUI
+• It prevents automation
+√ Power, speed, precise control, and easier automation through scripting
+
+72. Which interface generally consumes less memory according to the Desktop versus CLI comparison?
+• Desktop GUI
+• Neither can use memory
+√ CLI
+• Both always consume exactly the same
+
+73. Which interface is described as faster in the lecture?
+• Both are always identical
+• Only mobile GUI
+√ CLI
+• Desktop GUI
+
+74. Which interface is associated with automation and scripting?
+• BIOS only
+√ CLI
+• Hypervisor GUI only
+• Desktop only
+
+75. What interface do servers typically provide according to the lecture?
+• Only a web browser
+√ CLI
+• Only a touch-screen GUI
+• Only a mobile app
+
+76. Which is one of the three broad application categories in Linux architecture?
+• Ethernet cables
+• BIOS firmware only
+• Kernel registers
+√ Management tools
+
+77. Which web server is described as dominant in use today?
+• Postfix
+• Dovecot
+• MySQL
+√ Apache
+
+78. Which is another popular web server named in the lecture?
+• Calc
+• Audacity
+• Cyrus IMAP
+√ NGINX
+
+79. Which is a database server named in the lecture?
+√ PostgreSQL
+• Firefox
+• Thunderbird
+• Inkscape
+
+80. What do POP and IMAP allow an email client to do?
+• Assign IP addresses
+√ Communicate with a remote server to pick up email
+• Create symbolic links
+• Compile the Linux kernel
+
+81. Which is an email server example named in the lecture?
+• LibreOffice
+√ Dovecot
+• Apache
+• Blender
+
+82. Which desktop email client is described as full-featured?
+√ Thunderbird
+• BIND
+• Postfix
+• MariaDB
+
+83. Which office suite is described as a fork of Apache OpenOffice?
+√ LibreOffice
+• Audacity
+• Blender
+• GIMP
+
+84. Which LibreOffice component is used for spreadsheets?
+• GIMP
+• KMail
+√ Calc
+• Writer
+
+85. Which application is used for 3D movie creation?
+• Thunderbird
+• Inkscape
+√ Blender
+• GIMP
+
+86. What does GIMP stand for in the lecture?
+• General Internet Mail Program
+• GNU Installation Module Processor
+√ GNU Image Manipulation Program
+• Graphical Interface Management Package
+
+87. Which application is a vector graphics editor?
+• Audacity
+√ Inkscape
+• Apache
+• Dovecot
+
+88. Which application is used for audio editing?
+• NGINX
+• Cyrus IMAP
+• LibreOffice Calc
+√ Audacity
+
+89. Which package tools are associated with Debian-based distributions?
+• ssh and scp
+• zip and unzip
+√ dpkg and apt
+• rpm and yum/dnf
+
+90. Which package tools are associated with Red Hat distributions in the lecture?
+• tar and gzip
+√ rpm and yum/dnf
+• man and info
+• dpkg and apt
+
+91. What does a package manager keep track of?
+• Only CPU temperature
+√ Which files belong to which package and updates from repositories
+• Only SSH fingerprints
+• Only current usernames
+
+92. Which distributions are listed as using the Debian package management system?
+• Android only
+• Windows and macOS
+• Fedora, RHEL, and CentOS only
+√ Debian, Kali, Ubuntu, and Mint
+
+93. Which command updates the local repository package lists?
+• sudo apt purge
+• sudo apt upgrade
+√ sudo apt update
+• sudo apt remove
+
+94. Which command upgrades installed packages to the latest available versions after the package lists are updated?
+√ sudo apt upgrade
+• sudo apt search
+• sudo apt clean
+• sudo apt update
+
+95. Why is sudo used when installing software with apt in the lecture?
+√ Only users with root privileges may install new software
+• apt can run only from /tmp
+• apt requires a symbolic link
+• apt only works over SSH
+
+96. Which command prints the current working directory?
+• arch
+√ pwd
+• whoami
+• lspci
+
+97. Which command prints the current username?
+• lsusb
+• uname
+• pwd
+√ whoami
+
+98. Which commands can show the machine's IP address according to the lecture?
+• pwd, whoami, or arch
+• man, info, or apropos
+• lsusb, lspci, or lscpu
+√ ip addr, ifconfig, or ip a
+
+99. Which command prints system information?
+• passwd
+• touch
+√ uname
+• mkdir
+
+100. Which command prints distribution-specific information?
+• uname -r only
+• ls -a
+• pwd -a
+√ lsb_release -a
+
+101. Which command prints the machine architecture?
+• grep
+• whoami
+√ arch
+• cat
+
+102. Which command lists PCI devices?
+• lsusb
+√ lspci
+• lsb_release -a
+• lscpu
+
+103. Which command lists USB devices?
+• lspci
+√ lsusb
+• arch
+• lscpu
+
+104. Which command displays information about CPU architecture?
+• whoami
+√ lscpu
+• pwd
+• lsusb
+
+105. Who started the GNU Project in 1983?
+• Linus Torvalds
+• Steve Jobs
+• Bill Gates
+√ Richard Stallman
+
+106. Which license type is most commonly associated with open-source Linux distributions in the midterm style?
+• Commercial Proprietary License
+√ GNU General Public License (GPL)
+• Microsoft EULA
+• Apple Software License Agreement
+
+107. Which Debian-based distribution is specifically designed for penetration testing and security auditing?
+• MX Linux
+• Ubuntu
+√ Kali Linux
+• Lubuntu
+
+108. What is one main difference between Ubuntu and Fedora highlighted by the course?
+• Ubuntu is only for servers while Fedora is only for desktops
+√ Ubuntu uses the Debian package system, while Fedora uses RPM
+• Ubuntu is closed source while Fedora is open source
+• Ubuntu is paid while Fedora is free
+
+109. Which Linux service is commonly used to host websites?
+• MySQL
+• BIND
+• Postfix
+√ Apache HTTP Server
+
+110. Which command shows information about USB devices connected to a Linux system?
+• lspci
+• lsdev
+√ lsusb
+• lsmod
+
+111. What happens when you run sudo apt upgrade after sudo apt update?
+• Only apt itself is upgraded
+• Only the kernel is upgraded
+√ Installed packages are upgraded to the latest available versions
+• Old packages are deleted
