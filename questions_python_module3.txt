@@ -1,104 +1,925 @@
-    1. How does ZTNA differ from a traditional VPN?
-    • ZTNA works only for Microsoft applications
-    • ZTNA requires no authentication after initial setup
-    √ ZTNA brokers access to individual applications instead of granting routable access to a network segment
-    • ZTNA replaces the identity provider entirely
-    • ZTNA encrypts traffic while VPNs do not
+CLOUD SECURITY — MODULE 3: Extending Identity
+Professor-style practice quiz
 
-    2. An administrator configures a domain deny list in collaboration restrictions. What happens to guests from that domain who already redeemed their invitations?
-    • Their sessions are revoked within one hour
-    • They are converted to member users
-    √ They keep their access because the list only gates new redemptions
-    • They are deleted immediately
-    • They are moved to a quarantine group
+Format: • = wrong option, √ = correct option
+Correct-answer positions are mixed. The correct option is never left as the uniquely longest option.
 
-    3. In entitlement management, what is an access package?
-    • A group of Conditional Access policies applied together
-    • A template for bulk-inviting guests
-    • A billing bundle of Entra licenses
-    • A compressed export of audit logs
-    √ A requestable bundle of resource roles from a catalog, governed by request, approval, and lifecycle policies
+1. [Module 3] Why does the module call identity the new perimeter?
+• The provider prevents all public endpoints, leaving sign-in as the only possible attack surface. even when no related policy or role has been configured.
+• Identity replaces encryption, monitoring, and segmentation in a Zero Trust design.
+√ Every access request still crosses authentication and authorization even when users and apps are outside the old network boundary.
+• Conditional Access automatically configures all network firewalls from the Entra admin center.
+• Every external user becomes a member account and therefore bypasses network controls.
+• Cloud networks no longer exist, so identity is the only remaining security technology.
 
-    4. Which guest user access restriction level prevents guests from seeing any users, groups, or memberships other than their own profile?
-    • Guest users are blocked from all directory read operations
-    • Guest users can read only hidden group memberships
-    • Guest users have the same access as members
-    • Guest users have limited access to properties and memberships of directory objects
-    √ Guest user access is restricted to properties and memberships of their own directory objects
+2. [Module 3] A partner guest authenticates in the partner's home tenant. Whose Conditional Access policies govern access to your SharePoint resource?
+• The guest is governed only by Azure Firewall because authentication happened elsewhere.
+• The guest inherits whichever policy is less restrictive between the two tenants.
+• Only the partner tenant's policies apply because the password remains in that tenant.
+√ Your resource tenant's Conditional Access policies still evaluate the guest sign-in.
+• Conditional Access applies only to member users and never to external identities.
+• No Conditional Access policy can evaluate a B2B guest after redemption.
 
-    5. Which Microsoft Graph permission scope is the least-privilege choice for creating B2B invitations with Connect-MgGraph?
-    • Group.ReadWrite.All
-    √ User.Invite.All
-    • Application.ReadWrite.All
-    • Directory.ReadWrite.All
-    • User.Read
+3. [Module 3] What does a ZTNA broker normally connect the user to?
+• Every Azure subscription trusted by the same tenant.
+• A permanent network tunnel that bypasses application authentication.
+• All applications in the organization once the first app is approved.
+• The provider's physical datacenter management network.
+√ A specific private application rather than a routable subnet.
+• The entire internal subnet after one successful VPN-style authentication.
 
-    6. Why must break-glass emergency accounts be excluded from PIM and Conditional Access?
-    • Excluding them reduces licensing costs
-    √ They must remain usable when PIM, CA, or the IdP itself is misconfigured or unavailable
-    • Their passwords cannot satisfy MFA requirements
-    • They lack the licenses required for PIM
-    • Microsoft blocks policy assignment on them automatically
+4. [Module 3] How does ZTNA reduce blast radius compared with a flat VPN?
+• It removes application-level authorization because the broker already approved the session. regardless of the user's home identity provider or current access scope.
+• It relies only on device location and ignores the user's identity and risk.
+• It gives every user a new routable IP address in each protected subnet.
+√ It grants per-application access after identity and context checks instead of broad network reach.
+• It disables authentication after the user reaches the first private application.
+• It makes all internal applications public so VPN connectivity is unnecessary.
 
-    7. During Google federation setup, which set of authorized redirect URIs must be registered in the Google OAuth client?
-    • The tenant's custom domain and its MX record host
-    • https://portal.azure.com and https://myapps.microsoft.com
-    √ https://login.microsoftonline.com plus the two /te/.../oauth2/authresp URIs built from the tenant ID and tenant name
-    • Any URI, because Google does not validate redirects
-    • Only https://entra.microsoft.com
+5. [Module 3] What three broad components are described for ZTNA?
+• Guest object, dynamic group, and Office license.
+• Password hash, SAML assertion, and billing account.
+√ Identity provider, policy engine, and access broker/connectors.
+• Firewall, public IP, and default route only.
+• Azure subscription, Microsoft 365 license, and resource group. and it applies to every partner automatically by default.
+• Storage account, Key Vault, and Log Analytics workspace.
 
-    8. Under which Entra admin center section is Privileged Identity Management found?
-    • Global Secure Access
-    • Entra ID > Monitoring & health
-    • Learn & support
-    √ ID Governance
-    • Protection
+6. [Module 3] What does SASE combine at a high level?
+• Only SAML and OAuth federation for SaaS applications.
+• Only public-cloud billing and resource-management services. regardless of the user's home identity provider or current access scope.
+√ Networking such as SD-WAN with a cloud-delivered security service edge.
+• Only endpoint detection and response with antivirus.
+• Only network segmentation inside a single Azure VNet.
+• Only identity governance and privileged role activation.
 
-    9. After Google federation is configured, how does the redemption experience change for a gmail.com invitee?
-    • They receive an email one-time passcode as before
-    • They must create a new Microsoft account
-    √ They authenticate at accounts.google.com and no passcode or verification email is needed
-    • Their invitation is auto-redeemed without any sign-in
-    • They must register a FIDO2 key first
+7. [Module 3] Which components belong to the Security Service Edge portion of SASE in the notes?
+• PIM, SSPR, Azure RBAC, and Entra Connect.
+• Azure Monitor, Log Analytics, Sentinel, and Defender XDR.
+√ SWG, CASB, firewall-as-a-service, and ZTNA.
+• Key Vault, Purview, DLP, and sensitivity labels.
+• SAML, OAuth, OIDC, and SCIM only.
+• NSG, ASG, VNet peering, and private endpoints only.
 
-    10. In Microsoft Entra B2B collaboration, where do a guest user's credentials live and get managed?
-    • In a shared Microsoft-operated credential vault
-    √ At the guest's home identity provider
-    • In the guest object's extension attributes
-    • In the resource tenant that sent the invitation
-    • In Azure Key Vault of the resource tenant
+8. [Module 3] Which Microsoft product provides ZTNA-style access to private applications?
+• Microsoft Defender for Servers.
+• Microsoft Purview Information Protection.
+• Microsoft Entra Internet Access.
+• Microsoft Defender for Cloud Apps only.
+• Microsoft Entra Connect Sync.
+√ Microsoft Entra Private Access.
 
-    11. Which set of requirements can a PIM role's activation policy impose on a user activating an eligible Azure resource role?
-    √ MFA, justification, ticket information, and approval
-    • Manager consent, HR record update, and background check
-    • Password reset, device enrollment, and license assignment
-    • Group membership, dynamic rule match, and access package request
-    • Break-glass exclusion, tenant restriction, and OTP
+9. [Module 3] Which Microsoft product is positioned as the secure web gateway for Internet/SaaS traffic?
+√ Microsoft Entra Internet Access.
+• Microsoft Entra Private Access.
+• Microsoft Entra PIM.
+• Microsoft Sentinel.
+• Azure Bastion.
+• Microsoft Defender for Identity.
 
-    12. In PIM, what is the key difference between an eligible and an active role assignment?
-    • Eligible assignments bypass Conditional Access
-    √ Eligible assignments grant nothing until the user activates the role
-    • Active assignments expire after one hour automatically
-    • Active assignments require approval at every use
-    • Eligible assignments grant a reduced permission set
+10. [Module 3] A student says Zero Trust means networking no longer matters. What is the correction?
+√ Network segmentation and firewalls still matter; the network becomes one signal and one layer rather than the trust boundary.
+• Zero Trust applies only to identity and never to applications, data, or networks. even when no related policy or role has been configured.
+• Zero Trust requires users to trust all internal network locations automatically.
+• Zero Trust removes every need for VNets, firewalls, and network monitoring.
+• Zero Trust works only if every private application is moved to public SaaS.
+• Zero Trust makes Conditional Access unnecessary once ZTNA is deployed.
 
-    13. In the Entra admin center, which navigation path opens the bulk guest invitation operation?
-    • ID Governance > Entitlement management > Bulk invite
-    • Protection > Identity Protection > Bulk actions
-    • Entra ID > Groups > Bulk operations > Import members
-    • Entra ID > External Identities > Cross-tenant access settings
-    √ Entra ID > Users > All users > Bulk operations > Bulk invite
+11. [Module 3] In classic Entra B2B collaboration, where does an external user's password normally remain?
+• Inside the resource tenant as a copied cleartext password.
+• In the resource tenant's Conditional Access policy.
+• Inside the Azure subscription hosting the application.
+• Inside the invitation email until redemption completes.
+√ With the guest's home identity provider.
+• In the guest object's #EXT# UPN attribute.
 
-    14. Which redemption method acts as the universal fallback when an invitee has no Entra, Microsoft, Google, or SAML/WS-Fed identity?
-    • FIDO2 security key
-    √ Email one-time passcode
-    • Certificate-based authentication
-    • SMS verification code
-    • Temporary Access Pass
+12. [Module 3] What exists in your directory after you invite a B2B user?
+√ A lightweight guest object with userType = Guest.
+• A managed identity that authenticates through the Azure Instance Metadata Service.
+• A cross-tenant access policy object that replaces the user object.
+• A full member account with a password you must maintain.
+• A Microsoft 365 group containing the external user's entire organization.
+• A service principal representing the external person's home tenant.
 
-    15. Which PowerShell approach is currently supported for scripting guest invitations?
-    • New-AzureADMSInvitation from the AzureAD module
-    √ New-MgInvitation from Microsoft Graph PowerShell
-    • New-AzRoleAssignment from the Az module
-    • New-MsolUser from the MSOnline module
-    • Add-MailboxPermission from Exchange Online PowerShell
+13. [Module 3] What state does a newly invited guest normally have before redemption?
+• PIM state = Eligible.
+• Conditional Access state = Report-only.
+• Sign-in risk = High.
+• userType = Member.
+• externalUserState = Accepted.
+√ externalUserState = PendingAcceptance.
+
+14. [Module 3] What visible UPN pattern is common for B2B guest objects?
+• The externalUserState value used directly as the sign-in name.
+√ An address containing #EXT# in the resource tenant.
+• The guest's phone number followed by onmicrosoft.com.
+• The user's original password appended to the home domain.
+• A UPN that always ends in contoso.local.
+• A random Azure subscription GUID with no tenant suffix.
+
+15. [Module 3] What happens during invitation redemption?
+• The guest bypasses Conditional Access because the invitation already proved trust.
+• The guest is converted automatically into a Global Administrator.
+• The resource tenant creates a permanent local password and takes over authentication. without any extra configuration anywhere else.
+√ The invitee proves control of the invited identity and the guest becomes linked to that external identity.
+• The invitation creates a new Azure subscription for the external user.
+• The home identity provider transfers the user's private key into your tenant.
+
+16. [Module 3] After successful redemption, what does externalUserState become?
+• Member.
+• Compliant.
+• Eligible.
+• PendingAcceptance.
+√ Accepted.
+• Active.
+
+17. [Module 3] What is the general redemption-order idea described in the notes?
+• Email OTP is always used first even when the invitee has a home Entra account.
+• Conditional Access chooses the identity provider based only on the device operating system. and it applies to every partner automatically by default.
+√ Entra tries existing Microsoft/federated identity options first and email OTP is the universal fallback.
+• The resource tenant creates a new password before checking any external identity provider.
+• The guest selects any random identity provider from a list on every sign-in.
+• Google federation is always tried before Microsoft Entra home-tenant authentication.
+
+18. [Module 3] What does the resource tenant continue to control for a B2B guest?
+• The external provider's SAML signing key rotation schedule by default.
+• The guest's private email account and recovery information.
+• The guest's home password, password expiry, and MFA registration in the home tenant.
+• The physical hardware used by the guest's home identity provider.
+• The guest's employer directory and all users in that external organization.
+√ Authorization, groups, app assignments, Conditional Access, reviews, and removal.
+
+19. [Module 3] Why is filtering guests by #EXT# in scripts considered fragile?
+• Graph cannot read UPN values, so every script must use display names instead.
+• Guest UPNs change every fifteen minutes after dynamic group evaluation.
+√ User type is the reliable property; UPN patterns can break with converted or special external users.
+• UPNs are encrypted and cannot be used in KQL or Microsoft Graph filters.
+• The #EXT# pattern exists only before redemption and disappears immediately afterward. and it applies to every partner automatically by default.
+• #EXT# identifies only member users and never appears on guest objects.
+
+20. [Module 3] Where are tenant-wide external collaboration settings configured?
+√ Entra ID > External Identities > External collaboration settings.
+• Azure Monitor > Data Collection Rules.
+• Purview > Information Protection > Labels.
+• Microsoft 365 admin center > Billing > Licenses.
+• Azure portal > Subscriptions > Access control (IAM). regardless of the user's home identity provider or current access scope.
+• Defender portal > Incidents > External users.
+
+21. [Module 3] Which guest access setting gives guests the least directory visibility?
+• Public directory mode.
+• Same as members.
+• B2B direct connect mode.
+√ Most restrictive, where guests can essentially see only their own profile.
+• Guest Inviter mode.
+• Limited access, the default. with no separate approval, review, or verification step required.
+
+22. [Module 3] What does the default 'Limited access' guest setting generally prevent?
+• Guests cannot be added to groups or assigned applications.
+• Guests cannot see their own profile after redemption.
+• Guests cannot authenticate with any home identity provider.
+• Guests cannot be evaluated by Conditional Access.
+• Guests cannot receive an invitation email.
+√ Guests cannot enumerate the full directory like members.
+
+23. [Module 3] Which role is designed specifically to delegate guest invitation without broader user administration?
+√ Guest Inviter.
+• Application Developer.
+• Reader.
+• Security Reader.
+• Virtual Machine Contributor.
+• Global Reader.
+
+24. [Module 3] What is true about a collaboration domain allow list and deny list?
+√ A tenant uses one or the other, not both at the same time.
+• Both lists must always be enabled together for B2B collaboration to function.
+• They can contain only one domain because the setting has no list support.
+• They retroactively delete every guest from a newly denied domain.
+• They are configured separately for each individual guest user object.
+• They apply only to SharePoint and never to Entra B2B invitations.
+
+25. [Module 3] You add fabrikam.com to a deny list after a Fabrikam guest already redeemed. What happens to that existing guest?
+• The guest becomes a member user because the invitation policy changed after redemption.
+√ The existing redeemed guest is not automatically removed by the new domain restriction.
+• The deny list automatically removes all group and application assignments from the guest.
+• The guest is immediately deleted and all issued tokens are revoked.
+• The guest is moved to PendingAcceptance and must redeem a new invitation.
+• The guest's home password is copied into your tenant for continued access.
+
+26. [Module 3] What happens to a still-pending invitation from a domain that is newly denied?
+• The guest receives an Azure RBAC Owner role so the invitation remains usable.
+√ Redemption can fail because the restriction gates new redemption.
+• The resource tenant starts using Google federation regardless of the invited address.
+• The invitation is automatically converted into a member account.
+• The pending guest is automatically accepted without authentication.
+• The invitation bypasses the restriction because it was created before the deny list.
+
+27. [Module 3] Why should Email one-time passcode remain configured?
+• It replaces Conditional Access for every B2B guest.
+• It is required for PIM activation by privileged member users.
+• It grants Guest Inviter to users who receive an OTP.
+• It stores external users' long-term passwords in the resource tenant.
+√ It provides a fallback for invitees who have no supported federated or Microsoft identity.
+• It is the only sign-in method allowed for guests with home Entra accounts. even when no related policy or role has been configured.
+
+28. [Module 3] What is the main difference between external collaboration settings and cross-tenant access settings?
+√ External collaboration settings are tenant-wide; cross-tenant settings can override behavior per partner tenant.
+• The two pages are different names for the same policy object.
+• Cross-tenant settings are global and cannot target individual organizations.
+• External collaboration settings contain MFA trust while cross-tenant settings never do.
+• External collaboration settings manage Azure RBAC while cross-tenant settings manage only Microsoft 365 licenses.
+• External collaboration settings apply only to members; cross-tenant settings apply only to service principals.
+
+29. [Module 3] What does inbound access in cross-tenant settings describe?
+• Which users may activate PIM roles in their own tenant.
+• Which emails may enter Exchange Online from the Internet.
+• Which on-premises OUs are synchronized into Entra ID.
+• Which public IP addresses may enter an Azure VNet.
+√ What users from another tenant may do in your tenant.
+• What your users may do as guests in another tenant.
+
+30. [Module 3] What does outbound access in cross-tenant settings describe?
+• What external users may do inside your tenant.
+• Which applications may write logs to Sentinel.
+• Which VM subnets may access the Internet.
+• Which guests may see directory group membership.
+√ What your users may do as guests in another tenant.
+• Which partner MFA claims your tenant accepts inbound.
+
+31. [Module 3] What is B2B direct connect used for in the notes?
+√ A cross-tenant channel without guest objects, used for scenarios such as Teams shared channels.
+• A method for synchronizing on-premises users through Entra Connect.
+• A Google federation protocol that uses email OTP as its primary authentication step. without any extra configuration anywhere else.
+• The normal invitation-based B2B model that always creates #EXT# guest objects.
+• A way to grant Azure RBAC without any identity or tenant relationship.
+• A PIM feature that creates temporary external administrators.
+
+32. [Module 3] What can cross-tenant Trust settings accept from a partner?
+• The partner's dynamic group rules and Microsoft 365 license inventory.
+• The partner's Azure Firewall rules for all shared applications.
+• The partner's Azure subscription Owner role assignments.
+√ MFA, compliant-device, and hybrid-joined-device claims.
+• Every guest user's local browser cookies and refresh tokens.
+• The partner's cleartext user passwords and password-expiry policy.
+
+33. [Module 3] Why might you trust a partner's MFA claim?
+• It causes your tenant to stop evaluating Conditional Access for that partner entirely. regardless of the user's home identity provider or current access scope.
+√ It can avoid forcing the guest to register a second MFA method if you trust the partner's assurance.
+• It gives the partner authority to assign your Azure RBAC roles directly.
+• It lets the partner bypass your application authorization decisions.
+• It automatically converts partner guests into member users.
+• It copies the partner's MFA configuration into your Authentication methods policy.
+
+34. [Module 3] What problem does Tenant restrictions v2 address?
+• It removes stale guest accounts after quarterly access reviews.
+• It prevents PIM users from activating privileged roles outside business hours. regardless of the user's home identity provider or current access scope.
+• It forces every federated Google guest to use email OTP.
+• It blocks external guests from redeeming invitations into your own tenant.
+• It limits Azure Firewall egress to approved FQDNs only.
+√ It can stop your users from signing in to unauthorized foreign tenants from controlled devices or networks.
+
+35. [Module 3] What are the four phases of the guest lifecycle emphasized in the notes?
+√ Invite, redeem, review, remove.
+• Collect, score, detect, respond.
+• Authenticate, authorize, route, encrypt.
+• Discover, classify, protect, monitor.
+• Register, activate, elevate, recover.
+• Create, license, patch, delete.
+
+36. [Module 3] Can a guest object receive group or app assignments before redemption?
+• Only if an administrator turns off Conditional Access for the guest.
+• Only if the guest has first registered a password inside your tenant. without any extra configuration anywhere else.
+• No; the object does not exist until the invitation is redeemed.
+√ Yes; the object exists immediately and can already receive access assignments.
+• Only after the guest changes from Guest to Member user type.
+• No; guests cannot belong to groups in Microsoft Entra ID.
+
+37. [Module 3] Why are long-pending guest invitations a risk?
+• Every pending guest keeps a permanent Azure RBAC Owner assignment.
+• Pending guests are excluded from audit logs and cannot be monitored.
+√ The object may already hold access and the redemption link remains usable.
+• The home identity provider stores your tenant's signing certificate while the invite is pending.
+• Pending invitations automatically disable domain restrictions for that external organization.
+• Pending guests have Global Administrator by default until they redeem.
+
+38. [Module 3] Why are redeemed-but-stale guests also a risk?
+• Redeemed guests cannot be included in access reviews or group membership checks.
+• A redeemed guest cannot be deleted until the home tenant administrator approves it.
+• Accepted guests automatically become break-glass administrators after ninety days.
+• A stale guest forces the resource tenant to store the user's password locally.
+√ Their access may outlive the business purpose that justified the invitation.
+• Accepted guests bypass Conditional Access after the first successful sign-in.
+
+39. [Module 3] What happens when a guest is deleted?
+• The home identity provider deletes the user's original account too.
+• The guest disappears permanently with no recovery period.
+• The tenant removes all other users' group memberships to preserve consistency.
+√ The deletion is soft for about 30 days and the object can be restored during that window.
+• The guest's invitation changes to PendingAcceptance but the object remains active. even when no related policy or role has been configured.
+• Every external user from the same domain is also deleted automatically.
+
+40. [Module 3] Why might deletion be paired with session revocation during an emergency?
+• Deletion disables Conditional Access, so revocation re-enables policy evaluation.
+√ Already issued tokens can survive briefly after the object is deleted.
+• Deleting a guest does not remove the directory object for thirty years.
+• The home tenant cannot authenticate the user again until sessions are manually recreated.
+• The guest's password remains stored in your tenant until every session is revoked.
+• Session revocation is required to change the guest from Member to Guest user type.
+
+41. [Module 3] What two columns are required in the bulk-invite CSV described in the notes?
+• User object ID and PIM justification.
+• Department and usage location only.
+√ Email address to invite and Redirection url.
+• Password and Azure subscription ID.
+• Display name and Office 365 license SKU only.
+• Tenant ID and role definition name.
+
+42. [Module 3] Why must the first two rows of the bulk-invite CSV template remain unchanged?
+• They specify the physical region where guest accounts must be stored.
+• They contain Microsoft-owned guest passwords that must be preserved.
+• They store the tenant's signing certificate used for every invitation.
+• They contain the user's PIM activation duration and ticket number.
+• They define the Azure RBAC role automatically assigned to imported guests.
+√ They contain the template version and headers needed for validation.
+
+43. [Module 3] Which Graph permission is the least-privilege scope recommended for creating invitations?
+√ User.Invite.All.
+• Directory.AccessAsUser.All.
+• Application.ReadWrite.All.
+• RoleManagement.ReadWrite.Directory.
+• Mail.Send only.
+• User.ReadWrite.All only.
+
+44. [Module 3] Which Graph PowerShell cmdlet creates a B2B invitation?
+• New-AzRoleAssignment.
+• Start-ADSyncSyncCycle.
+• New-MgUser only.
+• Invoke-AzJitNetworkAccessPolicy.
+• New-MgGroup.
+√ New-MgInvitation.
+
+45. [Module 3] What useful value can New-MgInvitation return if invitation email delivery fails?
+• The partner's SAML signing private key.
+• The Azure subscription billing key.
+• The tenant's Global Administrator password.
+• The guest's cleartext password.
+• The guest's permanent refresh token.
+√ InviteRedeemUrl.
+
+46. [Module 3] What is a common cause of Authorization_RequestDenied during Graph invitation scripting?
+√ The Graph session was connected with insufficient permission scopes.
+• The guest already has externalUserState Accepted.
+• The tenant has too many Microsoft 365 licenses assigned.
+• The invited user belongs to a home tenant with MFA enabled.
+• The invitation email address has too many characters for Entra ID. with no separate approval, review, or verification step required.
+• The Azure subscription has no route to the Internet.
+
+47. [Module 3] Why is old New-AzureADMSInvitation code a problem in the course?
+• The old cmdlet requires Azure Firewall Premium before it can send invitations.
+• AzureAD works only for members and Graph works only for guests.
+√ The AzureAD module is retired; Microsoft Graph PowerShell is the supported path.
+• The old cmdlet can create invitations only for gmail.com addresses.
+• The old cmdlet creates resource groups instead of guest users in current tenants.
+• The old cmdlet forces every invitation to use B2B direct connect.
+
+48. [Module 3] What does identity-provider federation change for external guests?
+• It removes Conditional Access from the resource tenant for those users.
+• It copies the external identity provider's directory into your tenant.
+• It converts all federated users into member accounts with local passwords.
+√ It changes how they authenticate; it does not itself grant authorization to resources.
+• It disables the need for invitations or entitlement-management assignments in every case.
+• It grants access automatically to every resource after the external identity provider succeeds.
+
+49. [Module 3] Once Google federation is configured, how should a gmail.com guest normally authenticate during redemption?
+• By authenticating through Entra Connect password hash synchronization.
+√ Through Google sign-in rather than the email OTP fallback.
+• By using the resource tenant's break-glass account.
+• By receiving an RDP file containing a Temporary Access Pass.
+• By entering the Azure subscription ID as the second factor.
+• By receiving a new Microsoft password created in the resource tenant.
+
+50. [Module 3] Where is Google federation configured in Entra?
+• Defender portal > Settings > Cloud Apps > Google federation.
+• PIM > My roles > Google.
+• Azure portal > Network Watcher > Google.
+√ External Identities > All identity providers > Google.
+• Purview > Data Map > Google.
+• Microsoft 365 admin center > Billing > Identity providers.
+
+51. [Module 3] What is configured on the Google side for federation with Entra?
+• An Azure RBAC role assignment for every invited Gmail user.
+• A PIM eligible assignment for the Google OAuth client.
+• A static route from Google Cloud to the Entra tenant's private IP.
+• A Microsoft Graph application that stores user passwords in Google Cloud. without any extra configuration anywhere else.
+√ An OAuth web client with Microsoft login origins/redirect URIs, plus test-user and branding settings.
+• A Windows domain trust between contoso.local and google.com.
+
+52. [Module 3] Why are test users important while the Google OAuth app remains in Testing status?
+• Test users bypass the configured redirect URI validation.
+• The app copies passwords only for test users until production publishing.
+• Test users receive permanent Global Administrator in the Entra tenant.
+• Test users cause Entra to skip Conditional Access for federated sign-ins.
+• Only test users can create a Google Cloud project at all.
+√ Only listed test users can authenticate while the app is unpublished.
+
+53. [Module 3] What does redirect_uri_mismatch usually indicate in the Google federation lab?
+• The user has too many Azure RBAC roles assigned.
+• The resource tenant trusts the partner's MFA claim.
+• The Google client secret has been copied into Key Vault successfully. without any extra configuration anywhere else.
+• The guest's domain was added to the Entra deny list after redemption.
+√ One of the registered redirect URIs is missing or does not exactly match.
+• The guest object is already Accepted and cannot sign in again.
+
+54. [Module 3] What does 'access_denied ... app not verified' commonly mean in the lab's Testing setup?
+• The guest has not been assigned Office 365 E3.
+• The Entra tenant lacks an Azure subscription.
+• The resource tenant has too many cross-tenant organizations configured.
+• The Google client uses a web application rather than a desktop application.
+• The guest's #EXT# UPN contains an underscore.
+√ The user may not be listed as a Google OAuth test user.
+
+55. [Module 3] What observation proves Google federation is working during redemption?
+• The invitation disappears from the tenant before the user signs in.
+• The Google account is copied into the CloudUsers OU on ONPREM-DC01.
+• Conditional Access no longer appears in the sign-in logs.
+• The guest's userType changes from Guest to Member immediately.
+√ The user goes straight to Google sign-in without account-verification email or OTP.
+• The guest receives a new password from the resource tenant before entering Google. and it applies to every partner automatically by default.
+
+56. [Module 3] What is Microsoft Entra External ID in the naming distinction used by the notes?
+• The Entra Connect synchronization engine for on-premises Active Directory.
+• The Azure network service used for ZTNA private-app publishing.
+• The Microsoft CASB product used to discover shadow IT.
+• The privileged-access service that provides PIM role activation.
+√ The customer/CIAM product line using external tenants for consumer-facing scenarios.
+• Another name for classic B2B guest collaboration inside a workforce tenant only. with no separate approval, review, or verification step required.
+
+57. [Module 3] Why is standing privilege considered dangerous?
+√ A permanently active powerful role can be abused whenever the account or session is compromised.
+• Standing privilege automatically expires too quickly for administrators to perform normal work. even when no related policy or role has been configured.
+• Permanent assignments cannot be scoped below the tenant and always become Global Administrator.
+• A standing role prevents the user from authenticating with phishing-resistant MFA.
+• Standing privilege applies only to guest users and therefore bypasses member security controls.
+• Permanently active roles cannot be logged or reviewed in Microsoft Entra ID.
+
+58. [Module 3] What does a PIM Eligible assignment mean?
+• The assignment is a Microsoft 365 license state rather than a privilege state.
+√ The user can activate the role when needed but has no role privileges before activation.
+• The user receives a smaller set of permissions than the normal role definition.
+• The user permanently holds the full role with no activation step.
+• The user can use the role only from a trusted network but does not need activation. even when no related policy or role has been configured.
+• The role is active only for guest users and inactive for members.
+
+59. [Module 3] What does a PIM Active assignment mean?
+• The assignment exists only in the audit log and cannot authorize actions.
+• The user is a break-glass account excluded from the role itself.
+√ The role's privileges apply without a separate activation request.
+• The role contains fewer actions than the same role in Eligible state.
+• The user has no permissions until MFA and justification are provided each time.
+• The role works only after a cross-tenant partner approves the user.
+
+60. [Module 3] What is PIM activation?
+• A Conditional Access policy that blocks all administrator sign-ins.
+• A password reset that converts a guest into a member account.
+• A network rule that opens RDP or SSH to a VM temporarily.
+√ A just-in-time request that turns an eligible assignment into active privilege for a bounded period.
+• A synchronization cycle that copies Azure RBAC roles from on-premises AD. without any extra configuration anywhere else.
+• A Microsoft 365 licensing action that gives Office access for one hour.
+
+61. [Module 3] Which requirements can a PIM activation policy impose?
+• Only a public IP address and Azure Firewall route.
+• Only a password reset through SSPR.
+• Only a Microsoft 365 E3 license and no identity checks.
+• Only membership in a dynamic security group.
+• Only a SAML signing certificate from an external provider. regardless of the user's home identity provider or current access scope.
+√ MFA, justification, ticket information, duration limits, and approval.
+
+62. [Module 3] What happens when a PIM activation duration ends?
+• The user's Entra account is soft-deleted for thirty days.
+• The user's MFA methods are removed so the next activation starts clean.
+• The activation restarts automatically for the same duration.
+• The role converts automatically into subscription Owner.
+• The role becomes permanently Active until an administrator removes it manually.
+√ The elevated role self-expires unless the user deactivated it earlier.
+
+63. [Module 3] Where can an administrator see evidence of a PIM activation on an Azure resource?
+• Only in the guest invitation's redemption status.
+• Only in the Microsoft 365 billing history for the user.
+• Only in the Azure Firewall Effective routes blade.
+• Only in the Service Trust Portal's provider audit reports. even when no related policy or role has been configured.
+• Only in the user's home identity provider.
+√ In the resource's Access control (IAM) during the window and in PIM Resource audit/history.
+
+64. [Module 3] What unique evidence does PIM justification provide?
+• The resource's NSG rules are copied into the PIM audit record.
+• The user's home tenant transfers its MFA method into your directory.
+• The activation generates a permanent Azure subscription ID for the user. even when no related policy or role has been configured.
+√ The user's stated reason for activating privilege is attached to the audit trail.
+• The approver's private key is copied into the role assignment.
+• The user's cleartext password is stored for later forensic analysis.
+
+65. [Module 3] Which three broad areas can PIM manage according to the notes?
+√ Microsoft Entra roles, Azure resource roles, and privileged-access groups.
+• Only Defender incidents, Sentinel rules, and Logic Apps.
+• Only Microsoft 365 licenses, dynamic groups, and SSPR.
+• Only guest invitations, Google federation, and domain allow lists. even when no related policy or role has been configured.
+• Only VM login roles, NSG rules, and firewall policies.
+• Only SAML applications, OAuth scopes, and refresh tokens.
+
+66. [Module 3] Why should PIM role assignments still use the narrowest workable scope?
+• Narrow scopes are needed because MFA can be used only on resource groups.
+• Eligible assignments at subscription scope are identical to having no role at all.
+√ JIT reduces when privilege exists, but broad scope still increases what that privilege can affect.
+• A role at broad scope cannot generate any audit record during activation.
+• PIM automatically changes every subscription assignment to resource-group scope after activation. with no separate approval, review, or verification step required.
+• PIM does not support subscription or management-group scope at all.
+
+67. [Module 3] What is the deliberate PIM exception for recovery?
+√ One or two break-glass accounts keep permanent Global Administrator and stay outside PIM/CA.
+• All PIM approvers should share one permanent Owner account.
+• The oldest tenant member should automatically become Global Administrator during outages.
+• Guest Inviter accounts should be excluded from all auditing and role expiration.
+• Every administrator should keep permanent Global Administrator in case PIM is unavailable. regardless of the user's home identity provider or current access scope.
+• Service principals should hold permanent Global Administrator because they do not use MFA.
+
+68. [Module 3] What is a catalog in Entitlement Management?
+√ A container of governable resources such as groups, apps, and SharePoint sites.
+• A list of every guest user's password and home identity provider.
+• A cross-tenant domain deny list.
+• An Azure subscription that stores all identity-governance resources. without any extra configuration anywhere else.
+• A PIM audit report containing all role activations.
+• A Sentinel watchlist used for external identities.
+
+69. [Module 3] What is an access package?
+• A passwordless authentication method for guest redemption.
+• A permanent Global Administrator role for external project leads.
+• A list of user-risk detections generated by Identity Protection.
+• A network access profile that replaces Conditional Access.
+• A Microsoft 365 license package assigned to every guest automatically. regardless of the user's home identity provider or current access scope.
+√ A requestable bundle of resource roles and lifecycle policy from a catalog.
+
+70. [Module 3] What is a connected organization in Entitlement Management?
+• A Google Cloud project containing the OAuth client.
+√ A partner tenant or domain whose users can be targeted by access-package policy.
+• A synchronized on-premises OU connected through Entra Connect. and it applies to every partner automatically by default.
+• An Azure VNet peered to another subscription.
+• A Defender XDR tenant connected to Sentinel.
+• A PIM role group that contains Global Administrators.
+
+71. [Module 3] What can happen when an external user's access-package request is approved?
+√ A guest object can be created automatically and the bundled access is assigned.
+• The user becomes a permanent member and receives Global Administrator.
+• The external user's home password is copied into the resource tenant.
+• The user's home tenant is added automatically to every cross-tenant trust setting.
+• The access package creates a new Azure subscription for the partner.
+• Conditional Access is disabled for the user because approval proves trust.
+
+72. [Module 3] Why is Entitlement Management useful for guest sprawl?
+√ It bundles request, approval, expiry, reviews, and cleanup instead of relying on ad-hoc invitations.
+• It replaces Azure RBAC and directory roles with Microsoft 365 licensing.
+• It stores guest passwords locally so the resource tenant can manage their lifecycle.
+• It turns every external user into a service principal with short-lived secrets.
+• It disables cross-tenant settings because packages apply universally to every partner.
+• It prevents all external collaboration and therefore eliminates guest objects completely. without any extra configuration anywhere else.
+
+73. [Module 3] What is the purpose of an access review?
+• To activate an Eligible PIM role for one bounded session.
+• To authenticate a guest during the initial invitation redemption. even when no related policy or role has been configured.
+• To change a Google OAuth client secret before it expires.
+• To synchronize a new user from Active Directory to Entra ID.
+• To grant new access packages to users who have never had access.
+√ To periodically recertify whether existing access should continue.
+
+74. [Module 3] What does auto-apply results do in an access review?
+• It disables Conditional Access for reviewers so they can complete decisions.
+• It automatically grants every non-response a permanent role assignment.
+• It creates a new guest invitation for every user who was denied.
+• It automatically makes the reviewer a PIM approver for future activations.
+• It converts all guest users into member users at the end of the review.
+√ It can remove denied access automatically when the review closes.
+
+75. [Module 3] What is a strong default for reviewer non-response when stale access should not survive?
+• Disable audit logging so reviewers are not penalized for missing the deadline.
+• Convert the assignment to PIM Active so the user no longer needs review.
+• Grant Global Reader so users can verify their own access after the review.
+√ Remove access or use recommendations rather than silently renewing everything.
+• Keep access permanently because non-response is equivalent to approval.
+• Change every user to Guest and repeat the review in thirty days.
+
+76. [Module 3] What can Entra recommendations highlight during access reviews?
+• Only guests whose home tenant uses Google federation.
+√ Accounts with no recent sign-in activity, such as no sign-in in 30 days.
+• Only users whose Azure Firewall traffic was blocked.
+• Only accounts that hold an Office 365 E3 license.
+• Only users whose passwords are longer than twenty characters. regardless of the user's home identity provider or current access scope.
+• Only accounts with a current PIM activation.
+
+77. [Module 3] What does sign-in risk represent?
+√ The likelihood that a particular authentication attempt is suspicious.
+• The resource's Secure Score contribution.
+• The guest's probability of leaving the organization.
+• The risk that a subscription exceeds its budget.
+• The likelihood that the entire user identity is compromised over time.
+• The number of Azure RBAC roles assigned to the user.
+
+78. [Module 3] What does user risk represent?
+• The chance that the user's Microsoft 365 license assignment will fail.
+√ The likelihood that the identity itself is compromised overall.
+• Only the suspicion level of one specific sign-in event.
+• The number of guest invitations the user has created.
+• The user's PIM activation duration.
+• The network risk of the user's current IP route.
+
+79. [Module 3] Which detection is a headline example of user risk?
+• A Key Vault secret read.
+• A deleted JIT policy.
+√ Leaked credentials.
+• A dynamic group membership change.
+• Atypical travel for one sign-in only.
+• A failed Azure Firewall application rule.
+
+80. [Module 3] Which detections can raise sign-in risk?
+• Only guest invitation creation and bulk CSV validation errors. with no separate approval, review, or verification step required.
+• Only Azure Firewall deny actions and DDoS traffic.
+• Only Key Vault secret reads and storage encryption changes.
+• Only PIM activation failures and role-assignment expiry.
+• Only expired Microsoft 365 licenses and dynamic group delays.
+√ Atypical travel, anonymized IP, unfamiliar properties, password spray, or token anomalies.
+
+81. [Module 3] How can medium-or-higher sign-in risk be handled with risk-based Conditional Access?
+• Start an Entra Connect Initial synchronization cycle.
+• Disable every Conditional Access policy for the user.
+• Convert the user to a guest and send a new invitation.
+√ Require MFA for that sign-in.
+• Grant permanent Global Administrator to the user.
+• Require a new Azure subscription to isolate the account.
+
+82. [Module 3] How can high user risk be handled with risk-based Conditional Access?
+• Assign Reader at subscription scope.
+• Add the user to a dynamic Microsoft 365 group.
+• Enable Azure Firewall Premium.
+• Change the user's display name.
+√ Require a secure password change.
+• Require only a new guest invitation.
+
+83. [Module 3] Why can successful MFA remediate sign-in risk?
+• MFA permanently deletes all Identity Protection detections for the user. regardless of the user's home identity provider or current access scope.
+• MFA converts the user into a break-glass account.
+• MFA removes all Azure RBAC assignments that caused the risk.
+√ It helps prove the legitimate user is completing that suspicious authentication.
+• MFA prevents Identity Protection from scoring future sign-ins.
+• MFA changes the user's home identity provider to the resource tenant.
+
+84. [Module 3] Why does high user risk generally require more than a single MFA prompt?
+√ The identity may be broadly compromised, so a secure password change rotates the exposed credential.
+• User risk exists only for guests and is removed by deleting the invitation email.
+• User risk means only the current IP address is suspicious, so changing the network is enough.
+• User risk is generated by billing anomalies and must be resolved in Cost Management.
+• User risk is an Azure RBAC problem and must be fixed by changing resource scope.
+• A password change is unnecessary because user risk clears automatically after twenty-four hours. and it applies to every partner automatically by default.
+
+85. [Module 3] What deployment safeguards should be used for risk-based CA policies?
+• Enable for All users immediately and delete emergency accounts first.
+• Disable sign-in logging so false positives do not create noise.
+• Turn off MFA so the user-risk policy can evaluate passwords without interference.
+• Use only legacy Identity Protection risk policies and ignore Conditional Access.
+√ Start in report-only mode and exclude break-glass accounts.
+• Assign Global Administrator to the pilot group before testing.
+
+86. [Module 3] What is wrong with saying Identity Protection blocks attacks by itself?
+• Identity Protection has no detection capability and exists only for compliance reporting. even when no related policy or role has been configured.
+• Identity Protection works only for network-layer events and never for accounts.
+• Identity Protection is a free Azure Firewall feature rather than an Entra P2 service.
+• Identity Protection replaces PIM and access reviews for all privileged access.
+√ Identity Protection scores risk; enforcement occurs through controls such as Conditional Access.
+• Identity Protection automatically deletes any risky user without policy configuration.
+
+87. [Lab 3.1 — Configure External Collaboration Settings] Why must Lab 3.1 run before Lab 3.2?
+• Lab 3.2 changes the tenant ID, so Lab 3.1 would otherwise target the wrong directory.
+• The two labs are independent and the order has no effect on expected outcomes.
+√ It establishes the guest-policy guardrails that the invitation lab depends on.
+• Lab 3.2 creates the Entra tenant needed before any policy can exist.
+• Lab 3.1 requires guest objects created in Lab 3.2 before settings can be saved.
+• Lab 3.1 installs Microsoft Graph PowerShell, which cannot run after guests are invited.
+
+88. [Lab 3.1 — Configure External Collaboration Settings] Which guest visibility level did the lab set?
+• Same as members.
+• Public directory.
+√ Most restrictive.
+• No guest object visibility setting was changed.
+• B2B direct connect only.
+• Limited access only.
+
+89. [Lab 3.1 — Configure External Collaboration Settings] Which invitation permission did the lab choose?
+• Only PIM-activated Virtual Machine Contributors could invite guests.
+• Every anonymous Internet user could create guest objects.
+• Only existing guests could invite more guests.
+• Only Azure subscription Owners could invite guests.
+√ Member users plus users in specific admin roles could invite.
+• Nobody in the organization could invite any guest.
+
+90. [Lab 3.1 — Configure External Collaboration Settings] Why did the lab warn against choosing 'no one can invite guests'?
+• It would block only portal invitations while Graph and CSV continued normally.
+• It would disable Google as an identity provider before Lab 3.3.
+• It would hide the Email OTP provider from the identity-provider list.
+• It would prevent already accepted guests from signing in to resources.
+• It would delete every guest object already present in the tenant.
+√ It would block all invitation channels needed in Lab 3.2.
+
+91. [Lab 3.1 — Configure External Collaboration Settings] What did you do with domain allow/deny lists in the lab?
+• You added contoso.local as the only external domain allowed.
+• You created both an allow list and a deny list at the same time.
+• You denied every domain except gmail.com before inviting any guest.
+• You created a list that retroactively removed all existing guests.
+√ You studied the options without creating a restrictive list.
+• You configured a SharePoint sharing list instead of Entra collaboration restrictions.
+
+92. [Lab 3.1 — Configure External Collaboration Settings] What identity provider state did you verify for fallback redemption?
+• B2B direct connect was disabled at subscription scope.
+• Google was the only enabled identity provider before Lab 3.3.
+• Password hash synchronization was enabled for external guests.
+√ Email one-time passcode was configured.
+• The Guest Inviter role was removed from the tenant.
+• AD FS federation was enabled for every external domain.
+
+93. [Lab 3.2 — Add Guest Users] What three invitation channels did the lab practice?
+√ Portal single invite, bulk CSV, and Microsoft Graph PowerShell.
+• Azure CLI, ARM template, and Bicep only.
+• SAML, OAuth, and OpenID Connect.
+• Email OTP, FIDO2, and Windows Hello.
+• Azure Firewall, WAF, and DDoS Protection. without any extra configuration anywhere else.
+• PIM, SSPR, and Conditional Access.
+
+94. [Lab 3.2 — Add Guest Users] Which command combination did the PowerShell path use?
+√ Connect-MgGraph with User.Invite.All, then New-MgInvitation.
+• Connect-MsolService, then Set-MsolUserLicense.
+• Start-ADSyncSyncCycle, then New-AzRoleAssignment.
+• Connect-AzureAD with Directory.AccessAsUser.All, then New-AzureADMSInvitation.
+• az login, then az role assignment create.
+• Connect-MgGraph with Mail.Read only, then New-MgUser.
+
+95. [Lab 3.2 — Add Guest Users] Which properties did you inspect to verify guest objects?
+• DLP label, retention policy, and Purview scan status.
+• Resource group, route table, and firewall private IP.
+• VM size, region, and managed disk encryption.
+• Azure subscription ID, Secure Score, and NSG priority.
+√ User type, #EXT# UPN, and externalUserState.
+• Password hash, MFA secret, and FIDO2 private key.
+
+96. [Lab 3.2 — Add Guest Users] What proves the portal invitation was fully redeemed?
+• The invitation automatically creates an Azure subscription for the partner.
+• The user object disappears from All users after the invitation email is sent.
+√ The guest completes consent/sign-in and externalUserState changes to Accepted.
+• The guest receives an Office 365 E3 license before opening the invitation.
+• The guest's home identity provider copies the user's password into your tenant.
+• The guest becomes Global Administrator after the consent screen.
+
+97. [Lab 3.3 — Google Federation] What was built on the Google Cloud side?
+• A Sentinel Content hub solution for Google Activity.
+• A PIM access package for every Gmail account.
+• A Windows domain controller with contoso.local.
+• A Key Vault containing the guest user's password.
+• An Azure RBAC custom role and resource-group assignment. without any extra configuration anywhere else.
+√ A project, OAuth branding/audience, web client, redirect URIs, test user, and authorized domain.
+
+98. [Lab 3.3 — Google Federation] What did you paste into Entra when adding Google?
+• The guest user's Google password and MFA code.
+√ The Google OAuth Client ID and Client secret.
+• The Entra subscription ID and resource-group name.
+• The Google user's refresh token and browser cookie.
+• The Azure tenant's Global Administrator password.
+• The guest's #EXT# UPN and externalUserState.
+
+99. [Lab 3.3 — Google Federation] What was the clearest success signal during gmail guest redemption?
+• The Google OAuth app changed from Testing to Production automatically.
+• The guest object's userType changed permanently to Member.
+√ The user was redirected to normal Google sign-in with no email OTP verification step.
+• The resource tenant stopped recording the sign-in in Entra logs.
+• The guest received a new local Entra password after accepting the invitation. without any extra configuration anywhere else.
+• The guest received subscription Owner after authenticating with Google.
+
+100. [Lab 3.3 — Google Federation] What fallback existed for students who could not complete the Google setup themselves?
+√ An instructor-demo alternative for the first exercise, then hands-on continuation with provided credentials.
+• Students used Azure Firewall DNS rules as a substitute for the OAuth client.
+• Students used AD FS on ONPREM-DC01 instead of Google for every exercise.
+• The lab converted all guests into member accounts and removed federation.
+• The entire lab was skipped because federation cannot be demonstrated without personal Gmail. and it applies to every partner automatically by default.
+• A break-glass account was shared with the class for Google authentication.
+
+101. [Lab 3.4 — Assign Azure Resource Roles in PIM] What role was assigned as Eligible in the lab?
+• Owner.
+• Virtual Machine Administrator Login.
+• User Access Administrator.
+• Global Administrator.
+√ Virtual Machine Contributor.
+• Guest Inviter.
+
+102. [Lab 3.4 — Assign Azure Resource Roles in PIM] At what scope did the lab practice the role lifecycle?
+• Every Azure subscription in the tenant.
+• The entire tenant root only.
+√ The rg-cloudsec-pim resource group.
+• The Google Cloud project.
+• The Microsoft 365 admin center.
+• The CloudUsers OU on ONPREM-DC01.
+
+103. [Lab 3.4 — Assign Azure Resource Roles in PIM] What did the user provide during activation?
+• The Google client secret and guest invitation URL.
+• A new password hash synchronized from Active Directory. without any extra configuration anywhere else.
+• A firewall route and public IP address.
+• A permanent Azure subscription Owner assignment.
+√ MFA and a justification, with a bounded activation period.
+• A new Microsoft 365 license and a tenant country.
+
+104. [Lab 3.4 — Assign Azure Resource Roles in PIM] Where did the lab verify the activated role?
+• Only in the guest user's home identity provider. even when no related policy or role has been configured.
+√ In the resource group's Access control (IAM) and the PIM Resource audit.
+• Only in the dynamic group membership rule.
+• Only in Azure Firewall Effective routes.
+• Only in the Service Trust Portal.
+• Only in the Microsoft 365 billing page.
+
+105. [Lab 3.4 — Assign Azure Resource Roles in PIM] What lifecycle did the lab complete after activation?
+• Convert the user to Guest, federate Google, and delete the tenant.
+• Create a VNet, add an NSG, and deploy Azure Firewall.
+√ Verify, update the end date, and remove the assignment.
+• Enable Sentinel, create a playbook, and close an incident.
+• Assign Office 365 E3, create an SSPR group, and sync AD.
+• Change the role to permanent Owner and exclude it from all reviews.
+
+106. [Lab 3.4 — Assign Azure Resource Roles in PIM] What licensing prerequisite did the lab require?
+• An AWS IAM Identity Center license.
+• Azure Firewall Premium.
+• Defender for Servers Plan 2.
+√ An Entra ID P2 trial.
+• Microsoft 365 Business Basic only.
+• A paid Google Workspace subscription.
+
+107. [Module 3] Why does 'Eligible' not mean reduced permission?
+• Eligible is a guest-only status that blocks directory administration.
+√ When activated, the full role is granted; Eligible changes when privilege exists, not what the role contains.
+• Eligible automatically applies an ABAC condition limiting every role to one resource.
+• Eligible converts any Azure role into Reader during activation.
+• Eligible means the user can view resources but can never modify them.
+• Eligible assignments permanently remove high-risk actions from the underlying role definition. regardless of the user's home identity provider or current access scope.
+
+108. [Module 3] What is the difference between access reviews and entitlement management?
+• Access reviews activate PIM roles while entitlement management resets user passwords.
+• Access reviews manage network routes while entitlement management manages firewall rules.
+• They are two names for the same ID Governance feature.
+√ Access reviews recertify existing access; entitlement management can grant packaged access through governed requests.
+• Access reviews are for Azure resources only while entitlement management is only for licenses. without any extra configuration anywhere else.
+• Access reviews create new guest accounts while entitlement management only deletes them.
+
+109. [Module 3] Why should a Google client secret be treated carefully?
+• It contains no authentication value because the Client ID is the real secret.
+• It automatically expires after every successful guest redemption.
+• It is only a display identifier and cannot affect federation security.
+√ It is a credential that should be vaulted, tracked, and rotated like other secrets.
+• It is needed only during Google project creation and is never used again by Entra.
+• It is public metadata intended to be pasted into websites and source-code repositories.
+
+110. [Module 3] Which cross-cloud AWS service most closely parallels Entra Private Access?
+• AWS Config.
+• Amazon Macie.
+√ AWS Verified Access.
+• Amazon Route 53 only.
+• AWS Artifact.
+• AWS Backup.
+
+111. [Module 3] Which GCP approach most closely parallels identity-aware private-app access?
+√ BeyondCorp Enterprise / Identity-Aware Proxy.
+• Cloud KMS only.
+• Google Cloud Directory Sync only.
+• Cloud Storage lifecycle management. regardless of the user's home identity provider or current access scope.
+• Cloud Armor DDoS protection only.
+• BigQuery row-level security only.
+
+112. [Module 3] Why is the statement 'federation grants access' wrong?
+• Federation transfers resource ownership to the external identity provider.
+• Federation disables Conditional Access because the upstream IdP already authenticated the user.
+• Federation is an Azure RBAC role and therefore automatically authorizes every resource.
+• Federation converts all guest users into members with inherited permissions.
+√ Federation changes authentication; authorization still requires an invitation or assignment.
+• Federation is a network tunnel that grants subnet-level reach after authentication.
+
+113. [Module 3] Why is an unredeemed invitation not harmless?
+• Pending invitations force the tenant to disable all domain restrictions.
+• Unredeemed guests automatically receive Global Administrator until acceptance. regardless of the user's home identity provider or current access scope.
+• Pending guest objects cannot be audited or deleted by administrators.
+√ The guest object may already have access assignments and the redemption link is still active.
+• The invitee's password has already been copied into the resource tenant.
+• Every pending invite grants the guest access to all applications by default.
+
+114. [Module 3] What is the recommended mental model for privileged access in time?
+• Use one shared Global Administrator and rotate its password once per year.
+• Replace PIM with guest invitations because both create temporary identity objects. and it applies to every partner automatically by default.
+• Keep all administrators permanently active and rely only on MFA to control misuse.
+• Give every admin Owner at subscription scope so access is simple to troubleshoot.
+√ Make human admins eligible, activate just in time, expire automatically, and keep full audit evidence.
+• Exclude privileged users from Conditional Access so activations cannot fail.
+
+115. [Module 3] How does risk-based Conditional Access operationalize 'assume breach'?
+• It trusts all managed devices permanently after their first successful sign-in. without any extra configuration anywhere else.
+• It replaces password changes with permanent guest conversion.
+• It blocks all users whenever any risk detection appears anywhere in the tenant.
+• It removes identity monitoring because PIM already limits administrator access.
+• It makes every user a break-glass account so lockouts cannot occur.
+√ It presumes credentials may be compromised and pre-programs stronger verification or remediation.
