@@ -1,0 +1,893 @@
+1. What kind of operating system is Linux with respect to users?
+√ A multi-user operating system
+• A system with no user accounts
+• A system where only root can log in
+• A single-user-only operating system
+
+2. Which command prints real and effective user and group IDs?
+√ id
+• passwd
+• who
+• grep
+
+3. Which files store core user/account and authentication information according to the lecture?
+• /bin, /boot, and /dev
+• /var/log, /tmp, and /opt
+• /etc/hosts, /etc/fstab, and /etc/resolv.conf
+√ /etc/passwd, /etc/group, and /etc/shadow
+
+4. When id is run without arguments, whose information is shown?
+√ The current user
+• The last logged-out user
+• Only root
+• Every user at once
+
+5. What does id username add compared with id alone?
+• It deletes the user
+• It opens a root shell
+• It displays the user's password
+√ It displays UID/GID and group information for that specific user
+
+6. Which id option is shown for printing only secondary group memberships?
+• -r
+√ -G
+• -a
+• -u
+
+7. Which file defines basic user account information?
+√ /etc/passwd
+• /etc/sudoers
+• /etc/group
+• /etc/shadow
+
+8. How are fields separated in /etc/passwd?
+√ By colons (:)
+• By commas only
+• By semicolons only
+• By tabs only
+
+9. What is the first field in /etc/passwd?
+• Home directory
+• UID
+• Shell
+√ Username
+
+10. What is the second field in the /etc/passwd example?
+√ Password placeholder
+• Comment
+• Home directory
+• GID
+
+11. What does the UID field represent?
+• User interface description
+• Universal inode descriptor
+√ User ID
+• User installation directory
+
+12. What does the primary GID field in /etc/passwd represent?
+• The user's home size
+√ The user's primary group ID
+• The user's shell
+• The user's password age
+
+13. What is the purpose of the GECOS/comment field in /etc/passwd?
+• Store the encrypted password
+√ Store information such as full name and contact details
+• Store file permissions
+• Store supplemental group IDs
+
+14. Which field in /etc/passwd specifies the user's home directory?
+• Password placeholder
+• UID
+√ Home Directory
+• Comment only
+
+15. Which field in /etc/passwd specifies the login shell?
+• Comment
+• Password age
+• GID
+√ Shell
+
+16. Where are encrypted password details stored?
+√ /etc/shadow
+• /etc/group
+• /home/passwords
+• /etc/passwd
+
+17. Who normally needs permission to read /etc/shadow according to the lecture?
+√ root
+• Only members of /tmp
+• Every anonymous user
+• Only the web browser
+
+18. What does the Last Change field in /etc/shadow record?
+• When the group was created
+• When the user last ran ls
+√ When the password was last changed
+• When the kernel was installed
+
+19. What does the Min field in /etc/shadow represent?
+• Minimum UID
+√ Minimum number of days between password changes
+• Minimum file permissions
+• Minimum password length
+
+20. What does the Max field in /etc/shadow represent?
+• Maximum group count
+• Maximum shell processes
+√ Maximum number of days the password is valid
+• Maximum login attempts
+
+21. What does a value of 99999 in the maximum days field imply in the midterm example?
+√ The password effectively never needs to be changed
+• The password expires immediately
+• The account locks after 99999 failed logins
+• The password must change every day
+
+22. What does the Warn field in /etc/shadow represent?
+• Days since system boot
+• Number of groups
+• Number of failed logins
+√ Days before password expiry that the user is warned
+
+23. What does the Inactive field represent?
+• UID expiration
+• Time before the first login
+√ Grace period after password expiry during which it can be changed before the account is disabled
+• Time before a group is deleted
+
+24. What is the Expire field based on?
+√ Number of days from January 1, 1970 when the account expires
+• Number of files in home
+• Minutes since last login
+• Number of password characters
+
+25. What does su do?
+√ Runs a shell as a different user
+• Deletes a group
+• Creates a new user
+• Changes file ownership
+
+26. If no username is specified with su, which account is used?
+• daemon
+√ root
+• the current user
+• nobody
+
+27. What does su - request in addition to switching users?
+• A new network address
+• A compressed archive
+√ A login shell configured with the new user's settings
+• A hard link
+
+28. Which command returns from an su shell to the original shell?
+• touch
+• history
+• pwd
+√ exit
+
+29. What UID normally identifies root?
+• 1000
+√ 0
+• 1
+• 65535
+
+30. Which UID range is described for system accounts in the lecture?
+• 1000-9999 only
+• 0 only
+√ 1-999
+• 10000-20000
+
+31. Regular login users are described as normally having UIDs in which range?
+• Always negative
+• Exactly 0
+√ Greater than or around 1000
+• Only 1-99
+
+32. Which file defines the user's primary group membership?
+• /etc/sudoers
+• /etc/group
+• /etc/shadow
+√ /etc/passwd
+
+33. Which file defines supplemental/secondary group membership?
+• /etc/passwd
+• /etc/hosts
+• /etc/shadow
+√ /etc/group
+
+34. What is the third field in /etc/group?
+• Group password
+√ Group ID (GID)
+• Group name
+• User list
+
+35. What is the fourth field in /etc/group?
+• Primary shell
+• Group name
+• GID
+√ User list
+
+36. Which command lists users who are currently logged in?
+√ who
+• whoami
+• useradd
+• id
+
+37. In who output, what does tty usually indicate?
+• A compressed file
+• A package manager
+• A remote web server
+√ A local login terminal
+
+38. In who output, what does pts indicate?
+√ A pseudo-terminal
+• A hard disk partition
+• A system group
+• A password field
+
+39. Which command displays default values used by useradd?
+• useradd -R
+• groupadd -D
+• passwd -D
+√ useradd -D
+
+40. Which file can also be used to configure useradd defaults?
+√ /etc/default/useradd
+• /var/log/useradd
+• /etc/sudoers
+• /etc/hosts
+
+41. What does the GROUP default in useradd -D specify?
+• Default network gateway
+√ Default primary group for a new user
+• Default shell history size
+• Default password length
+
+42. What does the HOME default in useradd -D specify?
+• Root user's home only
+• Package repository location
+√ Base directory under which new user home directories are created
+• Default group file
+
+43. What does INACTIVE=-1 mean in the useradd defaults shown?
+• Password expires after one day
+• Account is disabled immediately
+√ No inactive-days disabling period is applied by default
+• UID is set to -1
+
+44. What does SHELL in useradd -D control?
+• Default hostname
+• Default GID
+• Default compression tool
+√ Default login shell for new users
+
+45. What is the skeleton directory used for?
+• It stores SSH fingerprints only
+• It stores kernel modules
+• It stores encrypted passwords
+√ Its contents are copied into a new user's home directory
+
+46. Which directory is shown as the default skeleton directory?
+• /home/template
+√ /etc/skel
+• /etc/shadow
+• /var/skel
+
+47. What does CREATE_MAIL_SPOOL=yes indicate?
+√ A mail spool file is created for incoming mail
+• The home directory is not created
+• Every user becomes a mail server
+• Mail is permanently disabled
+
+48. What is the purpose of groups in Linux?
+• Compress directories
+• Store network packets
+√ Allow users to share files and permissions
+• Replace all user accounts
+
+49. Which command can show local and network-based group information?
+• tar
+• touch
+• pwd
+√ getent
+
+50. Which command creates a new group?
+• groupdel
+√ groupadd
+• useradd
+• groupmod
+
+51. Which groupadd option sets a specific GID?
+√ -g
+• -n
+• -m
+• -u
+
+52. If -g is not used with groupadd, what happens?
+• The group gets UID 0
+√ A GID is assigned automatically
+• The command always fails
+• The group has no GID
+
+53. Which groupmod option changes a group name?
+• -u
+√ -n
+• -g
+• -m
+
+54. Which groupmod option changes a group's GID?
+• -r
+• -a
+• -n
+√ -g
+
+55. What problem can occur after changing a group's GID?
+√ Existing files may no longer be associated with that group
+• All users are deleted
+• Every file becomes executable
+• The kernel stops booting
+
+56. Which find option can search for files whose group no longer exists?
+√ -nogroup
+• -orphan-only
+• -nousername
+• -gidless
+
+57. Which command deletes a group?
+√ groupdel
+• groupmod
+• userdel
+• groupadd
+
+58. What happens to files belonging to a deleted group?
+• They become owned by root in every case
+• They are automatically deleted
+• They are compressed
+√ They can become orphaned
+
+59. Which command creates a new user?
+√ useradd
+• usermod
+• passwd
+• userdel
+
+60. Which useradd option sets a UID?
+• -c
+• -g
+√ -u
+• -G
+
+61. Which useradd option sets the primary group?
+• -u
+• -m
+√ -g
+• -c
+
+62. Which useradd option specifies supplemental groups?
+• -u
+√ -G
+• -g
+• -d
+
+63. Which useradd option supplies a comment/GECOS value?
+• -r
+• -x
+√ -c
+• -S
+
+64. Which useradd option creates the user's home directory in the midterm?
+• -d
+√ -m
+• -c
+• -h
+
+65. Which command sets or changes a user's password?
+• groupadd
+• who
+• pwd
+√ passwd
+
+66. Which command modifies an existing user?
+• groupmod
+√ usermod
+• useradd
+• userdel
+
+67. Which command deletes a user but leaves the home directory?
+• userdel -r username
+√ userdel username
+• groupdel username
+• rm -r /etc/passwd
+
+68. Which command deletes a user and their home directory?
+• groupdel -r username
+• usermod -r username
+• userdel username
+√ userdel -r username
+
+69. Which command adds alex to developers without removing existing supplemental memberships?
+• usermod -G developers alex
+• groupadd developers alex
+√ usermod -aG developers alex
+• usermod -g developers alex
+
+70. Who owns a file by default when a user creates it?
+√ The user who created it
+• The web server
+• The last user who logged in
+• root in every case
+
+71. What is the default group owner of a newly created file?
+• The largest group on the system
+• The sudo group always
+√ The creator's primary group
+• The root group always
+
+72. Which command shows UID, GID, username, and group memberships?
+√ id
+• chown
+• chmod
+• umask
+
+73. Which command can confirm file ownership in a long listing?
+• who
+• history
+• pwd
+√ ls -l
+
+74. Who can change file ownership according to the lecture?
+• Only the file's group
+• Only users with no password
+√ Users with root privileges
+• Any anonymous user
+
+75. Which command changes file ownership?
+• newgrp
+• chmod
+√ chown
+• chgrp
+
+76. What does chown user file change?
+• Only permissions
+• Only the file timestamp
+• Only the group owner
+√ The user owner
+
+77. What does chown user:group file change?
+√ Both user owner and group owner
+• Only the user password
+• Only permissions
+• Only the file type
+
+78. What does chown :group file change?
+√ Only the group owner
+• Only the user owner
+• Only execute permission
+• Only the inode
+
+79. Which command temporarily changes your current primary group by opening a new shell?
+• chgrp
+• id
+• groups
+√ newgrp
+
+80. Which command displays a user's group information?
+• touch
+• chmod
+√ groups
+• tar
+
+81. How do you return from the shell opened by newgrp?
+• su -
+√ exit
+• rm
+• pwd
+
+82. Which command changes the group owner of an existing file?
+√ chgrp
+• chown only
+• newgrp
+• groupadd
+
+83. Can a regular user use chgrp to any group?
+• Yes, to any group
+• Only to root
+√ No, only to a group the user is a member of
+• Never; only root can use chgrp
+
+84. What octal value represents ---?
+• 4
+• 1
+• 7
+√ 0
+
+85. What octal value represents --x?
+• 2
+• 4
+√ 1
+• 6
+
+86. What octal value represents -w-?
+• 7
+√ 2
+• 4
+• 1
+
+87. What octal value represents -wx?
+√ 3
+• 5
+• 2
+• 6
+
+88. What octal value represents r--?
+• 2
+√ 4
+• 5
+• 7
+
+89. What octal value represents r-x?
+• 3
+√ 5
+• 4
+• 6
+
+90. What octal value represents rw-?
+√ 6
+• 4
+• 5
+• 7
+
+91. What octal value represents rwx?
+• 6
+• 4
+√ 7
+• 5
+
+92. In ls -l permissions, what do characters 2-4 represent?
+√ User-owner permissions
+• Other permissions
+• File type only
+• Group-owner permissions
+
+93. In ls -l permissions, what do characters 5-7 represent?
+• Other permissions
+√ Group-owner permissions
+• Hard-link count
+• User-owner permissions
+
+94. In ls -l permissions, what do characters 8-10 represent?
+√ Other/world permissions
+• User-owner permissions
+• File size
+• Group-owner permissions
+
+95. What does read permission on a regular file allow?
+• Running it as root automatically
+• Changing ownership
+• Deleting any directory
+√ Viewing and copying the file contents
+
+96. What does read permission on a directory allow according to the lecture?
+• Executing every file as root
+• Deleting all files
+√ Listing names in the directory
+• Changing ownership
+
+97. What does write permission on a file allow?
+• Only listing its name
+• Mounting a filesystem
+• Changing the user's UID
+√ Writing to the file
+
+98. What does write permission on a directory allow when execute permission is also present?
+• Reading /etc/shadow automatically
+• Changing the kernel
+• Changing all file owners
+√ Adding or removing files in the directory
+
+99. What does execute permission on a regular file allow?
+• Compressing it automatically
+• Displaying its inode only
+√ Running the file as a process
+• Changing its owner
+
+100. What does execute permission on a directory allow?
+• Changing its GID automatically
+• Making it a symbolic link
+• Reading every file regardless of permissions
+√ Entering it with cd and accessing paths inside it
+
+101. Which command changes permissions?
+• chgrp
+• groupmod
+√ chmod
+• chown
+
+102. What are the two chmod methods covered in the lecture?
+• Static and DHCP
+√ Symbolic and numeric
+• Hard and soft
+• Local and remote
+
+103. In symbolic chmod, which letter represents the user owner?
+• g
+• a
+√ u
+• o
+
+104. In symbolic chmod, which letter represents the group?
+• u
+• r
+√ g
+• o
+
+105. In symbolic chmod, which letter represents others?
+• u
+• g
+• x
+√ o
+
+106. What does chmod u+rw abc.txt do?
+• Sets permissions to 000
+• Removes read and write from group
+√ Adds read and write permissions for the user owner
+• Changes ownership to user rw
+
+107. What numeric permission gives rwxr-xr--?
+• 755
+• 644
+• 640
+√ 754
+
+108. What numeric permission gives rw-r-----?
+• 777
+• 754
+• 600
+√ 640
+
+109. What is the maximum default permission value for new files before umask?
+• 777
+• 444
+• 755
+√ 666
+
+110. What is the maximum default permission value for new directories before umask?
+√ 777
+• 644
+• 666
+• 700
+
+111. What does umask determine?
+• Current network mask
+• Archive compression level
+• Current user UID
+√ Default permissions removed when new files or directories are created
+
+112. If the file default is 666 and umask is 027, what permissions result?
+• 600
+• 777
+• 754
+√ 640
+
+113. What symbolic permissions correspond to 640?
+• rwxr-xr--
+√ rw-r-----
+• rw-rw-rw-
+• r---------
+
+114. What is setuid used for?
+• Listing hidden files
+• Creating a symbolic link
+• Changing a network address
+√ Allowing an executable to run with the file owner's permissions
+
+115. Why can a normal user run passwd even though /etc/shadow is protected?
+• passwd stores passwords in /tmp
+√ passwd has setuid permission and executes with the owner's privileges
+• /etc/shadow is world-writable
+• The user temporarily becomes kernel
+
+116. How is setuid shown when user execute permission is also set?
+√ Lowercase s in the user execute position
+• Lowercase t in other execute
+• Uppercase S in group execute
+• A plus sign at the end only
+
+117. What does uppercase S in the user execute position mean?
+• Setgid is set and execute is set
+• Sticky bit and execute are both set
+• No special permission exists
+√ Setuid is set but user execute permission is not
+
+118. Which symbolic command adds setuid?
+• chmod u+x file
+• chmod o+t file
+√ chmod u+s file
+• chmod g+s file
+
+119. Which numeric value is added for setuid?
+√ 4000
+• 2000
+• 0400
+• 1000
+
+120. Which command sets setuid on a file that otherwise has 775 permissions?
+√ chmod 4775 file
+• chmod 2775 file
+• chmod 1775 file
+• chmod 0775 file
+
+121. What is setgid on a file used for?
+√ Running an executable with temporary group access based on the file's group
+• Making a file world-writable
+• Changing the user's UID
+• Creating an archive
+
+122. How is setgid shown when group execute permission is also set?
+• Lowercase t in other execute
+• A dash in every position
+• Uppercase S in user execute
+√ Lowercase s in the group execute position
+
+123. What does setgid on a directory do?
+√ New files inherit the directory's group ownership
+• The directory becomes read-only
+• It deletes group permissions
+• New files always become owned by root
+
+124. What happens to subdirectories created inside a setgid directory?
+√ They inherit the setgid permission
+• They become symbolic links
+• They lose all permissions
+• They cannot be created
+
+125. Which command adds setgid symbolically?
+√ chmod g+s <file|directory>
+• chmod o+t <file|directory>
+• chmod u+s <file|directory>
+• chmod a-r <file|directory>
+
+126. Which numeric value is added for setgid?
+• 0200
+• 1000
+• 4000
+√ 2000
+
+127. Which command applies setgid to permissions 775?
+√ chmod 2775 <file|directory>
+• chmod 4775 <file|directory>
+• chmod 0775 <file|directory>
+• chmod 1775 <file|directory>
+
+128. What does the sticky bit on a shared directory protect?
+• It prevents file creation
+• Only root can read the directory
+√ Only the file owner or root can delete a file
+• Every user can delete everyone else's files
+
+129. How is sticky bit shown when execute permission for others is also set?
+• Uppercase S
+• Lowercase s in user position
+• A plus sign
+√ Lowercase t
+
+130. What does uppercase T mean in the other execute position?
+• Setgid is set
+• No special permissions are set
+• Setuid is set
+√ Sticky bit is set but other execute permission is not
+
+131. Which symbolic command adds the sticky bit?
+• chmod u+s <directory>
+• chmod o+r <directory>
+√ chmod o+t <directory>
+• chmod g+s <directory>
+
+132. Which numeric value is added for sticky bit?
+• 2000
+√ 1000
+• 0100
+• 4000
+
+133. Which command applies sticky bit to permissions 775?
+√ chmod 1775 <directory>
+• chmod 4775 <directory>
+• chmod 2775 <directory>
+• chmod 0775 <directory>
+
+134. Why is staying logged in directly as root considered risky?
+• Root cannot use sudo
+• Root has no file access
+• Root cannot execute commands
+√ Everything runs with root privileges and there is poor accountability
+
+135. What does sudo allow an authorized user to do?
+• Create only symbolic links
+• Read only public files
+√ Execute privileged commands, including as another user
+• Disable all logging
+
+136. Which password does sudo normally prompt for?
+√ The invoking user's own password
+• The group password
+• The target file's password
+• The root password only
+
+137. What accountability benefit does sudo provide?
+• It hides the username
+• It disables timestamps
+√ It places an entry in a log file
+• It deletes command history
+
+138. Which file defines who can execute commands using sudo?
+• /etc/hosts
+• /etc/passwd
+√ /etc/sudoers
+• /etc/group
+
+139. Which command should be used to edit sudoers entries?
+• useradd
+√ visudo
+• chmod
+• nano /etc/sudoers without checks
+
+140. Who can modify the sudoers file according to the lecture?
+• Any user
+• Only members of /tmp
+√ root
+• Only the web server
+
+141. By default, which group can execute every command with sudo in the lecture?
+√ sudo
+• users
+• nogroup
+• mail
+
+142. How does a group entry begin in sudoers?
+• With @
+√ With %
+• With $
+• With #
+
+143. What does the first 'bob' in 'bob ALL=(ALL:ALL) ALL' identify?
+• The target group only
+• The command path
+√ The user to which the entry applies
+• The hostname
+
+144. What does the first ALL after bob identify in the sudoers example?
+• Only the command
+• The user's password
+• The log file
+√ The hostname(s) to which the rule applies
+
+145. What does (ALL:ALL) specify in the sudoers entry?
+• The source IP address
+• The package manager
+• The user's home directory
+√ The user and group identities under which the command may be executed
+
+146. What does the final ALL in 'bob ALL=(ALL:ALL) ALL' mean?
+√ Any command may be executed
+• No commands may be executed
+• Only /bin/head
+• Only commands in /tmp
+
+147. How do you restrict bob to only /bin/head with sudo?
+• bob ALL=(HEAD) DENY
+• bob /bin/head=(ALL) NONE
+√ bob ALL=(ALL:ALL) /bin/head
+• %bob ALL=/bin/head only
+
+148. How can multiple allowed sudo commands be listed?
+√ Separate their paths with commas
+• Separate them only with pipes
+• Use spaces without commas only
+• Put each path in /etc/passwd
+
+149. What does NOPASSWD: do in a sudoers rule?
+• Disables the command
+• Forces the root password
+• Deletes the sudo log
+√ Allows the specified sudo command without asking for a password
