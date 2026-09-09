@@ -1,8 +1,4 @@
-CLOUD SECURITY — MODULE 3: Extending Identity
-Professor-style practice quiz
 
-Format: • = wrong option, √ = correct option
-Correct-answer positions are mixed. The correct option is never left as the uniquely longest option.
 
 1. [Module 3] Why does the module call identity the new perimeter?
 • The provider prevents all public endpoints, leaving sign-in as the only possible attack surface. even when no related policy or role has been configured.
