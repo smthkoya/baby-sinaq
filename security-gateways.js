@@ -58,8 +58,6 @@ function syncModulesForSubject() {
   }
 }
 
-// app.js currently treats unknown subjects as a direct file path. Redirect the
-// Security Gateways subject key to whichever Security Gateways module is selected.
 const nativeFetch = window.fetch.bind(window);
 window.fetch = function patchedFetch(resource, init) {
   const subject = getSubjectKey();
@@ -83,8 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!subjectSelect || !moduleSelect) return;
 
   subjectSelect.addEventListener("change", () => {
-    // app.js also handles this event and may hide #module-selection for subjects
-    // it does not know. Run after its handler so our final UI state is correct.
     setTimeout(syncModulesForSubject, 0);
   });
 
@@ -96,8 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("quizSettings", JSON.stringify(settings));
   });
 
-  // app.js restores quizSettings in its own DOMContentLoaded handler. Wait until
-  // that finishes, then rebuild the correct module list and trigger one reload.
   setTimeout(() => {
     syncModulesForSubject();
     if (subjectSelect.value === SECURITY_GATEWAYS_SUBJECT) {
