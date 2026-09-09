@@ -60,8 +60,8 @@ function syncModulesForSubject() {
   }
 }
 
-// app.js does not know about Security Gateways yet. When it asks data.js to load
-// the subject key, redirect that request to the module selected in the UI.
+// app.js currently treats unknown subjects as a direct file path. Redirect the
+// Security Gateways subject key to whichever Security Gateways module is selected.
 const nativeFetch = window.fetch.bind(window);
 window.fetch = function patchedFetch(resource, init) {
   const subject = getSubjectKey();
@@ -84,16 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const moduleSelect = document.getElementById("module-select");
   if (!subjectSelect || !moduleSelect) return;
 
-  const savedSubject = localStorage.getItem("securityGatewaysSelectedSubject");
-  if (savedSubject === SECURITY_GATEWAYS_SUBJECT) {
-    subjectSelect.value = SECURITY_GATEWAYS_SUBJECT;
-  }
-
-  syncModulesForSubject();
-
   subjectSelect.addEventListener("change", () => {
-    localStorage.setItem("securityGatewaysSelectedSubject", subjectSelect.value);
-
     // app.js also handles this event and may hide #module-selection for subjects
     // it does not know. Run after its handler so our final UI state is correct.
     setTimeout(syncModulesForSubject, 0);
@@ -106,4 +97,13 @@ document.addEventListener("DOMContentLoaded", () => {
     settings.securityGatewaysModule = moduleSelect.value;
     localStorage.setItem("quizSettings", JSON.stringify(settings));
   });
+
+  // app.js restores quizSettings in its own DOMContentLoaded handler. Wait until
+  // that finishes, then rebuild the correct module list and trigger one reload.
+  setTimeout(() => {
+    syncModulesForSubject();
+    if (subjectSelect.value === SECURITY_GATEWAYS_SUBJECT) {
+      moduleSelect.dispatchEvent(new Event("change"));
+    }
+  }, 0);
 });
