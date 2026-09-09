@@ -19,6 +19,14 @@ const MODULE_SUBJECTS = {
     { file: "questions_security_gateways_module5.txt", label: "Module 5 — Private Networks" },
     { file: "questions_security_gateways_module6.txt", label: "Module 6 — Attacks & Defense" },
   ],
+  linux: [
+    { file: "questions_linux_module1.txt", label: "Module 1" },
+    { file: "questions_linux_module2.txt", label: "Module 2" },
+    { file: "questions_linux_module3.txt", label: "Module 3" },
+    { file: "questions_linux_module4.txt", label: "Module 4" },
+    { file: "questions_linux_module5.txt", label: "Module 5" },
+    { file: "questions_linux_module6.txt", label: "Module 6" },
+  ],
 };
 
 const ALL_MODULES_VALUE = "__ALL__";
