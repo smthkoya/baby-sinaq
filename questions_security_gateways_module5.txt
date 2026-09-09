@@ -1,0 +1,721 @@
+MODULE 5 — PRIVATE NETWORKS
+
+1. Why should security be considered during network design?
+• Threats appear only after deployment
+√ Security weaknesses can exist from the earliest design stages
+• Firewalls make design irrelevant
+• Network architecture never affects security
+
+2. How can computer networks be classified by coverage area?
+• Only as public or private
+√ As PAN, LAN, CAN, MAN, WAN, and GAN
+• Only as wired or wireless
+• Only by IP version
+
+3. What does PAN stand for?
+√ Personal Area Network
+• Public Access Network
+• Protected Area Node
+• Private Allocation Network
+
+4. What does LAN stand for?
+• Long Area Network
+√ Local Area Network
+• Logical Access Network
+• Limited Authentication Network
+
+5. What does CAN stand for in the module?
+• Controlled Access Network
+√ Campus Area Network
+• Central Authentication Network
+• Computer Address Network
+
+6. What does MAN stand for?
+• Managed Access Network
+√ Metropolitan Area Network
+• Mobile Area Node
+• Multiuser Authentication Network
+
+7. What does WAN stand for?
+• Wireless Access Network
+√ Wide Area Network
+• Web Area Node
+• Wired Authentication Network
+
+8. What does GAN stand for?
+√ Global Area Network
+• Gateway Access Network
+• General Authentication Network
+• Group Area Node
+
+9. Which type of network generally offers greater security according to the module?
+√ Wired
+• Wireless
+• Hybrid
+• Public Wi-Fi
+
+10. What is a disadvantage of wired networks listed in the module?
+• They cannot carry IP traffic
+√ They have greater coverage limitations
+• They do not support encryption
+• They are always public
+
+11. What is a benefit of wireless networks?
+• They are always more secure than wired networks
+√ They provide greater connection dynamism for different devices
+• They require physical cabling for every client
+• They eliminate radio attacks
+
+12. What security characteristic is associated with wireless networks?
+• They are always more secure than wired networks
+√ They are less secure than wired networks
+• They cannot be attacked remotely
+• They do not need authentication
+
+13. What is a hybrid network?
+• A network using only fiber
+√ A network interconnecting different communication types or dependencies
+• A network with no security controls
+• A network that uses only IPv6
+
+14. What disadvantage can hybrid networks inherit?
+• Only the disadvantages of wired networks
+√ Disadvantages associated with wireless networks
+• No security disadvantages
+• Only application-layer issues
+
+15. What is a public network?
+• A network restricted to one organization
+√ A network open and accessible to anyone
+• A network that always uses private IP addresses
+• A network that cannot provide Wi-Fi
+
+16. Which is an example of a public network?
+• Internal HR VLAN
+• Restricted server segment
+√ Public Wi-Fi
+• Private management LAN
+
+17. What characterizes a private network?
+• It is accessible to everyone
+√ It is restricted to specific users or organizations
+• It never uses encryption
+• It cannot use a firewall
+
+18. Which control is often used to protect private networks?
+• No authentication
+√ Firewalls and encryption
+• Open switching only
+• Anonymous access
+
+19. What are shared networks?
+• Networks that are always fully trusted
+√ Networks shared with guests, companies, or other external parties
+• Networks that cannot be segmented
+• Networks used only for routing protocols
+
+20. How are shared networks treated in the module?
+• As fully secure internal networks
+√ They may require minimum permission but are not considered internal secure networks
+• As physically isolated networks only
+• As networks without access control
+
+21. What is a trusted or dedicated network?
+• A network that must be public
+√ A network owned by an organization or leased for dedicated use
+• A network that can use only Wi-Fi
+• A network without administrative responsibility
+
+22. Who is responsible for communication security on a trusted dedicated network?
+• Only the ISP
+√ The client or organization
+• Only the hardware vendor
+• Nobody
+
+23. Which is an example of a trusted dedicated network from the module?
+• Public café Wi-Fi
+√ Military network
+• Open guest hotspot
+• Anonymous proxy network
+
+24. What is a secured network in the module?
+• A network that must be physically owned by the organization
+√ A secure connection built over existing non-exclusive infrastructure
+• A network with no specialized software
+• A network that does not use encryption
+
+25. What can affect the quality of a secured network connection?
+• Only user passwords
+√ The underlying wired, wireless, or mixed technology
+• The VLAN name
+• The hostname length
+
+26. What is guaranteed in a secured network according to the module?
+• Ownership of the communication medium
+• Dedicated physical cables
+√ Security at the level configured by the interested party
+• Unlimited bandwidth
+
+27. What is protocol transformation?
+• Changing a user password
+√ Moving data between different network technologies or protocols
+• Converting a MAC address to a username
+• Disabling routing
+
+28. Which is an example of protocol transformation?
+• HTTP to HTML
+√ Ethernet to Wi-Fi
+• Password to PIN
+• User to group
+
+29. What security risk is associated with Ethernet in the module?
+• DNS poisoning only
+√ ARP spoofing
+• Certificate revocation only
+• SMS interception only
+
+30. Which protection is recommended for Ethernet?
+• Disable segmentation
+√ VLAN segmentation
+• Use only public addressing
+• Remove encryption
+
+31. What is a security risk of fiber optics?
+• ARP cannot work over fiber
+√ Fiber tapping
+• It is highly affected by electromagnetic interference
+• It cannot carry encrypted traffic
+
+32. Which protection is recommended for fiber optics?
+• Disable physical security
+√ Cable monitoring and encryption
+• Use no network design
+• Replace encryption with NAT only
+
+33. What is a security risk associated with Wi-Fi?
+• Fiber tapping
+√ Rogue access points
+• Cable cutting only
+• CAM table absence
+
+34. Which attack is listed as a Wi-Fi security risk?
+• SQL injection
+√ Deauthentication attack
+• DHCP lease renewal
+• Certificate enrollment
+
+35. What Wi-Fi protection is recommended?
+• WEP only
+• Open authentication
+√ WPA3
+• No segmentation
+
+36. Why is the transition from IPv4 to IPv6 occurring?
+• IPv6 has fewer addresses
+√ IPv4 address exhaustion and newer IPv6 capabilities
+• IPv4 cannot route packets
+• IPv6 removes IP addressing
+
+37. How does IPv4 commonly extend address space?
+• SSO
+• VLAN trunking
+√ NAT
+• Kerberos
+
+38. What security effect of NAT is mentioned for IPv4?
+• It exposes every internal IP
+√ It hides internal IP addresses
+• It disables routing
+• It replaces encryption
+
+39. What does IPv6 generally eliminate according to the module?
+• Encryption
+√ NAT
+• Routing
+• Addressing
+
+40. What is one risk if IPv6 is not configured properly?
+• Devices cannot reach the Internet
+√ More devices may be directly exposed to the Internet
+• MAC addresses disappear
+• VLANs stop working
+
+41. What security technology is built into IPv6 according to the module?
+• RADIUS
+√ IPsec
+• LDAP
+• SAML
+
+42. Why can scanning attacks be harder in IPv6?
+• IPv6 blocks all scans
+√ The address space is much larger
+• IPv6 has no ports
+• ICMP does not exist
+
+43. What is an IPv6 tunneling risk?
+• IPv6 cannot be carried over IPv4
+√ Malicious IPv6 traffic may be encapsulated in IPv4 to bypass controls
+• IPv6 always disables firewalls
+• NAT converts IPv6 into MAC addresses
+
+44. Which technology is listed as an IPv6 tunneling example?
+• Kerberos
+√ Teredo
+• RADIUS
+• SAML
+
+45. What is a dual-stack vulnerability?
+• Running two firewalls
+√ Running IPv4 and IPv6 increases the attack surface
+• Using two VLAN tags only
+• Using two passwords
+
+46. What is network zoning?
+• Using one flat network for all devices
+√ Dividing a network into segments based on trust and security needs
+• Disabling inter-network routing
+• Assigning random VLAN IDs
+
+47. What is one purpose of network zoning?
+• Increase the attack surface
+√ Control traffic flow
+• Remove all security policies
+• Eliminate authentication
+
+48. What does a DMZ typically host?
+• Only employee laptops
+√ Public-facing services such as web servers
+• Only backup tapes
+• Private user passwords
+
+49. Why is a DMZ separated from the internal network?
+• To increase broadcast traffic
+√ To isolate public-facing services from trusted internal systems
+• To disable web access
+• To eliminate routing
+
+50. What is the Internal Zone?
+• A public guest network
+√ A trusted network for employees and business operations
+• A zone for Internet attackers
+• A network without access control
+
+51. What is the Restricted Zone?
+• A public Wi-Fi network
+√ A zone containing highly sensitive data
+• A VLAN reserved for guests
+• An unmonitored area
+
+52. Who should access the Restricted Zone?
+• Any Internet user
+• All guests
+√ Authorized users only
+• Anonymous devices
+
+53. What is the purpose of the Guest Zone?
+• Give visitors access to internal servers
+√ Provide visitor access while preventing access to internal resources
+• Host the company database
+• Replace the DMZ
+
+54. What challenge is associated with remote networking?
+• Different locations always use the same technology
+√ Different locations may use different networks, protocols, and technologies
+• Remote networks never require security
+• WAN links cannot be encrypted
+
+55. What is network architecture?
+• Only the IP addressing table
+√ The design and organizational framework of a communications network
+• Only a list of passwords
+• Only physical cabling
+
+56. What does network architecture specify?
+• Only MAC addresses
+√ Physical components, organization, configuration, and operational principles
+• Only DNS records
+• Only authentication tokens
+
+57. What is a VLAN?
+• A physical cable type
+√ A logical subdivision of a network
+• A firewall signature
+• A VPN protocol
+
+58. What is one purpose of VLANs?
+• Merge all traffic into one broadcast domain
+√ Improve security, performance, and management
+• Eliminate logical segmentation
+• Replace IP addressing
+
+59. Can devices in the same VLAN be grouped regardless of physical location?
+√ Yes
+• No
+• Only on public networks
+• Only when using IPv6
+
+60. What does creating VLANs allow?
+• Creating multiple physical buildings
+√ Creating separate logical networks on the same physical network
+• Removing switch configuration
+• Disabling segmentation
+
+61. What is port-based VLAN assignment?
+√ Assigning VLAN membership based on switch port
+• Assigning VLANs by username only
+• Assigning VLANs by URL
+• Assigning VLANs by DNS domain
+
+62. How can VLAN membership be assigned by MAC address?
+• By checking the IP protocol only
+√ Hosts are placed into VLANs according to their MAC addresses
+• By using browser cookies
+• By using DNS records
+
+63. What does protocol-based VLAN assignment use?
+• User passwords
+√ The frame protocol type such as IPv4 or IPv6
+• Certificate expiry dates
+• VPN usernames
+
+64. What does subnet-based VLAN assignment examine?
+• Only Layer 1
+• The Ethernet preamble
+√ The Layer 3 header
+• The keyboard layout
+
+65. What does a firewall do when integrated with VLANs?
+• Removes all VLAN boundaries
+√ Controls communication between VLANs
+• Converts VLANs into public networks
+• Disables security policies
+
+66. In VLAN integration, what can act as the Layer 3 gateway?
+• A hub
+√ A firewall
+• A passive cable
+• A certificate authority
+
+67. What is inter-VLAN routing?
+• Routing only inside one host
+√ Routing traffic between VLANs
+• Routing only public DNS requests
+• Routing without IP addresses
+
+68. What can firewall access control define between VLANs?
+• Only VLAN colors
+√ Which VLANs may communicate and which protocols are allowed
+• Only cable type
+• Only MAC vendor names
+
+69. What is VLAN hopping?
+• A normal routing process
+√ Gaining unauthorized VLAN access by exploiting switch misconfiguration
+• A certificate renewal method
+• A VPN encryption feature
+
+70. What is a double-tagging attack?
+• Removing all VLAN tags
+√ Injecting two VLAN tags to bypass VLAN restrictions
+• Sending two passwords
+• Creating two DHCP leases
+
+71. What is switch spoofing in a VLAN attack?
+• Changing a server hostname
+√ Imitating a switch using DTP to access multiple VLANs
+• Spoofing a DNS record only
+• Cloning a certificate
+
+72. What can MAC flooding do to a switch?
+• Increase CAM table accuracy
+√ Overload its MAC table and cause hub-like behavior
+• Disable all Ethernet frames permanently
+• Encrypt every frame
+
+73. What is ARP spoofing in a VLAN?
+• A method of assigning correct DNS
+√ Sending falsified ARP messages to redirect traffic
+• A method of certificate validation
+• A VPN tunneling protocol
+
+74. What is DHCP spoofing?
+• Using a trusted DHCP server
+√ Deploying a rogue DHCP server to manipulate configuration
+• Encrypting DHCP traffic
+• Disabling DHCP requests
+
+75. What does a VLAN MITM attack involve?
+• Only blocking traffic
+√ Intercepting and possibly modifying traffic
+• Assigning VLAN IDs correctly
+• Renewing certificates
+
+76. What is the goal of an STP attack described in the module?
+• Become a DNS server
+√ Become the root bridge and redirect VLAN traffic
+• Disable all trunking
+• Create a VPN
+
+77. What is a DoS attack on a VLAN?
+• Creating a new subnet
+√ Flooding the VLAN to disrupt operations
+• Updating switch firmware
+• Enabling QoS
+
+78. What is a rogue trunk attack?
+• Blocking all trunk ports
+√ Forcing a switch port into trunk mode to access multiple VLANs
+• Disabling VLAN tags
+• Creating a captive portal
+
+79. What is a general VLAN protection strategy?
+• Enable every unused service
+√ Disable what is not needed
+• Avoid all updates
+• Stop monitoring traffic
+
+80. What should be done before enabling all available security technologies?
+• Delete the VLAN
+√ Perform a performance test
+• Disable monitoring
+• Remove the firewall
+
+81. Why should VLAN devices and software be updated?
+• To remove security features
+√ To maintain protection and compatibility
+• To disable segmentation
+• To expose trunks
+
+82. Why is traffic monitoring important for VLAN protection?
+• It prevents all packets
+√ It helps detect possible security problems
+• It removes all MAC addresses
+• It replaces access control
+
+83. What is a VPN?
+• A public DNS service
+√ A technology that securely extends a private network over a public or uncontrolled network
+• A local-only switching method
+• A physical cable standard
+
+84. What does a VPN allow a remote computer to do?
+• Act only as a public Internet host
+√ Send and receive data as if connected to a private network
+• Disable security policies
+• Remove encryption
+
+85. What is the main purpose of a VPN tunnel?
+• Increase broadcast traffic
+√ Protect information across an insecure network
+• Replace all routing
+• Disable access control
+
+86. Can a public network be used to transmit information securely with a VPN?
+√ Yes
+• No
+• Only if NAT is disabled
+• Only on Layer 2
+
+87. Which VPN-related technology operates at Layer 2 according to the module?
+• SSL
+√ L2TP
+• TLS
+• SSH
+
+88. Which technology is listed as a Layer 3 VPN solution?
+• SAML
+√ IPsec
+• LDAP
+• WPA3
+
+89. Which technology is listed at the application layer for secure VPN-style connectivity?
+• ARP
+• STP
+√ SSL
+• VLAN
+
+90. What is a Remote Access VPN?
+• A tunnel only between two data centers
+√ A VPN allowing remote users to access a corporate network
+• A VLAN trunk
+• A public Wi-Fi portal
+
+91. What is a Site-to-Site VPN?
+• A VPN for one user's browser only
+√ A VPN connecting two or more private networks
+• A VPN that cannot cross the Internet
+• A certificate store
+
+92. What does an SSL VPN use to protect traffic?
+• ARP
+• DTP
+√ SSL
+• STP
+
+93. What is the goal of a Punycode homograph attack?
+• Improve certificate validation
+√ Make a malicious URL appear visually legitimate
+• Increase VPN speed
+• Assign private IP addresses
+
+94. What does the homograph technique rely on?
+• Identical IP addresses
+√ Similar-looking characters from different alphabets
+• Duplicate MAC tables
+• Two DHCP servers
+
+95. How can attackers misuse tunneling?
+• Only to improve QoS
+√ To exfiltrate information or send commands to compromised systems
+• Only to update certificates
+• Only to create VLANs
+
+96. Which traffic example is mentioned for malicious tunneling?
+• ARP
+√ HTTPS
+• STP
+• DTP
+
+97. How can a VPN be implemented?
+• Only with dedicated hardware
+• Only with specialized software
+√ With dedicated devices, software, or integrated security solutions
+• Only with a public Wi-Fi portal
+
+98. Why should a VPN not be “install and forget”?
+• It never needs security
+√ It requires administration, monitoring, and timely adjustments
+• It cannot be updated
+• It has no performance impact
+
+99. Which is a recommended VPN security practice?
+• Reuse default credentials
+√ Define update and administration policies
+• Disable monitoring
+• Open all firewall rules
+
+100. Which authentication practice is recommended for VPN access?
+• Use one weak password
+√ Use double or triple factor authentication
+• Disable all accounts
+• Use shared default credentials
+
+101. What should administrators avoid on VPN systems?
+• Strong access policies
+√ Reused or default credentials
+• Traffic monitoring
+• Firewall rules
+
+102. What should be managed on a VPN?
+• Only cable labels
+√ Accounts and access permissions
+• Only DNS TTL
+• Only VLAN names
+
+103. Why specify VPN connection times and functions?
+• To eliminate access control
+√ To restrict access according to policy
+• To disable authentication
+• To expose the internal network
+
+104. What should inspect VPN incoming and outgoing traffic?
+• Only a DHCP server
+√ IDS/IPS
+• Only a DNS resolver
+• Only an access point
+
+105. What network control should also be applied to VPN traffic?
+• Remove all filtering
+√ Firewall rules
+• Disable routing
+• Use public credentials
+
+106. Why manage Quality of Service for a VPN?
+• To weaken encryption
+√ To help ensure performance
+• To disable remote access
+• To remove tunnels
+
+107. What is WireGuard?
+• A VLAN attack
+√ A free and open-source VPN protocol and software solution
+• A DHCP server
+• A packet sniffer
+
+108. Which qualities are associated with WireGuard in the module?
+• Complex, slow, and unencrypted
+√ Simple, fast, and secure
+• Only Layer 2 and unencrypted
+• Windows-only and proprietary
+
+109. What does WireGuard use to create a secure connection?
+• No cryptography
+√ Modern encryption algorithms and protocols
+• Only MAC filtering
+• Only NAT
+
+110. On which platforms can WireGuard run?
+• Only Linux
+• Only Windows
+√ Multiple systems including Linux, Windows, macOS, and Android
+• Only routers without operating systems
+
+111. Can WireGuard be used to create a VPN server?
+√ Yes
+• No
+• Only on public Wi-Fi
+• Only without encryption
+
+112. Which users can VPNs protect in an organizational architecture?
+• Only local administrators
+√ Remote workers
+• Only DHCP servers
+• Only switches
+
+113. Which locations can VPNs securely connect?
+• Only devices in the same room
+√ Remote locations
+• Only loopback interfaces
+• Only public DNS servers
+
+114. Can VPNs be used for third-party access?
+√ Yes
+• No
+• Only if VLANs are removed
+• Only over dedicated cables
+
+115. What can VPNs securely carry?
+• Only web traffic
+• Only email
+√ Many types of information and protocols
+• Only ARP messages
+
+116. What is one organizational benefit of VPNs?
+• They force remote sites to operate as isolated islands
+√ They extend organizational connectivity across remote locations
+• They remove all security policies
+• They prohibit external users
+
+117. Can a VPN be combined with VLANs?
+√ Yes
+• No
+• Only on public Wi-Fi
+• Only without a firewall
+
+118. Which technology is shown as another possible VPN integration?
+• MAC flooding
+√ SSO
+• VLAN hopping
+• ARP poisoning
+
+119. What transmission media can a VPN operate over according to the module's final diagram?
+• Fiber only
+• Wi-Fi only
+√ Different transmission media
+• No physical or wireless media
+
+120. What is the central security idea of Module 5?
+• Use one flat network for everything
+√ Use segmentation and secure tunneling to control and protect connectivity
+• Avoid authentication and monitoring
+• Replace firewalls with hubs

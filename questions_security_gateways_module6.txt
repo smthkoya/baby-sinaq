@@ -1,0 +1,1081 @@
+MODULE 6 — FIREWALL IN ATTACKS AND DEFENSE
+
+1. What is network traffic monitoring?
+• Assigning IP addresses to clients
+√ Collecting and reviewing network protocol and IP data to detect abnormalities
+• Encrypting every packet
+• Creating VLAN tags
+
+2. What can traffic monitoring help protect?
+• Only screen resolution
+√ Performance, availability, and security
+• Only cable length
+• Only user passwords
+
+3. What are the two monitoring approaches listed in the module?
+• Static and dynamic
+√ Active and passive
+• Local and remote
+• Wired and encrypted
+
+4. How can passive monitoring be performed on a switched network?
+• By changing every MAC address
+√ By using a mirror or SPAN port
+• By disabling the switch
+• By flooding DHCP
+
+5. What does a SPAN or mirror port do?
+• Assigns IP addresses
+√ Reflects traffic from other switch ports for monitoring
+• Encrypts all frames
+• Blocks broadcast packets
+
+6. Which attack is listed as an active monitoring technique?
+• SQL injection
+√ MAC address flooding
+• SAML abuse
+• Certificate spoofing
+
+7. Which attack is listed as an active monitoring technique?
+• Cross-site scripting
+√ ARP poisoning
+• OAuth abuse
+• DNSSEC validation
+
+8. Which attack is listed as an active monitoring technique?
+• Kerberos roasting
+√ Port stealing
+• Certificate renewal
+• URL filtering
+
+9. What must be compromised to intercept any physical network transmission?
+• Only the application layer
+√ The physical layer
+• Only DNS
+• Only the user account
+
+10. Which transmission form is listed at the physical layer?
+• Password hashes
+√ Electrical impulses in a cable
+• HTTP headers
+• VLAN policies
+
+11. Which wireless transmission form can be intercepted at the physical layer?
+• DNS queries
+√ Electromagnetic waves
+• File permissions
+• User tokens
+
+12. Which optical transmission form is listed?
+• Radio packets
+√ Beams of light
+• SQL requests
+• Authentication cookies
+
+13. What is promiscuous mode?
+• A mode that captures only traffic addressed to the local MAC
+√ A mode in which the NIC captures all traffic visible on the shared network
+• A mode that disables packet capture
+• A firewall rule mode
+
+14. What is monitor mode used for in wireless networks?
+• It is identical to normal Ethernet mode
+√ It allows a wireless card to receive packets from different wireless networks
+• It disables wireless reception
+• It performs NAT
+
+15. What type of tool is Wireshark?
+• Authentication server
+√ Network sniffer
+• DHCP server
+• Certificate authority
+
+16. Which Wireshark element is used to narrow displayed traffic?
+• Payload bar
+√ Filter bar
+• DHCP bar
+• VLAN server
+
+17. Which Wireshark section shows HEX and ASCII payload data?
+• Action bar
+• Capture management bar
+√ Payload detail window
+• DNS settings window
+
+18. What are well-known ports mainly used for according to the module?
+• Client source ports only
+√ Listening for incoming traffic
+• VLAN tagging only
+• MAC learning only
+
+19. What are dynamic or ephemeral ports commonly used for?
+• Server listening only
+√ Generating client traffic
+• Certificate storage
+• VLAN trunking
+
+20. Which port range is dynamic/ephemeral in the module?
+• 1–1023
+• 1024–49151
+√ 49152–65535
+• 0–255
+
+21. What can be suspicious about a listening service on a dynamic port?
+• It is always normal
+√ It may indicate an attempt to avoid detection
+• It proves the host is offline
+• It means DHCP is disabled
+
+22. What is the purpose of the TCP three-way handshake?
+• Assign MAC addresses
+√ Establish TCP communication
+• Resolve domain names
+• Issue certificates
+
+23. What is the correct TCP connection setup sequence?
+• ACK, SYN, FIN
+√ SYN, SYN+ACK, ACK
+• RST, ACK, SYN
+• FIN, SYN, RST
+
+24. Which flag is commonly used to start a TCP connection?
+• FIN
+• RST
+√ SYN
+• URG only
+
+25. Which document defines TCP operation in the module?
+• RFC 1918
+√ RFC 793
+• RFC 2616
+• RFC 1035
+
+26. What is a “bad header” in the module?
+• A valid TCP handshake
+√ A non-logical combination of TCP flags
+• A correct Ethernet frame
+• A valid DHCP lease
+
+27. Which is an example of a bad TCP header?
+• SYN only
+√ SYN+FIN
+• ACK after SYN+ACK
+• FIN during connection close
+
+28. Which scan sends FIN, PSH, and URG flags together?
+• ACK scan
+√ Xmas scan
+• UDP scan
+• ARP scan
+
+29. Which scan sends no TCP flags?
+• FIN scan
+• SYN scan
+√ NULL scan
+• ICMP scan
+
+30. What can network scans identify?
+• Only MAC vendors
+√ Live hosts and running services
+• Only user accounts
+• Only certificates
+
+31. Which protocols can be used for network scanning according to the module?
+• SAML and OAuth
+√ ARP, ICMP, TCP, and UDP
+• LDAP and Kerberos
+• HTTP and HTML only
+
+32. Which tool is listed for packet manipulation?
+• Active Directory
+√ Scapy
+• RADIUS
+• SAML
+
+33. Which Windows-oriented packet manipulation tool is listed?
+• Nmap
+√ Colasoft Packet Builder
+• YARA
+• Snort
+
+34. Which is a network scanning tool listed in the module?
+• Kerberos
+√ Nmap
+• Active Directory
+• RADIUS
+
+35. What is Zenmap?
+• A DHCP server
+√ A scan tool/interface associated with Nmap
+• A certificate authority
+• A VLAN protocol
+
+36. Which additional scan tool is listed?
+• SAML
+√ Hping3
+• LDAP
+• PKI
+
+37. What is the destination MAC address in a typical ARP scan?
+• 00:00:00:00:00:00
+√ ff:ff:ff:ff:ff:ff
+• The attacker's own MAC only
+• A random unicast address only
+
+38. What pattern characterizes an ARP scan?
+• One packet to one IP only
+√ A storm of ARP packets asking about sequential IP addresses
+• Only TCP RST packets
+• Only encrypted traffic
+
+39. In an ARP scan, what usually remains the same?
+• Destination IP only
+√ Source IP
+• Every target MAC
+• TCP sequence number
+
+40. What does ICMP stand for?
+• Internet Connection Management Protocol
+√ Internet Control Message Protocol
+• Internal Communication Mapping Protocol
+• Integrated Control Monitoring Process
+
+41. What is ICMP used for?
+• User authentication
+√ Error messages and operational information
+• Certificate issuance
+• VLAN trunk negotiation
+
+42. What ICMP type does ping send as an Echo Request?
+• Type 0
+√ Type 8
+• Type 3
+• Type 11
+
+43. What ICMP type is expected as an Echo Reply?
+√ Type 0
+• Type 8
+• Type 3
+• Type 13
+
+44. What does an ICMP scan primarily identify?
+• Open TCP ports only
+√ Live hosts with active ICMP
+• User credentials
+• VLAN IDs
+
+45. What pattern can indicate an ICMP sweep?
+• One destination IP only
+√ Incremental destination IP addresses from one source
+• Random MAC learning
+• Only TCP FIN packets
+
+46. What may prevent a host from replying to an ICMP scan?
+• A valid MAC address
+√ A firewall blocking requests or replies
+• A correct subnet mask
+• A running ICMP service
+
+47. Which protocol does a UDP scan use?
+• TCP
+√ UDP
+• ARP only
+• STP
+
+48. What response indicates a closed UDP port according to the module?
+• TCP SYN+ACK
+√ ICMP type 3 Destination/Port Unreachable
+• ARP Reply
+• DHCP ACK
+
+49. What can indicate an open UDP port?
+• An RST packet
+√ A valid service-specific response
+• A TCP FIN packet
+• A VLAN tag
+
+50. If a UDP scan receives no response, what can it mean?
+• The port is definitely closed
+√ The port may be open with another service or filtered by a firewall
+• The host definitely has no IP address
+• The switch is always offline
+
+51. What characterizes a TCP Full Open scan?
+• It sends only FIN packets
+√ It completes the three-way handshake on an open port
+• It never sends SYN
+• It uses ARP only
+
+52. What response indicates a closed port in a Full Open scan?
+• SYN+ACK
+√ RST
+• ICMP Echo Reply
+• ARP Request
+
+53. What happens after a Full Open scan completes the handshake in the module?
+• The scanner sends DHCP Discover
+√ An RST is sent
+• The scanner changes MAC address
+• The target sends ARP poisoning
+
+54. What is another name associated with a Half Open scan?
+• Broadcast scan
+√ Stealth scan
+• DHCP scan
+• VLAN scan
+
+55. How does a Half Open scan treat an open port?
+• It completes a normal application session
+√ It receives SYN+ACK and sends RST
+• It receives ICMP type 3 only
+• It sends no SYN
+
+56. What response indicates a closed port in a Half Open scan?
+• SYN+ACK
+√ RST
+• ARP Reply
+• DHCP Offer
+
+57. What common pattern appears in Full Open and Half Open scans?
+• One source and many source IPs
+√ One source IP, one target IP, and iterative destination ports
+• Only broadcast MAC addresses
+• Only UDP packets
+
+58. Which flags are used by an Xmas scan?
+• SYN and ACK
+√ FIN, PSH, and URG
+• RST only
+• ACK only
+
+59. What response indicates a closed port in an Xmas scan?
+• No response
+√ RST
+• SYN+ACK
+• ICMP Echo Reply
+
+60. What usually indicates an open port in an Xmas scan according to the module?
+• RST
+√ No response
+• SYN+ACK
+• DHCP ACK
+
+61. Which flag is used by a FIN scan?
+• SYN
+√ FIN
+• ACK
+• PSH only
+
+62. What response indicates a closed port in a FIN scan?
+• No response
+√ RST
+• SYN+ACK
+• ARP Reply
+
+63. What response indicates an open port in a FIN scan?
+• RST
+√ No response
+• DHCP ACK
+• ICMP Echo Reply
+
+64. What is unusual about a NULL scan?
+• It uses UDP only
+√ It sends TCP packets with no flags set
+• It always completes a handshake
+• It uses ARP broadcast only
+
+65. What response indicates a closed port in a NULL scan?
+• No response
+√ RST
+• SYN+ACK
+• ICMP type 0
+
+66. What response indicates an open port in a NULL scan?
+• RST
+√ No response
+• ARP Reply
+• TCP SYN+ACK
+
+67. What is the purpose of an ACK scan?
+• Determine the application version
+√ Determine whether ports are filtered by a firewall
+• Resolve MAC addresses
+• Assign IP addresses
+
+68. What response indicates an unfiltered port in an ACK scan?
+• No response
+√ RST
+• SYN+ACK
+• DHCP Offer
+
+69. What response indicates a filtered port in an ACK scan?
+• RST
+√ No response
+• SYN+ACK
+• ARP Reply
+
+70. Why might an ACK scan be used?
+• To replace all other scans
+√ To test filtering when other scans fail
+• To assign VLAN IDs
+• To discover passwords
+
+71. What is a Third Party/Idle/Zombie scan?
+• A scan using only the attacker and target
+√ A scan using a third machine to probe the target indirectly
+• A DHCP scan
+• An ARP-only scan
+
+72. What IP header field is used by an Idle/Zombie scan?
+• TTL only
+√ IPID
+• DSCP only
+• Destination MAC only
+
+73. How does the IPID normally change in the module's zombie-scan explanation?
+• It decreases by 10
+√ It increases with packets sent
+• It never changes
+• It becomes the TCP port number
+
+74. In the module's idle-scan logic, what can a missing IPID indicate?
+• The target port is always closed
+√ The zombie spent that ID responding to the target
+• The zombie is not connected
+• DHCP failed
+
+75. What traffic pattern may appear during an Idle/Zombie scan in Wireshark?
+• Only ARP requests
+√ Many RST packets and TCP retransmissions
+• Only DHCP Offers
+• Only ICMP Echo Replies
+
+76. What unusual port pattern may be visible in zombie-scan conversations?
+• Every packet has a different random source
+√ Different scanned ports originate from a common port
+• Only port 53 is used
+• No TCP ports appear
+
+77. Why can Wireshark filters help identify scans?
+• They increase scanning speed
+√ Many scans have common packet characteristics
+• They disable TCP flags
+• They replace firewalls
+
+78. What is firewalking used to investigate?
+• User password strength
+√ Firewall filtering behavior and reachable paths
+• Certificate expiry only
+• VLAN names only
+
+79. What is port knocking?
+• Flooding every port continuously
+√ Using a predefined sequence of connection attempts to trigger access
+• Disabling firewall rules
+• Assigning a DHCP lease
+
+80. What is one main function of a network switch?
+• Issue certificates
+√ MAC address learning
+• Authenticate users with SAML
+• Perform malware classification
+
+81. What switch function decides where frames should go?
+• Certificate validation
+√ Forwarding and filtering
+• Password hashing
+• DNS resolution only
+
+82. What switch capability helps prevent network loops?
+• RADIUS
+√ Loop prevention
+• SAML
+• DPI
+
+83. What switch feature supports logical network segmentation?
+• DHCP reservation
+√ VLAN support
+• PKI
+• OAuth
+
+84. What switch feature can prioritize traffic?
+• ARP poisoning
+√ Quality of Service
+• MAC flooding
+• DHCP starvation
+
+85. What is a CAM table?
+• A certificate database
+√ A switch table mapping MAC addresses to ports
+• A DHCP lease database only
+• A DNS cache
+
+86. Why does a switch use the CAM table?
+• To store user passwords
+√ To forward frames to the correct port
+• To issue IP addresses
+• To encrypt HTTP
+
+87. Where is the dynamic CAM table stored for fast access according to the module?
+• ROM only
+√ RAM
+• Optical media
+• Certificate store
+
+88. What is the goal of MAC flooding?
+• Improve CAM accuracy
+√ Overflow or disrupt the CAM table
+• Encrypt switch traffic
+• Assign IP addresses
+
+89. What can happen when a switch CAM table is overwhelmed?
+• The switch becomes a certificate authority
+√ It may reflect traffic to many or all ports
+• It automatically creates VPNs
+• It disables Ethernet permanently
+
+90. What is one possible result of MAC flooding?
+• Improved confidentiality
+√ Denial of service
+• Stronger VLAN isolation
+• Faster authentication
+
+91. Why can MAC flooding enable traffic sniffing?
+• The switch creates certificates
+√ The switch may flood frames instead of forwarding only to the correct port
+• DNS becomes encrypted
+• DHCP is disabled
+
+92. What traffic characteristic can help detect MAC flooding?
+• One normal ARP request
+√ An abnormal number of addresses and characteristic packet patterns
+• A single TLS connection
+• One DHCP renewal
+
+93. What typically happens to the sender MAC during MAC flooding according to the module?
+• It always changes every packet
+√ It usually does not change
+• It becomes broadcast
+• It becomes the gateway MAC
+
+94. A MAC flood attacker sees only his own traffic. What did he likely forget?
+• To disable DHCP
+√ To put the NIC into promiscuous mode
+• To configure PKI
+• To enable SSO
+
+95. Which switch feature can help respond to MAC flooding by checking ARP packets?
+• URL filtering
+√ Dynamic ARP Inspection
+• SAML
+• OAuth
+
+96. What does storm control do?
+• Issues certificates
+√ Drops traffic that exceeds configured thresholds
+• Assigns MAC addresses
+• Creates VPN tunnels
+
+97. How can VLAN configuration reduce the impact of MAC flooding?
+• By making one large flat network
+√ By isolating network segments
+• By disabling switches
+• By removing security policies
+
+98. What is ARP responsible for?
+• Resolving domain names
+√ Finding the hardware address corresponding to an IP address
+• Encrypting VPN traffic
+• Issuing certificates
+
+99. What information does an ARP table store?
+• Usernames and passwords
+√ IP-to-MAC address mappings
+• VLAN names and IDs only
+• Certificate serial numbers
+
+100. Why is ARP vulnerable to poisoning according to the module?
+• It requires too much encryption
+√ It was designed for functionality without source-control security
+• It uses certificates
+• It cannot carry MAC addresses
+
+101. What can ARP poisoning allow an attacker to change?
+• Only web page colors
+√ Network traffic behavior on switches or hosts
+• Only DNS TTL
+• Only certificate expiry
+
+102. Which attack can ARP poisoning enable?
+• Certificate enrollment
+√ Man-in-the-middle
+• SSO login
+• VLAN creation
+
+103. Which availability impact can ARP poisoning cause?
+• Stronger redundancy
+√ Denial of service
+• Faster routing
+• Increased authentication
+
+104. Which tool is listed for ARP poisoning?
+• SAML
+√ Bettercap
+• WireGuard
+• LDAP
+
+105. Which other tool is listed for ARP poisoning?
+• Active Directory
+√ Ettercap
+• RADIUS
+• YARA only
+
+106. How can ARP poisoning be detected on the network?
+• By checking only DNS names
+√ By monitoring for a storm of suspicious ARP packets
+• By disabling all logs
+• By inspecting certificate chains only
+
+107. Can IDS/IPS help detect ARP poisoning?
+√ Yes
+• No
+• Only on IPv6
+• Only if DHCP is disabled
+
+108. How can a victim host detect ARP poisoning?
+• By checking browser history
+√ By reviewing its addressing table for duplicate MAC mappings
+• By changing its hostname
+• By disabling DNS
+
+109. What is the key difference between CAM and ARP tables?
+• Both store only usernames
+√ CAM maps MAC addresses to switch ports; ARP maps IP addresses to MAC addresses
+• CAM maps domains to IPs; ARP maps URLs to users
+• Both store only VLAN IDs
+
+110. Which measure can block the attacking MAC in an ARP poisoning incident?
+• DHCP relay
+√ MAC filtering
+• SSO
+• NAT overload
+
+111. What can be done on an affected machine after ARP poisoning?
+• Permanently disable the NIC
+√ Clear or refresh the ARP cache
+• Delete all firewall rules
+• Remove the IP address forever
+
+112. Which Windows commands are shown to refresh addressing after ARP poisoning?
+• ping and tracert
+√ ipconfig /release and ipconfig /renew
+• netstat and tasklist
+• format and chkdsk
+
+113. What stronger mapping can protect a gateway from ARP spoofing?
+• Dynamic DNS only
+√ Static ARP mapping
+• Public Wi-Fi
+• Open switching
+
+114. What is Port Stealing?
+• Stealing a physical switch
+√ Manipulating the CAM table so a victim MAC appears on the attacker's port
+• Changing a user's TCP source port
+• Disabling VLAN tags
+
+115. What can Port Stealing cause for the victim?
+• Higher bandwidth
+√ Denial of service
+• Automatic MFA
+• Certificate renewal
+
+116. What communication exposure can Port Stealing create?
+• Full disclosure of all network traffic
+√ Partial disclosure of traffic destined for the victim
+• No traffic exposure
+• Only DNS disclosure
+
+117. What is DHCP used for?
+• Detecting malware
+√ Providing IP configuration to network clients
+• Creating TLS certificates
+• Filtering URLs
+
+118. Which setting can DHCP provide?
+• User password
+√ IP address
+• Certificate private key
+• VLAN attack signature
+
+119. Which other setting can DHCP provide?
+• MFA token
+√ Default route
+• User SID
+• Browser certificate only
+
+120. Which service address can DHCP provide to a client?
+• Certificate Authority only
+√ DNS server
+• SAML endpoint only
+• WAF policy only
+
+121. What is DHCP starvation?
+• A server refusing all legitimate renewals by policy
+√ Exhausting the DHCP address pool with many fake requests
+• Encrypting DHCP messages
+• Creating static leases
+
+122. What is the main impact of DHCP starvation?
+• Clients receive too many certificates
+√ Legitimate users cannot obtain valid IP configuration
+• Switches stop learning MAC addresses permanently
+• VPN tunnels become faster
+
+123. What is a rogue DHCP server?
+• The authorized server
+√ An unauthorized DHCP server providing incorrect network configuration
+• A certificate authority
+• A network sniffer only
+
+124. What can a rogue DHCP server change maliciously?
+• The user's fingerprint
+√ Default gateway settings
+• TCP flags in every connection
+• Certificate private keys only
+
+125. What can a rogue DHCP server cause?
+• Only stronger authentication
+√ IP address conflicts and connectivity issues
+• Automatic VLAN protection
+• Better QoS
+
+126. Which switch security feature helps prevent DHCP attacks?
+• SAML inspection
+√ DHCP snooping
+• URL filtering
+• OAuth
+
+127. What does DHCP snooping do?
+• Encrypts all DHCP messages
+√ Validates DHCP messages and filters malicious or invalid ones
+• Issues IP addresses itself in every case
+• Replaces DNS
+
+128. How can IP address reservation help DHCP security?
+• It gives every attacker all addresses
+√ It ties a specific IP address to a specific device
+• It disables the DHCP server
+• It creates a VLAN trunk
+
+129. How does rate limiting help protect DHCP?
+• It increases the number of requests infinitely
+√ It limits how many DHCP requests can be processed
+• It disables monitoring
+• It removes all leases
+
+130. Why should DHCP logs be monitored?
+• To hide attacks
+√ To identify suspicious DHCP activity and respond early
+• To disable IP assignment
+• To remove default gateways
+
+131. What is an Intrusion Detection System?
+• A certificate server
+√ A system that detects unauthorized access or suspicious activity
+• A DHCP relay
+• A VLAN tagging protocol
+
+132. How does an IDS gather network information?
+• Only through user interviews
+√ Through sensors such as network sniffers
+• Only through DHCP reservations
+• Only through PKI
+
+133. What can an IDS detect?
+• Only successful logins
+√ Anomalies that may indicate attacks
+• Only cable faults
+• Only VLAN names
+
+134. What does HIDS stand for?
+√ Host-based Intrusion Detection System
+• Hybrid Internet Detection Service
+• Hardware Identity Directory System
+• Host Integrated DHCP Service
+
+135. What does NIDS stand for?
+• Network Identity Directory Service
+√ Network-based Intrusion Detection System
+• Node Internet Defense Server
+• Network Internal DHCP Service
+
+136. What does WIDS stand for?
+• Web Intrusion Detection System
+√ Wireless Intrusion Detection System
+• Wired Internet Defense Service
+• Windows Identity Detection System
+
+137. What is an Intrusion Prevention System?
+• A passive log viewer only
+√ A system that exercises access control to prevent attacks and abuse
+• A certificate database
+• A DHCP server
+
+138. How is IPS related to IDS in the module?
+• They are exactly the same technology
+√ IPS is prevention/access control, while IDS focuses on detection
+• IDS always blocks traffic automatically
+• IPS only creates logs
+
+139. What does HIPS stand for?
+√ Host-based Intrusion Prevention System
+• Hybrid Internet Protection Service
+• Hardware Intrusion Packet Server
+• Host Identity Policy System
+
+140. What does NIPS stand for?
+• Network Identity Prevention Service
+√ Network-based Intrusion Prevention System
+• Node Internet Protection Server
+• Network Internal Port Service
+
+141. What does WIPS stand for?
+• Web Intrusion Prevention System
+√ Wireless Intrusion Prevention System
+• Wired Internet Policy Service
+• Windows Intrusion Packet Server
+
+142. What are Snort rules used for?
+• Assigning IP addresses
+√ Defining how IDS/IPS detects and responds to network threats
+• Managing SSO
+• Creating VLANs only
+
+143. What are the two main parts of a Snort rule?
+• Header and certificate
+√ Rule header and rule body
+• VLAN and VPN
+• Source and DNS
+
+144. What does the Snort rule header define?
+• Only the message string
+√ Action, protocol, source/destination addresses, ports, and direction
+• Only certificate chains
+• Only file hashes
+
+145. What does the Snort rule body contain?
+• VLAN IDs only
+√ Detection options such as content, byte patterns, or flow conditions
+• DHCP lease values only
+• User passwords
+
+146. What is protocol-level IDS evasion?
+• Using only valid and simple packets
+√ Exploiting weaknesses with fragmentation, overlap, or invalid headers
+• Enabling DHCP snooping
+• Using static ARP
+
+147. How can fragmented packets help evade IDS?
+• They always improve detection
+√ They can exploit weaknesses in protocol reassembly or analysis
+• They disable TCP entirely
+• They create certificates
+
+148. What is polymorphic malware?
+• Malware that never changes
+√ Malware that changes code or structure to avoid signature detection
+• A type of VLAN
+• A DHCP packet
+
+149. Why can encryption help attackers evade IDS?
+• Encryption reveals more payload details
+√ It can prevent the IDS from inspecting packet contents
+• It disables all routing
+• It forces RST packets
+
+150. What is traffic obfuscation?
+• Making malicious traffic easier to identify
+√ Hiding malicious traffic using methods such as spoofing or tunneling
+• Deleting all network packets
+• Replacing MAC addresses with usernames
+
+151. Which technique is listed as traffic obfuscation?
+• Certificate enrollment
+√ IP spoofing
+• DHCP reservation
+• SSO
+
+152. What is timing-based IDS evasion?
+• Sending all attack traffic at maximum speed only
+√ Sending packets at selected intervals or low-traffic periods
+• Disabling clocks on endpoints
+• Changing certificate dates
+
+153. How can false positives be abused against an IDS?
+• By reducing the number of alerts
+√ By flooding analysts with misleading alerts
+• By disabling all signatures automatically
+• By assigning IP addresses
+
+154. What is YARA mainly used for?
+• DHCP configuration
+√ Identifying and classifying malware samples
+• VLAN trunking
+• User authentication
+
+155. What can YARA rules describe?
+• Only switch ports
+√ Malware families or other pattern-based objects
+• Only IP routes
+• Only user accounts
+
+156. What does a YARA rule contain?
+• Only an IP address
+√ Strings and a Boolean expression
+• Only a MAC address
+• Only a TLS certificate
+
+157. Which kind of patterns can YARA use?
+• Only DNS names
+√ Textual or binary patterns
+• Only VLAN tags
+• Only TCP port numbers
+
+158. A host replies with RST to a FIN scan. What should you conclude according to the module?
+• The port is open
+√ The port is closed
+• The port is a DHCP server
+• The port is definitely filtered
+
+159. A FIN scan produces no response from a port. What status does the module associate with that result?
+√ Open
+• Closed
+• DHCP exhausted
+• Authenticated
+
+160. An ACK scan receives no response. What is the likely status?
+• Unfiltered
+√ Filtered
+• Open application session
+• DHCP reserved
+
+161. An ACK scan receives RST. What is the likely status?
+√ Unfiltered
+• Filtered
+• Always open
+• Always closed
+
+162. A UDP probe receives ICMP type 3 Destination/Port Unreachable. What is the port status?
+• Open
+√ Closed
+• Filtered only
+• Authenticated
+
+163. A Half Open scan receives SYN+ACK. What should the scanner send next to remain half-open?
+• ACK
+√ RST
+• FIN+ACK
+• ICMP Echo Request
+
+164. A Full Open scan reaches an open port. What distinguishes it from a Half Open scan?
+• It never sends SYN
+√ It completes the three-way handshake
+• It uses only UDP
+• It uses ARP broadcast
+
+165. A packet capture shows many TCP packets with FIN, PSH, and URG flags to sequential ports. Which scan is most likely?
+• ACK scan
+√ Xmas scan
+• ICMP sweep
+• UDP scan
+
+166. A packet capture shows TCP packets with no flags set to many ports on one host. Which scan is most likely?
+• FIN scan
+• Xmas scan
+√ NULL scan
+• ARP scan
+
+167. A packet capture shows one host sending SYN packets to sequential ports on a single target. What should you suspect?
+• Normal DHCP operation
+√ TCP port scanning
+• Certificate validation
+• VLAN trunking
+
+168. A packet capture shows one source asking sequentially for many IP-to-MAC mappings using broadcast. Which activity is likely?
+• SSL VPN
+√ ARP scan
+• SSO authentication
+• WAF filtering
+
+169. A packet capture shows ICMP Echo Requests from one source to sequential IP addresses. Which activity is likely?
+• VLAN hopping
+√ ICMP sweep
+• DHCP starvation
+• ARP poisoning
+
+170. A switch suddenly sends unknown traffic to many ports after its MAC table fills. Which attack is likely?
+• SSL spoofing
+√ MAC flooding
+• Kerberos attack
+• WAF bypass
+
+171. A victim's ARP table shows two important IP addresses mapped to the same unexpected MAC. What should you suspect?
+• Normal SSO
+√ ARP poisoning
+• DHCP reservation
+• Port knocking
+
+172. Many fake DHCP requests consume all available leases. Which attack is occurring?
+• Rogue trunk
+√ DHCP starvation
+• ARP scan
+• FIN scan
+
+173. Clients receive a malicious default gateway from an unauthorized server. Which attack is occurring?
+• MAC flooding
+√ Rogue DHCP
+• NULL scan
+• ICMP sweep
+
+174. Which control is most directly associated with blocking unauthorized DHCP messages?
+• Dynamic ARP Inspection
+√ DHCP snooping
+• URL filtering
+• SAML
+
+175. Which control is most directly associated with validating ARP messages?
+√ Dynamic ARP Inspection
+• DHCP snooping
+• OAuth
+• WAF
+
+176. Which technology should be used when the goal is to detect suspicious traffic but not necessarily block it?
+√ IDS
+• IPS only
+• DHCP
+• VLAN trunking
+
+177. Which technology is better suited to actively stop malicious traffic?
+• Passive sniffer
+√ IPS
+• ARP table
+• DHCP relay
+
+178. Which technique can attackers use to hide commands inside apparently normal encrypted tunnels?
+• Static ARP only
+√ Tunneling and encryption
+• DHCP reservation
+• VLAN access mode
+
+179. Why is a firewall alone not enough for every intrusion scenario?
+• Firewalls cannot enforce any rules
+√ Additional monitoring and detection/prevention technologies may be needed
+• Firewalls cannot route traffic
+• Firewalls never inspect packets
+
+180. What is the overall defensive lesson of Module 6?
+• Rely only on perimeter filtering
+√ Combine monitoring, attack recognition, switch protections, and IDS/IPS controls
+• Disable all logging
+• Use one flat network without segmentation

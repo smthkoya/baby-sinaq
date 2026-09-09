@@ -1,0 +1,539 @@
+1. Why are firewalls often described as the first line of defense?
+• They replace all endpoint security tools
+√ They commonly face the Internet or other hostile networks
+• They are used only for internal routing
+• They operate only after an attack succeeds
+
+2. What term does the module use for perimeter devices such as UTM and NGFW systems?
+• Authentication servers
+• Proxy endpoints
+√ Security gateways
+• Access points
+
+3. What is one purpose of using a security gateway for authentication?
+• To assign public IP addresses
+√ To ensure only authorized users and devices access the network
+• To disable routing protocols
+• To replace all directory services
+
+4. Authentication on a firewall can improve which of the following?
+• Screen resolution
+• Cable speed
+√ Access control and policy enforcement
+• Disk partitioning
+
+5. In small or medium companies, what may be used to filter user access?
+√ The firewall itself
+• Only a SIEM
+• Only a hypervisor
+• A DNS resolver only
+
+6. What solution is commonly preferred in large enterprises for identity and access management?
+• NAT
+• DHCP
+√ IAM
+• ARP
+
+7. What does IAM stand for?
+• Internet Authorization Mechanism
+√ Identity and Access Management
+• Integrated Application Monitoring
+• Internal Authentication Mapping
+
+8. What is a captive portal?
+• A VPN tunnel between two offices
+√ A web page users are redirected to before gaining network access
+• A firewall rule that blocks all websites
+• A certificate database
+
+9. Where are captive portals commonly used?
+• Only in data centers
+√ Cafés, airports, hotels, and guest networks
+• Only on isolated servers
+• Only in storage networks
+
+10. How does a captive portal normally begin the authentication process?
+• It disables the client NIC
+• It changes the client MAC address
+√ It captures web requests and redirects the user to a login page
+• It creates a VLAN trunk automatically
+
+11. What happens after successful captive portal authentication?
+• The user is permanently disconnected
+• The firewall disables HTTP
+√ The user gains network access
+• The user receives a new MAC address
+
+12. What is Active Directory primarily used for in the module?
+• Packet capture
+• URL filtering
+√ Enterprise identity management
+• Port scanning
+
+13. What is a key benefit of Active Directory?
+• It eliminates IP addressing
+√ It provides centralized authentication for users and devices
+• It replaces all firewalls
+• It performs packet fragmentation
+
+14. What is LDAP used for?
+√ Accessing and managing directory services such as Active Directory
+• Encrypting VPN payloads only
+• Assigning MAC addresses
+• Performing NAT
+
+15. What does LDAP allow a firewall or IAM solution to retrieve?
+• Physical cable type
+• Packet TTL only
+√ User information
+• BIOS settings
+
+16. Which protocol is commonly used for centralized authentication, authorization, and accounting?
+• ARP
+√ RADIUS
+• ICMP
+• STP
+
+17. What does AAA stand for in the context of RADIUS?
+• Addressing, Auditing, Allocation
+√ Authentication, Authorization, Accounting
+• Access, Analysis, Alerting
+• Authentication, Addressing, Availability
+
+18. RADIUS is commonly used for which type of authentication?
+• Printer firmware updates
+√ Wi-Fi and VPN authentication
+• DNS zone transfers
+• File compression
+
+19. What is a key characteristic of Kerberos?
+• It sends passwords in plaintext
+• It authenticates only devices by MAC address
+√ It uses tickets to verify identities
+• It is a content-filtering engine
+
+20. Why is Kerberos considered secure in the module?
+• It disables encryption
+√ It prevents password transmission over the network
+• It uses only public IP addresses
+• It removes authentication tokens
+
+21. What must a client present during digital-certificate authentication?
+• A DHCP lease
+• A VLAN tag
+√ A valid digital certificate
+• An ARP table
+
+22. Who normally issues the certificate presented by the client?
+• A DNS server
+√ A trusted Certificate Authority
+• A switch port
+• A DHCP relay
+
+23. What does the server verify before granting certificate-based access?
+• The client's screen resolution
+• The switch CAM table
+√ The certificate's authenticity
+• The user's subnet mask only
+
+24. What infrastructure manages certificate issuance, renewal, and revocation?
+• VLAN
+• NAT
+√ PKI
+• QoS
+
+25. What does PKI stand for?
+√ Public Key Infrastructure
+• Private Key Interface
+• Protected Kerberos Integration
+• Public Kernel Identity
+
+26. What is the role of a Certificate Authority in PKI?
+• It performs packet capture
+√ It issues and manages digital certificates
+• It assigns VLAN IDs
+• It blocks websites by category
+
+27. What is the role of a Registration Authority?
+• It creates firewall logs
+• It encrypts all network traffic
+√ It verifies identity before certificate issuance
+• It provides DHCP addresses
+
+28. What is the role of a Validation Authority?
+• It changes certificate owners
+√ It validates certificate status in real time
+• It creates user passwords
+• It assigns switch ports
+
+29. What are end entities in PKI?
+• Only root CAs
+• Only routers
+√ Users, devices, or applications that use certificates
+• Only DNS servers
+
+30. Which is a valid use of a digital certificate according to the module?
+• VLAN hopping
+√ Authentication
+• MAC flooding
+• DHCP starvation
+
+31. What is 2FA/MFA?
+• A routing method
+√ A mechanism requiring two or more authentication factors
+• A NAT mode
+• A packet filtering rule
+
+32. Which is an example of “something the user knows”?
+• Fingerprint
+• Security key
+√ Password
+• Smartphone location
+
+33. Which is an example of “something the user has”?
+• Password
+• PIN
+√ Hardware security key
+• Fingerprint
+
+34. Which is an example of biometric authentication?
+• SMS code
+• Password
+√ Fingerprint
+• Username
+
+35. Which application is listed as a common MFA method?
+• Wireshark
+√ Microsoft Authenticator
+• Nmap
+• Snort
+
+36. Which hardware device is listed as an MFA method?
+• Network tap
+• Managed switch
+√ YubiKey
+• DHCP relay
+
+37. What is the main purpose of Single Sign-On?
+• To force a separate login for every application
+√ To let a user log in once and access multiple connected applications
+• To remove all authentication controls
+• To replace encryption
+
+38. In SSO, what component first verifies the user's credentials?
+• Switch
+• DHCP server
+√ Identity Provider
+• NAT gateway
+
+39. What does an Identity Provider issue after successful SSO authentication?
+• A new MAC address
+√ A secure authentication token
+• A VLAN trunk
+• A DNS record
+
+40. Which protocol is commonly used for SSO in enterprise applications?
+• ICMP
+√ SAML
+• ARP
+• FTP
+
+41. Which technologies are common for cloud and web SSO?
+• SMTP and POP3
+• ARP and ICMP
+√ OAuth 2.0 and OpenID Connect
+• SNMP and NTP
+
+42. Where is Kerberos commonly used for SSO according to the module?
+√ Windows Active Directory environments
+• Public Wi-Fi only
+• DNS root servers
+• Web Application Firewalls
+
+43. Why is device authentication important?
+• Devices cannot be compromised
+√ A previously compromised device can endanger the network
+• It is needed only for printers
+• It replaces user authentication completely
+
+44. What type of policy can a firewall enforce for personally owned devices?
+• BGP
+• NAT64
+√ BYOD
+• SMTP
+
+45. What does Active Directory use to identify a domain-joined computer?
+• Only its IP address
+√ A unique computer account
+• Only its browser cookie
+• Only its DNS cache
+
+46. Which attribute is associated with a computer account in Active Directory?
+• TCP window only
+√ Security Identifier (SID)
+• Public URL
+• TLS cipher only
+
+47. What does an Organizational Unit indicate in Active Directory?
+• The physical cable used
+√ The logical group the computer belongs to
+• The packet payload size
+• The Internet provider
+
+48. What is MAC address filtering?
+• Filtering traffic by URL category
+√ Restricting network access based on device MAC addresses
+• Encrypting HTTP traffic
+• Assigning IP addresses
+
+49. What does a device need to pass MAC address filtering?
+• A public certificate only
+√ An authorized MAC address
+• A dynamic routing protocol
+• A VPN tunnel
+
+50. What is the main weakness of MAC address filtering?
+• MAC addresses cannot be read
+• It works only on IPv6
+√ Attackers can spoof an authorized MAC address
+• It requires a RADIUS server
+
+51. What is a device digital certificate used for?
+• Increasing bandwidth
+√ Proving a device's identity before network access
+• Replacing DNS
+• Scanning open ports
+
+52. How does a network validate a device certificate?
+• By checking the switch port number only
+√ By checking it with the CA's public key
+• By comparing DNS TTL values
+• By changing the certificate serial number
+
+53. Where are device certificates commonly used?
+• Only in home networks
+√ Corporate or enterprise environments
+• Only in public Wi-Fi
+• Only in unmanaged switches
+
+54. What is 802.1X?
+• A URL filtering standard
+√ A port-based network access control protocol
+• A type of NAT
+• A malware signature format
+
+55. In 802.1X, what is the supplicant?
+√ The device attempting to connect
+• The firewall log server
+• The DHCP pool
+• The certificate revocation list
+
+56. In 802.1X, what is the authenticator?
+• The user password
+√ The switch or access point controlling access
+• The antivirus engine
+• The DNS server
+
+57. In 802.1X, what is the authentication server?
+• A proxy cache
+√ A RADIUS server
+• A web browser
+• A packet sniffer
+
+58. Which 802.1X method uses certificates for mutual authentication?
+• ARP
+• PAP
+√ EAP-TLS
+• NAT-T
+
+59. What is PEAP designed to provide?
+• Unencrypted communication
+√ Encrypted communication between the device and authentication server
+• VLAN hopping protection only
+• IP address translation
+
+60. What is Network Access Control (NAC)?
+• A routing protocol
+√ A solution that evaluates device security posture before granting access
+• A web application language
+• A VPN encryption algorithm
+
+61. Which device condition can NAC check?
+• Monitor brightness
+√ Antivirus status
+• Keyboard layout
+• Hostname length only
+
+62. Which condition can NAC use as part of posture assessment?
+• Browser theme
+• Printer color mode
+√ Security patch status
+• Screen size
+
+63. What may happen to a non-compliant device under NAC?
+• It is always granted full access
+√ It may be blocked or quarantined
+• It automatically becomes an administrator
+• It receives a new certificate authority
+
+64. What does posture assessment mean in NAC?
+• Measuring link speed only
+√ Checking the device's security health
+• Testing user typing speed
+• Creating an IPsec tunnel
+
+65. What does compliance enforcement do in NAC?
+• Disables logging
+√ Ensures devices meet security policies before access
+• Assigns public IP addresses
+• Replaces authentication
+
+66. What is remediation in NAC?
+• Deleting every device account
+√ Fixing or limiting non-compliant devices before full access
+• Creating a new VLAN tag
+• Disabling all firewalls
+
+67. After authentication, what can identity-based policy enforcement do?
+• Change the user's hardware
+√ Allow or block specific websites and applications
+• Disable all auditing
+• Rewrite the operating system
+
+68. Which is an example of identity-based policy enforcement?
+• Changing the subnet mask for every packet
+√ Applying bandwidth restrictions per user
+• Disabling certificates
+• Removing all logs
+
+69. Why may a firewall log user activity after authentication?
+• To increase packet size
+√ For auditing and compliance
+• To disable IAM
+• To replace DNS
+
+70. What can identity-based policies enforce based on user profiles?
+• Physical cable replacement
+√ VPN access or network segmentation
+• BIOS updates
+• ARP table deletion only
+
+71. What does Deep Packet Inspection analyze beyond standard headers?
+• Only IP addresses
+√ Packet payloads
+• Only cable signals
+• Only VLAN IDs
+
+72. What is one application-layer use of DPI?
+• Assigning DHCP leases
+√ Blocking YouTube while allowing Google Search
+• Creating user accounts
+• Replacing certificates
+
+73. How can DPI support Data Loss Prevention?
+• By disabling encryption
+√ By scanning for sensitive keywords or patterns
+• By changing MAC addresses
+• By opening all ports
+
+74. What can DPI use to identify malicious traffic?
+• Monitor size
+• VLAN names only
+√ Traffic signatures
+• User wallpaper
+
+75. What type of traffic does a WAF primarily protect?
+• ARP traffic
+• DHCP traffic
+√ HTTP/S traffic to web applications
+• Bluetooth traffic
+
+76. Which attack can a WAF block?
+• MAC flooding only
+√ SQL injection
+• DHCP starvation only
+• ARP discovery only
+
+77. Which web attack is also listed as a WAF target?
+• VLAN hopping
+√ Cross-site scripting
+• ARP poisoning
+• SYN scanning
+
+78. What is the purpose of WAF rate limiting?
+• To increase brute-force speed
+√ To restrict excessive requests from a user or IP
+• To disable HTTPS
+• To remove firewall rules
+
+79. What can WAF bot detection prevent?
+• Certificate renewal
+√ Automated scraping or service abuse
+• DHCP assignment
+• VLAN tagging
+
+80. Why are custom WAF rules useful?
+• They assign IP addresses
+√ They allow administrators to define specific security policies
+• They disable logging
+• They replace SSO
+
+81. What does URL filtering allow administrators to block?
+• Only MAC addresses
+√ Categories such as gambling or social media
+• Only VLAN tags
+• Only ARP packets
+
+82. What is a whitelist in URL filtering?
+• A list of denied domains only
+√ A list of specifically allowed domains
+• A list of expired certificates
+• A list of dynamic ports
+
+83. What is a blacklist in URL filtering?
+• A list of approved users
+√ A list of domains that should be denied
+• A list of VLAN gateways
+• A list of MFA factors
+
+84. What does SSL/TLS inspection allow a firewall to do?
+• Ignore encrypted traffic
+√ Decrypt and inspect HTTPS traffic for threats
+• Replace PKI
+• Disable certificates permanently
+
+85. What is required to avoid browser warnings during SSL/TLS inspection?
+• A dynamic MAC address
+• An open UDP port
+√ A trusted certificate
+• A public VLAN
+
+86. What do real-time threat intelligence feeds provide to modern firewalls?
+• Monitor drivers
+√ Information about malicious IPs, domains, and files
+• Local printer queues
+• DHCP lease times only
+
+87. What can threat intelligence feeds update automatically?
+• User passwords
+• MAC vendor databases only
+√ Firewall blocklists
+• Operating system themes
+
+88. What does anomaly detection look for?
+• Only known signatures
+√ Suspicious or unusual traffic behavior
+• Only expired certificates
+• Only static routes
+
+89. Which event may be flagged by behavior analysis?
+• Normal DNS lookup
+• Routine user login
+√ Unusually large data exfiltration
+• Standard DHCP renewal
+
+90. Which technology can modern firewalls use to detect suspicious patterns?
+• Spanning Tree only
+√ Machine learning
+• FTP only
+• ARP cache only
