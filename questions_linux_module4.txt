@@ -1,0 +1,617 @@
+1. What is a typical text file according to the lecture?
+• A file that can only be opened graphically
+√ A file containing text without word-processor formatting features
+• A compressed archive by definition
+• A file containing only executable machine code
+
+2. Which commands are listed for reading files or output directly in the terminal?
+• chmod and chown
+• nano and vim only
+• cut, sort, uniq, and sed only
+√ cat, head, tail, and grep
+
+3. Which commands are the two commonly used pagers?
+√ more and less
+• sed and tr
+• cat and grep
+• nano and vim
+
+4. Which commands are listed for modifying files or output via standard input?
+• chmod, chown, and chgrp
+√ cut, sort, uniq, sed, and tr
+• pwd, cd, and ls
+• gzip, tar, and zip
+
+5. Which command can display, create, and combine copies of text files?
+• wc
+• sort
+• grep
+√ cat
+
+6. Where does cat send output by default?
+• Only to a printer
+• Only to STDERR
+• Only to /tmp
+√ The terminal/stdout
+
+7. Which commands show the first or last lines of a file?
+• sort and uniq
+• cut and tr
+√ head and tail
+• nano and vim
+
+8. How many lines do head and tail display by default according to the lecture?
+• 1
+√ 10
+• 5
+• 20
+
+9. Which option explicitly specifies how many lines head or tail should output?
+• -f
+• -d
+• -c
+√ -n
+
+10. What does tail -n +5 file mean?
+• Display the first 5 lines
+• Delete line 5
+√ Display from line 5 through the end
+• Display only the last 5 lines
+
+11. Why is cat not ideal for very large files?
+• It changes permissions
+√ It dumps the file directly rather than providing paging navigation
+• It cannot display text
+• It always edits the file
+
+12. Which pager is described as having more advanced capability?
+• head
+• cat
+• more
+√ less
+
+13. Which pager is described as having fewer features but being widely available?
+• grep
+• tail
+√ more
+• less
+
+14. In more/less, what does Spacebar do?
+√ Move one window forward
+• Show help
+• Move one line backward
+• Exit
+
+15. In more/less, what does B do?
+• Move one window forward
+• Search forward
+• Exit
+√ Move one window backward
+
+16. In more/less, what does Enter do?
+• Open a text editor
+• Exit
+√ Move one line forward
+• Delete the current line
+
+17. In more/less, what does Q do?
+• Save the file
+• Search backward
+• Help
+√ Exit
+
+18. In less, what does H or Shift+H display?
+√ Help
+• The home directory
+• The last line
+• A hex dump
+
+19. How do you start a forward search in less?
+• Press > and a filename
+• Press $, type text
+√ Press /, type the text, and press Enter
+• Press ! and a number
+
+20. In a less search, what does N do according to the lecture?
+• Move to the previous match
+• Start editing
+• Exit
+√ Move to the next match
+
+21. In a less search, what does Shift+N do?
+√ Move to the previous match
+• Move to the next match
+• Exit
+• Open help
+
+22. What does grep do?
+• Compresses files
+• Creates users
+• Changes file ownership
+√ Matches patterns against text and prints matching lines
+
+23. Can a grep pattern be a regular expression?
+√ Yes, it can range from a simple word to a complex regex
+• Only with tar
+• Only on binary files
+• No, grep supports only exact filenames
+
+24. What does grep -i do?
+• Show only filenames
+• Show line numbers
+• Invert matching
+√ Ignore case distinctions
+
+25. What does grep -v do?
+• Suppress filenames
+• Ignore case
+√ Select non-matching lines by inverting the match
+• Show line numbers
+
+26. What does grep -A n do?
+• Append to a file
+• Show only the nth field
+√ Print n lines of trailing context after matches
+• Print n lines before matches
+
+27. What does grep -B n do?
+√ Print n lines of leading context before matches
+• Use basic regex
+• Count bytes
+• Print n lines after matches
+
+28. What does grep -h do?
+• Invert matching
+• Show line numbers
+√ Suppress filename prefixes in output
+• Show help only
+
+29. What does grep -l do?
+• Show only matched text
+√ Print names of files that contain a match
+• Show byte counts
+• Print names of files without matches
+
+30. What does cut do?
+• Count words
+• Sort lines
+• Change ownership
+√ Extract columns or fields of text from files or standard input
+
+31. What delimiter does cut expect by default?
+√ Tab
+• Colon
+• Comma
+• Space only
+
+32. Which cut option specifies a different delimiter?
+√ -d
+• -f
+• -u
+• -n
+
+33. Which cut option selects fields?
+• -k
+√ -f
+• -t
+• -d
+
+34. What does cut -d: -f1,5-7 mypasswd do?
+√ Extract fields 1 and 5 through 7 using colon as the delimiter
+• Delete fields 1 and 5-7
+• Sort fields numerically
+• Count those fields
+
+35. What does sort do?
+• Only remove duplicate characters
+√ Rearrange lines in dictionary or numeric order
+• Only count lines
+• Only replace text
+
+36. Which sort option changes the field separator?
+• -k
+√ -t
+• -u
+• -n
+
+37. Which sort option chooses the key/field to sort by?
+√ -k
+• -c
+• -t
+• -n
+
+38. Which sort option performs numeric sorting?
+• -t
+• -u
+• -r only
+√ -n
+
+39. What does sort -t: -n -k3 mypasswd do?
+• Sort alphabetically by the first field
+• Count the third field
+√ Sort numerically by the third colon-delimited field
+• Remove the third field
+
+40. Which sort option removes duplicate lines while sorting?
+• -k
+√ -u
+• -n
+• -t
+
+41. What does uniq do?
+• Change all text to uppercase
+√ Report or omit repeated adjacent lines
+• Extract fields
+• Edit files interactively
+
+42. Which uniq option counts occurrences of repeated lines?
+√ -c
+• -u
+• -n
+• -d
+
+43. What does tr do?
+• Change permissions
+• Compress archives
+√ Translate or delete characters
+• Create users
+
+44. What does tr -d do?
+• Show only digits
+• Decode gzip
+• Use a different delimiter
+√ Delete characters in the first set
+
+45. What does echo hello,world | tr ',' '\n' produce conceptually?
+• A sorted file
+• The literal text \n only
+√ hello and world on separate lines
+• HELLO,WORLD
+
+46. What does tr a-z A-Z do?
+• Delete letters
+√ Translate lowercase letters to uppercase
+• Translate uppercase to lowercase
+• Sort lines
+
+47. What is the most commonly shown sed operation in the lecture?
+√ Substitution/search and replace
+• Archiving
+• Creating users
+• Changing ownership
+
+48. What does the s in sed 's/Windows/Linux/g' stand for?
+√ Substitute
+• Shell
+• Sort
+• Stream
+
+49. What does the g flag mean in sed substitution?
+• Write to STDERR
+• Use grep syntax only
+• Replace only the first instance
+√ Replace all instances of the pattern on the line
+
+50. What does wc report by default?
+• Only CPU usage
+• Only file permissions
+• Only users and groups
+√ Lines, words, and bytes
+
+51. Which wc option reports only line count?
+√ -l
+• -c
+• -w
+• -n
+
+52. Which wc option reports only word count?
+• -c
+√ -w
+• -f
+• -l
+
+53. Which wc option reports only byte count?
+√ -c
+• -l
+• -b
+• -w
+
+54. Which text editors are highlighted as the best-known Linux terminal editors?
+• Word and Excel
+• Apache and NGINX
+√ vim and nano
+• tar and gzip
+
+55. How do you open or create file.txt with nano?
+√ nano file.txt
+• nano -x file.txt only
+• vim --create-only file.txt
+• cat > nano file.txt
+
+56. What happens in nano if the named file does not exist?
+• Nano always exits with an error
+• Nano opens /etc/passwd instead
+√ Nano creates a new file with that name
+• Nano creates a directory
+
+57. Which key combination exits nano in the lecture?
+√ Ctrl+X
+• Ctrl+Z
+• Alt+F4 only
+• Ctrl+P
+
+58. What is a regular expression?
+• A network protocol
+• A compression format
+• A filesystem permission
+√ A collection of normal and special characters used to find patterns
+
+59. Why is regex important for cybersecurity according to the lecture?
+• It removes the need for logs
+• It only changes file permissions
+√ It helps filter large text, logs, signatures, configurations, and input patterns
+• It replaces firewalls
+
+60. Which is a cybersecurity use case for regex mentioned in the lecture?
+• Physically replacing a network card
+• Formatting a hard drive
+√ Finding a specific event in a log file
+• Compiling a CPU
+
+61. Which is another regex use case mentioned in the lecture?
+• Creating an OVA file
+• Mounting USB media
+√ Validating user input on a web form
+• Changing a user's UID
+
+62. What are the two regex types covered?
+• Hard and soft regex
+• Static and dynamic regex
+√ Basic Regular Expressions and Extended Regular Expressions
+• Local and remote regex
+
+63. Which command is used throughout the regex module to print lines that match patterns?
+• chmod
+√ grep
+• gzip
+• useradd
+
+64. What three conceptual parts of a regex are emphasized?
+• Users, groups, and passwords
+• Input, output, and errors
+√ Anchors, elements, and quantifiers
+• Kernel, shell, and hardware
+
+65. What do anchors describe in a regex?
+• How many bytes a file has
+√ Where to find the pattern
+• Which user owns the pattern
+• How to compress the pattern
+
+66. What do elements describe in a regex?
+• The output file permissions
+• The target user's UID
+√ The characters, sets, wildcards, or groups to match
+• The archive type
+
+67. What do quantifiers describe in a regex?
+• Which directory to search
+√ How often the element should occur
+• Which file descriptor is used
+• Which user runs grep
+
+68. What do normal alphanumeric characters usually do in regex?
+√ Match themselves
+• Match any character
+• Negate the pattern
+• Always match the end of a line
+
+69. What does . match in a basic regex?
+• Only a literal period
+• Zero or more characters
+√ Any character except newline
+• Only digits
+
+70. What would the pattern r..f require between r and f?
+• Only two digits
+√ Exactly two characters
+• Zero characters
+• Any number of characters
+
+71. Which grep option prints only the matched non-empty portions instead of whole lines?
+√ -o
+• -i
+• -n
+• -v
+
+72. What do square brackets [] match in regex?
+√ One character from the listed set or range
+• A whole word only
+• Any number of characters
+• The beginning of a line
+
+73. What does [0-9] match?
+• Any number of digits automatically
+• A literal string 0-9
+√ One digit
+• Any non-digit
+
+74. How do you negate a bracket character set in regex?
+• Prefix it with |
+√ Start the set with ^
+• Use two dots
+• End it with $
+
+75. What does * mean in basic regex?
+• One or more occurrences only
+√ Zero or more occurrences of the preceding character or pattern
+• Exactly one occurrence
+• Beginning of line
+
+76. What strings can re*d match?
+• Only re*d literally
+• Only words ending in e
+• Only red
+√ rd, red, and reeed
+
+77. What does ^ anchor?
+√ The beginning of a line
+• Any character
+• A word boundary only
+• The end of a line
+
+78. What does $ anchor?
+• A digit
+√ The end of a line
+• A repeated character
+• The beginning of a line
+
+79. How do you match a literal regex-special character such as *?
+√ Escape it with a backslash
+• Replace it with a dot
+• Use only single quotes without escaping
+• Put it after a pipe
+
+80. Which grep option enables Extended Regular Expressions?
+• -n
+• -o
+• -G
+√ -E
+
+81. Which grep option explicitly interprets patterns as Basic Regular Expressions?
+√ -G
+• -E
+• -L
+• -A
+
+82. In ERE, what does ? mean?
+• One or more times
+√ The previous character occurs zero or one time
+• Exactly two times
+• Zero or more times
+
+83. In ERE, what does + mean?
+• Zero or one time
+• Beginning of line
+√ The previous character occurs one or more times
+• Zero or more times only
+
+84. In ERE, what does | mean?
+• Negation
+• Pipe stdout between shell commands only
+√ Alternation, like logical OR
+• End-of-line anchor
+
+85. Which regex matches both color and colour in ERE?
+• colou|r
+• colo*r
+√ colou?r
+• colou+r
+
+86. Which regex matches one or more e characters in ERE?
+• ^e$
+√ e+
+• e?
+• e* only for one or more
+
+87. Which regex matches either gray or grey?
+• gray?grey
+√ gray|grey
+• gray+grey
+• gray*grey
+
+88. In the lecture's ERE table, what does \w match?
+• Only digits
+• Only whitespace
+• Only punctuation
+√ A word character (alphanumeric plus underscore)
+
+89. What does \d match in the lecture's ERE table?
+• Whitespace
+• Any character
+√ A digit character
+• A word boundary
+
+90. What does \s match in the lecture's ERE table?
+• Only underscores
+• A literal s
+• Only digits
+√ Whitespace including newline
+
+91. What does {min,max} express?
+• A brace-expansion filename list only
+• A shell variable
+√ A repetition range from at least min to at most max
+• A user and group pair
+
+92. What does {3} mean as a regex quantifier?
+√ Exactly three repetitions of the preceding element
+• Zero to three
+• One to three
+• At least three
+
+93. What does {3,} mean?
+• At most three
+• Exactly three
+• Zero or one
+√ At least three repetitions
+
+94. What does {3,5} mean?
+• Exactly 35 repetitions
+• At least five
+• Three or five only
+√ Between three and five repetitions
+
+95. Which grep option ignores case?
+√ -i
+• -n
+• -l
+• -v
+
+96. Which grep option inverts matching and selects non-matching lines?
+• -E
+• -i
+• -o
+√ -v
+
+97. Which grep option adds line numbers to matching output?
+√ -n
+• -G
+• -v
+• -l
+
+98. Which grep option prints the name of each file that has a match?
+• -n
+√ -l
+• -o
+• -L
+
+99. Which grep option prints only matched parts of a matching line?
+• -i
+• -v
+√ -o
+• -E
+
+100. Which pipeline tool removes sections from each line?
+• uniq
+√ cut
+• sort
+• wc
+
+101. Which pipeline tool sorts lines of text?
+√ sort
+• wc
+• cut
+• grep -v
+
+102. Which pipeline tool reports or omits repeated lines?
+• tr
+• head
+• cut
+√ uniq
+
+103. Which pipeline tool prints newline, word, and byte counts?
+• sed
+• ln
+√ wc
+• sort

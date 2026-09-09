@@ -12,6 +12,7 @@ export const translations = {
     subject_azerbaijani: "Азербайджанский",
     subject_risks: "Риски",
     subject_python: "Cloud",
+    subject_linux: "Linux",
 
     select_module_label: "Выберите модуль:",
     all_modules_option: "Все модули (объединённо)",
@@ -28,6 +29,12 @@ export const translations = {
     security_gateways_module_4: "Модуль 4 — Аутентификация и контроль доступа",
     security_gateways_module_5: "Модуль 5 — Частные сети",
     security_gateways_module_6: "Модуль 6 — Атаки и защита",
+    linux_module_1: "Модуль 1",
+    linux_module_2: "Модуль 2",
+    linux_module_3: "Модуль 3",
+    linux_module_4: "Модуль 4",
+    linux_module_5: "Модуль 5",
+    linux_module_6: "Модуль 6",
 
     questions_from_label: "Вопросы от:",
     min_placeholder: "Начальный номер вопроса",
@@ -81,6 +88,7 @@ export const translations = {
     subject_azerbaijani: "Azerbaijani",
     subject_risks: "Risks",
     subject_python: "Cloud",
+    subject_linux: "Linux",
 
     select_module_label: "Select a module:",
     all_modules_option: "All modules (merged)",
@@ -97,6 +105,12 @@ export const translations = {
     security_gateways_module_4: "Module 4 — Authentication & Access Control",
     security_gateways_module_5: "Module 5 — Private Networks",
     security_gateways_module_6: "Module 6 — Attacks & Defense",
+    linux_module_1: "Module 1",
+    linux_module_2: "Module 2",
+    linux_module_3: "Module 3",
+    linux_module_4: "Module 4",
+    linux_module_5: "Module 5",
+    linux_module_6: "Module 6",
 
     questions_from_label: "Questions from:",
     min_placeholder: "Starting question number",
@@ -156,6 +170,12 @@ const MODULE_TRANSLATION_KEYS = {
   "questions_security_gateways_module4.txt": "security_gateways_module_4",
   "questions_security_gateways_module5.txt": "security_gateways_module_5",
   "questions_security_gateways_module6.txt": "security_gateways_module_6",
+  "questions_linux_module1.txt": "linux_module_1",
+  "questions_linux_module2.txt": "linux_module_2",
+  "questions_linux_module3.txt": "linux_module_3",
+  "questions_linux_module4.txt": "linux_module_4",
+  "questions_linux_module5.txt": "linux_module_5",
+  "questions_linux_module6.txt": "linux_module_6",
 };
 
 // Текущий выбранный язык / current selected language

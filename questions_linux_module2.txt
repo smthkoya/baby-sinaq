@@ -1,0 +1,1013 @@
+1. What is the shell?
+√ A command-line interpreter that takes user input and passes actions to the operating system
+• A file compression format
+• A package repository
+• A physical network adapter
+
+2. Which shell is described as the most commonly used shell on Linux distributions?
+• PowerPoint
+√ Bash
+• NTFS
+• RPM
+
+3. What does Bash stand for?
+• Basic Administration System Host
+• Binary Application Shell Handler
+• Boot And System Helper
+√ Bourne Again Shell
+
+4. In the prompt user@linux:~$, what does ~ represent?
+• The /tmp directory
+• The current user's password
+• The root directory only
+√ The user's home directory
+
+5. Which Bash feature creates short nicknames for longer commands?
+• Inodes
+• Pipes
+√ Aliases
+• Sockets
+
+6. Which Bash feature stores information for the shell and user?
+• Tarballs
+√ Variables
+• Partitions
+• Drivers
+
+7. Which Bash feature lets you put commands into a file and execute them as a sequence?
+• Globbing only
+• Archiving
+√ Scripting
+• Mounting
+
+8. What does command-line history help you do?
+• Assign IP addresses
+• Change filesystem permissions
+• Delete all old files automatically
+√ Reuse previously entered commands without retyping them
+
+9. Which key normally recalls the previous command in Bash?
+• Caps Lock
+• Escape only
+√ Up Arrow
+• Tab only
+
+10. Which command displays command history?
+• pwd
+√ history
+• who
+• man
+
+11. How can you execute history entry number 3?
+√ !3
+• history -x 3
+• $3
+• #3
+
+12. What does history 3 display?
+• Command number 3 only
+√ The last three commands from the history list
+• Three random commands
+• The first three files in the directory
+
+13. What is the typical Linux command structure?
+• argument command option
+• option = command + password
+√ command [options] [arguments]
+• [arguments] [command] only
+
+14. What is the main purpose of a command option?
+• Store an encrypted password
+• Provide only a username
+√ Modify the core behavior of a command
+• Create a new kernel
+
+15. What is the main purpose of a command argument?
+• Replace the shell
+• Define a file descriptor
+√ Provide additional information or specify what the command acts on
+• Change the CPU architecture
+
+16. How are single-letter options usually introduced?
+• With a dollar sign
+√ With one dash (-)
+• With two slashes
+• With a colon
+
+17. How are full-word options usually introduced?
+• With a semicolon
+• With an ampersand
+√ With two dashes (--)
+• With a single period
+
+18. What is the top-level directory in Linux?
+√ The root directory /
+• /root
+• /home
+• /usr
+
+19. Which directory contains essential command binaries?
+• /home
+• /tmp
+• /media
+√ /bin
+
+20. Which directory contains bootloader, kernel executable, and files required to boot Linux?
+√ /boot
+• /opt
+• /var
+• /mnt
+
+21. Which directory contains device files for hardware devices?
+• /lib
+• /etc
+• /usr
+√ /dev
+
+22. Which directory commonly contains system configuration files?
+√ /etc
+• /home
+• /media
+• /tmp
+
+23. Where do normal users usually have their home subdirectories?
+• /sbin
+• /boot
+• /dev
+√ /home
+
+24. Which directory contains shared library files required for system boot?
+√ /lib
+• /root
+• /mnt
+• /var
+
+25. Where are removable media devices commonly mounted according to the lecture?
+• /etc
+√ /media
+• /bin
+• /sbin
+
+26. Which directory is a temporary mount point for regular filesystems?
+• /opt
+√ /mnt
+• /usr
+• /root
+
+27. Which directory is intended for optional or third-party tools?
+• /tmp
+• /boot
+√ /opt
+• /dev
+
+28. What is the root user's home directory?
+• /home/root
+• /
+• /admin
+√ /root
+
+29. Which directory contains system administration executables?
+• /tmp
+√ /sbin
+• /media
+• /home
+
+30. Which directory is used for temporary files and is generally cleared at boot?
+√ /tmp
+• /var
+• /root
+• /opt
+
+31. Which directory contains executables, libraries, and man files?
+• /boot
+• /dev
+• /media
+√ /usr
+
+32. Which directory contains variable data such as log files?
+√ /var
+• /bin
+• /lib
+• /mnt
+
+33. Which symbol is shorthand for the current user's home directory?
+√ ~
+• .
+• /
+• ..
+
+34. Which command prints the working directory?
+• ls
+• mkdir
+√ pwd
+• cd
+
+35. Which command changes the current directory?
+• pwd
+√ cd
+• touch
+• cp
+
+36. What does cd with no arguments normally do?
+• Lists hidden files
+√ Moves to the user's home directory
+• Moves to /tmp
+• Deletes the current directory
+
+37. What does cd .. do?
+• Repeats the previous command
+√ Moves one directory up to the parent directory
+• Moves to the root directory in every case
+• Moves to the home directory
+
+38. What does a single period . represent in a path?
+√ The current directory
+• The parent directory
+• The root directory
+• The home directory
+
+39. What does an absolute path always begin with?
+√ /
+• ..
+• ~
+• $
+
+40. Which is an absolute path?
+√ /home/sysadmin/Documents
+• ./file.txt
+• School/Art
+• ../Documents
+
+41. Which is a relative path?
+• /home/user/Documents
+√ ../Pictures
+• /var/log
+• /etc/passwd
+
+42. What does the ls command do with no options or arguments?
+√ Lists files in the current directory
+• Changes to the home directory
+• Displays command history
+• Creates an empty file
+
+43. What is a hidden file in Linux?
+• Any file larger than 1 MB
+• Any file owned by root
+• Any executable file
+√ A file or directory whose name begins with a dot
+
+44. Which ls option includes hidden files?
+• -d
+• -S
+√ -a
+• -t
+
+45. Which ls option produces a long listing with metadata?
+• -a
+• -1
+• -R
+√ -l
+
+46. Which first character in ls -l output indicates a directory?
+• -
+√ d
+• l
+• c
+
+47. Which first character in ls -l output indicates a regular file?
+• p
+√ -
+• d
+• s
+
+48. Which first character in ls -l output indicates a symbolic link?
+√ l
+• c
+• b
+• d
+
+49. What does the hard-link count field in ls -l output show?
+• The number of directories below it
+• The number of users logged in
+√ How many hard links point to the file
+• The file size in KB
+
+50. Which ls option makes sizes human-readable when used with a long listing?
+• -d
+• -R
+• -t
+√ -h
+
+51. Which option helps show details about a directory itself rather than its contents?
+√ -d
+• -1
+• -S
+• -a
+
+52. Which ls option performs a recursive listing?
+• -r
+• -h
+• -t
+√ -R
+
+53. Which ls option sorts by file size?
+• -r
+• -a
+• -t
+√ -S
+
+54. Which ls option sorts by modification time?
+√ -t
+• -S
+• -d
+• -1
+
+55. Which ls option reverses the sort order?
+√ -r
+• -R
+• -h
+• -a
+
+56. Which option displays a complete timestamp including hours, minutes, and seconds?
+• --recursive-only
+• --hidden
+√ --full-time
+• --no-sort
+
+57. Which ls option lists one file per line?
+• -i
+√ -1
+• -l
+• -d
+
+58. Which command creates a directory?
+√ mkdir
+• touch
+• pwd
+• rm
+
+59. Which command is often used to create an empty file?
+√ touch
+• mv
+• cd
+• mkdir
+
+60. What two operands does cp normally require?
+• A shell and a password
+• A user and a group
+• A UID and GID
+√ A source and a destination
+
+61. Which cp option produces verbose output?
+√ -v
+• -i
+• -r
+• -n
+
+62. Which cp option prompts before overwriting?
+• -v
+√ -i
+• -h
+• -R
+
+63. Which cp option avoids overwriting existing destination files?
+• -S
+• -i
+√ -n
+• -v
+
+64. Which cp option is needed to copy directories recursively?
+• -l
+√ -r
+• -a
+• -t
+
+65. Which command removes a file?
+• pwd
+• history
+√ rm
+• cp
+
+66. Which rm option is recommended as a precaution when deleting multiple files?
+√ -i
+• -S
+• -h
+• -d
+
+67. Which rm option removes a directory and its contents recursively?
+• -v
+• -t
+√ -r
+• -l
+
+68. Which command moves or renames files?
+• mkdir
+√ mv
+• touch
+• pwd
+
+69. Which mv option asks before overwriting a destination?
+• -v
+√ -i
+• -n
+• -R
+
+70. Which mv option means 'no clobber' and does not overwrite destination contents?
+√ -n
+• -S
+• -i
+• -v
+
+71. Which mv option shows the resulting move?
+• -t
+√ -v
+• -a
+• -h
+
+72. You are in /home/user/Documents and run cd with no argument. Where do you go?
+• /home/user/Documents
+• /home
+√ /home/user
+• /Documents
+
+73. You are in /home/user/Documents and run cd .. . Where do you go?
+• /home
+√ /home/user
+• /home/user/Documents
+• /
+
+74. You want to see every file under /etc/ppp including files in subdirectories. Which command style is correct?
+√ ls -R /etc/ppp
+• ls -d /etc/ppp
+• ls -a /etc/ppp
+• ls -S /etc/ppp
+
+75. You want a long listing sorted from largest file to smallest. Which option combination is appropriate?
+• ls -lt
+√ ls -lS
+• ls -ld
+• ls -la
+
+76. You want file sizes like 1.5M instead of raw bytes. Which option should be added to ls -l?
+• -a
+• -t
+• -R
+√ -h
+
+77. You want to copy /etc/hosts into your home directory. Which command is correct?
+• cp ~ /etc/hosts
+• mv ~ /etc/hosts
+• touch /etc/hosts ~
+√ cp /etc/hosts ~
+
+78. You want to rename old.txt to new.txt in the same directory. Which command is correct?
+• rm old.txt new.txt
+√ mv old.txt new.txt
+• mkdir old.txt new.txt
+• cp -r old.txt new.txt
+
+79. You try rm Videos and receive 'Is a directory'. Which command removes the directory recursively?
+• rm -l Videos
+• rm -h Videos
+• rm -a Videos
+√ rm -r Videos
+
+80. What are glob characters commonly called?
+• Sudoers
+• File descriptors
+√ Wildcards
+• Inodes
+
+81. What does * match in Linux globbing?
+√ Zero or more of any characters in a filename
+• Only hidden files
+• Exactly one character
+• Only digits
+
+82. What does ? match in Linux globbing?
+√ Exactly one character
+• No characters
+• Zero or more characters
+• Only uppercase letters
+
+83. What does [gu] match in a glob pattern?
+• Any number of g or u characters
+• Any character except g and u
+• The exact two-character string gu
+√ One character that is either g or u
+
+84. What does [a-d] represent in globbing?
+• Any character except a through d
+• A brace-expansion range
+• Any filename containing four characters
+√ A single character from a through d
+
+85. What does [!a-t] do in a glob?
+• Matches only a through t
+• Matches exactly the string !a-t
+• Creates files a through t
+√ Matches a single character not in the range a through t
+
+86. Why might ls -d be used with globbing patterns that match directories?
+• To delete the directories
+• To sort directories by size
+• To follow symbolic links only
+√ To display directory names instead of listing their contents
+
+87. What is brace expansion used for?
+• Matching existing filenames only
+• Redirecting STDERR
+• Changing file permissions
+√ Generating multiple strings from one pattern before a command runs
+
+88. What does {1..5} generate?
+• 0 1 2 3 4
+• The literal text {1..5} only
+√ 1 2 3 4 5
+• 1 3 5 only
+
+89. What does {a,b,c} represent in brace expansion?
+• A character range from a to c only
+• A file descriptor list
+• A negated glob
+√ A set of explicit choices: a, b, and c
+
+90. What does {1..10..2} mean?
+√ Count from 1 to 10 using a step of 2
+• Count backward from 10 to 1
+• Match any two digits
+• Create only 1 and 10
+
+91. Which pattern expands to img01.jpg img02.jpg img03.jpg?
+• img[01-03].jpg
+• img?.jpg
+√ img{01..03}.jpg
+• img(01,02,03).jpg
+
+92. Which command creates directories dir5 and dir8 using brace expansion?
+• mkdir dir(5,8)
+√ mkdir dir{5,8}
+• mkdir dir*5,8
+• mkdir dir[5,8]
+
+93. Which pattern creates file1.txt through file20.txt when used with touch?
+• file(1..20).txt
+• file?.txt
+• file[1-20].txt
+√ file{1..20}.txt
+
+94. What is the backslash used for in globbing context?
+• Starting a comment
+√ Escaping or protecting a following special character
+• Separating commands like a pipe
+• Representing the home directory
+
+95. What is an inode?
+• A user password field
+• A shell alias
+• A network hostname
+√ A unique identification number for a file on a partition
+
+96. Which command displays inode numbers?
+• inode --show
+• ls -a
+• pwd -i
+√ ls -i
+
+97. What is a hard link?
+• A copy with a different inode
+• A network shortcut
+• A compressed archive
+√ Another filename that points to the same inode
+
+98. Can a hard link in this lecture be created for a directory?
+√ No, hard links are described for files only
+• Yes, always
+• Only across partitions
+• Only with ssh
+
+99. What partition restriction applies to hard links?
+• They require FAT32
+• They must be on different partitions
+√ They must be on the same partition
+• They require a network filesystem
+
+100. Which command creates a hard link named link_name to file1?
+• link file1 > link_name
+• cp -s file1 link_name
+• ln -s file1 link_name
+√ ln file1 link_name
+
+101. What happens to the hard-link count when a new hard link is created?
+• It is unchanged
+• It decreases by one
+• It becomes zero
+√ It increases by one
+
+102. What is a symbolic link?
+• A second filename sharing the exact same inode by definition
+√ A file that points to another file or directory by path
+• A compressed copy
+• A user group
+
+103. Which command creates a symbolic link named mypasswd to /etc/passwd?
+• cp -r /etc/passwd mypasswd
+• ln /etc/passwd mypasswd
+√ ln -s /etc/passwd mypasswd
+• mv -s /etc/passwd mypasswd
+
+104. Which is an advantage of a hard link?
+√ Deleting one hard-linked filename does not delete the data while another hard link remains
+• It clearly displays an arrow to the target
+• It can link directories across partitions
+• It can point to a missing path without issue
+
+105. Which is an advantage of a symbolic link?
+• It cannot become broken
+√ It can link to a directory
+• It always shares the same inode as the target
+• It must stay on the same partition
+
+106. What happens to a symbolic link if its original target is removed?
+• Nothing changes because data is duplicated
+• The symbolic link becomes a hard link
+• The target is recreated automatically
+√ The link becomes broken and fails to reach the target
+
+107. Which command gives a one-line manual-page description?
+√ whatis
+• pwd
+• touch
+• apropos
+
+108. Which commands can search man pages by keyword?
+• gzip or bzip2
+• pwd or cd
+√ apropos or man -k
+• cp or mv
+
+109. Which option often provides quick command help similar to a synopsis?
+• --archive-now
+• --delete
+√ --help
+• --root-only
+
+110. Where are README-style documentation files commonly found?
+√ /usr/share/doc or /usr/doc
+• /boot only
+• /proc/passwords
+• /dev only
+
+111. What are man pages?
+√ Manual pages describing commands and their options
+• Compressed archives
+• User password records
+• Network packets
+
+112. Which command opens the manual page for ls?
+• show ls
+• manual ls
+• help ls
+√ man ls
+
+113. Which key exits a man page?
+• Esc only
+• X
+• Ctrl+Alt+Del
+√ Q
+
+114. Which man-page section gives the command name and a brief description?
+• SYNOPSIS
+√ NAME
+• OPTIONS
+• SEE ALSO
+
+115. Which man-page section shows examples of command syntax?
+√ SYNOPSIS
+• NAME
+• AUTHOR
+• COPYRIGHT
+
+116. Which man-page section provides a detailed explanation of the command?
+• FILES
+• AUTHOR
+√ DESCRIPTION
+• NAME
+
+117. Which man-page section lists available command options?
+• AUTHOR
+• REPORTING BUGS
+√ OPTIONS
+• COPYRIGHT
+
+118. Which man-page section suggests related commands or additional information?
+√ SEE ALSO
+• FILES
+• SYNOPSIS
+• NAME
+
+119. How do you search forward inside a man page?
+√ Press /, type the term, and press Enter
+• Press $, type the term
+• Press ! followed by the term
+• Use cd term
+
+120. After a man-page search, which key goes to the next match?
+√ n
+• N
+• q
+• h
+
+121. After a man-page search, which key goes to the previous match?
+√ N
+• n
+• /
+• q
+
+122. Which man-page section number is for user programs?
+√ 1
+• 8
+• 2
+• 5
+
+123. Which man-page section number is for system administration commands?
+• 6
+• 3
+√ 8
+• 1
+
+124. What are info pages compared with man pages in the lecture?
+• Always shorter and with no navigation
+• Only for kernel compilation
+√ Often more detailed and able to link between pages
+• Only for Windows commands
+
+125. What does && do between two commands?
+• Always runs both commands regardless of status
+• Sends stdout as stdin
+√ Runs the next command only if the previous command succeeds
+• Runs the next command only if the previous fails
+
+126. What does || do between two commands?
+√ Runs the next command only if the previous command fails
+• Runs the next command only if the previous succeeds
+• Redirects STDERR
+• Always runs both commands
+
+127. What does ; do between commands?
+• Runs only after failure
+• Runs only after success
+• Pipes stdout into stdin
+√ Runs commands regardless of the previous command's exit status
+
+128. What does the pipe | operator do?
+• Runs the next command only on failure
+√ Sends stdout of one command as stdin to the next command
+• Creates a hard link
+• Redirects both streams to a file
+
+129. Which example runs echo "Error" only if mkdir test fails?
+• mkdir test && echo "Error"
+• mkdir test ; echo "Error"
+√ mkdir test || echo "Error"
+• echo "Error" && mkdir test
+
+130. Which example runs the second command only if the first succeeds?
+• command1 || command2
+• command1 > command2
+√ command1 && command2
+• command1 ; command2
+
+131. Which example runs both commands regardless of whether the first fails?
+• command1 && command2
+√ command1 ; command2
+• command1 | command2
+• command1 || command2
+
+132. What is file descriptor 0?
+• STDOUT
+• STDERR
+√ STDIN
+• A hard link
+
+133. What is file descriptor 1?
+√ STDOUT
+• A socket
+• STDIN
+• STDERR
+
+134. What is file descriptor 2?
+• STDOUT
+√ STDERR
+• STDIN
+• A pipe
+
+135. What does > do to standard output?
+• Reads input from a file
+• Redirects only STDERR
+• Appends without overwriting
+√ Redirects it to a file, overwriting an existing file
+
+136. What does >> do?
+• Redirects only STDIN
+• Always deletes the file
+• Creates a symbolic link
+√ Appends output to a file, creating the file if necessary
+
+137. What happens with > if the target file does not exist?
+• The command always fails
+• The output is discarded
+√ The file is created
+• The shell opens an SSH session
+
+138. What happens with >> if the target file does not exist?
+• The file is ignored
+• The shell waits forever
+√ The file is created and output is added
+• The command fails
+
+139. How do you redirect STDERR to error.txt?
+• > error.txt
+• 0> error.txt
+• | error.txt
+√ 2> error.txt
+
+140. What does &> all.txt do?
+• Redirects only STDIN
+√ Redirects both STDOUT and STDERR to all.txt
+• Appends only STDERR
+• Runs all.txt as a command
+
+141. How can STDOUT and STDERR be redirected to different files?
+√ > output.txt 2> error.txt
+• < output.txt | error.txt
+• &> output.txt error.txt
+• 2< output.txt > error.txt
+
+142. What does < do?
+√ Uses a file as STDIN for a command
+• Redirects STDOUT
+• Creates an archive
+• Redirects STDERR
+
+143. In tr 'a-z' 'A-Z' < example.txt, where does tr get its input?
+• From STDERR
+√ From example.txt through STDIN
+• From /etc/passwd automatically
+• From command history
+
+144. What is the difference between archiving and compression?
+• Archiving changes permissions; compression changes ownership
+• They are exactly the same operation
+• Compression combines users; archiving changes groups
+√ Archiving combines files into one; compression reduces size by removing redundancy
+
+145. What does tar stand for?
+• Transfer And Restore
+√ Tape Archive
+• Text Access Record
+• Terminal Archive Router
+
+146. Which tar mode creates a new archive?
+• -z
+• -t
+√ -c
+• -x
+
+147. Which tar mode extracts files from an archive?
+• -c
+• -t
+• -f
+√ -x
+
+148. Which tar mode lists archive contents without extracting?
+√ -t
+• -x
+• -c
+• -z
+
+149. What is the purpose of tar -f?
+• Force deletion
+• Format the disk
+√ Specify the archive file name
+• Follow symbolic links only
+
+150. Which command creates alpha_files.tar from files matching alpha*?
+√ tar -cf alpha_files.tar alpha*
+• tar -xf alpha_files.tar alpha*
+• gzip alpha_files.tar alpha*
+• tar -tf alpha_files.tar alpha*
+
+151. Which command lists the contents of alpha_files.tar?
+• tar -cf alpha_files.tar
+• tar -xf alpha_files.tar
+√ tar -tf alpha_files.tar
+• tar -zf alpha_files.tar
+
+152. Which command extracts alpha_files.tar?
+• tar -cf alpha_files.tar
+√ tar -xf alpha_files.tar
+• tar -lf alpha_files.tar
+• tar -tf alpha_files.tar
+
+153. What is lossless compression?
+• Compression that always deletes some information
+• A type of hard link
+√ Compression in which no information is removed from the file
+• An uncompressed archive
+
+154. What is lossy compression?
+• A symbolic link
+√ Compression in which some information may be removed
+• A package-manager operation
+• Compression with zero information loss by definition
+
+155. Which two compression algorithms/tools are highlighted for Linux?
+• grep and sed
+• cp and mv
+• ssh and scp
+√ gzip and bzip2
+
+156. What usually happens to the original file after gzip file completes without special options?
+√ The original is replaced by a .gz compressed file
+• The original remains and no .gz file is created
+• The file is deleted with no compressed output
+• The file is converted to .zip
+
+157. Which command restores file.gz to its original form?
+• unzip file.gz
+• gzip -r file.gz
+√ gunzip file.gz
+• tar -c file.gz
+
+158. Which command displays gzip compression information such as compressed and uncompressed sizes?
+√ gzip -l file.gz
+• gzip -x file.gz
+• ls -z file.gz
+• gunzip -t file.gz
+
+159. Which tool decompresses a .bz2 file?
+√ bunzip2
+• gunzip
+• tar -z
+• unzip
+
+160. Which command compresses a file using bzip2?
+• bunzip2 file1
+• gzip -d file1
+√ bzip2 file1
+• tar -xf file1
+
+161. Which tar option asks tar to use gzip compression?
+√ -z
+• -t
+• -x
+• -v
+
+162. Which command creates a gzip-compressed tarball in one step?
+• tar -xzf archive.tar.gz files
+• gzip -t archive.tar.gz files
+√ tar -czf archive.tar.gz files
+• tar -tf archive.tar.gz files
+
+163. Which command extracts project.tar.gz in one step?
+• tar -tvf project.tar.gz
+√ tar -xzvf project.tar.gz
+• tar -xvf project.tar.gz
+• tar -cvf project.tar.gz
+
+164. Which archive format is described as the default archiving utility in Microsoft environments?
+• tar
+√ ZIP
+• gzip
+• bzip2
+
+165. What is the default behavior of zip in the lecture?
+√ Add files to an archive and compress them
+• Only extract files
+• Only rename files
+• Only list archive contents
+
+166. Does zip recurse into subdirectories by default?
+• Only when used with sudo
+• Yes, always
+√ No, use -r for recursion
+• Only with -l
+
+167. Which command recursively creates file.zip from dir/?
+• unzip -r file.zip dir/
+• zip file.zip dir/
+√ zip -r file.zip dir/
+• tar -r file.zip dir/
+
+168. Which command extracts a ZIP archive?
+√ unzip file.zip
+• bzip2 -d file.zip
+• gunzip file.zip
+• tar -xf file.zip
+
+169. Which option lists files inside a ZIP archive without extracting?
+• unzip -r
+√ unzip -l
+• gzip -l
+• zip -x
