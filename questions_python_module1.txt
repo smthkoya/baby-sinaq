@@ -1,8 +1,3 @@
-CLOUD SECURITY — MODULE 1: Cloud Foundations & Security Principles
-Professor-style practice quiz
-
-Format: • = wrong option, √ = correct option
-Correct-answer positions are mixed, and the correct option is not intentionally made the longest.
 
 1. [Module 1] A user can provision a new cloud resource without waiting for an infrastructure administrator. Which NIST cloud characteristic is this?
 • Rapid elasticity automatically changes capacity with demand.
