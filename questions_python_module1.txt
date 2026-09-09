@@ -1,104 +1,765 @@
-    1. A backup restore process requires approval from two managers before data can be recovered. Which CIA trade-off does this design illustrate?
-    • Confidentiality is reduced to improve integrity
-    • Integrity is reduced to improve availability
-    • Integrity is exchanged for scalability
-    √ Availability is reduced to strengthen confidentiality and integrity
-    • Confidentiality and availability both increase without cost
+CLOUD SECURITY — MODULE 1: Cloud Foundations & Security Principles
+Professor-style practice quiz
 
-    2. A ministry keeps citizen records in a national government data center with cloud-style self-service, while using Microsoft 365 for staff email. Which deployment model describes the overall environment?
-    • Private cloud
-    • Public cloud
-    • Community cloud
-    • Multi-tenant cloud
-    √ Hybrid cloud
+Format: • = wrong option, √ = correct option
+Correct-answer positions are mixed, and the correct option is not intentionally made the longest.
 
-    3. Which list contains only pillars from the six foundational pillars of Zero Trust?
-    • Subscriptions, tenants, portals
-    • Compliance, audit, governance
-    • Firewalls, proxies, gateways
-    √ Identities, devices, applications
-    • Backups, snapshots, archives
+1. [Module 1] A user can provision a new cloud resource without waiting for an infrastructure administrator. Which NIST cloud characteristic is this?
+• Rapid elasticity automatically changes capacity with demand.
+• Broad network access makes services reachable from many devices.
+√ On-demand self-service lets users provision resources when needed.
+• Community cloud shares infrastructure among organizations with common needs.
+• Resource pooling shares provider infrastructure across customers.
+• Measured service records consumption for billing and telemetry.
 
-    4. Which cross-cloud mapping is most accurate for governance hierarchies?
-    √ Azure management group maps to AWS Organizations OU and GCP folder
-    • AWS account maps to an Azure resource tag
-    • Azure tenant maps to a single AWS EC2 instance
-    • GCP project maps to an Entra directory role
-    • Azure subscription maps to an AWS IAM user
+2. [Module 1] A shopping site automatically adds compute capacity during a sale and removes it later. Which characteristic is demonstrated?
+√ Rapid elasticity scales resources up and down quickly.
+• Broad network access lets users connect from different networks.
+• Resource pooling places customers on shared provider infrastructure.
+• On-demand self-service allows manual provisioning without an approval ticket.
+• Private cloud dedicates the underlying infrastructure to one organization.
+• Measured service records how much capacity the site consumed.
 
-    5. Place the defense correctly on the attack timeline: which control primarily blocks the initial access (foothold) phase?
-    • Data loss prevention policies
-    • Network micro-segmentation between subnets
-    • Immutable backup storage
-    √ Multifactor authentication enforced by Conditional Access
-    • Just-in-time privileged role activation
+3. [Module 1] A finance team receives detailed usage and billing reports for storage and compute. Which cloud characteristic enables this?
+• Resource pooling allocates shared infrastructure to multiple tenants.
+• On-demand self-service lets users request resources directly.
+√ Measured service meters consumption and produces usage data.
+• Rapid elasticity changes capacity automatically as demand changes.
+• Hybrid cloud integrates public and private environments into one design.
+• Broad network access exposes services through standard network mechanisms.
 
-    6. Which layer sequence correctly represents the defense-in-depth model taught for cloud environments?
-    • Data, application, licensing, billing, tenant, portal, physical
-    √ Physical, identity and access, perimeter, network, compute, application, data
-    • Identity, subscription, resource group, resource, tag, lock, policy
-    • Perimeter, firewall, antivirus, patching, backup, audit, insurance
-    • Reconnaissance, foothold, escalation, movement, exfiltration
+4. [Module 1] Several customers share the same physical cloud platform but remain logically isolated. What NIST characteristic is involved?
+• Private cloud guarantees that only one company uses every physical server.
+• Rapid elasticity changes capacity when workloads grow or shrink.
+√ Resource pooling supports multi-tenancy on shared infrastructure.
+• Broad network access makes services available over standard networks.
+• Measured service tracks each tenant's usage for chargeback.
+• On-demand self-service removes the need for manual provisioning approval.
 
-    7. In July 2026, where does an administrator assign an Office 365 E3 license to a group?
-    • Azure portal, under Subscriptions
-    • Microsoft Entra admin center, under Billing
-    • Microsoft Defender portal, under Settings
-    • Microsoft Purview portal, under Data governance
-    √ Microsoft 365 admin center, under Billing then Licenses
+5. [Module 1] Why does broad network access increase the importance of identity controls?
+• It removes the need for MFA because the provider already validates every device.
+• Broad network access prevents users from connecting from mobile devices or home networks.
+• It makes firewalls unnecessary because all traffic is automatically trusted after sign-in.
+• It means the provider owns all user accounts and customer access decisions.
+• It guarantees that cloud resources use only private IP addresses and cannot face the Internet.
+√ Attackers can attempt access from many locations, so identity becomes a major control point.
 
-    8. Which statement about a Microsoft Entra tenant and an Azure subscription is correct?
-    √ A tenant can contain many subscriptions, and each subscription trusts exactly one tenant
-    • Licenses are purchased per subscription, not per tenant
-    • A subscription can trust many tenants at the same time
-    • A tenant and a subscription are two names for the same object
-    • Deleting a subscription also deletes the tenant
+6. [Module 1] A developer creates dozens of resources in minutes with valid credentials but without governance approval. Which security consequence of on-demand self-service is shown?
+• Self-service automatically removes every unused resource after one hour.
+• Self-service makes all newly created resources private by default in every service.
+• Self-service turns every resource into SaaS and moves security responsibility to the provider.
+• Self-service prevents cost growth because quotas cannot be changed by customers.
+√ Self-service can create shadow IT and expand attack surface quickly.
+• Self-service eliminates configuration mistakes by using provider-managed templates only.
 
-    9. Why are stored passwords salted before hashing?
-    • To compress the password database
-    • To synchronize passwords between cloud providers
-    • To make the password longer and easier to remember
-    • To allow administrators to decrypt passwords when needed
-    √ To defeat precomputed dictionary and rainbow-table attacks
+7. [Module 1] Why can rapid elasticity become a security and governance concern?
+• Elasticity disables access control while new instances are being created.
+• Elasticity prevents monitoring because resources disappear from all platform logs.
+• Elasticity forces customers to use public IP addresses for every scaled instance.
+• Elasticity removes the provider's responsibility for physical infrastructure.
+• Elasticity means a workload can never be limited by subscription quotas or budgets.
+√ Capacity, cost, and exposed resources can grow silently without quotas or alerts.
 
-    10. Which attack tries a small set of common passwords against many accounts to stay under lockout thresholds?
-    • Dictionary attack against a single account
-    • SQL injection
-    • Token replay
-    √ Password spray
-    • Phishing
+8. [Module 1] What security opportunity comes from measured service?
+• Metered usage guarantees that resource logs are enabled on every Azure service by default.
+• Metered usage replaces customer logging and audit configuration on all services.
+• Metered usage prevents attackers from creating resources with compromised credentials.
+√ Metered usage creates rich telemetry that can support monitoring and anomaly detection.
+• Metered usage makes encryption unnecessary because every byte is already counted.
+• Metered usage means the provider automatically investigates every suspicious event.
 
-    11. A dynamic security group was created with the rule user.objectid -ne null, and saving fails with an invalid-property error. What is the most likely cause?
-    • The group owner lacks an Office 365 license
-    • Dynamic groups require a Microsoft 365 group type
-    √ The rule property is case-sensitive and must be written user.objectId
-    • Dynamic groups cannot use the -ne operator
-    • The tenant has too many users for dynamic evaluation
+9. [Module 1] A ministry keeps a regulated database in its own data center but uses Microsoft 365 for collaboration. Which deployment model best fits?
+√ Hybrid cloud combines private/on-premises resources with public cloud services.
+• Community cloud is required whenever a government organization uses Microsoft 365.
+• SaaS is a deployment model that describes who physically owns the infrastructure.
+• Private cloud means no public cloud service is used anywhere in the organization.
+• IaaS is a deployment model that combines provider and customer infrastructure.
+• Public cloud means every workload, including the regulated database, is provider-hosted.
 
-    12. In a TLS connection to entra.microsoft.com, how are asymmetric and symmetric cryptography used together?
-    • Symmetric establishes the handshake; asymmetric encrypts the session data
-    • Asymmetric encrypts all traffic; symmetric is used only for signatures
-    • Both encrypt every packet twice for extra security
-    √ Asymmetric secures the handshake and key exchange; a symmetric session key encrypts the traffic
-    • TLS uses hashing only and no encryption
+10. [Module 1] Several government agencies share a dedicated cloud built for common regulatory requirements. What model is this?
+• Public cloud requires one customer to own all underlying hardware.
+• PaaS describes infrastructure shared by a regulated industry.
+• Private cloud is shared by any number of customers with no common requirements.
+√ Community cloud is shared by organizations with common requirements.
+• Resource pooling is a deployment model used only by government agencies.
+• Hybrid cloud always means several unrelated organizations share one tenant.
 
-    13. A procurement document requires cloud-specific extensions of ISO/IEC 27001 covering protection of personal data in public clouds. Which standard should be cited?
-    √ ISO/IEC 27018
-    • ISO 9001
-    • ISO/IEC 20000
-    • ISO/IEC 27017
-    • ISO 31000
+11. [Module 1] A company wants maximum infrastructure control and runs cloud-style automation on hardware dedicated to itself. Which model fits?
+√ Private cloud provides dedicated infrastructure with cloud-style management.
+• Public cloud gives the customer direct ownership of the provider's data centers.
+• Community cloud is simply another name for a single-company private cloud.
+• SaaS provides dedicated hardware while the provider manages only the application.
+• Hybrid cloud means every resource must run simultaneously on-premises and in Azure.
+• Measured service defines who owns and operates the underlying infrastructure.
 
-    14. Which set lists the five essential characteristics of cloud computing as defined by NIST SP 800-145?
-    √ On-demand self-service, broad network access, resource pooling, rapid elasticity, measured service
-    • Virtualization, containers, APIs, automation, billing
-    • Public, private, hybrid, community, multi-cloud
-    • IaaS, PaaS, SaaS, FaaS, DBaaS
-    • Confidentiality, integrity, availability, authentication, authorization
+12. [Module 1] Which statement about public versus private cloud security matches the module?
+• Private cloud removes the need for audits because the organization owns the hardware.
+√ Private cloud gives more control, but security still depends on how well it is operated.
+• Private cloud is automatically more secure because no configuration mistakes are possible.
+• Public cloud is automatically less secure because providers cannot isolate tenants.
+• Public cloud transfers responsibility for customer identities and data to the provider.
+• The deployment model alone determines whether an environment is secure or insecure.
 
-    15. Which option states the three guiding principles of Zero Trust?
-    • Authenticate, authorize, audit
-    √ Verify explicitly, use least-privilege access, assume breach
-    • Encrypt everything, log everything, back up everything
-    • Prevent, detect, respond
-    • Isolate, segment, monitor
+13. [Module 1] You run Windows Server on an Azure VM and patch the guest OS yourself. Which service model is this?
+√ IaaS leaves the guest operating system and higher layers to the customer.
+• PaaS leaves the provider responsible only for physical security while you patch the runtime.
+• SaaS requires customers to patch the operating system but not the application.
+• Measured service describes a VM where billing is based on consumption.
+• Private cloud is the service model for any workload with a customer-managed OS.
+• Community cloud is the service model used when several VMs share one host.
+
+14. [Module 1] You move from a SQL Server VM to Azure SQL Database. What responsibility most clearly moves to the provider?
+• The provider becomes responsible for application queries and secure coding practices.
+• The provider takes over your database identities, permissions, and authentication design.
+• The provider automatically enables every audit and diagnostic log the customer may need.
+• The provider decides which networks may reach the database on behalf of the customer.
+√ The provider takes over operating-system and managed-runtime patching.
+• The provider classifies your business data and chooses its retention requirements.
+
+15. [Module 1] Employees use Microsoft 365 through a browser. Which service model is this?
+√ SaaS provides a finished application managed by the provider.
+• Hybrid cloud is a service model for applications accessed over the Internet.
+• PaaS provides only the physical datacenter and leaves the runtime to the customer.
+• IaaS provides raw compute while the customer installs the finished application.
+• Resource pooling is the service model in which users access a complete application.
+• Private cloud is required whenever an application contains organization data.
+
+16. [Module 1] Which sentence best captures the module's service-model lesson?
+• The service model changes billing only; the security responsibility matrix stays identical.
+• Moving to SaaS transfers all security decisions to the provider because the application is managed.
+• Moving to IaaS reduces customer responsibility because the provider owns the physical hosts.
+• A workload becomes secure automatically when it moves from an on-premises server to a managed service. and it applies automatically to every resource in the tenant.
+√ More abstraction transfers operations to the provider, not accountability for your data and identities.
+• Moving to PaaS removes the customer's need to configure authentication, networking, or logging.
+
+17. [Module 1] In the shared responsibility matrix, which three areas stay with the customer even in SaaS?
+• Provider applications, physical networks, and regional availability zones.
+• Hypervisor patching, rack access, and media destruction procedures.
+• Physical hosts, datacenter cooling, and provider backbone routing.
+• Platform runtime, physical servers, and provider identity infrastructure.
+√ Information/data, end-user devices, and accounts/identities.
+• Guest operating systems, hypervisors, and physical storage media.
+
+18. [Module 1] A SaaS customer accidentally shares confidential files publicly. Who primarily owns that failure?
+√ The customer, because data and sharing settings remain customer responsibilities.
+• The ISP, because external users reached the files over a public network.
+• The provider, because SaaS means the provider controls every permission in the application.
+• The device manufacturer, because end-user devices are part of the shared responsibility model.
+• No one, because public sharing is an unavoidable consequence of using SaaS.
+• The cloud auditor, because assurance reports replace customer configuration responsibility.
+
+19. [Module 1] A vulnerability is found in the physical hypervisor beneath your Azure VM. Who is responsible for patching it?
+• The tenant Global Administrator must deploy a directory role to repair the hypervisor.
+• The VM owner must patch the provider hypervisor from inside the guest operating system.
+• The customer's SOC must fix the hypervisor before Defender can monitor the VM.
+• The application developer must patch it because the workload runs in IaaS.
+• The subscription Owner must replace the physical host through the Azure portal.
+√ The cloud provider is responsible for physical hosts and the hypervisor layer.
+
+20. [Module 1] Why is a workload-specific responsibility matrix useful before migration?
+• It is mainly a billing document that estimates the monthly cost of cloud resources.
+• It changes the service model from IaaS to PaaS when customer duties are too large.
+√ It makes concrete who owns patching, backup, exposure, keys, logging, and related duties.
+• It guarantees that the provider will accept every customer-side risk automatically.
+• It replaces the need for technical security controls once responsibilities are documented.
+• It allows auditors to ignore evidence because ownership has already been agreed.
+
+21. [Module 1] What is a Microsoft Entra tenant?
+• A physical region containing several availability zones and provider data centers.
+√ An organization's dedicated identity boundary containing users, groups, apps, and directory roles.
+• An Azure billing container that holds VMs, VNets, and storage accounts.
+• A resource group used to organize one application's compute and network resources.
+• A Microsoft 365 license bundle assigned to employees and guest users.
+• A management group that can contain subscriptions from several unrelated identity directories. even when the related security control has not been enabled.
+
+22. [Module 1] What is an Azure subscription in relation to a tenant?
+√ A billing/resource container that trusts exactly one tenant for authentication.
+• A license object that gives every user Entra ID P2 capabilities.
+• A directory that stores the tenant's users, groups, app registrations, and roles.
+• A group container used only for Conditional Access and group-based licensing.
+• A security role that automatically grants Owner access to every Azure resource.
+• A physical isolation boundary between customers in the provider data center.
+
+23. [Module 1] Can one Microsoft Entra tenant be associated with multiple Azure subscriptions?
+• No; every tenant can contain exactly one subscription for security isolation.
+• Yes, but each subscription must use a different identity directory for authentication.
+• Only if every subscription is in the same Azure region and resource group.
+• Only after Entra ID P2 is enabled and PIM has onboarded the subscriptions.
+• Only for Microsoft 365 subscriptions, not Azure resource subscriptions.
+√ Yes; one tenant can be trusted by many subscriptions.
+
+24. [Module 1] Your team deletes an Azure subscription. What happens to the Entra tenant?
+• The tenant is converted into a management group and loses its directory roles.
+• The tenant is deleted automatically because it exists inside the subscription.
+• The tenant becomes read-only until Azure support restores the deleted subscription.
+• All tenant users become guest accounts until a new subscription is created.
+√ The tenant remains because the subscription and identity directory are separate objects.
+• All Microsoft 365 licenses are removed because licenses are subscription-level objects. without any additional policy or configuration.
+
+25. [Module 1] Where do you normally manage users, groups, directory roles, and Conditional Access?
+• The Microsoft Defender portal, because all identity tasks are security operations.
+• The Azure portal only, under Cost Management and Subscriptions.
+• The Microsoft 365 admin center only, under Billing and Licenses.
+• The Service Trust Portal, because identities are part of provider assurance.
+√ The Microsoft Entra admin center at entra.microsoft.com.
+• The Azure Monitor workspace, because identity objects are stored as log tables.
+
+26. [Module 1] Where does the July 2026 course assign Office 365 licenses?
+• Entra admin center under Protection > Conditional Access.
+• Azure portal under Subscriptions > Access control (IAM).
+• Service Trust Portal under Compliance reports.
+√ Microsoft 365 admin center under Billing > Licenses.
+• Azure portal under Resource groups > Licenses.
+• Defender portal under System > Licensing.
+
+27. [Module 1] Which identity type represents an application inside an Entra tenant?
+• A dynamic group is created automatically for every registered application.
+• A management group is the application identity at subscription scope.
+• A usage location is the application identity used for licensing decisions.
+√ A service principal is the tenant-local identity of an application.
+• A tenant ID is the runtime identity used by each individual application process.
+• A guest user is the application identity used for API calls.
+
+28. [Module 1] What problem does a managed identity primarily solve?
+• It automatically assigns every Azure resource the Owner role at subscription scope.
+• It allows a workload to authenticate without any authorization checks on the target resource.
+• It replaces Key Vault by embedding short passwords directly into the resource configuration.
+√ It lets Azure manage workload credentials so secrets do not need to be stored in code.
+• It gives every VM permanent Global Administrator rights inside Entra ID.
+• It converts a human user into a service principal that can bypass Conditional Access.
+
+29. [Module 1] What is the main difference between a security group and a Microsoft 365 group in the notes?
+• Microsoft 365 groups can never contain users and are used only for applications.
+√ Security groups focus on access/licensing, while Microsoft 365 groups also provide collaboration services.
+• Microsoft 365 groups cannot be used with any productivity service or shared mailbox.
+• Security groups exist only in Azure resources, while Microsoft 365 groups exist only on-premises. without any additional policy or configuration.
+• Security groups automatically grant Global Administrator to every member.
+• Security groups always use dynamic membership, while Microsoft 365 groups are always assigned.
+
+30. [Module 1] A dynamic group is not populated immediately after you create its rule. What should you remember?
+• A dynamic group stays empty until every member receives an Office 365 license.
+√ Dynamic membership evaluation can take roughly 15 minutes.
+• Dynamic rules only work after the group is converted into a Microsoft 365 group.
+• Dynamic membership works only for guest users and cannot include normal members.
+• The group must be assigned an Azure RBAC role before membership is calculated.
+• Dynamic groups never evaluate automatically and require a manual Entra Connect sync.
+
+31. [Module 1] Why can a rule such as user.userType fail when typed with the wrong property capitalization?
+• Dynamic groups accept only numeric object IDs and never support text properties.
+√ Dynamic membership property names are case-sensitive in the course examples.
+• The rule engine ignores user attributes unless they are synchronized from on-premises AD.
+• Dynamic group rules are evaluated by Microsoft 365 licensing and not by Entra ID.
+• The rule can use only department and jobTitle, not userType or objectId.
+• The property must be written as an Azure RBAC scope rather than a directory attribute.
+
+32. [Module 1] Why must a user's usage location be set before license assignment?
+• Usage location is the password policy that determines which MFA methods are available.
+• Usage location creates the user's UPN suffix automatically from a country code.
+• Usage location is required only for guests because members inherit it from the subscription.
+√ License and service availability can depend on the user's country/region.
+• Usage location defines the Azure region where every user's mailbox is physically stored.
+• Usage location grants the user an Entra directory role needed for license assignment.
+
+33. [Module 1] Which Entra edition adds Conditional Access and dynamic groups according to the notes?
+• Microsoft Defender XDR is the license tier that controls Entra group membership.
+• Microsoft Entra ID Free includes PIM and Identity Protection for every tenant.
+• Microsoft Entra ID P2 removes Conditional Access and focuses only on billing.
+√ Microsoft Entra ID P1 adds Conditional Access, group-based licensing, and dynamic groups.
+• Azure subscription Owner is the license tier that unlocks dynamic group processing.
+• Office 365 E3 is the directory edition that enables Azure RBAC at management-group scope.
+
+34. [Module 1] Which Entra edition adds PIM and Identity Protection in the course?
+√ Microsoft Entra ID P2 includes PIM and Identity Protection.
+• Microsoft 365 admin center licensing itself grants these features without an Entra tier.
+• Azure Firewall Premium unlocks PIM and Identity Protection for administrators.
+• Office 365 E3 is the identity tier that provides PIM for Azure resources.
+• Microsoft Entra ID P1 includes PIM but not Conditional Access.
+• Microsoft Entra ID Free includes both features with no licensing requirement.
+
+35. [Module 1] Which CIA objective is mainly protected by encryption and access control?
+• Resilience is the CIA objective that defines who may change cloud configuration.
+• Availability prevents unauthorized changes to files and database records.
+√ Confidentiality protects data from unauthorized disclosure.
+• Non-repudiation is the CIA objective primarily implemented by redundancy and autoscaling.
+• Authentication is the CIA objective that guarantees only approved users can read data.
+• Integrity ensures systems remain reachable during outages and DDoS attacks.
+
+36. [Module 1] Which CIA objective do hashing and digital signatures support most directly?
+• Privacy is the CIA property that protects against DDoS and ransomware.
+• Confidentiality keeps services online during a provider outage.
+√ Integrity helps detect or prevent unauthorized modification.
+• Availability verifies that data has not changed since it was created.
+• Authentication is the CIA property that measures whether a service can be reached.
+• Elasticity ensures that modified data is restored to its original value.
+
+37. [Module 1] Which CIA objective is primarily supported by redundancy, backups, and availability zones?
+• Integrity makes a service reachable during a regional failure.
+• Authentication is the CIA property provided by Azure Backup.
+• Confidentiality proves that files have not been modified by an attacker.
+• Non-repudiation is the CIA property that autoscaling is designed to protect.
+• Authorization is the CIA property provided by multi-region deployment.
+√ Availability keeps data and services usable when needed.
+
+38. [Module 1] Why is ransomware described as an attack on all three CIA goals?
+• It affects only availability because encrypted files are still confidential and unchanged.
+√ It can disrupt access, alter data, and threaten disclosure through leak extortion.
+• It affects authentication and billing but not the three CIA security objectives.
+• It affects only provider infrastructure, so the customer's CIA controls do not matter.
+• It affects only confidentiality because the attacker usually does not change or block data.
+• It affects only integrity because backups always preserve availability automatically.
+
+39. [Module 1] Two firewalls are placed one after another with nearly identical rules. Why is that not strong defense in depth by itself?
+• Two firewalls cancel each other's rules because Azure evaluates only one network device.
+• Defense in depth requires exactly seven products and no two may inspect network traffic.
+√ Defense in depth needs independent layers, not just duplicate copies of one control.
+• Defense in depth applies only to physical data centers and not cloud services.
+• A second firewall is always weaker than the first because it sees encrypted traffic.
+• Defense in depth works only when all controls come from different cloud providers.
+
+40. [Module 1] A phished credential bypasses the identity layer but a segmented network and monitoring still limit the attacker. What principle is illustrated?
+• Resource pooling guarantees another tenant's firewall will block the attacker.
+• Shared responsibility transfers the incident to the provider once MFA is bypassed.
+• Measured service ensures every attacker is automatically billed for malicious traffic.
+• Rapid elasticity replaces failed identity controls by creating more secure resources.
+√ Defense in depth assumes one control can fail and relies on other layers.
+• Community cloud automatically isolates a compromised user from every application.
+
+41. [Module 1] Which Zero Trust principle says every request should use available signals such as identity, device, location, and risk?
+• Use least-privilege access.
+• Assume breach.
+• Authenticate once and trust the session forever.
+• Prefer permanent administrator rights.
+• Trust the internal network.
+√ Verify explicitly.
+
+42. [Module 1] Granting a scoped role only for the time needed most directly implements which Zero Trust principle?
+• Assume breach.
+• Verify explicitly.
+• Broad network access.
+• Measured service.
+• Trust internal users by default.
+√ Use least-privilege access.
+
+43. [Module 1] Segmenting networks and designing as if an attacker is already inside most directly reflects which Zero Trust principle?
+• Verify explicitly.
+• Trust managed devices permanently.
+• On-demand self-service.
+• Use a single perimeter firewall.
+• Resource pooling.
+√ Assume breach.
+
+44. [Module 1] How should Zero Trust be understood in this course?
+• As a completed project once MFA is enabled for the tenant administrators.
+• As a Microsoft license that automatically replaces all network and identity controls.
+• As another name for Azure Firewall Premium and its TLS inspection feature.
+• As a strategy that removes the need for networks, devices, and application controls.
+• As a rule that blocks every request unless the user is physically inside the office.
+√ As an architecture and ongoing journey, not a single product.
+
+45. [Module 1] What does symmetric encryption use?
+• A public key for encryption and an unrelated password for decryption.
+• Two independent public keys with no private key.
+• A private key for every packet and no shared secret at any stage.
+• A digital signature only, without any encryption key.
+√ One shared secret key for encryption and decryption.
+• A fixed-length digest that cannot be reversed to the original data.
+
+46. [Module 1] Why is symmetric cryptography used for bulk TLS traffic?
+• It is one-way, so attackers cannot decrypt traffic even with the session key.
+√ It is efficient for encrypting large amounts of session data.
+• It has no key-distribution problem because the key is public to everyone.
+• It automatically hashes every password before the browser transmits it.
+• It proves server identity without certificates or a prior handshake.
+• It works only during the asymmetric handshake and not after the connection is established.
+
+47. [Module 1] What is the main benefit of asymmetric cryptography in TLS?
+• It encrypts all application data faster than symmetric algorithms such as AES.
+• It makes session keys unnecessary by signing every application packet with the private key.
+• It removes the need for certificates because public keys prove identity automatically.
+√ It helps establish trust and a shared session key without a pre-shared secret.
+• It prevents any stolen token from being replayed after the user has authenticated.
+• It stores passwords as one-way digests inside the browser during each connection.
+
+48. [Module 1] A developer says a SHA-256 hash can be decrypted if you know the key. What is wrong?
+• Hashing uses the same reversible key as AES but produces a shorter ciphertext.
+• A salt is the decryption key used to restore a password from its stored digest.
+√ Hashing is one-way and has no decryption key.
+• Hashing is reversible only when the digest was generated in a cloud environment.
+• The public key decrypts the hash while the private key verifies its integrity.
+• SHA-256 is asymmetric encryption, so the private key is required to recover the input.
+
+49. [Module 1] Why are salts added before password hashing?
+√ They defeat precomputed dictionary and rainbow-table attacks.
+• They let administrators decrypt forgotten passwords from the stored hash.
+• They ensure every user receives the same digest for the same password across systems.
+• They make the password shorter so authentication can complete more quickly.
+• They convert a one-way hash into symmetric encryption for secure storage.
+• They replace MFA by making credential stuffing impossible even when passwords are reused.
+
+50. [Module 1] A disk is encrypted at rest, but an attacker steals a valid user token and reads files normally. Why did encryption not stop the attack?
+• Token theft automatically disables the storage encryption key for the attacker.
+• At-rest encryption protects only network traffic and never protects stored media.
+• Encryption at rest is intended only for availability and not confidentiality.
+• The attacker bypassed encryption because the disk used customer-managed keys instead of platform keys.
+• Azure decrypts data only for local administrators, so cloud identities cannot read it.
+√ At-rest encryption does not stop authorized-path access using compromised credentials.
+
+51. [Module 1] Which data state is protected mainly by TLS 1.2+ in the notes?
+• Archived audit logs only.
+• Deleted data only.
+• Physical media before destruction.
+• Data at rest.
+√ Data in transit.
+• Data in use.
+
+52. [Module 1] Which data state is the target of confidential computing and hardware enclaves?
+• Data after soft delete.
+• Data before it enters the cloud.
+√ Data in use.
+• Data at rest.
+• Data in backup only.
+• Data in transit.
+
+53. [Module 1] Which cloud attack pattern tries a few common passwords across many accounts to avoid lockout thresholds?
+• Token replay.
+• Credential stuffing.
+• DDoS.
+• SQL injection.
+√ Password spray.
+• Rootkit persistence.
+
+54. [Module 1] Which cloud attack reuses valid session tokens so the attacker may bypass a fresh MFA prompt?
+√ Token replay.
+• Resource pooling.
+• Rapid elasticity.
+• Password spray.
+• DDoS amplification.
+• Dynamic group evaluation.
+
+55. [Module 1] Why are misconfigurations especially important in cloud security?
+• Cloud platforms prevent public endpoints, so configuration errors are limited to naming.
+√ A single bad setting can expose services or be replicated widely through automation.
+• Cloud providers do not patch physical infrastructure, so customers must manage every host.
+• Misconfigurations affect billing only and rarely influence exposure or access control.
+• Misconfiguration is a provider-only problem because customers cannot change cloud controls.
+• Automation always validates security settings before resources can be deployed.
+
+56. [Module 1] Which threat categories consistently appear near the top of CSA cloud threat rankings?
+• Only nation-state zero-days and cryptographic breaks against provider hardware.
+• Mainly provider datacenter failures, because customers cannot influence cloud security outcomes.
+• Hypervisor escapes, physical theft, solar storms, cable damage, printer malware, and BIOS attacks. even when the related security control has not been enabled.
+• Only malware families that execute inside virtual machines and never target identities or APIs.
+• Only DDoS attacks, because identity attacks are considered traditional rather than cloud threats.
+√ Misconfiguration, IAM weaknesses, insecure APIs, account hijacking, insiders, and insufficient visibility.
+
+57. [Module 1] In the five-stage attack timeline, what follows initial access or foothold?
+• Reconnaissance.
+• Resource pooling.
+• Recovery.
+• Risk acceptance.
+• Exfiltration or impact.
+√ Privilege escalation.
+
+58. [Module 1] Which defense most directly limits lateral movement after an attacker gains a foothold?
+• A Service Trust Portal report actively blocks suspicious network connections.
+√ Segmentation and firewalls can restrict movement between services and tiers.
+• Measured billing prevents the attacker from moving after the first resource is charged.
+• A dynamic licensing group removes the attacker's route between virtual networks.
+• Public cloud deployment automatically makes every workload unreachable from every other workload.
+• Hashing the user's password blocks all use of a stolen authenticated session.
+
+59. [Module 1] What is the working risk formula used in the notes?
+• Risk equals probability multiplied only by provider responsibility.
+• Risk equals impact divided by likelihood.
+• Risk equals threat count plus monthly cloud cost.
+• Risk equals asset value divided by number of users.
+• Risk equals control strength minus vulnerability age.
+√ Risk equals likelihood multiplied by impact.
+
+60. [Module 1] A risk is accepted rather than mitigated. What should still happen?
+• The provider becomes automatically responsible for any future incident.
+• All monitoring can stop because accepted risks are no longer security issues.
+• The risk should be removed from the register so auditors do not see it.
+√ The acceptance should be documented, owned, and reviewed.
+• The risk score must be changed to zero even if likelihood and impact stay the same.
+• The affected workload must be converted to SaaS immediately.
+
+61. [Module 1] Which STRIDE category is concerned with pretending to be another identity?
+• Repudiation.
+• Elevation of privilege.
+• Denial of service.
+• Information disclosure.
+• Tampering.
+√ Spoofing.
+
+62. [Module 1] Which STRIDE category fits an attacker gaining administrator rights from a normal account?
+• Repudiation.
+• Spoofing.
+√ Elevation of privilege.
+• Tampering.
+• Information disclosure.
+• Denial of service.
+
+63. [Module 1] Which NIST CSF 2.0 function was added to the classic five-function model?
+√ Govern.
+• Respond.
+• Recover.
+• Protect.
+• Detect.
+• Identify.
+
+64. [Module 1] A company wants prioritized security safeguards and hardening benchmarks. Which framework family best fits?
+• FedRAMP only.
+• SAML 2.0.
+√ CIS Controls and CIS Benchmarks.
+• MITRE ATT&CK.
+• NIST SP 800-145.
+• ISO/IEC 27018 only. and it applies automatically to every resource in the tenant.
+
+65. [Module 1] A SOC wants a knowledge base of attacker tactics and techniques to design detections. What should it use?
+• Microsoft 365 group rules.
+• ISO/IEC 27001.
+• FedRAMP authorization.
+√ MITRE ATT&CK.
+• NIST SP 800-145.
+• CIS licensing guidance.
+
+66. [Module 1] Why is saying 'we passed MITRE ATT&CK' incorrect?
+• ATT&CK is a license tier inside Microsoft Defender rather than a public framework.
+• ATT&CK applies only to physical security and cannot describe cloud techniques.
+√ ATT&CK is a behavior knowledge base, not a compliance certification.
+• ATT&CK has been retired and replaced by NIST SP 800-145 in the current course.
+• ATT&CK is used only to calculate Secure Score and has no detection purpose.
+• ATT&CK certifies only government cloud providers at Low, Moderate, or High baselines.
+
+67. [Module 1] Which standard is the certifiable information-security management system?
+• ISO/IEC 27017.
+• NIST SP 800-145.
+• MITRE ATT&CK.
+• ISO/IEC 27018.
+√ ISO/IEC 27001.
+• CSA Top Threats.
+
+68. [Module 1] When is ISO/IEC 27017 the more relevant reference?
+• When you need a catalog of attacker techniques rather than governance controls.
+• When you need a U.S. authorization baseline for a specific federal cloud service.
+• When you need a standard specifically focused on public-cloud PII processing only.
+√ When you need cloud-specific security guidance for providers and customers.
+• When you need an Azure role-assignment model for users and groups.
+• When you need the NIST definition of the five cloud characteristics.
+
+69. [Module 1] When is ISO/IEC 27018 especially relevant?
+• When designing network routes and firewall egress controls in Azure.
+√ When protecting personally identifiable information in public-cloud processing.
+• When deciding whether a workload should use IaaS or PaaS.
+• When assigning Office licenses to Entra security groups.
+• When selecting the six functions of NIST CSF 2.0.
+• When classifying attacker tactics for threat-informed detection engineering. regardless of the user's assigned permissions or sign-in state.
+
+70. [Module 1] What does FedRAMP authorize?
+√ Specific cloud service offerings against defined U.S. government baselines.
+• Private companies to perform penetration tests against any Azure customer.
+• Only on-premises government networks that do not use public cloud services.
+• Microsoft Entra tenants to use group-based licensing and dynamic groups.
+• Entire companies permanently, regardless of which cloud service is being assessed.
+• Individual user accounts after they complete phishing-resistant MFA enrollment.
+
+71. [Module 1] Why is a traceability matrix useful for compliance?
+• It maps user passwords to hashes so auditors can verify credential strength.
+√ It maps framework requirements to controls and evidence locations.
+• It converts every framework requirement directly into an Azure Firewall rule.
+• It replaces the need for audits because the provider certifies the customer automatically.
+• It lists cloud regions and automatically enforces data residency through routing.
+• It turns ATT&CK techniques into subscription billing tags for cost management.
+
+72. [Lab 1.1 — Tenant Properties] Why did adding an onmicrosoft.com subdomain send you to the Microsoft 365 admin center?
+• The Microsoft 365 admin center is the only portal that can manage Azure VMs and VNets.
+• The Entra admin center cannot display any tenant properties after a subdomain is added. without any additional policy or configuration.
+• A custom subdomain automatically converts the tenant into an Azure subscription.
+√ The lab was teaching that different administration tasks live in different Microsoft portals.
+• Adding a subdomain requires Defender XDR to validate the identity provider first.
+• The tenant must leave Entra ID temporarily while DNS records are being created.
+
+73. [Lab 1.1 — Tenant Properties] Which tenant property did you record because scripts and support cases frequently need it?
+• The private IP address of a lab virtual machine.
+• The Azure Firewall private IP used by later networking labs.
+• The object ID of the Office 365 E3 license product only.
+• The current password of the Global Administrator account.
+√ The tenant ID, an immutable GUID.
+• The Secure Score percentage for the subscription.
+
+74. [Lab 1.1 — Tenant Properties] Which tenant property is described as immutable in the lab checkpoint?
+• The privacy contact.
+• The tenant display name.
+• The Microsoft 365 group name.
+• The technical contact.
+√ The tenant country.
+• The privacy statement URL.
+
+75. [Lab 1.1 — Tenant Properties] Why did you publish a privacy contact and privacy statement URL?
+• The privacy contact receives every MFA code generated by users in the tenant.
+√ External users can see the organization's privacy information during collaboration and consent experiences.
+• The privacy URL is required before Azure can create any virtual machine or storage account. with no separate verification or administrative step required.
+• The privacy statement grants Application Administrator to the technical contact.
+• The privacy fields determine the subscription region and cannot be changed afterward.
+• The fields enable Entra Connect password hash synchronization for later hybrid labs.
+
+76. [Lab 1.1 — Tenant Properties] How did the lab verify the privacy statement from the user perspective?
+• By signing in to the Service Trust Portal as the tenant administrator.
+• By reviewing an NSG's Effective security rules.
+√ By opening the user's My Account experience.
+• By checking the VM's Effective routes.
+• By running New-MgUser in PowerShell.
+• By opening the Defender for Cloud recommendations page.
+
+77. [Lab 1.2 — Manage User Roles] Why did Chris Green fail to create an enterprise application before the role assignment?
+• His Office 365 E3 license had not yet been inherited from sg-CS-O365.
+• The tenant ID had not been recorded in Lab 1.1.
+• The Application Administrator role works only after a 30-minute synchronization cycle.
+• Enterprise applications can be created only by Azure subscription Owners.
+• InPrivate mode blocks enterprise application creation for every user.
+√ A normal user lacked the required directory privilege.
+
+78. [Lab 1.2 — Manage User Roles] Why did the assignment dialog offer Eligible and Active?
+• The dialog appears only when the user has previously been deleted and restored.
+• Application Administrator is always a temporary role in every Entra Free tenant.
+• Conditional Access automatically converts every directory role into a PIM role.
+√ The P2 trial enabled Privileged Identity Management-aware role assignment choices.
+• Azure RBAC requires all directory administrators to choose between those two states.
+• The choices came from the user's Office 365 license rather than directory licensing.
+
+79. [Lab 1.2 — Manage User Roles] What did choosing Active for Chris Green do?
+• It made Chris eligible but required a separate PIM activation before any permission existed.
+• It delayed the role until the next Entra Connect synchronization cycle completed.
+√ It granted the Application Administrator permissions immediately.
+• It forced Chris to use the role only from an InPrivate browser session.
+• It granted subscription Owner while leaving the directory role inactive.
+• It limited the role to Office 365 licensing tasks instead of application administration.
+
+80. [Lab 1.2 — Manage User Roles] Why did you retest as Chris after assigning the role?
+• To verify that the tenant country had changed after the role assignment. and it applies automatically to every resource in the tenant.
+• To move the role from Azure RBAC into the Entra directory automatically.
+• To assign Office 365 E3 to Chris through group membership.
+• To trigger the 30-day soft-delete timer for his user object.
+√ To prove that the previously denied capability became available after the precise grant.
+• To make the role permanent by causing Chris to use it at least once.
+
+81. [Lab 1.2 — Manage User Roles] After removing Chris's role, where should evidence of the change appear?
+• Only in the subscription Activity log because directory changes are Azure resource operations.
+• In the Service Trust Portal because role changes are provider-side events.
+• In Microsoft 365 billing history because every directory role is a licensed product.
+• Only in Windows Event Viewer on the student's local computer.
+• In the Azure Firewall network-rule logs after Chris signs out.
+√ In the Entra audit logs as role-assigned and role-removed activity.
+
+82. [Lab 1.2 — Manage User Roles] Chris is deleted accidentally. Why can he be restored shortly afterward?
+√ Entra user deletion uses a roughly 30-day soft-delete window.
+• The tenant snapshot S0-clean restores individual users automatically every hour.
+• Azure subscription backups include Entra users by default and restore them instantly.
+• Microsoft Graph stores a permanent duplicate account for every created user.
+• PIM recreates any user who previously held an active directory role.
+• Office 365 licensing automatically re-creates deleted members at the next billing cycle.
+
+83. [Lab 1.2 — Manage User Roles] Why did the lab use both CSV and Microsoft Graph PowerShell for user creation?
+• CSV is required for members while Graph can create only guest users.
+• Both methods are required together before a user appears in All users.
+√ To practice scalable provisioning methods beyond one-at-a-time portal creation.
+• CSV creates Azure RBAC assignments while Graph creates directory roles.
+• Graph is needed only to assign licenses and cannot create user objects.
+• The two methods exist only because Entra admin center cannot create users manually.
+
+84. [Lab 1.2 — Manage User Roles] Which modern PowerShell command begins the Graph session used for Entra automation?
+• az login.
+√ Connect-MgGraph.
+• Start-ADSyncSyncCycle.
+• Connect-MsolService.
+• Connect-AzureAD.
+• New-AzRoleAssignment.
+
+85. [Lab 1.2 — Manage User Roles] Why should testing another user happen in InPrivate or a separate browser profile?
+√ It prevents the administrator session from leaking into the test user's session.
+• It makes directory role changes take effect faster than normal browser sessions.
+• It is the only browser mode that can open the Microsoft 365 admin center.
+• It disables audit logging so the test does not pollute the tenant history.
+• InPrivate is required for Entra ID to issue any token to a newly created user.
+• It bypasses Conditional Access and therefore isolates authorization testing.
+
+86. [Lab 1.3 — Group-Based Licensing] Why did the lab first sign in as Delia before assigning the group license?
+√ To capture a negative baseline showing that she did not yet have Office access.
+• To set the tenant country based on the device's location.
+• To create the sg-CS-O365 group automatically from her sign-in activity.
+• To create an Azure subscription linked to Delia's user object.
+• To force dynamic group membership to refresh before the group was created. with no separate verification or administrative step required.
+• To activate an Eligible Application Administrator role for Delia.
+
+87. [Lab 1.3 — Group-Based Licensing] Delia gets Office apps without a direct license on her user. What proves the design worked?
+• Her tenant ID changes to the security group's object ID.
+• Her user object becomes a service principal after the group assignment.
+• Her usage location is removed because group licensing replaces country requirements.
+• Her directory role changes to Application Administrator when she opens Office.
+√ Her Office 365 E3 entitlement is inherited from sg-CS-O365.
+• The subscription Owner role appears on her account automatically.
+
+88. [Lab 1.3 — Group-Based Licensing] Where did you assign Office 365 E3 to sg-CS-O365?
+• Entra admin center > Roles & admins > Office 365 E3.
+• Azure portal > Resource groups > Access control (IAM) > Add role assignment.
+• Microsoft Defender portal > Settings > Endpoints > Licensing.
+• Azure portal > Subscriptions > Cost Management > License assignment.
+√ Microsoft 365 admin center > Billing > Licenses > Office 365 E3 > Groups.
+• Entra admin center > Protection > Conditional Access > Licenses.
+
+89. [Lab 1.3 — Group-Based Licensing] Delia leaves sg-CS-O365. What is the expected licensing behavior?
+√ The group-derived Office license is removed after group licensing reprocesses membership.
+• The license becomes permanent because inherited licenses cannot be removed automatically.
+• The tenant loses the Office 365 E3 product because one member left the group.
+• The group becomes dynamic and automatically re-adds Delia regardless of its rule.
+• The license converts into a direct assignment so Delia keeps Office forever.
+• The user is soft-deleted for 30 days because leaving a licensing group deletes the account.
+
+90. [Lab 1.3 — Group-Based Licensing] A dynamic group using user.objectId -ne null is still empty a minute after creation. What is the best explanation?
+• The rule is invalid because objectId can never be used in dynamic membership.
+• Only guest users can be members of a dynamic security group.
+√ Dynamic membership evaluation may need several minutes, up to roughly 15 in the lab.
+• Dynamic groups populate only after an Entra Connect Initial sync from on-premises AD.
+• The group must receive an Office license before Entra evaluates its membership rule.
+• The tenant requires Azure Firewall to allow membership evaluation traffic.
+
+91. [Lab 1.3 — Group-Based Licensing] The group licensing blade shows errors for some users. What common cause does the module tell you to check?
+• An expired SAML signing certificate on the tenant.
+• The fact that the group is a security group instead of a Microsoft 365 group.
+• A missing Azure Firewall UDR on the user's subnet.
+• A disabled Service Trust Portal audit report for the tenant.
+√ Missing usage location on affected users.
+• The absence of an Application Administrator role on every group member.
+
+92. [Lab 1.3 — Group-Based Licensing] Why is group-driven entitlement an important pattern beyond this one license lab?
+√ The same group-targeting approach later supports controls such as Conditional Access and SSPR.
+• Group membership automatically replaces every RBAC and directory role assignment in Azure.
+• It allows administrators to ignore usage location and other licensing prerequisites.
+• It converts every Microsoft 365 group into a dynamic security group after the first assignment.
+• Group-based licensing is required before any user can authenticate to Microsoft Entra ID.
+• The pattern removes the need for identity lifecycle management because access never changes.
+
+93. [Module 1] A user says a public cloud provider's ISO certificate proves the customer's configuration is compliant. What is missing?
+• Customer controls are irrelevant in SaaS because the shared responsibility model ends at the provider.
+• ISO certificates apply only to physical datacenters and never to cloud service operations.
+• The customer needs only a Microsoft 365 license report to replace control evidence.
+• Provider certificates automatically cover every tenant configuration and customer process.
+√ Provider assurance covers the provider's side; the customer must still prove its own controls.
+• A provider audit removes the need for customer risk assessments, logging, and access reviews.
+
+94. [Module 1] An auditor asks how physical access to Azure servers is controlled. What evidence does the module recommend?
+• A password hash export from the tenant's identity directory.
+• The dynamic group membership log from the Microsoft 365 admin center.
+√ Provider audit reports such as a SOC 2 Type II report from the Service Trust Portal.
+• A customer site visit to the exact Azure rack hosting the virtual machine.
+• A screenshot of the tenant's users and groups from Entra admin center.
+• The customer's Azure Firewall policy because network rules prove physical access controls.
+
+95. [Module 1] Why does identity become a primary security perimeter in cloud environments?
+• Every cloud user is automatically a Global Administrator unless a firewall blocks them.
+• Identity is provider-owned in every service model, so customers cannot configure it.
+• Cloud networking disappears completely, so no network security controls remain relevant.
+• Providers prevent every public endpoint, leaving only identity as a possible attack surface. and it applies automatically to every resource in the tenant.
+• Cloud services cannot use encryption or segmentation until identity has been disabled.
+√ Valid credentials and tokens can open access from almost anywhere, so identity decisions are central.
