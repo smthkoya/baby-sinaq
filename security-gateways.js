@@ -1,11 +1,9 @@
 const SECURITY_GATEWAYS_SUBJECT = "security_gateways";
 
 const SECURITY_GATEWAYS_MODULES = [
-  { file: "questions_security_gateways_module1.txt", label: "Module 1" },
-  { file: "questions_security_gateways_module2.txt", label: "Module 2" },
-  { file: "questions_security_gateways_module3.txt", label: "Module 3" },
-  { file: "questions_security_gateways_module4.txt", label: "Module 4" },
-  { file: "questions_security_gateways_module5.txt", label: "Module 5" },
+  { file: "questions_security_gateways_module4.txt", label: "Module 4 — Authentication & Access Control" },
+  { file: "questions_security_gateways_module5.txt", label: "Module 5 — Private Networks" },
+  { file: "questions_security_gateways_module6.txt", label: "Module 6 — Attacks & Defense" },
 ];
 
 const CLOUD_MODULES = [
