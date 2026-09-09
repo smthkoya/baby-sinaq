@@ -1,104 +1,1249 @@
-    1. Which mechanism provides micro-segmentation for pod-to-pod traffic inside an AKS cluster?
-    • Application security groups on the node NICs
-    √ Kubernetes network policies
-    • Network security groups on the node subnet
-    • Pod Security Standards
-    • Azure Firewall DNAT rules
 
-    2. Why must the Lab 4.2 route table NOT be associated with the jump-host subnet?
-    • Route tables can only be associated with one subnet at a time
-    • The jump subnet uses IPv6, which route tables do not support
-    • Azure Firewall rejects traffic originating from jump hosts
-    √ Routing the jump subnet's traffic through the firewall would break the inbound RDP session's return path
-    • The jump subnet already has a higher-priority system route
 
-    3. Which statement about Key Vault permission models is correct for new deployments?
-    • Azure RBAC and access policies can be mixed per user on the same vault
-    √ Azure RBAC is the recommended model, using data-plane roles like Key Vault Secrets User
-    • Vault access policies are recommended because they integrate with PIM
-    • Neither model applies to secrets, only to keys
-    • Access policies are required for managed identities to read secrets
+1. [Module 4] What is an Azure virtual network (VNet)?
+• A Microsoft Entra directory that stores users, groups, and directory roles.
+• A billing container that can hold subscriptions from multiple tenants.
+• A physical provider network that customers cable directly between Azure racks. regardless of the resource scope, network path, or authentication method in use.
+√ An isolated software-defined network with customer-chosen private address space.
+• A Log Analytics workspace used only for storing network-flow records.
+• A managed web firewall that inspects HTTP requests for OWASP attacks.
 
-    4. In Lab 4.2, what makes workload-subnet traffic actually pass through the Azure Firewall?
-    • Enabling forced tunneling on the VNet
-    • Peering the workload subnet to AzureFirewallSubnet
-    • Associating the firewall with the workload subnet in the firewall settings
-    • A DNAT rule translating the firewall public IP to the workload VMs
-    √ A user-defined route for 0.0.0.0/0 with next hop type Virtual appliance and the firewall's private IP
+2. [Module 4] How many usable IP addresses does the module give for an Azure /24 subnet?
+√ 251 usable IP addresses.
+• 255 usable IP addresses.
+• 254 usable IP addresses.
+• 250 usable IP addresses.
+• 252 usable IP addresses.
+• 256 usable IP addresses.
 
-    5. What changes when a storage account moves from platform-managed keys to a customer-managed key in Key Vault?
-    • Encryption moves from the service layer to the client application
-    • The encryption algorithm upgrades from AES-128 to AES-256
-    • The storage account no longer needs HTTPS
-    √ The customer controls key rotation, auditing, and can revoke access, making data unreadable
-    • Data is re-encrypted twice for every write operation
+3. [Module 4] Why does an Azure /24 provide 251 usable addresses rather than 254?
+• A route table reserves one address for every user-defined route in the subnet.
+• An NSG consumes three host addresses whenever it is associated to a subnet.
+• Azure reserves only the network and broadcast addresses, exactly as a normal LAN does.
+• Azure Firewall automatically reserves five addresses from every VNet, not every subnet.
+• Application Security Groups each reserve one address before any VM can be deployed.
+√ Azure reserves five addresses in every subnet.
 
-    6. In what order does Azure Firewall process its rule types?
-    • Rules are processed strictly by collection priority regardless of type
-    √ DNAT, network, application
-    • DNAT, application, network
-    • Application, network, DNAT
-    • Network, DNAT, application
+4. [Module 4] Why should VNet address ranges avoid overlap with networks that may later be peered?
+• Overlap disables NSGs but has no effect on connectivity between the VNets.
+√ Overlapping address ranges prevent peering and can force painful renumbering.
+• Overlapping ranges are required for global VNet peering across different regions.
+• Peering ignores IP prefixes because all traffic is routed by Entra identities.
+• Azure allows overlap only when both VNets use the same route table.
+• Azure automatically translates overlapping prefixes, so overlap only affects billing.
 
-    7. In a DevSecOps pipeline, which gate detects vulnerable open-source packages pulled in by the application?
-    • DAST
-    • Secret scanning
-    • IaC scanning
-    √ Software composition analysis (SCA)
-    • SAST
+5. [Module 4] Which subnet name is reserved for Azure Bastion?
+• Bastion-Default.
+• AzureJumpSubnet.
+• AzureManagementSubnet.
+√ AzureBastionSubnet.
+• BastionSubnet.
+• GatewaySubnet.
 
-    8. Azure Web Application Firewall managed rules are primarily built on which foundation?
-    • Suricata signature packs
-    • NIST CSF categories
-    √ The OWASP Core Rule Set
-    • CIS Benchmarks
-    • MITRE ATT&CK detections
+6. [Module 4] Which subnet name is reserved for Azure Firewall?
+• FirewallSubnet.
+• AzureInspectionSubnet.
+• Firewall-Workload.
+• GatewaySubnet.
+• AzureSecuritySubnet.
+√ AzureFirewallSubnet.
 
-    9. Which Azure capability protects data IN USE, not just at rest or in transit?
-    • Azure Disk Encryption with BitLocker
-    • Storage Service Encryption with platform keys
-    • TLS 1.2 enforcement on storage accounts
-    √ Confidential VMs with hardware-based trusted execution environments
-    • Double encryption of storage infrastructure
+7. [Module 4] Which subnet name is reserved for an Azure VPN gateway?
+• AzureVPNSubnet.
+• TransitSubnet.
+• AzureFirewallSubnet.
+√ GatewaySubnet.
+• AzureBastionSubnet.
+• VPNGatewaySubnet.
 
-    10. Which two properties must be added to an .rdp file for Entra-authenticated RDP to a Windows VM?
-    • authentication level:i:0 and gatewayusagemethod:i:2
-    • enablecredsspsupport:i:1 and authentication level:i:0
-    • aadauth:i:1 and networklevelauth:i:0
-    √ enablecredsspsupport:i:0 and authentication level:i:2
-    • use redirection server name:i:1 and prompt for credentials:i:1
+8. [Module 4] What does Azure automatically place in every subnet's route table?
+• No routes until the subnet receives an explicit route table resource. even when the related security service has not been enabled or configured.
+• Only NSG rules converted into routes by the Azure control plane.
+√ System routes, including VNet-local routes and a default Internet route.
+• Only application rules inherited from Azure Firewall.
+• Only user-defined routes created manually by the customer.
+• Only BGP routes learned from on-premises routers.
 
-    11. An NSG evaluates its rules in which way?
-    • Deny rules always evaluate before allow rules regardless of priority
-    √ By priority number, lowest first, and processing stops at the first match
-    • Alphabetically by rule name
-    • All matching rules are combined and the most restrictive wins
-    • By priority number, highest first, and processing stops at the first match
+9. [Module 4] What is a user-defined route (UDR) used for?
+• To assign a private IP address to a PaaS service.
+• To filter packets by application FQDN without using a firewall.
+• To store encrypted DNS responses inside Azure Key Vault.
+• To group VM NICs by workload role for NSG rules.
+√ To override or add routing behavior beyond Azure's system routes.
+• To create Azure RBAC role assignments for network administrators.
 
-    12. Which firewall rule type can allow outbound traffic to www.bing.com while denying all other websites?
-    √ An application rule matching the target FQDN
-    • A network rule with destination port 443
-    • An NSG outbound rule with a service tag
-    • A DNAT rule for the workload subnet
-    • A route table entry for bing.com's IP range
+10. [Module 4] You want all Internet-bound traffic from a workload subnet to pass through a firewall at 10.0.1.4. Which route matches the course pattern?
+• 0.0.0.0/0 → None → Azure DNS.
+√ 0.0.0.0/0 → Virtual appliance → 10.0.1.4.
+• 10.0.0.0/8 → Internet → 10.0.1.4.
+• 0.0.0.0/0 → VNet peering → 10.0.1.4.
+• 10.0.1.4/32 → Virtual network → Internet.
+• Any → Network Security Group → Azure Firewall.
 
-    13. Which default NSG inbound rule causes internet RDP attempts to a VM to fail when no custom allow rule matches?
-    • DenyAllOutBound (65500)
-    • AllowVnetInBound (65000)
-    √ DenyAllInBound (65500)
-    • AllowAzureLoadBalancerInBound (65001)
-    • BlockInternetInBound (65400)
+11. [Module 4] Why does a deployed Azure Firewall inspect nothing if no UDR sends traffic through it?
+• Azure Firewall reads only NSG logs, not live traffic, until Microsoft Sentinel is enabled.
+√ Routing determines the traffic path; a firewall cannot inspect traffic that bypasses it.
+• A Standard firewall inspects only inbound traffic unless upgraded to Premium.
+• Azure automatically routes only HTTPS through the firewall and ignores other protocols.
+• The firewall needs an ASG membership on each workload NIC before it can see packets.
+• Azure Firewall works only after a public IP is attached to every protected VM.
 
-    14. What is the main operational benefit of using Application Security Groups in NSG rules?
-    • They encrypt traffic between the grouped virtual machines
-    • They replace the need for any NSG on the subnet
-    • They increase network throughput between members
-    • They extend NSG filtering across multiple regions
-    √ Rules reference workload roles instead of IP addresses, so adding a VM needs no rule changes
+12. [Module 4] What does a NIC's Effective routes view show?
+• Only the default route to the Internet, regardless of route-table associations. regardless of the resource scope, network path, or authentication method in use.
+• Only Azure Firewall application and network rules in processing order.
+• Only routes learned from live traffic after the first successful connection.
+• Only the UDRs created by the customer, with all system routes hidden.
+√ The merged result of system routes, UDRs, and BGP, including routes made Invalid.
+• Only NSG rules applied to the NIC and its subnet.
 
-    15. Which service absorbs volumetric layer-3/4 floods but does NOT stop SQL injection attacks?
-    • Azure Web Application Firewall
-    • Azure Front Door rules engine
-    • Azure Key Vault firewall
-    • Network Security Groups
-    √ Azure DDoS Network Protection
+13. [Module 4] A UDR replaces the system default route. How can the old system route appear in Effective routes?
+√ It can remain visible but be marked Invalid because the UDR supersedes it.
+• It changes into a BGP route with higher priority.
+• It stays Active and Azure randomly chooses between the two routes.
+• It becomes an NSG rule rather than a route.
+• It disappears permanently because Azure deletes superseded system routes. without any additional route, role, or policy being required.
+• It remains the preferred path because system routes always beat UDRs.
+
+14. [Module 4] What is true about VNet peering?
+• It requires both VNets to use overlapping IP prefixes.
+• It replaces DNS and route tables with Entra Conditional Access.
+√ It provides private connectivity over the Microsoft backbone and is non-transitive.
+• It works only within the same Azure region and never across regions. even when the related security service has not been enabled or configured.
+• It automatically routes through every other peered VNet in a chain.
+• It makes all peered resources public on the Internet.
+
+15. [Module 4] Spoke A peers with Hub H, and Spoke B also peers with H. Can A reach B automatically through peering?
+√ No; peering is non-transitive unless traffic is deliberately routed through a hub device or direct peering is added.
+• Yes, but only if both spokes use different Azure subscriptions.
+• Yes, if both spokes have the default AllowVnetInBound NSG rule.
+• Only when the spokes use overlapping CIDR ranges.
+• No, because peered VNets can never exchange traffic under any design.
+• Yes; Azure peering always becomes transitive after the second spoke is connected. without any additional route, role, or policy being required.
+
+16. [Module 4] What is the main enterprise purpose of a hub-and-spoke design in the notes?
+• Use public IPs between spokes because private connectivity is not supported.
+• Host only Microsoft Entra identities in the hub and data workloads in subscriptions. without any additional route, role, or policy being required.
+• Put every workload into one flat VNet so no routing controls are needed.
+• Eliminate the need for firewalls by relying on transitive VNet peering.
+• Replace subnet segmentation with Microsoft 365 group membership.
+√ Centralize shared services such as firewall, gateways, and DNS while workloads live in spokes.
+
+17. [Module 4] What does an Azure Private Endpoint create?
+√ A private-IP NIC in your subnet mapped to one specific PaaS resource.
+• A route table that sends all Internet traffic to the PaaS service.
+• A VPN tunnel from the subnet to the provider's physical datacenter.
+• A service tag that can be used only by Azure Firewall Premium.
+• A managed identity that replaces the PaaS service's network endpoint.
+• A new public IP on the PaaS resource with a more restrictive NSG.
+
+18. [Module 4] What usually accompanies a private endpoint so the service name resolves privately?
+• A PIM role activated by the application before every DNS lookup.
+• A dynamic Entra group containing every VM in the subnet.
+• An Office 365 license assigned to the service principal.
+√ A private DNS zone mapping the service name to the private endpoint IP.
+• A public DNS record pointing directly to the original service IP. with no separate verification, logging, or administrative step needed.
+• A Conditional Access named location for the subnet.
+
+19. [Module 4] What important difference separates a service endpoint from a private endpoint?
+• Private endpoints are just another name for VNet peering.
+• Private endpoints are less granular because they always cover every service in the region.
+• Service endpoints require Azure Firewall Premium, while private endpoints require no network configuration. without any additional route, role, or policy being required.
+• Service endpoints work only for IaaS VMs, while private endpoints work only for users.
+√ A service endpoint keeps the service's public IP; a private endpoint gives private-IP reachability to a specific resource.
+• A service endpoint creates a private NIC, while a private endpoint keeps the public IP only.
+
+20. [Module 4] After creating a private endpoint for a storage account, what additional step best removes the public path?
+√ Disable the storage account's public network access.
+• Delete the private DNS zone after the endpoint resolves once.
+• Assign the storage account to myAsgWebServers.
+• Give every user the Storage Account Contributor role.
+• Create a second public endpoint for redundancy.
+• Enable AllowInternetOutBound on the subnet NSG.
+
+21. [Module 4] What is an Azure Network Security Group?
+• A DNS service that maps FQDNs to private endpoint addresses.
+• A directory role that controls which users can manage networks.
+• A layer-7 web firewall that detects SQL injection and XSS.
+√ A stateful layer-3/4 packet filter with prioritized allow/deny rules.
+• A route table that decides the next hop for every subnet packet.
+• A SIEM rule collection used to detect suspicious network activity. with no separate verification, logging, or administrative step needed.
+
+22. [Module 4] Which fields are part of the NSG 5-tuple concept?
+• User, role, scope, device, and tenant.
+• Issuer, audience, object ID, scope, and token expiry.
+• Priority, FQDN, certificate, user risk, and application label.
+• URL, HTTP method, cookie, header, and response code.
+√ Source IP/port, destination IP/port, and protocol.
+• Subscription, resource group, VM, disk, and region.
+
+23. [Module 4] In what order does an NSG evaluate rule priorities?
+• Deny rules are always processed before allow rules regardless of priority.
+• Azure randomly selects among matching rules to distribute traffic.
+• Highest priority number first; the last matching rule wins.
+√ Lowest priority number first; the first matching rule wins.
+• Rules are evaluated in creation order and priority is only a display value.
+• Allow rules are always processed before deny rules regardless of priority.
+
+24. [Module 4] What does stateful mean for an NSG?
+• The NSG stores application-layer state such as HTTP cookies.
+• Rules persist after the NSG is deleted from the subnet.
+√ Return traffic for an allowed connection is permitted automatically.
+• The NSG changes route priority based on previously seen traffic.
+• Every packet in both directions must match a separate explicit rule.
+• The NSG remembers user passwords so later sessions skip authentication.
+
+25. [Module 4] What is the default inbound rule at priority 65500?
+• AllowAzureLoadBalancerInBound.
+√ DenyAllInBound.
+• AllowVnetInBound.
+• AllowRDPInBound.
+• DenyAllOutBound.
+• AllowInternetOutBound.
+
+26. [Module 4] What does AllowVnetInBound mean for segmentation?
+• The rule applies only to public Internet traffic entering the VNet.
+• It automatically enforces least privilege between application tiers.
+• The rule allows only Azure Load Balancer probes and no workload traffic. and the same behavior is applied automatically to every workload in the tenant.
+• Only RDP and SSH are allowed between VMs in the same VNet.
+√ Intra-VNet traffic is broadly allowed by default, so custom rules are needed for tier isolation.
+• All traffic between VMs is denied until an ASG is created.
+
+27. [Module 4] What is the default outbound Internet behavior of an NSG?
+• Outbound traffic is controlled only by Azure Firewall and never by NSGs. even when the related security service has not been enabled or configured.
+• All Internet egress is denied by default at priority 65000.
+√ AllowInternetOutBound permits outbound traffic unless a higher-priority custom rule overrides it.
+• Internet egress is allowed only to Microsoft-owned IP addresses.
+• Only HTTPS is allowed outbound by the default rules.
+• The default outbound rule opens traffic only after a JIT request.
+
+28. [Module 4] A subnet has one NSG and a VM NIC has another NSG. What must happen for inbound traffic to reach the VM?
+√ The traffic must be allowed by both the subnet and NIC NSG evaluations.
+• The two NSGs cancel each other, causing Azure to allow all traffic.
+• The subnet NSG applies only at VM creation, then the NIC NSG becomes authoritative.
+• The NIC NSG always replaces the subnet NSG, so only one is evaluated.
+• NIC NSGs filter outbound traffic only and never participate in inbound evaluation.
+• Azure compares the lowest priority number across both NSGs and uses only that rule.
+
+29. [Module 4] Why does the course prefer subnet-level NSGs with ASGs rather than accidental NIC-level NSGs?
+• Subnet NSGs automatically create private endpoints for protected services.
+• Azure does not support NSGs on NICs, so subnet attachment is the only valid design. regardless of the resource scope, network path, or authentication method in use.
+• NIC NSGs are stateless while subnet NSGs are stateful.
+√ It reduces rule complexity and avoids hidden second filtering points that complicate troubleshooting.
+• Subnet NSGs can inspect FQDNs while NIC NSGs are limited to IP addresses.
+• ASGs work only when the NSG is attached to an Azure Firewall subnet.
+
+30. [Module 4] What is an Application Security Group (ASG)?
+• A Sentinel group that correlates alerts from the same application.
+• A layer-7 firewall that protects one Azure web application.
+• A DLP group that classifies application data by sensitivity.
+√ A logical label applied to VM NICs that can be referenced in NSG rules.
+• A route table grouping application subnets by default gateway.
+• A Microsoft Entra group that assigns Azure resource roles to application users.
+
+31. [Module 4] What problem do ASGs solve compared with IP-based NSG rules?
+• ASGs encrypt east-west traffic between members.
+• ASGs make VNet peering transitive between workload tiers.
+• ASGs assign Entra login roles automatically to tagged VMs. without any additional route, role, or policy being required.
+• ASGs provide URL filtering that NSGs cannot perform.
+• ASGs replace every need for subnet segmentation.
+√ Rules can express workload roles such as web or management without maintaining IP lists.
+
+32. [Module 4] What is micro-segmentation?
+• Routing all Internet traffic through one public IP address.
+• Using a WAF to inspect only north-south HTTP traffic at the edge.
+√ Fine-grained control of east-west traffic between workload tiers.
+• Creating multiple Azure subscriptions for billing separation only.
+• Encrypting every disk with a customer-managed key.
+• Splitting an Entra tenant into several independent identity directories.
+
+33. [Module 4] Which Azure tool can tell you the exact NSG rule that allowed or denied a tested flow?
+• Microsoft Entra What If.
+• Purview Activity explorer.
+• Microsoft Sentinel Content hub.
+√ Network Watcher IP flow verify.
+• PIM Resource audit.
+• Service Trust Portal.
+
+34. [Module 4] Which view shows the combined NSG rules affecting a NIC?
+• Effective routes.
+• Sign-in logs.
+• Secure Score.
+• Activity explorer. without any additional route, role, or policy being required.
+• PIM My roles.
+√ Effective security rules.
+
+35. [Module 4] What major capability does Azure Firewall add that NSGs cannot express?
+• Azure RBAC role assignments for administrators.
+• Basic stateful filtering of IP addresses and ports.
+√ FQDN-based application egress rules.
+• Private IP addressing for virtual machines.
+• Guest invitation and federation controls.
+• Disk encryption with AES-256.
+
+36. [Module 4] Which Azure Firewall SKU includes TLS inspection and IDPS?
+• Basic.
+• Consumption.
+• Enterprise.
+• Developer.
+√ Premium.
+• Standard.
+
+37. [Module 4] Which Azure Firewall SKU is described as the fit for most workloads?
+• Basic only.
+• Premium only.
+• Classic.
+• Developer.
+• Free.
+√ Standard.
+
+38. [Module 4] In what order are Azure Firewall classic rule types processed?
+• DNAT, then application, then network.
+• Routes, then RBAC, then Conditional Access. regardless of the resource scope, network path, or authentication method in use.
+• Application, then network, then DNAT.
+• Network, then application, then DNAT.
+√ DNAT, then network rules, then application rules.
+• NSG, then WAF, then DDoS.
+
+39. [Module 4] Which Azure Firewall rule type is suited to allowing UDP 53 to known DNS servers?
+• A Purview DLP rule.
+√ A network rule.
+• An application rule.
+• A WAF managed rule.
+• A DNAT rule only.
+• An Entra Conditional Access rule.
+
+40. [Module 4] Which Azure Firewall rule type can allow www.bing.com by FQDN?
+• A DNAT rule only.
+• A DDoS protection rule.
+√ An application rule.
+• A network rule only.
+• An NSG default rule.
+• A route-table rule.
+
+41. [Module 4] What does a Web Application Firewall primarily inspect?
+• Guest invitation emails for external collaboration. regardless of the resource scope, network path, or authentication method in use.
+√ Layer-7 HTTP requests for attacks such as injection and XSS.
+• Azure subscription billing activity.
+• Layer-3 routing tables for invalid default routes.
+• Entra tokens for user risk and sign-in risk.
+• Disk blocks for ransomware encryption.
+
+42. [Module 4] Where can Azure WAF be deployed according to the notes?
+• Only Azure Bastion.
+• Only Azure Firewall Premium.
+• Only Microsoft Entra Private Access. and the same behavior is applied automatically to every workload in the tenant.
+• Only a VM NIC.
+• Only a Log Analytics workspace.
+√ Application Gateway or Azure Front Door.
+
+43. [Module 4] Why start a new WAF policy in detection mode?
+• Detection mode is required permanently because WAF cannot block traffic.
+• Detection mode creates Azure RBAC assignments for web administrators.
+• Detection mode automatically converts the WAF into DDoS Network Protection.
+• Detection mode encrypts HTTP traffic until TLS certificates are installed.
+√ To observe and tune false positives before switching to blocking prevention mode.
+• Detection mode blocks all malicious requests more aggressively than prevention mode.
+
+44. [Module 4] What type of threat is Azure DDoS Protection designed primarily to absorb?
+√ Volumetric layer-3/4 floods.
+• Unauthorized Key Vault secret reads by a privileged identity.
+• SQL injection and cross-site scripting inside HTTP requests.
+• Guest invitation abuse in Microsoft Entra External Identities.
+• Stolen Entra session tokens and credential stuffing.
+• Malicious dependencies committed into application source code.
+
+45. [Module 4] Why pair DDoS protection with a WAF for an Internet-facing application?
+• WAF absorbs all layer-3/4 floods, while DDoS filters only SQL injection.
+• DDoS creates FQDN allow rules that WAF cannot express.
+• Both products inspect exactly the same traffic and are required only for license compliance.
+√ They address different layers: volumetric network floods versus application-layer attacks.
+• WAF is needed only to create the public IP used by DDoS.
+• DDoS protection handles identity risk while WAF handles Azure RBAC.
+
+46. [Module 4] Which statement about Azure Firewall deployment is a common misconception called out by the notes?
+• Azure Firewall is stateless and requires a return rule for every connection.
+• Azure Firewall can be used only with public workloads and not private VNets.
+• Azure Firewall Premium cannot inspect TLS traffic.
+√ Deploying the firewall alone does not protect traffic unless routing sends flows through it.
+• Azure Firewall application rules cannot use FQDNs.
+• A firewall automatically becomes the next hop for every subnet in the tenant. even when the related security service has not been enabled or configured.
+
+47. [Module 4] What VM-hardening principle does the module emphasize for management ports?
+• Open 3389 and 22 permanently, then rely on disk encryption to stop attackers.
+• Expose management ports only after assigning Contributor at subscription scope.
+• Use public management ports instead of Bastion because TLS 443 is less secure.
+• Open both ports to Any source so emergency access is always possible.
+• Management ports are safe by default because Azure NSGs inspect user identities.
+√ Do not expose RDP 3389 or SSH 22 directly to the Internet.
+
+48. [Module 4] What does Trusted Launch add to Gen-2 VMs?
+• A private endpoint for every VM management interface.
+• PIM activation for local administrator accounts.
+• A customer-managed encryption key stored inside the guest OS.
+• Automatic Azure Firewall Premium inspection of all VM traffic.
+• A Microsoft Sentinel workspace and analytics rule set.
+√ Secure Boot and vTPM to protect boot integrity.
+
+49. [Module 4] When would Confidential VMs be considered?
+• When the VM has no requirement for memory protection. without any additional route, role, or policy being required.
+• When Azure Firewall needs an FQDN application rule.
+• When a guest invitation cannot be redeemed with OTP.
+• When only public website DDoS protection is required.
+√ When protection of data in use against host-level access is required.
+• When the user needs group-based Office licensing.
+
+50. [Module 4] Which Azure service is listed for patching VMs?
+• Microsoft Purview.
+• Entra PIM.
+√ Azure Update Manager.
+• Service Trust Portal.
+• Microsoft Sentinel.
+• Azure Front Door.
+
+51. [Module 4] What is Azure Bastion?
+• A layer-7 web firewall for OWASP attacks.
+• A PaaS private endpoint for storage and SQL.
+• A directory role that allows administrators to sign in to VMs. without any additional route, role, or policy being required.
+√ A managed jump service providing RDP/SSH access to private VM addresses over TLS 443.
+• A SIEM data connector that collects VM security events.
+• A VPN that puts the user onto every subnet in the VNet.
+
+52. [Module 4] Why can a VM behind Bastion avoid a public management IP?
+• Bastion uses Microsoft 365 licensing instead of network connectivity.
+• Bastion converts the VM's private address into a globally routable public address.
+√ Bastion connects to the VM's private IP from inside the VNet.
+• Bastion disables authentication and therefore no management network is needed.
+• Bastion creates a guest account in the VM for each administrator.
+• Bastion tunnels through the Azure Firewall public IP but never enters the VNet.
+
+53. [Module 4] What minimum subnet size is stated for AzureBastionSubnet?
+√ /26.
+• /28.
+• /32.
+• /30.
+• /24 only.
+• /29.
+
+54. [Module 4] Why should lab users delete a billed Bastion SKU when finished?
+• Bastion expires the Entra tenant after the lab ends.
+√ Basic and higher Bastion SKUs can continue billing hourly.
+• Bastion automatically deletes all VMs after twenty-four hours if left deployed.
+• Leaving Bastion running disables NSGs on the VNet.
+• Leaving Bastion deployed converts every private VM to a public VM.
+• Bastion prevents Azure Monitor from collecting VM logs.
+
+55. [Module 4] What security problem does Microsoft Entra login for VMs address?
+• It converts Windows and Linux VMs into Microsoft 365 groups.
+√ It replaces scattered local credentials with centrally governed identity-based sign-in.
+• It gives every Contributor automatic local administrator access.
+• It removes the need for any VM login authorization role.
+• It routes VM traffic through Conditional Access instead of a VNet. even when the related security service has not been enabled or configured.
+• It replaces disk encryption with an Entra password.
+
+56. [Module 4] Which legacy extension name is still used for Windows Entra VM login?
+• AzureADConnectForWindows.
+• AADSSPRForWindows.
+• MicrosoftIdentityRDP.
+• EntraLoginForWindows.
+√ AADLoginForWindows.
+• WindowsPIMLogin.
+
+57. [Module 4] Which extension name is used for Linux Entra VM login?
+• MicrosoftGraphSSH.
+• AzureADConnectForLinux.
+• EntraSSHForLinux.
+√ AADSSHLoginForLinux.
+• AADLoginForWindows.
+• LinuxPIMLogin.
+
+58. [Module 4] What additional identity capability is enabled automatically when 'Login with Microsoft Entra ID' is selected for a VM?
+• A Sentinel workspace.
+• A permanent subscription Owner assignment.
+• A guest account in the user's home tenant.
+√ A system-assigned managed identity.
+• A Microsoft 365 E3 license.
+• An Azure Firewall Premium instance.
+
+59. [Module 4] Which Azure RBAC role grants administrative Entra logon to a VM?
+• Contributor.
+• Virtual Machine Contributor. with no separate verification, logging, or administrative step needed.
+• Owner only.
+√ Virtual Machine Administrator Login.
+• User Access Administrator.
+• Application Administrator.
+
+60. [Module 4] Which role grants standard non-admin Entra logon to a VM?
+• Guest Inviter.
+• Virtual Machine Contributor.
+• Application Administrator.
+• Security Reader.
+√ Virtual Machine User Login.
+• Reader.
+
+61. [Module 4] A user is Contributor on a VM but cannot sign in with Entra. Why?
+√ Contributor can manage the resource but does not grant VM logon authorization.
+• Contributor is a directory role, so it cannot apply to Azure resources.
+• Contributor automatically grants sign-in only after waiting for a 30-minute sync cycle.
+• Contributor works only for Linux and never for Windows.
+• Contributor requires the VM to have a public IP before Entra authentication works.
+• Contributor blocks Entra login whenever the VM has a system-assigned managed identity.
+
+62. [Module 4] Which two lines does the course add to the copied Windows RDP file for Entra sign-in?
+• promptcredentialonce:i:1 and redirectclipboard:i:0.
+• authentication level:i:0 and enablecredsspsupport:i:1.
+√ enablecredsspsupport:i:0 and authentication level:i:2.
+• use multimon:i:1 and full address:s:0.0.0.0.
+• gatewayusagemethod:i:2 and gatewayprofileusagemethod:i:1.
+• drivestoredirect:s:* and audiomode:i:0.
+
+63. [Module 4] Why is NLA relaxed once in the Windows Entra-login lab?
+• NLA is required only for Linux SSH and has no effect on Windows.
+• NLA prevents the VM from obtaining a system-assigned managed identity.
+• Disabling NLA assigns the Virtual Machine Administrator Login role automatically. with no separate verification, logging, or administrative step needed.
+• NLA disables Azure Disk Encryption until the first Entra sign-in succeeds.
+√ The lab's non-Entra-joined client path cannot carry the intended interactive Entra sign-in through default CredSSP/NLA.
+• NLA blocks all RDP connections to Azure VMs, even local administrator logons.
+
+64. [Module 4] What username format is used at the Windows logon screen in the lab?
+• PIM\role-name.
+• Guest\#EXT#UPN.
+• Microsoft365\tenantID.
+√ AzureAD\user@domain.
+• contoso.local\root only.
+• AzureRBAC\subscriptionID.
+
+65. [Module 4] What command is used to connect to an Entra-enabled Linux VM?
+• Connect-MgGraph -Scopes SSH.Login.
+√ az ssh vm.
+• New-AzRoleAssignment -RoleDefinitionName SSH.
+• Start-ADSyncSyncCycle -PolicyType Delta.
+• ssh root@public-ip with a permanent key only.
+• kubectl exec vmLinuxEntra.
+
+66. [Module 4] What credential does the Linux Entra SSH flow use under the hood?
+• An Azure Firewall application-rule certificate.
+• A SAML XML assertion posted to the Linux kernel.
+• The user's Microsoft 365 password sent directly to sshd in cleartext. without any additional route, role, or policy being required.
+• A static private key stored permanently in the user's home directory.
+• A guest invitation redemption URL used as the SSH key.
+√ A short-lived OpenSSH certificate issued through Entra authentication.
+
+67. [Module 4] Why does Entra VM login improve auditability?
+• The feature stores the user's password in the VM for later forensic review.
+• It removes all Azure RBAC authorization checks, simplifying the audit trail.
+• Entra login disables every local OS log so only Azure billing records remain. even when the related security service has not been enabled or configured.
+• It logs only successful administrator sessions and suppresses denied logons.
+√ VM logon becomes a centrally recorded identity event visible in Entra sign-in logs.
+• It converts every login into an Azure Firewall rule change.
+
+68. [Module 4] What is a key container-isolation difference compared with VMs?
+• Containers always receive a dedicated hypervisor and separate kernel.
+√ Containers share the host kernel, so isolation is thinner than VM isolation.
+• Containers cannot run vulnerable software because images are immutable.
+• Containers use physical hardware isolation stronger than Confidential VMs.
+• Containers cannot access networks, so east-west controls are unnecessary.
+• Containers are isolated only by Azure Firewall and do not use an operating system.
+
+69. [Module 4] What image-security practice does the module recommend?
+• Store secrets inside the image to avoid Key Vault availability problems.
+• Allow any critical-CVE image to deploy and rely on runtime antivirus alone.
+√ Use minimal trusted base images, scan for CVEs, prefer signed images, and avoid mutable latest tags.
+• Use the latest tag everywhere so production always receives the newest image automatically. without any additional route, role, or policy being required.
+• Build all images from the largest available base so tools are easier to install.
+• Disable registry scanning because container layers cannot contain vulnerabilities.
+
+70. [Module 4] How should AKS cluster access be governed?
+• Expose the API server publicly and allow Any source so management is reliable.
+√ Integrate Entra ID with Kubernetes RBAC and avoid local cluster-admin accounts.
+• Grant every pod a managed identity with Contributor on the subscription.
+• Use one shared kubeconfig with permanent cluster-admin for every developer.
+• Use Azure subscription Owner as the only Kubernetes authorization control.
+• Disable all identity integration because Kubernetes cannot use external identities.
+
+71. [Module 4] What do Pod Security Standards aim to prevent in production?
+• Any use of Microsoft Entra ID for cluster access.
+• All pod-to-pod networking inside the cluster.
+• Any deployment that includes a health probe.
+√ Overly privileged pods such as root, privileged mode, and host-path mounts.
+• Any pod from using an image stored in Azure Container Registry. without any additional route, role, or policy being required.
+• All containers from writing application logs.
+
+72. [Module 4] Why are Kubernetes network policies needed even when the nodes have NSGs?
+• NSGs already inspect every pod identity, so network policies are mainly for billing.
+• Network policies encrypt container images before deployment.
+• Network policies are used only to assign Azure RBAC roles to pods.
+• Network policies control only public Internet traffic and never east-west pod traffic. even when the related security service has not been enabled or configured.
+√ NSGs see node-level traffic, while pod-to-pod micro-segmentation needs Kubernetes-aware policy.
+• Kubernetes network policies replace the need for all VNet routing.
+
+73. [Module 4] How should AKS workloads access secrets?
+• Use a guest user's invitation URL as the application credential.
+√ Use Key Vault integration such as the Secrets Store CSI driver with workload identity.
+• Bake secrets directly into the container image for portability.
+• Store a Global Administrator password as an environment variable.
+• Place secrets in plain ConfigMaps so every pod can retrieve them.
+• Copy secrets into the source repository and rely on private Git permissions. regardless of the resource scope, network path, or authentication method in use.
+
+74. [Module 4] What changes in serverless security when the provider owns the OS and runtime?
+• Managed identities are unnecessary because the provider handles application access.
+• All input-validation vulnerabilities disappear because there is no server.
+√ Security focus shifts to code, dependencies, identities, triggers, and configuration.
+• The customer has no remaining security responsibility.
+• Serverless functions cannot be attacked through public triggers or APIs.
+• Dependency vulnerabilities are patched automatically in the customer's package manifest.
+
+75. [Module 4] What identity pattern is recommended for Azure Functions?
+• A shared Global Administrator user embedded in each function.
+• A permanent client secret stored in app settings.
+√ A least-privilege managed identity scoped only to resources the function needs.
+• A guest account with no Conditional Access evaluation.
+• A Microsoft 365 group used as the function's password.
+• Subscription Owner for every function so authorization never causes failures. with no separate verification, logging, or administrative step needed.
+
+76. [Module 4] Which DevSecOps gate catches source-code flaws before build?
+√ SAST.
+• DAST.
+• JIT.
+• DLP.
+• PIM.
+• SCA.
+
+77. [Module 4] Which gate is designed to catch committed credentials?
+• Network Watcher.
+• DAST only.
+• SAST only.
+• DDoS Protection.
+• PIM approval.
+√ Secret scanning.
+
+78. [Module 4] Which gate targets vulnerable third-party packages?
+• WAF detection mode.
+• SAST.
+• JIT.
+• NSG.
+• DAST.
+√ SCA.
+
+79. [Module 4] Which gate checks infrastructure-as-code templates for insecure configuration?
+• DDoS Protection.
+• B2B federation.
+• Password hash synchronization.
+• Access reviews.
+• Dynamic data masking.
+√ IaC scanning.
+
+80. [Module 4] Which gate tests the running application in staging for runtime flaws?
+• Secret scanning.
+• Data masking.
+• SAST.
+• SCA.
+√ DAST.
+• Azure RBAC.
+
+81. [Module 4] Why should security gates block pull requests instead of only producing nightly reports?
+• Pull-request gates replace the need for any runtime monitoring after deployment.
+• Nightly reports are more secure because vulnerabilities must reach production before they can be confirmed.
+√ Blocking feedback reaches the developer while the change is fresh and prevents bad code from advancing.
+• Blocking gates are required only for billing accuracy and not security outcomes.
+• A blocking gate automatically fixes every vulnerability without developer action.
+• Nightly reports prevent dependency vulnerabilities from entering source control.
+
+82. [Module 4] What are the three data states used in the module?
+√ At rest, in transit, and in use.
+• Active, Eligible, and PendingAcceptance.
+• Encrypted, hashed, and signed only.
+• Public, private, and hybrid.
+• Hot, cool, and archive.
+• Member, guest, and service principal.
+
+83. [Module 4] What threat does encryption at rest primarily address?
+√ Stolen media, raw storage access, or decommissioned hardware exposure.
+• A stolen access token calling the storage API with allowed permissions.
+• Guest users receiving excessive Azure RBAC roles.
+• SQL injection through an Internet-facing application.
+• DDoS floods against the application's public endpoint.
+• A valid authenticated user reading data through normal service permissions.
+
+84. [Module 4] What Azure mechanism protects data in transit?
+• Storage Service Encryption with platform-managed keys only. without any additional route, role, or policy being required.
+• Application Security Groups.
+• Dynamic data masking only.
+√ TLS 1.2+ and encrypted network paths such as VPN/ExpressRoute where appropriate.
+• Azure Update Manager.
+• PIM Eligible assignments.
+
+85. [Module 4] What is confidential computing designed to protect?
+• Only network routes in an Azure VNet.
+• Only Microsoft 365 licenses assigned through groups.
+• Only guest invitation emails before redemption.
+• Only HTTPS traffic between a browser and Azure Front Door.
+√ Data while it is being processed in memory.
+• Only data stored on decommissioned disks.
+
+86. [Module 4] What three object types does Azure Key Vault centralize?
+• Users, groups, and roles.
+√ Keys, secrets, and certificates.
+• VMs, disks, and NICs.
+• Files, folders, and mailboxes.
+• Routes, NSGs, and ASGs.
+• Alerts, incidents, and playbooks.
+
+87. [Module 4] What is a Key Vault secret in the notes?
+• An NSG default deny rule.
+√ A retrievable value such as a password or connection string.
+• A TLS certificate object that can auto-renew.
+• A dynamic group rule for protected users.
+• A Sentinel analytic detection.
+• A non-exportable RSA private key used only inside the vault.
+
+88. [Module 4] What is characteristic of a Key Vault key?
+• It is always returned in cleartext to any user with Reader. and the same behavior is applied automatically to every workload in the tenant.
+• It is just another name for a password stored as a secret.
+• It is automatically copied into every VM using the vault.
+• It cannot be protected by HSM-backed tiers.
+• It can be used only for Microsoft 365 license assignment.
+√ Private key material used for crypto operations can remain non-exportable inside the vault.
+
+89. [Module 4] What is the distinction between Key Vault Standard and Premium?
+• Premium is required for every customer-managed storage key.
+• Standard cannot use Azure RBAC for data-plane access.
+• Standard uses dedicated single-tenant HSMs while Premium is software-only.
+√ Premium adds HSM-backed key protection while Standard uses software-protected keys.
+• Standard supports secrets only while Premium supports all three object types. and the same behavior is applied automatically to every workload in the tenant.
+• Premium is a network firewall SKU rather than a Key Vault tier.
+
+90. [Module 4] Which Key Vault permission model does the module recommend for new vaults?
+√ Azure RBAC.
+• Conditional Access only.
+• SAML claims with no role assignment.
+• Microsoft 365 group licensing.
+• NSG-based permissions.
+• Legacy vault access policies for every new deployment.
+
+91. [Module 4] Why is Azure RBAC preferred over legacy Key Vault access policies in new deployments?
+√ It integrates with centralized role governance such as PIM, access reviews, and auditing.
+• It makes Key Vault data public to any authenticated Azure user.
+• It stores all keys outside Key Vault in the Entra directory.
+• It removes the need for any data-plane permission checks.
+• It automatically gives every Contributor permission to read secrets.
+• It is required because access policies cannot grant get or list operations. with no separate verification, logging, or administrative step needed.
+
+92. [Module 4] Can a vault use access policies for some users and Azure RBAC for others at the same time?
+• No, because Azure RBAC cannot be used for Key Vault data access at all.
+• Only when the vault is connected to Microsoft Sentinel.
+• Yes; Azure automatically merges both models per request.
+• Yes, if the user also has a Microsoft 365 E3 license.
+• Yes, but only for Premium vaults.
+√ No; the vault uses one data-plane permission model at a time.
+
+93. [Module 4] What does Key Vault soft delete provide?
+• A network route to the vault through Private Link.
+• A replacement for RBAC permissions.
+• Permanent destruction of a key immediately after deletion.
+√ A recovery window for deleted vault objects.
+• A guarantee that deleted data can never be recovered.
+• Automatic rotation of every secret on a fixed schedule.
+
+94. [Module 4] What does purge protection provide?
+√ It prevents permanent destruction until the retention period has passed.
+• It immediately erases deleted keys so attackers cannot restore them.
+• It disables soft delete for compliance reasons.
+• It changes platform-managed keys into customer-managed keys automatically.
+• It blocks every secret read from outside the Azure portal.
+• It encrypts data in use with a trusted execution environment.
+
+95. [Module 4] Why are soft delete and purge protection important prerequisites for customer-managed keys?
+• They are needed only for public-key certificates, not storage encryption. without any additional route, role, or policy being required.
+• They increase AES from 256-bit to 512-bit encryption strength.
+• They allow the storage service to bypass Key Vault RBAC during outages.
+• They provide the network path from storage to Key Vault.
+√ Accidentally losing the key-encryption key can make protected data permanently unreadable.
+• CMK works only if deleted keys are destroyed immediately.
+
+96. [Module 4] What is envelope encryption?
+• One password is hashed twice before it is stored.
+• Two independent VNets encrypt each other's packets.
+• An NSG and Azure Firewall each apply one layer of packet encryption. without any additional route, role, or policy being required.
+• A guest invitation is signed by two different identity providers.
+√ A data-encryption key protects data and a key-encryption key wraps that DEK.
+• A WAF encrypts HTTP payloads after inspecting them.
+
+97. [Module 4] What is a platform-managed key (PMK)?
+√ A key-encryption key generated, stored, and rotated by Microsoft.
+• A static SSH key stored on every Linux VM.
+• A key that must be created and rotated by the customer in Key Vault.
+• A PIM activation secret assigned to administrators.
+• A user password synchronized from on-premises Active Directory.
+• A key used only for TLS certificates in Azure Front Door.
+
+98. [Module 4] What additional control does a customer-managed key (CMK) provide?
+• Stronger AES mathematics than platform-managed keys.
+• A guarantee that the service never uses managed identities.
+√ Customer-controlled rotation, auditing, and the ability to revoke key access.
+• Removal of all Key Vault availability dependencies.
+• Automatic prevention of every credential-based data-access attack. with no separate verification, logging, or administrative step needed.
+• Automatic data classification and DLP enforcement.
+
+99. [Module 4] What is the practical 'kill switch' property of CMK?
+• Disabling Conditional Access rotates all storage encryption keys.
+√ Revoking the service's access to the wrapping key can make the protected data unreadable.
+• Deleting a resource group automatically preserves the CMK but erases only metadata. and the same behavior is applied automatically to every workload in the tenant.
+• Changing an NSG priority permanently erases encrypted storage data.
+• Deleting a user's password immediately destroys the provider's physical disks.
+• Removing a sensitivity label decrypts the underlying file permanently.
+
+100. [Module 4] Does CMK make AES ciphertext cryptographically stronger than PMK in the course example?
+• Yes; CMK automatically provides two independent encryption layers.
+• No; because CMK is only a billing label and never participates in encryption. even when the related security service has not been enabled or configured.
+• No; because CMK applies only to passwords and not storage encryption.
+√ No; the main difference is who controls, audits, rotates, and can revoke the key hierarchy.
+• Yes; CMK changes AES-256 into a stronger proprietary cipher.
+• Yes; PMK uses no encryption at rest until a customer key is enabled.
+
+101. [Module 4] What is double encryption?
+• Using TLS plus a password hash during user authentication.
+• Applying two sensitivity labels to one document.
+• Using an NSG and an Azure Firewall in the same network path.
+√ Two independent encryption layers using separate keys and implementations.
+• Encrypting the same file twice with the exact same key and algorithm. regardless of the resource scope, network path, or authentication method in use.
+• Encrypting both a guest invitation and its email message.
+
+102. [Module 4] What is Microsoft Purview used for in this module?
+• Network routing, peering, and firewall next-hop selection.
+• Guest invitation and Google federation.
+√ Data discovery, classification, sensitivity labeling, and DLP governance.
+• VM patching and operating-system baseline enforcement only. without any additional route, role, or policy being required.
+• Azure RBAC role assignment and PIM activation.
+• DDoS absorption for Internet-facing resources.
+
+103. [Module 4] What is a sensitivity label?
+• An NSG service tag used to group IP ranges.
+√ Classification metadata that can also enforce protections such as encryption or visual markings.
+• A JWT claim that identifies the application's audience. without any additional route, role, or policy being required.
+• A route priority assigned to sensitive subnets.
+• A PIM role status that marks privileged users.
+• A Defender for Cloud recommendation severity level.
+
+104. [Module 4] Why is it important that a sensitivity label can travel with a file?
+√ Protection can continue even after the file leaves the tenant.
+• The label automatically gives the recipient an Entra account.
+• The label converts the document into an immutable disk snapshot.
+• The label routes all future network traffic through Azure Firewall.
+• The label prevents the file from ever being copied or renamed.
+• The label changes the file's IP address to a private endpoint.
+
+105. [Module 4] What are the four building blocks of a Purview DLP policy in the notes?
+• Users, groups, roles, and scopes.
+• Header, payload, signature, and expiry.
+√ Locations, conditions, actions, and notifications.
+• Source, destination, port, and protocol. and the same behavior is applied automatically to every workload in the tenant.
+• Key, secret, certificate, and vault.
+• Detect, protect, respond, and recover.
+
+106. [Module 4] What rollout discipline does the module recommend for DLP?
+• Never use audit mode because it cannot produce useful evidence.
+√ Start in audit/simulation mode, tune false positives, then tighten to blocking.
+• Disable policy tips so users do not learn which controls are enforced.
+• Start by blocking everything immediately so users cannot bypass the control. without any additional route, role, or policy being required.
+• Apply DLP only after a confirmed data breach.
+• Use DLP only on endpoints and never email or collaboration services.
+
+107. [Module 4] What does dynamic data masking do?
+• It encrypts the entire database with a customer-managed key.
+√ It obscures the presentation of data while leaving the underlying stored value intact.
+• It changes the database schema so privileged users cannot query the base table. regardless of the resource scope, network path, or authentication method in use.
+• It substitutes data with tokens whose mapping is held in a separate vault.
+• It irreversibly removes identifiers from the stored dataset.
+• It deletes sensitive columns after each user session.
+
+108. [Module 4] Which technique is the best fit for PCI scope reduction in the notes?
+• Anonymization.
+• DDoS Protection.
+• PIM activation.
+• Dynamic data masking.
+• WAF detection mode.
+√ Tokenization.
+
+109. [Module 4] Which technique is intended to be irreversible for analytics or public research datasets?
+• Customer-managed keys.
+• Private endpoints.
+• Tokenization.
+• Dynamic data masking.
+√ Anonymization.
+• Soft delete.
+
+110. [Module 4] Which technique best fits a support agent who should see only the last digits of a card number?
+√ Dynamic data masking.
+• Tokenization only.
+• Double encryption.
+• Azure Firewall application rules.
+• Anonymization.
+• Confidential computing.
+
+111. [Module 4] Why is masking alone not enough for developers working with copied production data?
+• Masking automatically tokenizes every field into a separate vault.
+√ Masking protects the view, not the underlying stored value, so stronger de-identification may be needed.
+• Masking prevents database administrators from ever seeing the original value.
+• Masking permanently destroys identifiers and therefore cannot be used in development. with no separate verification, logging, or administrative step needed.
+• Masking is a network firewall feature rather than a data-protection technique.
+• Masking can be used only for public datasets that never contain personal data.
+
+112. [Module 4] Why can anonymized data still be risky if rich quasi-identifiers remain?
+• Anonymized data always contains the original encryption key in metadata. and the same behavior is applied automatically to every workload in the tenant.
+• Anonymized data cannot be stored in encrypted storage accounts.
+• Anonymization turns every record into a reversible token by design.
+√ Datasets can sometimes be re-identified by combining attributes such as ZIP code, birth date, and gender.
+• The process automatically publishes the source dataset to the Internet.
+• Azure requires anonymized data to use public endpoints.
+
+113. [Lab 4.1 — NSGs and ASGs] What VNet address space did the lab build?
+• 192.168.1.0/24.
+• 172.16.0.0/30.
+• 10.10.0.0/24.
+• 0.0.0.0/0.
+• 10.0.1.4/32.
+√ 10.0.0.0/16.
+
+114. [Lab 4.1 — NSGs and ASGs] What were the two ASG names?
+√ myAsgWebServers and myAsgMgmtServers.
+• AzureBastionSubnet and AzureFirewallSubnet.
+• Srv-Jump and Srv-Work.
+• sg-CS-O365 and SSPRTesters.
+• AllowBing and AllowDNS.
+• Web-SN and Workload-SN.
+
+115. [Lab 4.1 — NSGs and ASGs] Which inbound ports were allowed to myAsgWebServers at priority 100?
+• TCP 1433 only.
+• UDP 53 only.
+• All ports from VirtualNetwork.
+• TCP 22 only.
+√ TCP 80 and 443.
+• TCP 3389 only.
+
+116. [Lab 4.1 — NSGs and ASGs] Which inbound rule targeted myAsgMgmtServers?
+√ TCP 3389 at priority 110.
+• UDP 53 at priority 110.
+• TCP 22 at priority 65500.
+• Any protocol at priority 65000.
+• HTTPS 443 at priority 4096.
+• TCP 80/443 at priority 100.
+
+117. [Lab 4.1 — NSGs and ASGs] Why did the lab set 'Public inbound ports' to None when creating the VMs?
+• Because the Microsoft Entra login extension refuses installation if any public port exists. without any additional route, role, or policy being required.
+• Because IIS requires all VM public IP addresses to be disabled permanently.
+• Because ASGs work only on NICs that have no IP configuration.
+• Because the lab uses Azure Firewall instead of an NSG for every packet.
+• Because Azure VMs cannot have any inbound connectivity when an ASG is used.
+√ To avoid the portal adding extra NIC-level NSGs or standing management-port exposure that would undermine the intended design.
+
+118. [Lab 4.1 — NSGs and ASGs] How was IIS installed on the web VM?
+• Through an SSPR reset script.
+• Through Google federation.
+√ Using Run Command.
+• By assigning the VM to myAsgWebServers.
+• Through Microsoft Sentinel playbook automation.
+• Through PIM activation.
+
+119. [Lab 4.1 — NSGs and ASGs] What successful test proved management access worked?
+• The web VM could not load its IIS page.
+• UDP 53 to the web VM was blocked.
+√ RDP to the management VM succeeded.
+• The management VM served the IIS website publicly.
+• Both VMs rejected every inbound connection.
+• RDP to the web VM succeeded from the Internet.
+
+120. [Lab 4.1 — NSGs and ASGs] What successful test proved the web rule worked?
+√ The web VM served the IIS page over HTTP from the Internet.
+• The web VM accepted RDP from any source.
+• The web VM created a PIM Eligible assignment.
+• The ASG automatically created an Azure Firewall rule.
+• The NSG changed AllowVnetInBound into a deny rule.
+• The management VM blocked RDP while allowing only HTTPS. and the same behavior is applied automatically to every workload in the tenant.
+
+121. [Lab 4.1 — NSGs and ASGs] Why did RDP to the web VM fail?
+• The web VM's managed identity blocked all network traffic.
+√ No custom rule allowed 3389 to the web ASG, so DenyAllInBound at 65500 stopped it.
+• Azure Firewall denied RDP even though no firewall was used in this lab. with no separate verification, logging, or administrative step needed.
+• The web VM had no private IP address.
+• The management ASG was configured as a route table.
+• The IIS service automatically closes RDP whenever port 80 is enabled.
+
+122. [Lab 4.1 — NSGs and ASGs] What lesson does the negative RDP test prove?
+√ ASG-targeted NSG rules can allow one workload role while leaving another protected by default deny.
+• A web server cannot ever be managed through any secure access method. regardless of the resource scope, network path, or authentication method in use.
+• ASGs override DenyAllInBound for all VMs in the VNet.
+• Priority numbers have no effect when a rule uses an ASG.
+• An NSG permits any port to every NIC once one ASG rule exists.
+• RDP works only on web servers and not management servers.
+
+123. [Lab 4.2 — Azure Firewall] Which environment names were deployed by the ARM template?
+• myVirtualNetwork with WebVM and MgmtVM.
+• vnet-prod-weu with vmLinuxEntra and vmWindowsEntra.
+√ Test-FW-VN with Srv-Jump and Srv-Work.
+• AzureBastionSubnet with myAsgWebServers and myAsgMgmtServers.
+• rg-cloudsec-pim with Google OAuth and SSPRTesters.
+• law-cloudsec with ONPREM-DC01 and Delia Dennis.
+
+124. [Lab 4.2 — Azure Firewall] Which Azure Firewall SKU did the lab deploy?
+√ Standard.
+• Developer.
+• Free.
+• Premium.
+• Managed HSM.
+• Basic.
+
+125. [Lab 4.2 — Azure Firewall] What route-table name did the lab create?
+• FW-NSG.
+• Route-Sentinel.
+• AzureFirewallSubnet.
+• Workload-SN.
+• AllowBing.
+√ Firewall-route.
+
+126. [Lab 4.2 — Azure Firewall] What was the UDR route name?
+• AllowBing.
+• Firewall-route.
+• DenyAllInBound.
+• AllowDNS.
+• AzureDefaultRoute.
+√ FW-DG.
+
+127. [Lab 4.2 — Azure Firewall] Which subnet received Firewall-route?
+• Both jump and workload subnets.
+• The jump subnet only.
+• Every subnet in the subscription automatically.
+• AzureFirewallSubnet only.
+• No subnet; the table was left unassociated.
+√ Workload-SN only.
+
+128. [Lab 4.2 — Azure Firewall] Why did the jump subnet deliberately not receive the firewall UDR?
+√ The jump host needed a working management path and should not have its own route to the workload firewall create a circular or broken access path.
+• Azure Firewall can inspect only workload traffic from Linux VMs.
+• Azure does not support route tables on any subnet containing a VM.
+• The jump VM already had an ASG that automatically routed its traffic.
+• The UDR would convert Srv-Jump into the firewall itself.
+• The jump subnet is always public and ignores all route tables by design. even when the related security service has not been enabled or configured.
+
+129. [Lab 4.2 — Azure Firewall] What did the application rule allow?
+√ Access to www.bing.com.
+• UDP 53 to the DNS servers.
+• All HTTP and HTTPS destinations.
+• Access to every Microsoft website.
+• RDP from Any to Srv-Work.
+• Google OAuth redirects only.
+
+130. [Lab 4.2 — Azure Firewall] What did the network rule allow?
+• HTTPS to microsoft.com only.
+• DNS to Azure's default resolver only. and the same behavior is applied automatically to every workload in the tenant.
+• TCP 3389 to every Internet address.
+√ UDP 53 to 209.244.0.3 and 209.244.0.4.
+• TCP 443 to www.bing.com by FQDN.
+• All protocols to 0.0.0.0/0.
+
+131. [Lab 4.2 — Azure Firewall] Where were the custom DNS server addresses configured for the workload VM?
+√ On the Srv-Work NIC.
+• In the Service Trust Portal.
+• In PIM role settings.
+• In the Microsoft 365 license page.
+• In the guest user's Entra profile.
+• In the NSG default rule.
+
+132. [Lab 4.2 — Azure Firewall] What was the expected result when browsing to Bing from Srv-Work?
+• Bing required the VM to receive a public IP first.
+• Bing was denied because application rules cannot use FQDNs.
+• Bing could be reached only from Srv-Jump and never from Srv-Work.
+√ https://www.bing.com loaded successfully.
+• Bing loaded only after removing Firewall-route.
+• Bing redirected to the firewall deny page because only DNS was allowed.
+
+133. [Lab 4.2 — Azure Firewall] What was the expected result for http://www.microsoft.com from Srv-Work?
+√ The firewall deny page reported that no rule matched.
+• The request bypassed the firewall because HTTP is not routed by UDRs.
+• The NSG blocked it before Azure Firewall because outbound Internet is denied by default.
+• The browser automatically used the Bing application rule for every Microsoft domain.
+• The workload VM lost DNS resolution and could not generate any firewall log.
+• The site loaded because all Microsoft domains are implicitly allowed.
+
+134. [Lab 4.2 — Azure Firewall] Before web testing, what should Effective routes show for the default route?
+√ The old system Internet route is Invalid and FW-DG points to the firewall private IP.
+• No routes appear until the first browser request is made.
+• Only the firewall application rules appear because Effective routes hides system routes.
+• The NSG's DenyAllInBound becomes the next hop for 0.0.0.0/0.
+• The route points directly to www.bing.com because application rules rewrite the default route.
+• Both the Internet route and FW-DG remain equally Active and Azure chooses whichever responds first.
+
+135. [Lab 4.2 — Azure Firewall] What would happen if Firewall-route were accidentally associated with the wrong subnet instead of Workload-SN?
+• The NSG would copy the route table to the correct subnet after the first connection.
+• Azure Firewall would still inspect all VNet traffic because deployment alone controls routing. regardless of the resource scope, network path, or authentication method in use.
+• The firewall would automatically move itself into the workload subnet.
+• The VM would receive a new Entra identity and bypass network routing.
+• The application rule would become an NSG rule at priority 100.
+√ The intended workload egress path would not be forced through the firewall, so the lab's inspection behavior could fail.
+
+136. [Lab 4.3 — Entra Authentication for VMs] What type of Windows VM did Exercise 1 create?
+• A Windows VM configured only with local accounts and no Entra extension.
+• A Windows Server domain controller for contoso.local.
+• A Windows VM that used PIM instead of an OS login role.
+• A Windows web server used for Azure Firewall FQDN testing.
+√ A Windows 11 VM with Microsoft Entra login enabled.
+• A Windows VM joined only to a Google identity provider.
+
+137. [Lab 4.3 — Entra Authentication for VMs] What happened when Entra login was enabled on the Windows VM?
+• The local administrator account was deleted immediately.
+• Every tenant user received Virtual Machine Administrator Login.
+• The VM automatically received subscription Owner and opened RDP to Any. without any additional route, role, or policy being required.
+√ A system-assigned managed identity was enabled and AADLoginForWindows was installed.
+• Azure Firewall Premium was deployed in the same subnet.
+• The VM became a domain controller for the Entra tenant.
+
+138. [Lab 4.3 — Entra Authentication for VMs] Which role did the test user receive for Windows sign-in?
+• Virtual Machine Contributor. with no separate verification, logging, or administrative step needed.
+• Owner.
+• Application Administrator.
+• Guest Inviter.
+• Reader.
+√ Virtual Machine Administrator Login.
+
+139. [Lab 4.3 — Entra Authentication for VMs] What two .rdp settings were appended before the Entra sign-in test?
+• redirectclipboard:i:0 and audiomode:i:0.
+• gatewayusagemethod:i:0 and promptcredentialonce:i:1.
+• use multimon:i:1 and desktopwidth:i:1920.
+√ enablecredsspsupport:i:0 and authentication level:i:2.
+• networkautodetect:i:1 and bandwidthautodetect:i:1.
+• enablecredsspsupport:i:1 and authentication level:i:0.
+
+140. [Lab 4.3 — Entra Authentication for VMs] Why was a local administrator used once to relax NLA?
+• It synchronized the user's password hash from contoso.local. with no separate verification, logging, or administrative step needed.
+• It installed Microsoft Sentinel on the VM.
+• It converted the VM from Windows 11 to Windows Server.
+√ It prepared the Windows VM for the lab's Entra-authenticated RDP client path.
+• It enabled Azure Firewall routing for the RDP connection.
+• It assigned the user's Azure RBAC login role inside Windows.
+
+141. [Lab 4.3 — Entra Authentication for VMs] What type of Linux VM did Exercise 2 create?
+• A Linux domain controller for contoso.local.
+• A Kali VM used to scan the NSG.
+√ An Ubuntu VM with Entra login enabled.
+• A container host with no Entra integration.
+• A Windows Server VM running WSL.
+• An Amazon Linux VM with AWS IAM Identity Center only.
+
+142. [Lab 4.3 — Entra Authentication for VMs] What command completed the Linux sign-in?
+• Start-ADSyncSyncCycle.
+• ssh root@vm with a permanent private key.
+• kubectl attach.
+√ az ssh vm.
+• Connect-MgGraph.
+• az role assignment create.
+
+143. [Lab 4.3 — Entra Authentication for VMs] What negative test was important in both Windows/Linux login design?
+• Any authenticated tenant user should be allowed to log on by default.
+• A denied user should still appear as successfully authorized in sign-in logs.
+• A user without Contributor should automatically receive local administrator.
+• A user with no public IP should bypass RBAC and sign in locally.
+√ A user without a VM login role should be denied.
+• A guest user should become subscription Owner after one successful login.
+
+144. [Lab 4.3 — Entra Authentication for VMs] Where should the successful and denied identity events be visible?
+• Only in Purview Activity explorer.
+• Only in the Microsoft 365 license report.
+• Only in PIM Resource audit.
+• Only in the Service Trust Portal.
+• Only in Azure Firewall application-rule logs.
+√ In Microsoft Entra sign-in logs.
+
+145. [Lab 4.3 — Entra Authentication for VMs] What would likely happen if the required .rdp properties were skipped in the course's Windows client path?
+• The user's Entra account would be converted to a guest.
+√ The Entra interactive RDP sign-in would not work as expected with the default CredSSP/NLA behavior.
+• Azure RBAC would remove the user's login role automatically.
+• The disk would lose Storage Service Encryption.
+• The VM would lose its managed identity permanently.
+• The VM would become reachable from the Internet on every port. and the same behavior is applied automatically to every workload in the tenant.
+
+146. [Module 4] A company needs customer-controlled ability to revoke a storage service's decryption capability. What configuration best fits?
+• Use a sensitivity label without encryption because metadata controls the storage key.
+• Use platform-managed keys only because the customer can revoke Microsoft's internal key directly.
+• Use a service endpoint because it transfers key ownership from Microsoft to the customer.
+• Use dynamic data masking because it deletes the underlying encryption key.
+• Use an NSG deny rule because network filtering cryptographically erases stored data.
+√ Use a customer-managed key in Key Vault with the service authorized through managed identity.
+
+147. [Module 4] Which two Key Vault settings are prerequisites emphasized for CMK scenarios?
+• Bastion and JIT access.
+• Guest invitation and Email OTP.
+• WAF detection mode and DDoS IP Protection.
+• SAML federation and PHS.
+• Public network access and anonymous access.
+√ Soft delete and purge protection.
+
+148. [Module 4] A support agent should see masked payment-card values, but the payment processor must later recover the original value from a protected mapping. Which technique fits the processor use case?
+√ Tokenization because the original can be recovered through the secured token vault.
+• DLP audit mode because it provides reversible substitution.
+• Dynamic data masking because it stores a separate reversible mapping in a vault. with no separate verification, logging, or administrative step needed.
+• Anonymization because it is intentionally irreversible.
+• Double encryption because it replaces data with surrogate tokens.
+• Purview sensitivity labels because they change every field into a token.
+
+149. [Module 4] A research dataset must be shared publicly with identities removed so the transformation is not intended to be reversible. Which technique fits?
+• CMK.
+• WAF prevention.
+√ Anonymization.
+• Tokenization.
+• Dynamic data masking.
+• Private Link.
+
+150. [Module 4] A team wants to discover credit-card numbers in SharePoint before designing DLP. Which capability is most relevant?
+• Bastion session recording.
+• Entra Connect OU filtering.
+√ Purview discovery/classification using sensitive information types.
+• Network Watcher IP flow verify.
+• Azure Firewall application rules. and the same behavior is applied automatically to every workload in the tenant.
+• PIM role settings.
+
+151. [Module 4] Why should discovery come before a DLP blocking rollout?
+• Purview discovery assigns Azure RBAC roles needed to activate DLP.
+√ You need to know where sensitive data actually exists so controls can be tuned to the real estate.
+• Discovery converts all files into anonymized copies before policy creation.
+• Discovery automatically deletes all sensitive data and makes blocking unnecessary. with no separate verification, logging, or administrative step needed.
+• DLP is a network-layer control that requires a VNet inventory first.
+• DLP cannot technically run until every file has a customer-managed key.
+
+152. [Module 4] A security engineer says 'CMK makes ciphertext stronger.' Which correction matches the notes?
+• CMK applies only to TLS certificates, not storage or disks.
+√ The encryption strength can remain AES-256; CMK changes control, auditability, rotation, and revocability.
+• CMK disables envelope encryption and stores data directly under the KEK. even when the related security service has not been enabled or configured.
+• CMK is weaker than PMK because the customer can revoke it.
+• CMK is a masking technology and does not participate in encryption.
+• CMK always doubles the key size and therefore produces 512-bit AES.
+
+153. [Module 4] Which control is most appropriate for preventing lateral pod-to-pod communication by default inside AKS?
+√ Kubernetes network policies with a default-deny posture.
+• An Internet-facing WAF policy.
+• An Azure subscription Owner assignment. with no separate verification, logging, or administrative step needed.
+• A Microsoft 365 dynamic group.
+• A PIM access review.
+• A Key Vault certificate.
+
+154. [Module 4] A serverless function has Contributor on the whole subscription but needs only one Key Vault secret. What should be changed?
+• Replace the managed identity with a shared Global Administrator password.
+• Enable public anonymous Key Vault access and remove RBAC.
+• Disable Key Vault and store the secret directly in application code.
+√ Give its managed identity only the narrow data access it needs.
+• Add more Contributor assignments so availability is improved.
+• Move the function into a Microsoft 365 group with Office 365 E3.
+
+155. [Module 4] Why does a public endpoint plus a stolen connection string remain dangerous even with encryption at rest?
+• TLS prevents all use of stolen credentials because it validates the user identity. even when the related security service has not been enabled or configured.
+• A public endpoint disables the storage account's encryption key entirely.
+• Connection strings can be used only if the storage disk is physically stolen.
+• At-rest encryption applies only after the storage account is deleted.
+√ The attacker may use valid service access and receive data decrypted through the normal application path.
+• Encryption at rest automatically blocks every request originating outside Azure.
+
+156. [Module 4] Which pair best represents 'control plane' versus 'logon authorization' for a VM?
+• Owner authenticates the user; Conditional Access defines the VM's CPU size.
+• NSG manages the VM resource; ASG grants operating-system logon.
+• Microsoft 365 licensing manages the VM; Entra Connect grants RDP.
+√ Contributor can manage the VM resource; Virtual Machine User/Administrator Login grants Entra logon.
+• PIM grants network reachability; Bastion grants Azure subscription ownership.
+• Global Administrator manages the VM resource; Reader grants local administrator. and the same behavior is applied automatically to every workload in the tenant.
