@@ -1,104 +1,877 @@
-    1. Which token does an application present to Microsoft Graph when calling the API on a user's behalf?
-    • The primary refresh token
-    • The SAML assertion
-    • The ID token
-    √ The access token
-    • The refresh token
+CLOUD SECURITY — MODULE 2: Identity & Access Management
+Professor-style practice quiz
 
-    2. A user signs in successfully but receives "You do not have access" when opening a storage account. Which statement is correct?
-    • Authentication failed and must be investigated first
-    • The storage account firewall rejected the token
-    √ Authentication succeeded but authorization failed
-    • Authorization succeeded but authentication failed
-    • Both authentication and authorization failed
+Format: • = wrong option, √ = correct option
+Correct-answer positions are mixed. The correct option is never left as the uniquely longest option.
 
-    3. Where do you configure which authentication methods users may register and use in a modern tenant?
-    • Users > Per-user MFA
-    • Conditional Access > Named locations
-    √ Protection > Authentication methods > Policies in the Entra admin center
-    • Azure portal > Subscriptions > Access control
-    • Password reset > Customization
+1. [Module 2] A user successfully signs in to Microsoft Entra ID but receives 'You do not have access' when trying to start an Azure VM. What failed?
+• The VM needs a Microsoft 365 license before any Azure role can be evaluated.
+• The user's identity type must be changed from Member to Guest before VM access works.
+• The sign-in proves Azure RBAC is correct, so only the physical network can be responsible.
+• Authentication failed because the password was rejected before a token was issued.
+• The user must reset the password because every access-denied error is an authentication problem.
+√ Authorization failed because the user lacks the required Azure RBAC permission.
 
-    4. An attacker tries a few common passwords against thousands of accounts to avoid lockouts. What is this attack called?
-    • MFA fatigue
-    • Pass-the-hash
-    • Golden ticket
-    • Credential stuffing
-    √ Password spray
+2. [Module 2] What question does authentication answer?
+√ Authentication answers: Who are you?
+• Authentication answers: Which security control has the highest Secure Score value?
+• Authentication answers: Which data classification label applies to the file?
+• Authentication answers: Which Azure subscription should pay for the resource?
+• Authentication answers: Which route should a packet follow to the Internet?
+• Authentication answers: What resources may you manage?
 
-    5. You must require MFA for one pilot user accessing Office 365 only. What is the correct modern implementation?
-    • Enable SSPR for a group containing the user
-    • Assign the user the Authentication Administrator role
-    • Set the user's per-user MFA state to Enforced
-    • Enable security defaults for the tenant
-    √ Create a Conditional Access policy targeting that user and Office 365 with the Require MFA grant control
+3. [Module 2] What question does authorization answer?
+• Authorization answers: Which password factor did you use at sign-in?
+• Authorization answers: Which cloud deployment model does the organization use?
+√ Authorization answers: What are you allowed to do?
+• Authorization answers: Which physical datacenter contains the resource?
+• Authorization answers: Can you prove who you are?
+• Authorization answers: Which identity provider originally created the account?
 
-    6. Which built-in Azure role can manage all resources but cannot grant access to others?
-    • Owner
-    • Global Administrator
-    • User Access Administrator
-    • Reader
-    √ Contributor
+4. [Module 2] In Azure, which systems commonly perform authorization after a user authenticates?
+• Azure Monitor for directory roles and Log Analytics for resource group permissions.
+√ Azure RBAC for Azure resources and Entra directory roles for directory objects.
+• Conditional Access for all Azure resource permissions and Azure Firewall for directory administration.
+• SAML for Azure resources and OAuth only for Microsoft Entra directory administration.
+• Entra Connect for subscription permissions and SSPR for application authorization.
+• Microsoft Defender XDR for resource access and Microsoft 365 billing for directory permissions.
 
-    7. What does OpenID Connect add on top of OAuth 2.0?
-    √ An authentication layer with the ID token
-    • Network location conditions
-    • Role-based authorization for Azure resources
-    • Password hash synchronization
-    • XML-based assertions
+5. [Module 2] A VM-hosted application needs to read Key Vault without storing a client secret. Which identity type should you prefer?
+√ A managed identity issued and maintained by Azure.
+• A dynamic security group used directly as an application credential.
+• A long-lived service principal secret copied into the VM's source code.
+• A daily-use Global Administrator account embedded in the application configuration.
+• A break-glass account whose password is stored locally on the server.
+• A guest user created specifically for the VM and excluded from Conditional Access.
 
-    8. Enabling Microsoft Authenticator in the Authentication methods policy has what effect by itself?
-    • SSPR is enabled for all users
-    • Passwords are disabled tenant-wide
-    √ The method becomes available, but nothing enforces MFA yet
-    • All users must use MFA at next sign-in
-    • Legacy per-user MFA is automatically migrated
+6. [Module 2] How does a system-assigned managed identity obtain credentials for a VM workload?
+√ Azure provides short-lived tokens through the platform rather than storing a secret in code.
+• The developer writes a permanent password into an environment variable and rotates it manually.
+• The workload uses the guest user's home identity provider to create a token.
+• The application stores a private key in every source-code repository that deploys the VM.
+• The VM authenticates by using the subscription Owner's password from Azure Key Vault.
+• The managed identity bypasses authentication and calls any Azure service anonymously.
 
-    9. Which three components combine to form an Azure RBAC role assignment?
-    • Tenant, license, and resource group
-    √ Security principal, role definition, and scope
-    • User, password, and subscription
-    • Group, directory role, and management group
-    • Role definition, Conditional Access policy, and scope
+7. [Module 2] What is a service principal?
+• It is a human administrator account with permanent Global Administrator rights.
+• It is a network security object used to group VM NICs by application role.
+• It is a Microsoft 365 group that automatically receives API permissions.
+√ It is the tenant-local identity representing an application or workload.
+• It is a device identity used only for Windows laptops joined to Entra ID.
+• It is an Azure subscription that stores resources for a single service.
 
-    10. Which statement about password hash synchronization (PHS) is true?
-    • Passwords are validated by on-premises agents at every cloud sign-in
-    √ A salted, iterated hash of the password hash is synced, and cloud sign-in works even if on-premises AD is down
-    • PHS requires deploying AD FS federation servers
-    • PHS only works with verified .local domains
-    • Clear-text passwords are uploaded to Microsoft Entra ID over TLS
+8. [Module 2] Why are long-lived service-principal secrets a concern?
+√ They can be forgotten, leaked, and remain usable longer than intended.
+• They are stored exclusively inside the provider's HSM and cannot be exposed.
+• They cannot be granted any Azure RBAC roles, so workloads fail to authorize.
+• They are automatically rotated every hour, making troubleshooting difficult.
+• They always require interactive MFA, which prevents automation from running.
+• They exist only on physical servers and cannot be used in cloud applications.
 
-    11. Which AWS concept is the closest equivalent of an Azure RBAC role definition?
-    • A VPC endpoint policy only
-    √ An IAM policy document
-    • A Security Group
-    • A NACL
-    • An S3 bucket ACL
+9. [Module 2] What is the purpose of a break-glass account?
+• It is a service principal used by automation when a managed identity is unavailable.
+• It is a temporary account created automatically by Conditional Access during an outage. without requiring any additional configuration or policy.
+• It is the account that all employees share when their MFA device is unavailable.
+• It is the everyday account administrators should use for email and normal browsing.
+• It is a guest account that bypasses every Azure resource permission permanently.
+√ It provides emergency administrative access if normal identity controls cause a lockout.
 
-    12. Before enabling a new Conditional Access policy broadly, which two tools give you evidence of its impact?
-    • Check access and Resource health
-    √ Report-only mode and the What If tool
-    • Smart lockout and app passwords
-    • Azure Advisor and Cost analysis
-    • Synchronization Service Manager and dcdiag
+10. [Module 2] Why should break-glass accounts be excluded from Conditional Access?
+√ They must remain usable if a bad CA policy locks out normal administrators.
+• Excluded accounts automatically receive stronger MFA from Azure Firewall instead.
+• CA exclusions are required because emergency accounts are always guest identities.
+• The exclusion makes the account invisible to audit logs and therefore safer.
+• Conditional Access cannot evaluate cloud-only accounts under any circumstances.
+• Break-glass accounts do not have passwords, so CA conditions cannot apply to them.
 
-    13. An on-premises forest uses the non-routable suffix contoso.local. What happens to user UPNs when they sync to Entra ID without further configuration?
-    √ Entra ID substitutes the tenant's onmicrosoft.com domain as the UPN suffix
-    • Synchronization fails until AD FS is installed
-    • Entra Connect automatically registers contoso.local as a verified domain
-    • The users are created as B2B guests
-    • The users keep contoso.local and cannot sign in at all
+11. [Module 2] How should a break-glass account be protected according to the notes?
+√ Use a long offline-stored password, monitor every sign-in, and reserve it for emergencies.
+• Use it for normal email so sign-ins happen often enough to test that it works.
+• Enroll it in every Conditional Access policy so it receives maximum enforcement.
+• Use the same password as the daily admin account so staff can remember it.
+• Store its password in source code so automation can recover access automatically. without requiring any additional configuration or policy.
+• Make several dozen emergency accounts so at least one is always available.
 
-    14. Which Microsoft Authenticator feature specifically defeats MFA-fatigue (push bombing) attacks?
-    • Location on the lock screen
-    • Cloud backup
-    √ Number matching
-    • App passwords
-    • QR-code enrollment
+12. [Module 2] What access-control idea does RBAC use?
+√ Permissions are grouped into named roles assigned to identities.
+• Permissions are granted according to monthly cloud consumption.
+• Permissions depend only on resource tags and never on role assignments.
+• Permissions are inherited from the cloud provider's physical security controls.
+• Permissions are calculated entirely from the user's password strength.
+• Permissions are decided only from network location and time of day.
 
-    15. A Global Administrator opens the Azure portal and sees no virtual machines in the subscription. Why?
-    • The VMs are hidden until MFA is completed
-    • Global Administrators are blocked from subscriptions by default policy
-    √ Entra directory roles do not grant Azure RBAC permissions on resources
-    • Only break-glass accounts can view resources
-    • The subscription must first be registered in the Entra admin center
+13. [Module 2] What makes ABAC different from basic RBAC?
+• ABAC means assigning all permissions directly to individual users instead of groups. with no separate verification step needed anywhere else in the platform.
+√ ABAC evaluates attributes such as user, resource tags, or environment in policy conditions.
+• ABAC is Azure's name for the network firewall that filters application traffic.
+• ABAC is limited to physical datacenter access and cannot apply to cloud resources.
+• ABAC removes roles and gives every authenticated user the same permissions.
+• ABAC uses only a user's password age to decide whether access is allowed.
+
+14. [Module 2] Azure storage access is limited to blobs tagged Project=Alpha while keeping a normal role assignment. What feature is being used?
+√ An Azure RBAC role-assignment condition adds ABAC-style filtering.
+• A break-glass exclusion is restricting data access to one container.
+• An Azure Firewall application rule is evaluating the Project tag.
+• A Conditional Access network location is filtering blob content by tag.
+• An Entra directory role is overriding every storage DataAction.
+• A Microsoft 365 dynamic group is replacing the Azure RBAC role.
+
+15. [Module 2] What are the three parts of the Azure RBAC assignment triangle?
+√ Security principal, role definition, and scope.
+• Authentication method, Conditional Access policy, and sign-in log.
+• Resource group, virtual network, and network security group.
+• User password, MFA method, and device certificate.
+• Action, DataAction, and NotAction only.
+• Tenant, subscription, and Microsoft 365 license.
+
+16. [Module 2] In the RBAC triangle, what does the security principal represent?
+• The authentication protocol used to sign in to Microsoft Entra ID.
+• The physical resource provider responsible for the underlying infrastructure.
+• The Azure level at which the assignment applies and inherits downward.
+• The Conditional Access condition that determines whether a token may be issued.
+• The list of allowed operations stored inside the role definition.
+√ The user, group, service principal, or managed identity receiving access.
+
+17. [Module 2] In the RBAC triangle, what does scope answer?
+√ It defines where the role assignment applies.
+• It defines which authentication method is available to the user.
+• It defines the user's home identity provider for federation.
+• It defines who receives the role assignment.
+• It defines which password hash is synchronized from Active Directory.
+• It defines whether an access token is formatted as XML or JSON.
+
+18. [Module 2] You assign Reader at subscription scope. What happens?
+• The role is valid only for resources created after the assignment was made.
+• The permission applies only to the subscription object and never to contained resources.
+√ The permission is inherited by resource groups and resources below that subscription.
+• The assignment becomes a directory role and grants access to all Entra users and groups.
+• The role automatically converts to Contributor on each resource group.
+• The assignment affects every subscription in the tenant because tenant scope is implied.
+
+19. [Module 2] Which Azure role can manage resources and also manage access?
+• Reader.
+• Virtual Machine Contributor.
+• Global Reader.
+√ Owner.
+• User Access Administrator.
+• Contributor.
+
+20. [Module 2] Which Azure role can manage resources but cannot manage access assignments?
+• Guest Inviter.
+• User Access Administrator.
+• Owner.
+• Privileged Role Administrator.
+• Global Administrator.
+√ Contributor.
+
+21. [Module 2] Which Azure role is designed to manage access assignments without managing the resources themselves?
+√ User Access Administrator.
+• Microsoft 365 Global Reader.
+• Virtual Machine Contributor.
+• Reader.
+• Application Administrator.
+• Contributor.
+
+22. [Module 2] Why does the course recommend assigning roles to groups instead of individual users?
+√ Group-based assignment scales better and makes lifecycle management easier to audit.
+• Group assignments are always temporary and expire automatically after eight hours.
+• Only groups can inherit permissions from resource-group scope in Azure.
+• Azure RBAC cannot technically assign a role directly to a user account.
+• Groups automatically bypass Conditional Access and therefore reduce sign-in failures.
+• Users cannot be security principals until they have joined at least one group.
+
+23. [Module 2] Why should an Azure role be assigned at the lowest workable scope?
+• Subscription scope is slower, so lower scope is used mainly for performance.
+√ It limits blast radius and reduces unnecessary inherited permissions.
+• Lower scopes automatically provide stronger MFA for the assigned user.
+• Roles at higher scope are not logged in Azure and cannot be audited.
+• Azure does not allow built-in roles at subscription or management-group scope.
+• Lower scope converts RBAC into ABAC and therefore removes the need for reviews.
+
+24. [Module 2] What is the difference between Entra directory roles and Azure RBAC roles?
+• Directory roles are inherited from subscriptions, while RBAC roles are inherited from tenants.
+• Directory roles and RBAC roles are the same permissions shown in two different portals.
+• Directory roles manage only physical servers; RBAC manages only Microsoft 365 licenses.
+• RBAC roles exist only for guests, while directory roles exist only for member users.
+√ Directory roles manage identity-directory objects; Azure RBAC manages Azure resources.
+• Directory roles control network packets; RBAC roles control user passwords and MFA.
+
+25. [Module 2] A user is Global Administrator in Entra ID. Can the user automatically manage every Azure VM?
+• Only if the VM has a public IP, because RBAC depends on network reachability.
+• Yes; Global Administrator bypasses Azure RBAC whenever the user is cloud-only.
+• Only after the user receives an Office 365 E3 license in the Microsoft 365 admin center.
+• No; Global Administrators can never receive Azure resource roles.
+√ No; directory authority does not automatically grant Azure resource RBAC permissions.
+• Yes; Global Administrator is automatically Owner on every subscription in the tenant.
+
+26. [Module 2] What happens when a Global Administrator uses 'elevate access' for Azure resources?
+• The user gains Application Administrator but no Azure resource permissions.
+• The administrator receives permanent Owner on every resource with no audit record. without requiring any additional configuration or policy.
+• The administrator is converted into an Azure managed identity for one hour.
+• Conditional Access is disabled for the entire tenant until the elevation ends.
+√ The administrator can gain User Access Administrator at root scope for recovery purposes.
+• The tenant's subscriptions are moved into the administrator's personal directory.
+
+27. [Module 2] Why is MFA not a solution to over-permissioning?
+• MFA removes all role assignments after a successful sign-in.
+• Over-permissioning disappears automatically when users register Authenticator.
+√ MFA strengthens authentication, while excessive permissions are an authorization problem.
+• Over-permissioning is a physical-security problem that only the provider can solve.
+• MFA changes subscription scope, so broad role assignments become narrow after enrollment.
+• MFA applies only to guest accounts and cannot protect Azure administrators.
+
+28. [Module 2] What does single sign-on mean?
+• Every application validates the user's password independently at each sign-in.
+• A Global Administrator creates one common account that all employees use for every service.
+• The same password is copied into every application so the user can reuse it.
+√ A user authenticates once with the IdP and then accesses trusted applications without new credentials.
+• The user signs in once per Azure subscription but must re-enter credentials for every SaaS app. without requiring any additional configuration or policy.
+• The cloud provider disables tokens and shares password hashes directly with each application.
+
+29. [Module 2] What makes federation possible?
+• The application asks Azure Firewall to validate the user's directory role.
+• The browser hashes the password and sends the hash directly to every federated application. regardless of the scope, resource, or authentication state involved.
+• The application stores a synchronized copy of every user's cleartext password.
+• The provider disables authorization because authentication happened in another tenant.
+√ The application trusts signed tokens from an identity provider instead of checking the password itself.
+• The application shares its own private key with every user so they can sign tokens.
+
+30. [Module 2] In a federated sign-in, does the application normally see the user's password?
+• Only for OAuth, because OAuth always delegates password validation to the application.
+• Yes; the browser posts the cleartext password together with the SAML assertion.
+• Only when Conditional Access requires MFA, because the second factor reveals the password.
+• Yes; federation sends the same password to the application after every successful sign-in.
+√ No; it validates a token or assertion issued by the trusted identity provider.
+• Only for SAML, because XML assertions contain the user's password as a claim.
+
+31. [Module 2] In SP-initiated SAML SSO, what carries the SAML assertion from Entra ID to the application?
+• Microsoft Graph PowerShell transfers the assertion after the user signs in.
+• The Azure Firewall forwards the assertion directly between the two servers.
+• The service provider reads the assertion from the user's local password database.
+• The application opens an RDP session to the identity provider to retrieve it.
+• The two servers share a direct TCP session containing the user's password.
+√ The user's browser acts as the courier.
+
+32. [Module 2] What is a SAML assertion?
+• A password hash synchronized from on-premises Active Directory.
+• A network packet describing the source and destination of an Azure request.
+• A private key generated by the browser for every enterprise application session.
+• A Microsoft 365 license claim stored in the user's dynamic group membership.
+√ A signed XML statement containing claims about an authenticated user.
+• A JSON access token used only for calling Microsoft Graph APIs.
+
+33. [Module 2] What common operational issue can suddenly break SAML SSO?
+• The user's Office 365 license is inherited from a group rather than assigned directly.
+• The tenant enables report-only Conditional Access for a pilot user.
+• The application receives an access token instead of a refresh token.
+• A user's Azure subscription cost reaches its monthly budget threshold.
+√ An expired signing certificate can break trust between IdP and service provider.
+• A managed identity rotates its internal secret as designed.
+
+34. [Module 2] What is OAuth 2.0 primarily?
+• A network-layer encryption protocol used by Azure Firewall.
+• A directory-role model that replaces Azure RBAC.
+• A password synchronization protocol for hybrid identity.
+• An authentication protocol that replaces OpenID Connect.
+• A logging protocol used by Microsoft Sentinel data connectors.
+√ A delegated authorization framework.
+
+35. [Module 2] What does OpenID Connect add on top of OAuth 2.0?
+• A network firewall that validates OAuth scopes before API access.
+• A data-collection agent that sends authentication logs into Log Analytics.
+• A subscription-level authorization model that replaces role assignments.
+• A password hash synchronization engine for on-premises identities.
+• An XML assertion format used by traditional enterprise SaaS.
+√ An identity layer that supports authentication and an ID token.
+
+36. [Module 2] In the authorization code flow, what does the app receive first after the user authenticates?
+• A SAML XML assertion that must be posted to the OAuth token endpoint.
+• The user's cleartext password so the app can request an API token.
+• An Azure RBAC role definition containing the user's allowed actions.
+• A permanent refresh token before the user sees any consent prompt.
+√ A short-lived authorization code returned through the browser redirect.
+• A device certificate that automatically grants every requested OAuth scope.
+
+37. [Module 2] Which token tells the application who signed in?
+√ The ID token.
+• The access token.
+• The authorization code after it has already been exchanged.
+• The Azure RBAC role assignment.
+• The refresh token.
+• The SAML request.
+
+38. [Module 2] Which token should an application present to Microsoft Graph?
+• A SAML assertion because Graph accepts only XML federation tokens.
+• A Temporary Access Pass because Graph APIs require passwordless authentication.
+• An ID token intended for the client application itself.
+√ An access token intended for the API.
+• The user's password hash synchronized through Entra Connect.
+• A refresh token sent directly to Microsoft Graph for every API call.
+
+39. [Module 2] What is the purpose of a refresh token?
+• It proves the identity of the application to an API on every request.
+• It contains the Azure RBAC role definition for the current subscription.
+• It is posted to a SAML Assertion Consumer Service to create an application session.
+• It replaces the user's password permanently and cannot be revoked.
+• It is used only to register MFA methods on the combined security information page.
+√ It can obtain new tokens without making the user interactively sign in each time.
+
+40. [Module 2] What are the three parts of a JWT?
+• Request, assertion, and response.
+• Tenant, subscription, and resource group.
+• Certificate, secret, and token.
+• User, role, and scope.
+• Issuer, audience, and password.
+√ Header, payload, and signature.
+
+41. [Module 2] Which JWT claim identifies the intended audience?
+• scp.
+• oid.
+• upn.
+• exp.
+• iss.
+√ aud.
+
+42. [Module 2] Which JWT claim commonly contains delegated OAuth scopes?
+• iss.
+• nbf only.
+• oid.
+• exp.
+√ scp.
+• aud.
+
+43. [Module 2] Which password attack tries a few common passwords against many accounts slowly?
+• Credential stuffing.
+√ Password spray.
+• SAML federation.
+• Token replay.
+• Pass-through authentication.
+• MFA fatigue.
+
+44. [Module 2] Which attack replays username/password pairs leaked from unrelated sites?
+√ Credential stuffing.
+• MFA fatigue.
+• Role inheritance.
+• Password spray.
+• Dynamic group evaluation.
+• SAML signing.
+
+45. [Module 2] Which attack floods a user with push notifications until the user approves one?
+√ MFA fatigue or push bombing.
+• SAML certificate rollover.
+• Credential stuffing.
+• RBAC inheritance.
+• Password hash synchronization.
+• Token audience validation.
+
+46. [Module 2] Which Authenticator feature specifically reduces blind push-approval attacks?
+• Group-based licensing.
+• SAML metadata exchange.
+• Azure RBAC Check access.
+• Password writeback.
+√ Number matching.
+• Resource-group scope.
+
+47. [Module 2] Why are FIDO2/passkeys phishing-resistant?
+• Passkeys rely on SMS delivery, making them resistant to fake login pages.
+• Passkeys work only from corporate IP addresses, which prevents external phishing sites.
+• The service stores the user's private key and sends it back after password verification.
+√ The credential is cryptographically bound to the legitimate site origin.
+• The method disables OAuth tokens, so attackers cannot steal any browser session.
+• The user types the passkey into every website, so fake sites can compare it with the real one.
+
+48. [Module 2] What does the server store after a FIDO2/passkey registration?
+• The user's private key.
+√ The public key.
+• The biometric template from the user's device.
+• A reusable SMS code for future sign-ins.
+• The recovery key for every other authenticator the user owns.
+• The user's normal password in encrypted form.
+
+49. [Module 2] What is a Temporary Access Pass used for?
+• An Azure RBAC role that temporarily grants Owner at subscription scope.
+• A refresh token that cannot be revoked until its ninety-day lifetime ends. regardless of the scope, resource, or authentication state involved.
+• A SAML assertion used by guest users to redeem B2B invitations.
+• A permanent replacement for every user's password and MFA method.
+√ A time-limited code that can bootstrap security-method registration or recovery.
+• A JIT firewall rule that opens RDP or SSH to a VM.
+
+50. [Module 2] Where do users register security methods for both MFA and SSPR?
+• servicetrust.microsoft.com.
+• portal.azure.com/#subscriptions.
+√ mysignins.microsoft.com/security-info.
+• security.microsoft.com/incidents.
+• admin.microsoft.com/Billing/Licenses.
+• entra.microsoft.com/Identity/Devices only.
+
+51. [Module 2] What does enabling Microsoft Authenticator in the Authentication methods policy do?
+• It disables every other authentication method for the targeted users.
+• It creates a Conditional Access policy automatically for all applications. regardless of the scope, resource, or authentication state involved.
+• It assigns an Azure RBAC role needed to use Authenticator.
+√ It makes the method available to targeted users; it does not itself require MFA.
+• It changes the user's sign-in method from PHS to federation automatically.
+• It forces every tenant user to complete MFA at the next sign-in.
+
+52. [Module 2] Which feature actually enforces an MFA requirement in the course design?
+• Microsoft 365 group-based licensing.
+• The Service Trust Portal.
+• Entra Connect OU filtering.
+• The Authentication methods policy by itself.
+• Azure RBAC.
+√ Conditional Access.
+
+53. [Module 2] What is the purpose of Conditional Access?
+• It defines which Azure resource actions exist inside an RBAC role definition.
+√ It evaluates sign-in signals and applies grant, block, or session controls to token issuance.
+• It assigns Office licenses to users when they enter a security group.
+• It calculates Microsoft Defender for Cloud Secure Score for the subscription.
+• It synchronizes on-premises users and password hashes into Microsoft Entra ID. regardless of the scope, resource, or authentication state involved.
+• It routes network packets through Azure Firewall based on user identity.
+
+54. [Module 2] A policy targets All users and requires a compliant device, locking out the IT team. Which account should still work if the design followed the notes?
+• Every user after waiting thirty minutes for Conditional Access to synchronize.
+• The oldest user in the tenant because Entra preserves one account outside all policies.
+• Any service principal because CA grants human interactive access through workload identities.
+• Any user with an Office 365 E3 license because licensing overrides CA policy results.
+• Any Global Administrator because directory roles automatically bypass Conditional Access.
+√ The excluded break-glass emergency account.
+
+55. [Module 2] How should a risky new Conditional Access policy be introduced before broad enforcement?
+• Enable it for All users immediately so real failures reveal the problems quickly.
+• Turn on legacy per-user MFA first and leave both systems permanently enforcing the same rule.
+• Replace it with a resource-group RBAC role because CA cannot be tested safely.
+• Delete the break-glass account so it cannot bypass the new policy.
+• Exclude every user except Global Administrators and skip sign-in-log review.
+√ Use a pilot or report-only mode, then verify results before enforcing widely.
+
+56. [Module 2] What does the Conditional Access What If tool provide?
+• A report of every password hash stored by Entra Connect.
+• A live password reset for the selected user without changing the account.
+√ A simulation of which policies would apply to a specified sign-in scenario.
+• A way to rewrite the user's Azure RBAC role definition automatically.
+• A direct test of network connectivity to an Azure VM's management port.
+• A method for adding a user to a dynamic group without waiting for evaluation.
+
+57. [Module 2] Where can you verify which Conditional Access policies evaluated a real sign-in?
+• Only the VM's Windows Security event log.
+• Only the user's dynamic group membership history.
+• Only the Microsoft 365 billing history for the user. regardless of the scope, resource, or authentication state involved.
+• Only the Service Trust Portal's compliance reports.
+• Only the Azure subscription Activity log.
+√ Entra sign-in logs, including the Conditional Access details on the sign-in record.
+
+58. [Module 2] Why should legacy basic-auth protocols such as POP/IMAP/SMTP basic auth be blocked?
+• They grant subscription Owner to any mailbox user that authenticates successfully. and the same behavior applies automatically to every user in the tenant.
+• They cause Entra Connect to synchronize cleartext passwords into the cloud.
+• They prevent Azure RBAC roles from inheriting to resources below a subscription.
+• They use only SAML assertions and therefore cannot send email messages.
+• They always use FIDO2 automatically and therefore duplicate modern authentication.
+√ They cannot perform modern MFA and can bypass the intended interactive protection model.
+
+59. [Module 2] What does SSPR allow a verified user to do?
+• Change the tenant's Conditional Access policies without an administrator.
+• Rotate every service principal secret in the tenant automatically.
+√ Reset or unlock the user's own account after identity verification.
+• Assign a new Azure RBAC role to the user's security group.
+• Change another user's password if both users belong to SSPRTesters.
+• Restore any deleted user from the thirty-day soft-delete window.
+
+60. [Module 2] Where is SSPR configured?
+• Microsoft 365 admin center > Billing > Licenses.
+• Service Trust Portal > Compliance reports.
+• Defender portal > Incidents & alerts.
+• Azure portal > Subscriptions > Access control (IAM).
+√ Entra admin center > Protection > Password reset.
+• Azure Monitor > Data Collection Rules.
+
+61. [Module 2] Why does the course recommend piloting SSPR with Selected rather than All?
+√ A selected group lets you validate methods and user experience before broad rollout.
+• SSPR cannot technically be enabled for All users in Microsoft Entra ID.
+• Only selected groups can register authentication methods in the combined wizard.
+• Using All changes every user's UPN to the tenant onmicrosoft.com domain.
+• All users automatically have SSPR through Entra Free, so the setting has no effect.
+• The Selected option is required before Entra Connect can perform password hash sync.
+
+62. [Module 2] What feature is required for a cloud SSPR reset to update an on-premises AD password?
+√ Password writeback through Entra Connect.
+• SAML federation metadata.
+• Dynamic group membership.
+• Azure RBAC User Access Administrator.
+• Password hash synchronization alone.
+• Microsoft Defender for Servers Plan 2. and the same behavior applies automatically to every user in the tenant.
+
+63. [Module 2] What is special about administrator SSPR behavior?
+• Admins use security questions only, even if those questions are disabled for normal users. regardless of the scope, resource, or authentication state involved.
+√ Admins are covered by a stronger built-in reset policy requiring two methods and no security questions.
+• Admins bypass SSPR scope and receive their passwords by email from Entra ID.
+• Admins cannot use SSPR under any circumstances and must call Microsoft support.
+• Admins must first remove every Azure RBAC role before a password reset is allowed.
+• Admins always need only one method because their directory role already proves identity.
+
+64. [Module 2] What is hybrid identity in the module?
+• Microsoft 365 becomes the source of authority for all domain-controller objects automatically.
+• Users authenticate only to the network firewall while cloud services trust the IP address.
+• Every user has unrelated local and cloud accounts that are never synchronized.
+√ On-premises AD remains a source of authority while identities are synchronized to Entra ID.
+• Hybrid identity means using both SAML and OAuth for the same SaaS application.
+• Azure replaces the on-premises directory and deletes the original identities after migration.
+
+65. [Module 2] Which synchronization engine does Lab 2.4 use?
+• Azure File Sync, because user identities are stored in the CloudUsers folder.
+• AD FS only, because the lab delegates all authentication to the domain controller.
+• Microsoft Graph PowerShell only, with no directory synchronization product installed.
+• Defender for Identity, because it synchronizes Active Directory users into the tenant.
+√ Microsoft Entra Connect Sync, the full synchronization engine installed on a server.
+• Entra Cloud Sync only, because the lab avoids a server-based synchronization engine.
+
+66. [Module 2] When is Entra Cloud Sync presented as an attractive option?
+√ For simpler or multi-forest topologies where a lightweight cloud-managed approach fits.
+• When the organization requires AD FS federation for every cloud application.
+• When users must be synchronized but password hash synchronization is forbidden in all cases.
+• When custom writeback rules and the full legacy synchronization engine are mandatory.
+• Only for Microsoft 365 licensing; Cloud Sync cannot provision identities into Entra ID.
+• Only when there is exactly one domain controller and no cloud tenant yet exists.
+
+67. [Module 2] How does Password Hash Synchronization authenticate users?
+√ Entra ID validates the sign-in in the cloud against a derived synchronized password hash.
+• AD FS receives every authentication request and returns a federation token.
+• An on-premises agent validates the cleartext password live for every cloud sign-in.
+• The cloud sends a Kerberos ticket directly to the domain controller for every login.
+• The user's password is copied in cleartext into Microsoft Entra ID during each sync cycle.
+• A delta sync generates a new cloud-only password whenever the user signs in.
+
+68. [Module 2] Why is PHS resilient when the on-premises environment is unavailable?
+• Entra temporarily disables password validation and trusts any previously known username.
+• PHS automatically converts every account into a local Azure VM user during an outage.
+• PHS switches to AD FS without configuration whenever the domain controller is offline.
+• A break-glass account validates every normal user's password on behalf of the domain controller.
+• The browser stores the user's cleartext domain password and sends it directly to Microsoft 365.
+√ Cloud authentication can continue because Entra has the derived password-hash material.
+
+69. [Module 2] How does Pass-through Authentication differ from PHS?
+• PTA copies cleartext passwords into the tenant but encrypts them with Azure Key Vault.
+• PTA stores a salted password hash in Entra while PHS stores no password-derived material there. without requiring any additional configuration or policy.
+• PTA requires AD FS and SAML for every Microsoft 365 sign-in.
+• PTA creates cloud-only passwords that are unrelated to the on-premises credentials.
+• PTA works only for guest accounts and cannot authenticate synchronized member users.
+√ PTA validates passwords live through on-premises agents instead of authenticating entirely in the cloud.
+
+70. [Module 2] What does AD FS federation do in the three sign-in-method comparison?
+• It validates passwords with lightweight PTA agents while keeping federation disabled.
+√ It delegates authentication to on-premises federation infrastructure.
+• It authenticates entirely in Entra using the synchronized password hash.
+• It uses Microsoft Graph PowerShell to issue access tokens without an identity provider.
+• It automatically grants seamless SSO without any on-premises dependency.
+• It replaces the Entra tenant with an Azure subscription-scoped identity directory.
+
+71. [Module 2] What is the default synchronization interval described for Entra Connect Sync?
+• About 30 seconds.
+• Exactly 24 hours.
+√ About 30 minutes.
+• Only when an administrator runs a manual command.
+• Exactly 5 minutes.
+• Once per week.
+
+72. [Module 2] What does OU filtering control during Entra Connect configuration?
+√ Which on-premises organizational units are included in synchronization.
+• Which network routes are advertised from the domain controller to Azure.
+• Which Azure resource groups receive RBAC role assignments.
+• Which Conditional Access policies run for synchronized users.
+• Which Microsoft 365 licenses can be assigned to cloud users.
+• Which OAuth scopes are placed into Graph access tokens.
+
+73. [Module 2] A synchronized user's department is changed on-premises. Why might the field be read-only in the cloud?
+• PHS converts synchronized accounts into guest objects that cannot be modified.
+• Entra Connect protects attributes by storing them only in the Azure Activity log.
+• The user must first complete SSPR before any cloud attribute can change.
+• The user's Office 365 E3 license makes every identity attribute permanently read-only.
+• Azure RBAC Reader on the subscription prevents all Entra profile edits.
+√ AD DS is still the source of authority for synchronized attributes.
+
+74. [Module 2] Which PowerShell command triggers a manual delta synchronization cycle?
+• az role assignment create --role Contributor.
+• Connect-MgGraph -Scopes User.Read.All.
+√ Start-ADSyncSyncCycle -PolicyType Delta.
+• Get-MgContext -SyncType Delta.
+• New-AzRoleAssignment -RoleDefinitionName Reader.
+• Start-EntraCloudSync -Mode Incremental.
+
+75. [Module 2] Why do Lab 2.4 users from contoso.local receive onmicrosoft.com sign-in names?
+• Azure RBAC requires cloud resource users to sign in with the default tenant suffix.
+• The users were created as guests, and all guest accounts must use onmicrosoft.com names.
+• The initial sync creates a temporary cloud-only identity until the next delta cycle.
+• The domain controller cannot store UPNs, so Entra generates one from the user's display name.
+√ contoso.local is not a routable verified Entra domain, so the tenant suffix is used as a fallback.
+• PHS always replaces every synchronized UPN with onmicrosoft.com regardless of the original domain.
+
+76. [Module 2] What is the production-style fix for a non-routable AD UPN suffix?
+• Make every synchronized user a B2B guest of the same tenant.
+• Change the tenant ID so it matches the on-premises domain GUID.
+√ Add a routable verified UPN suffix and align users before synchronization.
+• Enable more Azure RBAC roles on the domain controller.
+• Disable password hash synchronization and use SSPR instead.
+• Use a dynamic group to rewrite every user's UPN after each sign-in. even if the related role or policy has never been assigned.
+
+77. [Lab 2.1 — Role-Based Access Control] Which user/group pair was created through the Azure portal?
+√ Joseph Price and the Senior Admins group.
+• Chris Green and the Application Admins group through the Azure portal.
+• Delia Dennis and the SSPRTesters group through the Azure portal.
+• Adele Vance and the CloudUsers OU through the Azure portal.
+• Dylan Williams and the Service Desk group through the Azure portal.
+• Isabel Garcia and the Junior Admins group through the Azure portal.
+
+78. [Lab 2.1 — Role-Based Access Control] Which pair was created with Microsoft Graph PowerShell?
+• Dylan Williams and the Service Desk group.
+• Chris Green and the Application Admins group.
+• Adele Vance and the CloudUsers OU.
+• Joseph Price and the Senior Admins group.
+• Delia Dennis and the SSPRTesters group.
+√ Isabel Garcia and the Junior Admins group.
+
+79. [Lab 2.1 — Role-Based Access Control] Which pair was created with Azure CLI?
+• Chris Green and the Application Admins group.
+• Adele Vance and the CloudUsers OU.
+• Isabel Garcia and the Junior Admins group.
+• Delia Dennis and the SSPRTesters group.
+√ Dylan Williams and the Service Desk group.
+• Joseph Price and the Senior Admins group.
+
+80. [Lab 2.1 — Role-Based Access Control] What role did the lab assign to Service Desk?
+• Virtual Machine Administrator Login.
+• Owner.
+• Application Administrator.
+• User Access Administrator.
+√ Virtual Machine Contributor.
+• Global Administrator.
+
+81. [Lab 2.1 — Role-Based Access Control] At what scope did the Service Desk assignment apply?
+• Only one individual VM.
+• The tenant root.
+• The Microsoft 365 admin center.
+• Every Azure subscription in the tenant.
+• The contoso.local domain.
+√ The rg-cloudsec-m2 resource group.
+
+82. [Lab 2.1 — Role-Based Access Control] Why was the role assigned to Service Desk rather than directly to Dylan Williams?
+• Azure RBAC technically cannot assign a built-in role to an individual user.
+• The role required Entra ID P2 and PIM, which applies only to security groups.
+√ The lab demonstrates the groups-not-users least-privilege management pattern.
+• The Service Desk group automatically enables MFA for all members.
+• Only groups can be scoped to a resource group; users must be scoped to subscriptions.
+• Dylan was a guest account and guests cannot receive resource roles.
+
+83. [Lab 2.1 — Role-Based Access Control] How did the lab verify the effective role assignment?
+√ By using Access control (IAM) > Check access.
+• By reviewing the Azure Firewall Effective routes view.
+• By running a Microsoft Sentinel analytics rule.
+• By opening Conditional Access What If.
+• By signing in to the Service Trust Portal.
+• By checking the user's SSPR registration status.
+
+84. [Lab 2.2 — Multifactor Authentication] What did you verify before creating MFA-for-Delia?
+• The tenant had disabled every passwordless authentication method.
+• Delia held the Global Administrator role in the directory.
+• The Office 365 application was excluded from all Conditional Access policies.
+• Entra Connect had synchronized Delia from contoso.local.
+• Delia already had a permanent per-user MFA state of Enforced in the legacy portal.
+√ Microsoft Authenticator was enabled in the Authentication methods policy.
+
+85. [Lab 2.2 — Multifactor Authentication] What were the key assignments of the MFA-for-Delia policy?
+• Service Desk, Azure VMs, with a grant control requiring Reader.
+• Chris Green, enterprise applications, with a grant control requiring PIM activation.
+• CloudUsers, Windows sign-in, with a grant control requiring password hash synchronization.
+• All users, all applications, with a grant control requiring subscription Owner.
+• SSPRTesters, Microsoft Graph, with a block control for every sign-in.
+√ Delia Dennis, Office 365, with a grant control requiring MFA.
+
+86. [Lab 2.2 — Multifactor Authentication] Why did the lab use Delia rather than All users for the new CA policy?
+• MFA policies work only for users with inherited Office licenses.
+• Conditional Access cannot target All users in an Entra ID P2 tenant.
+• The What If tool accepts only one user, so the real policy must also target one user.
+• Only Delia had a valid Microsoft Entra account in the lab tenant.
+√ It demonstrates safe pilot targeting before broad enforcement.
+• All users would disable Microsoft Authenticator in the methods policy.
+
+87. [Lab 2.2 — Multifactor Authentication] How did you prove the MFA policy was enforcing rather than merely configured?
+• Read the policy name and assume any enabled policy works as designed.
+• Check only the Microsoft 365 license page because MFA is a licensing feature.
+• Run an Entra Connect delta sync and verify the user's department changed.
+• Open Azure RBAC Check access on rg-cloudsec-m2.
+• Look at the Service Trust Portal for a report showing the tenant's MFA policy.
+√ Test the real sign-in and verify with What If plus sign-in logs.
+
+88. [Lab 2.3 — Self-Service Password Reset] Which group was used to scope the SSPR pilot?
+• CloudUsers.
+• Service Desk.
+• sg-CS-O365.
+√ SSPRTesters.
+• Senior Admins.
+• Junior Admins.
+
+89. [Lab 2.3 — Self-Service Password Reset] Which users were placed in SSPRTesters?
+• All users synchronized from the CloudUsers OU only.
+• Joseph Price, Chris Green, and Delia Dennis.
+√ Adele Vance, Isabel Garcia, and Dylan Williams.
+• Only Global Administrators in the lab tenant.
+• Every member of Senior Admins and Service Desk.
+• All guests with PendingAcceptance state.
+
+90. [Lab 2.3 — Self-Service Password Reset] Where did Adele register the methods used for the reset?
+• ONPREM-DC01 > Active Directory Users and Computers only.
+• Microsoft 365 admin center > Billing > Licenses.
+√ mysignins.microsoft.com/security-info.
+• Azure portal > Access control (IAM).
+• Defender portal > Incidents.
+• Service Trust Portal > My reports.
+
+91. [Lab 2.3 — Self-Service Password Reset] Why was Joseph Price used as a negative test?
+√ He was outside SSPRTesters, so the reset should not be available to him under Selected scope.
+• He was a guest user and all guests are blocked from SSPR by default.
+• He held Owner at subscription scope, which automatically disables SSPR.
+• He had no password because he used only FIDO2 authentication.
+• He already had a break-glass account and therefore could not use any password feature. and the same behavior applies automatically to every user in the tenant.
+• He was the only synchronized contoso.local user in the tenant.
+
+92. [Lab 2.4 — Hybrid Identity with Microsoft Entra Connect] What on-premises machine did the lab use?
+√ ONPREM-DC01, a Windows Server 2022 domain controller for contoso.local.
+• vmLinuxEntra, an Ubuntu VM used for Entra SSH login.
+• law-cloudsec, the Log Analytics workspace used for Sentinel.
+• Srv-Jump, the jump host used by the firewall lab.
+• vm-cloudsec-01, a standalone cloud-only workstation with no Active Directory role.
+• Srv-Work, a Windows Server VM used only for Azure Firewall testing.
+
+93. [Lab 2.4 — Hybrid Identity with Microsoft Entra Connect] Which OU was selected for synchronization?
+• GuestUsers.
+• Service Desk.
+• Senior Admins.
+• SSPRTesters.
+√ CloudUsers.
+• Domain Controllers.
+
+94. [Lab 2.4 — Hybrid Identity with Microsoft Entra Connect] Which sign-in method was configured in the lab?
+• AD FS federation only.
+• Temporary Access Pass.
+• SAML direct federation.
+• Pass-through authentication only.
+• Google federation.
+√ Password hash synchronization.
+
+95. [Lab 2.4 — Hybrid Identity with Microsoft Entra Connect] What portal property proved that a user came from the on-premises directory?
+• PIM assignment type: Eligible.
+• User type: Guest.
+• Authentication strength: Phishing-resistant MFA.
+• Conditional Access result: Report-only.
+• ExternalUserState: Accepted.
+√ On-premises sync enabled: Yes.
+
+96. [Lab 2.4 — Hybrid Identity with Microsoft Entra Connect] After changing an on-premises attribute, why did you trigger a delta sync?
+• To grant synchronized users Azure RBAC roles at resource-group scope. with no separate verification step needed anywhere else in the platform.
+• To convert the CloudUsers OU into a dynamic Entra group.
+• To replace PHS with pass-through authentication for the next sign-in.
+• To make the contoso.local suffix verifiable in Microsoft Entra ID.
+√ To synchronize only recent changes instead of running a full initial synchronization.
+• To create a new cloud-only password for every synchronized user.
+
+97. [Lab 2.4 — Hybrid Identity with Microsoft Entra Connect] A synced user signs in to microsoft365.com with a password set only in contoso.local. Why does it work?
+• The delta sync generated a separate cloud password matching the user's on-premises password.
+• AD FS on the domain controller receives and approves every Microsoft 365 sign-in.
+• An agent on ONPREM-DC01 checks the password live because the lab used PTA.
+√ Entra ID validates the password in the cloud using the synchronized derived password hash.
+• Seamless SSO sends a Kerberos ticket from ONPREM-DC01 to Microsoft 365 for every Internet sign-in.
+• Entra Connect copied the cleartext password into the tenant during initial synchronization.
+
+98. [Lab 2.4 — Hybrid Identity with Microsoft Entra Connect] Why was OU filtering important in the lab?
+• It changed the network route used by the domain controller to reach Entra ID.
+• It automatically excluded break-glass accounts from every Conditional Access policy. regardless of the scope, resource, or authentication state involved.
+√ It limited synchronization to the intended CloudUsers OU rather than the entire forest.
+• It restricted Azure RBAC inheritance to one resource group in the cloud.
+• It decided which users could register Microsoft Authenticator for MFA.
+• It defined which OAuth scopes were issued to Microsoft Graph PowerShell.
+
+99. [Module 2] Your organization wants SSO but does not want to operate AD FS unless necessary. Which statement matches the notes?
+• PTA disables SSO because passwords are validated on-premises rather than in the cloud.
+√ PHS with seamless SSO or PTA supports most SSO scenarios without federation servers.
+• SSO requires every application to store the same password as the user's Entra account.
+• AD FS is mandatory for all SSO because PHS can authenticate only through the Azure portal.
+• PHS works only for password reset and cannot be used for normal cloud sign-in.
+• SAML applications cannot use Entra ID unless AD FS is deployed on the local domain controller.
+
+100. [Module 2] Why is PHS recommended as the default sign-in method for many tenants?
+• It automatically grants every synchronized user access to all Azure subscriptions.
+• It requires the most on-premises infrastructure and therefore provides the greatest administrative control. without requiring any additional configuration or policy.
+• It disables leaked-credential detection so password hashes never leave the tenant.
+√ It is operationally simple, supports cloud-side risk detection, and keeps sign-in working during on-premises outages.
+• It stores cleartext passwords in Entra, which makes authentication faster and easier to troubleshoot.
+• It works only when the Entra Connect server and domain controllers are reachable for every sign-in.
+
+101. [Module 2] A user has a strong MFA method but still has Contributor at subscription scope for no business reason. What should you fix?
+• Move the user into a Microsoft 365 group because collaboration groups override Azure RBAC.
+• Enable SSPR because password reset automatically narrows Azure RBAC scope.
+• Switch from PHS to federation because federated users cannot be over-permissioned.
+√ Reduce the authorization scope or remove the unnecessary role assignment.
+• Register another MFA method because authorization problems are solved by stronger authentication.
+• Assign Global Administrator so the user's resource permissions become easier to audit.
+
+102. [Module 2] A new CA policy must be observed against real sign-ins for a week without blocking users. What is the best state?
+• Legacy per-user MFA Enforced.
+• Disabled and never evaluated.
+• Enabled with Block access.
+• PIM Eligible.
+√ Report-only.
+• Azure RBAC Reader.
+
+103. [Module 2] Why is a stolen valid token still dangerous even if it is correctly signed?
+• A signed token cannot be accepted after leaving the browser that originally received it.
+• Signed tokens are used only for logging and cannot authorize access to applications.
+• A valid token contains the user's password, so theft always requires password decryption first.
+• Conditional Access makes all access tokens single-use by default in every tenant.
+• Token signatures automatically bind every token to one physical network location.
+√ A valid stolen token may be replayed until it expires or is revoked.
+
+104. [Module 2] What is the modern relationship between MFA registration and SSPR registration?
+• Combined registration is available only to guest users and not normal tenant members.
+• MFA and SSPR always require two unrelated registration portals and separate devices.
+√ Combined security information registration lets users register methods once for both.
+• MFA registration happens in Azure RBAC while SSPR registration happens in Microsoft 365 billing.
+• Registering for SSPR automatically creates a break-glass administrator account for the user.
+• SSPR methods are configured only on the on-premises domain controller.
+
+105. [Module 2] Which role-assignment practice best reflects least privilege?
+√ Use a built-in role, assign it to a group, and choose the narrowest workable scope.
+• Create a custom Owner-like role for each person and assign it at management-group scope.
+• Rely on MFA instead of reviewing or removing unused resource permissions.
+• Assign Contributor directly to every administrator at subscription scope for convenience.
+• Grant permanent active roles so users never need to request access during incidents.
+• Use Global Administrator because directory roles automatically cover Azure resources.
+
+106. [Module 2] A workload identity needs short-lived credentials rather than a stored secret. Which cross-cloud design principle is being applied?
+• Use a static client secret with no expiration so automation never fails.
+• Use a break-glass account in code because emergency accounts are excluded from CA.
+√ Use platform-delivered machine credentials such as managed identities, IAM roles, or service accounts.
+• Use a shared human administrator password because people can rotate it when required.
+• Use a Microsoft 365 group because group membership is itself an authentication credential. even if the related role or policy has never been assigned.
+• Use guest accounts for workloads so credentials remain in an external home tenant.
+
+107. [Module 2] What is the practical difference between Actions and DataActions in an Azure role definition?
+• Actions are directory roles, while DataActions are Azure subscription roles.
+• Actions are allowed operations, while DataActions are always explicit denials.
+• Actions apply only to users, while DataActions apply only to managed identities. even if the related role or policy has never been assigned.
+• Actions work only in the portal, while DataActions work only through PowerShell.
+√ Actions cover control-plane operations; DataActions cover operations on the resource's data.
+• Actions require MFA, while DataActions always bypass Conditional Access.
+
+108. [Module 2] Why are custom roles not automatically 'more secure' than built-in roles?
+• Custom roles cannot include DataActions, making them ineffective for least privilege.
+• Built-in roles are always temporary PIM assignments, while custom roles are always permanent. even if the related role or policy has never been assigned.
+√ Unmaintained custom roles can become stale, while built-in roles are maintained and documented by Microsoft.
+• Microsoft automatically deletes custom roles after thirty days unless they are renewed.
+• Custom roles bypass Azure RBAC inheritance and therefore cannot be audited.
+• Custom roles can never contain fewer permissions than Owner.
+
+109. [Module 2] Which control protects the 'door' at token issuance, and which limits actions after entry?
+• SSPR protects token issuance; Entra Connect limits resource permissions.
+• Microsoft 365 licensing protects token issuance; dynamic groups define all resource permissions.
+• RBAC protects token issuance; Conditional Access defines every resource action.
+• Azure Firewall protects token issuance; PHS determines the user's Azure role.
+√ Conditional Access protects token issuance; RBAC limits permitted actions on resources.
+• SAML protects token issuance; OAuth assigns Azure subscription Owner.
