@@ -1,0 +1,581 @@
+1. What are variables used for in Bash scripts?
+• Creating network packets
+• Changing file ownership automatically
+• Compressing archives only
+√ Holding temporary information/data
+
+2. What does quoting control in Bash?
+√ How characters in a string are interpreted or represented
+• Which user owns a file
+• Which IP address is assigned
+• Which archive format is used
+
+3. What do branching structures do?
+• Only store variables
+√ Choose different actions based on conditions
+• Repeat forever without tests
+• Only define functions
+
+4. What do loops do?
+• Create users only
+√ Repeat code
+• Stop all scripts
+• Change file ownership
+
+5. What are functions?
+√ Reusable code that performs a set of instructions
+• Network routes
+• User accounts
+• File permissions
+
+6. What two types of Bash variables are covered?
+• User and group variables only
+√ Local and environment variables
+• Static and DHCP variables
+• Hard and soft variables
+
+7. How long does a local variable normally exist?
+• Only for one command regardless of shell
+√ Only in the current shell; it is lost when that shell closes
+• Until root deletes /etc/passwd
+• Forever across every reboot
+
+8. Which syntax correctly assigns a Bash variable?
+• variable = value
+• set variable := value
+• $variable=value
+√ variable=value
+
+9. How do you display the value of variable1?
+• echo variable1 only
+• cat %variable1
+√ echo $variable1
+• print #variable1
+
+10. Which symbol is used to retrieve/interpolate a Bash variable's value?
+• #
+√ $
+• %
+• &
+
+11. What are environment variables also called in the lecture?
+√ Global variables
+• Hard variables
+• Archive variables
+• Private variables
+
+12. Which command lists environment variables?
+• touch
+• useradd
+• pwd
+√ env
+
+13. Which command turns a local variable into an environment variable?
+• env -d
+• import
+√ export
+• globalize
+
+14. Which is an example of an environment variable from the lecture?
+• INODE
+• GIDFILE
+• TARBALL
+√ PATH
+
+15. What does PATH contain?
+• Network routes only
+• File ownership records
+√ Directories the shell searches for executable programs
+• User passwords
+
+16. What happens if a command is not found in any directory listed in PATH?
+• The command is downloaded automatically
+• The user becomes root
+• The shell deletes PATH
+√ The shell returns a command not found error
+
+17. What is variable interpolation?
+• Changing its permissions
+• Compressing a variable
+• Sorting a variable alphabetically
+√ Substituting a variable's stored contents where its $name appears
+
+18. How can command output be assigned to a variable using the older syntax shown?
+√ Enclose the command in backticks
+• Prefix with #
+• Use square brackets only
+• Put it after a semicolon
+
+19. Which command reads input from a user into a variable?
+• grep
+• printf only
+• echo
+√ read
+
+20. What does $0 represent in a script?
+• The process ID
+√ The name of the current shell script
+• The first argument
+• The number of arguments
+
+21. What do $1 through $9 represent?
+√ Positional parameters 1 through 9
+• Exit status codes
+• Environment variables only
+• File descriptors
+
+22. What does $# represent?
+• All arguments as one string
+• The script name
+• The process ID
+√ The number of positional parameters
+
+23. What does "$*" represent according to the lecture?
+√ All positional parameters as one string
+• The process ID
+• The exit status
+• Only the first parameter
+
+24. What does "$@" represent according to the lecture?
+• The shell name
+√ All positional parameters as a set of strings
+• Only the final parameter
+• The home directory
+
+25. What does $? contain?
+• Current process ID
+√ Return status of the most recently executed command
+• Current username
+• Number of arguments
+
+26. What does $$ contain?
+√ Process ID of the current process
+• Exit status
+• Home directory
+• First parameter
+
+27. What do double quotes prevent the shell from expanding in the lecture?
+• Every dollar sign without exception
+√ Some metacharacters such as glob characters
+• All variables and command substitution
+• All text output
+
+28. What still works inside double quotes?
+• No substitutions at all
+√ Variable substitution and command substitution
+• Only history deletion
+• Only filename globbing
+
+29. What do single quotes do?
+• Execute the string as root
+• Allow all variable expansion
+√ Prevent interpretation of special characters, variables, globs, and command substitution
+• Enable globbing only
+
+30. Why does echo 'The car costs $100' display the dollar sign literally?
+• The shell has no dollar-sign syntax
+• echo always removes variables
+• $100 is a valid filename
+√ Single quotes prevent variable interpretation
+
+31. What is the backslash \ used for in quoting?
+• Define a group
+• End a loop
+√ Escape a single special character
+• Start a function
+
+32. How can you display literal $1 while still expanding $PATH?
+• Use $$1
+• Delete PATH
+• Put both inside single quotes
+√ Escape the first dollar sign as \$1 and leave $PATH unescaped
+
+33. What are backticks used for?
+• Comments
+• File permissions
+√ Command substitution
+• Network routing
+
+34. Which modern syntax is shown as an alternative to backticks?
+√ $(command)
+• ${command:file}
+• <command>
+• [command]
+
+35. What does echo Today is $(date) do?
+• Changes the system date
+• Prints the literal characters $(date) only
+√ Runs date and inserts its output into the echo command
+• Creates a file named date
+
+36. How can a simple script be run through a shell even if it is not executable?
+√ sh test.sh
+• chmod test.sh
+• ./test.sh only
+• source /etc/passwd
+
+37. Why might ./test.sh return Permission denied?
+• The script is too short
+• The file must be compressed first
+√ The script is not marked executable
+• The user has too many variables
+
+38. Which command can make a script executable?
+√ chmod
+• chown only
+• gzip
+• useradd
+
+39. What is #! called at the start of a script?
+• Anchor
+• GECOS
+√ Shebang
+• Glob
+
+40. What does /bin/sh in #!/bin/sh specify?
+• The user's home directory
+• The script's output file
+• The current group
+√ The absolute path to the interpreter
+
+41. What type of files are shell scripts?
+√ Plain text files
+• Binary-only files
+• Compressed archives only
+• Device files only
+
+42. Which editor is described as simple and well suited for small text files?
+• vim only
+√ nano
+• grep
+• Apache
+
+43. Which editor is described as a remarkably powerful editor with a newer version called vim?
+• less
+• cat
+• nano
+√ vi
+
+44. What does echo -n do in the script example?
+√ Print without a newline at the end
+• Print a numeric value only
+• Run silently
+• Negate the output
+
+45. What does read -p do?
+• Set permissions
+√ Display a prompt string while reading input
+• Read a password file
+• Create a positional parameter
+
+46. What does read -s do?
+• Sort input
+• Stop the script immediately
+√ Silent mode: do not echo typed characters
+• Show shell history
+
+47. What does read -t do?
+√ Set a timeout for input
+• Translate characters
+• Create a tar archive
+• Test a file
+
+48. What is the purpose of the test command?
+• Manage network connections
+• Create users
+• Compress files
+√ Check files and compare values
+
+49. Which two equivalent forms of test are shown?
+• { expression } and ( expression ) only
+√ test expression and [ expression ]
+• if expression and tar expression
+• grep expression and sed expression
+
+50. What does -e file test?
+• Whether it is empty only
+• Whether it is owned by root
+√ Whether the file exists
+• Whether it is executable only
+
+51. What does -f file test?
+√ Whether it exists and is a regular file
+• Whether it is a socket
+• Whether it is a directory
+• Whether it is a symlink
+
+52. What does -d file test?
+• Whether it is executable
+• Whether it is newer
+√ Whether it exists and is a directory
+• Whether it is a regular file
+
+53. What does file1 -nt file2 test?
+• Whether file1 is not text
+• Whether file1 is a directory
+• Whether file1 is smaller
+√ Whether file1 is newer than file2
+
+54. What does file1 -ot file2 test?
+√ Whether file1 is older than file2
+• Whether file1 is writable
+• Whether file1 is a socket
+• Whether file1 is owned by test2
+
+55. What does -s file test according to the lecture table?
+√ Whether the file exists and has size/status as defined by the test table
+• Whether the file is a symbolic link
+• Whether the file has setuid
+• Whether the file is a directory
+
+56. What does -L file test?
+• Whether it is a directory
+√ Whether the file exists and is a symbolic link
+• Whether it is a block device
+• Whether it is readable
+
+57. What does -b file test?
+√ Whether it is a block special device
+• Whether it is a regular file
+• Whether it is writable
+• Whether it is a symlink
+
+58. What does -c file test?
+√ Whether it is a character special device
+• Whether it is a directory
+• Whether it has setgid
+• Whether it is compressed
+
+59. What does -r file test?
+√ Whether the effective user has read permission
+• Whether the file is root-owned
+• Whether it is a regular file
+• Whether it is recursive
+
+60. What does -w file test?
+• Whether it is writable by root only
+√ Whether the effective user has write permission
+• Whether it is a word file
+• Whether it is world-owned
+
+61. What does -x file test?
+• Whether it exists only
+√ Whether the effective user has execute permission
+• Whether it is encrypted
+• Whether it is XML
+
+62. What does -u file test?
+√ Whether the file has setuid permission
+• Whether it has setgid
+• Whether it has sticky bit
+• Whether it is owned by user u
+
+63. What does -g file test?
+• Whether it is gzip compressed
+• Whether it is a group file
+• Whether it has setuid
+√ Whether the file has setgid permission
+
+64. What does -k file test?
+• Whether it is a kernel file
+√ Whether the file has sticky-bit permission
+• Whether it is readable
+• Whether it is a symlink
+
+65. What does -n string test?
+• Whether it is numeric
+• Whether the string is empty
+• Whether strings are equal
+√ Whether the string length is greater than zero
+
+66. What does -z string test?
+√ Whether the string length is zero
+• Whether it contains a z
+• Whether it sorts after another
+• Whether it is non-empty
+
+67. What does string1 = string2 test?
+• Whether string1 is a file
+√ Whether the two strings are equal
+• Whether string1 is longer
+• Whether string1 is numeric
+
+68. What does string1 != string2 test?
+• Whether both are empty
+• Whether string1 is a directory
+• Whether they are integers
+√ Whether the two strings are not equal
+
+69. Which integer operator means equal?
+• -lt
+• -ge
+√ -eq
+• -ne
+
+70. Which integer operator means not equal?
+• -gt
+√ -ne
+• -eq
+• -le
+
+71. Which integer operator means less than?
+• -gt
+√ -lt
+• -le
+• -eq
+
+72. Which integer operator means greater than?
+√ -gt
+• -lt
+• -ge
+• -ne
+
+73. Which integer operator means less than or equal?
+• -lt
+• -eq
+• -ge
+√ -le
+
+74. Which integer operator means greater than or equal?
+√ -ge
+• -ne
+• -le
+• -gt
+
+75. What is branching in a shell script?
+√ Running different code based on tests/conditions
+• Repeating code without conditions
+• Only assigning variables
+• Only defining functions
+
+76. Which statement is the basic branching operator in Bash?
+• function
+• for
+√ if
+• while
+
+77. When does the body of an if statement execute according to the lecture?
+√ When the test returns exit code 0
+• When the test always returns nonzero
+• Only when $# is zero
+• Only when root runs it
+
+78. Which keyword means 'else if' in Bash?
+√ elif
+• elseif
+• otherwise
+• elsif
+
+79. In the example, what happens if $1 is hello?
+• It prints "I didn't understand that"
+• The script always exits silently
+√ The script prints "hello yourself"
+• It prints "nice to have met you"
+
+80. In the example, what happens if $1 is goodbye?
+• It creates a file
+• It prints only "hello yourself"
+√ The script prints the goodbye messages
+• It always enters the else branch
+
+81. Which keyword closes an if statement?
+• done
+√ fi
+• esac only
+• end
+
+82. What are the two main loop types covered?
+√ for and while
+• grep and sed
+• if and elif
+• case and until only
+
+83. When is a for loop especially useful according to the lecture?
+√ When iterating over a finite known assortment such as a list of files or servers
+• Only when the number of items is unknown
+• Only for password changes
+• Only for networking
+
+84. When is a while loop useful according to the lecture?
+• Only for functions
+• Only for a fixed list
+√ When looping while a condition is true, often with an unknown number of iterations
+• Only for one iteration
+
+85. Which keyword closes a for or while loop?
+• end
+√ done
+• fi
+• close
+
+86. In 'for S in $SERVERS; do', what is S?
+• The process ID
+• The entire script name
+√ The variable holding the current item on each iteration
+• The exit status
+
+87. In the while-loop example, what initial value is assigned to i?
+• 10
+• 9
+• 1
+√ 0
+
+88. What condition controls the example while loop?
+√ $i -lt 10
+• $i -gt 10
+• $i -ge 100
+• $i -eq 10 only
+
+89. What values are printed by the example while loop before 'Done counting'?
+• 0 through 10
+• Only 10
+√ 0 through 9
+• 1 through 10
+
+90. What does i=$(( $i + 1)) do?
+• Sets i to 0
+• Converts i to a string only
+√ Increases i by 1 using arithmetic expansion
+• Decreases i by 1
+
+91. What is $(( ... )) in Bash?
+• A regex character class
+• A comment
+√ Arithmetic expansion
+• Command substitution
+
+92. What is a shell function similar to?
+• A tar archive
+√ A shell script that stores a reusable series of commands
+• A network interface
+• A user account
+
+93. Where are shell functions stored while the shell is running?
+• Only in the kernel boot sector
+• Only in /etc/passwd
+• Only in a ZIP archive
+√ In memory
+
+94. In which shell does a shell function execute?
+√ The same shell that called it
+• Always a new root shell
+• Always /bin/sh regardless of caller
+• Always an SSH shell
+
+95. When must a function be defined?
+• After the script exits
+• It never needs definition
+• Only after the first call
+√ Before it is referenced/called
+
+96. Why are functions usually placed near the beginning of a script?
+• The kernel requires alphabetical order
+• They change file permissions
+• They can only run from line 1
+√ They must be defined before they are referenced
+
+97. Which is the function syntax shown in the lecture?
+√ function-name () { statements; }
+• function-name = statements
+• def function-name: statements
+• function-name -> statements
