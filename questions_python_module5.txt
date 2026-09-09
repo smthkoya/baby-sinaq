@@ -1,104 +1,1697 @@
-    1. In a Data Collection Rule, which three configuration blocks define the collection pipeline?
-    • Agents, extensions, and policies
-    • Metrics, logs, and traces
-    • Triggers, actions, and connections
-    • Tables, queries, and alerts
-    √ Data sources, destinations, and data flows
 
-    2. Where do you enable Microsoft Defender for Cloud's enhanced security features, such as Defender for Servers?
-    • Azure Policy > Definitions
-    • Microsoft Entra admin center > Protection
-    • Microsoft Sentinel > Content hub
-    √ Environment settings > (subscription) > Defender plans
-    • The VM's Configuration page
 
-    3. Which capability requires Microsoft Defender for Servers Plan 2 rather than Plan 1?
-    • The Activity log
-    • Secure Score
-    • Security recommendations
-    • Microsoft Defender for Endpoint integration
-    √ Just-in-time VM access
+1. [Module 5] What is the foundation of every downstream SOC capability in the module?
+• Compliance reports replace the need for operational logging.
+• Microsoft Sentinel generates historical telemetry automatically when it is enabled.
+• Secure Score can reconstruct any missing log after an incident.
+√ Collected telemetry: logs and metrics must exist before posture, detection, and response can work.
+• A playbook can create evidence retroactively even when the source never logged the event. and it applies automatically to every data source and subscription in the tenant.
+• Defender XDR can detect all attacks without receiving any event data.
 
-    4. Which product implements the CASB pillars — shadow IT discovery, app risk scoring, and session control — in the Microsoft stack?
-    • Microsoft Purview
-    √ Microsoft Defender for Cloud Apps
-    • Microsoft Entra ID Protection
-    • Microsoft Defender for Identity
-    • Azure Firewall Premium
+2. [Module 5] Which sequence best matches the module's security-operations mental model from bottom to top?
+√ Collect → Score → Protect → Detect → Respond → Govern.
+• Score → Respond → Collect → Govern → Protect → Detect.
+• Protect → Collect → Govern → Score → Detect → Respond.
+• Detect → Protect → Respond → Collect → Govern → Score.
+• Govern → Detect → Collect → Respond → Score → Protect.
+• Respond → Govern → Score → Detect → Collect → Protect.
 
-    5. A resource emits data-plane events, but nothing appears in your Log Analytics workspace. What is the most likely cause?
-    √ No diagnostic setting was created to route the resource logs
-    • The workspace is in a different resource group
-    • KQL cannot query data-plane events
-    • Resource logs require a Premium workspace tier
-    • The Activity log retention expired
+3. [Module 5] What does the Azure Activity log record?
+• Only Microsoft Sentinel alerts and incidents.
+• Only Windows guest operating-system security events from Azure VMs.
+• Data-plane actions inside every Azure service, such as every Key Vault secret read. without any extra connector, permission, or configuration being required.
+√ Subscription-level control-plane operations such as who created, changed, or deleted a resource.
+• Only numeric performance metrics such as CPU percentage and storage latency.
+• Only Microsoft Entra sign-in and audit events.
 
-    6. What does the following KQL query return? SigninLogs | where ResultType != 0 | summarize count() by UserPrincipalName
-    • The list of disabled user accounts
-    √ The number of failed sign-ins per user
-    • Sign-in latency per user
-    • MFA registrations per user
-    • All successful sign-ins grouped by application
+4. [Module 5] Is the Azure Activity log available by default according to the notes?
+• Yes, but only Defender for Servers Plan 2 subscriptions receive it.
+• No; it appears only after Microsoft Sentinel is enabled.
+• No; a DCR must be associated with every Azure resource first.
+• No; every subscription needs an AMA agent before Activity log exists.
+• Yes, but it records only data-plane events from Key Vault and Azure Firewall.
+√ Yes, with platform retention described as 90 days.
 
-    7. What does an approved just-in-time VM access request actually create?
-    • A new local administrator account on the VM
-    √ A temporary, high-priority NSG allow rule scoped to the requester's IP
-    • A Conditional Access policy exclusion
-    • A permanent firewall exception for the requester
-    • An Azure Bastion session
+5. [Module 5] What do resource logs mainly record?
+• Only numeric time-series metrics such as CPU and latency.
+• Only physical datacenter access by Microsoft staff.
+• Only subscription-level create, update, and delete operations.
+• Only Defender XDR incident classifications.
+√ Data-plane events inside a specific Azure service.
+• Only user sign-in outcomes from Microsoft Entra ID.
 
-    8. Sentinel automation cannot invoke your playbook even though the automation rule exists. Which grant is missing?
-    • A Conditional Access exclusion for the Logic App
-    √ Playbook permissions granting Sentinel access to the playbook's resource group
-    • Global Administrator on the playbook's managed identity
-    • A Defender for Servers Plan 2 license
-    • Owner rights for every analyst
+6. [Module 5] Are resource logs automatically collected for every service by default?
+• Yes; Microsoft Sentinel automatically backfills them when onboarded.
+• No; only the provider can access resource logs and customers cannot enable them.
+• Yes, but only if the resource has a public IP address.
+√ No; a diagnostic setting or equivalent configuration must route them.
+• No; resource logs can never be sent to Log Analytics.
+• Yes; Azure stores every data-plane event automatically for ninety days.
 
-    9. Why must labs and production deployments use the Azure Monitor Agent instead of the Log Analytics (MMA/OMS) agent?
-    √ The Log Analytics agent is retired and no longer supported
-    • AMA works without any network connectivity
-    • MMA only supports Linux machines
-    • AMA is free while MMA is billed per node
-    • MMA cannot collect performance counters
+7. [Module 5] A security team wants evidence that someone read a Key Vault secret at 03:00. Which type of log is required?
+• An NSG default-rule list.
+• The subscription Activity log alone.
+• A PIM Eligible assignment record only.
+√ A Key Vault resource/diagnostic log.
+• A VM CPU metric.
+• The Microsoft 365 license audit.
 
-    10. In Microsoft Defender XDR, what is an incident?
-    √ A collection of correlated alerts and associated data that tell the story of one attack
-    • A scheduled KQL query
-    • A Secure Score recommendation
-    • Any failed sign-in event
-    • A single alert from one product
+8. [Module 5] What happens if a crown-jewel resource had no diagnostic setting when a data-plane event occurred?
+• Defender XDR requests the historical record from the resource automatically.
+• A DCR created after the incident retroactively collects all previous resource events.
+• The Activity log always contains a complete duplicate of every data-plane event.
+√ That missing telemetry cannot simply be backfilled later.
+• Azure Monitor derives the exact event later from billing metrics.
+• Microsoft Sentinel recreates it from Secure Score history.
 
-    11. A security control worth 8 points applies to 20 virtual machines, of which 15 are healthy. How many points does this control contribute to Secure Score?
-    • 15
-    • 2
-    • 4
-    • 8
-    √ 6
+9. [Module 5] What are Azure platform metrics?
+• Sentinel incidents and investigation comments.
+√ Numeric time-series values such as VM CPU percentage or storage latency.
+• Directory role assignments from Microsoft Entra ID only.
+• Detailed data-plane audit events containing full user activity. with no separate authorization, tuning, or verification step anywhere else.
+• User passwords and authentication-method registrations.
+• Static configuration documents from Azure Policy.
 
-    12. Which statement correctly distinguishes Microsoft Defender for Cloud from Microsoft Defender XDR?
-    √ Defender for Cloud covers Azure, AWS, and GCP workload posture and protection; Defender XDR correlates endpoint,  email, identity, and app signals
-    • Defender for Cloud protects users and mailboxes; Defender XDR protects Azure resources
-    • Defender XDR is the free tier of Defender for Cloud
-    • Defender for Cloud is only available in the Defender portal
-    • They are two names for the same product
+10. [Module 5] What is a diagnostic setting?
+• A KQL query that creates an incident from a log table.
+• A PIM setting that limits role activation duration.
+• An Azure RBAC role that allows a user to read security logs.
+• A Defender for Servers plan that installs endpoint protection. regardless of retention, workspace design, or the user's assigned permissions.
+• A route table that forces packets through Azure Firewall.
+√ A routing configuration that sends logs/metrics to destinations such as Log Analytics, Storage, or Event Hub.
 
-    13. When connecting the Azure Activity data connector, at which scope must the Azure Policy assignment be made, and why?
-    • Workspace scope, because the data lands there
-    • Tenant scope, because Activity logs are tenant-wide
-    √ Subscription scope, so all control-plane events in the subscription stream to the workspace
-    • Resource group scope, to limit cost
-    • Management group scope, because policies cannot target subscriptions
+11. [Module 5] Which destination is appropriate when logs must be queryable with KQL?
+• A PIM catalog.
+√ A Log Analytics workspace.
+• A Key Vault secret.
+• An Azure Bastion subnet.
+• An Application Security Group.
+• A Microsoft 365 group.
 
-    14. Where do pending automated remediation actions from Defender XDR's automated investigations wait for analyst approval?
-    • The Content hub
-    √ The Action center
-    • Azure Policy compliance
-    • Workload protections
-    • The Activity log
+12. [Module 5] Which diagnostic-setting destination is useful for cheap long-term archive?
+• Azure Firewall Premium.
+√ A storage account.
+• A VM managed identity.
+• An Entra dynamic group.
+• An Application Gateway WAF.
+• A Conditional Access policy.
 
-    15. According to NIST SP 800-61, which phase follows Detection & Analysis in the incident response lifecycle?
-    √ Containment, eradication, and recovery
-    • Notification and disclosure
-    • Post-incident activity
-    • Threat hunting
-    • Preparation
+13. [Module 5] Which diagnostic-setting destination is designed for streaming to external systems or SIEMs?
+• An Azure Bastion host.
+• A PIM activation request.
+• A Microsoft 365 license.
+• A VNet peer.
+√ An Event Hub.
+• A Key Vault key.
+
+14. [Module 5] What is a Log Analytics workspace?
+• A compliance certificate repository for cloud-provider audits.
+• A DLP system that applies sensitivity labels to documents.
+√ A regional log data store organized into typed tables that can be queried with KQL.
+• A Windows agent installed directly inside every VM.
+• A network appliance that filters layer-3/4 traffic.
+• A directory that stores users, groups, and identity-provider settings. and it applies automatically to every data source and subscription in the tenant.
+
+15. [Module 5] Why did the course use one workspace named law-cloudsec for several labs?
+• Multiple workspaces cannot store different table types.
+√ Centralizing related telemetry gives the SOC a more coherent view across queries, Defender, and Sentinel.
+• A single workspace automatically satisfies all data-residency requirements worldwide. without any extra connector, permission, or configuration being required.
+• Sentinel requires the workspace name law-cloudsec and rejects any other name.
+• Defender for Cloud creates a new subscription whenever a second workspace exists.
+• Every Azure tenant can technically have only one Log Analytics workspace.
+
+16. [Module 5] What may justify using more than one workspace despite the consolidation guidance?
+• The need to run more than one KQL query at the same time. and it applies automatically to every data source and subscription in the tenant.
+• Enabling Defender for Servers Plan 2.
+• The presence of both Windows and Linux virtual machines.
+• Having more than one security analyst.
+• Using both Azure Activity and SigninLogs tables.
+√ Data residency, RBAC separation, or chargeback requirements.
+
+17. [Module 5] What language is used across Log Analytics, Sentinel detections/hunting, and Defender XDR advanced hunting?
+• Structured Query Language only.
+• SAML.
+• YAML only.
+• PowerShell only.
+√ Kusto Query Language (KQL).
+• Wireshark display filters.
+
+18. [Module 5] In KQL, what does the where operator do?
+• Aggregates records into counts only.
+• Selects which columns remain in the result.
+• Sorts results from highest to lowest automatically.
+• Builds a visual chart without changing the dataset.
+• Creates a new calculated column.
+√ Filters rows based on a condition.
+
+19. [Module 5] In KQL, what does project do?
+• Counts unique values without grouping. regardless of retention, workspace design, or the user's assigned permissions.
+• Creates time buckets automatically.
+• Installs a data connector.
+• Creates a new Sentinel incident.
+• Filters rows by a Boolean condition.
+√ Selects or shapes the columns returned by the query.
+
+20. [Module 5] In KQL, what does summarize commonly do?
+• Routes logs to a storage account.
+• Creates a PIM role activation.
+• Blocks an IP address through Azure Firewall.
+• Installs AMA on a virtual machine.
+√ Aggregates records, for example with count(), dcount(), or max().
+• Changes the schema of the source table permanently. with no separate authorization, tuning, or verification step anywhere else.
+
+21. [Module 5] Why should a time filter usually appear early in a KQL query?
+• Time filters enable the Azure Monitor Agent on the queried VM.
+• KQL rejects any query where the time filter is not the final operator.
+√ It reduces the amount of data scanned, improving cost and speed.
+• The first filter determines the Sentinel incident severity.
+• Queries without an early time filter cannot return successful sign-ins.
+• A time filter automatically grants access to older archived logs.
+
+22. [Module 5] In SigninLogs, what does ResultType = 0 represent in the course?
+• A disabled Conditional Access policy.
+• A high-risk user.
+√ A successful sign-in.
+• A deleted JIT policy.
+• Invalid credentials.
+• An account lockout.
+
+23. [Module 5] In SigninLogs, what does ResultType 50126 represent?
+• MFA registration required.
+• PIM activation approved.
+√ Invalid credentials.
+• Guest invitation accepted.
+• Account locked.
+• Successful sign-in.
+
+24. [Module 5] In SigninLogs, what does ResultType 50053 represent in the notes?
+• Invalid credentials.
+• Azure Firewall denied traffic.
+• Token audience mismatch.
+• User risk remediated.
+√ Account locked.
+• Successful sign-in.
+
+25. [Module 5] What does the query 'SigninLogs | where ResultType != 0' select?
+• Only successful sign-ins.
+• Only users with PIM roles.
+• Only Azure resource deletions.
+• Only Windows event 4625 records.
+• Only Sentinel incidents with High severity.
+√ Sign-ins whose result is not success.
+
+26. [Module 5] Which Windows event ID is used in the notes for failed logons?
+• 4688.
+√ 4625.
+• 4624.
+• 50126.
+• 1102.
+• 50053.
+
+27. [Module 5] What is the purpose of bin(TimeGenerated, 1h) in a summarize query?
+• Limit the table to exactly one record per user.
+• Change the query schedule to run hourly.
+• Delete records older than one hour.
+√ Group events into one-hour time buckets.
+• Convert the timestamp into a user object ID.
+• Send one hour of logs to an Event Hub.
+
+28. [Module 5] Which table stores the Azure Activity connector's control-plane events?
+• SigninLogs.
+√ AzureActivity.
+• Syslog.
+• ThreatIntelligenceIndicator.
+• SecurityEvent.
+• OfficeActivity.
+
+29. [Module 5] Which table commonly contains Windows security events collected through AMA?
+• SigninLogs.
+• AzureActivity.
+• ThreatIntelligenceIndicator.
+√ SecurityEvent.
+• OfficeActivity.
+• AuditLogs only.
+
+30. [Module 5] Which table commonly contains Microsoft Entra sign-in events?
+√ SigninLogs.
+• SecurityEvent.
+• CommonSecurityLog only.
+• OfficeActivity.
+• Heartbeat.
+• AzureActivity.
+
+31. [Module 5] Which tables are associated with Linux/syslog or CEF appliance data in the notes?
+• Heartbeat and Perf only.
+√ Syslog and CommonSecurityLog.
+• AzureActivity and SigninLogs.
+• ThreatIntelligenceIndicator and AzureActivity only.
+• SecurityAlert and SecurityIncident only.
+• OfficeActivity and AuditLogs only.
+
+32. [Module 5] What does Heartbeat help you check for a monitored VM?
+• Whether the user's MFA method is phishing-resistant.
+• Whether a guest invitation is still PendingAcceptance. without any extra connector, permission, or configuration being required.
+• Whether the VM holds an Azure RBAC login role.
+• Whether the VM belongs to a specific ASG.
+• Whether the VM's disk is encrypted with a CMK.
+√ Whether the monitoring agent is still reporting recently.
+
+33. [Module 5] What collector does the module identify as the current supported VM telemetry agent?
+• Microsoft Defender for Identity sensor only.
+√ Azure Monitor Agent (AMA).
+• Windows Event Collector only.
+• Azure AD Connect agent.
+• Log Analytics Agent only.
+• Microsoft Monitoring Agent (MMA/OMS).
+
+34. [Module 5] What is the status of the older MMA/OMS agent in the notes?
+√ It is retired and older instructions using it are outdated.
+• It is the preferred replacement for AMA in new environments.
+• It is a PIM component rather than a monitoring agent.
+• It is required before a DCR can be created.
+• It is the only way to send Windows Security Events to Sentinel.
+• It is supported only for Azure Activity logs.
+
+35. [Module 5] What is a Data Collection Rule (DCR)?
+√ A cloud resource defining what AMA collects, where it sends data, and the flows between them.
+• A Purview policy that blocks sensitive data movement.
+• An Azure Firewall policy containing application and network rules.
+• A Sentinel analytics rule that creates incidents from KQL.
+• A Defender for Cloud recommendation that calculates Secure Score.
+• A Conditional Access policy that controls which devices can sign in. even if the relevant telemetry or security plan was never enabled.
+
+36. [Module 5] What three blocks are shown inside the DCR properties example?
+• keys, secrets, and certificates.
+• alerts, incidents, and playbooks.
+• locations, conditions, and actions.
+√ dataSources, destinations, and dataFlows.
+• users, applications, and grantControls. even if the relevant telemetry or security plan was never enabled.
+• source, destination, and nextHop.
+
+37. [Module 5] What fourth DCR element exists outside the JSON example?
+• The VM's PIM activation request.
+• The user's Microsoft 365 license assignment. even if the relevant telemetry or security plan was never enabled.
+√ Resource associations that bind machines to the rule.
+• The Azure Firewall route table.
+• The Entra guest invitation state.
+• The Sentinel incident severity.
+
+38. [Module 5] What can happen when a VM is associated with an appropriate DCR?
+√ The association can trigger installation of AMA and begin the configured collection path.
+• The VM is deleted and recreated with a monitoring image.
+• The VM is converted into a Log Analytics workspace.
+• The VM automatically becomes subscription Owner.
+• The VM's local accounts are replaced by guest identities. and it applies automatically to every data source and subscription in the tenant.
+• The VM receives a public RDP rule at priority 100.
+
+39. [Module 5] Can one DCR serve many machines?
+• No; every DCR is permanently bound to exactly one VM.
+• Only Sentinel can reuse a DCR across machines.
+• Only Windows machines can share a DCR; Linux requires one each.
+• Only if all machines share the same private IP address.
+• No; the DCR is stored inside the guest OS and cannot be shared.
+√ Yes; one DCR can be associated with large numbers of machines.
+
+40. [Module 5] Can one machine be associated with more than one DCR?
+• Only after Microsoft support changes a hidden workspace setting. even if the relevant telemetry or security plan was never enabled.
+• No; AMA can read only one configuration object in its lifetime.
+√ Yes; for example a baseline performance rule and a separate security-event rule.
+• Only if each DCR uses a different Azure subscription.
+• No; the first DCR blocks all later associations.
+• Only if the machine has multiple public IP addresses.
+
+41. [Module 5] What question does CSPM in Defender for Cloud answer?
+√ Is my environment configured securely?
+• Which application should use SAML rather than OIDC?
+• Which guest domain should be allowed for B2B redemption?
+• Which packet route will a VM use to reach the Internet?
+• Is an attacker actively executing inside my workload right now?
+• Which user should receive an Office 365 license?
+
+42. [Module 5] What question does CWPP in Defender for Cloud answer?
+• Which cloud configuration recommendations should raise Secure Score?
+• Which SAML certificate is nearing expiration?
+√ Is something attacking my workloads right now?
+• Which subnet should receive a firewall UDR?
+• Which DLP label should be assigned to a document?
+• Which user is allowed to invite B2B guests?
+
+43. [Module 5] Is foundational CSPM in Defender for Cloud free according to the notes?
+• Yes, but only when Defender for Servers Plan 2 is purchased.
+• No; every recommendation requires a separate CWPP license.
+√ Yes, the foundational posture-management tier is available on subscriptions without a paid Defender plan.
+• No; Secure Score is available only after Microsoft Sentinel onboarding.
+• No; Defender for Cloud has no free capabilities.
+• Yes, but it can assess only Microsoft 365 identities and not Azure resources. with no separate authorization, tuning, or verification step anywhere else.
+
+44. [Module 5] What enables runtime workload-protection capabilities such as Defender for Servers?
+√ Defender plans enabled per subscription.
+• An Azure Firewall Premium policy.
+• A private endpoint on the workspace. without any extra connector, permission, or configuration being required.
+• The free Activity log alone.
+• A Microsoft 365 group-based license.
+• A PIM activation on the VM.
+
+45. [Module 5] Where are Defender plans enabled in Defender for Cloud?
+• Purview > Information Protection > Labels.
+• Microsoft 365 admin center > Billing > Licenses.
+• Sentinel > Hunting > Bookmarks.
+• Azure Monitor > Workbooks > Licensing.
+• Microsoft Entra > External Identities > Identity providers.
+√ Environment settings > subscription > Defender plans.
+
+46. [Module 5] What does a Defender for Cloud recommendation normally provide?
+• An automatic guarantee that no future attack can exploit the resource.
+• A new tenant ID and Microsoft 365 license.
+• A PIM activation code for the affected administrator.
+• The user's cleartext password to remediate the issue.
+• A network route that sends all traffic to Microsoft support.
+√ Affected resources, remediation guidance, and sometimes a Fix action.
+
+47. [Module 5] How is Defender for Cloud Secure Score calculated at a high level?
+• Passed recommendations divided only by failed sign-ins.
+• Number of PIM activations divided by number of administrators.
+√ Earned security-control points divided by total possible applicable points.
+• Threat severity added to compliance-score percentages.
+• Number of alerts divided by number of users.
+• Number of protected VMs multiplied by monthly subscription cost. without any extra connector, permission, or configuration being required.
+
+48. [Module 5] A control is worth 6 points, applies to 30 VMs, and 10 are healthy. How many points are earned for that control?
+√ 2 points.
+• 20 points.
+• 3 points.
+• 0 points.
+• 10 points.
+• 6 points.
+
+49. [Module 5] A control is worth 8 points and 15 of 20 storage accounts are healthy. How many points are earned?
+• 8 points.
+• 4 points.
+√ 6 points.
+• 2 points.
+• 7.5 points.
+• 15 points.
+
+50. [Module 5] Why can fixing one recommendation on a resource fail to increase Secure Score for a control?
+• Secure Score updates only once per year.
+√ The resource may need to satisfy every recommendation in that control before it counts as healthy.
+• Secure Score ignores Azure resources and scores only users.
+• Recommendations never affect Secure Score in Defender for Cloud.
+• A recommendation increases score only if it was fixed through a Sentinel playbook. regardless of retention, workspace design, or the user's assigned permissions.
+• Only Microsoft support can change a control's earned points.
+
+51. [Module 5] What is the scope difference between Defender for Cloud Secure Score and Microsoft Secure Score in the Defender portal?
+• Microsoft Secure Score is the only score that can assess any security configuration.
+• Defender for Cloud Secure Score applies only to on-premises servers.
+• They are the same score shown with two names and always have identical percentages.
+√ Defender for Cloud scores cloud resources; Microsoft Secure Score covers identity, device, app, and M365 configuration.
+• Defender for Cloud scores only email; Microsoft Secure Score scores only VMs.
+• Defender for Cloud scores guest users; Microsoft Secure Score scores Azure route tables. regardless of retention, workspace design, or the user's assigned permissions.
+
+52. [Module 5] Which Defender for Servers plan includes Just-in-Time VM access?
+• Microsoft Sentinel Essentials.
+• The free CSPM tier only.
+• Defender for Resource Manager only.
+√ Plan 2.
+• Plan 1.
+• Defender for Storage.
+
+53. [Module 5] What is the main security goal of JIT VM access?
+• Replace Azure RBAC with IP-based authentication.
+√ Replace standing-open RDP/SSH exposure with temporary, approved network access.
+• Replace Entra authentication with a temporary local password. regardless of retention, workspace design, or the user's assigned permissions.
+• Disable every NSG rule while the user is connected.
+• Grant subscription Owner to administrators for three hours.
+• Create a permanent public IP for management access.
+
+54. [Module 5] What does JIT keep on management ports when no approved request is active?
+• A public load-balancer rule for emergency access.
+• An Azure Firewall application rule allowing every FQDN.
+• A PIM Active assignment for every administrator.
+• A permanent allow from Any source.
+√ A deny posture so RDP/SSH are not standing open.
+• No NSG at all because JIT removes network filtering.
+
+55. [Module 5] What happens after a JIT access request is approved?
+• The VM receives a new public IP that never expires.
+√ A temporary high-priority allow is created for the requester's IP and time window.
+• The user becomes Virtual Machine Administrator Login permanently. even if the relevant telemetry or security plan was never enabled.
+• The NSG is deleted so the user can connect freely.
+• Azure Firewall Premium is deployed automatically into the VNet.
+• The user's password is reset to a temporary value.
+
+56. [Module 5] What default maximum JIT access duration is described in the notes?
+• Twenty-four hours.
+• Five minutes.
+• Thirty days.
+• Eight hours.
+√ Three hours.
+• One hour.
+
+57. [Module 5] What happens to the temporary JIT NSG rule when its time expires?
+• It changes into an Azure Firewall rule.
+• It blocks all network traffic to the VM permanently.
+√ It self-deletes.
+• It becomes a permanent Allow-RDP-Any rule.
+• It remains until an administrator manually removes it.
+• It is converted to a PIM role assignment.
+
+58. [Module 5] Does JIT authenticate the user to the VM?
+• Yes; the source IP address becomes the user's authentication factor.
+• Yes; JIT automatically grants Virtual Machine Administrator Login to any requester. with no separate authorization, tuning, or verification step anywhere else.
+√ No; JIT controls the network path, while identity authentication and authorization are separate.
+• Yes; JIT creates a local administrator password for the duration.
+• No, because JIT works only after authentication has been disabled.
+• Yes; the JIT request replaces every VM credential and login role.
+
+59. [Module 5] A manually created Allow-RDP-Any rule at priority 100 remains after JIT is enabled. What is the problem?
+• JIT works at layer 7 and ignores NSG priorities entirely.
+√ The standing high-priority allow can undermine JIT by keeping RDP exposed.
+• The rule increases Secure Score because standing access improves availability.
+• Priority 100 is lower precedence than every temporary JIT rule by definition.
+• The rule affects only outbound RDP traffic and cannot expose the VM.
+• JIT automatically deletes all manually created NSG rules, so no problem exists.
+
+60. [Module 5] What should an administrator do after enabling JIT on a VM?
+• Open 3389 and 22 permanently to ensure JIT requests never fail.
+√ Review the NSG and remove legacy standing management-port allow rules.
+• Assign every administrator Owner at subscription scope.
+• Disable Defender for Servers because JIT no longer needs the plan. regardless of retention, workspace design, or the user's assigned permissions.
+• Delete all deny rules so temporary access has nothing to override.
+• Remove the VM's Entra login roles to simplify network security.
+
+61. [Module 5] What does Microsoft Defender XDR primarily do?
+• Synchronizes on-premises Active Directory users to Entra ID.
+• Acts as the Azure network firewall for all VNets.
+• Provides group-based Office licensing and SSPR.
+• Assigns Azure RBAC roles based on application risk.
+√ Correlates security signals across Microsoft endpoint, email, identity, and app domains into incidents.
+• Replaces Log Analytics as the storage engine for every Azure resource log. with no separate authorization, tuning, or verification step anywhere else.
+
+62. [Module 5] What was Microsoft Defender XDR formerly called?
+• OMS Security.
+• Cloud App Security only.
+• Azure Sentinel.
+• Microsoft Purview.
+• Azure Security Center.
+√ Microsoft 365 Defender.
+
+63. [Module 5] Which Defender product watches endpoints for malware, exploitation, and lateral movement?
+• Microsoft Entra ID Protection. without any extra connector, permission, or configuration being required.
+• Defender for Cloud CSPM.
+• Defender for Identity.
+• Defender for Cloud Apps.
+√ Microsoft Defender for Endpoint.
+• Defender for Office 365.
+
+64. [Module 5] Which Defender product focuses on phishing and malicious email content?
+• Azure Firewall.
+• Defender for Identity.
+• Defender for Endpoint.
+√ Microsoft Defender for Office 365.
+• Microsoft Entra ID Protection. with no separate authorization, tuning, or verification step anywhere else.
+• Defender for Cloud Apps.
+
+65. [Module 5] Which Defender product monitors on-premises Active Directory for attacks such as DCSync or pass-the-ticket?
+• Azure Monitor.
+• Defender for Endpoint.
+• Defender for Office 365. even if the relevant telemetry or security plan was never enabled.
+• Microsoft Purview.
+√ Microsoft Defender for Identity.
+• Defender for Cloud Apps.
+
+66. [Module 5] Which Defender product focuses on SaaS usage, risky OAuth grants, shadow IT, and cloud-app data exfiltration?
+• Defender for Office 365. with no separate authorization, tuning, or verification step anywhere else.
+• Defender for Endpoint.
+• Azure DDoS Protection.
+• Defender for Identity.
+• Defender for Servers.
+√ Microsoft Defender for Cloud Apps.
+
+67. [Module 5] What was Microsoft Defender for Cloud Apps formerly branded as?
+• Azure Information Protection only. without any extra connector, permission, or configuration being required.
+• Microsoft Monitoring Agent.
+• Azure Security Center only.
+• Microsoft 365 Defender.
+√ Microsoft Cloud App Security / MCAS.
+• Azure AD Identity Protection.
+
+68. [Module 5] What is the current name replacing 'Azure AD Identity Protection'?
+• Azure RBAC Protection.
+• Microsoft Sentinel Identity Guard.
+√ Microsoft Entra ID Protection.
+• Microsoft Defender for Cloud Apps.
+• Microsoft Defender for Identity.
+• Microsoft Purview Identity Manager.
+
+69. [Module 5] Why must Defender for Cloud and Defender XDR be kept conceptually separate?
+• Defender XDR manages Azure network routes while Defender for Cloud handles Microsoft 365 billing. without any extra connector, permission, or configuration being required.
+√ Defender for Cloud focuses on cloud workload/posture security, while XDR correlates Microsoft user/device/email/app signals.
+• Defender for Cloud exists only for AWS and GCP, not Azure.
+• Defender XDR is an Azure IaaS service and cannot handle email or identity signals.
+• They are the same product with identical portals and data sources.
+• Defender for Cloud is only a legacy name for Microsoft Sentinel.
+
+70. [Module 5] What is an incident in Defender XDR/Sentinel terminology?
+• A Microsoft 365 license assigned to an analyst.
+• A KQL function used to aggregate security events. even if the relevant telemetry or security plan was never enabled.
+• A DCR association between a VM and a workspace.
+• A PIM activation request for an administrator.
+• A single raw log line from any data connector.
+√ A container of correlated alerts, affected entities, and evidence that becomes the unit of SOC work.
+
+71. [Module 5] What is the first step in the incident-triage workflow described in the notes?
+√ Acquire ownership of the incident.
+• Immediately classify every alert as true positive.
+• Close the incident so automated investigation can start.
+• Immediately delete the affected VM.
+• Run a destructive playbook before reviewing evidence.
+• Disable all users in the tenant.
+
+72. [Module 5] What should the analyst examine during the Scope step?
+• Only the incident title and current assigned owner. with no separate authorization, tuning, or verification step anywhere else.
+• Only the user's Microsoft 365 license.
+• Only the VM's CPU metric.
+• Only the subscription's monthly billing total.
+• Only the current Secure Score percentage.
+√ Entities, attack story, MITRE tactics, and first/last activity to understand spread.
+
+73. [Module 5] What happens during the Verify step?
+• The analyst permanently deletes every affected asset.
+• The analyst disables log collection to preserve system performance. regardless of retention, workspace design, or the user's assigned permissions.
+• The analyst assigns new Office licenses to affected users.
+√ The analyst checks evidence and automated findings and may pivot to advanced hunting.
+• The analyst accepts all automated actions without reviewing them.
+• The analyst converts every alert into a new Azure subscription.
+
+74. [Module 5] Which actions are examples of containment in the triage workflow?
+• Disable every analytic rule to reduce alert volume.
+√ Isolate a device, revoke sessions, suspend an account, remove malicious email, or block indicators.
+• Increase every user's Azure RBAC permissions so remediation is faster. with no separate authorization, tuning, or verification step anywhere else.
+• Move the incident into a new Microsoft 365 group.
+• Delete all evidence storage after copying one screenshot.
+• Convert affected users to guest accounts without revoking sessions.
+
+75. [Module 5] Why does incident classification matter beyond paperwork?
+√ Classification and determination can help tune future automation and detections.
+• Classification controls which Azure region stores the incident.
+• Classification automatically purges all false-positive telemetry. regardless of retention, workspace design, or the user's assigned permissions.
+• Classification assigns Microsoft 365 licenses to analysts.
+• Classification changes the source log into a different table.
+• Classification disables KQL queries for closed incidents.
+
+76. [Module 5] What is AIR in Defender XDR?
+• Application Identity Review, a PIM access-review feature.
+• Azure Identity Recovery, an SSPR emergency mode.
+√ Automated investigation and response that performs investigation/remediation workflows for supported alert types.
+• Azure Incident Routing, a service that sends packets through the SOC. without any extra connector, permission, or configuration being required.
+• Automatic Internet Routing, an Azure Firewall capability.
+• Audit Information Repository, a Service Trust Portal feature.
+
+77. [Module 5] Why might servers use semi-automatic remediation rather than full automatic?
+• Full automatic mode grants administrators too few Azure RBAC permissions.
+• Servers cannot be investigated by Defender XDR at all.
+√ A destructive automated action such as isolating a critical server could itself cause an outage.
+• Full automatic mode disables incident logging.
+• Servers have no network connections, so automatic containment provides no value. and it applies automatically to every data source and subscription in the tenant.
+• Semi-automatic mode is required for all endpoints by Microsoft licensing.
+
+78. [Module 5] What is a CASB?
+• A data-encryption key stored in Key Vault.
+• A password synchronization engine for hybrid identity. regardless of retention, workspace design, or the user's assigned permissions.
+• A PIM approval workflow for privileged roles.
+• A Microsoft 365 license-management group.
+• A cloud-native packet router for Azure VNets.
+√ A cloud access security broker that discovers and governs SaaS use and risk.
+
+79. [Module 5] What does Cloud Discovery in Defender for Cloud Apps do?
+• Scans Azure VM disks for operating-system vulnerabilities only.
+• Assigns a Purview sensitivity label to every discovered application. even if the relevant telemetry or security plan was never enabled.
+√ Uses network or endpoint telemetry to identify shadow-IT applications and assess their risk.
+• Deletes every application not published by Microsoft.
+• Creates every unsanctioned SaaS account automatically in Entra ID.
+• Routes SaaS traffic through Azure Firewall without configuration.
+
+80. [Module 5] What governance verdicts can Defender for Cloud Apps apply to discovered apps?
+• Assign every app a Global Administrator owner.
+• Convert applications into Azure resource groups.
+• Replace app OAuth permissions with Microsoft 365 licenses. and it applies automatically to every data source and subscription in the tenant.
+• Enable PHS or PTA for each app automatically.
+√ Sanction or unsanction applications, with blocking available on endpoints.
+• Create private endpoints for every SaaS application.
+
+81. [Module 5] What does Conditional Access App Control add?
+• A subscription route table that filters web sessions.
+• A password hash synchronization method for guest users. regardless of retention, workspace design, or the user's assigned permissions.
+• A new Azure RBAC role that replaces Conditional Access.
+• A Key Vault CMK for all SaaS data.
+√ Session-level reverse-proxy controls such as blocking downloads on unmanaged devices.
+• A permanent network tunnel to every SaaS application.
+
+82. [Module 5] What four CASB functions are described for Defender for Cloud Apps?
+• Collect, score, patch, and back up virtual machines.
+√ Discover shadow IT, protect information, defend against threats, and assess compliance.
+• Invite, redeem, review, and remove B2B guests only.
+• Authenticate, authorize, synchronize, and license Entra users. and it applies automatically to every data source and subscription in the tenant.
+• Route, NAT, filter, and encrypt Azure VNet packets.
+• Encrypt, hash, sign, and tokenize passwords.
+
+83. [Module 5] What is Microsoft Sentinel?
+• A data-classification service in Microsoft Purview.
+• A host-based antivirus agent installed on every Azure VM.
+√ A cloud-native SIEM and SOAR built on a Log Analytics workspace.
+• A passwordless authentication method for administrators.
+• A Microsoft Entra role used for security incident administration.
+• A network firewall that replaces NSGs and WAF.
+
+84. [Module 5] Why might a company choose Sentinel in addition to Defender XDR?
+• Defender XDR cannot create any incidents, so Sentinel is required for Microsoft alerts. even if the relevant telemetry or security plan was never enabled.
+• Defender XDR and Sentinel cannot be used together in the same environment.
+• Sentinel is needed only to assign Microsoft 365 security licenses.
+• Sentinel replaces all endpoint, email, and identity protection products.
+• Sentinel provides the Azure Firewall data plane and packet inspection.
+√ It adds multi-vendor/multi-cloud breadth, custom detections, and long-term arbitrary-data analysis.
+
+85. [Module 5] Where is Microsoft Sentinel primarily experienced in the course's current interface?
+• The Microsoft 365 admin center.
+• The Purview portal.
+• The Service Trust Portal.
+• The Entra admin center under Authentication methods.
+• Only the Azure portal, with no Defender integration.
+√ The Microsoft Defender portal.
+
+86. [Module 5] What date does the notes say the standalone Azure-portal Sentinel experience retires?
+• 30 June 2028.
+• 1 January 2027.
+• 31 March 2026.
+• It has no announced retirement date in the course.
+√ 31 March 2027.
+• 31 December 2026.
+
+87. [Module 5] What is the modern Sentinel component chain at a high level?
+• Create users → license users → sync passwords → assign RBAC → delete tenant.
+√ Connect data → store/query → visualize → detect/hunt → investigate → automate response.
+• Route packets → apply NSG → apply ASG → patch VM → classify data.
+• Create subscription → delete logs → disable alerts → close incidents → archive nothing.
+• Invite guests → redeem → federate Google → activate PIM → review licenses.
+• Hash passwords → encrypt disks → create VNet → deploy Bastion → enable SSPR.
+
+88. [Module 5] What is Sentinel Content hub?
+• The Purview catalog of sensitivity labels.
+• The repository of cloud-provider audit certificates.
+• The Azure Firewall blade for network and application rules.
+√ The in-product catalog of packaged solutions for data sources and security content.
+• The location where Azure subscriptions store billing invoices. even if the relevant telemetry or security plan was never enabled.
+• The Entra page for PIM catalog and access packages.
+
+89. [Module 5] What can a Content hub solution include?
+• Only a private endpoint to the data source.
+• Only a Microsoft 365 license and no technical content. regardless of retention, workspace design, or the user's assigned permissions.
+• Only a playbook permission assignment.
+√ A connector plus analytics templates, hunting queries, workbooks, and parsers.
+• Only a single KQL query with no connector.
+• Only an Azure Monitor Agent installer.
+
+90. [Module 5] Which connector category collects Windows Security Events through the current agent path?
+• The retired MMA/OMS connector as the preferred current design.
+• A PIM audit connector that installs no agent.
+• A Microsoft 365 billing connector.
+• A Google OAuth federation connector.
+√ An AMA-based agent connector using DCRs.
+• An Azure Firewall DNAT connector.
+
+91. [Module 5] Which connector types can bring Linux appliance logs into Sentinel?
+• SAML/OIDC only.
+• Private Link only. and it applies automatically to every data source and subscription in the tenant.
+• RDP/SSH only.
+√ Syslog/CEF via AMA.
+• Purview DLP only.
+• PHS/PTA only.
+
+92. [Module 5] What does the Azure Activity connector's setup launch?
+• A VM extension installation on every workload VM only.
+• A firewall route-table creation wizard.
+• A Google Cloud OAuth client setup wizard.
+• A Purview sensitivity-label publishing wizard.
+√ An Azure Policy assignment flow that deploys diagnostic settings at subscription scope.
+• A PIM activation request for the Sentinel administrator. with no separate authorization, tuning, or verification step anywhere else.
+
+93. [Module 5] At what scope should the Azure Activity policy assignment be made in the lab?
+√ The subscription.
+• The Log Analytics workspace table only.
+• The Entra tenant root only.
+• A single resource group only.
+• The Microsoft 365 group containing analysts.
+• One VM NIC only.
+
+94. [Module 5] Why does the Azure Activity setup include a remediation task?
+• It grants Global Administrator to the Sentinel service.
+• It disables diagnostic settings that were configured before Sentinel onboarding. and it applies automatically to every data source and subscription in the tenant.
+• It converts resource logs into Windows Security Events.
+• It deletes all historical Activity log records before enabling the connector.
+• It creates a new Azure subscription for every data connector.
+√ It applies the policy effect to existing in-scope subscriptions/resources so they begin streaming rather than waiting only for future creation.
+
+95. [Module 5] How long may the notes say to allow before the Azure Activity connector shows Connected?
+• It must be instant or the connector has failed permanently.
+• At least 24 hours.
+• Exactly 30 days.
+√ Up to about 15 minutes.
+• Exactly 90 minutes.
+• It connects only after the first Sentinel incident is closed.
+
+96. [Module 5] Which table receives the Azure Activity connector events?
+• Syslog.
+• SecurityEvent.
+√ AzureActivity.
+• OfficeActivity.
+• SigninLogs.
+• Perf.
+
+97. [Module 5] What is a Scheduled analytics rule?
+√ A custom KQL detection that runs on a configured schedule and lookback window.
+• A DCR that installs AMA on a VM.
+• A PIM policy that schedules role activation.
+• A WAF rule that blocks HTTP requests by signature.
+• A Defender XDR rule that cannot use KQL.
+• A playbook that changes incident severity without any detection. regardless of retention, workspace design, or the user's assigned permissions.
+
+98. [Module 5] What is an NRT analytics rule?
+• A fourteen-day batch report used only for compliance. without any extra connector, permission, or configuration being required.
+• A resource log diagnostic setting.
+√ A near-real-time detection type running at roughly one-minute cadence.
+• A PIM role assignment with no expiration.
+• An Azure Firewall network rule.
+• A monthly Secure Score calculation.
+
+99. [Module 5] What is Fusion in Sentinel?
+• A PIM feature combining Eligible and Active assignments. with no separate authorization, tuning, or verification step anywhere else.
+• A DLP feature combining two sensitivity labels.
+• A method for merging two Azure subscriptions.
+• A network-routing method combining BGP and UDR.
+√ A Microsoft-managed ML correlation mechanism for multi-stage attacks.
+• A KQL operator that joins two tables by user ID.
+
+100. [Module 5] What is entity mapping in a Sentinel analytics rule?
+• Mapping Key Vault secrets to data-encryption keys.
+• Mapping PIM activations to SSPR methods.
+√ Binding query columns to entities such as Account, IP, or Host for investigation context.
+• Mapping Azure subscriptions to Microsoft 365 licenses.
+• Mapping NSG rules to route-table entries.
+• Mapping a guest user's home password into the resource tenant. with no separate authorization, tuning, or verification step anywhere else.
+
+101. [Module 5] Why does entity mapping matter?
+√ Without mappings, an incident may lack meaningful identified accounts, IPs, or hosts.
+• Entity mappings change the raw log values stored in the source table.
+• Entity mappings are required to install the Azure Monitor Agent.
+• Entity mappings automatically isolate every entity in an incident.
+• Entity mappings replace KQL filters and schedules.
+• Entity mappings determine the Azure region where the workspace is stored. and it applies automatically to every data source and subscription in the tenant.
+
+102. [Module 5] What design problem occurs if a scheduled rule runs every 5 minutes but looks back 14 days?
+• Only the most recent five minutes are queried, so the fourteen-day window is ignored. even if the relevant telemetry or security plan was never enabled.
+• The lookback automatically changes to five minutes after the first run.
+• The rule actually runs only once every fourteen days.
+• The rule cannot create incidents because incident grouping requires equal values.
+• Sentinel rejects every rule whose lookback is longer than its frequency.
+√ The same old events can be rediscovered repeatedly, increasing duplicate alerts and query cost.
+
+103. [Module 5] What is the general discipline for frequency and lookback?
+• Use one-minute frequency for every query even when data arrives daily.
+√ Choose them coherently so the rule covers needed data without repeatedly re-detecting old events.
+• Frequency is irrelevant because Sentinel runs all rules in real time.
+• Always use the longest possible lookback regardless of how often the rule runs. even if the relevant telemetry or security plan was never enabled.
+• Disable incident creation when lookback is longer than five minutes.
+• Lookback must always be exactly fourteen days for scheduled rules.
+
+104. [Module 5] Why start with a smaller set of high-signal analytics rules?
+• Sentinel supports only five analytics rules per workspace. and it applies automatically to every data source and subscription in the tenant.
+√ Untuned rule volume creates alert fatigue and can hide real incidents.
+• Only hand-built rules can create incidents.
+• High-signal rules are the only kind that can use KQL.
+• More rules automatically reduce Secure Score.
+• Templates are billed per rule whether they run or not.
+
+105. [Module 5] What is hunting in Sentinel?
+• A DLP classification scan of SharePoint data.
+√ Proactive analyst-driven KQL investigation based on hypotheses.
+• A PIM access review for privileged users.
+• A scheduled Azure Policy compliance scan.
+• Automatic blocking performed before any event is observed. with no separate authorization, tuning, or verification step anywhere else.
+• A route-table check performed by Network Watcher.
+
+106. [Module 5] What is a bookmark in Sentinel hunting?
+• A permanent firewall allow rule.
+• A guest invitation redirect URL.
+• A DCR association.
+• A saved Microsoft 365 license assignment. and it applies automatically to every data source and subscription in the tenant.
+√ A preserved and annotated finding that can be attached to an incident.
+• A Key Vault recovery point.
+
+107. [Module 5] What is a watchlist in Sentinel?
+• A list of VNet routes used to direct traffic into the workspace.
+• A list of Key Vault keys waiting for rotation.
+• A list of Active PIM roles that Sentinel automatically activates. regardless of retention, workspace design, or the user's assigned permissions.
+• A list of DLP labels that blocks sensitive files.
+√ Reference data imported from CSV and joined into KQL for enrichment or noise reduction.
+• A list of Microsoft 365 licenses assigned to analysts.
+
+108. [Module 5] Which function is used to access a Sentinel watchlist in KQL?
+• watchlist::open().
+√ _GetWatchlist('name').
+• Get-MgWatchlist.
+• Import-Csv only.
+• Get-AzWatchlist.
+• SigninLogs.watchlist().
+
+109. [Module 5] What should happen when a hunting query repeatedly finds useful malicious behavior?
+• Move the query into a Microsoft 365 license policy.
+√ Promote the logic into a scheduled detection rule where appropriate.
+• Disable the underlying data connector to reduce alert volume.
+• Delete the query because hunting should never become automated detection.
+• Replace it with a PIM access review.
+• Convert the query into an Azure Firewall route.
+
+110. [Module 5] What is a Sentinel playbook?
+• A KQL table storing raw security events.
+• A Log Analytics workspace retention setting. regardless of retention, workspace design, or the user's assigned permissions.
+• A Defender for Servers plan.
+• An Entra Conditional Access policy.
+√ An Azure Logic App triggered or invoked from Sentinel to automate response.
+• An Azure Firewall Policy rule collection.
+
+111. [Module 5] What does the Change-Incident-Severity playbook do in the course example?
+• It installs AMA on every virtual machine.
+• It creates a new Azure subscription for each incident.
+√ It reads incident information and updates the incident severity.
+• It resets every affected user's password automatically.
+• It assigns Owner to the analyst who runs it.
+• It deletes all alerts after changing their source table. without any extra connector, permission, or configuration being required.
+
+112. [Module 5] Why can a freshly deployed playbook template show warnings on its connector steps?
+• Warnings mean the playbook has already run successfully.
+√ Its API connections still need to be authorized or configured.
+• The warnings indicate that KQL syntax in the analytics rule is invalid.
+• Every playbook requires Azure Firewall Premium first.
+• Logic Apps cannot use connectors with Microsoft Sentinel.
+• The workspace must be deleted and recreated before any connection can be authorized.
+
+113. [Module 5] What separate permission does Sentinel need to execute playbooks in a resource group?
+• A DCR association to the Logic App.
+• Global Administrator for every SOC analyst.
+• A Microsoft 365 E3 license on the Logic App.
+• A guest invitation to the resource group.
+√ Explicit playbook permissions granted in Sentinel settings.
+• Subscription Owner on every user in the tenant. regardless of retention, workspace design, or the user's assigned permissions.
+
+114. [Module 5] How can a playbook be invoked?
+• Only from the Microsoft 365 billing page.
+• Only when a PIM role activates.
+• Only by a Defender for Cloud recommendation Fix button. with no separate authorization, tuning, or verification step anywhere else.
+√ Manually from an incident or automatically through an automation rule.
+• Only manually from Azure Cloud Shell.
+• Only after the incident is closed.
+
+115. [Module 5] Why should destructive response automation be added later in the tuning process?
+• Destructive playbooks cannot be audited, so they are forbidden permanently. even if the relevant telemetry or security plan was never enabled.
+√ A noisy detection can trigger harmful automated actions against legitimate users or systems.
+• Logic Apps cannot disable users or isolate devices.
+• Tuning affects only KQL cost and has no impact on response safety.
+• Automation works only after two years of log retention.
+• Sentinel requires every playbook to begin with a destructive action.
+
+116. [Module 5] What precaution should destructive identity-response playbooks always respect?
+• Assign break-glass accounts to all Conditional Access policies.
+• Convert break-glass users into guests before automation starts.
+• Remove all audit alerts on emergency-account sign-ins.
+• Automatically disable every break-glass account first.
+√ Exclude or otherwise protect break-glass recovery accounts.
+• Make emergency accounts members of every automated-remediation group.
+
+117. [Module 5] What are the four NIST 800-61 incident-response phases used in the notes?
+√ Preparation; Detection & Analysis; Containment, Eradication & Recovery; Post-Incident Activity.
+• Collect; Score; Protect; Govern.
+• Reconnaissance; Initial Access; Lateral Movement; Exfiltration. and it applies automatically to every data source and subscription in the tenant.
+• Identify; Protect; Detect; Respond only.
+• Plan; Build; Deploy; Delete.
+• Invite; Redeem; Review; Remove.
+
+118. [Module 5] Which preparation activity ensures evidence will exist when an incident occurs?
+• Enable logging only after an alert is confirmed.
+• Rely on Secure Score to recreate missing events.
+• Keep crown-jewel resource logging disabled until storage costs are approved during response.
+√ Deploy DCRs and diagnostic settings before the incident.
+• Wait for the attacker to generate a Sentinel incident before connecting data sources.
+• Delete old telemetry to reduce noise before every investigation.
+
+119. [Module 5] Which tools belong mainly to Detection & Analysis in the cloud mapping?
+• Azure Bastion and VNet peering only.
+• Service Trust Portal audit downloads only.
+• PIM catalogs and access packages only.
+• Key Vault secret creation and certificate renewal only. and it applies automatically to every data source and subscription in the tenant.
+• Microsoft 365 billing and group-based licensing.
+√ Defender XDR incidents, Sentinel analytics/hunting, and Defender for Cloud alerts.
+
+120. [Module 5] What is the cloud-specific containment priority emphasized in the notes?
+• Delete the compromised VM immediately before collecting evidence.
+√ Contain the identity first by disabling accounts, revoking sessions/tokens, and rotating credentials.
+• Disable all security logging so the attacker cannot see monitoring activity.
+• Block a single IP first and assume the attacker cannot use any other session. and it applies automatically to every data source and subscription in the tenant.
+• Change only the subscription name and resource tags.
+• Wait for the provider to contain every customer-side identity incident.
+
+121. [Module 5] Why is blocking an IP often insufficient for cloud identity compromise?
+• Conditional Access cannot evaluate network locations.
+• Cloud workloads cannot have public IP addresses.
+• Azure never supports IP-based controls anywhere in the platform. even if the relevant telemetry or security plan was never enabled.
+• IP blocking automatically deletes every user token anyway.
+√ The attacker may already hold a valid session token that is not tied to one network cable or IP.
+• All attackers use exactly the same Microsoft-owned IP address.
+
+122. [Module 5] Which identity actions are mentioned for containment?
+• Assign Owner to compromised users so investigators can monitor them.
+√ Disable compromised identities, revoke sessions/refresh tokens, and rotate credentials or keys.
+• Delete all Conditional Access policies to simplify sign-in.
+• Disable password reset so credentials remain unchanged during the incident. even if the relevant telemetry or security plan was never enabled.
+• Convert every compromised member to a guest and keep sessions active.
+• Add the attacker to a PIM Eligible role for audit visibility.
+
+123. [Module 5] Which network actions are examples of containment?
+√ Apply NSG denies, remove public IPs, or tighten JIT access.
+• Open RDP/SSH to Any so responders can connect quickly.
+• Delete all route tables and allow Azure system routes only.
+• Replace firewall rules with Microsoft 365 group memberships.
+• Assign Application Security Groups as Entra directory roles.
+• Disable every NSG so the SOC can see more traffic.
+
+124. [Module 5] What is the recommended order for a compromised VM before stopping or rebuilding it?
+√ Snapshot first to preserve evidence, then isolate/stop/remediate.
+• Disable all logs before taking any evidence copy.
+• Open every management port before preservation.
+• Delete it immediately so the attacker cannot access the disk.
+• Remove the disk encryption key before the snapshot.
+• Reimage it first, then attempt to create a snapshot afterward. with no separate authorization, tuning, or verification step anywhere else.
+
+125. [Module 5] Why is deleting a compromised VM immediately a forensic mistake?
+• Deleted Azure VMs can never be redeployed from infrastructure as code. without any extra connector, permission, or configuration being required.
+• Azure bills more for deleted VMs than running ones.
+√ It can destroy volatile or disk evidence needed to understand the incident.
+• Deleted VMs cannot be removed from Secure Score.
+• Deletion makes all Sentinel analytics rules permanent.
+• Deleting the VM automatically deletes the entire Entra tenant.
+
+126. [Module 5] What should Eradication remove after containment?
+• Every legitimate role assignment and subscription.
+• The Log Analytics workspace containing investigation evidence.
+• The organization's break-glass accounts and all audit logs.
+• Every security policy so recovery begins from an unrestricted state. without any extra connector, permission, or configuration being required.
+• All backups created before the incident.
+√ Attacker persistence such as rogue service principals, guest users, inbox rules, or malicious CA exclusions.
+
+127. [Module 5] What does Recovery include?
+• Disable monitoring until the environment is fully stable.
+• Delete all historical evidence before bringing systems online.
+√ Restore from trusted backup or redeploy from IaC and re-enable with new credentials.
+• Return to the exact compromised credentials so applications do not need changes. regardless of retention, workspace design, or the user's assigned permissions.
+• Reopen standing management ports from Any source.
+• Remove all segmentation to avoid connectivity problems.
+
+128. [Module 5] What belongs to Post-Incident Activity?
+• Moving every affected workload to public IP access.
+• Removing incident classifications from Defender XDR.
+• Disabling new detections so the same attack does not create duplicate alerts. and it applies automatically to every data source and subscription in the tenant.
+• Deleting the case record and closing all related audit evidence.
+√ A blameless review, detection improvements, playbook updates, and metrics such as MTTD/MTTR.
+• Restoring the attacker's original access for reproducibility.
+
+129. [Module 5] Why do cloud forensics emphasize volatility?
+• Provider audit reports are deleted whenever a VM stops.
+• Immutable storage automatically destroys evidence after collection. and it applies automatically to every data source and subscription in the tenant.
+• KQL queries erase source logs after displaying them.
+• Cloud disks cannot be snapshotted after creation.
+• Azure resources cannot be isolated without deleting them.
+√ Instances may disappear through scaling and logs can age out, so evidence must be captured quickly.
+
+130. [Module 5] What is the cloud equivalent of a forensic disk image in the notes?
+• An NSG Effective security rules page only. and it applies automatically to every data source and subscription in the tenant.
+• A PIM role-assignment CSV.
+• A Microsoft 365 license export.
+√ A disk snapshot copied or preserved as evidence.
+• A guest invitation email.
+• A screenshot of the Azure portal only.
+
+131. [Module 5] Why can the customer not image the cloud provider's hypervisor directly?
+√ Shared responsibility limits customer access to provider-managed layers, so customers rely on provider logs and attestations there.
+• Azure encrypts hypervisors with the customer's Key Vault key, making them unreadable. even if the relevant telemetry or security plan was never enabled.
+• The hypervisor is stored in the customer's resource group but hidden by default.
+• Sentinel automatically copies the full hypervisor into the workspace.
+• Customers can image the hypervisor only after becoming Global Administrator.
+• Hypervisors contain no security-relevant evidence in cloud environments.
+
+132. [Module 5] What does API-driven acquisition add to cloud forensics?
+• APIs make chain of custody unnecessary because the provider owns the evidence. and it applies automatically to every data source and subscription in the tenant.
+• APIs can retrieve the provider's physical CCTV footage directly.
+• The API deletes source evidence after each export automatically.
+√ Snapshots and exports can be scripted, and those acquisition actions themselves are logged.
+• API acquisition bypasses all audit logging to preserve investigator privacy.
+• API acquisition converts evidence into a Microsoft 365 group.
+
+133. [Module 5] How should cloud forensic evidence be stored for strong chain of custody?
+• Store it in a public container so every investigator can download it easily.
+• Keep evidence only on the compromised VM so no copy can be altered.
+√ Use dedicated storage with immutable retention/legal hold, hashes, restricted RBAC, and access logs.
+• Use a normal mutable share with no retention because the Sentinel incident is sufficient by itself. even if the relevant telemetry or security plan was never enabled.
+• Remove all hashes because encryption makes integrity verification unnecessary.
+• Grant Contributor to the whole organization so access cannot be blocked during response.
+
+134. [Module 5] Why record hashes of evidence?
+• Hashes replace immutable storage and access logging completely.
+• Hashes automatically identify the attacker who created the evidence.
+• Hashes provide network routing from the evidence account to Sentinel.
+• Hashes convert every evidence file into a customer-managed key.
+√ Hashes help demonstrate that evidence has not changed.
+• Hashes let investigators decrypt encrypted disks without keys.
+
+135. [Module 5] How can a Sentinel incident support the case file?
+• It contains the cleartext passwords of all affected identities.
+• It stores the provider's hypervisor image automatically.
+√ Its timeline, alerts, entities, comments, and playbook runs preserve investigation context.
+• It cannot record analyst comments or automation history.
+• It replaces the need to preserve any underlying evidence or logs.
+• It can be used only while the incident is open and disappears after closure. regardless of retention, workspace design, or the user's assigned permissions.
+
+136. [Module 5] What is ISO/IEC 27017 focused on?
+• A list of attacker techniques used for detection engineering. without any extra connector, permission, or configuration being required.
+√ Cloud-specific security-control guidance for providers and customers.
+• A Microsoft-specific Secure Score formula.
+• A payment-card standard only.
+• PII protection in public-cloud processing specifically.
+• An incident-response lifecycle.
+
+137. [Module 5] What is ISO/IEC 27018 focused on?
+• Azure network routing and segmentation. even if the relevant telemetry or security plan was never enabled.
+• Privileged role activation.
+• Payment-card logging requirements only.
+√ Protection of PII in public-cloud processing contexts.
+• Endpoint malware detection.
+• Cloud penetration-testing scope.
+
+138. [Module 5] What does SOC 1 primarily concern?
+• Cardholder data security.
+• Public-cloud PII processing.
+√ Controls relevant to financial reporting.
+• Only cybersecurity attack techniques. without any extra connector, permission, or configuration being required.
+• PIM privileged access.
+• Azure resource routing.
+
+139. [Module 5] What does SOC 2 examine?
+√ Trust-services areas such as security, availability, processing integrity, confidentiality, and privacy.
+• Only WAF and DDoS configuration.
+• Only Microsoft Azure physical datacenter locations. even if the relevant telemetry or security plan was never enabled.
+• Only password hash synchronization.
+• Only a company's annual financial statements.
+• Only guest-user invitation settings.
+
+140. [Module 5] What is the difference between SOC 2 Type I and Type II?
+• Type I requires a pentest while Type II prohibits testing.
+• Type I is stronger because it proves months of operation while Type II checks design only. with no separate authorization, tuning, or verification step anywhere else.
+√ Type I assesses design at a point in time; Type II assesses operating effectiveness over a period.
+• Type I covers PII and Type II covers payment cards.
+• Type I is for Azure while Type II is for AWS only.
+• Type I is public while Type II is always an internal self-assessment.
+
+141. [Module 5] Which SOC 2 report does the module say is generally more valuable for vendor diligence?
+• Any report, because Type I and Type II contain identical assurance.
+• No SOC report, because cloud vendors cannot be independently audited.
+√ Type II, because it provides evidence of operation over time.
+• SOC 3 only, because a public summary is always more detailed.
+• Type I, because point-in-time design proves all future operation.
+• SOC 1 only, because security is a financial-reporting control.
+
+142. [Module 5] Which PCI-DSS requirement theme maps directly to diagnostic settings and Sentinel retention in the notes?
+• VNet peering.
+• Cloud deployment model selection.
+• PIM activation duration.
+• Guest invitation redemption.
+√ Logging and monitoring access.
+• Dynamic group membership.
+
+143. [Module 5] What GDPR timeline is highlighted for breach notification?
+• 30 days.
+• 90 days.
+• 7 days.
+√ 72 hours.
+• 48 hours.
+• 24 hours.
+
+144. [Module 5] Why can the Log Analytics workspace region matter for GDPR?
+• The region determines which Azure RBAC roles exist.
+• Workspace region affects only billing and never compliance.
+• The workspace region changes the user's nationality.
+√ Telemetry location can be part of data-residency and processing obligations.
+• KQL can run only in regions covered by GDPR.
+• GDPR requires every organization to use West Europe regardless of business location.
+
+145. [Module 5] Where can Microsoft provider audit reports and ISO certificates be obtained?
+• Microsoft Entra My Access.
+• Azure Network Watcher.
+√ Microsoft Service Trust Portal.
+• Microsoft 365 group settings.
+• Microsoft Sentinel Content hub.
+• Azure Firewall Policy.
+
+146. [Module 5] Does a provider's ISO certificate make the customer automatically compliant?
+• Yes, but only for SaaS, where customers have no security duties.
+• No, because ISO applies only to on-premises environments.
+• Yes; auditors are not allowed to examine customer identity or workload configuration.
+√ No; it covers the provider's side, while the customer must implement and evidence its own responsibilities.
+• No, because providers cannot receive ISO certification for cloud services.
+• Yes; provider certification automatically certifies every customer tenant and workload. with no separate authorization, tuning, or verification step anywhere else.
+
+147. [Module 5] Which Defender for Cloud feature maps live resources against standards such as ISO 27001 or PCI-DSS?
+• Microsoft Defender for Cloud Apps.
+• Microsoft Entra PIM.
+• Microsoft 365 group-based licensing.
+• Azure Bastion.
+• Azure Firewall Manager.
+√ Regulatory compliance.
+
+148. [Module 5] What does Regulatory compliance provide?
+√ Passing/failing assessments per control and exportable evidence over time.
+• Only Entra sign-in risk detections.
+• Only raw packet captures from Azure networks.
+• Automatic legal approval to process any type of data.
+• A one-time certificate that removes the need for future assessments. and it applies automatically to every data source and subscription in the tenant.
+• A replacement for all customer security controls.
+
+149. [Module 5] Which Microsoft service plays a similar compliance-management role for the M365/data estate?
+• Network Watcher.
+• Azure Bastion.
+• Azure Firewall Premium.
+√ Microsoft Purview Compliance Manager.
+• Microsoft Entra Connect.
+• Defender for Identity sensor. with no separate authorization, tuning, or verification step anywhere else.
+
+150. [Module 5] Is penetration testing your own Azure/M365 resources categorically forbidden?
+√ No; it is allowed within Microsoft's penetration-testing Rules of Engagement.
+• Yes; any security testing of Azure resources requires Microsoft to perform it for you.
+• Only if the customer disables all monitoring first.
+• Yes; only physical datacenter staff may run vulnerability tests.
+• No, and there are no restrictions on targets or techniques.
+• Only if the tester is a Global Administrator in Microsoft's own tenant.
+
+151. [Module 5] What is an important Azure penetration-testing boundary?
+• Other customers are acceptable targets if scanning intensity is low.
+• Any Azure IP may be tested because public cloud has no ownership boundary.
+• Microsoft infrastructure may be tested freely after a normal support ticket. with no separate authorization, tuning, or verification step anywhere else.
+√ Test only resources you own or are authorized to test, not other customers or Microsoft infrastructure.
+• The tester may expand scope automatically when a finding appears related.
+• Authorization is unnecessary if the tester uses only passive techniques.
+
+152. [Module 5] What testing activity is prohibited by the provider rules summarized in the notes?
+• Normal authorized vulnerability scanning within your own scope.
+• Reviewing your own application's authentication controls.
+• Running a scoped web application test against your own tenant.
+√ Denial-of-service testing against the cloud platform/services.
+• Testing a customer-owned EC2 or Azure VM under the provider's allowed rules.
+• Validating whether your own Sentinel detections see the test activity.
+
+153. [Module 5] What social-engineering boundary is explicitly mentioned for Microsoft testing?
+• Microsoft employees must approve every phishing simulation against your own staff.
+• Phishing any third party is always allowed if the test comes from Azure.
+• Social engineering is required before a cloud pentest is considered valid.
+• Phishing is the only testing method exempt from Rules of Engagement.
+• Microsoft employees are the recommended targets for validating Sentinel detections.
+√ Do not phish Microsoft employees.
+
+154. [Module 5] What should a defensible pentest scope document include?
+• Only the final report; planning and scope do not need to be documented.
+• No written authorization if the resources belong to the organization.
+√ Authorization, tenant/subscription scope, time windows, exclusions, provider rules, abort channel, and data-handling expectations.
+• Only the tester's name and a list of favorite security tools.
+• Only the public IP of the first target because scope can expand automatically. with no separate authorization, tuning, or verification step anywhere else.
+• Only the customer's Azure bill and Secure Score.
+
+155. [Module 5] Why ask 'did Sentinel see the tester?' after each pentest finding?
+• Sentinel must approve every exploit before it can execute.
+√ A pentest can also validate detection coverage, not just preventive weaknesses.
+• If Sentinel missed it, the vulnerability itself no longer matters.
+• Sentinel replaces the need for the tester's technical evidence.
+• The question determines whether the provider will pay for remediation. and it applies automatically to every data source and subscription in the tenant.
+• A finding is invalid unless Sentinel automatically blocks it.
+
+156. [Module 5] What does 'harvest now, decrypt later' mean?
+• It is a Sentinel retention strategy for archived logs.
+• It means collecting password hashes for immediate rainbow-table cracking only. regardless of retention, workspace design, or the user's assigned permissions.
+• Attackers delete encrypted data now and ask the victim to restore it later.
+• It describes ordinary ransomware encryption of local files.
+√ Attackers may collect encrypted data now and hope future quantum capability can decrypt long-lived secrets later.
+• It describes rotating customer-managed keys before data is stored.
+
+157. [Module 5] What first practical PQC step does the module recommend?
+√ Build a cryptographic inventory showing where RSA/ECC and long-lived cryptography are used.
+• Wait until quantum decryption is publicly available before planning migration. even if the relevant telemetry or security plan was never enabled.
+• Delete all historical encrypted backups.
+• Replace every algorithm immediately without identifying dependencies.
+• Disable TLS until all systems support post-quantum algorithms.
+• Move all cryptographic keys into user passwords.
+
+158. [Module 5] Which post-quantum algorithms are named in the notes?
+• RSA-2048 and ECC P-256. even if the relevant telemetry or security plan was never enabled.
+• PBKDF2 and bcrypt.
+• TLS 1.2 and SMB 3.
+• AES-256 and SHA-256.
+√ ML-KEM (Kyber) and ML-DSA (Dilithium).
+• SAML and OAuth.
+
+159. [Module 5] What AI-enabled defender capabilities are mentioned?
+• Automatic legal certification of every cloud environment.
+• Automatic deletion of all compromised workloads before evidence collection.
+• Guaranteed zero false positives in Sentinel.
+√ AI-assisted triage, natural-language-to-KQL, and incident summarization.
+• Automatic elimination of the need for telemetry and human review.
+• Permanent replacement of least privilege and MFA.
+
+160. [Module 5] What new AI-system attack surfaces are mentioned?
+• Only traditional DDoS and password spray.
+• Only expired SAML certificates.
+• Only physical theft of GPU servers.
+• Only VNet CIDR overlap.
+• Only SQL injection against legacy databases.
+√ Prompt injection and data poisoning.
+
+161. [Lab 5.1 — Monitoring and KQL] What central workspace did the course use for raw log queries?
+√ law-cloudsec.
+• Test-FW-VN.
+• rg-cloudsec-pim.
+• AzureBastionSubnet.
+• sg-CS-O365.
+• ONPREM-DC01.
+
+162. [Lab 5.1 — Monitoring and KQL] Why was law-cloudsec reused later by Defender for Cloud and Sentinel?
+• Sentinel cannot onboard any workspace that has previously been used by Azure Monitor.
+• The name law-cloudsec grants special built-in licensing not available to other workspaces.
+• Defender for Cloud automatically deletes the workspace after its lab.
+• The workspace is actually an Azure Firewall instance reused by different labs.
+• Each security service requires a separate copy of the same workspace name in a different tenant. even if the relevant telemetry or security plan was never enabled.
+√ The course intentionally consolidated telemetry so multiple security functions could use the same data store.
+
+163. [Lab 5.1 — Monitoring and KQL] Which query pattern checks whether monitored machines have reported recently?
+• OfficeActivity | route 0.0.0.0/0 to Computer.
+• SecurityEvent | where EventID == 0 | delete all.
+• AzureActivity | summarize Password = max(UserPassword) by Computer.
+√ Heartbeat | summarize LastSeen = max(TimeGenerated) by Computer.
+• SigninLogs | project FirewallPrivateIP.
+• Perf | assign role Owner by Computer.
+
+164. [Lab 5.1 — Monitoring and KQL] A VM's LastSeen is much older than roughly ten minutes. What does the module suggest suspecting?
+• A customer-managed key rotation. with no separate authorization, tuning, or verification step anywhere else.
+• A healthy JIT policy.
+• A WAF false positive.
+• A successful PIM activation.
+√ An agent or telemetry-path problem.
+• A valid guest invitation.
+
+165. [Lab 5.1 — Monitoring and KQL] Which query counts failed Windows logons by account and hour?
+• OfficeActivity with UserType Guest.
+√ SecurityEvent with EventID 4625 summarized by TargetAccount and bin(TimeGenerated, 1h).
+• SigninLogs with EventID 4625 summarized by ResourceGroup. regardless of retention, workspace design, or the user's assigned permissions.
+• Heartbeat with OperationNameValue delete.
+• AzureActivity with ResultType 0 summarized by Caller.
+• Perf with CPU percentage grouped by PIM role.
+
+166. [Lab 5.2 — Defender for Cloud] Where did the lab enable workload-protection plans?
+• Microsoft 365 admin center > Billing > Licenses.
+• Microsoft Entra > Authentication methods > Policies. and it applies automatically to every data source and subscription in the tenant.
+• Network Watcher > Effective routes.
+• Purview > Data Map > Sources.
+• Sentinel > Content hub > Workbooks.
+√ Defender for Cloud > Environment settings > subscription > Defender plans.
+
+167. [Lab 5.2 — Defender for Cloud] Which Defender for Servers level was enabled?
+• No Defender plan was enabled.
+• Defender for SQL.
+• Defender for Storage.
+√ Plan 2.
+• Free CSPM only.
+• Plan 1 only.
+
+168. [Lab 5.2 — Defender for Cloud] Why was Plan 2 important for the later JIT lab?
+√ Plan 2 includes Just-in-Time VM access.
+• Plan 2 makes all VM resource logs enabled by default with no diagnostic settings.
+• Plan 2 automatically assigns Virtual Machine Administrator Login to every user.
+• Plan 2 removes the need for NSGs on management ports.
+• Plan 2 creates an Azure Firewall Premium instance for each VM.
+• Plan 2 converts local VM accounts into Entra accounts automatically.
+
+169. [Lab 5.2 — Defender for Cloud] What is the distinction the lab reinforces between posture and protection?
+• CSPM is paid while all Defender plans are free.
+• CSPM handles only email phishing while Defender plans manage Microsoft 365 licensing.
+• CSPM replaces Azure Monitor while Defender plans replace Log Analytics.
+• The two terms describe the same capability and differ only in branding.
+• CSPM grants Azure RBAC roles while Defender plans synchronize identities.
+√ CSPM evaluates configuration posture; Defender plans add runtime workload protection.
+
+170. [Lab 5.3 — Just-in-Time VM Access] What should you observe in the NSG immediately after an approved JIT request?
+• The entire NSG is removed for the duration of the request.
+√ A temporary allow rule scoped to the approved source and time window.
+• A permanent Allow-RDP-Any rule created at priority 100.
+• All inbound rules change from Deny to Allow.
+• The VM receives a new public IP instead of an NSG rule.
+• A PIM Active assignment appears in place of the network rule. without any extra connector, permission, or configuration being required.
+
+171. [Lab 5.3 — Just-in-Time VM Access] What should happen after the JIT window expires?
+• The VM is deleted automatically.
+• The NSG is detached from the NIC and subnet.
+• The firewall UDR is removed from the subnet.
+√ The temporary allow rule disappears.
+• The temporary rule becomes a permanent allow.
+• The requester becomes VM Administrator permanently.
+
+172. [Lab 5.3 — Just-in-Time VM Access] Why is the before/after NSG screenshot useful?
+• It shows that the VM's public IP changes every three hours.
+• It demonstrates that Defender for Servers disables logging while access is open. with no separate authorization, tuning, or verification step anywhere else.
+• It proves that JIT stores the user's password inside the NSG.
+• It shows that JIT replaces Azure RBAC with source-IP authentication.
+• It proves the VM disk was encrypted during the access request.
+√ It visually proves that management access is temporary rather than standing open.
+
+173. [Lab 5.3 — Just-in-Time VM Access] An old priority-100 Allow-RDP-Any rule is still present. What should you do?
+• Move it to priority 65000 so it becomes an Azure default rule.
+• Change it to Allow-SSH-Any and leave both ports open.
+• Keep it because JIT requires a permanent allow beneath its temporary rule.
+• Convert it into an Azure Firewall application rule.
+• Disable Defender for Servers so the manual rule becomes the official JIT rule. without any extra connector, permission, or configuration being required.
+√ Remove the legacy standing allow because it defeats the intended JIT exposure reduction.
+
+174. [Lab 5.4 — Microsoft Sentinel] What did installing the Azure Activity solution from Content hub provide?
+• It automatically merged every Defender XDR incident before the workspace was onboarded. even if the relevant telemetry or security plan was never enabled.
+√ The Azure Activity connector together with packaged analytics content such as templates and workbooks.
+• It replaced AMA on the VM with a special Activity-log collector.
+• It immediately streamed all events with no connector setup or policy assignment.
+• It created a VM diagnostic setting for guest operating-system security events.
+• It gave Sentinel permission to run every Logic App in the resource group.
+
+175. [Lab 5.4 — Microsoft Sentinel] After installing the solution, why did you still need to configure the connector?
+• The connector installs Azure Firewall and routes the Activity log through it.
+• The Content hub installation already streams every event, so connector configuration is only cosmetic. regardless of retention, workspace design, or the user's assigned permissions.
+√ Installing content makes the connector available; data flow still requires the connector's setup and policy/diagnostic configuration.
+• The connector is used only to rename the workspace and has no effect on ingestion.
+• The connector creates PIM roles for every account found in AzureActivity.
+• The connector is needed only to assign Microsoft 365 licenses to Sentinel analysts.
+
+176. [Lab 5.4 — Microsoft Sentinel] At what scope did the Azure Activity connector's policy assignment need to be targeted?
+• A single resource-group scope.
+√ Subscription scope.
+• One user scope.
+• The Microsoft 365 tenant billing scope.
+• One NIC scope.
+• One VM scope.
+
+177. [Lab 5.4 — Microsoft Sentinel] What was the purpose of the remediation task during Azure Activity onboarding?
+• Convert all data into Windows SecurityEvent records.
+• Disable Defender XDR alerts to prevent duplicates.
+• Create a new Entra tenant for Sentinel.
+• Grant Global Administrator to the Logic App.
+√ Apply the desired diagnostic configuration to existing in-scope resources/subscriptions.
+• Delete existing Activity log history before enabling new ingestion. regardless of retention, workspace design, or the user's assigned permissions.
+
+178. [Lab 5.4 — Microsoft Sentinel] Which existing analytics template did the lab enable?
+• RDP brute-force from every Internet address. without any extra connector, permission, or configuration being required.
+• Impossible travel for Google guests.
+• DLP policy violation in SharePoint.
+• High user risk requires password reset.
+√ Suspicious number of resource creation or deployment activities.
+• Key Vault CMK purge-protection disabled.
+
+179. [Lab 5.4 — Microsoft Sentinel] What custom activity did the hand-built rule detect?
+√ Deletion of a JIT VM access policy.
+• A Windows successful logon event 4624.
+• Creation of a B2B guest invitation.
+• A Google OAuth test-user sign-in.
+• An Office 365 group license assignment.
+• An Azure Firewall DNS allow action.
+
+180. [Lab 5.4 — Microsoft Sentinel] Which table and resource provider does the JIT-deletion detection query use?
+• Perf filtered for Microsoft.Security.
+• SecurityEvent filtered for Microsoft.Compute only. even if the relevant telemetry or security plan was never enabled.
+• SigninLogs filtered for Microsoft.Graph.
+• Syslog filtered for Microsoft.Network.
+• OfficeActivity filtered for Microsoft.Purview.
+√ AzureActivity filtered for Microsoft.Security operations.
+
+181. [Lab 5.4 — Microsoft Sentinel] Which operation name is the custom JIT-deletion query looking for?
+√ Microsoft.Security/locations/jitNetworkAccessPolicies/delete.
+• Microsoft.Authorization/roleAssignments/delete only. without any extra connector, permission, or configuration being required.
+• Microsoft.Compute/virtualMachines/start.
+• Microsoft.KeyVault/vaults/secrets/read.
+• Microsoft.Entra/users/invitations/delete.
+• Microsoft.Network/networkSecurityGroups/write.
+
+182. [Lab 5.4 — Microsoft Sentinel] How often was the custom JIT-deletion rule scheduled to run?
+• Every 1 minute. with no separate authorization, tuning, or verification step anywhere else.
+• Every 24 hours.
+√ Every 5 minutes.
+• Every 14 days.
+• Only manually.
+• Every 1 hour.
+
+183. [Lab 5.4 — Microsoft Sentinel] Why would a 14-day lookback be a bad match for that 5-minute rule frequency?
+• AzureActivity retains only five minutes of data.
+√ Old matching events would be found over and over, driving duplicates and unnecessary query cost.
+• The rule would run only once every fourteen days.
+• Sentinel would truncate the lookback to five minutes automatically. without any extra connector, permission, or configuration being required.
+• The rule could no longer map Caller to an Account entity.
+• The data connector would disconnect after the first alert.
+
+184. [Lab 5.4 — Microsoft Sentinel] What did the Change-Incident-Severity Logic App represent?
+• A data connector that ingests Azure Activity. and it applies automatically to every data source and subscription in the tenant.
+• A DCR that installs AMA.
+• A PIM policy that changes role duration.
+• A Defender for Cloud recommendation.
+• An Azure Firewall rule collection.
+√ A SOAR playbook that automates an incident action.
+
+185. [Lab 5.4 — Microsoft Sentinel] Why could the deployed playbook template initially show warnings?
+• Sentinel does not support Logic Apps in any subscription.
+√ Its API connections needed authorization/configuration.
+• The incident had already been closed.
+• The workspace name law-cloudsec was invalid.
+• The KQL query was stored in the wrong Log Analytics table.
+• The Azure Activity connector was using the Defender portal.
+
+186. [Lab 5.4 — Microsoft Sentinel] What permission step was required before Sentinel could run the playbook in the resource group?
+• Give the playbook an Office 365 E3 license.
+• Create a guest invitation for the Sentinel service. regardless of retention, workspace design, or the user's assigned permissions.
+• Make the Logic App subscription Owner permanently.
+√ Grant Sentinel the appropriate Playbook permissions.
+• Add the Logic App to SSPRTesters.
+• Assign every analyst Global Administrator.
+
+187. [Lab 5.4 — Microsoft Sentinel] What does an automation rule add to the playbook design?
+√ It can trigger the playbook automatically when matching incidents are created or updated.
+• It installs the Azure Activity data connector.
+• It stores the playbook's client secret in the incident. regardless of retention, workspace design, or the user's assigned permissions.
+• It assigns Entra login roles to VMs.
+• It creates the KQL source table.
+• It replaces every analytic rule in the workspace.
+
+188. [Lab 5.4 — Microsoft Sentinel] Why did the course emphasize the Microsoft Defender portal for Sentinel?
+• Azure Activity can be connected only if Defender for Endpoint is installed.
+• Sentinel can ingest only Defender XDR data in the new portal.
+√ It is the current primary experience and unifies Sentinel with Defender XDR incident workflows.
+• The Defender portal is the only place where KQL exists.
+• The Defender portal replaces Log Analytics storage with Microsoft 365 mailboxes. regardless of retention, workspace design, or the user's assigned permissions.
+• The Azure portal no longer contains any Azure resources.
+
+189. [Module 5] An incident contains a phishing email, malicious endpoint activity, and an anomalous sign-in. Which three Microsoft products likely contributed?
+• Defender for Cloud Apps, Azure Monitor, and Microsoft 365 billing. regardless of retention, workspace design, or the user's assigned permissions.
+√ Defender for Office 365, Defender for Endpoint, and Microsoft Entra ID Protection.
+• Defender for Identity, Key Vault, and Network Watcher only.
+• PIM, SSPR, and Entra Connect.
+• Azure Firewall, Microsoft Purview, and Azure Bastion.
+• Azure DDoS Protection, WAF, and Application Security Groups.
+
+190. [Module 5] A company needs two years of security logs from Azure, AWS, Linux, and many appliance vendors. Which platform better fits than XDR alone?
+• Azure Firewall because packet filtering is equivalent to long-term log retention.
+• Microsoft 365 admin center because license history can replace security telemetry.
+• Defender XDR alone because it stores any arbitrary vendor log by default without connectors.
+• Purview DLP because data governance stores all infrastructure security events.
+√ Microsoft Sentinel because it is designed for broad multi-vendor ingestion and retention.
+• PIM because role audit history is a general-purpose SIEM.
+
+191. [Module 5] Why is 'more analytics rules = more security' a misconception?
+• Rules cannot be changed after creation, so quantity has no effect.
+• Analytics rules are used only for billing and do not create alerts. with no separate authorization, tuning, or verification step anywhere else.
+• Sentinel has a hard technical limit of ten analytics rules.
+√ Poorly tuned rules create noise and alert fatigue that can hide real threats.
+• Microsoft recommends enabling every template without review.
+• Every additional rule disables one data connector.
+
+192. [Module 5] Why does identity-first containment align with Zero Trust?
+• It grants more privilege so responders can act quickly.
+• It removes the need for network and compute containment.
+• It preserves attacker sessions so forensic logs remain complete.
+• It assumes the internal network is always trustworthy after one login. with no separate authorization, tuning, or verification step anywhere else.
+√ It assumes credentials or sessions may already be compromised and rapidly revokes trust.
+• It disables MFA to avoid locking out the user.
+
+193. [Module 5] A compromised user account still has active refresh tokens after the password is changed. What additional containment action is appropriate?
+• Disable all diagnostic settings.
+• Delete the Log Analytics workspace.
+• Add the user to a Microsoft 365 group.
+• Assign the user Reader at subscription scope.
+• Open a JIT RDP rule to the user's workstation. even if the relevant telemetry or security plan was never enabled.
+√ Revoke sessions/refresh tokens so existing authenticated access is cut off.
+
+194. [Module 5] Why should logging and monitoring be considered part of incident preparation rather than just detection?
+• Resource logs are always on by default, so preparation has no logging task.
+• Logs are needed only for compliance audits, not incident response.
+• Detection tools can always reconstruct full historical data after compromise. and it applies automatically to every data source and subscription in the tenant.
+√ Without preconfigured telemetry, later investigation may have no evidence to analyze.
+• Incident preparation concerns people only and never technology.
+• Only the provider is allowed to collect cloud telemetry.
+
+195. [Module 5] What does chain of custody protect in an investigation?
+√ The integrity and documented handling history of evidence.
+• The cloud provider's billing process.
+• The attacker's ability to keep using a stolen session. without any extra connector, permission, or configuration being required.
+• The route priority of the forensic storage account.
+• The user's Microsoft 365 license assignment.
+• The PIM activation duration for investigators.
+
+196. [Module 5] A compliance dashboard shows a failing assessment. What is the intended governance loop?
+• License → route table → firewall → password reset.
+• Policy → public exposure → penetration test → deletion.
+• Incident → guest invitation → PIM activation → billing.
+• Assessment → disable monitoring → remove control → evidence.
+√ Standard → assessment → remediation → evidence.
+• Standard → delete logs → ignore finding → certification.
+
+197. [Module 5] Why should genuinely not-applicable compliance controls be documented when exempted?
+• Documentation is unnecessary because Secure Score records legal justification.
+• An exemption converts the control to a passed technical assessment.
+√ The exception itself needs defensible reasoning and audit evidence.
+• Not-applicable controls should be silently hidden from auditors.
+• Exempted controls disappear from all future audit requirements automatically.
+• Exemptions are allowed only if the provider issues a new ISO certificate.
+
+198. [Module 5] Which provider evidence source is analogous to AWS Artifact in the Microsoft ecosystem?
+• Azure Monitor Metrics.
+√ Microsoft Service Trust Portal.
+• Defender XDR Action center.
+• Microsoft Sentinel Content hub.
+• Microsoft Entra My Access.
+• Network Watcher.
+
+199. [Module 5] What is the difference between a Sentinel playbook and an automation rule?
+√ The playbook is the Logic App workflow; the automation rule defines when Sentinel should invoke actions such as that playbook.
+• A playbook is a KQL table and an automation rule is a Microsoft 365 license.
+• A playbook assigns Azure RBAC roles while an automation rule creates guest users. regardless of retention, workspace design, or the user's assigned permissions.
+• A playbook detects threats while an automation rule stores raw logs.
+• A playbook installs AMA while an automation rule creates DCRs.
+• They are the same object with two portal labels.
+
+200. [Module 5] What is the relationship between Defender XDR and Sentinel after onboarding into the Defender portal?
+• Defender XDR is used only for AWS data after integration.
+• Defender XDR deletes the Log Analytics workspace and moves all raw logs into Exchange. with no separate authorization, tuning, or verification step anywhere else.
+√ They can share a unified incident queue and investigation surface while retaining complementary depth and breadth.
+• The two products cannot coexist in one tenant.
+• Sentinel replaces all Defender XDR products and disables their alerts.
+• Sentinel becomes an Azure Firewall policy inside Defender XDR.
+
+201. [Module 5] A SOC wants to block downloads from unmanaged devices while still allowing browser access to a SaaS app. Which control fits?
+• Key Vault purge protection.
+• PIM role activation.
+• Entra Connect PHS.
+• Azure Bastion.
+√ Conditional Access App Control through Defender for Cloud Apps.
+• Azure DDoS Network Protection. and it applies automatically to every data source and subscription in the tenant.
+
+202. [Module 5] A company wants to know which unsanctioned SaaS services employees are using. Which capability fits?
+• Purview sensitivity labels only. regardless of retention, workspace design, or the user's assigned permissions.
+• Azure Firewall Effective routes.
+• Microsoft Entra PIM.
+• Key Vault access policies.
+√ Defender for Cloud Apps Cloud Discovery.
+• Azure Bastion session recording.
+
+203. [Module 5] What does a Microsoft security analytics rule type do in Sentinel?
+√ Promotes alerts from Microsoft security products into the incident pipeline.
+• Creates a PIM Eligible role assignment.
+• Blocks web requests using OWASP signatures.
+• Installs the Azure Monitor Agent on Windows hosts.
+• Assigns Office 365 licenses to incident responders. regardless of retention, workspace design, or the user's assigned permissions.
+• Generates a customer-managed storage key.
+
+204. [Module 5] What does an Anomaly analytics rule type represent at a high level?
+• A resource route that deviates from the VNet's default route. with no separate authorization, tuning, or verification step anywhere else.
+• A PIM activation longer than its policy maximum.
+• A user whose Microsoft 365 license failed to assign.
+√ A detection based on anomalous behavior rather than only a fixed custom schedule query.
+• A DCR with more than one destination.
+• A guest invitation that remains PendingAcceptance.
+
+205. [Module 5] Why is an untuned impossible-travel rule dangerous when wired directly to a 'disable user' playbook?
+• The playbook would only affect guest users, never administrators.
+√ Legitimate network-location changes can create false positives and mass-disable real users.
+• Impossible travel can never produce a false positive.
+• The rule automatically excludes VPN egress locations by default.
+• Sentinel requires every destructive playbook to target at least 300 users. regardless of retention, workspace design, or the user's assigned permissions.
+• Logic Apps cannot disable Entra users.
+
+206. [Module 5] What should automation generally do before destructive containment is trusted?
+• Use every new detection for automatic account disablement immediately.
+• Grant the playbook Global Administrator with no scope restrictions.
+• Skip tuning because automation eliminates false positives.
+• Remove break-glass exclusions so automation treats all accounts equally. without any extra connector, permission, or configuration being required.
+• Disable alert classification so the playbook can run faster.
+√ Observe detection quality, automate enrichment first, then add destructive actions carefully.
+
+207. [Module 5] What is the closest AWS conceptual bridge listed for Azure Monitor telemetry?
+• AWS Shield Advanced only.
+• AWS IAM Identity Center only. regardless of retention, workspace design, or the user's assigned permissions.
+• AWS Artifact only.
+√ Amazon CloudWatch for metrics/logs plus AWS CloudTrail for control-plane audit.
+• Amazon Macie only.
+• Amazon Cognito only.
+
+208. [Module 5] What is the closest AWS posture-management bridge listed for Defender for Cloud?
+√ AWS Security Hub plus AWS Config, with Inspector contributing vulnerability findings.
+• AWS Artifact only.
+• Amazon S3 plus Glacier.
+• AWS Route 53 plus CloudFront.
+• AWS Direct Connect plus Transit Gateway. with no separate authorization, tuning, or verification step anywhere else.
+• Amazon Cognito plus IAM Identity Center.
+
+209. [Module 5] What AWS service is used as the closest bridge for Defender for Servers threat detection?
+• Route 53.
+√ Amazon GuardDuty.
+• CloudFormation.
+• AWS Artifact.
+• AWS Backup.
+• Amazon Macie only.
+
+210. [Module 5] What is the closest AWS pattern listed for JIT-style removal of standing management ports?
+• AWS Artifact.
+• Amazon Macie.
+• S3 Object Lock.
+√ EC2 Instance Connect or Systems Manager Session Manager.
+• IAM Identity Center group licensing. without any extra connector, permission, or configuration being required.
+• CloudFront Functions.
+
+211. [Module 5] What is the closest AWS SOAR pattern mentioned for Sentinel playbooks?
+• Route 53 with Resolver.
+• IAM groups with SCPs only.
+• S3 Lifecycle with Glacier.
+• AWS Artifact with Audit Manager. even if the relevant telemetry or security plan was never enabled.
+√ EventBridge triggers with Lambda or Step Functions actions.
+• CloudFront with WAF rules.
+
+212. [Module 5] What is the final course message about operations and governance?
+• The provider's certifications replace customer monitoring and incident response.
+• Once preventive controls are enabled, telemetry and governance can be skipped.
+√ Security must be observable, defensible, responsive, and evidenced to auditors—not merely configured once.
+• Compliance should be treated as an annual paperwork exercise separate from operational tooling. even if the relevant telemetry or security plan was never enabled.
+• Cloud security ends after identities and networks are configured.
+• More security products automatically equal stronger defense regardless of configuration.
