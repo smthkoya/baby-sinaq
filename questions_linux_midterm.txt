@@ -1,0 +1,653 @@
+1. Who created the first version of the Linux kernel in 1991?
+• Richard Stallman
+√ Linus Torvalds
+• Steve Wozniak
+• Dennis Ritchie
+
+2. Which desktop environment is the default for Ubuntu?
+√ GNOME
+• LXDE
+• MATE
+• Enlightenment
+
+3. Which symbol is used in Linux to send the output of one command to another command?
+√ |
+• &
+• ;
+• >
+
+4. In the output of the id command, what does groups= list?
+• The user’s password hash
+√ The groups the user is a member of
+• All usernames on the system
+• The user’s home directory path
+
+5. In /etc/shadow, what does a * in the password field mean for a user account?
+• The account is locked and cannot be used for login
+• The account password is empty and can be used without authentication
+√ The account has no valid password and cannot be used to log in with a password
+• The account password is expired but can be reset at next login
+
+6. Which tar option is used to list the contents of an archive without extracting it?
+√ -t
+• -v
+• -c
+• -l
+
+7. Which Linux file stores encrypted user passwords and password policy information?
+• /etc/config
+• /etc/passwd
+• /etc/security
+√ /etc/shadow
+
+8. In Linux globbing, what does the ? wildcard represent?
+• Any number of characters
+√ One single character
+• Any letter only
+• No characters at all
+
+9. Which example correctly uses || to run echo "Error" if mkdir test fails?
+• mkdir test && echo "Error"
+√ mkdir test || echo "Error"
+• echo "Error" || mkdir test
+• echo "Error" && mkdir test
+
+10. When using ; between two commands in Linux, what happens if the first command has an error?
+• The error will stop all commands in the terminal
+• The system will restart automatically
+• The second command will be skipped
+√ The second command will still run
+
+11. Which command copies file1.txt to a new file called file2.txt in the same directory?
+• copy file1.txt file2.txt
+• mv file1.txt file2.txt
+• cp file2.txt file1.txt
+√ cp file1.txt file2.txt
+
+12. What is the correct command to copy a directory named data and all its contents to /backup?
+• cp data /backup
+• cp -a data /backup
+• cp data/* /backup
+√ cp -r data /backup
+
+13. What is the main purpose of the man command in Linux?
+• To run programs with administrator rights
+• To display system hardware details
+• To list files in the current directory
+√ To show documentation and help for commands
+
+14. What does the su command do in Linux?
+• Shuts down the system immediately
+√ Switches the current user to another user account
+• Shows system uptime and resource usage
+• Starts the system update process
+
+15. If the target file of a symbolic link is deleted, what happens when you try to open the link?
+• The link shows the last saved copy of the file
+• The link automatically points to another file
+• The link renames itself to match a new file
+√ The link becomes broken and does not work
+
+16. Which command output shows the list of users currently logged into the system?
+• wh
+√ who
+• passwd
+• whoami
+
+17. Which command removes the saved Bash history file for the current user?
+• delete ~/.bash_history
+√ rm ~/.bash_history
+• clear ~/.bash_history
+• purge ~/.bash_history
+
+18. When using || between two commands in Linux, when will the second command run?
+• Always, regardless of the first command’s result
+√ Only if the first command fails
+• Only if both commands are the same
+• Only if the first command succeeds
+
+19. Which option with mv will ask for confirmation before overwriting a file?
+√ -i
+• -c
+• -p
+• -q
+
+20. Which option with ls sorts files by modification time, newest first?
+• ls -r
+√ ls -t
+• ls -S
+• ls -m
+
+21. Which statement best describes a hard link in Linux?
+• A copy of a file stored in another directory
+√ A new name for the same data on disk as another file
+• A special file that points to another file’s path
+• A shortcut file that points to the original file’s location
+
+22. Which database does the whatis command use to find information?
+• File system index
+√ Man page database
+• Bash history file
+• Package manager cache
+
+23. Which command shows all files in a directory, including hidden ones?
+• ls -t
+• ls -l
+• ls -h
+√ ls -a
+
+24. Which Linux command is used to create a hard link?
+• link source target
+√ ln source target
+• ln -s source target
+• cp source target
+
+25. Which part of a Linux command usually tells the system what program to run?
+√ The command name
+• The argument
+• The file path
+• The option
+
+26. Which command shows the current user’s UID and GID?
+• passwd
+• whoami
+√ id
+• useradd
+
+27. What type of hardware information can lspci show?
+• Only the CPU model and speed
+√ Network cards, graphics cards, and storage controllers
+• Only installed software packages
+• Only USB-connected devices
+
+28. What happens when you run sudo apt upgrade after sudo apt update?
+• It deletes old unused packages
+√ It upgrades all installed packages to the latest available versions
+• It upgrades the package manager only
+• It upgrades only the Linux kernel
+
+29. Which command is used to install a new package with apt?
+• apt update
+• apt remove
+• apt purge
+√ apt install
+
+30. Which option with groupadd sets a specific Group ID (GID) for the new group?
+• -n
+• -u
+• -i
+√ -g
+
+31. Which command will list all files in the current directory, no matter their name?
+• ls .
+• ls []
+√ ls *
+• ls ?
+
+32. When creating a tar archive, what does the c option stand for?
+• Copy
+√ Create
+• Check
+• Compress
+
+33. Which command is used to decompress a file named archive.bz2 in Linux?
+• unzip archive.bz2
+• gzip archive.bz2
+• tar -xf archive.bz2
+√ bunzip2 archive.bz2
+
+34. In Linux, which is an example of a relative path?
+• /var/log
+• /home/user/Documents
+• /etc/passwd
+√ ../Pictures
+
+35. Which curly bracket pattern will expand to img01.jpg img02.jpg img03.jpg?
+• img{1,2,3}.jpg
+• img(01,02,03).jpg
+• img[01-03].jpg
+√ img{01..03}.jpg
+
+36. In the context of Linux, what is a key benefit of open source development?
+√ Many people can contribute to improving and fixing the system
+• The system can only run on one type of computer hardware
+• Users can only install updates from the original developer
+• Only one company is allowed to make changes to the system
+
+37. Which Debian-based distribution is specifically designed for penetration testing and security auditing?
+• Lubuntu
+• Ubuntu
+√ Kali Linux
+• MX Linux
+
+38. Which command will display only the first 5 lines of a file named log.txt by using a pipe?
+• head log.txt | -n 5
+√ cat log.txt | head -n 5
+• head -n 5 | cat log.txt
+• cat log.txt | tail -n 5
+
+39. Which ls option shows file sizes in KB, MB, or GB instead of bytes?
+• -r
+• -a
+√ -h
+• -l
+
+40. In /etc/shadow, what does a value of 99999 in the maximum days field mean?
+• The user must change the password every day
+• The password will expire immediately
+√ The password never needs to be changed
+• The account will be locked after 99999 failed logins
+
+41. When using useradd, which option sets the user's default shell?
+√ -s
+• -m
+• -p
+• -g
+
+42. A symbolic link in Linux is best described as:
+√ A shortcut that points to another file or directory
+• A compressed version of the original file
+• A copy of the original file that updates automatically
+• A backup stored in a hidden directory
+
+43. When using >> in Linux, what happens if the file does not already exist?
+• The command waits for user input
+√ The file is created and data is added to it
+• The file is ignored
+• The command fails with an error
+
+44. Which file descriptor number is used for standard input (stdin) in Linux?
+√ 0
+• 3
+• 2
+• 1
+
+45. Which command extracts files from an archive called backup.tar in the current directory?
+• tar -tvf backup.tar
+• tar -zvf backup.tar
+• tar -cvf backup.tar
+√ tar -xvf backup.tar
+
+46. In the command ls -l /home/user, what does -l represent?
+• A command name
+• A file path
+• An argument specifying a program
+√ An option that changes the output format
+
+47. What does the third field in a line of /etc/group represent?
+• List of users in the group
+√ Group ID (GID)
+• Group password
+• Group name
+
+48. Which option with useradd creates the user's home directory?
+• -d
+• -c
+√ -m
+• -h
+
+49. What is one main difference between Ubuntu and Fedora?
+√ Ubuntu uses the Debian package system, while Fedora uses RPM
+• Ubuntu is open-source, while Fedora is closed-source
+• Ubuntu is free, while Fedora is paid
+• Ubuntu is only for servers, while Fedora is only for desktops
+
+50. Which command creates a new group called "developers"?
+• mkgroup developers
+• addgroupname developers
+√ groupadd developers
+• groupadd -n developers
+
+51. When using a pipe in Linux, what happens to the output of the first command?
+• It is sent to the screen only.
+• It is deleted after execution.
+√ It becomes the input of the next command.
+• It is saved to a file.
+
+52. You are in /home/user/Documents and run cd Where will you be after this command?
+√ /home/user
+• /Documents
+• /home/user/Documents
+• /home
+
+53. Why would a Linux administrator use >> instead of > when sending output to a file?
+• To replace the file’s contents with new data
+• To send the output to the screen
+√ To add new data without removing existing content
+• To delete the file before writing
+
+54. If you want an alias to be available every time you log in, where should you normally add it?
+• /etc/aliases
+• ~/.history
+• /etc/passwd
+√ ~/.bashrc
+
+55. If a command has multiple manual sections, how can you open the section for configuration files?
+√ man 5 command
+• man --config command
+• man section5 command
+• man -c command
+
+56. Which command correctly redirects stderr to a file named errors.txt while keeping normal output on the screen?
+• command > errors.txt
+√ command 2> errors.txt
+• command >> errors.txt
+• command 1> errors.txt
+
+57. Which user account normally has UID 0 in the /etc/passwd file?
+• superuser
+• normal user
+√ root
+• system user
+
+58. When you create a hard link to a file, what happens to the original file’s data if the original file is deleted?
+• The data is moved to the Trash folder
+• The hard link becomes a broken link
+√ The data remains until all hard links are removed
+• The data is lost immediately
+
+59. Which statement best describes a Linux distribution?
+√ A complete operating system built around the Linux kernel
+• A type of hardware designed for Linux
+• A Linux update patch for security issues
+• A single program that runs on Linux
+
+60. What does the ls -l command display in addition to filenames?
+• The number of users on the system
+• File contents
+√ File sizes and permissions
+• Only hidden files
+
+61. In Linux, what is the default file descriptor number for stderr?
+• 3
+√ 2
+• 1
+• 0
+
+62. Which command adds user alex to the developers group without removing them from other groups?
+• adduser alex developers
+√ usermod -aG developers alex
+• usermod -G developers alex
+• groupadd developers alex
+
+63. Which command will rename a file called report.txt to final.txt in the current directory?
+• mv /report.txt final.txt
+• mv report.txt /final.txt
+√ mv report.txt final.txt
+• mv final.txt report.txt
+
+64. Which command is used to create a symbolic link in Linux?
+• link -c
+• mv
+• cp
+√ ln -s
+
+65. Which command shows your recent Bash commands?
+• recent
+• commands
+• log
+√ history
+
+66. Why might you use a relative path instead of an absolute path?
+• It is always more secure
+• It can be used without knowing the current location
+• It automatically changes the root directory
+√ It is shorter when working in deep directories
+
+67. Which command shows information about USB devices connected to a Linux system?
+√ lsusb
+• lsmod
+• lsdev
+• lspci
+
+68. When you run id username, what extra information is displayed compared to id without arguments?
+• It shows only the UID of the current user
+• It shows the user’s password
+√ It shows the UID and GID of that specific user
+• It shows a list of system processes
+
+69. What does the command apt update do?
+• Removes unused packages
+• Upgrades the Linux kernel
+√ Updates the list of available packages from repositories
+• Installs new software from a .deb file
+
+70. Which command will delete a file named old.txt in the current directory?
+• rm ./old.txt/file
+• rm -d old.txt
+√ rm old.txt
+• rm /old.txt
+
+71. When using the rm command, which option is used to remove a directory and all its contents?
+• rm -i
+• rm -v
+• rm -f
+√ rm -r
+
+72. Which symbol is used to get the value stored in a Bash variable?
+√ $
+• #
+• %
+• &
+
+73. Which Linux service is commonly used to host websites?
+• MySQL
+√ Apache HTTP Server
+• Bind
+• Postfix
+
+74. You have a compressed archive named project.tar.gz. Which command correctly extracts it in one step?
+• tar -cvf project.tar.gz
+√ tar -xzvf project.tar.gz
+• tar -xvf project.tar.gz
+• tar -tvf project.tar.gz
+
+75. What is the effect of running rm -f report.doc?
+• Deletes the file only if it is read-only
+• Deletes the file and creates a backup
+√ Deletes the file without asking for confirmation
+• Deletes the file only if it is empty
+
+76. When was the Linux kernel version 1.0 officially released?
+• 2000
+• 1996
+• 1991
+√ 1994
+
+77. Which command will move you to your home directory from anywhere in the terminal?
+• home /cd
+√ cd ~
+• gohome
+• cd /home
+
+78. Which command shows the Linux distribution name and version in a simple format?
+• cat /etc/hosts
+• uname -a
+√ lsb_release -a
+• ifconfig -v
+
+79. If you run useradd newuser without extra options, what happens by default on many Linux systems?
+• The account expires in 7 days
+• A home directory is created automatically
+• The user gets administrative rights
+√ The account is locked until a password is set
+
+80. Which stream number is used for STDOUT in Linux?
+√ 1
+• 2
+• 3
+• 0
+
+81. Which command lists files starting with “file” followed by either “1” or “2”?
+√ ls file[1,2]
+• ls file{12}
+• ls file_[12]
+• ls file(1|2)
+
+82. When a Linux command runs successfully, where is its normal output sent by default?
+• /dev/null
+√ STDOUT
+• STDIN
+• STDERR
+
+83. If you run pwd immediately after logging into a Linux system, what will it usually display?
+• The /bin directory path
+√ The user’s home directory path
+• The /tmp directory path
+• The / (root) directory path
+
+84. Why might an advanced Linux user choose to perform tasks in the CLI instead of the desktop interface?
+• The CLI is the only place where Linux can connect to the internet
+√ The CLI supports automation through scripting
+• The CLI hides all system files from the user
+• The CLI is easier to learn for beginners
+
+85. How does Linux know when to lock a user account based on /etc/shadow data?
+• It waits for the user to type the wrong password three times
+√ It compares the expiry date field to the current date
+• It checks if the shell is set to /bin/false
+• It checks if the username matches "root"
+
+86. Which part of a Linux system communicates directly with the hardware?
+• The shell
+√ The Linux kernel
+• The package manager
+• The desktop environment
+
+87. What happens when you run gunzip file.gz without any options?
+• It compresses the file again
+• It renames the .gz file without extracting
+√ It extracts the file and deletes the original .gz file
+• It extracts the file but keeps the .gz file
+
+88. Which license type is most commonly used for open source Linux distributions?
+• Commercial Proprietary License (CPL)
+• Microsoft End User License Agreement (EULA)
+√ GNU General Public License (GPL)
+• Apple Software License Agreement (ASLA)
+
+89. In Linux, what does the * wildcard match?
+• Only numbers in a filename
+• Exactly one character in a filename
+• Only hidden files in a directory
+√ Any number of characters in a filename
+
+90. Which command output will you get after typing whoami in a Linux terminal?
+√ The name of the current user account
+• The hostname of the system
+• The IP address of the computer
+• The version of the operating system
+
+91. When you run apropos user, what will it display?
+• All usernames in the system
+• Files in the /home/user directory
+• Commands that are currently being used by a user
+√ Manual pages with "user" in the name or description
+
+92. Which shell is typically used as the default login shell on most modern Linux distributions?
+• Zsh
+√ Bash
+• Fish
+• sh
+
+93. Which statement describes an absolute path in Linux?
+• It starts from the current working directory
+• It can only be used by the root user
+• It only uses folder names without /
+√ It starts from the root directory /
+
+94. When using && between two commands in Linux, when will the second command run?
+√ Only if the first command succeeds
+• Only if the first command fails
+• Always, no matter the first command’s result
+• Only if both commands are the same
+
+95. Which command creates a new empty file named notes.txt in the current directory?
+• create notes.txt
+√ touch notes.txt
+• fileadd notes.txt
+• newfile notes.txt
+
+96. A system administrator wants to check the hardware architecture and operating system name in one command. Which is the best command to use?
+• uname -m
+√ uname -a
+• uname -s
+• uname -r
+
+97. Which command shows detailed information about the CPU architecture on a Linux system?
+• hwinfo
+• lshw
+• cpustat
+√ lscpu
+
+98. Why might a beginner choose Ubuntu or Linux Mint over other distributions?
+• They have no graphical interface by default
+• They require manual source code compilation for all apps
+√ They offer strong community support and easy-to-use interfaces
+• They have the most advanced kernel features
+
+99. What is the main goal of the Free Software Foundation?
+• To control the global software market
+• To prevent software updates from large companies
+• To sell closed-source software at a low price
+√ To promote the use and development of free software
+
+100. Who started the GNU Project in 1983?
+• Steve Jobs
+√ Richard Stallman
+• Linus Torvalds
+• Bill Gates
+
+101. When running ls -R /home/user, what will be displayed?
+• Only hidden files in /home/user
+• File sizes sorted by largest to smallest
+• Only files in the /home/user directory
+√ Files in /home/user and all its subdirectories
+
+102. What does the pwd command show in Linux?
+• The total size of the current directory
+• The name of the user currently logged in
+√ The full path of the current working directory
+• The list of all files in the current directory
+
+103. Which of the following best describes the relationship between Red Hat Enterprise Linux (RHEL) and Fedora?
+√ Fedora is a free community project that acts as a testing ground for RHEL
+• Fedora is used only for cloud computing while RHEL is for desktops
+• RHEL is developed from CentOS before release
+• Fedora is a paid version of RHEL with extra support
+
+104. In what main way does Bash extend the features of sh?
+• By removing scripting capabilities
+• By replacing all shell commands with new ones
+• By disabling compatibility with older scripts
+√ By adding advanced scripting features and shortcuts
+
+105. Which command shows the manual page for the ls command?
+• manual ls
+√ man ls
+• help ls
+• show ls
+
+106. What is the main purpose of the GECOS fields in the /etc/passwd file?
+√ To store information like full name and contact details
+• To store the user’s encrypted password
+• To define the user’s default shell
+• To list the user’s group memberships
+
+107. What happens if you run passwd without giving a username?
+• It deletes the current password
+• It shows all passwords in the system
+√ It changes the password for the current user
+• It changes the password for the root user
+
+108. Which option with mkdir creates a directory and any missing parent directories?
+• mkdir -r
+• mkdir -m
+• mkdir -d
+√ mkdir -p
+
+109. Which file name would match the pattern file?.txt?
+• file_abc.txt
+√ file1.txt
+• file.txt
+• file10.txt
