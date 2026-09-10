@@ -26,6 +26,7 @@ const MODULE_SUBJECTS = {
     { file: "questions_linux_module4.txt", label: "Module 4" },
     { file: "questions_linux_module5.txt", label: "Module 5" },
     { file: "questions_linux_module6.txt", label: "Module 6" },
+    { file: "questions_linux_midterm.txt", label: "Midterm Questions" },
   ],
 };
 
