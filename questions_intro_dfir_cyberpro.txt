@@ -1,0 +1,376 @@
+CYBER INCIDENT RESPONSE — MODULES 00–05
+Combined quiz
+
+Format: • = wrong option, √ = correct option
+
+1. [Module 00] In general, how often is Digital Forensics performed when an incident occurs?
+• Every time
+• Almost never
+• Most of the time
+√ Some on the time
+
+2. [Module 00] In which phase of the Cyber Kill Chain does the attacker craft a payload, such as a virus or exploit, to deliver to the target system?
+• Installation
+• Command and Control
+• Delivery
+√ Weaponization
+
+3. [Module 00] What are the main objectives of Incident Response?
+• To restore normal operations as swiftly as possible
+• To limit the scope of a breach
+√ All of these
+• To minimize the impact of security incidents
+
+4. [Module 00] What is the primary goal of the Delivery phase in the Cyber Kill Chain?
+• To identify vulnerabilities in the target system
+√ To deliver the payload to the target system
+• To execute the attacker's objective
+• To establish a connection with compromised systems
+
+5. [Module 00] What phase of the Cyber Kill Chain involves the identification of vulnerabilities and weaknesses in the target system?
+• Exploitation
+• Installation
+• Weaponization
+√ Reconnaissance
+
+6. [Module 01] In the Preparation phase, what role does risk assessment play in cyber incident response?
+• Conducting post-incident reviews to identify areas for improvement
+• Identifying vulnerabilities and weaknesses in the organization's infrastructure
+• Determining the financial impact of potential security breaches
+√ Evaluating the likelihood and potential impact of various security incidents
+
+7. [Module 01] What is the primary goal of the Preparation phase in cyber incident response?
+• Detect and analyze security incidents in real-time
+• Identify and prioritize potential risks and threats
+• Implement corrective measures to mitigate vulnerabilities
+√ Develop and document an effective response plan
+
+8. [Module 01] What is the purpose of conducting tabletop exercises during the Preparation phase?
+• To train employees on basic cybersecurity principles and practices
+√ To simulate real-world cyber attacks and assess response capabilities
+• To perform penetration testing to identify vulnerabilities in systems
+• To develop new security policies and procedures for incident response
+
+9. [Module 01] What is the purpose of establishing communication channels with external partners and authorities during the Preparation phase?
+• To share sensitive information about security incidents as they occur
+• To request financial compensation for damages caused by cyber attacks
+√ To coordinate response efforts and gather intelligence on threats
+• To avoid disclosing any information about security incidents to outsiders
+
+10. [Module 01] What is the purpose of establishing roles and responsibilities within the incident response team during the Preparation phase?
+• To ensure that all team members have equal decision-making authority
+• To assign blame and hold individuals accountable for security incidents
+• To restrict access to incident response resources to a select few individuals
+√ To clarify expectations and streamline response efforts during an incident
+
+11. [Module 01] Which of the following is an essential component of a cyber incident response playbook developed during the Preparation phase?
+• Detailed logs of all network traffic for forensic analysis
+• List of potential cyber attackers and their motives
+√ Step-by-step procedures for restoring backups after an incident
+• Inventory of hardware and software assets within the organization
+
+12. [Module 01] Which of the following is a recommended practice for documenting incident response procedures during the Preparation phase?
+• Keeping incident response plans static without regular updates or revisions
+• Sharing sensitive information about security controls with external parties
+• Storing incident response documentation in unencrypted files on public servers
+√ Using plain language and clear instructions to ensure easy understanding
+
+13. [Module 01] Which of the following is NOT typically included in the Preparation phase of cyber incident response?
+• Establishing communication channels for reporting incidents
+√ Investigating and analyzing the root causes of security incidents
+• Conducting regular security training for employees
+• Testing and updating incident response plans and procedures
+
+14. [Module 02] In the Detection phase, what role do threat intelligence feeds play in cyber incident response?
+• Conducting post-incident reviews to identify areas for improvement
+• Determining the financial impact of security incidents
+• Identifying vulnerabilities and weaknesses in the organization's systems
+√ Providing timely information about emerging threats and attack techniques
+
+15. [Module 02] What is the primary goal of the Detection phase in cyber incident response?
+• Develop and document an effective response plan
+• Mitigate vulnerabilities in the organization's systems
+• Analyze the root causes of security incidents
+√ Identify and alert on security incidents in a timely manner
+
+16. [Module 02] What is the purpose of establishing security baselines and thresholds during the Detection phase?
+• To coordinate response efforts and gather intelligence on threats
+√ To track changes in system configurations and detect anomalies
+• To determine the financial impact of security incidents
+• To assign blame and hold individuals accountable for security incidents
+
+17. [Module 02] What is the purpose of implementing security information and event management (SIEM) systems during the Detection phase?
+√ To collect, correlate, and analyze log data from various sources for signs of security incidents
+• To conduct penetration testing to identify vulnerabilities in the organization's systems
+• To develop incident response playbooks and procedures
+• To block all incoming network traffic to prevent cyber attacks
+
+18. [Module 02] Which of the following is a common mistake to avoid during the Detection phase of cyber incident response?
+√ Failing to monitor network traffic and system logs for signs of compromise
+• Overloading security analysts with too many alerts, leading to alert fatigue
+• Ignoring security alerts and assuming they are false positives
+• Implementing security controls without considering their impact on business operations
+
+19. [Module 02] Which of the following is an example of a behavioral analytics technique used in the Detection phase of cyber incident response?
+√ Monitoring user activity for deviations from normal behavior patterns
+• Implementing firewalls and access control lists (ACLs) to restrict network traffic
+• Conducting regular vulnerability scans of network infrastructure
+• Encrypting sensitive data stored on company servers
+
+20. [Module 02] Which of the following is an example of an anomaly-based detection technique used in the Detection phase of cyber incident response?
+• Encrypting sensitive data to prevent unauthorized access
+• Scanning systems for known vulnerabilities using automated tools
+√ Monitoring network traffic for known patterns of malicious behavior
+• Blocking known malicious IP addresses at the firewall
+
+21. [Module 02] Which of the following is a recommended practice for improving incident detection capabilities?
+• Ignoring low-priority security alerts to reduce alert fatigue
+• Limiting security monitoring to business hours only
+√ Collecting and analyzing historical data to identify trends and patterns
+• Relying solely on perimeter defenses such as firewalls and antivirus software
+
+22. [Module 02] Which of the following is NOT typically included in the Detection phase of cyber incident response?
+• Deploying intrusion detection systems (IDS) and intrusion prevention systems (IPS)
+• Monitoring network traffic for suspicious activities
+• Analyzing logs and security alerts for signs of compromise
+√ Assessing the financial impact of security incidents
+
+23. [Module 03] How does the Common Vulnerability Scoring System (CVSS) calculate the severity score of a vulnerability?
+• By assessing the financial impact of the vulnerability
+√ By evaluating the impact on confidentiality, integrity, and availability
+• By considering the skill level and resources required to exploit the vulnerability
+• By determining the likelihood and potential impact of a successful exploit
+
+24. [Module 03] How does the OODA loop concept apply to cybersecurity operations?
+• It focuses on optimizing network performance and reliability.
+• It assists in analyzing historical security incidents.
+• It helps in the development of incident response plans.
+√ It provides a framework for decision-making and response to cyber threats.
+
+25. [Module 03] What is the primary goal of the Triage phase in cyber incident response?
+• Analyze the root causes of security incidents
+• Identify and prioritize potential risks and threats
+√ Assess the scope and severity of security incidents
+• Develop and document an effective response plan
+
+26. [Module 03] What is the primary purpose of the OODA loop in the context of cybersecurity?
+• To develop incident response playbooks and procedures
+• To assess the financial impact of security incidents
+√ To facilitate decision-making and adaptability in response to evolving threats
+• To identify and prioritize potential risks and threats
+
+27. [Module 03] What is the purpose of conducting initial assessment and classification of security incidents during the Triage phase?
+• To develop incident response playbooks and procedures
+√ To determine the appropriate response actions based on the severity and impact of the incident
+• To conduct post-incident reviews and identify areas for improvement
+• To collect and preserve evidence for forensic analysis
+
+28. [Module 03] What is the purpose of documenting findings and actions taken during the Triage phase?
+• To identify and prioritize potential risks and threats
+• To develop incident response playbooks and procedures
+• To assess the scope and severity of security incidents
+√ To maintain a record of response actions for future reference and analysis
+
+29. [Module 03] What is the purpose of the Common Vulnerability Scoring System (CVSS)?
+√ To classify vulnerabilities based on severity and impact
+• To develop incident response playbooks and procedures
+• To assess the financial impact of security incidents
+• To identify and prioritize potential risks and threats
+
+30. [Module 03] Which of the following best describes the stages of the OODA loop?
+• Observe, Operate, Decide, Adapt
+• Operate, Orient, Detect, Analyze
+√ Observe, Orient, Decide, Act
+• Optimize, Observe, Decide, Adapt
+
+31. [Module 03] Which of the following is a common mistake to avoid during the Triage phase of cyber incident response?
+√ Delaying response actions until all evidence has been collected and analyzed
+• Relying solely on automated tools and alerts to classify incidents
+• Failing to communicate effectively with internal and external stakeholders
+• Making assumptions about the severity of the incident based on limited information
+
+32. [Module 03] Which of the following is an example of a critical decision made during the Triage phase of cyber incident response?
+• Assessing the financial impact of the incident on the organization
+• Identifying the root cause of a security incident
+• Conducting a thorough investigation and forensic analysis of the incident
+√ Determining whether an incident requires escalation to senior management or law enforcement
+
+33. [Module 03] Which of the following is an example of a tool or technique used during the Triage phase of cyber incident response?
+• Conducting security awareness training for employees
+• Encrypting sensitive data stored on company servers
+• Conducting vulnerability scans to identify weaknesses in systems
+√ Analyzing network traffic logs for signs of compromise
+
+34. [Module 03] Which of the following metrics is NOT included in the Common Vulnerability Scoring System (CVSS)?
+• Attack vector
+√ Financial cost of exploitation
+• Exploitability
+• Impact on confidentiality, integrity, and availability
+
+35. [Module 04] In evidence collection, what role does documentation play in cyber incident response?
+• To coordinate response efforts among internal and external stakeholders
+• To conduct post-incident reviews and identify areas for improvement
+√ To maintain a record of collected evidence for analysis and legal purposes
+• To develop incident response playbooks and procedures
+
+36. [Module 04] What is the primary goal of evidence collection during cyber incident response?
+• Identifying and prioritizing potential risks and threats
+• Developing and documenting an effective response plan
+√ Preserving and documenting evidence for investigation and potential legal proceedings
+• Analyzing the root causes of security incidents
+
+37. [Module 04] What is the primary goal of the Containment phase in cyber incident response?
+• Analyzing the root causes of security incidents
+√ Isolating and limiting the impact of the security incident
+• Developing and documenting an effective response plan
+• Identifying and prioritizing potential risks and threats
+
+38. [Module 04] What is the purpose of conducting hash verification on collected evidence?
+• To maintain a record of collected evidence for analysis and legal purposes
+• To develop incident response playbooks and procedures
+• To coordinate response efforts among internal and external stakeholders
+√ To validate the integrity and authenticity of the evidence
+
+39. [Module 04] What is the purpose of implementing temporary security controls during the Containment phase?
+• To analyze the root causes of security incidents
+• To conduct post-incident reviews and identify areas for improvement
+• To identify and prioritize potential risks and threats
+√ To mitigate vulnerabilities until permanent fixes can be implemented
+
+40. [Module 04] What is the purpose of isolating affected systems from the network during the Containment phase?
+√ To prevent further spread of the security incident
+• To develop incident response playbooks and procedures
+• To conduct post-incident reviews and identify areas for improvement
+• To analyze the root causes of security incidents
+
+41. [Module 04] Which of the following is a common mistake to avoid during the Containment phase of cyber incident response?
+√ Disconnecting affected systems from the network without proper analysis
+• Ignoring security alerts and assuming they are false positives
+• Delaying containment actions until all evidence has been collected
+• Failing to communicate effectively with internal and external stakeholders
+
+42. [Module 04] Which of the following is an example of a containment technique used in the Containment phase of cyber incident response?
+• Updating antivirus signatures on all endpoints
+• Conducting security awareness training for employees
+√ Disconnecting compromised systems from the network
+• Encrypting sensitive data stored on company servers
+
+43. [Module 04] Which of the following is an example of volatile data that should be collected promptly during evidence collection?
+• Archived log files
+• System configuration files
+• Encrypted files
+√ RAM memory contents
+
+44. [Module 04] Which of the following is a recommended practice for collecting digital evidence during cyber incident response?
+• Using undocumented tools and scripts for evidence collection
+√ Using forensically sound methods to preserve the integrity of the evidence
+• Modifying the evidence to preserve its integrity
+• Collecting only relevant evidence to expedite the investigation process
+
+45. [Module 04] Which of the following is a recommended practice for isolating compromised systems during the Containment phase?
+• Disconnecting all systems from the network to prevent further spread
+• Shutting down affected systems without any further analysis
+√ Implementing network segmentation to limit lateral movement
+• Ignoring security alerts until all evidence has been collected
+
+46. [Module 04] Which of the following is a serious mistake to avoid during evidence collection in cyber incident response?
+• Using undocumented tools and scripts for evidence collection
+• Failing to document the chain of custody for collected evidence
+√ All of these
+• Modifying or altering collected evidence
+
+47. [Module 04] Which of the following is NOT typically included in evidence collection during cyber incident response?
+√ Modifying or altering evidence to support a particular narrative
+• Documenting chain of custody for collected evidence
+• Collecting network traffic logs and system event logs
+• Capturing screenshots of compromised systems
+
+48. [Module 04] Which of the following is NOT typically included in the Containment phase of cyber incident response?
+• Identifying affected systems and data
+• Isolating compromised systems from the network
+√ Assessing the financial impact of security incidents
+• Implementing corrective measures to mitigate vulnerabilities
+
+49. [Module 05] What is the primary goal of the eradication phase in cyber incident response?
+• Developing and documenting an effective response plan
+√ Removing the presence of the attacker from the affected systems
+• Identifying and prioritizing potential risks and threats
+• Analyzing the root causes of security incidents
+
+50. [Module 05] What is the primary goal of the lessons learned phase in cyber incident response?
+• Developing and documenting an effective response plan
+• Analyzing the root causes of security incidents
+√ Capturing insights and improvements from the incident response process
+• Identifying and prioritizing potential risks and threats
+
+51. [Module 05] What is the primary goal of the recovery phase in cyber incident response?
+√ Restoring affected systems and data to normal operations
+• Developing and documenting an effective response plan
+• Identifying and prioritizing potential risks and threats
+• Analyzing the root causes of security incidents
+
+52. [Module 05] What is the purpose of conducting post-recovery testing and validation during the recovery phase?
+√ To ensure that systems and data have been fully restored and are functioning properly
+• To identify and prioritize potential risks and threats
+• To analyze the root causes of security incidents
+• To develop incident response playbooks and procedures
+
+53. [Module 05] What is the purpose of documenting lessons learned during the lessons learned phase?
+• To develop incident response playbooks and procedures
+• To prevent further damage and re-infection of the systems
+• To ensure that systems and data have been fully restored and are functioning properly
+√ To capture insights and improvements for future incident response efforts
+
+54. [Module 05] What is the purpose of implementing corrective measures based on lessons learned?
+• To develop incident response playbooks and procedures
+• To ensure that systems and data have been fully restored and are functioning properly
+√ To prevent similar incidents from occurring in the future
+• To identify and prioritize potential risks and threats
+
+55. [Module 05] What is the purpose of implementing security controls and patches during the eradication phase?
+• To analyze the root causes of security incidents
+√ To mitigate vulnerabilities and prevent future attacks
+• To identify and prioritize potential risks and threats
+• To develop incident response playbooks and procedures
+
+56. [Module 05] What is the purpose of removing malware and unauthorized access from compromised systems during the eradication phase?
+• To develop incident response playbooks and procedures
+√ To prevent further damage and re-infection of the systems
+• To document the chain of custody for collected evidence
+• To conduct post-incident reviews and identify areas for improvement
+
+57. [Module 05] What is the purpose of restoring data from backups during the recovery phase?
+• To prevent further damage and re-infection of the systems
+• To develop incident response playbooks and procedures
+• To document the chain of custody for collected evidence
+√ To bring affected systems and data back to a known good state
+
+58. [Module 05] Which of the following is a recommended practice for conducting a lessons learned session?
+• Conducting the session without any documentation or follow-up actions
+√ Encouraging open and honest communication among team members
+• Ignoring feedback and suggestions from incident responders
+• Focusing solely on assigning blame for the incident
+
+59. [Module 05] Which of the following is a recommended practice for ensuring successful recovery during the recovery phase?
+• Rebooting compromised systems without further analysis
+• Ignoring security controls and patches during the recovery process
+√ Implementing backup and recovery solutions with regular testing
+• Relying solely on manual recovery processes without backups
+
+60. [Module 05] Which of the following is NOT typically included in the eradication phase of cyber incident response?
+• Identifying affected systems and data
+• Removing malware and unauthorized access from compromised systems
+• Implementing corrective measures to mitigate vulnerabilities
+√ Assessing the financial impact of security incidents
+
+61. [Module 05] Which of the following is NOT typically included in the lessons learned phase of cyber incident response?
+• Identifying areas for improvement in incident response processes
+• Documenting best practices and lessons learned from the incident
+√ Analyzing the financial impact of security incidents
+• Implementing corrective measures to mitigate vulnerabilities
+
+62. [Module 05] Which of the following is typically included in the recovery phase of cyber incident response?
+• Implementing corrective measures to mitigate vulnerabilities
+• Assessing the financial impact of security incidents
+• Identifying affected systems and data
+√ Restoring data from backups and rebuilding affected systems
