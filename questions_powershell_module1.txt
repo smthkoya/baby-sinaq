@@ -1,0 +1,255 @@
+1. [Module 01] Your pipeline runs Get-Service | Sort-Object Name -Descending. What does Sort-Object change?
+• It stops services in reverse order.
+√ It sorts the service objects by Name in descending order.
+• It converts services to strings.
+• It filters out stopped services.
+• It groups services by status only.
+• It changes the service names in Windows.
+
+2. [Module 01] You want to discover the properties and methods available on objects returned by Get-Process. Which command best fits?
+√ Get-Process | Get-Member
+• Get-Process | Format-Table
+• Get-Help Get-Process -Online
+• Get-Process | Out-File
+• Get-Process | Measure-Object
+• Get-Process | Export-Csv
+
+3. [Module 01] A command produces objects and pipes them to another command. What is the main role of the | operator?
+• It writes the output to disk.
+√ It sends the output of the preceding command to the next command.
+• It comments out the rest of the line.
+• It joins two strings.
+• It starts a background job.
+• It converts output to text.
+
+4. [Module 01] You run Get-ChildItem -File | Measure-Object -Property Length -Sum. What is returned?
+• The original files sorted by length.
+√ A measurement object containing the sum of Length values.
+• A CSV file containing file lengths.
+• Only the largest file.
+• The file contents concatenated together.
+• A formatted table of files.
+
+5. [Module 01] You need the first five objects from a pipeline. Which Select-Object option is designed for this?
+• -Unique
+• -Last
+√ -First
+• -Property
+• -Skip
+• -GroupBy
+
+6. [Module 01] You need to ignore the first ten objects and then continue selecting from the collection. Which option is relevant?
+√ -Skip
+• -First
+• -Unique
+• -Average
+• -Filter
+• -Tail
+
+7. [Module 01] In a calculated property used with Select-Object, what does $_ or $PSItem represent?
+• The last command typed.
+√ The current object coming through the pipeline.
+• The current user account.
+• The current PowerShell module.
+• The previous error.
+• The output file path.
+
+8. [Module 01] You create a calculated property with @{n='SizeGB';e={$_.Size/1GB}}. What does n define?
+• The input object.
+√ The property label/name.
+• The number of pipeline stages.
+• The namespace.
+• The numeric data type.
+• The command noun.
+
+9. [Module 01] You want to filter services whose Status equals Running. Which command directly matches the lab examples?
+√ Get-Service | Where-Object Status -eq ‘Running’
+• Get-Service | Sort-Object Status -eq ‘Running’
+• Get-Service | Select-Object Status -eq ‘Running’
+• Get-Service | Measure-Object Status
+• Get-Service | Format-Table -Filter Running
+• Get-Service | Out-File Running
+
+10. [Module 01] Why would you use the advanced script-block form of Where-Object instead of the basic form?
+• It is the only form that can display output.
+√ It supports multiple conditions and more complex expressions.
+• It automatically exports results to CSV.
+• It changes object types into strings.
+• It disables case-insensitive comparison.
+• It is required for every single-property comparison.
+
+11. [Module 01] Your filter needs HealthStatus -ne 'Healthy' OR SizeRemaining -lt 100MB. What lets you combine the two comparisons?
+• -join
+√ -or
+• -matchall
+• -pipe
+• -group
+• -append
+
+12. [Module 01] For better pipeline performance, where should filtering usually occur?
+√ As close to the beginning of the command line as possible.
+• Only after Format-Table.
+• Only after Export-Csv.
+• At the very end of every pipeline.
+• Inside Out-File.
+• After converting all objects to strings.
+
+13. [Module 01] A cmdlet has its own server-side/filter parameter that can reduce results before they enter the pipeline. What is the recommended approach?
+• Ignore it and always use Where-Object at the end.
+√ Use the cmdlet’s filtering parameter when possible.
+• Convert everything to JSON first.
+• Use Format-Table before filtering.
+• Use Get-Member to remove objects.
+• Write all data to a file and filter the file.
+
+14. [Module 01] You need to run an action once for every object in a collection in the pipeline. Which cmdlet is designed for that?
+√ ForEach-Object
+• Measure-Object
+• Group-Object
+• Out-Host
+• Get-Help
+• ConvertTo-Html
+
+15. [Module 01] What is a limitation of the basic member form of ForEach-Object shown in the module?
+√ It can access only a single member and cannot run arbitrary code or logical decisions.
+• It can process only strings.
+• It cannot receive pipeline input.
+• It always runs in parallel.
+• It deletes the input objects after processing.
+• It works only with services.
+
+16. [Module 01] You pipe objects to Out-File. What is the main result?
+√ A text file formatted similarly to screen output.
+• A reusable PowerShell module.
+• An XML object in memory.
+• A binary executable.
+• A database table.
+• A new pipeline object with all original methods preserved.
+
+17. [Module 01] Which pair is specifically used to convert/export pipeline data as CSV?
+√ ConvertTo-CSV and Export-CSV
+• Format-CSV and Out-CSV
+• Get-CSV and Set-CSV
+• Import-CSV and Add-CSV
+• ConvertTo-HTML and Export-HTML
+• ConvertTo-JSON and Export-JSON
+
+18. [Module 01] What does Import-Csv create from rows in a CSV file?
+√ Custom objects whose properties come from the headers.
+• Only raw text lines.
+• Registry keys.
+• PowerShell functions.
+• Windows services.
+• HTML tables.
+
+19. [Module 01] You want a compact data representation commonly used with JavaScript. Which conversion command from the module fits?
+√ ConvertTo-JSON
+• ConvertTo-HTML
+• Format-Wide
+• Out-Printer
+• Get-Member
+• Clear-Content
+
+20. [Module 01] You run ConvertTo-HTML on objects. What additional step is needed to save the generated HTML?
+√ Pipe the output to a file.
+• Import the ActiveDirectory module.
+• Run Get-Member first.
+• Enable PSRemoting.
+• Use Set-ExecutionPolicy Bypass.
+• Convert the HTML back to objects.
+
+21. [Module 01] Which output cmdlet creates an interactive spreadsheet-like view?
+√ Out-GridView
+• Out-Printer
+• Out-Host
+• Out-File
+• Format-Wide
+• Measure-Object
+
+22. [Module 01] In Lab 1.1, Get-Process | Stop-Process works through pipeline binding. Why?
+√ Stop-Process has an InputObject parameter that accepts Process objects ByValue.
+• Get-Process outputs service names.
+• Stop-Process ignores all pipeline types.
+• PowerShell converts every process to a file path.
+• Get-Process automatically calls Stop-Process.
+• The pipe operator always binds to ComputerName.
+
+23. [Module 01] Why does Get-Content computers.txt | Get-Service fail in the lab example?
+√ ComputerName does not accept that pipeline input ByValue in this case.
+• Get-Content cannot read text files.
+• Get-Service works only locally and has no ComputerName parameter.
+• Pipelines cannot carry strings.
+• The text file must be XML.
+• Get-Service requires Format-Table first.
+
+24. [Module 01] How does the lab correct the failed attempt to use computer names from computers.txt with Get-Service?
+√ Get-Service -ComputerName (Get-Content computers.txt)
+• Get-Content computers.txt | Format-Table | Get-Service
+• Get-Service | Get-Content computers.txt
+• Import-Csv computers.txt | Stop-Service
+• Get-Service -Name computers.txt
+• Get-Content computers.txt > Get-Service
+
+25. [Module 01] What does Clear-Content do to a file?
+• Deletes the file itself.
+√ Deletes the contents but leaves the item in place.
+• Renames the file.
+• Moves the file to the Recycle Bin.
+• Encrypts the file.
+• Exports the file as CSV.
+
+26. [Module 01] What does Add-Content do?
+√ Appends content to an item or file.
+• Deletes existing content first.
+• Changes the working directory.
+• Lists file properties.
+• Imports a CSV file.
+• Creates a new PowerShell session.
+
+27. [Module 01] You need to change the current working directory in PowerShell. Which cmdlet is correct?
+√ Set-Location
+• Get-ChildItem
+• Move-Item
+• Rename-Item
+• New-Item
+• Select-Object
+
+28. [Module 01] You need to create a new empty file. Which cmdlet pattern from the lab fits?
+√ New-Item -ItemType File -Path
+• Set-Location -ItemType File
+• Get-ChildItem -Create
+• Rename-Item -New
+• Clear-Content -Create
+• Format-Table -Path
+
+29. [Module 01] You need to rename an existing file without changing its contents. Which cmdlet is intended for this?
+√ Rename-Item
+• Move-Item
+• Remove-Item
+• Set-Location
+• Get-Content
+• Out-Host
+
+30. [Module 01] You run Get-Service -Name s*. Why can this filter work without Where-Object?
+√ The Name parameter supports wildcards.
+• Every PowerShell parameter supports regex automatically.
+• Get-Service converts names to numbers.
+• The pipeline adds an implicit Where-Object.
+• Format-Table performs the filtering.
+• The asterisk means sort descending.
+
+31. [Module 01] Which comparison operator is case-sensitive equality?
+√ -ceq
+• -eq
+• -cne
+• -like
+• -gt
+• -le
+
+32. [Module 01] Which formatting cmdlets were identified for pipeline output in the theory?
+√ Format-List, Format-Table, and Format-Wide
+• Select-List, Select-Table, and Select-Wide
+• Out-List, Out-Table, and Out-Wide
+• Get-List, Get-Table, and Get-Wide
+• Measure-List, Measure-Table, and Measure-Wide
+• ConvertTo-List, ConvertTo-Table, and ConvertTo-Wide
