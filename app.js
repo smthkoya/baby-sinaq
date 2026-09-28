@@ -3,6 +3,7 @@ import { t, applyStaticTranslations, toggleLang } from "./i18n.js";
 
 const MODULE_SUBJECTS = {
   python: [
+    { file: "questions_powershell_all_modules.txt", label: "All modules — Combined quiz" },
     { file: "questions_powershell_module1.txt", label: "Module 1" },
     { file: "questions_powershell_module2.txt", label: "Module 2" },
     { file: "questions_powershell_module3.txt", label: "Module 3" },
