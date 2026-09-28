@@ -1,0 +1,1258 @@
+DFIR EXAM PREPARATION — MODULES 00–05
+Practice questions generated from the professor's lectures and quiz style
+
+Format: • = wrong option, √ = correct option
+
+========================================================================
+Module 00 — Incident Response 101
+========================================================================
+
+1. [Module 00] What is the primary purpose of Incident Response (IR)?
+• To eliminate the need for security controls
+√ To minimize the impact of security incidents and restore normal operations
+• To replace digital forensics
+• To guarantee that incidents never occur
+
+2. [Module 00] Which statement best describes Incident Response?
+√ A systematic organizational approach to handling security incidents
+• A process used only after criminal prosecution begins
+• A method for creating software backups
+• A vulnerability scoring framework
+
+3. [Module 00] How does Incident Response relate to Digital Forensics?
+• They are unrelated disciplines
+• Digital forensics always occurs before incident response
+√ Incident response can lay the groundwork for subsequent digital forensic investigation
+• Incident response replaces forensic analysis
+
+4. [Module 00] Which of the following can constitute an incident even if no malicious actor is involved?
+√ A data center fire
+• A routine password change
+• A scheduled software update
+• A successful backup
+
+5. [Module 00] Which situation is an example of a non-malicious incident?
+√ Critical infrastructure failure
+• Credential theft
+• Ransomware deployment
+• Command-and-control traffic
+
+6. [Module 00] Why should an incident response plan account for non-malicious events?
+√ Because incidents can disrupt operations regardless of malicious intent
+• Because malware is never considered an incident
+• Because non-malicious events always require law enforcement
+• Because digital evidence exists only in accidents
+
+7. [Module 00] What is the Cyber Kill Chain primarily used to describe?
+√ The progression of a cyber attack through multiple phases
+• The order of evidence volatility
+• The severity of vulnerabilities
+• The organizational reporting hierarchy
+
+8. [Module 00] What is the first phase of the Cyber Kill Chain?
+• Actions on Objectives
+√ Reconnaissance
+• Installation
+• Command and Control
+
+9. [Module 00] Which Cyber Kill Chain phase involves preparing a malicious payload for delivery?
+√ Weaponization
+• Exploitation
+• Installation
+• Reconnaissance
+
+10. [Module 00] Which phase of the Cyber Kill Chain involves transmitting the weapon to the target?
+√ Delivery
+• Installation
+• Command and Control
+• Actions on Objectives
+
+11. [Module 00] Which phase occurs when a vulnerability is used to execute malicious activity on the target?
+• Reconnaissance
+√ Exploitation
+• Weaponization
+• Actions on Objectives
+
+12. [Module 00] Which Cyber Kill Chain phase establishes persistence by placing malicious code on the victim system?
+√ Installation
+• Delivery
+• Reconnaissance
+• Weaponization
+
+13. [Module 00] During which Cyber Kill Chain phase does an attacker establish communication with compromised systems?
+• Exploitation
+√ Command and Control
+• Delivery
+• Reconnaissance
+
+14. [Module 00] Which Cyber Kill Chain phase represents the attacker pursuing the ultimate goal of the intrusion?
+√ Actions on Objectives
+• Weaponization
+• Installation
+• Delivery
+
+15. [Module 00] Why is understanding the Cyber Kill Chain useful to incident responders?
+√ It helps identify where an attack may be detected or disrupted
+• It determines the legal admissibility of evidence
+• It calculates CVSS scores
+• It replaces event monitoring
+
+16. [Module 00] In a typical response path, who is most likely to be the first person to notice an unusual problem?
+√ A user
+• A digital forensics examiner
+• External law enforcement
+• An executive
+
+17. [Module 00] Where may a user's report commonly be escalated first?
+√ Help Desk or Support
+• A court
+• A threat actor
+• A backup vendor
+
+18. [Module 00] What is the primary role of a SOC in the response path?
+√ Monitoring and analyzing security events
+• Performing only physical evidence collection
+• Approving all business expenditures
+• Replacing the IR team
+
+19. [Module 00] When an event becomes a confirmed security incident, which group is most directly responsible for coordinating the response?
+√ Incident Response team
+• Marketing team
+• Facilities team only
+• Software vendor only
+
+20. [Module 00] When is a digital forensics specialist most likely to become involved?
+√ When detailed evidence acquisition and analysis are required
+• Only before an incident occurs
+• Only for non-technical incidents
+• Whenever a password expires
+
+21. [Module 00] Which external entity might become involved when an incident has legal or regulatory implications?
+√ Law enforcement or regulators
+• Only the help desk
+• Only end users
+• Only application developers
+
+22. [Module 00] Why is escalation important in the response path?
+√ It brings the appropriate expertise and authority into the response as needed
+• It guarantees every alert is a true positive
+• It eliminates the need for documentation
+• It prevents evidence collection
+
+23. [Module 00] Which statement best describes an incident?
+√ An adverse event that threatens or disrupts normal operations or security
+• Only a successful malware infection
+• Only an event caused intentionally
+• Any normal system log entry
+
+24. [Module 00] Which response principle is most important when several teams are involved?
+√ Coordination and communication
+• Keeping all information within one individual
+• Avoiding documentation
+• Waiting until recovery to notify anyone
+
+25. [Module 00] Why should organizations understand the progression of an attack?
+√ To recognize opportunities for detection and interruption
+• To avoid collecting logs
+• To eliminate the need for preparation
+• To make all incidents identical
+
+26. [Module 00] Which scenario most clearly requires an incident response process?
+√ A security event causing operational impact
+• A routine approved configuration change
+• A normal user login
+• A scheduled maintenance window
+
+27. [Module 00] What distinguishes Digital Forensics from general Incident Response?
+√ Digital forensics focuses on specialized acquisition and analysis of evidence
+• Digital forensics is only concerned with business continuity
+• Incident response is performed only by law enforcement
+• There is no distinction
+
+28. [Module 00] What is a major objective after detecting an incident?
+√ Limit damage and return the organization to a secure operational state
+• Immediately delete all affected data
+• Ignore the event until its cause is proven in court
+• Disable all monitoring
+
+29. [Module 00] Why can the response path involve external entities?
+√ Some incidents require specialized, legal, regulatory, or third-party assistance
+• External entities always control the IR team
+• Internal teams cannot collect evidence
+• Every alert must be reported publicly
+
+30. [Module 00] Which concept best summarizes Incident Response 101?
+√ Recognize incidents, understand attack progression, and coordinate the appropriate response
+• Focus only on malware signatures
+• Treat every event as an emergency
+• Collect evidence without containment
+
+========================================================================
+Module 01 — IR Preparation
+========================================================================
+
+1. [Module 01] Which phase should occur before an organization has to respond to an incident?
+√ Preparation
+• Eradication
+• Recovery
+• Lessons Learned
+
+2. [Module 01] What is the primary purpose of the Preparation phase?
+√ To establish capabilities, plans, people, and relationships before an incident
+• To collect only volatile evidence
+• To assign a CVSS score
+• To remove an attacker from a compromised host
+
+3. [Module 01] Which activity is a critical part of incident response preparation?
+√ Developing an Incident Response Plan
+• Deleting historical incident records
+• Waiting until an incident to assign roles
+• Disabling monitoring tools
+
+4. [Module 01] Why should an IR team be constructed and trained before an incident?
+√ Responders need defined skills and responsibilities before time pressure begins
+• Training is useful only after recovery
+• The team should learn roles during the incident
+• Training replaces an IR plan
+
+5. [Module 01] What is the purpose of regular incident response drills?
+√ To test readiness and expose gaps before a real incident
+• To generate production incidents
+• To eliminate the need for procedures
+• To replace technical controls
+
+6. [Module 01] What is a tabletop exercise?
+√ A discussion-based simulation of an incident scenario
+• A forensic disk imaging method
+• A type of SIEM correlation rule
+• A vulnerability scanner
+
+7. [Module 01] What should an Incident Response Plan define first?
+√ Scope and objectives
+• The attacker's identity
+• The final legal outcome
+• The exact number of future incidents
+
+8. [Module 01] Why must roles and responsibilities be assigned in an IR plan?
+√ To make clear who is expected to perform specific response actions
+• To ensure only one person can respond
+• To remove the need for escalation
+• To prevent collaboration
+
+9. [Module 01] What should an IR plan establish regarding communications?
+√ How and with whom incident information will be communicated
+• That no communication occurs until recovery
+• That only users may send alerts
+• That all incidents are announced publicly
+
+10. [Module 01] Why should incident response procedures be documented?
+√ To provide repeatable guidance during stressful events
+• To guarantee incidents never change
+• To replace responder judgment entirely
+• To avoid training
+
+11. [Module 01] Why should an IR plan integrate with existing business processes?
+√ Incident response affects and depends on normal organizational operations
+• IR must operate independently of the organization
+• Business units should never participate in recovery
+• Integration is only required after litigation
+
+12. [Module 01] What should happen to an IR plan after it is tested?
+√ It should be refined based on identified weaknesses
+• It should be permanently locked
+• It should be discarded
+• It should be used only by management
+
+13. [Module 01] Why must an IR plan be maintained and updated?
+√ Threats, technology, personnel, and business processes change over time
+• A plan becomes legally invalid after one use
+• Updates eliminate the need for exercises
+• Only vendors may update it
+
+14. [Module 01] What is the first step in developing effective personnel training?
+√ Determine role-based training needs
+• Purchase forensic hardware
+• Begin recovery
+• Assign every employee identical training
+
+15. [Module 01] Why should training be role-based?
+√ Different participants have different responsibilities during an incident
+• Everyone performs exactly the same tasks
+• Only technical staff need any preparation
+• Role-based training prevents documentation
+
+16. [Module 01] What should be done after delivering IR training?
+√ Evaluate its effectiveness
+• Assume it was successful
+• Delete the training materials
+• Stop future exercises
+
+17. [Module 01] Why should training materials be updated frequently?
+√ Procedures, threats, tools, and responsibilities can change
+• Old materials are always legally prohibited
+• Training must never be repeated
+• Updates replace hands-on practice
+
+18. [Module 01] Which sequence best represents the incident handling lifecycle?
+√ Preparation, Identification, Triage, Containment, Evidence Collection, Eradication, Recovery, Lessons Learned
+• Recovery, Preparation, Triage, Identification, Eradication
+• Evidence Collection, Recovery, Preparation, Identification
+• Lessons Learned, Recovery, Preparation only
+
+19. [Module 01] What is the purpose of the Identification phase?
+√ Recognize and confirm that an adverse event may constitute an incident
+• Restore affected assets
+• Remove all malicious persistence
+• Conduct the post-incident review
+
+20. [Module 01] What is the purpose of Triage?
+√ Prioritize incidents and response efforts based on urgency and impact
+• Create forensic images only
+• Restore services to production
+• Write the final lessons-learned report
+
+21. [Module 01] What is the primary purpose of Containment?
+√ Prevent further damage and limit spread while preserving evidence
+• Return systems to normal production immediately
+• Calculate vulnerability scores
+• Train new responders
+
+22. [Module 01] Why is Evidence Collection included in the response process?
+√ To preserve information needed to understand and investigate the incident
+• To replace containment
+• To guarantee attribution
+• To avoid documentation
+
+23. [Module 01] What is the purpose of Eradication?
+√ Remove the adversary, malware, persistence, and other causes of compromise
+• Prioritize incoming alerts
+• Train the help desk
+• Define the IR plan
+
+24. [Module 01] What is the purpose of Recovery?
+√ Safely restore and redeploy affected business assets
+• Identify the first alert
+• Determine the initial CVSS base score
+• Destroy all compromised equipment
+
+25. [Module 01] What is the purpose of Lessons Learned?
+√ Improve future prevention and response using experience from the incident
+• Close the incident without review
+• Replace evidence collection
+• Assign blame to individual users
+
+26. [Module 01] Why are relationships with other business units important before an incident?
+√ Established trust and communication make coordination faster during response and recovery
+• They allow the IR team to avoid documentation
+• They guarantee the IR team controls every asset
+• They eliminate the need for management
+
+27. [Module 01] Which preparation activity best tests how decision-makers would respond to a scenario?
+√ Tabletop exercise
+• Dead acquisition
+• Threat hunting
+• Disk wiping
+
+28. [Module 01] Which preparation activity best reveals whether technical procedures actually work as intended?
+√ Regular drills and exercises
+• Waiting for a real incident
+• Reading a CVSS score
+• Closing alerts
+
+29. [Module 01] What is a likely consequence of relying only on on-the-job IR training?
+√ Personnel may be unprepared when a high-pressure incident occurs
+• The organization will have too many documented procedures
+• All incidents will become false positives
+• Evidence will automatically be preserved
+
+30. [Module 01] Which statement best summarizes effective IR preparation?
+√ Prepare plans, people, procedures, training, relationships, and exercises before an incident
+• Focus only on buying security tools
+• Wait for an incident before defining responsibilities
+• Treat preparation as a one-time activity
+
+========================================================================
+Module 02 — Detection
+========================================================================
+
+1. [Module 02] Which of the following is the first listed step in the detection process?
+√ Event monitoring
+• Incident scoping
+• Data collection
+• Alerting and notifying
+
+2. [Module 02] Which step follows event monitoring by combining related security activity?
+√ Event correlation
+• Recovery
+• Eradication
+• Triage
+
+3. [Module 02] What is the purpose of incident validation?
+√ Confirm that a suspicious event is a legitimate actionable incident
+• Restore systems to production
+• Assign evidence ownership
+• Train responders
+
+4. [Module 02] What is the purpose of incident classification?
+√ Categorize a confirmed incident by nature, severity, and impact
+• Acquire RAM
+• Disable all affected accounts
+• Perform lessons learned
+
+5. [Module 02] Why is data collection performed during detection?
+√ To gather logs, system state, and other information for analysis and scoping
+• To replace validation
+• To guarantee attribution
+• To remove malware
+
+6. [Module 02] What does incident scoping determine?
+√ The extent of affected systems, networks, and data
+• The cost of all security tools
+• The number of future attacks
+• The training schedule
+
+7. [Module 02] Why are alerting and notifying part of detection?
+√ Relevant stakeholders must know an incident has been identified and requires action
+• Notifications replace containment
+• Only external parties can validate incidents
+• Alerts eliminate false positives
+
+8. [Module 02] Which statement best captures the principle of event monitoring?
+√ You cannot detect what you are not monitoring
+• Every monitored event is an incident
+• Only endpoints require monitoring
+• Monitoring is useful only after recovery
+
+9. [Module 02] Which system provides centralized aggregation and analysis of security events from multiple sources?
+√ SIEM
+• WORM
+• CVSS
+• OODA
+
+10. [Module 02] Which monitoring source focuses on traffic and activity moving through the network?
+√ Network monitoring systems
+• Endpoint monitoring systems
+• Backup systems
+• Physical access badges only
+
+11. [Module 02] Which monitoring source focuses on activity occurring on individual workstations and servers?
+√ Endpoint monitoring systems
+• Network topology diagrams
+• CVSS calculators
+• Archival media
+
+12. [Module 02] What distinguishes an IPS from an IDS in the lecture context?
+√ An IPS can take action to block detected threats
+• An IDS always performs recovery
+• An IPS calculates CVSS scores
+• An IDS images hard drives
+
+13. [Module 02] Why is centralized log management valuable?
+√ It aggregates logs from multiple sources for efficient analysis
+• It prevents all attacks
+• It replaces endpoint visibility
+• It removes the need for timestamps
+
+14. [Module 02] Why is event correlation necessary?
+√ Incidents commonly consist of multiple related events rather than one isolated event
+• Every event is malicious by itself
+• Correlation is used only for recovery
+• It prevents data collection
+
+15. [Module 02] Which technique examines records from servers, applications, and security devices for patterns?
+√ Log analysis
+• Dead acquisition
+• Asset redeployment
+• Tabletop exercise
+
+16. [Module 02] Which technique looks for unusual data flows or communications with malicious hosts?
+√ Traffic analysis
+• Lessons learned
+• Role-based training
+• Physical acquisition
+
+17. [Module 02] Which technique examines suspicious processes, file modifications, and registry changes on a host?
+√ Endpoint analysis
+• Network topology analysis only
+• CVSS scoring
+• Business continuity planning
+
+18. [Module 02] How does a SIEM support event correlation?
+√ It aggregates, normalizes, and analyzes data from diverse sources
+• It physically isolates compromised hosts
+• It creates forensic disk images
+• It replaces the IR team
+
+19. [Module 02] What is a false positive?
+√ An event that appears suspicious but is determined to be non-threatening
+• A confirmed actionable security incident
+• An incident that has already been eradicated
+• A vulnerability with a high CVSS score
+
+20. [Module 02] What is a true positive?
+√ An actionable event representing a genuine security incident
+• A benign event incorrectly detected
+• A failed backup
+• A training exercise
+
+21. [Module 02] Which validation method cross-checks an event against another source or system?
+√ Independent verification
+• Recovery
+• Network isolation
+• Dead acquisition
+
+22. [Module 02] Which validation method relies on experienced security professionals interpreting ambiguous events?
+√ Expert analysis
+• Rule-based validation only
+• Environmental scoring
+• Archival analysis
+
+23. [Module 02] Which validation method uses predefined criteria or patterns?
+√ Rule-based validation
+• Lessons learned
+• Asset redeployment
+• Physical destruction
+
+24. [Module 02] How can threat intelligence assist incident validation?
+√ By comparing indicators with known signatures, TTPs, and malicious infrastructure
+• By replacing event monitoring
+• By restoring affected systems
+• By defining network topology
+
+25. [Module 02] How can testing and simulation assist validation?
+√ By reproducing suspected behavior in a controlled environment
+• By deleting suspicious files from production immediately
+• By assigning a triage category automatically
+• By avoiding independent evidence
+
+26. [Module 02] After an incident is validated, which data source can help reconstruct the timeline of events?
+√ Logs
+• Only archival media
+• Only user interviews
+• Only CVSS scores
+
+27. [Module 02] What can packet captures and network flow data reveal?
+√ Communication patterns, exfiltration attempts, and lateral movement
+• Only physical device locations
+• Only user passwords
+• Only software licensing
+
+28. [Module 02] Why can system images be valuable during detection and investigation?
+√ They preserve system state, including disk or memory evidence for analysis
+• They automatically eradicate malware
+• They replace chain of custody
+• They prevent all future compromise
+
+29. [Module 02] Which configuration data can provide context about network setup during an incident?
+√ CAM tables and routing tables
+• Only office documents
+• Only browser history
+• Only CVSS scores
+
+30. [Module 02] Why is threat hunting useful during incident scoping?
+√ It proactively searches for additional indicators of compromise beyond the initially discovered systems
+• It guarantees no attacker remains
+• It replaces forensic analysis
+• It is used only before detection
+
+31. [Module 02] How does digital forensics support incident scoping?
+√ It helps reconstruct attacker actions and identify affected assets and data
+• It calculates business revenue
+• It replaces notifications
+• It prevents event correlation
+
+32. [Module 02] Why can scoping trigger another IR lifecycle?
+√ Newly discovered compromised systems may require additional containment, eradication, and recovery
+• Scoping always ends the investigation
+• Every scoped incident is a false positive
+• The IR plan prohibits iterative response
+
+33. [Module 02] Who should be notified as impacted systems are discovered?
+√ Parties responsible for maintenance and recovery of those systems
+• Only the attacker
+• Only external media
+• No one until lessons learned
+
+34. [Module 02] Where should notification procedures be defined?
+√ In the Incident Response plan
+• Only in forensic notes
+• Only in the SIEM
+• Only in a CVSS calculator
+
+35. [Module 02] Why should communications continue throughout recovery?
+√ Stakeholders need updates on progress, changes, and required actions
+• Communication is needed only at initial detection
+• Ongoing communication invalidates evidence
+• Recovery is performed only by the SOC
+
+========================================================================
+Module 03 — Triage
+========================================================================
+
+1. [Module 03] From which field was the concept of triage adopted?
+√ Emergency medicine
+• Software development
+• Accounting
+• Cryptography
+
+2. [Module 03] What is the purpose of triage in cyber incident response?
+√ Prioritize incidents according to severity and urgency
+• Collect only disk evidence
+• Remove all malware
+• Replace event monitoring
+
+3. [Module 03] Which triage category requires no immediate action?
+√ Informational
+• Warning
+• Urgent
+• Emergency
+
+4. [Module 03] Which triage category represents a heightened state of awareness and monitoring?
+√ Warning
+• Informational
+• Emergency
+• Recovered
+
+5. [Module 03] Which triage category should generally receive a response within 24 hours?
+√ Urgent
+• Informational
+• Warning
+• Archived
+
+6. [Module 03] Which triage category requires immediate action?
+√ Emergency
+• Urgent
+• Warning
+• Informational
+
+7. [Module 03] An alert that does not indicate an immediate threat but may be useful for trend analysis is best categorized as:
+√ Informational
+• Emergency
+• Urgent
+• Critical
+
+8. [Module 03] A potential issue requiring closer monitoring but not immediate action is best categorized as:
+√ Warning
+• Emergency
+• Informational
+• Recovered
+
+9. [Module 03] A known exploitable vulnerability requiring timely action before exploitation is best categorized as:
+√ Urgent
+• Informational
+• Warning only
+• Lessons Learned
+
+10. [Module 03] An active ransomware infection is most appropriately categorized as:
+√ Emergency
+• Informational
+• Warning
+• Routine
+
+11. [Module 03] What does CVSS stand for?
+√ Common Vulnerability Scoring System
+• Central Vulnerability Security Standard
+• Computer Validation Severity Scale
+• Common Verification Security System
+
+12. [Module 03] What is the purpose of CVSS?
+√ Provide a standardized measure of vulnerability severity
+• Determine chain of custody
+• Define the Cyber Kill Chain
+• Perform disk imaging
+
+13. [Module 03] Which CVSS component represents inherent vulnerability characteristics such as attack vector and complexity?
+√ Base Score
+• Temporal Score
+• Environmental Score
+• Recovery Score
+
+14. [Module 03] Which CVSS component accounts for factors that can change over time?
+√ Temporal Score
+• Base Score
+• Environmental Score
+• Containment Score
+
+15. [Module 03] Which CVSS component allows an organization to adjust severity based on its specific environment?
+√ Environmental Score
+• Base Score
+• Temporal Score
+• Evidence Score
+
+16. [Module 03] Which factor is associated with the CVSS Base Score?
+√ Attack complexity
+• Organization-specific business importance only
+• Availability of a future patch only
+• IR team staffing
+
+17. [Module 03] Which factor can affect a CVSS Temporal Score?
+√ Availability of exploit code or patches
+• The organization's office location
+• The number of IR team members
+• The age of a forensic image
+
+18. [Module 03] Why is the CVSS Environmental Score useful?
+√ It adapts vulnerability severity to the organization's specific threat profile and controls
+• It replaces the Base Score entirely
+• It measures evidence volatility
+• It defines OODA stages
+
+19. [Module 03] Who developed the OODA Loop?
+√ John Boyd
+• Kevin Mitnick
+• Alan Turing
+• Whitfield Diffie
+
+20. [Module 03] What does OODA stand for?
+√ Observe, Orient, Decide, Act
+• Observe, Operate, Detect, Analyze
+• Organize, Observe, Defend, Act
+• Orient, Operate, Decide, Assess
+
+21. [Module 03] What happens during the Observe stage of OODA?
+√ Information is gathered and the environment is monitored
+• A final course of action is implemented
+• Assets are redeployed
+• Evidence is archived
+
+22. [Module 03] What happens during the Orient stage of OODA?
+√ Collected information is interpreted in context
+• The chosen action is executed
+• The incident is permanently closed
+• All systems are powered off
+
+23. [Module 03] What happens during the Decide stage of OODA?
+√ A course of action is selected
+• Raw information is first gathered
+• The selected action is executed
+• Evidence is destroyed
+
+24. [Module 03] What happens during the Act stage of OODA?
+√ The chosen course of action is implemented
+• The environment is first observed
+• A vulnerability receives a Base Score
+• Critical infrastructure is identified
+
+25. [Module 03] Why is the OODA Loop relevant to incident response?
+√ It supports rapid, iterative decision-making under time pressure
+• It is a forensic imaging standard
+• It defines chain of custody
+• It replaces triage categories
+
+26. [Module 03] Why should critical infrastructure be identified before an incident?
+√ Effective triage depends on knowing which services and assets are most important
+• All infrastructure has identical importance
+• It eliminates the need for monitoring
+• It guarantees no emergency incidents
+
+27. [Module 03] What is the first step in identifying critical infrastructure?
+√ Identify essential services
+• Prioritize protection
+• Assess vulnerabilities
+• Calculate CVSS Temporal Scores
+
+28. [Module 03] After essential services are identified, what should be identified next?
+√ Their supporting infrastructure
+• The attacker
+• The final lessons learned
+• Archival media
+
+29. [Module 03] Why determine the potential impact of compromise?
+√ To understand consequences such as operational disruption, financial loss, or reputational damage
+• To eliminate the need for vulnerability assessment
+• To calculate RAM volatility
+• To decide evidence ownership
+
+30. [Module 03] Why assess vulnerabilities in critical infrastructure?
+√ To identify weaknesses that could be exploited
+• To make every asset an emergency
+• To replace impact analysis
+• To avoid prioritization
+
+31. [Module 03] What should follow identification of services, infrastructure, impacts, and vulnerabilities?
+√ Prioritize protection
+• Disable all services
+• Begin dead acquisition
+• Skip to lessons learned
+
+32. [Module 03] Which statement best describes critical infrastructure in triage?
+√ Some organizational components are more important to essential operations than others
+• Every system must always receive identical priority
+• Only physical infrastructure can be critical
+• Criticality is determined only after recovery
+
+33. [Module 03] How does mass-casualty triage relate to cyber triage?
+√ Both allocate limited response resources according to urgency and severity
+• Both require medical personnel
+• Cyber triage ignores severity
+• There is no conceptual relationship
+
+34. [Module 03] Which combination best supports effective cyber triage?
+√ Clear protocols, appropriate tools, trained personnel, and communication
+• Only automated scoring
+• Only management approval
+• Only forensic imaging
+
+35. [Module 03] Why should triage decisions be revisited as new information appears?
+√ Severity, scope, and urgency can change during an incident
+• A triage category can never change
+• Only CVSS scores matter
+• Triage ends before detection
+
+========================================================================
+Module 04 — Containment and Evidence Collection
+========================================================================
+
+1. [Module 04] What are the two primary goals of containment?
+√ Prevent further damage and preserve evidence
+• Recover systems and close the incident
+• Calculate CVSS and notify users
+• Train responders and update policy
+
+2. [Module 04] Which is a common containment technique?
+√ Disconnect compromised systems from the network
+• Delete all logs
+• Immediately destroy all affected hardware
+• Disable the IR plan
+
+3. [Module 04] Why might firewall rules be changed during containment?
+√ To block malicious traffic or isolate compromised areas
+• To calculate evidence hashes
+• To train users
+• To create disk images
+
+4. [Module 04] Why might an entire network segment be isolated?
+√ To prevent lateral movement while protecting unaffected assets
+• To increase attacker access
+• To replace evidence collection
+• To eliminate all business communication
+
+5. [Module 04] How can access controls support containment?
+√ By limiting unauthorized access to sensitive systems and data
+• By increasing privileges for all users
+• By deleting system logs
+• By replacing network monitoring
+
+6. [Module 04] Why might a compromised system be moved to an isolated network?
+√ To permit safer investigation and evidence collection
+• To return it immediately to production
+• To make it publicly accessible
+• To avoid collecting evidence
+
+7. [Module 04] Why might specific processes or services be shut down during containment?
+√ To stop malicious or compromised activity
+• To preserve attacker access
+• To calculate CVSS scores
+• To conduct a tabletop exercise
+
+8. [Module 04] What is the first basic step in evidence collection?
+√ Identify the scope of the incident
+• Destroy the original media
+• Recover the business unit
+• Assign an Environmental Score
+
+9. [Module 04] After identifying scope, what is the next basic evidence collection step?
+√ Gather evidence
+• Erase logs
+• Redeploy systems
+• Close the incident
+
+10. [Module 04] Why conduct a preliminary analysis of collected evidence?
+√ To identify key artifacts and begin reconstructing attacker actions
+• To modify the original evidence
+• To eliminate chain of custody
+• To avoid determining the attack vector
+
+11. [Module 04] Why determine the attack vector?
+√ To understand how the attacker gained access or executed actions
+• To decide which user gets training
+• To calculate system uptime
+• To define archival media
+
+12. [Module 04] What does 'follow the trail' mean during evidence collection?
+√ Trace attacker actions, lateral movement, privilege escalation, and accessed data
+• Move evidence between analysts without documentation
+• Delete suspicious artifacts
+• Return the system to production
+
+13. [Module 04] Why must evidence be preserved?
+√ To maintain integrity for future analysis and potential legal proceedings
+• To ensure it can be freely modified
+• To avoid documentation
+• To reduce storage use
+
+14. [Module 04] What are the two basic types of data acquisition?
+√ Live and dead/static acquisition
+• Base and temporal acquisition
+• Internal and external acquisition
+• Active and passive triage
+
+15. [Module 04] What is live acquisition?
+√ Collecting data from a system that is powered on
+• Collecting only archival media
+• Collecting data from a powered-off system
+• Collecting only printed documents
+
+16. [Module 04] What is dead or static acquisition?
+√ Collecting data from a system that is powered off
+• Capturing RAM from a running system
+• Monitoring live network traffic only
+• Performing a tabletop exercise
+
+17. [Module 04] Why is live acquisition important?
+√ It can capture volatile data that may disappear when power is removed
+• It guarantees the system is not altered
+• It replaces forensic imaging
+• It is used only for archival media
+
+18. [Module 04] Which item is a target of live acquisition?
+√ RAM
+• A powered-off WORM disc only
+• A printed network diagram only
+• A sealed evidence bag
+
+19. [Module 04] Which item may be obtained during live acquisition?
+√ Running processes
+• Only deleted archival backups
+• Only powered-off SSDs
+• Only paper records
+
+20. [Module 04] Why can clipboard data be valuable?
+√ It may contain transient recently copied information
+• It is always stored permanently on disk
+• It replaces RAM acquisition
+• It contains only operating-system files
+
+21. [Module 04] What can an ARP cache reveal?
+√ Recent IP-to-MAC mappings and device interactions
+• CVSS severity
+• User training history
+• Chain-of-custody signatures
+
+22. [Module 04] Why document active network connections during live acquisition?
+√ They can reveal current communications with malicious or unauthorized hosts
+• They are less volatile than archival media
+• They replace disk images
+• They determine legal jurisdiction
+
+23. [Module 04] What is the purpose of the order of volatility?
+√ Collect the most ephemeral evidence before it changes or disappears
+• Collect the largest evidence source first
+• Collect evidence alphabetically
+• Collect only non-volatile evidence
+
+24. [Module 04] Which evidence is generally the most volatile?
+√ CPU registers and cache
+• Archival media
+• Physical network topology
+• Optical media
+
+25. [Module 04] According to the lecture order, what follows CPU registers and cache?
+√ Primary storage (RAM)
+• Archival media
+• Physical configuration
+• HDD/SSD
+
+26. [Module 04] Which should generally be collected before secondary storage?
+√ Temporary system files
+• Archival media
+• Physical topology
+• Lessons learned
+
+27. [Module 04] Which is generally less volatile than RAM?
+√ Secondary storage such as HDD/SSD
+• CPU cache
+• Registers
+• Active process state
+
+28. [Module 04] Which evidence source is generally among the least volatile?
+√ Archival media
+• CPU registers
+• RAM
+• ARP cache
+
+29. [Module 04] What does dead acquisition commonly target?
+√ High-value non-volatile data that will not rapidly change
+• Only CPU registers
+• Only active network connections
+• Only clipboard data
+
+30. [Module 04] Why are forensic images of HDDs and SSDs useful?
+√ They create a bit-for-bit copy for analysis while preserving the original
+• They automatically decrypt all files
+• They remove the need for hashing
+• They guarantee attribution
+
+31. [Module 04] What is the purpose of a write blocker?
+√ Prevent alteration of source media during acquisition
+• Increase write speed to the original drive
+• Delete malware automatically
+• Calculate CVSS scores
+
+32. [Module 04] What does WORM stand for?
+√ Write Once, Read Many
+• Write Often, Read More
+• Workstation Operations and Recovery Media
+• Write Only, Read Memory
+
+33. [Module 04] Which is an example of user-created digital evidence?
+√ Office documents
+• Kernel files only
+• System logs only
+• Routing tables only
+
+34. [Module 04] Which is an example of protected digital evidence?
+√ Hidden or encrypted files
+• Only public documents
+• Only system uptime
+• Only network topology
+
+35. [Module 04] Which is an example of computer-created evidence?
+√ Log files
+• A handwritten witness statement
+• A user's paper notebook
+• A verbal report
+
+36. [Module 04] Why can browser caches be useful evidence?
+√ They may reveal web activity and user behavior
+• They contain only encrypted RAM
+• They are always unrelated to investigations
+• They replace system logs
+
+37. [Module 04] Why can backup files be useful evidence?
+√ They can provide snapshots of data or system state from earlier points in time
+• They are always more volatile than RAM
+• They cannot contain historical data
+• They replace chain of custody
+
+38. [Module 04] What is the purpose of hashing forensic evidence?
+√ To verify that evidence has not changed
+• To compress evidence
+• To increase attacker persistence
+• To assign a triage category
+
+39. [Module 04] What is chain of custody?
+√ A documented record of who handled evidence, when, and for what purpose
+• The sequence of Cyber Kill Chain phases
+• The OODA decision cycle
+• A list of CVSS metrics
+
+40. [Module 04] Why should evidence acquisition be documented?
+√ To demonstrate what was collected, how it was collected, and that integrity was maintained
+• To make evidence easier to alter
+• To eliminate the need for hashes
+• To prevent later analysis
+
+========================================================================
+Module 05 — Eradication, Recovery, and Lessons Learned
+========================================================================
+
+1. [Module 05] What must be achieved before eradication can begin?
+√ Successful containment
+• Lessons learned
+• Final recovery
+• A tabletop exercise
+
+2. [Module 05] What is the primary goal of eradication?
+√ Completely remove the adversary and their ability to control compromised assets
+• Prioritize incoming alerts
+• Identify critical infrastructure
+• Train the help desk
+
+3. [Module 05] Why should command-and-control (C2) channels be disrupted?
+√ To cut off the adversary's ability to communicate with and control compromised assets
+• To increase network visibility for the attacker
+• To restore business applications
+• To calculate CVSS
+
+4. [Module 05] If comprehensive evidence collection was not possible earlier, when should it be completed?
+√ During eradication before destructive remediation actions
+• Only after lessons learned
+• Never after containment
+• Only during preparation
+
+5. [Module 05] If both memory and persistent storage must be imaged, which should be acquired first?
+√ Memory
+• Persistent storage
+• Archival media
+• Physical topology
+
+6. [Module 05] Why should memory be imaged before persistent storage?
+√ Memory is more volatile and may contain transient evidence
+• Persistent storage disappears first
+• Memory cannot contain useful evidence
+• Disk imaging always destroys RAM
+
+7. [Module 05] Which action best represents a methodical eradication strategy?
+√ Remove persistence and hostile control while ensuring no remnants remain
+• Immediately reconnect every compromised host
+• Delete all evidence before remediation
+• Skip validation of affected systems
+
+8. [Module 05] Why should eradication actions be documented?
+√ For post-incident analysis, accountability, and possible legal requirements
+• To avoid lessons learned
+• To eliminate the need for evidence
+• To allow uncontrolled changes
+
+9. [Module 05] What should eradication activities comply with?
+√ Relevant legal, regulatory, and ethical requirements
+• Only attacker preferences
+• Only informal team customs
+• No documented standards
+
+10. [Module 05] What is the primary purpose of Recovery?
+√ Safely redeploy affected business assets and resume operations
+• Identify the first alert
+• Perform reconnaissance
+• Assign triage categories
+
+11. [Module 05] Who usually controls when and how affected business assets are redeployed?
+√ The affected business unit and organizational stakeholders, with IR guidance
+• The attacker
+• The IR team alone in every organization
+• External media
+
+12. [Module 05] What role does the IR team commonly play during Recovery?
+√ A consultative role helping ensure safe redeployment
+• No role at all
+• Only a legal role
+• Only a procurement role
+
+13. [Module 05] Why are relationships built during Preparation important during Recovery?
+√ They enable collaboration between IR and affected business units
+• They eliminate the need for validation
+• They guarantee IR owns every system
+• They replace monitoring
+
+14. [Module 05] Why must the affected business unit partner with the IR team?
+√ To reduce the risk that redeployed systems become re-compromised
+• To prevent any system from returning to service
+• To avoid patching
+• To eliminate documentation
+
+15. [Module 05] What should happen before a recovered system is redeployed?
+√ Validate that it is clean, secure, and appropriately patched
+• Disable monitoring
+• Remove all security controls
+• Delete all incident records
+
+16. [Module 05] What should be increased on recently redeployed assets?
+√ Monitoring
+• Attacker access
+• Anonymous privileges
+• Log deletion
+
+17. [Module 05] Which Recovery strategy emphasizes cooperation among the IR team, business unit, and other stakeholders?
+√ Collaboration
+• Isolation forever
+• Evidence destruction
+• Weaponization
+
+18. [Module 05] Why is enhanced monitoring useful after redeployment?
+√ It helps quickly identify signs of re-compromise or remaining problems
+• It guarantees no future incident
+• It replaces patching
+• It makes lessons learned unnecessary
+
+19. [Module 05] What is the purpose of the Lessons Learned stage?
+√ Use the incident to improve future prevention and response
+• Assign a CVSS Base Score
+• Perform initial detection
+• Create attacker persistence
+
+20. [Module 05] According to the lecture, which stage is often overlooked despite being extremely important?
+√ Lessons Learned
+• Event Monitoring
+• Delivery
+• Weaponization
+
+21. [Module 05] Which question should be asked during Lessons Learned?
+√ How can we handle this better if it happens again?
+• How can we avoid documenting the incident?
+• How can we remove all monitoring?
+• How can we skip recovery?
+
+22. [Module 05] Why is 'make sure this never happens again' not a sufficient goal?
+√ Complete prevention cannot be guaranteed, so organizations must also improve resilience and response
+• Incidents are always identical
+• Prevention is unrelated to security
+• Recovery guarantees prevention
+
+23. [Module 05] What is a structured debriefing?
+√ A post-incident discussion involving stakeholders to identify what happened and what should improve
+• A live acquisition technique
+• A CVSS scoring method
+• A containment firewall rule
+
+24. [Module 05] Why should lessons learned be documented?
+√ Future responders can benefit from institutional knowledge of past events
+• Documentation increases attacker access
+• Past incidents have no future value
+• It replaces training
+
+25. [Module 05] What should be created from identified lessons and weaknesses?
+√ Action plans
+• New attacker accounts
+• Unmonitored systems
+• Unverified assumptions
+
+26. [Module 05] How should lessons learned influence training?
+√ They should be incorporated into future training and exercises
+• They should remain confidential from responders
+• They should eliminate drills
+• They should be ignored once recovery ends
+
+27. [Module 05] Why is Lessons Learned part of a continuous improvement loop?
+√ Experience from one incident should strengthen preparation and response to future incidents
+• It permanently ends the IR lifecycle
+• It replaces containment
+• It prevents all future alerts
+
+28. [Module 05] Which statement best describes effective eradication?
+√ It depends on containment and removes adversarial control and persistence
+• It occurs before detection
+• It consists only of notifying users
+• It is the same as triage
+
+29. [Module 05] Which statement best describes effective recovery?
+√ It is a collaborative and validated return of affected assets to service
+• It is simply powering systems back on immediately
+• It excludes the affected business unit
+• It ends all monitoring
+
+30. [Module 05] Which statement best describes effective lessons learned?
+√ It converts incident experience into concrete improvements in plans, controls, training, and response
+• It focuses only on blame
+• It requires deleting old records
+• It is optional whenever recovery succeeds
+
+31. [Module 05] What is a major risk of redeploying systems without adequate validation?
+√ Re-compromise
+• Lower CVSS scores
+• Loss of tabletop exercises
+• Excessive preparation
+
+32. [Module 05] Why should the IR team remain involved even if it does not control redeployment?
+√ Its expertise can help ensure systems return safely and securely
+• It must personally operate every business service
+• It replaces system owners
+• It is responsible only for public relations
+
+33. [Module 05] Which activity helps preserve institutional knowledge after an incident?
+√ Detailed incident and lessons-learned documentation
+• Deleting case records
+• Avoiding debriefings
+• Removing training materials
+
+34. [Module 05] What is the relationship between eradication and recovery?
+√ Eradication removes the threat so recovery can safely restore operations
+• Recovery must always occur before eradication
+• They are unrelated
+• Recovery replaces containment
+
+35. [Module 05] Which sequence is most appropriate near the end of the IR lifecycle?
+√ Eradication, Recovery, Lessons Learned
+• Lessons Learned, Detection, Weaponization
+• Recovery, Reconnaissance, Triage
+• Preparation, Recovery, Exploitation
