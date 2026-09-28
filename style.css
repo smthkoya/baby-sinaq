@@ -541,3 +541,25 @@ body {
   color: #fff;
   border-color: #fff; /* Добавлено, чтобы рамка тоже была красной */
 }
+
+/* Baby sinaq mascot */
+.app-mascot {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+@media (max-width: 600px) {
+  .app-mascot {
+    width: 48px;
+    height: 48px;
+    top: 12px;
+    right: 12px;
+    border-radius: 12px;
+  }
+}
