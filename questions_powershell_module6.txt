@@ -1,0 +1,255 @@
+1. [Module 06] What is PowerShell Empire described as?
+√ A post-exploitation framework used in penetration testing and red teaming.
+• A Windows file manager.
+• A replacement for PowerShell ISE.
+• A CSV viewer.
+• An Active Directory schema editor.
+• A patch-management service.
+
+2. [Module 06] What is Starkiller?
+√ A graphical user interface for PowerShell Empire.
+• A Windows service that replaces WinRM.
+• A PowerShell execution policy.
+• A domain controller role.
+• A CSV conversion tool.
+• A built-in cmdlet for creating users.
+
+3. [Module 06] Which operating systems are mentioned as straightforward platforms for installing Empire through apt?
+√ Kali Linux or Parrot OS.
+• Windows XP only.
+• macOS only.
+• Android only.
+• Cisco IOS only.
+• FreeDOS only.
+
+4. [Module 06] Which command updates package information before installing Empire in the theory?
+√ sudo apt update
+• sudo empire update-client
+• powershell Update-Module Empire
+• apt empire –refresh-only
+• yum update empire
+• winget upgrade powershell
+
+5. [Module 06] Which command installs the package in the course material?
+√ sudo apt install powershell-empire
+• sudo apt install starkiller-only
+• pip install powershell
+• winget install empire-c2
+• Install-Module Empire
+• apt install winrm
+
+6. [Module 06] To run Empire, what two major components does the theory say must be running?
+√ The server and the client.
+• Two domain controllers.
+• PowerShell ISE and cmd.exe.
+• A printer and a scanner.
+• Two listeners only.
+• A CSV importer and exporter.
+
+7. [Module 06] What is the Empire server primarily described as?
+√ The backend that serves stagers and performs other framework functions.
+• A GUI used only to format tables.
+• A Windows service for DNS.
+• A local text editor.
+• A CSV database.
+• A browser extension.
+
+8. [Module 06] Which command starts the Empire server according to the course material?
+√ sudo powershell-empire server
+• sudo powershell-empire client
+• empire start listener only
+• Start-EmpireServer
+• python empire.ps1 server
+• sudo starkiller server
+
+9. [Module 06] Which command starts the Empire client?
+√ sudo powershell-empire client
+• sudo powershell-empire server
+• Start-EmpireClient
+• empire –gui-only
+• powershell client.ps1
+• sudo apt client empire
+
+10. [Module 06] Why is the Empire client started in a separate terminal from the server?
+√ The server must remain running while the operator uses the client.
+• The client automatically shuts down the server.
+• Linux cannot run two processes in one terminal session.
+• The server is only needed for installation.
+• The client is a Windows-only executable.
+• The server converts all output to CSV.
+
+11. [Module 06] What is an Empire listener?
+√ A communication endpoint that agents connect back to.
+• A PowerShell help topic.
+• A Windows local group.
+• A CSV file containing targets.
+• A domain trust.
+• A disk partition.
+
+12. [Module 06] Which settings are specifically associated with listener communication?
+√ Listening address, port, and communication protocol.
+• CSV delimiter, font, and paper size.
+• User password age only.
+• Forest functional level only.
+• Disk size and drive letter.
+• PowerShell variable scope only.
+
+13. [Module 06] Which command sequence begins configuring an HTTP listener in the CLI material?
+√ uselistener http
+• useagent http
+• usestager exe
+• listener new csv
+• New-HttpListener PowerShell
+• Start-WebServer Empire
+
+14. [Module 06] After uselistener http, which command changes the listener port in the example?
+√ set port {your preferred port number}
+• set ipconfig port
+• listen -p only
+• port = auto
+• Set-NetTCPSetting
+• New-PSSession -Port
+
+15. [Module 06] What does execute do after listener options are configured in the CLI workflow?
+√ Creates/starts the configured listener.
+• Deletes the listener.
+• Exports the listener to CSV.
+• Stops the Empire server.
+• Installs Starkiller.
+• Creates a domain controller.
+
+16. [Module 06] What is an Empire agent?
+√ A payload/script instance on a compromised system that beacons back to the Empire server.
+• A PowerShell module that only formats output.
+• A domain user created by RSAT.
+• A Windows Update service.
+• A CSV row.
+• A local printer driver.
+
+17. [Module 06] What role does an agent provide after it connects?
+√ A foothold/channel for remote post-exploitation interaction.
+• Only a visual theme for Starkiller.
+• A replacement for the server.
+• A package-manager mirror.
+• A file-compression service.
+• A DNS resolver.
+
+18. [Module 06] What does the Empire EXE stager generate?
+√ A standalone Windows executable.
+• A CSV report.
+• A Group Policy Object.
+• A PowerShell module manifest only.
+• A Linux kernel module.
+• An Active Directory trust.
+
+19. [Module 06] Why is a PowerShell stager attractive on Windows according to the theory?
+√ PowerShell is native to Windows and can execute one-liners/scripts in memory.
+• It requires no listener.
+• It can only write CSV files.
+• It automatically disables all security controls.
+• It replaces the operating system shell permanently.
+• It runs only on domain controllers.
+
+20. [Module 06] What does the interact command do in Empire?
+√ Selects and opens interaction with a connected agent.
+• Installs the Empire package.
+• Creates a new forest.
+• Exports agents to XML.
+• Changes the listener port.
+• Updates apt repositories.
+
+21. [Module 06] What can operators do after interacting with an agent?
+√ Execute commands, deploy payloads, and gather information on the connected system.
+• Only change the Starkiller theme.
+• Only create CSV files.
+• Only view package versions.
+• Only start the Empire server.
+• Only modify Linux users.
+
+22. [Module 06] What is the purpose of Empire plugins?
+√ Extend the framework with specialized capabilities, modules, scripts, or automation.
+• Replace every listener with a printer.
+• Disable the client.
+• Convert all agents into domain controllers.
+• Manage only CSV output.
+• Enforce Windows execution policy.
+
+23. [Module 06] Which is listed as an extra Starkiller sponsorship feature in the theory?
+√ Graph View
+• Get-ExecutionPolicy
+• Active Directory Users and Computers
+• Windows Event Viewer
+• PowerShell ISE
+• Group Policy Management Console
+
+24. [Module 06] Which is another listed extra Starkiller feature?
+√ Process Browser
+• Import-Csv
+• Get-Member
+• Out-Printer
+• Set-Location
+• Get-Help
+
+25. [Module 06] In Lab 6, where do you create a new listener in Starkiller?
+√ The Listeners section/tab.
+• The Agents tab only.
+• The Plugins folder on disk.
+• The Windows Event Viewer.
+• The Active Directory Users console.
+• The PowerShell Get-Help window.
+
+26. [Module 06] Which listener type does the lab tell students to select for the basic exercise?
+√ HTTP
+• FTP only
+• SMTP
+• SNMP
+• RDP
+• LDAP only
+
+27. [Module 06] Before submitting the listener, what values should be checked against the lab environment?
+√ Port and IP address/domain.
+• Only the CSV delimiter.
+• Only the current username.
+• Only the screen resolution.
+• Only the PowerShell version.
+• Only the system time.
+
+28. [Module 06] In Lab 6, which stager type is selected?
+√ multi/launcher
+• csv/export
+• ad/user
+• gpo/apply
+• disk/query
+• winrm/session
+
+29. [Module 06] When configuring the stager, what must be selected so it knows where to connect?
+√ The listener created earlier.
+• A GPO.
+• A CSV file.
+• The current execution policy.
+• A printer.
+• An OU.
+
+30. [Module 06] Which language is selected by default for the lab stager?
+√ PowerShell
+• Python only
+• Java
+• C# only
+• Ruby
+• SQL
+
+31. [Module 06] After the stager runs successfully, where should a new connection appear?
+√ The Agents tab.
+• The Listeners tab only.
+• The Windows Services console.
+• The AD Trusts view.
+• The Get-Help output.
+• The CSV export folder.
+
+32. [Module 06] After selecting the new agent, where does the lab say commands can be issued?
+√ The Tasks window.
+• The package manager.
+• The Group Policy editor.
+• The Windows printer queue.
+• The CSV import dialog.
+• The execution-policy prompt.
