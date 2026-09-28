@@ -15,9 +15,8 @@ const MODULE_SUBJECTS = {
     { file: "questions_module4_zaxra.txt", label: "Module 5 AI" },
   ],
   security_gateways: [
-    { file: "questions_security_gateways_module4.txt", label: "Module 4 — Authentication & Access Control" },
-    { file: "questions_security_gateways_module5.txt", label: "Module 5 — Private Networks" },
-    { file: "questions_security_gateways_module6.txt", label: "Module 6 — Attacks & Defense" },
+    { file: "questions_intro_dfir_cyberpro.txt", label: "Quiz questions" },
+    { file: "questions_intro_dfir_ai_generated.txt", label: "AI generated additional questions" },
   ],
   linux: [
     { file: "questions_linux_module1.txt", label: "Module 1" },
