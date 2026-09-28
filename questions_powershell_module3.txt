@@ -1,0 +1,255 @@
+1. [Module 03] You repeatedly modify the same PowerShell code for different scenarios. What does the module suggest doing?
+√ Turn it into a reusable function.
+• Convert it to a screenshot.
+• Always rewrite it from scratch.
+• Replace it with Format-Table.
+• Store it only in command history.
+• Disable execution policy.
+
+2. [Module 03] How is a basic PowerShell function declared?
+√ With the function keyword, a name, and a script block in braces.
+• With class and parentheses only.
+• With module and square brackets.
+• With def and a colon.
+• With cmdlet and XML.
+• With alias and a pipeline.
+
+3. [Module 03] What can a PowerShell module contain?
+√ Cmdlets, providers, functions, workflows, variables, and aliases.
+• Only text files.
+• Only compiled executables.
+• Only functions and nothing else.
+• Only aliases.
+• Only Active Directory users.
+
+4. [Module 03] Which command lists modules available in default module locations even if they are not imported yet?
+√ Get-Module -ListAvailable
+• Get-Module
+• Import-Module -List
+• Get-Command -ModulesOnly
+• Show-Module
+• Find-Module -Imported
+
+5. [Module 03] Which command lists modules already imported into the current session?
+√ Get-Module
+• Get-Module -ListAvailable
+• Import-Module
+• Get-Command -AllModules
+• Show-ImportedModule
+• Get-Help Module
+
+6. [Module 03] Which cmdlet imports a module into the current PowerShell session?
+√ Import-Module
+• Get-Module
+• Add-ModulePath
+• Enable-Module
+• Start-Module
+• Open-Module
+
+7. [Module 03] A module is not in a default module location. What should you provide to Import-Module?
+√ The fully qualified path to the module.
+• Only the module version.
+• The current user’s SID.
+• A CSV file.
+• The process ID.
+• The execution-policy name.
+
+8. [Module 03] Which cmdlet can list available commands and filter them by module, name, or noun?
+√ Get-Command
+• Get-Member
+• Get-Module
+• Get-Help only
+• Select-Object
+• Find-Object
+
+9. [Module 03] In Lab 3.1, what is the purpose of New-ADGroup -Name IPPhoneTest ...?
+√ Create the test group used for the VoIP exercise.
+• Create a new computer account.
+• Create a new forest.
+• Create a log file.
+• Create a CIM session.
+• Create a scheduled task.
+
+10. [Module 03] In Lab 3.1, which cmdlet moves IPPhoneTest into the IT organizational unit?
+√ Move-ADObject
+• Move-Item
+• Set-ADUser
+• Add-ADGroupMember
+• Rename-ADObject
+• Set-Location
+
+11. [Module 03] Which command adds Abbi, Ida, Parsa, and Tonia to the test group in the lab?
+√ Add-ADGroupMember IPPhoneTest -Members Abbi,Ida,Parsa,Tonia
+• Set-ADUser IPPhoneTest -Members Abbi,Ida,Parsa,Tonia
+• New-ADGroupMember -Users Abbi,Ida,Parsa,Tonia
+• Get-ADGroupMember IPPhoneTest | Add-User
+• Move-ADObject Abbi,Ida,Parsa,Tonia
+• Import-Csv IPPhoneTest
+
+12. [Module 03] The lab builds an ipPhone value from GivenName and Surname. What naming pattern is required?
+√ FirstName.LastName@domain.com
+• LastName_FirstName@domain.com
+• domain
+• FirstName@LastName
+• FirstName.LastName.local
+• SID@domain.com
+
+13. [Module 03] Why does the Lab 3.1 script call Get-ADUser $u after Get-ADGroupMember?
+√ To retrieve fuller user properties such as GivenName and Surname.
+• To delete the user from the group.
+• To create a new user.
+• To start a Windows service.
+• To retrieve disk space.
+• To enable PSRemoting.
+
+14. [Module 03] Which cmdlet updates the ipPhone attribute in the lab script?
+√ Set-ADUser
+• Get-ADUser
+• New-ADUser
+• Move-ADObject
+• Get-ADGroupMember
+• Write-Host
+
+15. [Module 03] In the services exercise, why is Select -ExpandProperty Name used before Out-File?
+√ To write the service Name values into the text file.
+• To start the services.
+• To convert the services to XML.
+• To create a module.
+• To sort services by status.
+• To prompt for credentials.
+
+16. [Module 03] The service-start script checks If ($Status -ne 'Running'). What happens when the service is stopped?
+√ Start-Service $s is called.
+• The service is removed.
+• The script exits immediately.
+• The service name is deleted from the file.
+• A CIM session is created.
+• The status is set to Null.
+
+17. [Module 03] In the random-password exercise, what controls the number of generated characters?
+√ $passwordLength
+• $number
+• $letter
+• $i only with no other variable
+• Get-Random -Maximum only
+• Write-Host
+
+18. [Module 03] Why is [char]$number used in the random-password script?
+√ To convert the random numeric value into a character.
+• To convert the password to an integer.
+• To encrypt the password.
+• To create an array index.
+• To write the password to disk.
+• To generate a credential object.
+
+19. [Module 03] Lab 3.2 requires remote disk queries to use which management technology rather than DCOM?
+√ WS-MAN
+• SMB only
+• LDAP
+• RDP
+• FTP
+• SNMP
+
+20. [Module 03] Which CIM class is queried for logical disk information in Lab 3.2?
+√ Win32_LogicalDisk
+• Win32_PhysicalMemory
+• Win32_Process
+• Win32_Service
+• Win32_NetworkAdapter
+• Win32_UserAccount
+
+21. [Module 03] What does the filter DriveType=3 select in the disk-query lab?
+√ Local fixed disks/hard drives.
+• CD-ROM drives only.
+• Network drives only.
+• RAM disks only.
+• All physical devices.
+• Only removable USB drives.
+
+22. [Module 03] If no computer name is supplied to the Lab 3.2 script, what happens?
+√ Read-Host prompts the user to enter a computer name.
+• The script always uses localhost without asking.
+• The script terminates with no message.
+• It queries every domain computer.
+• It creates a new computer account.
+• It imports the ActiveDirectory module.
+
+23. [Module 03] What type of parameter is AlternateCredential in the updated disk script?
+√ A switch parameter.
+• An integer parameter.
+• A mandatory string array.
+• A credential object parameter only.
+• A pipeline-only parameter.
+• A module parameter.
+
+24. [Module 03] When -AlternateCredential is used, which cmdlet gathers credentials interactively?
+√ Get-Credential
+• Read-Host -AsPlainText
+• Get-ADUser
+• Get-Module
+• Enter-PSSession
+• Get-Content
+
+25. [Module 03] Why does the alternate-credential branch create a New-CimSession?
+√ Because the script needs a session that can carry the alternate credentials for the CIM query.
+• Because Get-CimInstance can never query remote computers.
+• Because WS-MAN requires a CSV file.
+• Because a module cannot contain credentials.
+• Because the disk class exists only inside sessions.
+• Because it converts DCOM to LDAP.
+
+26. [Module 03] What does .PARAMETER AlternateCredential in comment-based help describe?
+√ The purpose of that script parameter.
+• The current value of the parameter.
+• A module dependency.
+• The last error.
+• A required file extension.
+• The output format.
+
+27. [Module 03] The logging function accepts Folder, File, and Data. What extra information does it add to each log entry?
+√ A timestamp.
+• A digital signature.
+• The user’s password.
+• A process dump.
+• A random port.
+• A domain trust.
+
+28. [Module 03] Why does the improved Write-Log function check $Folder.EndsWith('\')?
+√ To add a missing trailing backslash before building the full log path.
+• To ensure the folder is hidden.
+• To convert the folder to a network share.
+• To escape every character in the path.
+• To delete the folder if it exists.
+• To enable tab completion.
+
+29. [Module 03] Why is -ErrorAction Stop used with Out-File inside the Try block?
+√ So a write failure becomes catchable by the Catch block.
+• So Out-File stops after one line even when successful.
+• So PowerShell exits after writing.
+• So the log file becomes read-only.
+• So the function runs in parallel.
+• So errors are ignored.
+
+30. [Module 03] What does the Catch block do in the logging-function exercise?
+√ Displays a friendly error message when writing the log fails.
+• Retries forever.
+• Deletes the invalid folder.
+• Creates an Active Directory user.
+• Disables execution policy.
+• Imports the LogFunction module.
+
+31. [Module 03] To convert the logging function into a reusable module, what file extension is used in the lab?
+√ .psm1
+• .ps1
+• .dll only
+• .module
+• .psd0
+• .cmd
+
+32. [Module 03] What does successful Tab completion of Write-L verify at the end of the module exercise?
+√ That the function is available/loaded for use.
+• That the log file contains data.
+• That WS-MAN is disabled.
+• That the module was deleted.
+• That the current user is an administrator.
+• That all services are running.
