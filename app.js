@@ -3,16 +3,12 @@ import { t, applyStaticTranslations, toggleLang } from "./i18n.js";
 
 const MODULE_SUBJECTS = {
   python: [
-    { file: "questions_python_module1.txt", label: "Модуль 1 AI according to the example" },
-    { file: "questions_python_module2.txt", label: "Модуль 2 AI according to the example" },
-    { file: "questions_python_module3.txt", label: "Модуль 3 AI according to the example" },
-    { file: "questions_python_module4.txt", label: "Модуль 4 AI according to the example" },
-    { file: "questions_python_module5.txt", label: "Модуль 5 AI according to the example" },
-    { file: "questions_python_module6.txt", label: "Модуль 1 AI" },
-    { file: "questions_python_module7.txt", label: "Модуль 2 AI" },
-    { file: "questions_python_module8.txt", label: "Модуль 3 AI" },
-    { file: "questions_python_module9.txt", label: "Module 4 AI" },
-    { file: "questions_module4_zaxra.txt", label: "Module 5 AI" },
+    { file: "questions_powershell_module1.txt", label: "Module 1" },
+    { file: "questions_powershell_module2.txt", label: "Module 2" },
+    { file: "questions_powershell_module3.txt", label: "Module 3" },
+    { file: "questions_powershell_module4.txt", label: "Module 4" },
+    { file: "questions_powershell_module5.txt", label: "Module 5" },
+    { file: "questions_powershell_module6.txt", label: "Module 6" },
   ],
   security_gateways: [
     { file: "questions_intro_dfir_cyberpro.txt", label: "Quiz questions" },
