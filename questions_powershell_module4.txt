@@ -1,0 +1,255 @@
+1. [Module 04] What is the Active Directory PowerShell module in this course associated with?
+√ RSAT (Remote Server Administration Tools).
+• Powercat only.
+• Microsoft Sentinel.
+• Starkiller only.
+• Windows Defender Firewall only.
+• Git Bash.
+
+2. [Module 04] Before using cmdlets such as Get-ADUser from the AD module, what does the theory say you should do?
+√ Import the module.
+• Disable the domain controller.
+• Create a listener.
+• Convert the output to HTML.
+• Run Mimikatz.
+• Start an Empire agent.
+
+3. [Module 04] Which cmdlet retrieves information about the current Active Directory forest?
+√ Get-ADForest
+• Get-ADDomain
+• Get-ADTrust
+• Get-ADComputer
+• Get-GPO
+• Get-Host
+
+4. [Module 04] Which cmdlet retrieves information about a domain, including its functional level and PDC emulator information?
+√ Get-ADDomain
+• Get-ADForest
+• Get-ADUser
+• Get-ADGroup
+• Get-NetAdapter
+• Get-LocalGroupMember
+
+5. [Module 04] Which cmdlet retrieves information about domain controllers such as name, IP address, and site?
+√ Get-ADDomainController
+• Get-ADComputer
+• Get-ADTrust
+• Get-WmiObject Win32_Process
+• Get-GPO
+• Get-EventLog
+
+6. [Module 04] Which cmdlet is used to enumerate trust relationships between domains?
+√ Get-ADTrust
+• Get-ADGroup
+• Get-ADUser
+• Get-ADComputer
+• Get-ADForest only
+• Get-NetAdapter
+
+7. [Module 04] Which cmdlet retrieves organizational units?
+√ Get-ADOrganizationalUnit
+• Get-ADGroup
+• Get-ADForest
+• Get-GPO
+• Get-ADSiteOnly
+• Get-OUItem
+
+8. [Module 04] Which cmdlet retrieves Group Policy Objects?
+√ Get-GPO
+• Get-ADPolicyOnly
+• Get-ADTrust
+• Get-ADUser
+• Get-Host
+• Get-WinEvent
+
+9. [Module 04] Which cmdlet can retrieve computer objects and properties such as operating system?
+√ Get-ADComputer
+• Get-ADUser
+• Get-ADGroup
+• Get-ADTrust
+• Get-GPO
+• Get-LocalGroupMember
+
+10. [Module 04] In Lab 4, which command returns the domain of the current computer through WMI?
+√ (Get-WmiObject Win32_ComputerSystem).Domain
+• Get-NetAdapter.Domain
+• whoami /domainonly
+• Get-Host -Domain
+• ipconfig /domain
+• Get-EventLog Domain
+
+11. [Module 04] Which pair is used in the lab to identify the current user and their group memberships?
+√ whoami and whoami /groups
+• Get-Host and Get-NetAdapter
+• Get-GPO and Get-ADTrust
+• ipconfig and route print
+• Get-EventLog and Get-WinEvent
+• Get-ADForest and Get-ADDomain
+
+12. [Module 04] If Get-ADDomainController is unavailable, which utility does the lab give as an alternative for listing DCs?
+√ nltest /dclist:
+• netstat -ano
+• ping -dc
+• route print
+• whoami /dc
+• gpupdate /force
+
+13. [Module 04] Which command enumerates all domain users and requests DisplayName and SamAccountName in the lab?
+• Get-ADUser -Filter * -Property DisplayName, SamAccountName
+• Get-ADGroup -Filter * | Select Name
+• Get-ADComputer -Filter
+• Get-NetAdapter
+• Get-GPO -All
+• Get-LocalGroupMember Administrators
+
+14. [Module 04] Which command lists the members of the Domain Admins group?
+√ Get-ADGroupMember -Identity ‘Domain Admins’
+• Get-ADGroup -Name ‘Domain Admins’ -Users
+• Get-ADUser -Group ‘Domain Admins’
+• whoami /groups Domain Admins
+• Get-GPO ‘Domain Admins’
+• Get-ADTrust ‘Domain Admins’
+
+15. [Module 04] Which command lists computers in the domain and selects Name and OperatingSystem?
+• Get-ADComputer -Filter * | Select-Object Name, OperatingSystem
+• Get-ADUser -Filter * | Select Name, OperatingSystem
+• Get-NetAdapter | Select Name, OperatingSystem
+• Get-GPO -All | Select Computer
+• Get-Host | Select OperatingSystem
+• Get-EventLog -Computer
+
+16. [Module 04] Why does the lab enumerate domain trusts?
+√ Trusts can reveal relationships and possible paths between domains.
+• Trusts list local disk free space.
+• Trusts are required to format tables.
+• Trusts store PowerShell execution policy.
+• Trusts replace GPOs.
+• Trusts are only used for DNS caching.
+
+17. [Module 04] Which cmdlet lists Active Directory replication sites in the lab?
+√ Get-ADReplicationSite -Filter
+• Get-ADSite -All
+• Get-NetSiteOnly
+• Get-GPO -Sites
+• Get-ADForest -SitesOnly
+• Get-WmiObject Win32_Site
+
+18. [Module 04] Which command lists all GPOs?
+√ Get-GPO -All
+• Get-GPO -Filter * only
+• Get-ADPolicy -All
+• Get-GroupPolicyObject
+• Get-ADGroup -GPO
+• Get-GPResultantSetOfPolicy -All
+
+19. [Module 04] Which cmdlet is used to generate resultant-set-of-policy information for a user/computer?
+√ Get-GPResultantSetOfPolicy
+• Get-GPO
+• Get-ADDefaultDomainPasswordPolicy
+• Get-ADTrust
+• Get-WinEvent
+• Get-NetUser
+
+20. [Module 04] Which command checks membership of the local Administrators group?
+√ Get-LocalGroupMember -Group ‘Administrators’
+• Get-ADGroupMember -Identity ‘Administrators’ only
+• Get-NetUser -Admin
+• whoami /localadmins
+• Get-GPO -Administrators
+• Get-Host -Admin
+
+21. [Module 04] Why does the lab enumerate accounts with ServicePrincipalName values?
+√ To identify service accounts/SPNs that may be security-relevant.
+• To find disk partitions.
+• To discover PowerShell modules.
+• To list local printers.
+• To change the execution policy.
+• To create a listener.
+
+22. [Module 04] Which cmdlet retrieves the default domain password policy?
+√ Get-ADDefaultDomainPasswordPolicy
+• Get-DomainPasswordText
+• Get-GPOPasswordOnly
+• Get-ADUser -PasswordPolicy
+• Get-ExecutionPolicy
+• Get-CredentialPolicy
+
+23. [Module 04] What does -Recursive add to Get-ADGroupMember -Identity 'Domain Admins'?
+√ It includes members found through nested group membership.
+• It searches every disk recursively.
+• It queries every forest on the internet.
+• It repeatedly changes the group.
+• It imports all modules.
+• It creates a recursive PowerShell session.
+
+24. [Module 04] Which cmdlet lists available event logs in the optional lab section?
+√ Get-EventLog -List
+• Get-WinEvent -ListOnly
+• Get-Log -All
+• Get-ADLog
+• Get-GPO -Logs
+• Get-Content Security
+
+25. [Module 04] Which cmdlet queries the Security event log in the lab?
+√ Get-WinEvent -LogName ‘Security’
+• Get-EventLog -Create Security
+• Get-ADSecurityLog
+• Get-Content Security.evtx
+• whoami /events
+• Get-GPO Security
+
+26. [Module 04] What is PSRemoting used for in this module?
+√ Running PowerShell commands and scripts on remote computers without logging on interactively.
+• Exporting objects to CSV.
+• Creating calculated properties.
+• Formatting local tables.
+• Renaming files.
+• Generating random passwords.
+
+27. [Module 04] Which cmdlet configures a computer to receive PowerShell remote commands and adjusts the relevant firewall rules?
+√ Enable-PSRemoting
+• Enter-PSSession
+• Invoke-Command
+• Start-RemoteDesktop
+• Enable-ADRemote
+• New-CimSession only
+
+28. [Module 04] Which cmdlet is intended for an interactive one-to-one remote PowerShell session?
+√ Enter-PSSession
+• Invoke-Command
+• Get-ADForest
+• Get-WinEvent
+• Import-Module
+• Out-GridView
+
+29. [Module 04] Which cmdlet can execute commands on a remote computer without entering an interactive session?
+√ Invoke-Command
+• Enter-PSSession only
+• Get-Host
+• Set-Location
+• Format-Table
+• Import-Csv
+
+30. [Module 04] At the end of Lab 4, what should the student’s report include?
+√ Domain structure, DCs/trusts, privileged accounts, notable GPOs, and potential weaknesses.
+• Only a screenshot of PowerShell ISE.
+• Only the current username.
+• Only the execution policy.
+• Only a list of installed applications.
+• Only the computer’s IP address.
+
+31. [Module 04] The lab asks students to report additional exposed information or risky conditions discovered during enumeration. Why?
+√ To document security risks beyond the required checklist.
+• To change all findings automatically.
+• To delete risky accounts immediately.
+• To replace the LMS submission.
+• To disable event logging.
+• To convert every finding into a module.
+
+32. [Module 04] Which command from the lab checks basic network adapter information?
+√ Get-NetAdapter
+• Get-ADComputer
+• Get-GPO
+• Get-ADTrust
+• Get-EventLog
+• Get-Credential
