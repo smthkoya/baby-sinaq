@@ -1,0 +1,255 @@
+1. [Module 05] What is PowerSploit described as in the theory?
+√ A collection of PowerShell modules used for penetration testing and red-team tasks.
+• A Windows patching service.
+• A GUI for Microsoft Sentinel.
+• A replacement for Active Directory.
+• A CSV conversion library.
+• A printer-management module.
+
+2. [Module 05] Which category includes gathering users, groups, shares, and domain-controller information?
+√ Reconnaissance and Enumeration
+• Data Formatting
+• Printer Management
+• Execution Policy
+• File Compression
+• GUI Rendering
+
+3. [Module 05] Which category includes moving between systems and gaining higher privileges?
+√ Lateral Movement and Privilege Escalation
+• CSV Export
+• Object Formatting
+• Help Discovery
+• File Renaming
+• Console Coloring
+
+4. [Module 05] Which category includes extracting data and learning about the target network?
+√ Data Exfiltration and Network Reconnaissance
+• Module Import only
+• Pipeline Formatting
+• Execution Policy
+• Comment-Based Help
+• Object Sorting
+
+5. [Module 05] Which PowerSploit category includes reverse shells or shellcode injection?
+√ Payload Execution and Code Injection
+• Help and Discovery
+• CSV Conversion
+• Group Policy Reporting only
+• Console Output
+• File Enumeration only
+
+6. [Module 05] Which category includes creating scheduled tasks or services to maintain access?
+√ Persistence
+• Formatting
+• Object Measurement
+• Module Discovery
+• Variable Casting
+• Console History
+
+7. [Module 05] What does Invoke-PortScan do in Lab 5?
+√ Scans a target for open ports and services.
+• Lists domain users.
+• Creates a scheduled task.
+• Exports credentials to CSV.
+• Imports PowerSploit.
+• Starts Empire.
+
+8. [Module 05] What does Get-NetDomain retrieve?
+√ Information about the domain.
+• Only local disk information.
+• A list of PowerShell versions.
+• The current execution policy.
+• A process dump.
+• Only GPO passwords.
+
+9. [Module 05] Why is Get-NetForest useful in multi-domain environments?
+√ It retrieves forest information.
+• It starts a reverse shell.
+• It changes forest functional level.
+• It deletes trusts.
+• It creates a new forest.
+• It enables PSRemoting.
+
+10. [Module 05] Which command retrieves information about domain users in the Lab 5 enumeration section?
+√ Get-NetUser
+• Get-NetGroup
+• Get-NetComputer
+• Get-NetShare
+• Get-NetSession
+• Get-NetForest
+
+11. [Module 05] Which command retrieves information about domain groups?
+√ Get-NetGroup
+• Get-NetUser
+• Get-NetComputer
+• Get-NetLoggedon
+• Get-NetFileServer
+• Get-NetShare
+
+12. [Module 05] Which command can enumerate computers and filter by operating system?
+√ Get-NetComputer
+• Get-NetUser
+• Get-NetGroup
+• Get-DomainPolicy
+• Get-NetShare
+• Get-NetSession
+
+13. [Module 05] Which command enumerates active sessions on a machine?
+√ Get-NetSession
+• Get-NetLoggedon
+• Get-NetShare
+• Get-NetComputer
+• Get-NetForest
+• Get-NetGPO
+
+14. [Module 05] Which command retrieves users logged on to a machine?
+√ Get-NetLoggedon
+• Get-NetSession
+• Get-NetGroup
+• Get-DomainTrust
+• Get-NetFileServer
+• Get-ADSIObject
+
+15. [Module 05] Which command enumerates file servers in the domain?
+√ Get-NetFileServer
+• Get-NetShare
+• Get-NetComputer
+• Get-NetUser
+• Get-NetSession
+• Get-NetForest
+
+16. [Module 05] Which command enumerates shares on a specified machine?
+√ Get-NetShare
+• Get-NetFileServer
+• Get-NetGroup
+• Get-NetUser
+• Get-DomainPolicy
+• Get-NetForest
+
+17. [Module 05] Which command retrieves domain policy information such as password policies?
+√ Get-DomainPolicy
+• Get-NetGPOGroup
+• Get-NetShare
+• Get-NetSession
+• Invoke-PortScan
+• Get-NetLoggedon
+
+18. [Module 05] Which command retrieves trust relationships between domains?
+√ Get-DomainTrust
+• Get-NetGPO
+• Get-ADSIObject
+• Get-NetGroup
+• Get-NetComputer
+• Get-NetFileServer
+
+19. [Module 05] In the lateral-movement section, what does Invoke-Command do?
+√ Executes a command on a remote machine.
+• Lists only local groups.
+• Creates a CSV file.
+• Retrieves forest information.
+• Formats process output.
+• Changes execution policy globally.
+
+20. [Module 05] What does Invoke-SMBExec require according to the lab?
+√ Administrative privileges on the remote machine.
+• A local printer.
+• A CSV file with headers.
+• PowerShell ISE only.
+• A domain trust in every case.
+• A graphical interface.
+
+21. [Module 05] What is the purpose of Invoke-TokenManipulation in the lab?
+√ Manipulate/impersonate Windows tokens for access or privilege-related actions.
+• Sort tokens alphabetically.
+• Convert credentials to JSON.
+• Create PowerShell variables.
+• Change file extensions.
+• List event logs only.
+
+22. [Module 05] What does Get-UnquotedService identify?
+√ Services with unquoted paths that may present privilege-escalation opportunities.
+• Unsigned PowerShell scripts.
+• Disabled domain users.
+• Untrusted forests.
+• Open SMB shares.
+• Expired certificates.
+
+23. [Module 05] What does Invoke-ServiceAbuse modify for privilege escalation?
+√ Service configuration/binary path.
+• The domain forest root.
+• PowerShell help files.
+• CSV headers.
+• The local time zone.
+• Only the firewall display name.
+
+24. [Module 05] What is Invoke-BypassUAC intended to attempt?
+√ Bypass User Account Control for elevated execution.
+• Disable Active Directory replication.
+• Convert scripts to modules.
+• List running services.
+• Change the PowerShell version.
+• Export objects to XML.
+
+25. [Module 05] What does Get-GPPPassword look for?
+√ Passwords stored in Group Policy Preferences files.
+• Passwords typed into Read-Host in the current console only.
+• Browser history.
+• Only Kerberos tickets.
+• CSV files named password.csv.
+• PowerShell module manifests.
+
+26. [Module 05] What is Invoke-NinjaCopy described as doing?
+√ Copying files from locked or restricted locations by bypassing normal NTFS restrictions.
+• Renaming every file in a folder.
+• Creating an Empire listener.
+• Listing PowerShell modules.
+• Formatting a process table.
+• Changing domain password policy.
+
+27. [Module 05] What does Invoke-FileFinder help locate?
+√ Files of interest based on names, paths, or other attributes.
+• Only domain controllers.
+• Only PowerShell versions.
+• Only local groups.
+• Only running services.
+• Only event logs.
+
+28. [Module 05] What is Out-Minidump used for in the lab description?
+√ Creating a process dump such as LSASS for credential-analysis purposes.
+• Exporting a CSV report.
+• Starting a remote service.
+• Creating a PowerShell module.
+• Changing UAC settings.
+• Scanning network ports.
+
+29. [Module 05] What is the purpose of Invoke-Obfuscation in the AV-evasion section?
+√ Obfuscate PowerShell code to make signature-based detection harder.
+• Encrypt every file on disk.
+• Create a new domain.
+• Enable Windows Defender.
+• Generate HTML reports.
+• Manage printers.
+
+30. [Module 05] Why are reflective PE/DLL injection techniques described as harder for traditional AV to detect?
+√ They can load payloads into memory without writing the executable payload to disk.
+• They always disable every security product.
+• They use only signed Microsoft files.
+• They require no code execution.
+• They convert malware to CSV.
+• They work only on Linux.
+
+31. [Module 05] Which PowerSploit technique injects shellcode into a process’s memory?
+√ Invoke-Shellcode
+• Get-NetUser
+• Get-DomainPolicy
+• Invoke-PortScan
+• Get-NetShare
+• Get-NetForest
+
+32. [Module 05] What is Powercat used for in the theory section?
+√ PowerShell-based networking/listener and reverse-shell functionality.
+• Active Directory password-policy management.
+• CSV conversion.
+• PowerShell execution-policy enforcement.
+• GPO editing only.
+• Disk formatting.
