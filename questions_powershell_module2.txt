@@ -1,0 +1,255 @@
+1. [Module 02] You want to check the current PowerShell script execution policy. Which cmdlet should you run?
+√ Get-ExecutionPolicy
+• Set-ExecutionPolicy
+• Get-Policy
+• Get-Help Policy
+• Test-ExecutionPolicy
+• Show-ScriptPolicy
+
+2. [Module 02] Which execution policy prohibits running scripts?
+√ Restricted
+• RemoteSigned
+• AllSigned
+• Unrestricted
+• Bypass
+• DefaultScript
+
+3. [Module 02] Which policy requires downloaded scripts to have a digital signature?
+√ RemoteSigned
+• Restricted
+• Bypass
+• Unrestricted
+• NoProfile
+• CurrentUser
+
+4. [Module 02] Which policy allows all scripts to execute without prompts?
+√ Bypass
+• AllSigned
+• Restricted
+• RemoteSigned
+• UndefinedOnly
+• LocalSigned
+
+5. [Module 02] Your organization enforces script execution through Group Policy. What happens to conflicting local execution-policy settings?
+√ The Group Policy setting can override local settings.
+• The local setting always wins.
+• PowerShell randomly chooses one.
+• Both policies are ignored.
+• Only ISE follows Group Policy.
+• The script is converted to a module.
+
+6. [Module 02] A downloaded script is trusted, but Windows still marks it as downloaded. Which cmdlet can clear that status?
+√ Unblock-File
+• Clear-Content
+• Remove-Item
+• Set-ExecutionPolicy
+• Unlock-Script
+• Enable-PSRemoting
+
+7. [Module 02] What file extension is normally used for a PowerShell script?
+√ .ps1
+• .psm0
+• .cmdlet
+• .pwr
+• .batps
+• .psx
+
+8. [Module 02] A script has a param() block with $DriveType = 3. What does the value 3 represent in this context?
+√ A default parameter value.
+• A mandatory line number.
+• The PowerShell version.
+• The number of pipeline stages.
+• An execution-policy scope.
+• A module index.
+
+9. [Module 02] If a script has no param() block, where can unnamed arguments supplied after the script name be accessed?
+√ $args
+• $inputFile
+• $PSItem
+• $env
+• $params
+• $host
+
+10. [Module 02] Which syntax explicitly references a script in the current directory?
+√ ..ps1
+• MyScript.ps1::current
+• /MyScript.ps1
+• $MyScript.ps1
+• Current:MyScript.ps1
+• Run-Item MyScript.ps1
+
+11. [Module 02] Why did the documented disk script replace Format-Table with Select-Object?
+√ To keep the final output as objects that can continue through the pipeline.
+• To make the script run only in ISE.
+• To disable all formatting.
+• To force output to a printer.
+• To convert the result to XML.
+• To bypass execution policy.
+
+12. [Module 02] Which comment syntax is used for multiple consecutive lines in PowerShell?
+√ <# … #>
+• /* … */
+• 
+• ’’’ … ’’’
+• {# … #}
+• REM … ENDREM
+
+13. [Module 02] What does .SYNOPSIS provide in comment-based help?
+√ A short summary of what the script does.
+• A list of every installed module.
+• The script’s digital signature.
+• The current execution policy.
+• A list of errors from the last run.
+• The script’s output encoding.
+
+14. [Module 02] You have an array of users and do not know how many items it contains. Which construct is preferred for processing every user?
+√ ForEach
+• For
+• Switch only
+• Do..Until only
+• Break
+• Set-Location
+
+15. [Module 02] Why is a For loop useful compared with ForEach in the example from the lab?
+√ You can explicitly define how many iterations occur.
+• It automatically imports CSV files.
+• It always runs in parallel.
+• It requires no condition.
+• It can process only one object.
+• It bypasses execution policy.
+
+16. [Module 02] PowerShell 7 adds -Parallel to which cmdlet for simultaneous processing?
+√ ForEach-Object
+• Where-Object
+• Get-Process
+• Write-Host
+• Select-Object
+• Import-Csv
+
+17. [Module 02] What is the default number of items processed at a time by ForEach-Object -Parallel according to the lab?
+√ 5
+• 1
+• 2
+• 10
+• 20
+• Unlimited
+
+18. [Module 02] Which parameter changes the concurrency limit for ForEach-Object -Parallel?
+√ -ThrottleLimit
+• -ParallelLimit
+• -ThreadCount
+• -MaxItems
+• -Concurrency
+• -BatchSize
+
+19. [Module 02] Which loop guarantees that its script block runs at least once and continues until a condition becomes true?
+√ Do..Until
+• While
+• ForEach-Object
+• For
+• Where-Object
+• Switch
+
+20. [Module 02] Which loop guarantees at least one execution and continues while its condition remains true?
+√ Do..While
+• While
+• For
+• ForEach
+• Switch
+• If
+
+21. [Module 02] Which loop may execute zero times if its condition is false before the first iteration?
+√ While
+• Do..While
+• Do..Until
+• ForEach on a nonempty array
+• Switch
+• Try
+
+22. [Module 02] Inside a loop, what does Continue do?
+√ Skips the rest of the current iteration and moves to the next one.
+• Stops the entire loop permanently.
+• Restarts PowerShell.
+• Exits the script and closes the console.
+• Repeats the current iteration forever.
+• Writes the current object to output.
+
+23. [Module 02] Inside a loop, what does Break do?
+√ Stops the loop completely.
+• Skips only the current iteration.
+• Pauses the loop for one second.
+• Sends the loop output to the pipeline.
+• Starts a nested loop.
+• Clears the loop variable.
+
+24. [Module 02] In Lab 2.1, why is [int]$num = Read-Host ... useful before multiplying the value?
+√ It casts the input to an integer instead of leaving it as text.
+• It encrypts the input.
+• It makes the variable global.
+• It prevents all errors.
+• It converts the input to an array.
+• It automatically validates the number against Active Directory.
+
+25. [Module 02] What is the default value of a newly referenced variable that has not been assigned a value?
+√ $null
+• 0
+• EmptyString
+• False
+• UndefinedError
+• $args
+
+26. [Module 02] You set $var='Hello' and then $text='Value is $var'. What appears inside $text?
+√ Value is $var
+• Value is Hello
+• Value is
+• $var only
+• A syntax error
+• Value is System.String
+
+27. [Module 02] Why does $text="Value is $var" behave differently from the single-quoted version?
+√ Double quotes allow variable interpolation.
+• Double quotes force integer casting.
+• Double quotes disable variables.
+• Double quotes create arrays.
+• Double quotes invoke Get-Member.
+• Double quotes change execution policy.
+
+28. [Module 02] What does the PowerShell backtick do when placed before a special character such as $?
+√ Escapes the following special character.
+• Starts a comment.
+• Creates a pipeline.
+• Ends the script.
+• Imports a module.
+• Makes the variable global.
+
+29. [Module 02] You create $computers='server','localhost','server_2'. What does $computers[0] return?
+√ server
+• localhost
+• server_2
+• 3
+• 0
+• All three values
+
+30. [Module 02] What does $computers.Count return for a three-element list?
+√ 3
+• 2
+• 1
+• 0
+• 4
+• The list itself
+
+31. [Module 02] What is the main purpose of Read-Host in these labs?
+√ Collect user input from the console.
+• Write output to a file.
+• Start a remote session.
+• Import a module.
+• Sort pipeline objects.
+• Change the execution policy.
+
+32. [Module 02] A script uses an If expression. What determines whether its statement block runs?
+√ Whether the expression evaluates to True or False.
+• The number of modules installed.
+• The execution-policy scope only.
+• The current directory.
+• The user’s group membership automatically.
+• The file extension.
