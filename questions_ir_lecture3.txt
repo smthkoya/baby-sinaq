@@ -1,0 +1,2918 @@
+1. In the six-stage incident response lifecycle, what follows Identification?
+    • Preparation
+    √ Containment
+    • Lessons Learned
+    • Recovery
+    • Eradication
+
+2. What is the third phase in the lecture's six-stage IR lifecycle?
+    • Preparation
+    √ Containment
+    • Identification
+    • Recovery
+    • Eradication
+
+3. What is the fourth phase in the lecture's six-stage IR lifecycle?
+    • Containment
+    • Lessons Learned
+    • Identification
+    • Recovery
+    √ Eradication
+
+4. What comes directly after Eradication in the six-stage model?
+    • Lessons Learned
+    • Identification
+    • Containment
+    • Preparation
+    √ Recovery
+
+5. Which phase completes the six-stage IR lifecycle?
+    • Preparation
+    • Eradication
+    • Recovery
+    • Identification
+    √ Lessons Learned
+
+6. What is the central goal of containment?
+    √ Limit further damage and spread
+    • Complete the incident review
+    • Attribute the attack to an individual
+    • Restore applications to production
+    • Remove all traces of the attacker
+
+7. Which statement best defines eradication?
+    • Publish the final lessons-learned report
+    • Determine an initial incident category
+    √ Remove threats, footholds and entry points
+    • Return services to full production
+    • Disconnect affected network segments only
+
+8. What is the primary purpose of recovery?
+    √ Return systems to normal and monitor them
+    • Enumerate all initial response contacts
+    • Determine the attacker's infrastructure
+    • Collect volatile evidence from active memory
+    • Block outgoing C2 for the first time
+
+9. What does rebuilding compromised systems bridge?
+    √ Eradication and recovery
+    • Recovery and lessons learned
+    • Identification and containment
+    • Detection and initial triage
+    • Preparation and identification
+
+10. In the fire analogy from the lecture, closing fire doors represents...
+    • Recovery
+    √ Containment
+    • Identification
+    • Eradication
+    • Forensics
+
+11. In the fire analogy, extinguishing the fire and repairing the faulty wire represents...
+    • Recovery
+    • Threat hunting
+    • Containment
+    √ Eradication
+    • Preparation
+
+12. In the fire analogy, repairing the building and adding alarms represents...
+    • Containment
+    √ Recovery
+    • Attribution
+    • Evidence collection
+    • Identification
+
+13. Which NIST publication replaced SP 800-61 Rev. 2 in April 2025?
+    • NIST SP 800-86
+    • NIST SP 800-83 Rev. 1
+    • ISO/IEC 27037
+    √ NIST SP 800-61 Rev. 3
+    • NIST CSF 1.1
+
+14. When was NIST SP 800-61 Rev. 3 published according to the lecture?
+    √ April 3, 2025
+    • April 30, 2025
+    • April 3, 2024
+    • March 3, 2025
+    • May 3, 2025
+
+15. How many main phases are in NIST SP 800-61 Rev. 2?
+    √ Four
+    • Six
+    • Five
+    • Three
+    • Seven
+
+16. Which phase comes directly after Detection & Analysis in NIST SP 800-61 Rev. 2?
+    • Identification Only
+    • Preparation
+    • Post-Incident Activity
+    • Threat Hunting
+    √ Containment, Eradication & Recovery
+
+17. Which phase concludes the four-phase NIST Rev. 2 lifecycle?
+    • Initial Identification
+    • Detection & Analysis
+    • Preparation
+    • Containment Only
+    √ Post-Incident Activity
+
+18. Which section of NIST SP 800-61 Rev. 2 is cited for technical containment guidance?
+    √ Section 3.3
+    • Section 1.1
+    • Section 2.1
+    • Section 4.7
+    • Section 5.2
+
+19. NIST SP 800-61 Rev. 3 is primarily aligned with which framework?
+    • ISO/IEC 27037
+    • FIRST TLP 2.0
+    √ NIST CSF 2.0
+    • MITRE ATT&CK
+    • RFC 3227
+
+20. Which of these is a NIST CSF 2.0 function?
+    • Disseminate
+    • Attribute
+    • Eradicate
+    √ Govern
+    • Investigate
+
+21. What NIST CSF 2.0 function covers incident mitigation?
+    • Govern
+    • Recover
+    • Identify
+    • Protect
+    √ Respond
+
+22. Which NIST CSF 2.0 category is associated with containment and eradication?
+    • Incident Analysis (RS.AN)
+    • Event Analysis (DE.AE)
+    • Continuous Monitoring (DE.CM)
+    √ Incident Mitigation (RS.MI)
+    • Improvement (ID.IM)
+
+23. What does NIST CSF 2.0 RS.MI-01 specify?
+    • Recovery plans are exercised
+    √ Incidents are contained
+    • Incident logs are archived
+    • Security reports are published
+    • Incidents are eradicated
+
+24. What does NIST CSF 2.0 RS.MI-02 specify?
+    • Incident reports are classified
+    • Incidents are contained
+    • Cyber risks are accepted
+    • Forensic evidence is destroyed
+    √ Incidents are eradicated
+
+25. What does NIST CSF 2.0 RS.AN-07 address?
+    • Blocking malicious network domains
+    • Selection of response team members
+    • Validation of application backups
+    √ Collection and integrity of incident evidence
+    • Assigning recovery time objectives
+
+26. What is one purpose of recording incident information in Brown and Roberts' model?
+    • Eliminate the need for a response plan
+    • Automatically restore production systems
+    • Substitute for a forensic disk image
+    √ Support legal, reporting and intelligence follow-up
+    • Guarantee attribution without investigation
+
+27. According to the lecture, a successful Finish phase must address...
+    • The ransom payment before analysis
+    • The public attribution before containment
+    • The malware executable alone
+    • The SIEM platform licensing model
+    √ Threat access and the weakness it exploited
+
+28. Why is hacking back discouraged in the textbook?
+    • It always improves the accuracy of evidence
+    • It prevents the need for threat intelligence
+    • It is required before malware removal
+    √ Attribution may be wrong and harm third parties
+    • It is the first step in incident recovery
+
+29. What does the textbook include beyond deleting malicious files?
+    √ Removing attacker channels and remaining footholds
+    • Changing the company network address plan
+    • Publishing all internal security logs
+    • Contacting the attacker to negotiate
+    • Closing every existing user account
+
+30. Which three-step principle is highlighted by the joint advisory?
+    • Attribute, prosecute, then restore
+    • Patch, restart, then collect logs
+    • Detect, publicize, reconnect immediately
+    √ Collect, act quietly, finish completely
+    • Block, wipe, and investigate later
+
+31. Why does the advisory recommend collecting evidence before disruptive changes?
+    • Logs cannot be exported while a host is running
+    √ Changes may destroy evidence and warn the attacker
+    • Evidence is only useful after the system is rebuilt
+    • Patches must always be installed before imaging
+    • Forensics is unnecessary once containment begins
+
+32. Why might discreet action be important during remediation?
+    √ The adversary may hide or detonate ransomware
+    • It allows responders to skip an incident record
+    • It removes the need to protect critical systems
+    • It guarantees the attacker will disconnect voluntarily
+    • It prevents security monitoring from collecting data
+
+33. What is the benefit of third-party IR support mentioned in the golden order?
+    • Avoiding any coordination with legal counsel
+    • Providing an automatic guarantee of recovery
+    √ Helping ensure eradication is thorough
+    • Assigning the attacker a public identity
+    • Replacing the need for internal records
+
+34. Which is NOT among the six NIST containment-selection criteria?
+    √ Attacker's country of origin
+    • Expected solution duration
+    • Service availability impact
+    • Potential organizational damage
+    • Evidence preservation needs
+
+35. Which criterion considers damage and possible theft if the team waits?
+    • Service availability
+    √ Potential damage
+    • Duration
+    • Time and resources
+    • Effectiveness
+
+36. Which criterion addresses the need to retain forensic artifacts?
+    • Implementation effort
+    • Duration
+    • Potential damage
+    √ Evidence preservation
+    • Service availability
+
+37. Which criterion asks whether network services can remain operational?
+    • Threat intelligence confidence
+    • Evidence preservation
+    • Duration
+    √ Service availability
+    • Attack attribution
+
+38. Which criterion considers personnel effort and implementation cost?
+    √ Time and resources
+    • Malware family popularity
+    • Service recovery category
+    • Threat actor identity
+    • Evidence admissibility
+
+39. Which criterion asks whether a measure fully or partly contains the threat?
+    √ Effectiveness
+    • Potential damage
+    • Resource availability
+    • Evidence preservation
+    • Duration
+
+40. Which criterion distinguishes a four-hour workaround from a permanent fix?
+    √ Duration
+    • Service availability
+    • Potential damage
+    • Effectiveness
+    • Evidence preservation
+
+41. How quickly is short-term containment generally intended to act?
+    • Days to weeks
+    √ Minutes to hours
+    • Only after full recovery
+    • Several months
+    • One to two years
+
+42. How long may long-term containment typically continue?
+    • Only after incident closure
+    • Until first detection only
+    • Less than one minute
+    • Seconds only
+    √ Days to weeks
+
+43. What is the goal of short-term containment?
+    • Finish rebuilding all systems
+    √ Stop the spread immediately
+    • Conduct a final lessons-learned review
+    • Replace the entire IRP
+    • Rewrite all enterprise policies
+
+44. What is the goal of long-term containment?
+    • Shut down all services permanently
+    • Eliminate the need for recovery testing
+    √ Maintain safety while eradication is prepared
+    • Obtain public attribution of the attacker
+    • Replace post-incident reporting
+
+45. Which action is short-term containment?
+    • Rewrite all disaster recovery policies
+    • Deploy a new corporate security strategy
+    • Rebuild the entire network architecture
+    • Redesign the identity management program
+    √ Put a compromised endpoint in a quarantine VLAN
+
+46. Which action is long-term containment?
+    • Isolate one endpoint using its EDR agent
+    • Block one malicious sender at the gateway
+    • Disable one currently abused session
+    √ Patch the exploited weakness across similar hosts
+    • Unplug a single infected laptop immediately
+
+47. Which is a typical short-term identity action?
+    • Deploy a new authentication scheme
+    • Rebuild the full domain architecture
+    √ Disable an actively compromised account
+    • Replace the enterprise identity provider
+    • Publish a company-wide password guide
+
+48. Which is a typical long-term visibility improvement?
+    • Unplug the infected workstation from LAN
+    √ Increase monitoring in affected segments
+    • Apply an immediate block to one domain
+    • Suspend one suspicious session
+    • Disable a specific compromised VPN token
+
+49. Which set lists the four isolation layers from the lecture?
+    • Threat, risk, audit and policy
+    • Find, fix, finish and disseminate
+    • Endpoint, legal, media and recovery
+    √ Network, identity, services and cloud
+    • Analyze, examine, collect and report
+
+50. What is an example of network-level isolation?
+    • Revoke a stolen cloud API key
+    • Suspend an employee account
+    • Remove an infected scheduled task
+    √ Disable a switch port on the affected VLAN
+    • Disable an exposed software plugin
+
+51. What is an example of identity-level isolation?
+    • Block file extensions at a gateway
+    • Disable a physical switch port
+    √ Revoke a compromised session token
+    • Snapshot a cloud volume
+    • Create a quarantine VLAN
+
+52. What is an example of service-level containment?
+    • Rotate an exposed cloud access key
+    • Revoke an account authentication token
+    √ Temporarily stop the service used by malware
+    • Isolate an entire hypervisor cluster
+    • Set the host's switch port to shutdown
+
+53. What is an example of cloud-level containment?
+    • Move a physical desktop to another VLAN
+    • Unplug the host's Ethernet cable
+    √ Change the VM security group to isolate it
+    • Remove the workstation's USB devices
+    • Disable the on-premises switch port
+
+54. What access can remain after standard EDR host isolation?
+    • A new route directly to public C2 infrastructure
+    • Full access to every internal user workstation
+    √ Communication to its security management console
+    • Unrestricted inbound internet connections
+    • All ordinary file shares and domain resources
+
+55. What might a remediation VLAN be used for?
+    • Restoring traffic to every blocked domain
+    • Permanently hosting internet-facing services
+    • Sharing internal chat with suspected attackers
+    √ Quarantining suspicious endpoints
+    • Publishing recovered forensic evidence
+
+56. Why should cloud volumes be snapshotted before changing a compromised instance?
+    √ To preserve relevant evidence
+    • To ensure malicious accounts remain active
+    • To increase the attacker's C2 visibility
+    • To replace investigation notes entirely
+    • To make credential revocation unnecessary
+
+57. What is a risk of stopping a production service during containment?
+    • It can never affect any legitimate customer
+    • It automatically deletes all preserved backups
+    • It always changes the incident's source IP
+    √ It may interrupt business operations
+    • It guarantees a failed forensic hash check
+
+58. A single infected laptop can be disconnected from the network. What is preferred?
+    • Reboot it before collecting RAM
+    • Remove its disk while it is still active
+    • Shut it down before evaluating evidence
+    • Reconnect it to the internet immediately
+    √ Isolate it but keep the power on
+
+59. Why should an isolated compromised host normally remain powered on?
+    • To avoid the need for forensic imaging
+    • To eliminate the need for isolation monitoring
+    • To prevent all malware from running forever
+    • To ensure the hard disk cannot be modified
+    √ To preserve volatile memory for collection
+
+60. If a large number of hosts across subnets are affected, what may be necessary?
+    • Reset one employee's password first
+    • Disconnect each computer at random times
+    • Immediately rejoin all hosts to the domain
+    √ Disconnect at the network switch level
+    • Delete every file with an unfamiliar extension
+
+61. When may powering down infected devices be a last resort?
+    • Before preserving any available evidence in all cases
+    • Whenever a single suspicious DNS query appears
+    • Whenever the workstation has an EDR agent
+    √ When disconnection is impossible and malware is spreading
+    • As soon as any phishing e-mail is reported
+
+62. What is the main cost of powering off a compromised host?
+    • Automatic deletion of every offline backup
+    • Permanent damage to every disk sector
+    • Loss of all historical proxy logs
+    • Automatic expiration of domain certificates
+    √ Loss of volatile RAM evidence
+
+63. Which scenario most strongly favors network-wide isolation?
+    √ Ransomware alerts on more than ten finance hosts
+    • One approved scan during a test change
+    • An isolated benign antivirus false positive
+    • One normal login on a payroll workstation
+    • A scheduled backup to a trusted provider
+
+64. Which incident places exceptional weight on service availability?
+    √ A web shop server with a shell and 24/7 revenue
+    • An archived VM with no business dependencies
+    • An unplugged test laptop in a lab
+    • A decommissioned desktop with no network link
+    • An inactive printer receiving a routine update
+
+65. In the HR phishing exercise, which action is an appropriate short-term response?
+    • Reinstall every machine in the company immediately
+    √ EDR-isolate the laptop and preserve evidence
+    • Disable all corporate cloud services indefinitely
+    • Publish the user's account details to all staff
+    • Wait for public confirmation of the malware family
+
+66. In the web shop exercise, what must responders weigh before taking it offline?
+    • Whether IT staff can contact a media outlet
+    √ Revenue disruption and service availability
+    • Whether the company has extra desktop monitors
+    • Whether the attacker has a public social profile
+    • Whether the user has a preferred web browser
+
+67. In the finance VLAN exercise, what makes the event especially urgent?
+    √ Active encryption across multiple systems
+    • An approved change window on test systems
+    • A routine planned service outage
+    • A reported but unverified spam message
+    • A single blocked login from a known scanner
+
+68. Which sequence describes coordinated containment?
+    • Attribute, recover, then contain
+    • Patch one system, wait, repeat
+    • Rebuild, publicize, then scope
+    • Reset randomly, isolate, then collect
+    √ Scope, plan, execute together
+
+69. What should scoping identify before a coordinated action?
+    • Only the initial phishing message
+    • The company's future hardware budget
+    • The attacker's home address and real name
+    √ Affected hosts, accounts and network paths
+    • All employees with approved leave
+
+70. What does H-hour refer to in containment planning?
+    √ Agreed moment to execute coordinated actions
+    • Time when incident recovery is formally signed off
+    • Deadline for purchasing new EDR licenses
+    • Scheduled time for public attacker attribution
+    • Required end of the forensic reporting period
+
+71. Why is piecemeal containment risky?
+    • It automatically encrypts every backup copy
+    √ The attacker can adapt and use remaining footholds
+    • It proves that an incident did not occur
+    • It causes every IoC to become a false positive
+    • It guarantees loss of all monitoring records
+
+72. Which actions should be synchronized at H-hour?
+    • Regular backup testing and annual auditing
+    • Forensic report printing and file archiving
+    • Hardware inventory, travel approval and training
+    • Media interviews, recruiting and procurement
+    √ Host isolation, account disabling and C2 blocking
+
+73. How might partial containment leave the attacker in control?
+    • All accounts are locked simultaneously
+    √ Other accounts or tools remain usable
+    • Backup tapes are erased during isolation
+    • The network loses all evidence permanently
+    • Every malicious file is automatically deleted
+
+74. Which of the following is a C2 containment action?
+    • Review the annual incident response training plan
+    • Calculate a hash of an unused archival tape
+    • Publish a post-incident executive report
+    √ Block malicious domains at the DNS or proxy layer
+    • Restore an offline database from clean backups
+
+75. What does limiting workstation-to-workstation SMB and RDP help stop?
+    • Initial target selection
+    • Offline backup restoration
+    • File signature verification
+    • Post-incident legal review
+    √ Lateral movement
+
+76. What is egress filtering primarily used for during a compromise?
+    • Rebuild Windows from known-good media
+    • Restore files from archived storage
+    • Reissue every employee's access badge
+    • Verify the identity of a forensic analyst
+    √ Restrict suspicious outbound data transfers
+
+77. What might repeated archives such as 1.zip and 2.zip indicate?
+    • An approved domain controller upgrade
+    • Successful restoration of backups
+    • A completed forensic chain of custody
+    √ Data staging for exfiltration
+    • Routine printer driver deployment
+
+78. Which action directly removes an attacker's VPN access?
+    • Change the case classification code
+    • Publish a public indicator repository
+    • Replace a desktop computer's monitor
+    • Rebuild the SIEM reporting dashboard
+    √ Terminate the compromised VPN session
+
+79. Which protocol pair is cited when restricting lateral movement?
+    • HTTP and HTTPS
+    • SMTP and IMAP
+    √ RDP and SMB
+    • NTP and SNMP
+    • FTP and TFTP
+
+80. In the 5 Ds, what does Deny mean?
+    • Destroy an attacker-owned object
+    • Provide false information
+    • Interrupt an active action
+    • Reduce attacker capability
+    √ Stop access to a resource
+
+81. In the 5 Ds, what does Disrupt mean?
+    • Deny entry to a protected resource
+    • Lower bandwidth without stopping traffic
+    • Destroy the attacker infrastructure
+    • Display misleading data to the attacker
+    √ Interrupt the flow of action or information
+
+82. In the 5 Ds, what does Degrade mean?
+    • Delete attacker-controlled external infrastructure
+    • Feed the attacker deliberately false information
+    √ Reduce an attacker's capability
+    • Remove a host from the network entirely
+    • Record a complete forensic image
+
+83. In the 5 Ds, what does Deceive mean?
+    • Interrupt a current C2 session
+    √ Provide misleading information to the attacker
+    • Permanently destroy external systems
+    • Reduce a malicious host's bandwidth
+    • Disable access to the affected server
+
+84. In the 5 Ds, what does Destroy mean?
+    • Disable login to a compromised service
+    • Interrupt the active C2 session
+    √ Destroy an attacker-controlled item
+    • Limit the attacker's network bandwidth
+    • Provide deceptive files to a suspect
+
+85. Which 5 D is illustrated by a firewall block?
+    • Disrupt
+    • Destroy
+    • Degrade
+    • Deceive
+    √ Deny
+
+86. Which 5 D is illustrated by terminating a malicious process?
+    √ Disrupt
+    • Deceive
+    • Destroy
+    • Deny
+    • Degrade
+
+87. Which 5 D best matches throttling traffic to a suspicious host?
+    • Deny
+    √ Degrade
+    • Destroy
+    • Deceive
+    • Disrupt
+
+88. Which 5 D best matches using a honeytoken?
+    • Destroy
+    √ Deceive
+    • Deny
+    • Disrupt
+    • Degrade
+
+89. Which 5 D is generally not appropriate for a private organization?
+    • Degrade
+    √ Destroy
+    • Disrupt
+    • Deceive
+    • Deny
+
+90. A defender interrupts a live C2 connection without changing the malware. Which D is this?
+    √ Disrupt
+    • Deny
+    • Degrade
+    • Deceive
+    • Destroy
+
+91. A team publishes a fake credential in a monitored trap. Which D does this represent?
+    √ Deceive
+    • Disrupt
+    • Degrade
+    • Deny
+    • Destroy
+
+92. What is the recommended boundary for active defense?
+    • Retaliate against the attacking network
+    • Use unauthorized access against suspicious IPs
+    √ Take action in systems the organization controls
+    • Delete malware from third-party cloud tenants
+    • Probe every server attributed to the adversary
+
+93. Why is testing an attacker-controlled IP with a browser a bad first response?
+    √ It may alert the adversary to investigation
+    • It automatically restores stolen credentials
+    • It proves that the server is not compromised
+    • It provides a verified chain of custody
+    • It preserves the volatile RAM on the victim
+
+94. Which behavior is one of AA20-245A's seven common missteps?
+    • Using clean channels for responder coordination
+    • Recording who collected the RAM image
+    • Preserving original forensic images
+    √ Cleaning systems before safeguarding evidence
+    • Scoping all compromised accounts before resets
+
+95. Why are pre-emptive blocks of attacker infrastructure risky?
+    • Every malicious IP is guaranteed to remain static
+    √ The attacker may rotate C2 and evade observation
+    • Such blocks automatically invalidate prior hashes
+    • Firewalls cannot technically block a C2 IP
+    • Blocking always causes physical disk damage
+
+96. Why are early uncoordinated credential resets discouraged?
+    • They force offline backups to be re-encrypted
+    • They automatically disclose every employee's password
+    • Resetting passwords always deletes domain audit logs
+    • All password resets are forbidden during containment
+    √ The attacker may switch to other or forged credentials
+
+97. Which is the preferred approach to a necessary credential reset?
+    • Defer every credential action until the post-mortem
+    • Rotate one password before checking any other access
+    • Ask the attacker which credentials to change
+    √ Coordinate resets after sufficient scope and evidence
+    • Reset one visible account without notifying the team
+
+98. Why is cleaning before acquiring evidence risky?
+    • It preserves the original process memory perfectly
+    √ Volatile evidence can be lost or modified
+    • It eliminates the need for an evidence log
+    • It fixes every unrelated underlying vulnerability
+    • It guarantees faster forensic collection later
+
+99. Which common mistake gives an attacker access to incident response planning?
+    • Employing code names during coordination
+    • Preserving evidence on protected media
+    √ Discussing response over a compromised network
+    • Documenting the incident in an isolated workspace
+    • Using a separately secured conference bridge
+
+100. What does the term whack-a-mole describe in this context?
+    • Applying a coordinated network isolation plan
+    • Preserving disk data before running scanners
+    • Rebuilding a host from a trusted image
+    • Verifying all compromised accounts together
+    √ Treating symptoms while footholds remain
+
+101. Which behavior best illustrates whack-a-mole remediation?
+    • Imaging the system before replacing malicious files
+    • Hunting every host for related malicious activity
+    √ Removing one shell while leaving its backdoor accounts
+    • Fixing the entry point after removing persistence
+    • Revoking all compromised credentials together
+
+102. According to the lecture, mission-critical SIEM logs should be retained for at least...
+    √ One year
+    • One day
+    • Six months
+    • One month
+    • Five years
+
+103. A junior admin immediately blocks a C2 IP before scoping related systems. What is the main concern?
+    • All forensic evidence disappears when blocking an IP
+    • Every affected system is automatically reinstalled
+    • Firewalls cannot log connections once a rule exists
+    • Blocking IPs is never an effective containment method
+    √ The attacker may switch infrastructure and escape detection
+
+104. A responder deletes suspicious files and reboots before imaging. Which mistake is made?
+    • Performing a complete coordinated eradication
+    • Using an independent communications channel
+    √ Destroying or changing potential evidence
+    • Following the correct order of volatility
+    • Safeguarding the chain of custody
+
+105. Which of the junior admin's actions in Exercise 2 was constructive?
+    • Opening the suspicious IP in a normal browser
+    • Wiping the suspect binary before collecting it
+    • Resetting two passwords without coordination
+    √ Exporting logs and recording the hash and time
+    • Broadcasting details on corporate e-mail
+
+106. How should the FS01 team communicate if its enterprise e-mail may be monitored?
+    • Communicate only through infected user sessions
+    • Discuss findings in the compromised group chat
+    • Send all details on the same mail server
+    • Open a public social-media discussion
+    √ Use a separate trusted channel
+
+107. What is an example of out-of-band response communication?
+    • A shared folder on the isolated file server
+    √ A trusted phone call outside the affected network
+    • A shell command sent through the suspect VPN
+    • An e-mail sent through the compromised server
+    • A chat window running on the infected laptop
+
+108. Which is NOT an out-of-band option listed in the lecture?
+    • A trusted network isolated from the incident
+    • A phone conversation among responders
+    √ The possibly compromised company chat server
+    • An in-person incident-response war room
+    • A separate clean messaging tenant
+
+109. Why should incident responders agree on code names?
+    √ To protect people and systems during coordination
+    • To prove the name of the threat actor
+    • To replace all forensic event timestamps
+    • To automatically calculate forensic checksums
+    • To avoid preserving the original evidence
+
+110. What does NIST advise about pursuing attacker attribution during active response?
+    • Publicly identify the attacker before collecting RAM
+    • Trace and scan every suspect host before isolation
+    √ Prioritize containment, eradication and recovery
+    • Treat third-party network owners as guilty
+    • Delay all containment until attribution is certain
+
+111. Which attacker-infrastructure activity is characterized as safer in the lecture?
+    • Probing the suspect server with vulnerability scans
+    • Attempting remote login to the suspect machine
+    √ Checking established incident databases
+    • Opening the C2 address from the affected host
+    • Flooding the server to see whether it responds
+
+112. Who should handle attribution-related law-enforcement action?
+    • Any junior system administrator
+    • The corporate help desk alone
+    • The first employee to report the event
+    • The team's external marketing contractor
+    √ Appropriate law-enforcement authorities
+
+113. What can happen if malware uses a dead-man switch?
+    • It restores encrypted data when the host disconnects
+    • It guarantees safe isolation without any trade-off
+    • It automatically transfers custody to legal
+    √ It may encrypt files when its check-in fails
+    • It erases only unused backup tapes
+
+114. A host encrypts its disk after losing network contact. What does this illustrate?
+    • A completed data restoration
+    • Successful eradication verification
+    • A harmless baseline deviation
+    • A routine backup integrity test
+    √ A dead-man switch response
+
+115. When might delayed containment be considered?
+    • Only after all compromised devices are restored
+    • Whenever the team lacks a public press statement
+    • As the routine default for every incident
+    • Whenever ransomware is spreading rapidly
+    √ In a controlled investigation after legal consultation
+
+116. What is the main hazard of deliberately delaying containment?
+    • Automatic prevention of any further evidence
+    • An unavoidable loss of all archival media
+    √ Continued attacker access and increasing damage
+    • Immediate repair of the exploited vulnerability
+    • Guaranteed integrity of the infected operating system
+
+117. What is the default containment posture for most organizations?
+    • Wait until the adversary is publicly attributed
+    • Rebuild every machine before network isolation
+    • Allow unrestricted attacker activity for weeks
+    √ Contain promptly once the response is coordinated
+    • Send a warning to the attacker before acting
+
+118. Why should a compromised domain controller trigger special credential planning?
+    √ The attacker may control domain authentication material
+    • It ensures all malicious sessions end on their own
+    • It makes backups permanently unusable by definition
+    • It proves no workstation can be compromised
+    • It removes the need to review other accounts
+
+119. According to AA20-245A, how many times should krbtgt be reset after DC compromise?
+    • Never, because krbtgt is not an account
+    • Three times on each workstation
+    √ Twice, with replication between resets
+    • Once, immediately without replication
+    • Once per infected user workstation
+
+120. Why must replication occur between two krbtgt resets?
+    • It gives the attacker time to restore all sessions
+    √ Domain controllers need to receive the first change
+    • It replaces the need for any administrator resets
+    • It automatically removes malicious scheduled tasks
+    • Replication deletes the forensic system image
+
+121. If ntds.dit has been stolen, what does the lecture call for?
+    • Deleting all domain controller backups
+    • Replacing only local guest accounts
+    • Keeping the old krbtgt password indefinitely
+    √ Resetting every domain user's password
+    • Resetting only the originally phished user
+
+122. Which identity artifacts may need revocation and reissuance?
+    • DNS cache records and ARP entries
+    • Printer configuration files and backups
+    √ Compromised certificates and access tokens
+    • Firewall log files and network captures
+    • Offline operating-system installation media
+
+123. Why should all compromised accounts and devices be included in one plan?
+    • To skip forensic analysis of affected hosts
+    • To avoid changing any authentication tokens
+    • To guarantee that no monitoring is needed afterward
+    • To satisfy an unrelated software licensing policy
+    √ To prevent the attacker from adapting between resets
+
+124. Which record best demonstrates that containment was planned rather than improvised?
+    • A public post announcing the planned blocks
+    • An informal guess about the malware author
+    • A browser bookmark of the suspected C2 address
+    √ Documented scope, roles and coordinated execution time
+    • A list of newly purchased endpoint licenses
+
+125. Why should investigators acquire evidence early?
+    • Malware automatically removes all historical backups
+    • An image becomes admissible only after recovery
+    √ Later changes can overwrite the original system state
+    • Every evidence artifact expires after one hour
+    • Evidence cannot be collected from powered-on systems
+
+126. Which use of forensic evidence is explicitly mentioned in the lecture?
+    √ Court or regulatory proceedings
+    • Replacing every incident management ticket
+    • Avoiding any independent incident verification
+    • Naming the attacker without further analysis
+    • Automatically certifying restored applications
+
+127. Which evidence goal asks how the attacker initially gained entry?
+    • Recovery priority allocation
+    √ Root-cause analysis
+    • Attack attribution by geography
+    • Service-level cost modeling
+    • Annual procurement planning
+
+128. Which evidence goal identifies additional affected accounts and systems?
+    • Planning staff vacation schedules
+    • Calculating a software licensing cost
+    • Assigning public blame to an attacker
+    √ Scoping the incident
+    • Measuring network hardware depreciation
+
+129. Which NIST CSF 2.0 subcategory covers evidence provenance and integrity?
+    • RS.MI-02
+    • DE.CM-01
+    • PR.AA-01
+    • RS.MI-01
+    √ RS.AN-07
+
+130. Which standard gives the order of volatility used in the lecture?
+    • NIST SP 800-61 Rev. 3
+    • MITRE ATT&CK
+    • FIRST TLP 2.0
+    √ RFC 3227
+    • ISO/IEC 27035-1
+
+131. According to RFC 3227, which items have highest collection priority?
+    • Disk images and backup tapes
+    • Network topology diagrams
+    √ Registers and CPU cache
+    • Centralized syslog archives
+    • Offsite archival media
+
+132. Which item follows registers and cache in the volatility order?
+    • Archived backup tapes
+    • Disk storage media
+    • Organizational network diagrams
+    √ Routing tables, process data and RAM
+    • Long-term application change records
+
+133. Which source is more volatile than a hard disk in the lecture's sequence?
+    √ Temporary file systems
+    • Archived offsite backup tape
+    • Long-term immutable SIEM archives
+    • Printed switch port diagrams
+    • Network topology documentation
+
+134. Which should generally be acquired earlier under RFC 3227?
+    • Disk before process tables
+    √ RAM before hard disk
+    • Offsite tapes before temporary files
+    • Network diagrams before cache
+    • Archival backup before RAM
+
+135. Which should normally be collected after disk data in the RFC order?
+    • Active process memory
+    • CPU registers and cache
+    • Routing table and ARP cache
+    √ Remote logging and monitoring data
+    • Temporary file systems
+
+136. Which is least volatile in the listed evidence sequence?
+    • Temporary files in memory
+    • CPU register contents
+    • An active ARP cache
+    √ Archival media such as backup tapes
+    • Running process state
+
+137. In the exercise, which should be captured first: CPU cache, RAM, disk or backup tapes?
+    √ CPU cache
+    • RAM
+    • Hard disk
+    • Remote syslog
+    • Backup tapes
+
+138. In the evidence-ordering exercise, which comes after RAM but before disk?
+    √ Files in /tmp
+    • Printed incident report
+    • Archival backup tape
+    • Network topology diagram
+    • Stored physical configuration
+
+139. In the same exercise, where does central syslog data belong relative to disk?
+    • Before temporary files and RAM
+    • After backup tapes only
+    • Before CPU cache, after RAM
+    √ After disk, before topology
+    • Before all process data
+
+140. Which complete order fits the exercise's seven evidence items?
+    • CPU cache, disk, RAM, backups, /tmp, topology, syslog
+    √ CPU cache, RAM, /tmp, disk, syslog, topology, backups
+    • RAM, CPU cache, disk, /tmp, backups, syslog, topology
+    • /tmp, RAM, backups, cache, disk, syslog, topology
+    • Backups, topology, syslog, disk, /tmp, RAM, CPU cache
+
+141. What are the four processes in ISO/IEC 27037?
+    • Mitigate, Remediate, Rearchitect, Recover
+    • Govern, Identify, Protect, Detect
+    • Collection, Examination, Analysis, Reporting
+    √ Identification, Collection, Acquisition, Preservation
+    • Find, Fix, Finish, Exploit
+
+142. Which principle is listed for assessing digital evidence quality?
+    • Convenience
+    • Availability alone
+    √ Relevance
+    • Anonymity
+    • Publicity
+
+143. Which set contains all three evidence principles cited with ISO/IEC 27037?
+    • Collection, analysis, publication
+    • Speed, secrecy, attribution
+    • Cost, budget, flexibility
+    • Confidentiality, availability, recovery
+    √ Relevance, reliability, sufficiency
+
+144. What are the four forensic process steps in NIST SP 800-86?
+    • Preparation, Detection, Containment, Recovery
+    • Observe, Restrict, Rebuild, Restore
+    √ Collection, Examination, Analysis, Reporting
+    • Find, Fix, Finish, Exploit
+    • Identification, Collection, Acquisition, Preservation
+
+145. What happens primarily during forensic examination?
+    √ Extract relevant information while maintaining integrity
+    • Publish the final executive summary
+    • Decide all legal notification deadlines
+    • Delete the original source media after imaging
+    • Disable all external firewall rules
+
+146. Which NIST SP 800-86 stage focuses on interpreting extracted evidence?
+    √ Analysis
+    • Preservation
+    • Reporting
+    • Collection
+    • Examination
+
+147. Which NIST SP 800-86 step presents findings and recommendations?
+    • Examination
+    • Collection
+    • Acquisition
+    √ Reporting
+    • Identification
+
+148. Which task belongs mainly to the collection stage in NIST SP 800-86?
+    • Rebuild every endpoint from a gold image
+    • Restore all services to production
+    • Publicly announce an attacker's identity
+    • Destroy compromised credentials
+    √ Identify, label and acquire relevant data
+
+149. What does ISO/IEC 27035 address as contrasted with ISO/IEC 27037?
+    • Only physical custody seals
+    • Only forensic image hash algorithms
+    √ Overall incident management
+    • Only bit-for-bit disk duplication
+    • Only malware binary unpacking
+
+150. Which acquisition method is used while a compromised system remains powered on?
+    • Cold storage verification
+    • Archival restoration
+    • Dead-box imaging
+    √ Live response
+    • Offline configuration assessment
+
+151. What should be collected early during live response?
+    • Printed network topology
+    √ Volatile RAM contents
+    • Retired hardware purchase records
+    • Offsite archival tapes
+    • Historical physical site diagrams
+
+152. Which live response artifact captures active processes?
+    • Physical office asset register
+    √ Current process list and process tree
+    • Last year's offline backup index
+    • Printed network rack schematic
+    • Vendor contract renewal dates
+
+153. Why use trusted tools from external media during live response?
+    • It makes timestamps irrelevant to forensic reporting
+    √ Host-installed tools may be compromised
+    • The host's disk can never be accessed while on
+    • External tools erase all volatile evidence by default
+    • Only removable media contain valid executable formats
+
+154. What limitation of live response is explicitly acknowledged?
+    • It is impossible to record executed commands
+    • A running system never has network state
+    • RAM remains unchanged after restarting the host
+    √ Every action may slightly alter the system
+    • No live tools can examine memory contents
+
+155. Which approach best describes dead-box disk acquisition?
+    • Copy only user documents and ignore metadata
+    √ Create a bit-for-bit image of the original
+    • Restore the newest system backup directly
+    • Reformat the source disk before imaging
+    • Compress and discard the source drive
+
+156. Why is a bit-for-bit image preferred over a normal backup?
+    • It replaces the need for integrity verification
+    • It prevents any network communication by itself
+    • It automatically eradicates any malicious boot code
+    • It always restores applications faster
+    √ It preserves the disk contents for forensic examination
+
+157. What is the purpose of a forensic write blocker?
+    √ Prevent writes to the original storage media
+    • Prevent outbound C2 from a running endpoint
+    • Delete malware during disk copying
+    • Block all communication to the IR team
+    • Decrypt encrypted partitions without a key
+
+158. What should investigators compare after imaging a disk?
+    • File modification dates for one random document
+    • Hostnames of the analyst and domain controller
+    • Antivirus software version names only
+    • User passwords stored on both drives
+    √ SHA-256 hashes of source and forensic copy
+
+159. If a source disk and image produce different hashes, what is the implication?
+    • The original image is automatically court-admissible
+    • The two images must be forensically identical
+    • All network connections were blocked successfully
+    √ Integrity of the image needs investigation
+    • Malware is guaranteed to have been removed
+
+160. Which copy should be used for routine forensic analysis?
+    √ The verified working copy of the image
+    • A rewritten source partition
+    • The sealed master original disk
+    • The original device without any write protection
+    • The only unverified backup available
+
+161. How should the original seized disk normally be handled after imaging?
+    • Wipe it immediately after making a copy
+    • Return it to the attacker for validation
+    √ Seal and store it as master evidence
+    • Use it directly for repeated malware scans
+    • Reinstall the OS on it for convenience
+
+162. What does chain of custody primarily track?
+    • Only the total volume of infected files
+    • The expected time to restore a service
+    √ Who handled evidence, when and where
+    • Only the final malware family name
+    • Which firewall rule blocked C2 traffic
+
+163. Which detail belongs in a chain-of-custody record?
+    • Only the current antivirus signature version
+    • A final public incident press statement
+    √ Collector's name and identifying information
+    • The attacker's confirmed personal identity
+    • The price of the affected laptop
+
+164. Which timestamp detail is essential in evidence custody?
+    • Only the approximate month
+    • Time without any date reference
+    √ Date, time and time zone
+    • Only the date the incident was closed
+    • A service restart time without context
+
+165. What should be recorded for a physical evidence item?
+    • The employee's annual leave record
+    • A guess at the attacker's nationality
+    • The latest public vulnerability headlines
+    • The next planned hardware purchase
+    √ Serial number, model and host identifiers
+
+166. Why is storage location needed in custody documentation?
+    • To identify an attacker's motivation automatically
+    • To compute the vulnerability base score
+    • To decide whether a service is mission-critical
+    • To prevent all live system state changes
+    √ To account for where evidence was kept
+
+167. Which is recommended at every custody handoff?
+    • Rename the original image and overwrite it
+    • Disable integrity controls for quicker access
+    √ Recheck hash and obtain signatures
+    • Remove the recorded time zone
+    • Delete the earlier custody record
+
+168. The note 'Dell laptop collected by Rashad at 14:30, put in a cabinet' lacks what?
+    • Only the initial C2 domain's reputation score
+    • Only the CPU brand and processor core count
+    • Only the affected host's software license number
+    √ Full identifiers, date and zone, handler details and location
+    • Only an executive sign-off on recovery timing
+
+169. Which custody record would be more defensible?
+    • A filename with no hash or transfer history
+    • A photo without collection time or handler
+    • A verbal claim that the laptop was collected
+    • An anonymous message that evidence was copied
+    √ Signed handoffs with times, handlers and storage
+
+170. Which is a host-based investigative artifact?
+    • DNS resolver statistics for all clients
+    • Firewall deny logs on a router
+    • NetFlow data at the network border
+    • Proxy URL records from the gateway
+    √ Scheduled tasks and autorun registry keys
+
+171. Which is a network-based investigative artifact?
+    • An endpoint's autorun registry keys
+    • The host's installed applications list
+    √ Proxy logs including URIs and user agents
+    • A local Prefetch execution artifact
+    • Windows local scheduled-task entries
+
+172. Which pair contains host-based artifacts?
+    • VPN logs and egress flow records
+    • NetFlow and DNS logs
+    • DNS resolutions and IDS alerts
+    √ Prefetch and Shimcache
+    • Proxy URLs and firewall logs
+
+173. Which pair best supports detecting remote access and lateral movement?
+    √ RDP and VPN session logs
+    • Application user-interface screenshots
+    • Physical room temperature sensors
+    • BIOS hardware serial numbers
+    • Offline backup tape inventory
+
+174. What is a useful network artifact for C2 reconstruction?
+    • A list of planned training exercises
+    √ DNS resolutions and outbound connections
+    • Employee benefits records
+    • Offline installation media checksums only
+    • Server purchase dates
+
+175. Which endpoint evidence may reveal persistence?
+    √ Services, autoruns and scheduled tasks
+    • A single isolated printed network diagram
+    • Public registry registration dates
+    • Vendor support ticket priorities
+    • Border firewall deny counters alone
+
+176. What retention minimum does the lecture give for mission-critical SIEM logs?
+    √ At least one year
+    • At least one week
+    • At least 180 days
+    • At least 90 days
+    • At least 24 hours
+
+177. What retention minimum does the lecture recommend for NetFlow?
+    • At least two years
+    • At least 24 hours
+    • At least 30 days
+    √ At least 180 days
+    • At least one year
+
+178. What retention minimum does the lecture recommend for full packet capture?
+    • At least six months
+    • At least one year
+    • At least 180 days
+    • At least three years
+    √ At least 24 hours
+
+179. What time information does RFC 3227 recommend recording?
+    • Only the time selected by the analyst's laptop
+    • Only the date when analysis ended
+    • Only the time of original system installation
+    • Only timestamps taken from screenshots
+    √ UTC, local time and clock offset
+
+180. What should an investigator's notes capture under RFC 3227?
+    √ Who did what, when and why
+    • Only the first IP address observed
+    • Only the name of the malware family
+    • Only the final list of restored applications
+    • Only the final legal cost estimate
+
+181. What does the minimal-change principle require?
+    √ Disturb the evidence source as little as possible
+    • Patch all endpoint software before any data collection
+    • Run normal user applications during acquisition
+    • Delete unused accounts before recording them
+    • Modify every suspicious file before copying
+
+182. Which order matches the RFC 3227 practical guidance?
+    • Wipe the original first, image later
+    • Restore services first, document later
+    • Analyze and clean first, collect last
+    √ Collect first, analyze later
+    • Publish findings first, preserve last
+
+183. What should analysts do if legal requirements may apply to acquired data?
+    • Discard the original once a summary is written
+    • Avoid documenting who accessed the evidence
+    √ Follow policy and coordinate with legal authorities
+    • Publicly distribute raw employee records
+    • Store all copies on an infected user share
+
+184. Why must collection actions be documented even if they slightly change state?
+    • To guarantee no process will ever restart
+    • To replace evidence provenance with analyst memory
+    √ To make the investigation reproducible and accountable
+    • To eliminate the need for independent hash checking
+    • To prove automatic legal admissibility of any method
+
+185. What is the primary goal of eradication?
+    • Restore every application before closing entry points
+    • Keep the infected host online for ordinary users
+    √ Remove the attacker and all means of regaining access
+    • Produce only an initial incident severity rating
+    • Publish an attribution statement before cleanup
+
+186. Which trio describes Brown and Roberts' stages of Finish?
+    • Detect, Correlate, Escalate
+    • Prepare, Recover, Review
+    • Find, Fix, Exploit
+    • Identify, Collect, Acquire
+    √ Mitigate, Remediate, Rearchitect
+
+187. What does Mitigate mean in the three-stage Finish model?
+    • Rebuild all services and return them to users
+    • Complete the external regulatory notification
+    • Redesign the organization's security architecture
+    • Write the long-term lessons-learned strategy
+    √ Take tactical action to stop ongoing activity
+
+188. What does Remediate mean in the three-stage Finish model?
+    • Perform only an initial alert validation
+    • Conduct an annual physical access audit
+    • Define the next year's security budget
+    √ Remove attacker capabilities and access
+    • Create a public timeline of incident reports
+
+189. What does Rearchitect mean in the three-stage Finish model?
+    √ Correct recurring strategic weaknesses over time
+    • Kill a malicious process on the first affected host
+    • Disconnect one laptop from Wi-Fi right now
+    • Revoke an active C2 session at the firewall
+    • Copy RAM contents to trusted external storage
+
+190. Which Finish stage usually requires the longest-term effort?
+    • Mitigate
+    • Triage
+    • Live response
+    √ Rearchitect
+    • Initial detection
+
+191. Which action most directly illustrates Mitigate?
+    • Conduct a post-incident board workshop
+    √ Block active attacker C2 traffic at a planned moment
+    • Eliminate insecure workflows across every department
+    • Publish a new security standard for future years
+    • Replace enterprise network architecture after review
+
+192. Which action most directly illustrates Remediate?
+    • Label the incident as initially suspicious
+    √ Remove persistence, accounts and malicious tools
+    • Identify the initial incident reporter
+    • Collect one screenshot of the alert dashboard
+    • Calculate future software procurement costs
+
+193. Which action most directly illustrates Rearchitect?
+    • Export the current firewall logs to secure storage
+    • Isolate an infected workstation right now
+    √ Redesign controls after analyzing repeated compromises
+    • Capture the memory of an active compromised server
+    • Disable a stolen account during the coordinated action
+
+194. What must be addressed besides malicious software during eradication?
+    • Only the software procurement records
+    √ Exploited vulnerabilities and persistence
+    • Only the employee's workstation wallpaper
+    • Only the affected server's DNS cache
+    • Only the local incident case number
+
+195. Why is removing only a malware executable insufficient?
+    • The firewall will automatically restore all services
+    • The file hash becomes unavailable for good
+    √ Hidden accounts or entry points may still work
+    • It proves the host has no other persistence
+    • The attacker cannot reuse credentials after deletion
+
+196. Which of these is a Windows persistence location cited in the lecture?
+    • Physical network cabling
+    • Domain registrar billing data
+    √ Scheduled tasks
+    • Linux crontab alone
+    • Offline backup catalogue
+
+197. Which Windows mechanism can provide hidden persistence through event triggers?
+    • Linux authorized_keys file
+    • Physical rack labeling
+    • NetFlow retention policy
+    √ WMI subscriptions
+    • Offline tape rotation
+
+198. Which Windows configuration can be abused for wider persistence?
+    • Archival retention labels
+    • Public WHOIS registry
+    √ Group Policy Objects
+    • Printer supply ordering
+    • Physical badge inventory
+
+199. Which Windows tool does the lecture recommend to review autoruns?
+    • Wireshark only
+    √ Sysinternals Autoruns
+    • Browser Developer Tools
+    • OpenSSL certificate viewer
+    • Nmap only
+
+200. On Linux, which scheduled execution mechanism is a persistence target?
+    • Windows Run keys
+    • IIS application pools
+    • Windows Task Scheduler
+    √ cron jobs
+    • Windows Group Policy Objects
+
+201. Which Linux feature can launch malicious processes at startup?
+    √ systemd units
+    • Windows domain policy editor
+    • Windows WMI event filter
+    • Windows registry Run key
+    • IIS web.config alone
+
+202. Which Linux file should be reviewed for added SSH keys?
+    • /tmp/resolv.conf
+    • /var/log/lastlog only
+    • /etc/motd only
+    • /etc/hosts only
+    √ authorized_keys
+
+203. A Linux system account unexpectedly uses /bin/bash. What is a concern?
+    √ It may permit attacker interactive access
+    • It always indicates normal system hardening
+    • It proves that the account is disabled
+    • It means the root account cannot log in
+    • It automatically removes malicious SSH keys
+
+204. Where might a web shell be hidden on a compromised server?
+    • Only the external DNS registrar's billing page
+    • Only the router's hardware inventory
+    √ An upload or web-root directory
+    • Only offline backup tape labels
+    • Only the operating system swap partition
+
+205. Which account behavior is suspicious for persistence?
+    • A scheduled system backup using its owner
+    √ Interactive login by a service account
+    • An administrator following a documented change
+    • A password reset after approved offboarding
+    • A regular user viewing an approved report
+
+206. Which host change suggests an attacker has established persistent access?
+    √ Unexpected new local administrator account
+    • A planned backup report export
+    • An approved monitor resolution adjustment
+    • A routine printer spooler update
+    • A signed corporate policy acknowledgment
+
+207. What network-device modifications should an eradication hunt check?
+    • Only asset purchase order numbers
+    • Only physical cable labels
+    • Only UPS battery life reports
+    • Only employee time-entry records
+    √ Changed firmware images and configurations
+
+208. What SSL VPN artifact is specifically mentioned as potentially modified?
+    √ VPN web objects
+    • Corporate e-mail signatures
+    • Digital camera image metadata
+    • Archive-tape index headers
+    • Workstation desktop themes
+
+209. What is step 1 of the lecture's eradication checklist?
+    • Delete all original disk evidence
+    √ Confirm the entire incident scope
+    • Restore the newest available backup
+    • Reset one account without coordination
+    • Reconnect affected hosts to production
+
+210. What is step 2 of the eradication checklist?
+    • Unseal the original evidence for daily use
+    √ Remove malware and tools, or rebuild the host
+    • Announce an attacker identity publicly
+    • Reenable the infected network segment
+    • Deploy the next year's incident training
+
+211. What is step 3 of the eradication checklist?
+    • Close the case without scanning
+    √ Remove all persistence mechanisms
+    • Publish unverified IoCs
+    • Choose a media spokesperson
+    • Replace office printers
+
+212. What is step 4 of the eradication checklist?
+    √ Close the exploited entry point
+    • Accept every existing account as trusted
+    • End all forensic documentation
+    • Discard evidence collected from the host
+    • Immediately restore all network services
+
+213. What is step 5 of the eradication checklist?
+    • Create the preliminary incident category
+    • Identify the first employee to report
+    • Run the initial phishing training campaign
+    √ Reset credentials in a coordinated way
+    • Turn off all logging after cleanup
+
+214. What is step 6 of the eradication checklist?
+    • Disable all security monitoring indefinitely
+    • Close the case before reviewing results
+    √ Verify removal by scanning and hunting
+    • Restore the original malicious user accounts
+    • Contact the attacker for permission
+
+215. Which step comes directly after removing malicious tools in the checklist?
+    • Close the entry point
+    √ Remove persistence
+    • Reconnect to production
+    • Reset credentials
+    • Verify eradication
+
+216. Which step comes directly before coordinated credential reset?
+    √ Close the exploited entry point
+    • Delete all old incident tickets
+    • Verify removal with updated tools
+    • Return systems to full production
+    • Publish the final customer announcement
+
+217. Which response best follows the entire eradication checklist?
+    • Recover, reset, close case, scan, patch, image
+    √ Scope, remove tools, remove persistence, patch entry, reset, verify
+    • Patch randomly, reboot, restore backups, then collect evidence
+    • Delete malware, return to production, hunt, report, scope, reset
+    • Reset, reconnect, scope, patch, remove tools, verify
+
+218. Which principle applies to vulnerabilities found during eradication?
+    √ Find and fix all entry points, not only the first
+    • Patch only the first host with an antivirus alert
+    • Ignore exploited weaknesses after removing the payload
+    • Leave the original backdoor exposed for monitoring
+    • Reenable the vulnerable service before testing
+
+219. Why must the team confirm all affected hosts during eradication?
+    • It ensures the malware family has one hash
+    • It determines the attacker's legal identity
+    √ Unidentified hosts can allow reinfection
+    • It replaces all need for forensic evidence
+    • It automatically verifies every backup copy
+
+220. Which condition makes cleaning a host more defensible?
+    • Unknown APT access with incomplete scope
+    √ Common malware, no privileged compromise, verified removal
+    • Attacker held local administrator privileges
+    • System behavior remains abnormal after cleaning
+    • Rootkit suspected in system components
+
+221. Which scenario particularly favors rebuilding rather than cleaning?
+    • Known low-privilege adware fully removed
+    √ Suspected rootkit with replaced system files
+    • Harmless test malware in an isolated training VM
+    • Benign false positive during a scheduled scan
+    • Verified single malicious browser extension
+
+222. Why does administrator/root access change the clean-or-rebuild decision?
+    √ The attacker may have changed trusted system components
+    • Admin-level access is evidence of no persistence
+    • Root permissions automatically restore files
+    • It guarantees AV can verify every hidden modification
+    • Privilege level has no bearing on trust
+
+223. Which condition makes a known-good rebuild advisable?
+    • A legitimate account password expiry
+    • A verified false-positive antivirus alert
+    √ Uncertain depth or scope of compromise
+    • A signed, scheduled security update
+    • A one-time approved test-scanner execution
+
+224. If the host remains unstable after cleaning, what is recommended?
+    √ Rebuild from a trusted image after preserving evidence
+    • Reuse the compromised system without testing
+    • Turn off all logging permanently
+    • Ignore the instability and close the incident
+    • Allow the attacker to repair the OS
+
+225. Why is APT-type targeted intrusion a rebuild trigger?
+    • It means every ransomware note is fabricated
+    • It proves the system has no network connections
+    • It eliminates the need to capture evidence
+    √ The attacker may have deeper hidden modifications
+    • It makes credential compromise impossible
+
+226. What is a major limitation of antivirus-based cleaning?
+    • It guarantees full removal regardless of access
+    √ It may miss backdoors and privileged modifications
+    • It can replace integrity-verified forensic images
+    • It automatically proves the absence of all persistence
+    • It always repairs the original exploited vulnerability
+
+227. When should the evidence of a root-compromised host be captured?
+    • After all logs have been permanently erased
+    √ Before its trusted rebuild begins
+    • Only after production services have resumed
+    • Only after disks have been formatted
+    • After custody records are discarded
+
+228. Which change does NOT by itself prove eradication?
+    √ One malicious file no longer appearing
+    • Validated rescan of the previously infected host
+    • Confirmed closure of the original entry point
+    • Coordinated removal of compromised credentials
+    • Threat hunt across the known affected hosts
+
+229. What does a post-eradication threat hunt look for?
+    √ Remaining incident IoCs and TTPs across hosts
+    • Printer page totals after maintenance
+    • Employee payroll withholding errors
+    • Supplier discount codes on invoices
+    • New corporate advertising performance metrics
+
+230. Why should monitoring be increased following an attack?
+    √ Reinfection or residual access may remain
+    • More monitoring can replace all response controls
+    • Clean systems never require further analysis
+    • All network traffic must permanently be blocked
+    • Compromise guarantees that all logs are false
+
+231. Who should decide when incident containment is lifted, per the lecture?
+    • The attacker who controlled the host
+    • A public vulnerability database alone
+    √ Management using the agreed response process
+    • An unattended antivirus signature job
+    • Any employee who first noticed the alert
+
+232. When should isolation be lifted from affected systems?
+    • Immediately after the first malicious file is deleted
+    • Before application patching and verification
+    • As soon as the ransom note disappears
+    • Before related vulnerable hosts are identified
+    √ After sufficient cleanup and risk review
+
+233. What allows an incident to be declared formally over?
+    • The help desk closes an unrelated ticket
+    • A single antivirus scan that ran without error
+    • One successful ping to the rebuilt server
+    √ Authorized sign-off against pre-agreed criteria
+    • The attacker stops sending e-mails temporarily
+
+234. What is the purpose of sweeping all hosts for IoCs after cleanup?
+    • Reclassify every alert as a false positive
+    • Update the employee onboarding list
+    • Determine a media spokesperson's schedule
+    √ Detect overlooked persistence and other infected hosts
+    • Calculate licensing cost for forensic software
+
+235. Which artifacts should be revisited during persistence hunting on Windows?
+    • Only a printed network topology diagram
+    • Only users' approved vacation requests
+    • Only software purchasing contracts
+    • Only the storage vendor support phone number
+    √ Services, tasks, autoruns and WMI subscriptions
+
+236. Which artifacts should be revisited during persistence hunting on Linux?
+    • Windows-only Run and RunOnce keys
+    • Windows Group Policy filtering alone
+    √ cron, systemd, SSH keys and unusual shell accounts
+    • Domain controller security group naming
+    • IIS-only application pool settings
+
+237. Which condition in the WEB02 exercise is a strong rebuild signal?
+    • Web application serving static files normally
+    • A scheduled nightly backup finishing on time
+    • Standard TLS certificate renewal on the website
+    √ A newly created local admin account alongside a web shell
+    • Public website earning regular customer revenue
+
+238. What is the suspicious executable behavior of help.aspx in WEB02?
+    √ It invokes cmd.exe when requested
+    • It enforces normal web application authentication
+    • It runs only an approved printer driver
+    • It silently restores verified-clean data
+    • It calculates a harmless checksum at startup
+
+239. How did help.aspx reach WEB02 in the exercise?
+    • Through a regular firmware update
+    • Through a standard incident reporting form
+    • Through a scheduled operating system patch
+    • Through an approved backup restore
+    √ Through a vulnerable file-upload plugin
+
+240. What was the name of the unexpected administrator in the WEB02 example?
+    • admin_restore3
+    • svc_update7
+    √ svc_backup2
+    • web_service1
+    • backup_agent1
+
+241. What extra investigation matters because the WEB02 shell is six days old?
+    • How many virtual backgrounds IT employees use
+    √ What access and actions occurred during those six days
+    • Which keyboard layout the web developer prefers
+    • Whether the company changed its payroll schedule
+    • Whether the server's exterior rack color changed
+
+242. Which secret needs attention after web-server administrator compromise?
+    • Office stationery ordering codes
+    √ Local administrator and service credentials
+    • A public web server's non-secret hostname
+    • Employees' personal social media usernames
+    • Publicly available software release notes
+
+243. What would make removing help.aspx alone a poor response?
+    • Its TLS certificate has not yet expired
+    • The website remains reachable over HTTPS
+    • The host has an assigned machine name
+    • The application logs contain timestamps
+    √ The attacker also created privileged access
+
+244. What should be true before WEB02 is returned to service?
+    √ Backdoors removed, vulnerable plugin fixed, accounts rotated
+    • A new backup is made from the still-compromised host
+    • The suspicious local admin account keeps its permissions
+    • The web shell is renamed while the admin account remains
+    • The vulnerable upload endpoint is immediately reenabled
+
+245. Which is a recovery option explicitly listed by NIST Rev. 2?
+    • Abandon evidence documentation
+    • Send a message to the threat actor
+    • Scan the attacker's public server
+    √ Restore from a verified clean backup
+    • Publish all customer passwords
+
+246. What is another NIST-listed recovery option?
+    √ Rebuild a compromised host from scratch
+    • Analyze the original disk without protection
+    • Ignore all newly exploited vulnerabilities
+    • Disable all corporate backup policies
+    • Reveal the IR team's communication plan
+
+247. Which NIST recovery measure involves perimeter hardening?
+    √ Tighten firewall rules and router ACLs
+    • Stop recording user authentication events
+    • Remove all endpoint monitoring agents
+    • Enable every old open firewall port
+    • Restore the malicious scheduled tasks
+
+248. Which NIST recovery measure focuses on visibility?
+    • Erase firewall allow and deny logs
+    • Remove central event collection
+    • Stop monitoring the restored network
+    • Disable endpoint antivirus updates
+    √ Increase logging and monitoring
+
+249. What is the first step of the safe rebuild procedure?
+    • Restore the newest backup immediately
+    • Connect the machine to infected production
+    √ Prepare an isolated build network
+    • Delete existing incident evidence
+    • Reuse all prior passwords and API keys
+
+250. Why is an isolated build network important?
+    • It automatically proves the attacker identity
+    • It enables the old compromised account to remain
+    • It makes clean backup verification unnecessary
+    • It replaces endpoint system hardening
+    √ It reduces exposure to the infected environment
+
+251. What should be verified before installing a known-good image?
+    • The attacker's current social media account
+    √ Image or installation-media integrity
+    • The final post-mortem report design
+    • A public ranking of malware families
+    • The original host's desktop background
+
+252. What is step 2 of the safe rebuild procedure?
+    • Reconnect to all internal network shares
+    • Remove all security logging tools
+    • Enable old exposed service credentials
+    • Restore user data without scanning
+    √ Install from a verified known-good image
+
+253. What is step 3 of the safe rebuild procedure?
+    • Keep known vulnerable plugins installed
+    • Restore data from any random timestamp
+    • Reuse every previously exposed key
+    √ Patch and harden the rebuilt system
+    • Reconnect directly to the infected VLAN
+
+254. What does secure baseline mean in the rebuild context?
+    • Any workstation connected to the affected VLAN
+    • A backup captured after the malware executed
+    √ A hardened and trusted system configuration
+    • An undocumented collection of installer files
+    • A copy of the malicious operating-system image
+
+255. What is step 4 in the safe rebuild sequence?
+    √ Restore verified-clean data
+    • Enable every original user session
+    • Delete the change and custody records
+    • Stop all monitoring for seven days
+    • Reset only an unrelated local account
+
+256. What is step 5 in the safe rebuild sequence?
+    • Restore old privileged sessions unchanged
+    • Publish all regenerated tokens in a report
+    • Reuse the compromised API key to save time
+    √ Issue fresh passwords, keys and certificates
+    • Disable all future credential auditing
+
+257. What is step 6 in the safe rebuild sequence?
+    • Shut down all monitoring appliances
+    • Publish the original forensic image publicly
+    √ Return in phases with close monitoring
+    • Reopen the vulnerable upload endpoint
+    • Immediately connect all hosts at once unmonitored
+
+258. Which sequence matches the safe rebuild procedure?
+    • Reconnect, restore data, isolate, reuse keys, disable logs, patch
+    √ Isolate build, trusted image, harden, clean data, new credentials, monitor
+    • Trusted image, reconnect, old credentials, scan, patch, preserve
+    • Old image, old data, old keys, reconnect, clean, report
+    • Recover data, announce closure, build on infected network, then scan
+
+259. Which restore source is the most defensible after a ransomware incident?
+    • A new backup of the actively encrypted file server
+    • A copied user directory from an unknown endpoint
+    • The most recent backup regardless of infection date
+    √ A scanned backup from before the first compromise
+    • Any online snapshot without integrity checks
+
+260. Why should the restore point precede the earliest malicious activity?
+    √ Later backups may contain the attacker's footholds
+    • Only early backups have valid file names
+    • Earlier backups automatically decrypt ransomware
+    • It guarantees the attacker never used credentials
+    • Later backups always use weaker encryption
+
+261. What does the dwell-time concept affect when selecting backups?
+    • The number of backup tapes in a storage rack
+    • The physical placement of server racks
+    • The name of the incident report author
+    √ Identification of a pre-compromise restore point
+    • The color of recovery-status indicators
+
+262. What does an offline backup help prevent?
+    • Malware detection from creating alerts
+    √ Ransomware reaching and encrypting the backup
+    • Any possible credential theft in the domain
+    • All future phishing against employees
+    • Every disk hardware failure in production
+
+263. What property is most associated with offsite backups?
+    • Reusing old production administrator credentials
+    • Keeping backups mounted to infected shares
+    • Storing the only copy on the infected server
+    √ Separation from the primary facility
+    • Testing them only after a live incident
+
+264. Why should backups be tested regularly?
+    √ Restore operations may fail despite existing backups
+    • Backup labels are always unreliable in storage
+    • Testing guarantees no production incident will occur
+    • Every backup must be intentionally infected first
+    • Test restores replace the need for live monitoring
+
+265. What should backup scanning look for?
+    • Only the employee's last login display language
+    • Only free disk space and CPU temperature
+    • Only application icon and background colors
+    √ Malware, web shells and attacker accounts
+    • Only archived media purchase dates
+
+266. Which backup is most suspicious to use after a six-day undetected web-shell compromise?
+    • A verified clean backup from two months earlier
+    • An offline pre-compromise backup copy
+    • A tested restoration point from the previous quarter
+    • A scanned image taken before attacker entry
+    √ A backup taken two days after the shell was installed
+
+267. Which statement about backup age is correct in this lecture?
+    • Oldest always contains the most malicious code
+    • Newest always guarantees no active malware
+    √ Newest does not always mean cleanest
+    • Backups are irrelevant once hosts are reimaged
+    • All backups are equivalent without scanning
+
+268. What is the main benefit of gold images during large-scale recovery?
+    • Preventing every future compromise automatically
+    • Avoiding all verification of installed applications
+    • Removing the need for incident preparation
+    √ Repeatable rebuilding from trusted systems
+    • Keeping malicious programs in restored hosts
+
+269. Why should rebuilt machines receive new certificates?
+    • Original certificates always expire after a reboot
+    √ Exposed trust material may let the attacker back in
+    • They replace the need for network isolation
+    • Certificates prevent forensic imaging from completing
+    • New certificates automatically recover encrypted files
+
+270. What is a risk of returning all recovered hosts to production simultaneously?
+    • It automatically preserves all volatile evidence
+    √ Remaining problems may spread before being noticed
+    • It eliminates every need for network segmentation
+    • It always prevents applications from starting
+    • It guarantees all restored hosts are fully hardened
+
+271. What is meant by monitored return to production?
+    • Disable SIEM collection while users return
+    √ Reconnect in stages and inspect suspicious activity
+    • Reconnect immediately without logging
+    • Restore every server before running integrity checks
+    • Restore old compromised sessions for testing
+
+272. What recovery priority comes first in the lecture?
+    √ Health, safety and critical operations
+    • Optional development test machines
+    • Employee recreation services
+    • Routine internal documentation systems
+    • Non-critical departmental applications
+
+273. Which is a Priority 1 recovery asset in the lecture?
+    • A spare unused training workstation
+    √ Identity infrastructure such as Active Directory
+    • Non-critical internal staff portal
+    • A retired printer management application
+    • A test demonstration website
+
+274. Which industrial function has top recovery priority?
+    • Nonessential intranet announcements
+    √ OT safety and monitoring systems
+    • Employee cafeteria menu service
+    • Laboratory wallpaper customization
+    • Optional internal training portal
+
+275. Which service group is classified as Priority 2?
+    • Fully isolated disposable test boxes
+    • Archived training presentations
+    √ Revenue-generating systems
+    • Unused old workstation images
+    • Non-essential internal software only
+
+276. Which is an example of Priority 2 in the lecture?
+    • Archived screenshot folder
+    √ Billing or customer portal
+    • Unused software testing sandbox
+    • Non-critical internal note-taking tool
+    • Retired printer configuration page
+
+277. Which recovery assets are usually Priority 3?
+    • Emergency life safety systems
+    √ Non-critical internal applications
+    • Revenue-critical payment workflows
+    • Essential OT monitoring infrastructure
+    • Core identity services
+
+278. Why does the lecture put health and safety ahead of revenue?
+    • Payment systems cannot be compromised
+    • OT equipment always has perfect backups
+    • Safety applications never require recovery
+    √ Human safety is the highest consequence
+    • Revenue is never affected by ransomware
+
+279. How should business services return after a large incident?
+    • By the order in which laptops were purchased
+    √ In phases based on criticality
+    • Based only on malware file size
+    • In alphabetical order by hostname
+    • By random device assignment
+
+280. What characterizes early recovery phases according to NIST?
+    • Only multi-year infrastructure replacement
+    √ Quick, high-value changes over days or weeks
+    • Only detailed public attribution research
+    • Avoidance of all short-term security fixes
+    • Exclusive focus on non-critical test machines
+
+281. What characterizes later recovery phases according to NIST?
+    • Only initial network isolation of infected hosts
+    • Only acquisition of RAM from running systems
+    √ More extensive infrastructure improvements over months
+    • Only determination of an incident category
+    • Only rapid password revocation in minutes
+
+282. What was the malware in the Maersk 2017 case study?
+    √ NotPetya
+    • LockBit 3.0
+    • PetyaGreen
+    • WannaCry
+    • Ryuk
+
+283. How does the lecture characterize NotPetya?
+    • A normal corporate file-encryption tool
+    • A legitimate software deployment platform
+    √ A destructive wiper disguised as ransomware
+    • A backup verification utility
+    • A harmless penetration-testing simulator
+
+284. Approximately how many servers did Maersk reinstall after NotPetya?
+    • 45,000
+    • 400
+    • 2,500
+    • 14,000
+    √ 4,000
+
+285. Approximately how many PCs did Maersk reinstall?
+    • 2,500
+    • 4,000
+    • 10,000
+    √ 45,000
+    • 500
+
+286. How many applications are mentioned in the Maersk rebuild case?
+    • 14,000
+    • 250
+    • 4,000
+    • 45,000
+    √ 2,500
+
+287. Roughly how long did the Maersk rebuilding effort take in the lecture?
+    • Six months
+    • One year
+    • Three months
+    √ Ten days
+    • Twenty-four hours
+
+288. What comparison is made about Maersk's rebuilding speed?
+    • About 24 hours rather than about 10 weeks
+    • About 2 weeks rather than about 2 days
+    • About one year rather than about 3 months
+    √ Roughly 10 days rather than about 6 months
+    • About 6 months rather than about 10 days
+
+289. How much did Maersk's volume fall while business continued manually?
+    √ About 20 percent
+    • About 40 percent
+    • About 80 percent
+    • About 5 percent
+    • About 60 percent
+
+290. What estimated financial loss does the lecture give for Maersk?
+    • USD 500–600 million
+    • USD 25–30 million
+    • USD 1–2 billion
+    • USD 2.5–3 million
+    √ USD 250–300 million
+
+291. What helped Maersk keep business operations running during disruption?
+    • A verified ransom payment
+    • Complete reliance on the infected network
+    • Reuse of compromised backup images
+    • Permanent shutdown of all shipping operations
+    √ Manual fallback procedures
+
+292. What does the Maersk case illustrate about incident preparation?
+    • Offline backups cannot support ransomware recovery
+    √ Rebuild capability must exist before the crisis
+    • Manual procedures are never useful
+    • Recovery planning should begin only after data loss
+    • Every case should be resolved by paying ransom
+
+293. Which three preparation assets does the Maersk lesson emphasize?
+    • Compromised master images, shared accounts and no monitoring
+    • Random snapshots, default keys and open VPN access
+    √ Gold images, offline backups and documented apps
+    • Public attribution, ransom notes and press releases
+    • External attack scans, public file uploads and unlocked servers
+
+294. Which scenario shows why recovery sequencing matters?
+    • Restore the web shell as part of the application
+    • Prioritize archived screenshots above critical billing
+    • Restore unused desktop themes before control systems
+    • Reconnect compromised VPN accounts before patching
+    √ Restore AD and safety monitoring before optional intranet tools
+
+295. Why should the rebuilt system's original entry point be patched?
+    • Patching automatically generates backup tapes
+    • Recovered applications require no vulnerability fixes
+    √ The same exploit could re-compromise it
+    • It changes the attacker identity in logs
+    • The restore would otherwise have no hostname
+
+296. A known-good image is installed, but old exposed tokens are reused. What remains wrong?
+    • The backups have definitely been erased
+    • Evidence chain-of-custody becomes impossible
+    • The OS image was not originally trusted
+    • The network is no longer able to log traffic
+    √ The attacker may retain valid access
+
+297. A backup restores successfully, but contains the old web shell. What was overlooked?
+    • Selecting the correct operating system edition
+    • Recording the physical monitor serial number
+    • Enabling the users' preferred language
+    • Performing annual procurement approval
+    √ Checking restoration data for compromise
+
+298. A tested offline backup was made before the first malicious login. Why is it a better candidate?
+    • It proves every user account is trustworthy
+    • It will never need application compatibility testing
+    • It eliminates the need to monitor the restored host
+    √ It is more likely to avoid copied attacker artifacts
+    • It automatically invalidates all compromised tokens
+
+299. A server is rebuilt on the same infected LAN while ransomware is still active. Which rebuild principle was violated?
+    • Copy the latest unverified data immediately
+    • Allocate more disk space than before
+    • Install a new system user-interface theme
+    • Publish the rebuilt host's public address
+    √ Use a separated, clean build network
+
+300. After clean data restoration, what additional control protects the reintroduced server?
+    • Disabling the endpoint agent for convenience
+    √ Phased reconnection with active monitoring
+    • Restoring the vulnerable plugin configuration
+    • Reinstating every exposed service token
+    • Permanent disabling of event logs
+
+301. Which option represents recovery rather than immediate containment?
+    • Revoking an actively stolen VPN session
+    √ Rebuilding and restoring a secure production server
+    • Applying an urgent temporary domain block
+    • Quarantining one affected workstation
+    • Disabling a switch port to stop spread
+
+302. Which option represents eradication rather than restoration?
+    • Reconnecting a fully patched host with monitoring
+    √ Deleting the attacker's web shell and closing its entry point
+    • Returning a clean application to production
+    • Restoring verified user data from a backup
+    • Enabling essential services after final testing
+
+303. Which outcome is the strongest evidence of a successful rebuild?
+    • Network connectivity works despite an unpatched plugin
+    • All old malicious files have been renamed
+    • Restored machine boots once with old administrator credentials
+    √ Clean install, closed entry point, fresh secrets and monitored return
+    • Antivirus was disabled to reduce CPU load
+
+304. In the ransomware tabletop, what time did finance users first report .lockd files?
+    • 08:20
+    • 02:14
+    • 08:35
+    √ 08:10
+    • 09:00
+
+305. At what time did the tabletop EDR detect the Finance VLAN outbreak?
+    • 09:00
+    √ 08:20
+    • 08:10
+    • 08:35
+    • 02:14
+
+306. At what time did the tabletop ransom note claim exfiltration?
+    • 09:00
+    √ 08:35
+    • 02:14
+    • 08:10
+    • 08:20
+
+307. At what time were logs found showing the contractor VPN RDP access?
+    • 08:10
+    • 02:14
+    √ 09:00
+    • 08:35
+    • 08:20
+
+308. At what time did the suspicious RDP login to FS-FIN01 actually occur?
+    • 09:00
+    • 08:10
+    √ 02:14
+    • 08:35
+    • 08:20
+
+309. How many endpoints raised EDR alerts in the tabletop Finance VLAN?
+    • Ten
+    • Twenty
+    √ Fourteen
+    • Forty
+    • Six
+
+310. Which file extension was observed in the tabletop ransom incident?
+    • .enc
+    √ .lockd
+    • .blocked
+    • .crypt
+    • .locked
+
+311. Which file server was identified as encrypting shares in the tabletop?
+    • WEB02
+    • HR-LT-017
+    • FS01
+    • FIN-PC-12
+    √ FS-FIN01
+
+312. How much data did the ransom note CLAIM had been stolen?
+    • 50 GB
+    • 20 GB
+    • 2 TB
+    • 500 GB
+    √ 200 GB
+
+313. Which account type was linked to the tabletop's suspicious RDP login?
+    • Public e-commerce account
+    • Guest Wi-Fi-only account
+    • Mail distribution-list account
+    √ Contractor VPN account
+    • Local backup-only account
+
+314. Which claim in the tabletop should NOT immediately be treated as verified fact?
+    √ That 200 GB was actually exfiltrated
+    • That an RDP login was in the logs
+    • That encrypted shares were observed
+    • That ransom notes were reported
+    • That EDR raised alerts on multiple hosts
+
+315. What is the first containment priority when the Finance VLAN is actively encrypting?
+    • Wait to identify the ransomware family precisely
+    • Restore every laptop before restricting the network
+    • Reconnect all hosts for complete file visibility
+    • Publish the note's claims to external media
+    √ Isolate affected segments and hosts quickly
+
+316. If 14 hosts are affected, what containment approach is most defensible?
+    • Reboot individual hosts in no planned order
+    • Patch one workstation while leaving the VLAN open
+    • Block one IP and assume the incident is over
+    • Unplug only the first reporting laptop and stop
+    √ Coordinate network and account restrictions across the scope
+
+317. In the ransomware tabletop, what network element likely warrants rapid isolation?
+    • Every vendor website in the browser
+    • The company's unrelated test lab
+    • An unrelated building access controller
+    • The safe offline backup repository
+    √ The affected Finance VLAN
+
+318. Which server should be investigated for ongoing file-share encryption?
+    • A public domain registration service
+    √ FS-FIN01
+    • A clean remote training workstation
+    • A spare archived test VM
+    • The isolated lab printer server
+
+319. Which user credential is an immediate investigation priority?
+    √ Contractor VPN account used for suspicious RDP
+    • An unrelated employee's approved guest login
+    • A retired shared account with no network access
+    • A standard user account with no abnormal activity
+    • A read-only audit account used last year
+
+320. Why might the contractor's VPN access require more than a password reset?
+    • VPN connections never use session credentials
+    • The account's username cannot be recorded in logs
+    • A password change automatically removes web shells
+    √ Active sessions and related tokens may survive a reset
+    • Contractor accounts never have permissions on shares
+
+321. Which evidence directly helps reconstruct the suspected initial access?
+    • Archived stationery invoices
+    √ VPN and RDP logs around the 02:14 session
+    • Office printer toner replacement records
+    • A list of annual employee birthdays
+    • Noncritical website theme screenshots
+
+322. What should be captured before cleaning the encrypting file server if safe to do so?
+    √ RAM, active connections and a forensic system image
+    • Only the current desktop wallpaper screenshot
+    • Only the ransom note's requested payment method
+    • Only the company's general security policy
+    • Only the application service desk ticket title
+
+323. How can responders avoid altering the original disk evidence?
+    • Reinstall Windows before recording its contents
+    • Open files directly from the original for daily work
+    √ Use a write blocker and analyze a verified image
+    • Keep the source drive mounted read-write
+    • Delete unwanted files before calculating hashes
+
+324. Which evidence is most useful to determine whether exfiltration actually occurred?
+    • Only the ransom note's unsupported claim
+    • Only a screenshot of the lock screen
+    • Only the employee's email signature
+    √ Egress flows, proxy logs and network telemetry
+    • Only a historical hardware inventory report
+
+325. Which clue is most directly associated with possible ransomware encryption?
+    • A single approved administrative login
+    • A normal scheduled patch deployment
+    √ File renaming and ransom-note appearance
+    • A completed backup to trusted storage
+    • An expected certificate-renewal message
+
+326. What do network beacons every 60 seconds suggest in the FS01 exercise?
+    √ Possible periodic C2 communication
+    • Guaranteed legitimate backup replication
+    • A confirmed disk hardware malfunction
+    • A routine legal compliance audit
+    • Verified successful data recovery
+
+327. A host continues communicating with C2 after a local file is deleted. What may remain?
+    • An automatically restored identity provider
+    √ Another foothold, process or persistence path
+    • No evidence of any compromise by definition
+    • A guaranteed fully cleaned system image
+    • A verified clean backup copy
+
+328. How should responders react if a suspected incident affects a life-safety controller?
+    • Put noncritical office conveniences before safety
+    • Shut down safety functions without consulting operations
+    √ Prioritize safety and carefully coordinate containment
+    • Reconnect all compromised services unmonitored
+    • Wait for a complete media relations strategy
+
+329. An infected web server has critical customer availability requirements. What best guides containment?
+    • Only the physical server model and room number
+    • Only the malicious domain's spelling and length
+    • Only the number of backup tapes in storage
+    • Only the ability to publish a press statement
+    √ Damage, evidence, service impact, feasibility and duration
+
+330. A suspicious host can be isolated remotely with EDR. What is the preferred evidence-aware action?
+    √ Isolate while retaining power and collect volatile evidence
+    • Wipe the operating system before checking memory
+    • Reboot first to speed up all forensic collection
+    • Remove the EDR agent before containment
+    • Restore infected backups while traffic remains open
+
+331. Ransomware is spreading, and endpoints cannot be disconnected. What is the last-resort step?
+    √ Power them off to stop further encryption
+    • Allow encryption to continue until the next shift
+    • Restore the entire domain before any containment
+    • Delete all collected security logs immediately
+    • Use the compromised network to alert the attacker
+
+332. A service administrator blocks C2 first, then discovers five more hidden hosts. What should change next time?
+    • Publicly disclose the first blocked IP sooner
+    • Reset only the help-desk account immediately
+    √ Scope broadly and coordinate containment actions
+    • Ignore all hosts that lack a malware file hash
+    • Stop collecting network traffic entirely
+
+333. An attacker retains a second domain admin account after initial cleanup. Which mistake occurred?
+    • Incorrect choice of incident report filename
+    • Insufficient public attribution of malware
+    √ Incomplete credential and foothold eradication
+    • Too much legitimate network segmentation
+    • Excessive testing of clean offline backups
+
+334. A team has evidence of stolen domain authentication data. What is the most urgent planning issue?
+    • Updating employee email signatures
+    √ Domain-wide coordinated credential remediation
+    • Purchasing additional office printers
+    • Restoring desktop wallpaper preferences
+    • Choosing a new internal incident code name only
+
+335. An administrator proposes restoring an image captured during active compromise. What is the flaw?
+    • It removes the need for data integrity scanning
+    • It is guaranteed to revoke all malicious tokens
+    • It is always better than a pre-compromise backup
+    √ It may preserve the malware or attacker backdoors
+    • It cannot possibly contain any persistence artifacts
+
+336. A malware sample uses the Windows Run key, but the process was killed. What remains possible?
+    • The Run key automatically vanishes with the process
+    √ It can execute again through its autorun
+    • All Windows audit logs become immutable
+    • The host becomes trustworthy without further checks
+    • Network segmentation is no longer necessary
+
+337. A web shell is removed, but the upload plugin remains vulnerable. What can happen?
+    • The application can never be compromised again
+    • The C2 session automatically becomes harmless
+    √ The entry point can be exploited again
+    • The malware hash becomes permanently blocked globally
+    • A new forensic image is no longer necessary
+
+338. An investigator has a source image hash mismatch after copying. What is the best response?
+    √ Investigate acquisition integrity before relying on the copy
+    • Assume the image is definitely unmodified
+    • Reconnect the suspect host to the production VLAN
+    • Skip custody records and continue reporting
+    • Immediately delete the original master disk
+
+339. A defender must decide between a full outage and limited network restrictions. Which NIST criterion is directly relevant?
+    • Historical stock performance
+    • Staff travel preferences
+    √ Service availability
+    • Adversary nationality
+    • Public attack attribution
+
+340. A server can remain online in a restricted quarantine network. What is a potential advantage?
+    • Automatically restore clean application data
+    √ Preserve memory access while limiting spread
+    • Avoid any need for later credential replacement
+    • Guarantee zero business cost without verification
+    • Make all persistence mechanisms disappear
+
+341. An IR team sees suspicious admin logins after a single password rotation. What was likely missed?
+    • The option to skip all domain log collection
+    √ Other compromised credentials or sessions
+    • The need to restore old password hashes
+    • The requirement to disclose forensic tools publicly
+    • The need for more public security announcements
+
+342. The team is handling a suspected rootkit with uncertain modifications. Which option is safer?
+    • Reuse original tokens on the restored host
+    • Reconnect without patching the vulnerable software
+    • Ignore privileged account access in the timeline
+    • Delete the visible malicious file and stop hunting
+    √ Preserve evidence, then perform a trusted rebuild
+
+343. One AV detection disappears after cleanup, but C2 traffic continues. What is the best conclusion?
+    • Every related host must now be trusted
+    • The C2 traffic is necessarily benign
+    • Incident closure criteria have already been met
+    √ Eradication has not been demonstrated
+    • All attacker access has been removed
+
+344. A company restored billing while its identity infrastructure remained compromised. What error is illustrated?
+    √ Recovery dependencies and priorities were mishandled
+    • The hard disk was collected too early
+    • The SIEM logs were retained too long
+    • The network was segmented before recovery
+    • The organization used an offline backup
+
+345. A confirmed compromised service account has interactive logins. What should be examined?
+    • Only employee timesheets for that month
+    • Only the host's processor model
+    √ Service-account misuse and persistence
+    • Only the incident report cover page
+    • Only the application server's screen size
+
+346. What is the most suitable response if a clean rebuild recontacts a known C2 address?
+    • Ignore the traffic because rebuilding always succeeds
+    • Disable the security sensor to reduce alert fatigue
+    √ Re-isolate and investigate unresolved compromise
+    • Publish the host as recovered without review
+    • Delete only the latest syslog record
+
+347. Which is a reason to keep a signed and hashed custody log?
+    • It prevents all future cybersecurity incidents
+    • It automatically fixes the vulnerability used by attackers
+    √ It documents evidence integrity and handling history
+    • It proves the ransom note's claims of exfiltration
+    • It replaces malware scanning on restored systems
+
+348. A clean backup exists but restoration has never been tested. What is uncertain?
+    • Whether the backup file is stored at all
+    • Whether the incident started before detection
+    √ Whether the organization can actually recover the data
+    • Whether the original attacker used C2
+    • Whether any regulatory reporting may apply
+
+349. Why should legal counsel be involved before intentionally observing an active attacker longer?
+    • Their approval automatically makes all malware harmless
+    • They are needed to calculate every network flow
+    • They are responsible for executing all endpoint blocks
+    • They replace forensic specialists in RAM acquisition
+    √ The delay may expose the organization to more harm
+
+350. An incident responder wants to scan a suspected external attacker server. What principle should stop them?
+    √ Do not hack back or probe adversary infrastructure
+    • Disable internal monitoring to avoid false positives
+    • Identify the source IP before reviewing internal logs
+    • Abandon forensic evidence before deciding containment
+    • Rebuild all machines before talking to the IR lead
+
+351. Which of these is a safer way to enrich an external suspect IP?
+    √ Check established threat-intelligence and incident records
+    • Log in to the remote server without authorization
+    • Flood the IP to see whether it changes
+    • Browse the suspect C2 directly from an infected host
+    • Send payloads to test its exploitability
+
+352. A malicious account can log in through a valid issued certificate. What is needed besides password reset?
+    • Trust prior certificate-based sessions indefinitely
+    • Delete historical audit logs for that account
+    • Rename only the user's profile folder
+    √ Revoke and replace affected certificates
+    • Restore all old cookies and tokens
+
+353. What constitutes scope in a coordinated containment plan?
+    • Only the original analyst's shift schedule
+    • Only the name of the affected department
+    • Only the most recent antivirus report
+    • Only the first malicious attachment discovered
+    √ Hosts, credentials and network routes controlled or used
+
+354. Why might attackers react badly to poorly timed containment?
+    √ They may destroy data or change tactics
+    • They issue a trusted recovery certificate
+    • They automatically provide forensic images
+    • They always voluntarily surrender their access
+    • They stop using stolen credentials forever
+
+355. A volatile memory image must be collected, but malware is actively spreading. How should the trade-off be resolved?
+    • Always delay network isolation for weeks
+    • Reconnect every host to improve image quality
+    • Wait for an exact attacker identity to emerge
+    √ Balance evidence with urgent damage limitation
+    • Always ignore all forensic collection needs
+
+356. In a ransomware case, when should IR leaders be told about data theft claims?
+    • Never, because ransom notes cannot contain claims
+    • Only after all destroyed files have been replaced
+    • Only after the ransom demand is paid
+    • Only once every employee has received a public notice
+    √ Promptly, while clearly marking the claim unverified
+
+357. Which of the four tabletop roles should coordinate the whole team's actions?
+    • Security Analyst
+    • Communications/Legal
+    • Forensics Specialist
+    • Finance VLAN Administrator
+    √ Incident Manager
+
+358. Which tabletop role focuses most directly on evidence collection and integrity?
+    √ Forensics Specialist
+    • Incident Manager
+    • Customer Service Agent
+    • Communications/Legal
+    • Business Process Owner
+
+359. Which tabletop role is especially relevant to external disclosure obligations?
+    • Network Cable Technician
+    √ Communications/Legal
+    • Application Graphic Designer
+    • Endpoint Packaging Engineer
+    • Server Hardware Vendor
+
+360. Which tabletop role is most directly associated with monitoring EDR and IoCs?
+    • Procurement Coordinator
+    • Corporate Media Spokesperson
+    • Facilities Receptionist
+    • External Payroll Auditor
+    √ Security Analyst
+
+361. Which action would be appropriate within the first 15 minutes of a live ransomware event?
+    • Reset arbitrary passwords without assessing scope
+    • Delete original logs before opening a ticket
+    √ Alert IR leadership and isolate spread paths
+    • Publicly confirm exfiltration without evidence
+    • Restore the most recent unscanned production copy
+
+362. Which information cannot be reliably concluded from the ransom note alone?
+    • That the note claimed a data theft
+    • That investigators should evaluate exfiltration
+    √ That exactly 200 GB was stolen
+    • That victims received a ransom demand
+    • That a threat of publication was stated
+
+363. What is the most defensible answer to the tabletop's 'eradication complete' question?
+    • The attacker has not contacted the help desk again
+    • The first compromised user's password is changed
+    • The ransom note has been moved to another folder
+    • The first antivirus alert is no longer visible
+    √ All footholds and entry points are removed and checks pass
+
+364. In the tabletop, which evidence helps link contractor credentials to lateral access?
+    √ VPN authentication records and server RDP logs
+    • Vendor license renewal documentation
+    • A diagram of a decommissioned network rack
+    • Physical office sign-in for unrelated staff
+    • A report of planned staff training dates
+
+365. Before restoring the Finance share, what should responders validate?
+    • Only that the backup file has the newest timestamp
+    √ Clean restore point, patched access and trusted credentials
+    • Only that the VPN login page is reachable
+    • Only that the file names have expected extensions
+    • Only that the ransom note can be read
+
+366. Which outcome suggests an incident is ready to move from eradication toward recovery?
+    • Hosts reconnected while C2 sessions remain active
+    • Web shell renamed without upload-plugin patch
+    • Malware process ended but extra admin access remains
+    • Backup selected from after the first attacker login
+    √ Entry points fixed and remaining IoC hunts negative
+
+367. Which textbook chapter is cited for the three stages of Finish?
+    • ISO/IEC 27037, Chapter 3
+    • Brown and Roberts, Chapter 1
+    • RFC 3227, Chapter 6
+    • NIST SP 800-86, Chapter 4
+    √ Brown and Roberts, Chapter 6
+
+368. Which model's Finish phase focuses on removing the adversary?
+    • CIA Triad
+    • STRIDE
+    √ F3EAD
+    • PASTA
+    • CVSS
+
+369. What does the Find stage emphasize in the lecture's F3EAD explanation?
+    • Rewriting the corporate risk management strategy
+    √ Targeting and locating the relevant adversary activity
+    • Restoring all encrypted customer databases
+    • Issuing a final signed chain-of-custody receipt
+    • Reconnecting fully rebuilt servers to production
+
+370. What does the Fix stage emphasize in the F3EAD explanation?
+    • Return of all users to service
+    • Long-term rearchitecture of the company
+    • Rebuilding all affected network devices
+    √ Investigation of adversary activity
+    • Public disclosure of the incident
+
+371. What comes after Finish in the F3EAD sequence stated in the quiz explanation?
+    • Fix
+    • Initial triage
+    √ Exploit
+    • Find
+    • Preparation
+
+372. Which is the last step of the stated F3EAD sequence?
+    • Fix
+    • Exploit
+    • Finish
+    • Analyze
+    √ Disseminate
+
+373. What is the correct sequence in the F3EAD model as described in the lecture quiz?
+    √ Find, Fix, Finish, Exploit, Analyze, Disseminate
+    • Fix, Find, Analyze, Finish, Exploit, Disseminate
+    • Exploit, Find, Fix, Analyze, Disseminate, Finish
+    • Finish, Fix, Find, Exploit, Disseminate, Analyze
+    • Find, Finish, Fix, Disseminate, Exploit, Analyze
+
+374. Which cybersecurity knowledge base is mentioned for defensive Isolate and Evict tactics?
+    • EPSS
+    • CVSS
+    • FIRST TLP
+    • ATT&CK Navigator only
+    √ MITRE D3FEND
+
+375. Which joint advisory is cited for mistakes in technical remediation?
+    • NIST SP 800-82
+    √ AA20-245A
+    • AA21-131A
+    • RFC 5737
+    • ISO/IEC 27001 Annex A
+
+376. Which agencies are among the sponsors of the #StopRansomware Guide cited?
+    • ISACA, COBIT, CSA and ISC2
+    • ICANN, W3C, NTP and IANA
+    √ CISA, FBI, NSA and MS-ISAC
+    • FIRST, IETF, ISO and IEEE
+    • MITRE, ENISA, ECMA and OASIS
+
+377. What kind of address is 203.0.113.45 in the lecture exercise?
+    √ A documentation-only example IPv4 address
+    • An automatically blocked private subnet
+    • A verified live C2 on the public internet
+    • A normal IPv6 multicast address
+    • A genuine employee VPN gateway
+
+378. Which RFC assigns the example address block used in the FS01 exercise?
+    • RFC 1035
+    • RFC 2616
+    • RFC 1918
+    • RFC 3227
+    √ RFC 5737
+
+379. Which publication is cited for the forensic volatility order?
+    • NIST SP 800-61 Rev. 3
+    • FIRST Case Classification
+    √ IETF RFC 3227 / BCP 55
+    • ISO/IEC 27035-1
+    • NIST SP 800-83 Rev. 1
+
+380. Which of these best describes provenance of evidence?
+    √ A record of where the evidence originated
+    • The total file size of all archived logs
+    • The cost of reconstructing a compromised VM
+    • The elapsed time to reopen a customer portal
+    • The percentage of hosts affected by ransomware
+
+381. Which process specifically protects evidence against later changes?
+    √ Preservation
+    • Attribution
+    • Re-architecture
+    • Lateral movement
+    • Eradication
+
+382. In dead-box imaging, why is the source drive retained separately?
+    √ To preserve a verifiable original master
+    • To speed up malware execution during analysis
+    • To avoid producing a custody log
+    • To let normal users continue using that disk
+    • To make the forensic working copy unnecessary
+
+383. Which item is particularly likely to be lost if the system is restarted?
+    • Archived backup tapes at an offsite location
+    • A long-retained central syslog archive
+    • A printed network diagram in the IR office
+    √ In-memory encryption keys and active processes
+    • An offline signed custody form
+
+384. What network evidence is useful when analyzing staging of stolen archives?
+    • Only the local keyboard language setting
+    • Only an employee's annual review form
+    • Only the printer driver's release history
+    √ Proxy, firewall and outbound NetFlow records
+    • Only the software vendor's support policy
+
+385. Which recovery action protects against use of compromised cloud API credentials?
+    • Restore expired session tokens
+    √ Rotate exposed access keys
+    • Disable all new activity auditing
+    • Copy keys from the infected machine
+    • Reuse every prior secret in the new VM
+
+386. What is the difference between an immutable forensic master and a working copy?
+    √ The master is preserved; analysis is done on the copy
+    • Both are overwritten after every examination
+    • The copy is trusted without any integrity check
+    • The master is used for daily scans; copies are discarded
+    • The master is reconstructed from analyst notes later
+
+387. Which action in the lecture is most directly concerned with preserving an accurate timeline?
+    • Deactivate all central monitoring during collection
+    • Rename every infected file to a standard name
+    √ Record clock offsets and UTC/local timestamps
+    • Restore user permissions before collecting logs
+    • Publish a single final time without verification
+
+388. Which criterion asks whether containment can be achieved with available team members and tooling?
+    • The attacking host's country
+    • Evidence preservation
+    • Duration of the solution
+    √ Time and resources
+    • Quality of backup encryption
+
+389. Which action would clearly violate the principle 'collect before you clean'?
+    √ Deleting a web shell before preserving its relevant artifacts
+    • Exporting firewall logs to protected media
+    • Documenting analyst actions with time zones
+    • Recording network connections from a live host
+    • Copying a verified forensic image before reimaging
+
+390. What distinguishes a trusted, known-good rebuild from merely rebooting a compromised host?
+    • Avoidance of all software patch deployment
+    √ Clean installation and removal of untrusted system state
+    • An automatic assurance that the old shell disappears
+    • Exclusive use of the original exposed admin password
+    • Immediate return without any application verification
+
+391. Which category of backups makes them resilient to a single-site disaster?
+    • Online copies on the same infected file server
+    • Only snapshots held by the attacked hypervisor
+    • Copies mounted to every user desktop
+    √ Secure offsite copies
+    • Backups stored only in the affected VLAN
+
+392. Why is running the business on clean temporary systems a containment option?
+    √ It maintains operations while unsafe systems are addressed
+    • It guarantees that the network is free of attacker accounts
+    • It removes the need for later trusted rebuilding
+    • It proves that the malware has been publicly attributed
+    • It replaces testing data-restoration procedures
+
+393. How should the integrity of installation media be established?
+    • Skip validation if software is digitally signed elsewhere
+    √ Verify the known-good image before use
+    • Copy installers directly from the infected host
+    • Trust files only because they are recent
+    • Reuse the old unverified virtual disk snapshot
+
+394. What should be done with reintroduced hosts if suspicious beaconing reappears?
+    • Delete the new alerts as expected background noise
+    √ Re-isolate, investigate and revisit eradication
+    • Allow the infected host to contact C2 for convenience
+    • Continue restoring unrelated servers without review
+    • Close the incident based on the earlier clean scan
+
+395. Which requirement is common to both sound eradication and sound recovery?
+    • Avoid documenting any analyst changes
+    √ Address the original weakness that allowed access
+    • Prove the attacker nationality before taking action
+    • Stop all future monitoring once the host boots
+    • Reuse every credential from the compromised host
+
+396. A team has no infected executables but observes a malicious scheduled task. What does it imply?
+    • The original forensic image cannot be trusted
+    • Network isolation can be removed immediately
+    • All legitimate services must be deleted
+    • Eradication is complete by definition
+    √ Persistence may remain even without a visible malware file
+
+397. How can monitoring after rebuild reveal incomplete eradication?
+    • It proves that all legal reporting is finished
+    • It supplies a copy of the original RAM retroactively
+    • It eliminates the need for trained IR analysts
+    • It automatically patches every unknown vulnerability
+    √ It detects recurring IoCs, beaconing or suspicious access
+
+398. In NIST SP 800-61 Rev. 2, which phase comes directly after “Detection & Analysis”?
+    • Incident Evaluation and Reporting
+    √ Containment, Eradication & Recovery
+    • Preparation and Coordination
+    • Risk Governance and Strategy
+    • Post-Incident Activity
+
+399. Which document superseded NIST SP 800-61 Rev. 2 in April 2025?
+    • NIST SP 800-83 Rev. 1
+    • ISO/IEC 27035-1:2023
+    • NIST SP 800-86
+    √ NIST SP 800-61 Rev. 3
+    • NIST CSF 2.0 (2024)
+
+400. In NIST CSF 2.0, what does subcategory RS.MI-01 state?
+    • Incident data are preserved
+    • Incidents are reported
+    √ Incidents are contained
+    • Incidents are recovered
+    • Incidents are eradicated
+
+401. Which of these is NOT one of the NIST criteria for choosing a containment strategy?
+    • Service availability
+    √ The attacker’s country of origin
+    • Potential organizational damage
+    • Need for evidence preservation
+    • Duration of the solution
+
+402. Which action is an example of SHORT-TERM containment?
+    • Applying a permanent network zoning redesign
+    • Deploying a multi-month identity redesign project
+    √ Isolating an infected laptop from the network
+    • Implementing a new corporate risk management framework
+    • Replacing the company's incident response platform
+
+403. According to the CISA #StopRansomware Guide, when should you power down infected devices?
+    • As soon as the first ransomware note is discovered
+    • After every suspicious outbound connection is observed
+    √ Only if you are unable to disconnect them from the network
+    • Immediately after an incident ticket has been opened
+    • Before attempting any form of network isolation
+
+404. What is the main forensic risk of powering off a compromised host?
+    • The incident's original timestamp changes
+    √ Volatile memory (RAM) evidence is lost
+    • Forensic disk hashes become invalid
+    • Offline archival backups are destroyed
+    • Historical firewall log retention is lost
+
+405. According to AA20-245A, why should responders avoid pinging or browsing to the attacker’s infrastructure?
+    • It makes local disk imaging completely impossible
+    • It automatically resets the attacker credentials
+    • It always disables the network security sensors
+    • It prevents recording the source system hostname
+    √ It can tip off the adversary that they have been detected
+
+406. Why are pre-emptive (unplanned, early) credential resets considered a misstep?
+    • The compromised user always immediately loses all current local files
+    • The existing passwords cannot be changed while centralized logging is enabled
+    • The active attacker's network sessions must be preserved indefinitely
+    √ The adversary likely has other credentials and will use, create or forge new ones
+    • The incident response plan prohibits every password change until closure
+
+407. Which communication approach is recommended while handling an incident?
+    • A public statement on the organization's social network
+    • A status call carried through the compromised VPN tenant
+    √ Out-of-band communication, separate from the compromised network
+    • An incident discussion in the affected corporate e-mail system
+    • A shared collaboration chat running on infected computers
+
+408. According to RFC 3227, which of these should be collected FIRST?
+    • Archival media such as backup tapes
+    • The physical configuration and topology
+    √ Routing table, ARP cache, process table and memory
+    • Centralized logging and monitoring archives
+    • Data stored on the local hard disk
+
+409. What is the main purpose of a chain of custody record?
+    √ To document who handled the evidence, when, and where it was stored
+    • To calculate the overall financial cost of the attack
+    • To record only the forensic tools used when copying files
+    • To assign incident severity levels before first containment
+    • To list firewall rules added during the recovery process
+
+410. Why do investigators calculate a hash (e.g., SHA-256) of a forensic image?
+    • To restore deleted Windows processes into memory
+    • To recover the original password from encrypted files
+    • To identify the specific ransomware family without analysis
+    √ To verify that the copy is identical to the original and unaltered
+    • To calculate the amount of data transferred over C2
+
+411. What does a write blocker do during disk acquisition?
+    • Stops every command from running in the analyst's terminal
+    • Prevents all network communications to an infected host
+    • Prevents an image file from being read after collection
+    • Blocks encryption processes from accessing remote shares
+    √ Prevents any writes to the source (original) media
+
+412. What are the four phases of the forensic process in NIST SP 800-86?
+    • Find, Fix, Finish, Exploit
+    • Mitigate, Remediate, Rearchitect, Monitor
+    • Preparation, Detection, Containment, Recovery
+    • Identification, Collection, Acquisition, Preservation
+    √ Collection, Examination, Analysis, Reporting
+
+413. In the textbook’s F3EAD model, in which phase do defenders take action to remove the adversary?
+    √ Finish
+    • Fix
+    • Exploit
+    • Disseminate
+    • Find
+
+414. According to Brown & Roberts, what are the three stages of “Finish”?
+    • Find, Fix, Disseminate
+    • Scan, Patch, Reboot
+    √ Mitigate, Remediate, Rearchitect
+    • Prepare, Contain, Recover
+    • Detect, Deny, Destroy
+
+415. If the attacker compromised a domain controller, how should the krbtgt account password be reset (AA20-245A)?
+    √ Twice, letting the first reset replicate before the second
+    • Three times before confirming any domain controller state
+    • Once immediately on the first confirmed compromised device
+    • Once at the end of recovery, without a replication check
+    • Never; only local administrator passwords require reset
+
+416. What is the safest approach for a server where the attacker had administrator-level access?
+    • Run antivirus on the live host, then reconnect before collecting evidence
+    • Delete the visible malicious file but keep the exploited plugin unchanged
+    • Restore the most recent snapshot without scanning, then turn off the alerts
+    √ Capture evidence, then rebuild from a known-good image, patch, and restore verified-clean data
+    • Reboot the affected server, then trust the original administrator accounts
+
+417. Before restoring data from a backup after a compromise, responders should…
+    • Reuse previously exposed credentials to simplify restoration
+    • Restore data directly onto the still-infected production network
+    • Disable the integrity and anti-malware checks during the restore
+    √ Verify the backup is clean and was taken before the compromise began
+    • Select the latest backup without reviewing its creation timestamp
