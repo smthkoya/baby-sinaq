@@ -178,7 +178,7 @@ function loadUserSettings() {
   if (inputMax) inputMax.value = settings.max || "";
   inputCount.value = settings.count || "20";
 
-  if (subjectSelect) subjectSelect.value = settings.subject |||| "incident_response";
+  if (subjectSelect) subjectSelect.value = MODULE_SUBJECTS[settings.subject] ? settings.subject : "incident_response";
   updateModuleVisibility(settings.module || null);
 
   showCorrectCheckbox.checked =
