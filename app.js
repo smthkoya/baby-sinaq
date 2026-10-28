@@ -3,7 +3,9 @@ import { t, applyStaticTranslations, toggleLang } from "./i18n.js";
 
 const MODULE_SUBJECTS = {
   incident_response: [
-    { file: "questions_incident_response.txt", label: "Lecture 1 — Incident Response" },
+    { file: "questions_ir_lecture1.txt", label: "Lecture 1" },
+    { file: "questions_ir_lecture2.txt", label: "Lecture 2" },
+    { file: "questions_ir_lecture3.txt", label: "Lecture 3" },
   ],
   linux: [
     { file: "questions_linux_module1.txt", label: "Module 1" },
@@ -64,6 +66,11 @@ function populateModules(subject, preferredValue = null) {
   moduleSelectionDiv.classList.remove("hide");
   moduleSelect.innerHTML = "";
 
+  const combinedOption = document.createElement("option");
+  combinedOption.value = ALL_MODULES_VALUE;
+  combinedOption.textContent = t("all_modules_option");
+  moduleSelect.appendChild(combinedOption);
+
   modules.forEach(({ file, label }) => {
     const option = document.createElement("option");
     option.value = file;
@@ -71,7 +78,7 @@ function populateModules(subject, preferredValue = null) {
     moduleSelect.appendChild(option);
   });
 
-  if (preferredValue && modules.some((module) => module.file === preferredValue)) {
+  if (preferredValue && (preferredValue === ALL_MODULES_VALUE || modules.some((module) => module.file === preferredValue))) {
     moduleSelect.value = preferredValue;
   }
 }
