@@ -28,9 +28,14 @@
             <!-- <option value="linux" data-i18n="subject_linux">Linux</option> -->
           </select>
         </div>
-        <div class="module-selection hide" id="module-selection">
+        <div class="module-selection" id="module-selection">
           <p class="input-label" data-i18n="select_module_label">Выберите модуль:</p>
-          <select id="module-select" class="subject-select"></select>
+          <select id="module-select" class="subject-select">
+            <option value="__ALL__">Все лекции (объединённо)</option>
+            <option value="questions_ir_lecture1.txt">Lecture 1</option>
+            <option value="questions_ir_lecture2.txt">Lecture 2</option>
+            <option value="questions_ir_lecture3.txt">Lecture 3</option>
+          </select>
         </div>
         <div class="input-group">
           <p class="input-label" data-i18n="questions_from_label">Вопросы от:</p>
@@ -50,6 +55,6 @@
       </div>
       <div id="incorrect" class="hide"><h1 id="incorrect-answers-title" data-i18n="incorrect_title">Неправильные ответы</h1><div id="all-questions-container"></div><button id="show-incorrect-answers" class="play-again-button" data-i18n="return_home_button">Вернуться на главную</button></div>
     </div>
-    <script type="module" src="app.js?v=ir-lectures-3"></script>
+    <script type="module" src="app.js?v=ir-lectures-20261028-fix2"></script>
   </body>
 </html>
