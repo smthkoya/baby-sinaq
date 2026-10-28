@@ -2,18 +2,8 @@ import { loadQuizData } from "./data.js";
 import { t, applyStaticTranslations, toggleLang } from "./i18n.js";
 
 const MODULE_SUBJECTS = {
-  python: [
-    { file: "questions_powershell_all_modules.txt", label: "All modules — Combined quiz" },
-    { file: "questions_powershell_module1.txt", label: "Module 1" },
-    { file: "questions_powershell_module2.txt", label: "Module 2" },
-    { file: "questions_powershell_module3.txt", label: "Module 3" },
-    { file: "questions_powershell_module4.txt", label: "Module 4" },
-    { file: "questions_powershell_module5.txt", label: "Module 5" },
-    { file: "questions_powershell_module6.txt", label: "Module 6" },
-  ],
-  security_gateways: [
-    { file: "questions_intro_dfir_cyberpro.txt", label: "Quiz questions" },
-    { file: "questions_intro_dfir_ai_generated.txt", label: "AI generated additional questions" },
+  incident_response: [
+    { file: "questions_incident_response.txt", label: "Lecture 1 — Incident Response" },
   ],
   linux: [
     { file: "questions_linux_module1.txt", label: "Module 1" },
@@ -90,7 +80,7 @@ async function initializeQuizData() {
   startButton.disabled = true;
   inputMax.value = t("loading");
 
-  let selectedSubjectFile = subjectSelect ? subjectSelect.value : "python";
+  let selectedSubjectFile = subjectSelect ? subjectSelect.value : "incident_response";
 
   if (MODULE_SUBJECTS[selectedSubjectFile]) {
     const selectedModule = moduleSelect ? moduleSelect.value : ALL_MODULES_VALUE;
@@ -162,7 +152,7 @@ function saveUserSettings() {
     min: inputMin.value,
     max: inputMax.value,
     count: inputCount.value,
-    subject: subjectSelect ? subjectSelect.value : "python",
+    subject: subjectSelect ? subjectSelect.value : "incident_response",
     module: moduleSelect ? moduleSelect.value : ALL_MODULES_VALUE,
     showCorrect: showCorrectCheckbox.checked,
   };
@@ -181,7 +171,7 @@ function loadUserSettings() {
   if (inputMax) inputMax.value = settings.max || "";
   inputCount.value = settings.count || "20";
 
-  if (subjectSelect) subjectSelect.value = settings.subject || "python";
+  if (subjectSelect) subjectSelect.value = settings.subject |||| "incident_response";
   updateModuleVisibility(settings.module || null);
 
   showCorrectCheckbox.checked =
