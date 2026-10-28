@@ -1,0 +1,1294 @@
+1. What best describes Incident Response (IR)?
+    • A process used only after services are restored
+    • A procedure limited to investigating hardware failures
+    • A method for replacing all security monitoring tools
+    • A strategy focused only on preventing cyberattacks
+    √ A structured approach to handling security incidents
+
+2. Which set of activities is included in the lecture’s definition of Incident Response?
+    • Backing up, formatting, reinstalling, and closing
+    • Monitoring, patching, licensing, and archiving
+    √ Detecting, analyzing, containing, and recovering
+    • Scanning, exploiting, escalating, and reporting
+    • Planning, purchasing, deploying, and auditing
+
+3. According to the NIST definition cited in Lecture 1, an incident may include…
+    √ An imminent threat of violating security policy
+    • A planned security test performed with approval
+    • Only downtime caused by a server malfunction
+    • Only an attack that has already stolen information
+    • Any authorized change to a production system
+
+4. Which situation can be an incident even before a confirmed breach occurs?
+    • A planned migration to a new backup provider
+    • A scheduled reboot with no security implications
+    • A printer running out of paper during work
+    √ An imminent violation of a computer security policy
+    • An authorized software upgrade during maintenance
+
+5. Which term most closely matches the ISO-style description in the lecture?
+    • Approved changes that improve system performance
+    √ Unwanted security events threatening business operations
+    • Maintenance tasks with no business consequences
+    • Any technical event regardless of security relevance
+    • Routine IT requests submitted through a service desk
+
+6. Which example is explicitly presented as a security incident in Lecture 1?
+    • A scheduled firewall update
+    • A normal user password change
+    • A successful nightly backup
+    • A planned database migration
+    √ A ransomware infection
+
+7. Which of the following is NOT listed as an example of a security incident?
+    • A malware attack
+    • A phishing attempt
+    √ An approved printer replacement
+    • A ransomware attack
+    • A data breach
+
+8. Which activity belongs to Detection and Analysis?
+    √ Identifying suspicious activity using SIEM monitoring
+    • Updating the IRP after the case is closed
+    • Restoring a server after the threat is removed
+    • Coordinating a public statement after the crisis
+    • Isolating an affected laptop from the network
+
+9. What is the primary purpose of Containment?
+    • To complete the post-incident review
+    • To replace existing detection and alerting tools
+    • To return every system immediately to production
+    √ To limit damage by stopping further spread
+    • To assign legal responsibility for the intrusion
+
+10. Which activity is a Recovery task?
+    • Collecting the initial SIEM alert for investigation
+    √ Returning affected systems to operational status
+    • Identifying the first suspicious login attempt
+    • Determining the original source of a phishing email
+    • Disabling the network port of an infected machine
+
+11. What does a post-incident review mainly aim to achieve?
+    • Replace containment with immediate restoration
+    • Avoid changes to previously approved procedures
+    • Prevent analysts from documenting the attack
+    • Classify every service outage as a cyberattack
+    √ Improve future responses using lessons learned
+
+12. Which sequence best reflects the purpose of Incident Response?
+    • Restore operations, ignore evidence, close the case
+    • Assign blame, replace hardware, stop communicating
+    √ Identify the problem, limit harm, restore operations
+    • Delete affected data, disable monitoring, reconnect
+    • Wait for certainty, announce publicly, investigate
+
+13. What usually triggers an IT incident?
+    √ An interruption or degradation of an IT service
+    • A malicious program establishing persistence
+    • An unauthorized disclosure of customer records
+    • A confirmed violation of data confidentiality only
+    • An attempted unauthorized privilege escalation
+
+14. What primarily distinguishes a security incident from a routine IT incident?
+    • Whether a physical server needs maintenance
+    • The presence of a customer-facing application
+    • The number of help desk tickets submitted
+    √ A threat to confidentiality, integrity, or availability
+    • Whether the event occurs outside working hours
+
+15. Which example is a typical IT incident rather than a security incident?
+    • An attacker accesses a restricted folder
+    √ A printer unexpectedly stops working
+    • A phishing email steals employee credentials
+    • Malware modifies business-critical records
+    • A stolen account downloads sensitive files
+
+16. Which situation best represents a security incident?
+    • A scheduled outage for a database upgrade
+    • A printer driver failure on one workstation
+    • An approved change to access permissions
+    • A planned replacement of network switches
+    √ Unauthorized access to confidential employee data
+
+17. What is usually the first priority in handling a routine IT incident?
+    • Determine the attacker’s persistence method
+    • Prepare breach notifications for regulators
+    √ Restore the affected service
+    • Collect a forensic memory image
+    • Disable all suspected user accounts
+
+18. What is the first general priority in a security incident?
+    √ Contain and protect before fully restoring
+    • Publish all investigation details immediately
+    • Reinstall every system in the organization
+    • Wait for a scheduled maintenance window
+    • Restore service without checking security risk
+
+19. Which group normally owns routine IT service incidents?
+    • Incident forensics specialists
+    • Legal and compliance department
+    • Corporate communications team
+    √ Service Desk or IT Operations
+    • Cybersecurity incident responders only
+
+20. Which group normally leads a security incident?
+    • Customer billing department
+    √ Security team or CSIRT
+    • Only the affected end user
+    • General procurement department
+    • Facilities and building maintenance
+
+21. In the lecture, CIA refers to which three security properties?
+    • Communication, Inspection, Authentication
+    • Criticality, Impact, Accountability
+    • Compliance, Investigation, Authorization
+    • Containment, Identification, Analysis
+    √ Confidentiality, Integrity, Availability
+
+22. A mail server crashes because of a failed power supply, with no evidence of compromise. What is the best initial classification?
+    • An unauthorized disclosure incident
+    • A deliberate policy violation
+    √ An IT service incident
+    • A confirmed security breach
+    • A phishing-related compromise
+
+23. An employee’s credentials are stolen, but the application still works normally. What is the best classification?
+    √ A security incident
+    • An approved access change
+    • A hardware maintenance problem
+    • A standard service request
+    • A routine availability incident
+
+24. Which statement matches the relationship described on the lecture slide?
+    • Security incidents are managed exclusively by the help desk
+    • All cyber incidents require physical hardware failure
+    • IT incidents can never involve security risks
+    √ Not every IT incident is a security incident
+    • Every printer outage is a security incident
+
+25. Why should responders avoid treating every service outage as a cyberattack?
+    • All outages are caused by phishing attempts
+    √ Some outages have no threat to information security
+    • An interruption always means that data was stolen
+    • Security teams never investigate availability issues
+    • Service restoration is prohibited after an outage
+
+26. A server is unavailable after unauthorized encryption of its files. Which factor makes the situation security-related?
+    • The number of employees using the application
+    • The fact that the server needs a restart
+    • The age of the server operating system
+    • The incident’s occurrence during business hours
+    √ The loss of data availability due to malicious action
+
+27. A service fails after an approved patch causes a compatibility issue. Which team is the usual initial owner?
+    • The cyber forensics team only
+    • External breach notification authority
+    √ IT Operations or Service Desk
+    • The red team conducting attack simulations
+    • Public relations and media team
+
+28. How does timely Incident Response reduce organizational risk?
+    √ It limits damage, data loss, and downtime
+    • It replaces the need for security awareness
+    • It makes all future vulnerabilities disappear
+    • It removes every requirement for data backups
+    • It guarantees that cyberattacks never occur
+
+29. Which business impact does effective IR aim to reduce?
+    • The cost of approved staff training
+    • The number of ordinary user logins
+    • The frequency of regular system backups
+    √ Financial losses from a breach
+    • The need to document security procedures
+
+30. Which of these is presented as a reason Incident Response matters?
+    • Guaranteeing zero risk in every system
+    √ Maintaining regulatory compliance
+    • Replacing every physical security control
+    • Avoiding all communication with customers
+    • Eliminating the need for IT operations
+
+31. Which pair of regulations is mentioned in the lecture in the context of incident response?
+    • SOX and ITIL
+    • TCP/IP and DNSSEC
+    • NIST CSF and OWASP Top 10
+    • PCI DSS and ISO 9001
+    √ GDPR and HIPAA
+
+32. Poor handling of an incident can most directly harm which intangible business asset?
+    • The capacity of the local print server
+    • The length of employee email addresses
+    √ Customer trust and organizational reputation
+    • The naming convention of incident tickets
+    • The total number of installed operating systems
+
+33. What legal consequence may follow an ineffective incident response?
+    √ Fines or legal action
+    • Automatic cancellation of all software licenses
+    • Permanent disabling of network monitoring
+    • Removal of all internal company policies
+    • Mandatory replacement of every endpoint
+
+34. Which factor links IR to business continuity?
+    • Stopping all normal business activities indefinitely
+    • Prioritizing marketing campaigns over containment
+    • Waiting to recover until the next financial year
+    √ Reducing service downtime and restoring operations
+    • Removing redundancy from critical systems
+
+35. Why should a business invest in Incident Response before an attack?
+    • Legal obligations start only after systems are replaced
+    √ Preparation enables faster and more coordinated action
+    • Recovery is impossible without public disclosure
+    • Only large companies are affected by security incidents
+    • Monitoring alone eliminates every possible threat
+
+36. Why is rapid containment financially useful?
+    • It automatically satisfies every regulatory requirement
+    • It removes the need to restore critical applications
+    • It guarantees that forensic tools become unnecessary
+    • It transfers all recovery costs to the attacker
+    √ It can prevent the incident from causing further losses
+
+37. Which incident response outcome best supports reputation management?
+    • Deleting all documentation to avoid criticism
+    • A public claim that no organization can be attacked
+    √ A coordinated response that helps preserve trust
+    • Publishing employee identities without a need
+    • Delaying all customer communication indefinitely
+
+38. A company delays responding to an active data breach. Which risk is likely to increase?
+    √ Data loss and potential legal exposure
+    • Effectiveness of its emergency drills
+    • Accuracy of future forensic evidence
+    • Availability of its compromised services
+    • Reliability of its containment process
+
+39. Which option is NOT one of the lecture’s main justifications for Incident Response?
+    • Reputation management
+    • Reducing legal consequences
+    • Regulatory compliance
+    √ Increasing the number of routine software updates
+    • Risk mitigation
+
+40. What does the primary IR goal “Minimize Impact” focus on?
+    • Publishing technical investigation notes
+    √ Stopping an attack from spreading
+    • Increasing the volume of SIEM alerts
+    • Preparing a new company marketing plan
+    • Buying replacements for all devices
+
+41. Which primary goal is served by restoring normal business functions promptly?
+    • Investigate Every Host
+    • Preserve Evidence
+    • Conduct Threat Modeling
+    • Assign Legal Responsibility
+    √ Recover Quickly
+
+42. What is meant by the IR goal “Protect Data”?
+    • Archive all company data without access controls
+    • Keep only operational logs after an incident
+    √ Prevent theft or corruption of sensitive information
+    • Make every employee a system administrator
+    • Delete suspicious files before preserving evidence
+
+43. Which objective explains why monitoring and alerting are essential?
+    √ Detect incidents early
+    • Rewrite the communication plan
+    • Recover data from a known-good backup
+    • Eliminate the attacker’s remaining access
+    • Complete legal reporting after a breach
+
+44. Which activity directly supports the objective of containing and eliminating threats?
+    • Sending a general announcement to all staff
+    • Disabling SIEM log collection permanently
+    • Removing the incident from the ticket queue
+    √ Isolating a compromised system and removing malware
+    • Restoring access without checking compromise
+
+45. Why should evidence be preserved during incident response?
+    • It guarantees every system can be recovered in minutes
+    √ It supports investigations and possible legal action
+    • It replaces the need for security monitoring
+    • It ensures an incident has no business impact
+    • It automatically reveals the attacker’s identity
+
+46. Which action best represents post-incident improvement?
+    • Using the same response plan without review
+    • Deleting the case history once service is back
+    • Skipping all future training exercises
+    • Keeping known detection gaps undocumented
+    √ Updating response procedures after reviewing findings
+
+47. A SOC detects an intrusion before the attacker moves laterally. Which IR objective is demonstrated?
+    • Full-scale recovery
+    • Post-incident documentation
+    √ Early detection
+    • Public crisis communication
+    • External reporting
+
+48. An analyst isolates an infected laptop to prevent access to other machines. Which primary goal is served?
+    √ Minimize Impact
+    • Update Contracts
+    • Recover Quickly
+    • Publish Findings
+    • Train Responders
+
+49. Restoring a clean database helps satisfy which primary IR goal?
+    • Preserve Evidence
+    • Identify Threat Actors
+    • Create an IRT
+    √ Recover Quickly
+    • Detect Incidents Early
+
+50. Which objective is most directly served by retaining logs and forensic artifacts?
+    • Reduce the number of backup copies
+    √ Preserve evidence for investigation
+    • Prepare employee performance reviews
+    • Increase routine IT ticket volume
+    • Restore printer connectivity
+
+51. Why is a lessons-learned meeting not optional in a mature IR process?
+    • It guarantees the attacker will be identified
+    • It removes the need for incident documentation
+    • It replaces every preventive control
+    • It completes the initial containment step
+    √ It helps prevent similar response failures
+
+52. Which lifecycle phase establishes policies, tools, and the response team?
+    • Identification
+    • Eradication
+    √ Preparation
+    • Recovery
+    • Containment
+
+53. Which lifecycle phase focuses on recognizing potential security events?
+    √ Identification
+    • Preparation
+    • Lessons Learned
+    • Eradication
+    • Recovery
+
+54. What comes directly after Preparation in the six-step lifecycle shown in Lecture 1?
+    • Lessons Learned
+    • Containment
+    • Recovery
+    √ Identification
+    • Eradication
+
+55. Which phase follows Identification in the lecture’s six-step sequence?
+    • Eradication
+    √ Containment
+    • Lessons Learned
+    • Recovery
+    • Preparation
+
+56. Which phase follows Containment?
+    • Identification
+    • Preparation
+    • Recovery
+    • Post-Incident Review
+    √ Eradication
+
+57. Which phase comes immediately after Eradication?
+    • Identification
+    • Containment
+    √ Recovery
+    • Preparation
+    • Lessons Learned
+
+58. Which activity is associated with the final lifecycle stage?
+    √ Reviewing lessons and updating the IRP
+    • Removing malware persistence from a host
+    • Disabling an infected network connection
+    • Detecting an anomalous login through SIEM
+    • Deploying an emergency firewall restriction
+
+59. Which order matches the six-step IR lifecycle presented in the lecture?
+    • Containment → Identification → Preparation → Eradication → Recovery → Lessons Learned
+    • Preparation → Recovery → Identification → Eradication → Containment → Lessons Learned
+    • Identification → Preparation → Containment → Recovery → Eradication → Lessons Learned
+    √ Preparation → Identification → Containment → Eradication → Recovery → Lessons Learned
+    • Preparation → Identification → Recovery → Containment → Eradication → Lessons Learned
+
+60. In the four-phase overview on slide 8, which activities are grouped into one phase?
+    • Detection, Forensics, and Governance
+    √ Containment, Eradication, and Recovery
+    • Recovery, Training, and Communications
+    • Post-Incident Review, Reporting, and Monitoring
+    • Preparation, Identification, and Reporting
+
+61. Which phase contains restoring systems only after security testing?
+    • Containment
+    • Lessons Learned
+    • Identification
+    • Preparation
+    √ Recovery
+
+62. Which phase is responsible for completely removing malicious software?
+    • Detection and Analysis
+    • Recovery
+    √ Eradication
+    • Preparation
+    • Post-Incident Activity
+
+63. At which phase should responders normally stop an incident from spreading?
+    √ Containment
+    • Preparation
+    • Recovery
+    • Lessons Learned
+    • Identification
+
+64. Which lifecycle phase uses human reports and detection systems to recognize threats?
+    • Preparation
+    • Recovery
+    • Post-Incident Review
+    √ Identification
+    • Eradication
+
+65. What is the main purpose of the Preparation stage?
+    • Remove persistence established by attackers
+    √ Make the organization ready to respond efficiently
+    • Publish a final report after case closure
+    • Confirm all systems have already been breached
+    • Restore damaged systems to normal service
+
+66. A team removes a malicious user account after the affected host is isolated. Which stage is illustrated?
+    • Identification
+    • Post-Incident Activity
+    • Preparation
+    • Recovery
+    √ Eradication
+
+67. After deleting attacker persistence, engineers test patched systems before returning them to service. What phase is this?
+    • Post-Incident Review
+    • Preparation
+    √ Recovery
+    • Identification
+    • Containment
+
+68. During which stage would responders develop an IRP before an incident occurs?
+    √ Preparation
+    • Detection and Analysis
+    • Containment
+    • Eradication
+    • Recovery
+
+69. Which stage should produce findings used to improve the next response cycle?
+    • Threat Removal
+    • Operational Recovery
+    • Initial Identification
+    √ Lessons Learned
+    • Immediate Containment
+
+70. Which phase includes creating a forensic incident timeline and identifying suspicious activity?
+    • Operational Recovery
+    √ Detection and Analysis
+    • Business Continuity Planning
+    • Long-term Containment
+    • Post-incident Improvement
+
+71. A team has detected malicious code but has not stopped it spreading. Which stage needs urgent action next?
+    • Legal Closure
+    • Post-Incident Review
+    • Recovery
+    • Preparedness Training
+    √ Containment
+
+72. Which of the following is an eradication action, rather than a containment action?
+    • Blocking a malicious connection temporarily
+    • Disconnecting an infected machine from Wi-Fi
+    √ Removing malware and compromised credentials
+    • Moving an endpoint to a quarantine network
+    • Restricting network access for an affected host
+
+73. Which of the following is a recovery action, rather than eradication?
+    √ Restoring tested, patched systems to operation
+    • Removing a malicious service from an endpoint
+    • Removing a confirmed malware executable
+    • Revoking a compromised user credential
+    • Deleting an attacker-created scheduled task
+
+74. Which of the following belongs to incident preparation?
+    • Publishing the attacker’s details to all employees
+    • Restoring an infected system without validation
+    • Erasing forensic evidence after a system crash
+    √ Establishing policies and response tools
+    • Waiting for a confirmed breach before forming a team
+
+75. Which pair of tools is explicitly mentioned for staff training during Preparation?
+    • DNS and DHCP
+    √ IDS and SIEM
+    • CRM and ERP
+    • FTP and SMTP
+    • CAD and GIS
+
+76. Which of these is listed as an Indicator of Compromise in Lecture 1?
+    • A documented application upgrade
+    • A planned security awareness workshop
+    • A scheduled server replacement
+    • A successful authorized backup
+    √ Abnormal login attempts
+
+77. What can unusual network activity indicate during the Identification phase?
+    • Successful completion of the recovery plan
+    • Guaranteed compliance with company policy
+    √ A possible security compromise
+    • Definitive proof that all endpoints are infected
+    • A routine software license audit
+
+78. Why are unauthorized file accesses relevant during Identification?
+    √ They may reveal suspicious activity involving protected data
+    • They prove that every failed login is harmless
+    • They eliminate the need for log correlation
+    • They are required for normal printer maintenance
+    • They indicate that the incident has been eradicated
+
+79. Which source can initiate Identification besides a security detection tool?
+    • A normal financial reconciliation
+    • A scheduled marketing campaign
+    • An unrelated equipment inventory
+    √ An employee report
+    • A completed procurement contract
+
+80. What is SIEM used for in the lecture’s IR overview?
+    • Replacing the incident manager during a crisis
+    √ Monitoring and identifying potential threats
+    • Rebuilding physical servers automatically
+    • Authoring public legal statements
+    • Managing company payroll and benefits
+
+81. Which event should the security team investigate as a potential IoC?
+    • An approved employee role change
+    • An IT technician applying a planned update
+    • A backup completing during its scheduled window
+    • A user logging in successfully at a normal time
+    √ Multiple abnormal login attempts to an account
+
+82. Which approach best combines human and technical detection?
+    • Trust all automated alerts without any examination
+    • Use only user complaints and disable central logging
+    √ Review SIEM alerts alongside employee incident reports
+    • Ignore reports unless a major service has failed
+    • Perform investigations only after system recovery
+
+83. Why does the Identification phase come before Containment?
+    √ Responders must first recognize a possible incident
+    • Legal reporting replaces all technical detection
+    • The IRP cannot exist until a breach is confirmed
+    • Recovery must be finished before threats are detected
+    • Training and drills must follow every forensic action
+
+84. Which is a short-term containment measure according to Lecture 1?
+    • Redesigning the entire corporate network
+    • Completing all staff training exercises
+    • Rewriting the organization’s policies
+    √ Isolating an affected machine
+    • Replacing a compromised building’s wiring
+
+85. Which is an example of long-term containment from the lecture?
+    • Recording the time of the first SIEM alert
+    √ Implementing network segmentation
+    • Temporarily disabling a single switch port
+    • Acknowledging a suspicious-user report
+    • Disconnecting one infected cable immediately
+
+86. Applying patches as a longer-term containment measure primarily helps…
+    • Replace the need for forensic evidence
+    • Restore data without any integrity checks
+    • Remove the need for security monitoring
+    • Determine the attacker’s legal identity
+    √ Reduce the chance of continued exploitation
+
+87. What does Eradication require beyond simply limiting network access?
+    • Changing only the incident ticket priority
+    • Restoring all systems before investigating them
+    √ Removing the underlying threat and compromised credentials
+    • Disabling every employee account permanently
+    • Publishing the forensic findings externally
+
+88. Why are compromised credentials relevant to the Eradication stage?
+    √ They may let the attacker regain access
+    • They always indicate a broken physical printer
+    • They can never be used after malware is removed
+    • They replace the need for network isolation
+    • They are needed only for post-incident publicity
+
+89. Before fully restoring an affected system, what does the lecture recommend?
+    • Skipping verification to reduce downtime
+    • Reconnecting before confirming threat removal
+    • Deleting all prior incident documentation
+    √ Patching and thorough security testing
+    • Disabling the system’s security alerts
+
+90. Which recovery approach aligns best with the lecture?
+    • Restore any available data without validation
+    √ Return services to a tested and secure state
+    • Prioritize uptime even when malware remains
+    • Avoid patching recovered hosts until the next year
+    • Use the incident report instead of technical checks
+
+91. What is the purpose of a detailed post-mortem analysis?
+    • Guarantee that no future incidents will occur
+    • Determine which employee should be publicly blamed
+    • Replace the need for initial detection and analysis
+    • Close all remaining evidence collection tasks automatically
+    √ Understand the incident and improve future response
+
+92. Which document should be updated after lessons learned are analyzed?
+    • Software end-user license agreement
+    • Employee vacation calendar
+    √ Incident Response Plan (IRP)
+    • Printer troubleshooting guide
+    • Company product price list
+
+93. Which sequence is most appropriate for a compromised workstation?
+    √ Identify the threat → isolate → remove it → restore safely
+    • Restore the host → identify the threat → isolate it → review
+    • Publish the incident → reconnect the host → inspect logs → isolate
+    • Delete logs → restore the host → identify compromise → close
+    • Reinstall applications → disable controls → analyze → contain
+
+94. A recovered system remains vulnerable to the original exploit. Which step was incomplete?
+    • Creation of the incident ticket
+    • Notification of the security team
+    • Incident identification through SIEM alerts
+    √ Secure recovery through patching and validation
+    • Short-term isolation of the endpoint
+
+95. Which action belongs to Post-Incident Activity rather than immediate response?
+    • Temporarily isolating compromised workstations
+    √ Revising the IRP based on investigation findings
+    • Removing a known attacker-created account
+    • Blocking active malicious connections
+    • Restoring an unavailable critical system
+
+96. What is the key difference between proactive and reactive incident handling?
+    • Reactive handling requires no investigation or documentation
+    • Proactive teams begin only after a public breach notice
+    • Proactive handling removes all possibility of human error
+    • Reactive teams always recover faster than prepared teams
+    √ Proactive organizations prepare before incidents occur
+
+97. How does preparation reduce confusion during a real incident?
+    • Incident classification becomes unnecessary
+    • Only one person is allowed to know about the breach
+    √ Roles and procedures are known in advance
+    • Employees can bypass all escalation requirements
+    • Analysts need not preserve forensic evidence
+
+98. Which preparedness activity helps reduce the likelihood of exploitation?
+    √ Identify weaknesses and implement preventive controls
+    • Send all incident evidence to public mailing lists
+    • Wait for the attacker to demonstrate each vulnerability
+    • Disable all security monitoring to reduce alerts
+    • Rebuild every endpoint after each minor IT request
+
+99. Which technologies are cited as possible preventive controls?
+    • Spreadsheet software and printers
+    • Web browsers and video conferencing
+    • Payroll systems and projectors
+    √ Firewalls and intrusion detection
+    • Graphic editors and document scanners
+
+100. What is a business continuity benefit of good incident preparedness?
+    • Elimination of every regulatory obligation
+    √ Less downtime and faster recovery
+    • Removal of all security policies
+    • Permanent suspension of business processes
+    • Guaranteed operation without any backups
+
+101. Which team behavior best reflects preparedness?
+    • Keeping the response plan secret from all responders
+    • Waiting for management to invent each procedure
+    • Disabling the incident reporting mechanism
+    • Assigning ownership only after damage spreads
+    √ Rehearsing responsibilities before a real incident
+
+102. An organization identifies a critical vulnerability and installs a preventive control before exploitation. What approach is this?
+    • Late-stage incident eradication
+    • External incident disclosure
+    √ Proactive risk reduction
+    • Emergency service restoration
+    • Post-incident evidence collection
+
+103. A company has no IR plan and starts assigning roles during a ransomware outbreak. What preparation problem is most apparent?
+    √ Unclear preassigned responsibilities
+    • Excessive forensic image collection
+    • Overly frequent security monitoring
+    • Too many completed tabletop exercises
+    • Premature recovery from clean backups
+
+104. Which statement about preparation is most consistent with Lecture 1?
+    • It is useful only after systems have been restored
+    • It is the same activity as malware eradication
+    • It matters only when an incident becomes public
+    √ It helps prevent panic and response mistakes
+    • It removes the need to plan communication
+
+105. Why should organizations assess threats before an incident?
+    • To guarantee that no adverse event is ever detected
+    √ To select suitable preventive and response measures
+    • To avoid collecting any security logs
+    • To postpone all training until recovery
+    • To stop assigning responsibilities within the IRT
+
+106. Which is the strongest indicator of an organization’s practical IR readiness?
+    • A response plan that has never been shared
+    • A list of tools without any assigned owners
+    • A public announcement prepared without a technical team
+    • A large number of unreviewed security alerts
+    √ Defined roles, usable procedures, and tested communication
+
+107. How does proactive planning support operational continuity?
+    • It requires waiting for legal action before containment
+    • It removes all need for cross-team communication
+    √ It prepares coordinated steps for limiting downtime
+    • It replaces the need to protect sensitive data
+    • It ensures every emergency can be ignored safely
+
+108. Which component of an IRP lists events such as data breaches and DDoS attacks?
+    √ Incident scenarios
+    • Payroll records
+    • Network asset depreciation
+    • Employee vacation requests
+    • Routine marketing forecasts
+
+109. Which IRP component defines who is responsible for each response task?
+    • External product inventory
+    • Annual financial projections
+    • Historical software license data
+    √ Roles and responsibilities
+    • Incident severity statistics
+
+110. Which component specifies predefined detection, containment, and recovery steps?
+    • Customer satisfaction questionnaires
+    √ Response procedures
+    • Media relations statistics
+    • Staff performance evaluations
+    • General asset naming standards
+
+111. Which IRP section should cover both internal and external messaging?
+    • Security tool inventory
+    • Backup retention schedule
+    • Patch history
+    • Incident evidence register
+    √ Communication plan
+
+112. Why is an IRP described as a “living document”?
+    • It must be rewritten from zero after every alert
+    • It is complete once approved and should not be revised
+    √ It needs regular updates as threats and conditions change
+    • It is used only for simulation exercises
+    • It is relevant only during the recovery phase
+
+113. Which activity most directly keeps an Incident Response Plan effective?
+    √ Regular reviews and updates
+    • Limiting access to the plan to vendors only
+    • Replacing response procedures with informal messages
+    • Avoiding lessons from previous incidents
+    • Removing contact details from the plan
+
+114. The company expands to a new cloud environment. What should happen to its IRP?
+    • Retire the IRP until a breach occurs
+    • Keep old procedures because threats never change
+    • Replace technical response with public communications
+    √ Review and update it for the changed environment
+    • Remove the new environment from incident scenarios
+
+115. An IRP names team members but never explains their tasks. Which component is weak?
+    • Physical security inventory
+    √ Roles and responsibilities
+    • External threat intelligence
+    • Incident scenarios
+    • Legal case record retention
+
+116. The team does not know how to reach customers or regulators during an incident. Which IRP element is missing?
+    • Firewall hardware inventory
+    • Incident severity scale
+    • Malware scanning schedule
+    • Forensic tool procurement list
+    √ Communication plan
+
+117. An analyst asks what steps to take during a DDoS event. Which part of the IRP should guide the response?
+    • An unrelated HR disciplinary policy
+    • A list of staff holiday entitlements
+    √ Predefined response procedures
+    • The annual equipment procurement plan
+    • The corporate visual identity guide
+
+118. Which item is NOT listed as a core IRP component in Lecture 1?
+    √ A complete list of employees’ personal passwords
+    • Communication plan
+    • Roles and responsibilities
+    • Response procedures
+    • Incident scenarios
+
+119. Why should an IRP contain possible incident scenarios?
+    • They replace detection and analysis technologies
+    • They guarantee that all incidents follow one pattern
+    • They determine the legal identity of each attacker
+    √ They help the team anticipate different response needs
+    • They remove the need to identify ongoing attacks
+
+120. Which response planning question is answered by roles and responsibilities?
+    • Which file hash was observed during compromise?
+    √ Who is authorized and expected to perform each task?
+    • What was the attacker’s exact source IP address?
+    • When was the malicious domain first registered?
+    • How many packets were dropped by the firewall?
+
+121. The IRP contains correct technical steps but outdated stakeholder contacts. What is the main risk?
+    • Ransomware can no longer encrypt files
+    • The SIEM automatically loses all its alerts
+    • Security incidents can no longer be classified
+    • The network will stop routing internal traffic
+    √ Critical notifications may be delayed
+
+122. Which statement best describes a strong IRP?
+    • It focuses on tools while leaving decisions informal
+    • It is updated only after a regulatory inspection
+    √ It connects scenarios, owners, procedures, and communications
+    • It contains public statements but no technical steps
+    • It provides only a list of past incidents
+
+123. Who is primarily responsible for overall incident response coordination?
+    √ Incident Manager
+    • Security Analyst
+    • Communications Coordinator
+    • Forensics Specialist
+    • Legal Advisor
+
+124. Which IRT role is responsible for detecting and mitigating attacks?
+    • Finance Representative
+    • Communications Coordinator
+    • Legal Advisor
+    √ Security Analyst
+    • Public Relations Manager
+
+125. Who primarily investigates breach evidence and forensic artifacts?
+    • Procurement Specialist
+    √ Forensics Specialist
+    • Communications Coordinator
+    • Human Resources Officer
+    • Incident Manager
+
+126. Which role manages internal and external incident messaging?
+    • Security Analyst
+    • Network Administrator
+    • Forensics Specialist
+    • Threat Intelligence Analyst
+    √ Communications Coordinator
+
+127. Who ensures the response complies with relevant laws and regulations?
+    • Forensics Specialist
+    • IT Service Desk Agent
+    √ Legal Advisor
+    • Security Analyst
+    • Incident Communications Coordinator
+
+128. A major incident has several technical workstreams, and nobody knows who is coordinating them. Which IRT role is needed?
+    √ Incident Manager
+    • Red Team Operator
+    • Forensics Specialist
+    • Customer Support Agent
+    • Legal Advisor
+
+129. SIEM alerts suggest malware is spreading across endpoints. Which IRT role would most directly detect and mitigate this?
+    • Legal Advisor
+    • Finance Officer
+    • Media Relations Officer
+    √ Security Analyst
+    • Communications Coordinator
+
+130. Evidence from an infected workstation must be examined in detail. Which specialist should lead that task?
+    • Communications Coordinator
+    √ Forensics Specialist
+    • Incident Manager
+    • Public Relations Officer
+    • Human Resources Specialist
+
+131. The company must prepare a consistent update for customers and staff. Who coordinates the messaging?
+    • Backup Operator
+    • Forensics Specialist
+    • Security Analyst
+    • Endpoint Administrator
+    √ Communications Coordinator
+
+132. Management asks whether breach disclosure creates regulatory obligations. Who should advise the team?
+    • Network Engineer
+    • System Backup Operator
+    √ Legal Advisor
+    • Help Desk Technician
+    • Malware Researcher
+
+133. Which is an example of forensic tools explicitly named in Lecture 1?
+    √ EnCase and FTK
+    • SIEM and CRM
+    • JIRA and Slack
+    • Docker and Git
+    • DNS and HTTP
+
+134. Why do IRT members need to understand attack vectors?
+    • To eliminate the need for communication planning
+    • To determine employee salary adjustments
+    • To replace the organization’s legal advisors
+    √ To recognize how threats such as malware and phishing work
+    • To avoid performing all incident triage
+
+135. Which soft skill is emphasized for IRT members?
+    • Writing exploit code for every observed threat
+    √ Explaining technical issues to non-technical stakeholders
+    • Working independently without other departments
+    • Replacing all legal advice with technical notes
+    • Managing unrelated corporate advertising accounts
+
+136. Which group combination reflects the lecture’s cross-functional IRT approach?
+    • Only the executive board and no technical experts
+    • Only network administrators and penetration testers
+    • Payroll staff without security personnel
+    • Only security vendors and external auditors
+    √ IT, HR, legal, and public relations
+
+137. Why is cross-functional collaboration useful in Incident Response?
+    • It removes the need for a response coordinator
+    • It ensures only one department receives incident facts
+    √ It combines technical response with business, legal, and communication needs
+    • It allows all staff to publish incident details
+    • It guarantees that incident evidence can be discarded
+
+138. What is a central benefit of regular IR training?
+    √ Team members understand their assigned roles
+    • It replaces the responsibility of legal advisors
+    • It removes the need to create an IRP
+    • It prevents every possible cyberattack
+    • It guarantees the absence of false alerts
+
+139. How can training improve performance during a real incident?
+    • It ensures evidence never needs collecting
+    • It makes secure communication unnecessary
+    • It eliminates the requirement to detect threats
+    √ It reduces response time and confusion
+    • It allows teams to skip containment planning
+
+140. What is a tabletop exercise?
+    • A technical simulation without any team discussion
+    √ A discussion-based response to a hypothetical incident
+    • An audit of office furniture and equipment
+    • A mandatory live attack against production systems
+    • A public presentation of sensitive forensic findings
+
+141. What distinguishes a full-scale drill from a tabletop exercise?
+    • It focuses solely on drafting press releases
+    • It consists only of informal scenario discussion
+    • It is limited to a written policy review
+    • It excludes use of the IR plan entirely
+    √ It activates the IR plan in a practical simulation
+
+142. In a Red Team/Blue Team exercise, what is the Red Team’s role?
+    • Restore backups after system maintenance
+    • Manage the enterprise incident ticket queue
+    √ Simulate offensive attacker behavior
+    • Operate the organization’s legal department
+    • Prepare external customer notifications
+
+143. In a Red Team/Blue Team exercise, what is the Blue Team’s role?
+    √ Defend and detect simulated attacks
+    • Replace the crisis communications team
+    • Operate only physical access controls
+    • Publish all internal network diagrams
+    • Write unrelated procurement contracts
+
+144. Which approach best tests whether the entire IR plan works operationally?
+    • A survey unrelated to incident handling
+    • A lecture attendance record
+    • A monthly financial reporting meeting
+    √ A full-scale response drill
+    • A list of security software purchases
+
+145. Which exercise is most suitable for discussing an incident response without activating production defenses?
+    • A complete reinstallation of all endpoints
+    √ A tabletop exercise
+    • A live deployment of emergency firewall blocks
+    • An uncontrolled penetration test of production
+    • A full-scale environment shutdown
+
+146. Which weakness can drills help uncover before an actual breach?
+    • The exact date of the next phishing attempt
+    • Every undisclosed vulnerability on the internet
+    • An attacker’s precise future identity
+    • All unknown zero-day exploits in any product
+    √ Unclear escalation and response procedures
+
+147. What is a benefit of drilling with detection technology?
+    • Avoiding post-exercise improvements
+    • Replacing every log source with manual reports
+    √ Reinforcing how responders use their security tools
+    • Eliminating the requirement for human review
+    • Disabling monitoring to reduce simulated alerts
+
+148. Which training frequency is mentioned as a best practice on the Lecture 1 slide?
+    √ Quarterly or semi-annually
+    • Once before the IR team is created
+    • Only after a confirmed data breach
+    • Every business day without exception
+    • Every ten years only
+
+149. A team talks through a ransomware scenario while each person explains their decision. What type of drill is this?
+    • Routine network performance testing
+    • Malware removal on all endpoints
+    • Production failover without coordination
+    √ Tabletop exercise
+    • Full-scale live activation
+
+150. Which outcome best shows that a training exercise was useful?
+    • The IRP was left unchanged despite discovered gaps
+    √ Response gaps were identified and procedures improved
+    • The exercise was canceled before participants arrived
+    • Every incident notification was sent to the public
+    • No one documented any decisions or lessons
+
+151. What is the purpose of internal incident communication?
+    • Replace the need for a secure communications channel
+    • Avoid informing the Incident Manager
+    • Delay technical work until after public discussion
+    • Publish all sensitive investigation details online
+    √ Inform relevant executives, stakeholders, and technical teams
+
+152. Which communication method is suggested for sensitive internal coordination?
+    • Only verbal messages with no record
+    • Unverified third-party mailing lists
+    √ Predefined encrypted communication channels
+    • Unrestricted public group chats
+    • Anonymous social media comments
+
+153. Which tool is mentioned as an example for incident task management?
+    √ JIRA
+    • Wireshark
+    • EnCase
+    • FTK
+    • IDS
+
+154. When may external incident communication be necessary?
+    • Whenever any scheduled maintenance occurs
+    • Only after every endpoint has been replaced
+    • Only after the next annual company meeting
+    √ When affected customers, partners, or regulators need notification
+    • When the team has no confirmed facts at all
+
+155. Which description best fits clear external breach communication?
+    • Based on speculation rather than validated facts
+    √ Concise and understandable to non-technical audiences
+    • Written only for forensic analysts
+    • Designed to hide confirmed consequences
+    • Filled with unexplained technical abbreviations
+
+156. Which IRP component governs handling the press during a major incident?
+    • Technical vulnerability scanner profile
+    • Employee onboarding checklist
+    • Routine network maintenance policy
+    • Software deployment checklist
+    √ Crisis communication plan
+
+157. According to Lecture 1, which GDPR-related notification timeframe is mentioned?
+    • 24 hours
+    • 30 days
+    √ 72 hours
+    • 7 days
+    • 12 hours
+
+158. Why are regulatory requirements relevant to external communication?
+    √ Some breaches require timely notification of authorities
+    • They guarantee every incident is legally identical
+    • They make internal coordination unnecessary
+    • They prevent security teams from containing incidents
+    • They allow all customer data to be published freely
+
+159. Who should receive prompt internal incident updates according to the lecture?
+    • Only the person who submitted the first alert
+    • Only external suppliers and no internal staff
+    • Unrelated third-party organizations automatically
+    √ Relevant stakeholders, executives, and technical teams
+    • Every social media follower regardless of relevance
+
+160. Why should communication channels be defined before an incident?
+    • It replaces all technical containment actions
+    √ Responders can coordinate without improvising under pressure
+    • It ensures the incident can remain undocumented
+    • It removes the need to identify incident severity
+    • It guarantees that every user receives all evidence
+
+161. An organization sends a highly technical message to affected customers who cannot understand it. What should be improved?
+    • The frequency of SIEM log collection
+    • The patch level of its email gateway
+    • The number of assigned forensic disk images
+    • The length of its network segmentation rules
+    √ Clarity of external communication
+
+162. Who should help manage legal considerations when notifying outside parties?
+    • Threat Hunters alone
+    • The first employee who reported the issue
+    √ Legal Advisors
+    • Forensics Specialists alone
+    • Desktop Support Technicians alone
+
+163. Which two audiences require different communication styles during IR?
+    √ Internal technical staff and external non-technical recipients
+    • Two backup repositories with equal retention
+    • Two firewall interfaces in the same VLAN
+    • Two identical SIEM sensors
+    • Two security analysts on the same shift
+
+164. Which problem does an incident-management task tool primarily help address?
+    • Stopping malware through signature matching
+    • Replacing forensic disk acquisition
+    • Automatically restoring encrypted files
+    √ Tracking response work and team coordination
+    • Eliminating external disclosure obligations
+
+165. Which statement about crisis communication is most accurate according to Lecture 1?
+    • Communications procedures should be invented after closure
+    √ Media and public messaging should be planned in the IRP
+    • Public statements should always be written by any analyst
+    • External communication must contain all raw forensic logs
+    • Crisis communication is relevant only to hardware failure
+
+166. A staff member reports a suspicious message, but SIEM shows no alert. What does the lecture imply responders should do?
+    • Delete the message and close the case immediately
+    • Ignore it because automated detection is mandatory
+    • Start recovery before checking the message
+    • Treat it only as a printer-related IT request
+    √ Assess the report as a possible incident
+
+167. A ransomware infection is spreading, and the team has identified the affected workstation. What is the most immediate objective?
+    • Publish a comprehensive post-mortem report
+    • Replace the corporate incident response plan
+    √ Limit further spread through containment
+    • Perform an annual training review
+    • Restore the machine without stopping the infection
+
+168. The malware has been removed, but the attacker’s stolen password still works. Which objective remains incomplete?
+    √ Eliminating the threat and compromised access
+    • Notifying the internal incident manager
+    • Identifying the existence of suspicious activity
+    • Documenting the first end-user report
+    • Listing the possible incident scenarios
+
+169. An organization has reliable backups but does not test systems before reconnecting them. Which phase is being handled poorly?
+    • Threat Detection
+    • Initial Identification
+    • Containment
+    √ Recovery
+    • Preparation
+
+170. An IR team includes technical experts but has no member responsible for compliance. Which role is missing?
+    • Endpoint Technician
+    √ Legal Advisor
+    • Incident Manager
+    • Security Analyst
+    • Forensics Specialist
+
+171. An analyst wants to announce “the attacker has been eliminated” immediately after isolating a host. What is wrong with this conclusion?
+    • The incident cannot be categorized without public media
+    • Recovery always happens before the host is disconnected
+    • Isolation guarantees all malicious accounts are removed
+    • Legal approval is unnecessary after containment
+    √ Containment limits spread but does not necessarily remove the threat
+
+172. During a drill, no one knows which manager has authority to coordinate the response. What should be improved first?
+    • Delay all future exercises indefinitely
+    • Add more unrelated incident scenarios to the IRP
+    √ Document the Incident Manager’s role and ownership
+    • Delete the tabletop discussion notes
+    • Disable monitoring until roles are decided
+
+173. The team restored service quickly but lost evidence that could explain the breach. Which IR objective was neglected?
+    √ Preserving evidence for investigation
+    • Removing the attacker’s malicious access
+    • Restoring normal business operations
+    • Providing detection capability through SIEM
+    • Limiting the spread of the original incident
+
+174. An organization updates its plan after discovering weaknesses in a simulation. Which two ideas does this demonstrate?
+    • Hardware replacement and data exfiltration
+    • Public disclosure and attacker attribution
+    • Containment and immediate service outage
+    √ Lessons learned and a living IRP
+    • Initial access and malicious persistence
+
+175. The response team knows how to isolate laptops but has no process for contacting regulators. What is the main planning gap?
+    • Initial SIEM alert collection
+    √ External communication procedures
+    • Forensic examination of memory
+    • Short-term network containment
+    • Detection of suspicious login attempts
+
+176. A business suffers a printer outage and an unrelated credential theft at the same time. Which issue should involve the CSIRT?
+    • The printer outage alone
+    • Only the event with the smaller ticket number
+    • Neither because users can still log in
+    • Both as identical security breaches
+    √ The credential theft
+
+177. An employee asks why a full-scale drill is more demanding than a tabletop exercise. Which answer best fits the lecture?
+    • It excludes all coordination among team members
+    • It is purely a written review of company policy
+    √ It involves practical activation of the response plan
+    • It uses only hypothetical discussion at a table
+    • It never involves response tools or procedures
+
+178. Which combination best supports an early and coordinated response?
+    √ Monitoring tools, trained responders, and defined communication
+    • Public statements before detection and validation
+    • A static plan with no training or monitoring
+    • Backups alone, without any assigned team roles
+    • Hardware replacement without incident classification
+
+179. A company updates firewall rules before any breach to address an identified risk. Which category best describes this?
+    • Emergency eradication
+    • Operational recovery
+    • Post-incident activity
+    √ Proactive preparedness
+    • External incident reporting
+
+180. A responder removes a malicious program but does not examine how it gained access. Which concern follows from the IR objectives?
+    • The service is automatically classified as fully recovered
+    √ The underlying threat may recur if weaknesses remain
+    • The company can stop preserving incident evidence
+    • The IRT no longer needs to coordinate with anyone
+    • The existence of malware cannot be an incident
+
+181. A manager says that incident response ends as soon as systems come back online. What is missing?
+    • The initial restoration of business services
+    • The original escalation of the security report
+    • The detection of suspicious system activity
+    • The urgent containment of compromised hosts
+    √ A post-incident review and improvement
+
+182. A customer-data breach requires technical containment and an official public update. Which teams need to cooperate?
+    • Only the external penetration testing vendor
+    • Printer support and facilities maintenance alone
+    √ Security responders and communications personnel
+    • Only the accounting department and help desk
+    • Backup operators without any incident coordinator
+
+183. An organization has written procedures but never practices them. What is the likely weakness?
+    √ Responders may struggle to execute their roles under pressure
+    • Forensic evidence becomes unnecessary in live cases
+    • The IRP automatically updates itself with new threats
+    • Regulatory reporting requirements cease to apply
+    • Identification tools will not produce any alerts
+
+184. After a simulated incident, the team improves its escalation contacts and detection procedures. What benefit of drills is shown?
+    • Automatic elimination of all cyber threats
+    • Replacement of all security analysts
+    • A guarantee of zero recovery time
+    √ Improved coordination and response strategy
+    • Removal of the need for an incident plan
+
+185. A financial application is restored but has not been patched after a security breach. Which next step matches the lecture?
+    • Allow unlimited external access for verification
+    √ Secure and test the system before full restoration
+    • Skip technical validation to protect availability
+    • Publish the final report and close without checks
+    • Disable every monitoring control on the host
