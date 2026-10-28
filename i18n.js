@@ -157,6 +157,7 @@ const LANG_STORAGE_KEY = "quizLang";
 const DEFAULT_LANG = "en";
 
 const MODULE_TRANSLATION_KEYS = {
+  "__ALL__": "all_modules_option",
   "questions_powershell_module1.txt": "python_module_1",
   "questions_powershell_module2.txt": "python_module_2",
   "questions_powershell_module3.txt": "python_module_3",
