@@ -1,0 +1,2904 @@
+1. Which description best fits an event in incident response?
+    • Any confirmed unauthorized disclosure of information
+    √ Any observable occurrence in a system or network
+    • A validated incident assigned to an IR lead
+    • A malicious action detected by a security rule
+    • An alert classified at a high criticality level
+
+2. What is an adverse event?
+    √ An occurrence with potentially negative consequences
+    • An event that always requires legal notification
+    • A normal activity approved in the change calendar
+    • An observation already declared to be an incident
+    • A security alert confirmed by multiple sensors
+
+3. What is an alert?
+    √ A notification of potentially malicious activity not yet validated
+    • An occurrence that has already compromised a system
+    • A decision to invoke the incident response plan
+    • A completed analysis confirming a security breach
+    • A finalized report of a past security incident
+
+4. What does an incident declaration mean?
+    • A monitoring tool has issued a low-confidence alert
+    • A user has submitted an unverified security report
+    • An analyst has received a suspicious log entry
+    √ An adverse event has met the defined incident criteria
+    • An investigation has finished and systems are restored
+
+5. Which outcome is considered the most dangerous detection error?
+    • True positive
+    • Benign positive
+    • False positive
+    √ False negative
+    • True negative
+
+6. Which outcome describes an alert that turns out to be harmless?
+    • True positive
+    • False negative
+    √ False positive
+    • Confirmed incident
+    • True negative
+
+7. A security system misses a real credential theft. What is this?
+    • False positive
+    • True negative
+    • Unverified positive
+    • True positive
+    √ False negative
+
+8. An alert correctly identifies malicious PowerShell execution. What is it?
+    • Unrelated event
+    • False positive
+    • True negative
+    • False negative
+    √ True positive
+
+9. A login is recorded in the Windows logs. By itself, this is a(n)...
+    • Escalation
+    √ Event
+    • False negative
+    • Declaration
+    • Incident
+
+10. A sensor reports possible malware without validation. Its output is a(n)...
+    • Recovery record
+    • Declaration
+    • Threat-hunt conclusion
+    • Incident
+    √ Alert
+
+11. Which statement about an alert is accurate?
+    • It must originate from an automated tool
+    • It always requires an immediate breach notification
+    • It proves that an attacker controls a system
+    • It is the same as an incident declaration
+    √ It can be benign until checked against evidence
+
+12. What is the distinguishing feature of an incident under the lecture's definition?
+    • All maintenance events performed outside office hours
+    • Any performance reduction on a production service
+    • Every failed authentication attempt on a server
+    • Any network request with an unknown destination
+    √ Actual or imminent threat to CIA or a security-policy violation
+
+13. In NIST CSF 2.0, which function most directly aligns with identification?
+    • Identify (ID)
+    √ Detect (DE)
+    • Govern (GV)
+    • Recover (RC)
+    • Protect (PR)
+
+14. In the ISO/IEC 27035-1 view, which stage aligns with identification?
+    • Respond
+    • Plan and prepare
+    √ Detect and report
+    • Learn lessons
+    • Assess and decide
+
+15. In the six-step Brown and Roberts IR lifecycle, what follows Identification?
+    • Preparation
+    • Lessons Learned
+    √ Containment
+    • Recovery
+    • Eradication
+
+16. What does NIST CSF 2.0 DE.AE-08 concern in this lecture?
+    • Restoring critical services after a breach
+    • Keeping a backup copy of every event log
+    √ Declaring incidents when defined criteria are met
+    • Calculating vulnerability severity using CVSS
+    • Eradicating persistent malware from endpoints
+
+17. What is dwell time?
+    • Time between containment and full recovery
+    • Time from alert validation until ticket closure
+    √ Time from initial compromise until detection
+    • Time between malware deletion and patching
+    • Time required to acknowledge a user report
+
+18. According to the lecture, what was the global median dwell time for 2025 investigations?
+    • 9 days
+    • 11 days
+    • 25 days
+    √ 14 days
+    • 22 days
+
+19. What was the lecture's cited median dwell time for 2024?
+    • 14 days
+    • 25 days
+    √ 11 days
+    • 22 days
+    • 9 days
+
+20. What does the 22-second metric mentioned in the lecture describe?
+    • Average time needed to validate a malicious file hash
+    √ Median initial-access-to-handoff time to another threat group
+    • Median incident report acknowledgment time
+    • Median time between a detection alert and containment
+    • Time required to rotate a compromised C2 domain
+
+21. How did internal detection compare with external notification in the lecture's figures?
+    • About 25 days versus about 9 days
+    • About 22 days versus about 9 days
+    • About 14 days versus about 11 days
+    • About 11 days versus about 14 days
+    √ About 9 days versus about 25 days
+
+22. Why does faster identification generally reduce incident impact?
+    • It prevents every phishing message from arriving
+    • It removes the need for an incident response plan
+    √ It limits the time available for attacker progress
+    • It guarantees that every alert is a true positive
+    • It makes forensic evidence unnecessary
+
+23. Which activity is an example of attacker progress during long dwell time?
+    • Migrating an application to a clean server
+    • Updating employee training schedules
+    • Creating an approved backup schedule
+    √ Moving laterally to additional systems
+    • Performing routine maintenance scans
+
+24. Which description best distinguishes data from intelligence?
+    √ Intelligence adds source, context, time and confidence to data
+    • Intelligence is simply any copied IP or file hash
+    • Intelligence never contains technical artifacts
+    • Data is validated only after a public incident announcement
+    • Raw data is always more actionable than intelligence
+
+25. Which is best described as raw data rather than actionable intelligence?
+    • A recent indicator tied to a targeted sector
+    √ A standalone IP address without context
+    • An IP with last-seen date and source validation
+    • A domain associated with observed attacker activity
+    • A campaign-linked C2 IP with high confidence
+
+26. Which statement is most consistent with the lecture's key takeaway?
+    √ Indicators are evidence that must be evaluated, not automatic proof
+    • Every externally published IoC remains reliable forever
+    • A single anomaly should always be declared an incident
+    • A false positive is more dangerous than a missed attack
+    • A known hash proves all related hosts are compromised
+
+27. What is an Indicator of Compromise (IoC)?
+    • An incident response plan that defines recovery roles
+    • A mandatory breach notification sent to regulators
+    • A list of all authorized applications on a system
+    • A rating that measures the severity of every vulnerability
+    √ An observable artifact suggesting a system has been or is being compromised
+
+28. Which of the following can be an IoC?
+    • A scheduled endpoint restart after patching
+    • An approved new service added through change management
+    • A routine DNS lookup for a documented vendor
+    • A known backup task run by the assigned administrator
+    √ A suspicious registry Run key
+
+29. Which example is an atomic indicator?
+    • A correlation rule linking events
+    • A YARA signature
+    • A SHA-256 file hash
+    • A process behavior sequence
+    √ A single IP address
+
+30. Which example is a computed indicator?
+    • An e-mail address copied from a message
+    • A CVE identifier naming a vulnerability
+    √ A SHA-256 hash of a suspicious executable
+    • A bare IPv4 address from a firewall log
+    • A domain name listed without other logic
+
+31. Which example best represents a behavioral indicator?
+    • One IP is observed in a firewall connection log
+    • A single domain is mentioned in a CTI report
+    • One e-mail address appears in a phishing header
+    • A file is identified by an MD5 hash alone
+    √ Word launches encoded PowerShell and contacts a new domain
+
+32. What is a key weakness of atomic IoCs?
+    • They are always more resilient than behavioral rules
+    • They cannot be observed in standard network logs
+    • They always require machine learning to detect
+    • They cannot be stored in threat-intelligence feeds
+    √ Attackers can often replace them quickly
+
+33. Why are file hashes considered brittle indicators?
+    • The same hash always describes every malware version
+    • Hashes are impossible to compare across systems
+    √ Even a one-byte change can produce a different hash
+    • Hashes are not tied to specific file contents
+    • A hash can only be calculated for running processes
+
+34. Which category uses several indicators together with logic?
+    √ Behavioral
+    • Geographic
+    • Administrative
+    • Atomic
+    • Computed
+
+35. A domain name, IP address and e-mail address are all examples of...
+    • Computed indicators
+    • Behavioral indicators
+    • Statistical baselines
+    √ Atomic indicators
+    • Forensic reports
+
+36. A YARA rule derived from a malware sample is a...
+    • Atomic indicator
+    √ Computed indicator
+    • Network credential
+    • Behavioral anomaly
+    • Recovery indicator
+
+37. Which indicator type is generally hardest for attackers to change?
+    • Computed
+    • Atomic
+    • Unvalidated
+    √ Behavioral
+    • Temporary
+
+38. Why are behavioral indicators valuable against evasion?
+    • They describe only known file signatures
+    • They remain accurate without any periodic testing
+    √ They capture ways of operating rather than one replaceable value
+    • They eliminate the possibility of false positives
+    • They require no supporting logs or data sources
+
+39. Which action is a practical use of IoCs?
+    √ Search logs for other affected systems
+    • Remove the need for threat-intelligence context
+    • Replace all alert rules with manual checks
+    • Skip correlation and declare every event
+    • Calculate network bandwidth for backups only
+
+40. Which source is most suitable for a malicious registry Run key?
+    √ Sysmon or endpoint event logs
+    • An identity log showing foreign sign-in activity
+    • A firewall log containing outbound DNS requests
+    • A cloud audit trail showing API key creation
+    • A proxy log listing suspicious web domains
+
+41. Which source best shows DNS tunneling and suspicious C2 domains?
+    • Local Windows event logs for scheduled tasks
+    • Identity logs showing unusual MFA approvals
+    • File-integrity monitoring of executable changes
+    √ DNS and network monitoring logs
+    • EDR reports of suspicious parent processes
+
+42. Which source is most useful for suspicious scheduled tasks?
+    • DNS resolver logs listing queried hostnames
+    • Firewall logs of accepted outbound sessions
+    • Proxy logs of external web destinations
+    √ Endpoint telemetry such as EDR or Sysmon
+    • Cloud audit logs for mailbox forwarding
+
+43. Which source is most useful for injected code and fileless payloads?
+    • Cloud audit records for new access keys
+    • File integrity scans of modified disk files
+    • Firewall connection logs and NetFlow metadata
+    √ Memory scanning and memory forensics
+    • Identity provider sign-in and MFA logs
+
+44. Which IoC is most associated with identity logs?
+    • A malware SHA-256 value
+    • An injected process in memory
+    • A DNS query to a C2 domain
+    • A tampered executable on disk
+    √ Impossible travel between sign-ins
+
+45. Repeated MFA prompts and token misuse belong mainly to which IoC domain?
+    • Physical
+    • Memory
+    • Network
+    √ Identity
+    • File
+
+46. Disabled logging and newly created API keys are most associated with...
+    • File integrity monitoring only
+    • Printed incident report templates
+    • Endpoint memory acquisition
+    • Physical security cameras only
+    √ Cloud and SaaS environments
+
+47. Which data source is best for a suspicious mailbox forwarding rule?
+    • A YARA result matching a downloaded file
+    • Network NetFlow records of egress traffic
+    √ SaaS or cloud audit logs
+    • A forensic memory image of an endpoint
+    • Local Sysmon events for process creation
+
+48. Which IoC is typically file-based?
+    • A sign-in from an unfamiliar country
+    • An impossible travel sign-in pattern
+    √ A known-malicious executable hash
+    • A sequence of outbound DNS queries
+    • A new cloud administrator account
+
+49. Which of these would best identify anomalous TLS certificate properties?
+    • File system quota reports
+    • Employee holiday calendars
+    • Password complexity policy
+    √ Network security telemetry
+    • Legal compliance invoices
+
+50. Which telemetry would typically reveal lateral RDP use between hosts?
+    • Only customer support ticket categories
+    • Only patch-management release notes
+    • Only annual purchasing records
+    • Only physical office attendance records
+    √ Network connections and endpoint event logs
+
+51. What makes an IoC suitable for operational response?
+    • It was copied from any public forum without review
+    • It is older than all other known indicators
+    • It appears in one log and is never corroborated
+    √ It has enough context and confidence to support action
+    • It has been marked as TLP:CLEAR by default
+
+52. Which artifact indicates possible endpoint persistence?
+    • A normal user login during office hours
+    • A successful routine database backup
+    √ An unauthorized scheduled task
+    • A scheduled antivirus signature download
+    • An authorized service desk ticket
+
+53. Which observation is characteristic of network-level IoCs?
+    √ Recurring outbound communication to a C2 address
+    • A stolen password reset token
+    • An unapproved local autorun registry value
+    • An executable modified on disk
+    • An injected DLL inside a process
+
+54. Which observation is characteristic of host-level IoCs?
+    • A suspicious external IP connection
+    • A TLS certificate anomaly in proxy logs
+    • A newly registered remote C2 domain
+    √ Word spawning an unexpected command shell
+    • A DNS request to a long random subdomain
+
+55. Which pair correctly matches the IoC category and artifact?
+    √ Memory — injected code
+    • Identity — modified DLL
+    • Network — new local Run key
+    • File — impossible travel
+    • Cloud — ARP table entry
+
+56. Which pair correctly matches a source to an identity IoC?
+    √ Active Directory logs — new admin account
+    • YARA scan — impossible travel
+    • Memory dump — new SaaS mailbox rule
+    • NetFlow — altered registry Run key
+    • File integrity monitor — MFA fatigue
+
+57. Who created the Pyramid of Pain referenced in the lecture?
+    • Bruce Schneier
+    √ David Bianco
+    • William Stallings
+    • Eugene Kaspersky
+    • Robert M. Lee
+
+58. What is at the bottom of the Pyramid of Pain?
+    • TTPs
+    • Tools
+    • Domain names
+    √ Hash values
+    • IP addresses
+
+59. What is at the top of the Pyramid of Pain?
+    • Hash values
+    • Network artifacts
+    √ TTPs
+    • Domain names
+    • IP addresses
+
+60. Which Pyramid of Pain level is labelled Easy?
+    • TTPs
+    • Hash values
+    • Tools
+    • Domain names
+    √ IP addresses
+
+61. Which Pyramid level is labelled Simple?
+    • TTPs
+    • Hash values
+    √ Domain names
+    • IP addresses
+    • Network artifacts
+
+62. Which Pyramid level is labelled Annoying?
+    • Tools
+    • IP addresses
+    √ Network and host artifacts
+    • Hash values
+    • Domain names
+
+63. Which Pyramid level is labelled Challenging?
+    • IP addresses
+    √ Tools
+    • Hash values
+    • TTPs
+    • Domain names
+
+64. Which Pyramid level is labelled Tough?
+    • Domain names
+    • Tools
+    √ TTPs
+    • IP addresses
+    • File hashes
+
+65. Which level is most trivial for attackers to evade?
+    • Domain names
+    • Network artifacts
+    √ Hash values
+    • Tools
+    • TTPs
+
+66. Why do high-level Pyramid detections create more attacker pain?
+    • They remove all need for threat hunting
+    • They guarantee immediate prevention of attacks
+    √ They force changes in tools or operating behavior
+    • They force every IP to remain the same
+    • They prevent analysts from using file hashes
+
+67. How can an attacker usually evade detection of one malware hash?
+    • Disable every security analyst account
+    • Replace the victim's network topology
+    • Change the entire intrusion strategy
+    √ Modify or rebuild the file
+    • Abandon all lateral movement techniques
+
+68. What must an attacker typically change to evade a blocked C2 IP?
+    • Stop using any type of remote communication
+    • Rebuild all endpoint monitoring sensors
+    • Rewrite every malware technique from scratch
+    √ Move C2 communications to another server
+    • Replace the entire organization-wide identity system
+
+69. A hard-coded User-Agent string in an implant is placed at which Pyramid level?
+    • Hash values
+    • Atomic IP addresses
+    • TTPs
+    • Tools
+    √ Network and host artifacts
+
+70. Mimikatz used as an attacker utility fits which Pyramid level?
+    • Domain names
+    √ Tools
+    • Network artifacts
+    • Hash values
+    • IP addresses
+
+71. LSASS dumping followed by lateral movement using valid accounts is best classified as...
+    √ TTPs
+    • A domain name
+    • A file hash
+    • An IP indicator
+    • An isolated host artifact
+
+72. Which change best represents moving upward in the Pyramid?
+    • Block only a new IPv4 address instead of a domain
+    • Replace a behavior rule with an MD5 blocklist
+    • Delete correlation logic and watch one domain
+    • Ignore attacker methods and focus on a single hash
+    √ Detect credential dumping behavior rather than one file hash
+
+73. Which of these would generally cost an attacker the MOST effort to change?
+    • One external C2 IPv4 address
+    • One hard-coded HTTP User-Agent
+    • A single SHA-256 value for a malware file
+    • A disposable attacker-controlled domain
+    √ Credential theft and lateral movement procedures
+
+74. Which of these would generally cost an attacker the LEAST effort to change?
+    √ A single malware file hash
+    • A custom malware deployment method
+    • A multi-stage intrusion playbook
+    • A credential dumping technique
+    • An established toolkit and procedure
+
+75. In MITRE ATT&CK, tactics describe the attacker's...
+    √ Why or objective
+    • IP address
+    • Time zone
+    • Hash algorithm
+    • File size
+
+76. In MITRE ATT&CK, techniques describe the attacker's...
+    • Asset criticality
+    • Response deadline
+    • Financial impact
+    • Business owner
+    √ How or method
+
+77. What is the main benefit of tagging detections with ATT&CK IDs?
+    • Automatically calculating the cost of an incident
+    √ Mapping coverage gaps and sharing behavior terminology
+    • Guaranteeing that every alert is malicious
+    • Assigning a TLP label to every file by default
+    • Replacing all evidence collection procedures
+
+78. Which ATT&CK technique ID corresponds to Phishing in the lecture?
+    • T1071.004
+    • T1003.001
+    • T1078
+    • T1059.001
+    √ T1566
+
+79. Which ATT&CK technique ID corresponds to PowerShell?
+    • T1566
+    • T1078
+    √ T1059.001
+    • T1003.001
+    • T1071.004
+
+80. Which ATT&CK technique ID corresponds to Valid Accounts?
+    • T1003.001
+    • T1071.004
+    • T1566
+    • T1059.001
+    √ T1078
+
+81. Which ATT&CK technique ID corresponds to DNS as a C2 application-layer protocol?
+    • T1071.001
+    • T1003.001
+    • T1059.001
+    • T1566
+    √ T1071.004
+
+82. Which ATT&CK technique ID corresponds to LSASS Memory credential dumping?
+    • T1078
+    • T1059.001
+    • T1071.004
+    √ T1003.001
+    • T1566
+
+83. Which technique describes abuse of an e-mail forwarding rule in the lecture?
+    • T1566
+    √ T1114.003
+    • T1059.001
+    • T1078
+    • T1003.001
+
+84. What is the defensive counterpart to ATT&CK mentioned in the lecture?
+    √ MITRE D3FEND
+    • MITRE TAXII
+    • MITRE NIST
+    • MITRE CVSS
+    • MITRE ISAC
+
+85. In the lecture's eight-step Kill Chain, what is the FIRST phase?
+    • Weaponization
+    √ Targeting
+    • Exploitation
+    • Recon
+    • Delivery
+
+86. What phase follows Targeting in the lecture's Kill Chain?
+    • Delivery
+    • Installation
+    √ Recon
+    • Exploitation
+    • C2
+
+87. Which Kill Chain phase involves building a malicious payload?
+    • Installation
+    √ Weaponization
+    • Exploitation
+    • Recon
+    • C2
+
+88. Which phase commonly includes sending a phishing message or USB payload?
+    • Targeting
+    • Installation
+    √ Delivery
+    • Recon
+    • C2
+
+89. At which Kill Chain phase does the malicious code begin running?
+    • Weaponization
+    • Delivery
+    • Recon
+    • Targeting
+    √ Exploitation
+
+90. Which Kill Chain phase commonly involves adding persistence?
+    • Targeting
+    √ Installation
+    • Weaponization
+    • Delivery
+    • Recon
+
+91. Which Kill Chain phase commonly includes periodic beaconing?
+    • Targeting
+    • Weaponization
+    • Delivery
+    √ Command and Control
+    • Recon
+
+92. Which is an example of Actions on Objective?
+    • Choosing a potential victim
+    • Scanning a public IP range
+    • Sending an initial phishing e-mail
+    • Writing a malicious payload
+    √ Data theft or encryption
+
+93. Why is earlier Kill Chain detection valuable?
+    • It replaces the need for incident documentation
+    • It proves attribution to a named criminal group
+    • It guarantees no false positives in any sensor
+    • It makes containment and eradication unnecessary
+    √ It can limit attacker progress and reduce overall damage
+
+94. Which Kill Chain stage is most closely linked to scanning and OSINT?
+    √ Recon
+    • Exploitation
+    • C2
+    • Delivery
+    • Installation
+
+95. Which Kill Chain stage commonly leaves evidence of newly installed services?
+    • Weaponization
+    √ Installation
+    • Delivery
+    • Targeting
+    • Recon
+
+96. How many core features form the Diamond Model of Intrusion Analysis?
+    • Five
+    √ Four
+    • Six
+    • Three
+    • Eight
+
+97. Which is NOT one of the Diamond Model's four features?
+    √ Recoverability
+    • Infrastructure
+    • Victim
+    • Adversary
+    • Capability
+
+98. In the Diamond Model, a C2 domain normally maps to which feature?
+    • Victim
+    • Capability
+    √ Infrastructure
+    • Adversary
+    • Recoverability
+
+99. In the Diamond Model, malware used by the attacker maps to...
+    • Victim
+    • Adversary
+    • Infrastructure
+    √ Capability
+    • Priority
+
+100. In the Diamond Model, compromised workstations map to...
+    • Severity
+    • Adversary
+    • Infrastructure
+    √ Victim
+    • Capability
+
+101. What is the main value of pivoting from one confirmed IoC?
+    • Automatically deleting malicious registry keys
+    • Calculating the correct CVSS base score
+    • Determining the legal name of the attacker
+    • Avoiding correlation with other evidence
+    √ Finding additional related hosts and incident scope
+
+102. A C2 domain is known. Asking which malware family uses it is pivoting toward...
+    • Victim
+    • Infrastructure
+    • Priority
+    • Recoverability
+    √ Capability
+
+103. A C2 domain is known. Searching for other hosts that contacted it is pivoting toward...
+    • Adversary
+    √ Victim
+    • Severity
+    • TLP label
+    • Capability
+
+104. What is the first step in the lecture's IoC-to-detection pipeline?
+    √ Collect
+    • Act
+    • Normalize
+    • Correlate
+    • Enrich
+
+105. Which order matches the full IoC detection workflow?
+    • Correlate, Normalize, Enrich, Act, Collect
+    • Normalize, Collect, Act, Enrich, Correlate
+    √ Collect, Normalize, Enrich, Correlate, Act
+    • Enrich, Collect, Correlate, Act, Normalize
+    • Collect, Enrich, Act, Normalize, Correlate
+
+106. What is the main goal of normalization?
+    • Determine which ATT&CK tactic is being used
+    √ Give logs a common structure and time reference
+    • Block malicious addresses in the firewall
+    • Write the initial external notification
+    • Assign an incident manager and response deadline
+
+107. Which step adds asset owner, user role and reputation to an IoC?
+    • Act
+    • Collect
+    √ Enrich
+    • Normalize
+    • Correlate
+
+108. Which step links related security events across time and data sources?
+    • Enrich
+    • Normalize
+    • Collect
+    • Act
+    √ Correlate
+
+109. Which action is a typical output of the Act stage?
+    • Attach threat reputation to an observed domain
+    • Assign the same UTC format to all logs
+    √ Open an incident case for investigation
+    • Add an asset's business criticality metadata
+    • Group logs by standardized field names
+
+110. Where might an IoC detection pipeline collect inputs from?
+    • Only external IP reputation databases
+    • Only local workstation memory snapshots
+    • Only a final executive incident summary
+    √ Logs, sensors, CTI feeds and forensic findings
+    • Only employee-submitted incident tickets
+
+111. Which contextual source is associated with asset ownership and criticality?
+    • IAM
+    • IDS
+    √ CMDB
+    • HR
+    • NetFlow
+
+112. Which contextual source primarily describes roles and privileges?
+    • CMDB
+    • DNS
+    • AV
+    √ IAM
+    • HR
+
+113. Which contextual source is often used for joiners, movers and leavers?
+    √ HR records
+    • DNS queries
+    • Proxy logs
+    • YARA scans
+    • Firewall rules
+
+114. Which property is especially important when combining timestamps across sources?
+    • Local time inferred from the user's browser
+    • Use of a separate unsynchronized clock per host
+    • Randomized time zones per network segment
+    • Exclusion of events with original timestamps
+    √ Consistent UTC time representation
+
+115. Which of the following is NOT one of the five named pipeline steps?
+    • Correlate
+    • Enrich
+    • Normalize
+    • Collect
+    √ Eradicate
+
+116. What does the collection method of an IoC help analysts judge?
+    • The number of affected employees
+    • The server's maximum network throughput
+    • The legal response deadline
+    • Exact financial impact of a breach
+    √ Reliability of the source
+
+117. Why should an analyst record first-seen and last-seen dates?
+    • CVSS scores require the two timestamps
+    √ Old indicators can become stale or misleading
+    • Each TLP label is calculated from the dates
+    • The dates directly determine incident priority
+    • All threat indicators expire after one day
+
+118. Which IoC record is most useful to an analyst?
+    √ Indicator with source, observed time, context and confidence
+    • Indicator with only a value copied from an unknown blog
+    • Indicator that omits its type and intended detection use
+    • Indicator with no associated incident or collection date
+    • Indicator without origin, sightings or validation notes
+
+119. An IP hosted C2 six months ago but now serves a legitimate site. What problem does this illustrate?
+    • Memory volatility
+    • Kill Chain progression
+    • Impact scoring
+    √ IoC decay
+    • Data exfiltration
+
+120. Which three qualities of good intelligence are highlighted on the slide?
+    √ Collection method, date of collection and context
+    • CVSS vector, software version and patch status
+    • TLP restriction, analyst role and case category
+    • Impact rating, response deadline and escalation owner
+    • Victim count, geographic region and asset owner
+
+121. Which confidence scale is specifically suggested in the lecture?
+    • P1, P2 and P3
+    • Atomic, computed and behavioral
+    • Public, private and archived
+    • Minor, major and emergency
+    √ Low, moderate and high
+
+122. Why is explicit confidence important when sharing threat intelligence?
+    • It replaces the need to state when the indicator was seen
+    • It determines the operating system of the attacker
+    • It makes evidence collection and validation optional
+    √ It helps users interpret uncertainty and avoid analytic bias
+    • It guarantees that every false positive will be removed
+
+123. Which problem describes alert fatigue?
+    • Too few legitimate alerts are recorded as events
+    • Too many systems have identical UTC timestamps
+    • Too few domain names are registered every day
+    √ Too many low-value alerts hide important signals
+    • Too many users are trained to report suspicious mail
+
+124. What is a common cause of false positives?
+    • A malicious event receives no alert at all
+    • A server crashes due to an exhausted disk
+    • An attacker deletes every log from a host
+    • A signed report is routed to the wrong team
+    √ A legitimate admin script matches an attack rule
+
+125. What does living off the land mean in this lecture?
+    • Using only malware with a known file hash
+    • Moving C2 servers into abandoned buildings
+    • Physically accessing an offline computer
+    √ Using built-in tools such as PowerShell and WMI
+    • Staying in one country to avoid attribution
+
+126. Which weakness creates a visibility gap?
+    √ Disabled logging or an unmonitored edge device
+    • A well-maintained identity audit trail
+    • A correctly normalized SIEM data source
+    • Correlation across independent security sources
+    • Sufficient log retention for all key hosts
+
+127. What is one recommended response to alert fatigue?
+    • Disable the most frequently triggered sensor
+    √ Use enrichment, tuning and automation
+    • Delete all alerts below critical severity
+    • Treat every rule match as a confirmed incident
+    • Suppress every alert associated with admin users
+
+128. Which ATT&CK-related problem can frustrate signature detections?
+    • SIEM systems normalizing logs into UTC
+    • Analysts marking a confidence level on a report
+    √ Attackers changing hashes and relying on built-in tools
+    • Users reporting phishing through a hotline
+    • Responders collecting multiple telemetry sources
+
+129. A detection rule produces a high volume of low-confidence alerts. What should the team do first?
+    • Remove all logs related to the rule
+    • Accept the alerts as proof of compromise
+    √ Improve its criteria and supporting context
+    • Ignore the alerts without recording outcomes
+    • Immediately retire all network detection use cases
+
+130. Which tool or format is explicitly mentioned for exchanging indicators?
+    • FTP/TFTP
+    √ STIX/TAXII
+    • RDP/SMB
+    • DHCP/DNS
+    • IMAP/POP3
+
+131. Which platform is cited for sharing threat intelligence?
+    • JIRA
+    • Sysmon
+    √ MISP
+    • LDAP
+    • CVSS
+
+132. Which organization can help share threat information among sector peers?
+    • A private CMDB containing affected asset records
+    • A recovery playbook for one organization
+    • An internal ticketing queue for help-desk cases
+    √ An ISAC
+    • A local threat detection rule on one endpoint
+
+133. Which TLP label restricts disclosure to individual recipients only?
+    • TLP:AMBER
+    • TLP:AMBER+STRICT
+    • TLP:CLEAR
+    √ TLP:RED
+    • TLP:GREEN
+
+134. Which TLP label permits sharing inside the recipient's own organization only?
+    • TLP:GREEN
+    • TLP:RED
+    • TLP:CLEAR
+    √ TLP:AMBER+STRICT
+    • TLP:AMBER
+
+135. Which TLP label permits need-to-know sharing with the recipient's clients?
+    √ TLP:AMBER
+    • TLP:CLEAR
+    • TLP:AMBER+STRICT
+    • TLP:GREEN
+    • TLP:RED
+
+136. Which TLP label allows sector-community sharing but not public posting?
+    √ TLP:GREEN
+    • TLP:RED
+    • TLP:CLEAR
+    • TLP:AMBER
+    • TLP:AMBER+STRICT
+
+137. Which TLP label has no disclosure restriction subject to copyright rules?
+    • TLP:GREEN
+    √ TLP:CLEAR
+    • TLP:RED
+    • TLP:AMBER+STRICT
+    • TLP:AMBER
+
+138. You must share an IoC with a sector ISAC but prohibit public release. Which label fits?
+    • TLP:AMBER+STRICT
+    • TLP:RED
+    √ TLP:GREEN
+    • TLP:AMBER
+    • TLP:CLEAR
+
+139. A partner asks to share an incident report with its customers on a need-to-know basis. Which TLP label could allow this?
+    √ TLP:AMBER
+    • TLP:RED
+    • TLP:AMBER+STRICT
+    • TLP:GREEN
+    • TLP:CLEAR
+
+140. Which label would prevent an outside recipient from forwarding case details to coworkers?
+    • TLP:CLEAR
+    • TLP:AMBER+STRICT
+    • TLP:AMBER
+    • TLP:GREEN
+    √ TLP:RED
+
+141. An analyst wants the recipient to use IoCs internally but not share them with clients. Which label fits best?
+    • TLP:CLEAR
+    • TLP:RED
+    • TLP:GREEN
+    √ TLP:AMBER+STRICT
+    • TLP:AMBER
+
+142. Which statement about TLP is correct?
+    • It sets the response time for criticality levels
+    • It identifies which malware family produced an alert
+    √ It defines how far recipients may share information
+    • It determines whether an IoC is atomic or computed
+    • It directly calculates financial losses from an incident
+
+143. Why are need-to-know restrictions important?
+    • They make all technical evidence publicly shareable
+    • They replace the team's incident escalation matrix
+    • They eliminate every requirement for incident reporting
+    √ They limit exposure of sensitive investigative details
+    • They allow all staff to review private victim identities
+
+144. What is the key difference between an anomaly and a known-bad IoC?
+    √ An anomaly deviates from expected behavior, not necessarily known maliciousness
+    • An anomaly is always an incident by definition
+    • A known-bad IoC can only be detected with machine learning
+    • An anomaly always involves a file hash match
+    • A known-bad IoC cannot be searched in historical logs
+
+145. Why is an anomaly not automatically a security incident?
+    • Anomalies never involve identity systems
+    • Unusual activity cannot affect sensitive data
+    √ Legitimate behavior can sometimes be unusual
+    • Baseline measurements are always incorrect
+    • Only endpoint malware can cause incidents
+
+146. Which detection approach is most suitable for known-bad hashes?
+    • Recovery scoring based on backup availability
+    √ Signature or IoC matching
+    • Initial incident categorization by asset type
+    • Impact estimation for affected business services
+    • Behavioral profiling without known file values
+
+147. Which method best identifies a user acting outside their historical habits?
+    • A static hash list for known malware files
+    • An IP blocklist derived from public CTI feeds
+    • A fixed threshold for failed login attempts
+    √ Behavioral baseline or UEBA
+    • A rule matching one specific PowerShell command
+
+148. Which statement about IoCs and anomalies is correct?
+    • Only IoCs are useful in security monitoring
+    • Anomalies are never confirmed as IoCs
+    • Every anomaly proves a known campaign was used
+    √ They complement each other in a mature detection program
+    • Signatures detect all future novel techniques
+
+149. What is a behavioral baseline?
+    • A list of confirmed threat actor infrastructures
+    √ A description of an entity's usual activities
+    • A record of permanently authorized domain names
+    • A legal definition of a reportable incident
+    • A catalog of all accepted malware samples
+
+150. Which historical period is given as an example for building baselines?
+    √ 30–90 days
+    • 2–5 days
+    • 365–730 days
+    • 5–10 years
+    • 1–3 days
+
+151. Why must baseline models be reviewed over time?
+    • Baselines cannot include remote-work patterns
+    • Every login source remains constant indefinitely
+    √ Legitimate behavior and business patterns change
+    • All anomalies become false positives after a week
+    • Historical records never support modern detection
+
+152. Which factor may legitimately shift a baseline?
+    • A static malware SHA-256 hash
+    • A previously observed ransom note
+    • A confirmed stolen credential dump
+    • An attacker-controlled domain on a blocklist
+    √ A new remote-work arrangement
+
+153. Which question is appropriate when building a user baseline?
+    • Which CVSS vector was assigned to the user?
+    √ Where and when does the user normally sign in?
+    • Which criminal group legally owns the user's laptop?
+    • Which recovery image has the most files?
+    • How many TLP recipients are in the company?
+
+154. Which is useful context when assessing whether a large data transfer is normal?
+    • Whether a suspected DNS domain is newly registered
+    • Whether endpoint memory contains injected code
+    • Whether the user received unusual MFA prompts
+    • Whether the host has an unsigned new service
+    √ Whether it matches a scheduled backup job
+
+155. Which baseline context source provides roles and privileges?
+    • HR
+    • DNS
+    √ IAM
+    • CMDB
+    • AV
+
+156. Which baseline context source provides asset owners and criticality?
+    • IDS
+    • HR
+    • EDR
+    • IAM
+    √ CMDB
+
+157. Which baseline context source gives staff joiner, mover and leaver information?
+    √ HR
+    • YARA
+    • Zeek
+    • NetFlow
+    • SIEM
+
+158. What is an example of a user and identity anomaly?
+    • An altered TLS certificate in transit
+    • A modified file in a webroot
+    • An unexpected local service binary
+    √ A new-country sign-in at 03:10
+    • A changed executable hash on disk
+
+159. What is impossible travel?
+    • A scheduled commute outside normal office hours
+    • A security policy requiring local authentication
+    • A recovery operation from an offline backup
+    • An approved overseas trip logged in advance
+    √ Logins from geographically incompatible locations in a short period
+
+160. What may repeated unwanted MFA prompts suggest?
+    • Approved business continuity testing
+    • A correctly configured YARA signature
+    • Normal DNS tunneling in an application
+    √ MFA fatigue against a user account
+    • A firmware patch waiting for installation
+
+161. Which pattern is commonly associated with C2 beaconing?
+    • A burst of connections during a one-time scan
+    • A single authorized application update
+    • A user-initiated file upload to an approved share
+    √ Repeated connections at roughly fixed intervals
+    • A normal backup flow at a scheduled hour
+
+162. Long random DNS subdomains in large volumes may indicate...
+    • A routine system image creation
+    • A normal account termination
+    √ DNS tunneling
+    • Approved workstation decommissioning
+    • Scheduled password rotation
+
+163. Which observation is most indicative of a host anomaly?
+    • A backup job finishes at its scheduled hour
+    √ winword.exe launches powershell.exe with encoded input
+    • A user completes a documented leave request
+    • A cloud provider publishes a maintenance notice
+    • A managed switch sends an ordinary link-up event
+
+164. Which observation is an application or data anomaly?
+    • A normal single file read by an authorized user
+    √ Unexpected bulk downloads from a file share
+    • A scheduled malware signature update on a host
+    • An approved patch deployment to endpoints
+    • A verified scan of a test subnet during maintenance
+
+165. A new mailbox forwarding rule that sends mail outside the company is an anomaly in which area?
+    • Endpoint hardware inventory
+    • Network traffic only
+    • Memory forensics only
+    • Physical access monitoring
+    √ Application and data
+
+166. How does a signature or rule-based detector work?
+    • Score every user from historical behavior alone
+    • Verify backup media before service restoration
+    • Calculate incident recovery time from budgets
+    • Determine legal severity from financial statements
+    √ Match data against known patterns
+
+167. What is the main strength of signature detection?
+    √ It is precise, explainable and fast for known patterns
+    • It needs no indicators or matching logic
+    • It never produces false positives in production
+    • It always detects previously unseen attacks
+    • It automatically assigns correct business impact
+
+168. What is the main weakness of signature detection?
+    • It always requires extensive historical baselines
+    √ It can miss new or changed attack patterns
+    • It cannot be implemented using SIEM rules
+    • It cannot match a known malicious hash
+    • It never supports domain or IP matching
+
+169. How does a threshold detector work?
+    • Publish a report every time logs are ingested
+    • Compare every event with external legal requirements
+    • Match software packages to known CVE identifiers only
+    √ Alert when a measured count exceeds a configured limit
+    • Reconstruct deleted evidence from memory
+
+170. Which weakness of thresholds is noted in the lecture?
+    • Thresholds cannot examine failed login counts
+    • Thresholds always report every anomaly as malicious
+    √ Low-and-slow attacks can remain just below the limit
+    • Thresholds only work on encrypted packet captures
+    • Threshold detectors need no operating parameters
+
+171. What does a statistical baseline compare?
+    • Known domains against a published blocklist
+    √ Current activity against historical norms
+    • Current detections against a fixed hash list
+    • Open cases against a static priority matrix
+    • Received alerts against escalation contacts
+
+172. What drawback can statistical baselines have?
+    • They require a known malicious hash for every event
+    √ Legitimate behavior changes may generate noisy alerts
+    • They completely prevent insider-threat investigation
+    • They cannot detect an unusual traffic volume
+    • They only work after malware has been removed
+
+173. Which method detects subtle multi-signal deviations but can be hard to explain?
+    • A one-value file hash lookup
+    √ UEBA and machine learning
+    • A static port blocklist
+    • A simple failed-login threshold
+    • Signature-only matching
+
+174. What is UEBA designed to model?
+    • Only fixed login-count thresholds
+    √ User and entity behavior
+    • Only publicly registered DNS names
+    • Only IP reputation from external feeds
+    • Malware file hashes and static signatures
+
+175. A malicious actor intentionally remains at four failed logins per minute under a five-attempt alert rule. This illustrates...
+    √ Low-and-slow threshold evasion
+    • File-hash computation
+    • Incident declaration
+    • TLP declassification
+    • Long-term recovery
+
+176. A baseline starts alerting after a company-wide shift to remote work. Why?
+    • The signature list automatically changes every day
+    • The users are all confirmed to be compromised
+    • The historical model has no new observations
+    √ Normal activity has changed without model adjustment
+    • The new sign-ins have already been fully explained
+
+177. A detector sees a known ransomware hash. Which approach is it using?
+    • User behavior baselining
+    • Triage prioritization
+    • Recovery validation
+    • External incident notification
+    √ Known-indicator matching
+
+178. A detector flags an unusual destination for a user's first-ever overseas sign-in. What is the result initially?
+    • A completed incident recovery record
+    • A legal finding of unauthorized access
+    • A confirmed privileged-account compromise
+    • Proof that the attacker's password is known
+    √ An anomaly requiring contextual investigation
+
+179. A finance user logs in from a new country at 03:10 with no other signals. What is the best initial action?
+    √ Check context and corroborate the login
+    • Announce a confirmed account takeover
+    • Publish the user's name to all employees
+    • Disable all identity logging as a precaution
+    • Delete the user's mailbox immediately
+
+180. A new-country login is followed by an external mailbox forwarding rule. How should it be treated?
+    √ Escalate promptly as a strong compromise signal
+    • Wait for five more forwarding rules before acting
+    • Turn off mailbox auditing to reduce false positives
+    • Declare it benign based only on the login time
+    • Dismiss it because country changes are harmless
+
+181. Why is an external forwarding rule especially concerning?
+    • It means all network firewalls are unavailable
+    • It proves that every other employee is compromised
+    √ It may allow continuing leakage of incoming messages
+    • It automatically resets the user's account password
+    • It demonstrates that the user's device is patched
+
+182. What should an analyst check to explain an unusual sign-in location?
+    √ Travel plans or use of a VPN or proxy service
+    • Whether the endpoint installed a new local service
+    • Whether outbound connections show repeated beaconing
+    • Whether a memory sample matches a malware YARA rule
+    • Whether the host created persistence in a Run key
+
+183. Which log is most useful to verify whether a suspicious MFA push was approved?
+    • A memory scan for an injected browser module
+    • A proxy log showing unrelated outbound websites
+    • A firewall log listing server-to-server sessions
+    • A file-integrity record of local DLL changes
+    √ MFA or identity authentication logs
+
+184. Which source helps confirm the creation of a new forwarding rule?
+    • Firewall logs listing DNS requests
+    √ Mailbox audit logs
+    • Sysmon events for scheduled-task creation
+    • YARA matches for downloaded attachments
+    • A disk image of a local administrator PC
+
+185. Why does the lecturer suggest checking with a manager or HR as well as the user?
+    • HR can automatically remove every forwarding rule
+    √ Travel or account context should be corroborated independently
+    • The user cannot ever provide useful security information
+    • The manager can independently calculate the malware hash
+    • All anomalous logins must be reported to the entire team
+
+186. When should a suspicious anomaly be escalated under the worked example?
+    • Only if a traditional antivirus signature also triggers
+    • Only when the affected user publicly confirms an attack
+    • Whenever any unusual time is seen without context
+    √ When multiple independent signals or data-leakage evidence exist
+    • Only after every possible threat actor has been identified
+
+187. A backup server transfers 500 GB to a cloud provider every Sunday at 01:00. How is it initially classified in the exercise?
+    • A mandatory report to law enforcement
+    √ Probably benign if it matches the approved backup
+    • Proof of illegal customer-data publication
+    • Confirmed malware command-and-control traffic
+    • Automatically a critical data breach
+
+188. What should be checked first for the regular 500 GB backup transfer?
+    • Whether the system launched encoded PowerShell
+    • Whether the user received unsolicited MFA prompts
+    • Whether the antivirus software detects an injected DLL
+    • Whether the backup server has a new Run key
+    √ Whether it is the expected job and contracted destination
+
+189. A workstation contacts one IP every 60 seconds throughout the day. Which behavior does this resemble?
+    • Employee password enrollment
+    • Scheduled task deletion
+    • Credential dumping
+    • Disk defragmentation
+    √ Beaconing
+
+190. What follow-up would most help investigate periodic external connections?
+    • Reinstall every machine in the corporate network
+    • Move the report to a public discussion board
+    √ Identify the generating process and check other hosts
+    • Classify the traffic as expected without examination
+    • Immediately delete all destination DNS records
+
+191. Word spawns PowerShell with an encoded argument on a finance PC. How suspicious is it in the exercise?
+    √ Highly suspicious
+    • Unrelated to host activity
+    • Automatically resolved
+    • Probably normal
+    • Clearly an approved backup
+
+192. What first technical check fits the Word-to-PowerShell scenario?
+    • Update the user's travel itinerary
+    • Publish the PowerShell hash to social media
+    √ Decode the command and identify its source document
+    • Delete the entire SIEM alert index
+    • Ignore the event until the next patch cycle
+
+193. Forty failed VPN logins are followed by one success. What is the likely concern?
+    • Expected mail forwarding configuration
+    √ Successful password guessing or brute force
+    • An authorized backup archive operation
+    • Data recovery from an offline tape
+    • A normal signed software upgrade
+
+194. Which question helps determine the risk after multiple VPN failures followed by success?
+    • Which local registry key was added by a service
+    • Which DNS resolver was used by a separate web server
+    √ Where did the login originate and what happened afterward?
+    • Which executable hash matched a ransomware sample
+    • Which YARA scan result appeared on a test laptop
+
+195. Hundreds of long random DNS subdomains appear under one domain. What is a plausible interpretation?
+    • A routine software update from a known publisher
+    • A standard backup using an authorized server
+    • An approved login session via corporate VPN
+    √ Possible DNS tunneling
+    • A scheduled file transfer through an HTTPS proxy
+
+196. Which evidence is most useful for suspicious long DNS queries?
+    • Whether an endpoint has a suspicious autorun key
+    √ Source host and domain registration context
+    • Whether an RDP session used a privileged account
+    • Whether the finance mailbox got new forwarding rules
+    • Whether a downloaded executable matches a known hash
+
+197. A developer runs a scanner during an approved test-network change. What is the expected classification?
+    • Confirmed adversarial reconnaissance without checking
+    • An emergency incident requiring public notification
+    √ Probably benign after verifying the change
+    • A high-confidence exfiltration attempt
+    • Proof of a compromised identity provider
+
+198. What should be verified for a developer's planned network scan?
+    • Whether unrelated hosts had suspicious MFA prompts
+    • Whether the CEO mailbox has a forwarding rule
+    • Whether unrelated malware hashes are on a blocklist
+    • Whether a backup tape has a verified SHA-256
+    √ Change approval, time and target network
+
+199. What is the first stage of hypothesis-driven threat hunting?
+    • Permanently allow-list every suspicious IP
+    • Immediately delete all unrelated SIEM records
+    • Notify regulators of an unconfirmed data breach
+    • Restore systems before checking historical activity
+    √ Form a testable hypothesis from intelligence or experience
+
+200. Which hypothesis fits the lecture's hunting example?
+    • Every failed login is caused by a stolen password
+    • Every new DNS domain necessarily represents ransomware
+    • All legitimate users log in at the exact same hour
+    √ Stolen VPN logins from hosting providers may precede internal RDP
+    • A single antivirus alert always proves data exfiltration
+
+201. During the Hunt stage, what does an analyst do?
+    • Declare every user report true without checking
+    √ Query available data to support or disprove a hypothesis
+    • Disable network sensors to reduce collected evidence
+    • Send unconfirmed attribution to the media
+    • Delete old case records before correlating events
+
+202. If threat hunting finds confirmed suspicious activity, what should happen?
+    • Stop all log collection for the host
+    • Delay all investigation until a vendor contacts the SOC
+    • Treat it as a false positive by default
+    • Replace the existing incident response plan
+    √ Open an incident for response
+
+203. If a hunt finds no supporting events, what should the analyst do?
+    √ Document the result and consider a reliable new detection
+    • Automatically suppress the hypothesis forever
+    • State that attackers cannot be present in the network
+    • Publish all queried user account names
+    • Delete the hypothesis and all related notes
+
+204. What is meant by 'Tune, don't silence'?
+    • Remove all alert rules that generate incidents
+    • Reduce the sensitivity of every sensor to zero
+    • Ignore recurring alerts without qualifying them
+    √ Refine noisy rule conditions rather than disabling detection
+    • Keep permanent allow-lists with no review process
+
+205. Which condition might usefully tune a noisy rule?
+    • Permanently exclude all privileged accounts
+    √ Asset type, user role or time window
+    • Suppress all events from important production systems
+    • Drop source and target details from every alert
+    • Automatically disable the rule during working hours
+
+206. Why should allow-list entries have expiry and review?
+    • External reporting depends on allow-list length
+    • Legal counsel must approve every log record
+    • Allow-lists automatically erase all evidence
+    • All approved processes become malicious the next day
+    √ Attackers could exploit outdated trusted exceptions
+
+207. What does qualifying every alert involve?
+    • Disclosing all related user identities publicly
+    • Rebuilding every host linked to the detector
+    √ Labeling true or false positive and recording the reason
+    • Deleting all past events produced by the alert rule
+    • Assigning a TLP:CLEAR label without review
+
+208. Which measurements are suggested for improving detection rules?
+    • Response tickets, employee count and backup space
+    • Critical vulnerabilities, patch age and scan count
+    √ Alert volume, true-positive rate and time-to-triage
+    • Number of detected IoCs and total CMDB entries
+    • Mean time to recover and patch deployment count
+
+209. What should be considered for a rule with poor benefit-to-effort ratio?
+    • Immediate publication of its internal logic
+    √ Retirement after evaluating its value and alternatives
+    • Permanent suppression of all logs from its hosts
+    • Automatic promotion to critical severity forever
+    • Replacement with an untested allow-list for everyone
+
+210. Which order matches the path from an event to an incident declaration?
+    • Detect, Assess, Recover, Report, Declare
+    √ Detect, Report, Acknowledge, Assess, Declare
+    • Report, Declare, Detect, Assess, Acknowledge
+    • Acknowledge, Detect, Declare, Report, Assess
+    • Detect, Declare, Report, Escalate, Restore
+
+211. What usually starts the Detect step in reporting?
+    • A completed recovery image and forensic conclusion
+    √ A tool alert, a user report or third-party notification
+    • An approved security policy review meeting
+    • A formal regulatory audit of an incident register
+    • A weekly maintenance request from IT operations
+
+212. What happens during the Report step?
+    • The incident is fully eradicated and documented
+    • The affected server is automatically rebuilt
+    √ An event is sent to SOC or CSIRT through an agreed channel
+    • The source is declared malicious with no triage
+    • All employees receive a detailed investigation timeline
+
+213. What does Acknowledge require?
+    • Restore every affected asset before receiving more details
+    • Disable all user accounts linked to the business function
+    • Confirm the identity of the attacker before opening a case
+    • Send the full case to all external service providers
+    √ Provide a ticket number and explain what happens next
+
+214. What happens during Assess?
+    √ The team determines plausibility, category and initial severity
+    • Legal counsel publishes all IoCs to the public
+    • The user resets the entire network infrastructure
+    • The case is automatically removed from the SIEM
+    • The company declares recovery complete
+
+215. What happens in the Declare stage?
+    √ Defined incident criteria are met and the IRP is activated
+    • A sensor collects its first benign log event
+    • The reporting tool issues any unreviewed warning
+    • The affected team's maintenance window begins
+    • A user files a normal support ticket
+
+216. Which ISO/IEC 27035 documentation order is shown in the lecture?
+    • Incident register, event report, recovery note, vulnerability scan
+    • Evidence image, event report, incident register, staff notice
+    • Incident report, event report, maintenance log, recovery register
+    • Initial alert, public notice, incident plan, deletion certificate
+    √ Event report, incident management log, incident report, incident register
+
+217. Which of these can be an incident reporting source?
+    √ An external security researcher
+    • Only employees on the security team
+    • Only centrally managed SIEM rules
+    • Only senior executives and legal counsel
+    • Only devices running a commercial EDR
+
+218. Which group is listed among automated reporting sources?
+    • Researchers, customers and sector ISACs
+    √ SIEM, EDR, IDS and e-mail gateways
+    • Legal counsel, executives and communications staff
+    • Employees, help desk agents and IT administrators
+    • Law enforcement, government CSIRTs and vendors
+
+219. Which people may be the first to report suspected phishing?
+    • Only external breach-notification contacts
+    • Only incident response team leaders
+    • Only analysts assigned to SIEM operations
+    √ Employees, help desk and IT administrators
+    • Only administrators with privileged accounts
+
+220. Which third-party reporting source is mentioned?
+    • Only employee reports sent through a portal
+    • Only internal SIEM correlation rules
+    √ National CSIRTs or security researchers
+    • Only an automatic firewall block notification
+    • Only antivirus events from an endpoint
+
+221. How might an attacker directly notify a victim of an incident?
+    • A signed endpoint backup log
+    • A normal planned maintenance notice
+    • A change-ticket closure message
+    • A CMDB asset-owner update
+    √ A ransom note or extortion e-mail
+
+222. According to the cited M-Trends 2026 figures, attackers informed victims how often in 2025?
+    • 25% of the time
+    • 9% of the time
+    • 72% of the time
+    • 22% of the time
+    √ 14% of the time
+
+223. Which feature best describes an effective internal incident reporting channel?
+    √ Simple, well-advertised and continuously monitored
+    • Restricted to private messages to a single engineer
+    • Located only on the potentially compromised host
+    • Unavailable outside normal business hours
+    • Never tested because staff have already been trained
+
+224. Which example is presented as a possible staff reporting mechanism?
+    √ A dedicated hotline or Report phishing button
+    • An unmonitored shared team mailbox
+    • A private message to any available colleague
+    • A local file saved on the affected endpoint
+    • A public comment under a news article
+
+225. What should happen after receiving an employee's security report?
+    • Share all technical evidence with everyone in the department
+    • Wait until an attacker confirms the event
+    • Tell the employee to wipe the affected device
+    √ Acknowledge receipt and issue a case or ticket identifier
+    • Require the employee to investigate the suspect host
+
+226. Why is a no-blame reporting culture encouraged?
+    • It guarantees that every employee report is correct
+    • It eliminates any need for confidential handling
+    √ A prompt false alarm is cheaper than delayed genuine detection
+    • It allows employees to delete suspected evidence
+    • It replaces the need for incident severity assessment
+
+227. An employee receives a phishing e-mail. What should they avoid?
+    • Using the designated report-phishing function
+    • Recording the time it arrived
+    √ Forwarding it to colleagues for informal review
+    • Reporting it through the official channel
+    • Preserving the original message when possible
+
+228. What should staff generally do when reporting a suspicious event?
+    √ Record what they observed and when it occurred
+    • Open every suspicious attachment for confirmation
+    • Conduct their own forensic malware investigation
+    • Reboot and wipe their device before reporting
+    • Discuss the suspected attacker publicly
+
+229. Which action should staff NOT take during initial reporting?
+    • Report the suspicious event through a monitored portal
+    √ Independently investigate or wipe the device
+    • Preserve details without editing the evidence
+    • Remain available to the incident response team
+    • Note the occurrence time as accurately as possible
+
+230. Which initial report field describes disrupted business services?
+    √ Functional impact
+    • Information impact
+    • Incident contact
+    • Network location
+    • Recoverability
+
+231. Which initial report field describes stolen, exposed or altered data?
+    √ Information impact
+    • Incident owner
+    • Sensor health
+    • Recoverability
+    • Functional impact
+
+232. Which field describes the resources and time required for restoration?
+    √ Recoverability
+    • Initial detection channel
+    • Source reputation
+    • Network location
+    • Analyst confidence
+
+233. Why must the first-detected time be recorded?
+    • It removes any need for follow-up communication
+    • It substitutes for the number of affected systems
+    • It automatically determines malware attribution
+    √ It anchors the timeline and reporting deadlines
+    • It is always the exact moment of initial compromise
+
+234. What should be recorded to estimate the scope of an incident?
+    • Average employee commute time
+    • Number of completed budget approvals
+    √ Number of affected systems, users and records
+    • Number of available presentation slides
+    • Historical office utility costs
+
+235. What does the network location of activity help determine?
+    • Whether the system can be restored with backup media
+    √ Whether the affected zone is business-critical
+    • Whether the event was caused by a known IoC hash
+    • Whether the case has an assigned follow-up contact
+    • Whether the report includes the first detection time
+
+236. Which field supports coordination after the initial report?
+    • Data sensitivity classification
+    √ Point of contact for follow-up
+    • Evidence preservation procedure
+    • The triggering IoC list
+    • Business interruption estimate
+
+237. Which details may be added if known, beyond the seven core report elements?
+    • A full root-cause conclusion before any report
+    • Only the final assigned threat actor identity
+    √ Attack vector, IoCs and mitigation already performed
+    • A public list of all affected user credentials
+    • Only the remediation budget after closure
+
+238. What is a good rule for uncertain facts in the initial report?
+    • Leave every uncertain field permanently blank
+    • Replace unknowns with the analyst's strongest guess
+    • Label the entire case harmless until attribution is known
+    • Delay the report until every detail is certain
+    √ Mark them unknown or provisional and update later
+
+239. Which phrasing is a fact rather than speculation in the ransomware exercise?
+    • All stolen records have already been sold
+    • The attack is definitely from a named ransomware gang
+    • The attacker has permanent access to the domain
+    √ Files in the Customers share end with .locked
+    • Every workstation in the office has been encrypted
+
+240. An employee entered credentials into a fake payroll form. Which observed follow-up increases concern?
+    • A scheduled login from a recognized device
+    √ Repeated unexpected MFA approval prompts
+    • An expected password-expiration notification
+    • A single successful sign-in using normal MFA
+    • An approved company-wide phishing simulation notice
+
+241. Which artifact is an IoC in the fake-payroll example?
+    • The standard corporate identity provider URL
+    √ The payro11-update.example sender domain
+    • A known approved payroll provider domain
+    • An authorized pay-day reminder message
+    • A normal authenticated company mail sender
+
+242. What was the preliminary criticality level in the sample payroll-phishing report?
+    • Emergency Black
+    • Level 3
+    • P5 only
+    • Level 1
+    √ Level 2
+
+243. Which TLP label is used in the example payroll-phishing report?
+    • TLP:AMBER+STRICT
+    √ TLP:AMBER
+    • TLP:CLEAR
+    • TLP:GREEN
+    • TLP:RED
+
+244. Why include the next update time in incident communications?
+    • It replaces the need to choose an incident owner
+    • It is needed to compute the file's cryptographic hash
+    √ Stakeholders know when to expect an accurate status update
+    • It guarantees the attacker will not move laterally
+    • It automatically assigns a national incident color
+
+245. Which sensitivity level covers highly confidential staff investigations?
+    • TLP:GREEN — Community
+    √ S1 — Extremely sensitive
+    • S2 — Sensitive
+    • S3 — Not sensitive
+    • P1 — Critical priority
+
+246. Which sensitivity level typically covers external hacking and unauthorized access?
+    √ S2 — Sensitive
+    • P3 — Routine priority
+    • S1 — Extremely sensitive
+    • S3 — Not sensitive
+    • TLP:CLEAR — Public
+
+247. Which sensitivity level includes routine spam, spoofing and denial-of-service cases in the FIRST example?
+    • P1 — Critical priority
+    • TLP:RED
+    • S1 — Extremely sensitive
+    √ S3 — Not sensitive
+    • S2 — Sensitive
+
+248. For an S1 case, who must be informed according to the matrix?
+    • Anyone following the company's ISAC
+    • Every employee and vendor
+    √ CSIRT and the requester
+    • All users in the affected domain
+    • All external business partners
+
+249. For an S2 case, who may also be informed according to the matrix?
+    • Any member of the public
+    • The entire social media audience
+    • All customers without review
+    • Competitors and local news outlets
+    √ Security operations and system owners
+
+250. Who may be informed in an S3 case?
+    √ Relevant parties based on the case
+    • No internal personnel at all
+    • Only external law enforcement
+    • Every public website automatically
+    • Only the investigated employee
+
+251. What is the key communication rule for insider investigations?
+    • Publish all staff identities to avoid false rumors
+    • Post all IoCs publicly without sensitivity review
+    • Use a compromised mailbox for all coordination
+    √ Do not leak details to the person being investigated
+    • Immediately tell the suspected insider every investigative step
+
+252. Which GDPR article is cited for notifying the supervisory authority?
+    • Article 6
+    • Article 34
+    • Article 72
+    √ Article 33
+    • Article 22
+
+253. Which GDPR article is cited for notifying affected individuals at high risk?
+    • Article 18
+    √ Article 34
+    • Article 61
+    • Article 33
+    • Article 72
+
+254. What is the GDPR supervisory-authority deadline cited in the lecture?
+    √ Within 72 hours where feasible and without undue delay
+    • Within 24 hours for all security alerts
+    • Within 30 days after final malware eradication
+    • Exactly 7 days after the customer complaint
+    • Only after the organization's next audit
+
+255. When does the cited GDPR notification clock generally start?
+    • When the forensic report is finally published
+    • When the attacker posts a public statement
+    • When the first employee is hired
+    • When the last patched host is rebuilt
+    √ When the organization becomes aware of the breach
+
+256. Under the cited GDPR example, when should affected individuals be told?
+    • Always before investigators know any facts
+    • Only if the incident contains malware
+    • Never if an external authority was informed
+    √ Without undue delay when risk to them is high
+    • Only after a full-year recovery review
+
+257. Which Azerbaijani organization is identified as serving the state sector?
+    √ CERT.GOV.AZ
+    • FIRST CSIRT Forum
+    • A foreign national DPO office
+    • A private-sector ISAC only
+    • MITRE ATT&CK
+
+258. Which function may involve law enforcement coordination?
+    √ Responding to fraud, extortion or espionage
+    • Synchronizing logs across SIEM collectors
+    • Updating the help-desk escalation contacts
+    • Reviewing standard endpoint configuration drift
+    • Routine approval of password complexity policy
+
+259. Who determines what external incident notices to send and when?
+    √ Legal counsel with management as appropriate
+    • Any junior analyst acting independently
+    • The SIEM detection rule without human oversight
+    • The attacker claiming responsibility
+    • The employee who first observed the problem
+
+260. Which partner-related reason may require external notification?
+    • A new approved reporting dashboard release
+    • A low-risk internal testing change
+    • A routine patch deployment completed on time
+    √ Contractual duties or supply-chain defense
+    • A normal scheduled service maintenance notice
+
+261. Which reporting mistake is waiting until all facts are certain?
+    • Wrong channel
+    • Over-sharing
+    √ Waiting for certainty
+    • No update rhythm
+    • Corroboration
+
+262. An initial report states 'This is definitely an APT attack' without proof. What mistake is this?
+    • Validating
+    • Evidence preservation
+    • Wrong channel
+    √ Speculating
+    • Proper escalation
+
+263. Discussing response details using a possibly compromised mail server is which mistake?
+    • Correct acknowledgment
+    • Waiting for certainty
+    • Accurate scoping
+    √ Wrong channel
+    • Confidence calibration
+
+264. Sending victim identities to all employees is which mistake?
+    • Low urgency
+    • Good source validation
+    • Appropriate TLP labeling
+    • Proper need-to-know
+    √ Over-sharing
+
+265. Reimaging a system before preserving needed evidence illustrates...
+    • Escalation under an agreed matrix
+    • Accurate incident declaration
+    • Correct baseline maintenance
+    √ Destroying evidence
+    • Recoverability estimation
+
+266. Not stating when stakeholders will receive another update is which mistake?
+    √ No update rhythm
+    • Asset categorization
+    • False negative
+    • Data enrichment
+    • Over-sharing
+
+267. In the call-center exercise, what observation first raises concern about ransomware?
+    • A staff member requesting a new shared folder
+    • A normal permission review on one folder
+    • An approved nightly financial backup
+    √ Files with .locked and a README_RESTORE.txt note
+    • An authorized mailbox forwarding policy
+
+268. How many call-center users independently noticed the file changes in the scenario?
+    • Two
+    √ Three
+    • Five
+    • One
+    • Four
+
+269. What was the first detected time in the ransomware call-center exercise?
+    • 08:50 local
+    √ 09:20 local
+    • 09:24 local
+    • 09:30 local
+    • 10:00 local
+
+270. Which detail should be marked unknown in the initial ransomware report?
+    • The .locked extension the users observed
+    √ Whether data was stolen before encryption
+    • The fact that three users saw the change
+    • The time the first employee called
+    • The name of the new ransom-note file
+
+271. Which preliminary criticality was assigned to the call-center ransomware example?
+    • P5
+    • Level 3
+    • Level 2
+    • Baseline White
+    √ Level 1
+
+272. Why was the call-center ransomware scenario rated Level 1?
+    • Scheduled file-share maintenance is in progress
+    • The case involves a test laptop with no important data
+    √ Active encryption threatens customer files and a critical business process
+    • The file extension alone identifies the criminal group
+    • Three employees always imply a national emergency
+
+273. Who should be informed promptly about the affected file server?
+    • All customers on public social media
+    • Only the first reporting employee
+    √ IR lead, IT Operations and CISO
+    • Only external antivirus vendors
+    • Only the person suspected of attacking the company
+
+274. Why should the DPO or legal team be informed early in the exercise?
+    • The identity of the ransomware developer is confirmed
+    √ Customer personal data may be affected and reporting duties could apply
+    • A .locked file name automatically proves an export ban
+    • The help desk can decide all statutory notification duties
+    • No evidence needs to be maintained if a DPO is involved
+
+275. What should the reporting employees do with suspected infected PCs?
+    √ Disconnect network access while keeping the PCs powered on
+    • Restore the affected share from any reachable backup
+    • Reboot the computers repeatedly to confirm the issue
+    • Delete files ending with .locked before the IR team arrives
+    • Open the ransom note and contact the attacker's address
+
+276. What should staff avoid doing with a ransomware note in the example?
+    • Recording the time they noticed it
+    • Documenting its filename
+    • Reporting its presence to the SOC
+    √ Opening it or contacting the attacker
+    • Preserving the evidence without modification
+
+277. Which type of impact is illustrated when the call center cannot access its customer files?
+    √ Functional impact
+    • Indicator freshness
+    • Network reputation
+    • Reputation score
+    • Vulnerability base score
+
+278. Which value is unknown until the backup situation is assessed?
+    • The number of initial reporters
+    • The observed .locked file extension
+    • The name of the reported share
+    √ Recoverability
+    • The time of the first help-desk call
+
+279. Which reporting principle is demonstrated by writing 'unknown — to be updated'?
+    • Replace incident severity with vulnerability severity
+    • Omit all uncertain issues from the case record
+    √ Separate verified facts from incomplete investigation findings
+    • Assign a final cause without seeing the systems
+    • Delay escalation until full attribution is possible
+
+280. What best describes triage in incident response?
+    • Complete recovery of all affected business services
+    • Final confirmation of the attacker's identity and motives
+    • Immediate publication of a complete breach report
+    √ Rapid structured assessment of validity, type, urgency and ownership
+    • Full forensic analysis of every involved endpoint
+
+281. Why is triage compared with emergency medical triage?
+    • All incoming alerts must receive the same response resources
+    • Responders should always start with the oldest report
+    √ Limited responders must deal with the most urgent cases first
+    • Cases cannot be prioritized without a complete investigation
+    • Incident priority is based only on who reported the problem
+
+282. What should triage NOT be confused with?
+    • Assignment of an initial category
+    • Selection of an incident owner
+    • A quick check of alert validity
+    √ A complete forensic investigation
+    • An early assessment of urgency
+
+283. Which attributes should describe an effective triage process?
+    • Unstructured and unrestricted
+    • Fully automated with no review
+    • Slow, secret and informal
+    √ Fast, repeatable and documented
+    • Private with no case record
+
+284. What is the correct order of the full five-step triage workflow?
+    • Validate, Categorize, Recover, Correlate, Escalate
+    • Detect, Publish, Restore, Correlate, Delete
+    √ Validate, Correlate, Categorize, Prioritize, Escalate
+    • Escalate, Prioritize, Normalize, Validate, Close
+    • Correlate, Eradicate, Validate, Categorize, Recover
+
+285. What is the first triage step in the lecture's workflow?
+    √ Validate
+    • Escalate
+    • Correlate
+    • Categorize
+    • Prioritize
+
+286. What is the second triage step in the lecture's workflow?
+    • Escalate
+    • Validate
+    • Prioritize
+    √ Correlate
+    • Categorize
+
+287. What is the third triage step in the lecture's workflow?
+    √ Categorize
+    • Correlate
+    • Prioritize
+    • Escalate
+    • Validate
+
+288. What is the fourth triage step in the lecture's workflow?
+    √ Prioritize
+    • Escalate
+    • Validate
+    • Categorize
+    • Correlate
+
+289. What is the final triage step in the lecture's workflow?
+    • Correlate
+    √ Escalate
+    • Categorize
+    • Validate
+    • Prioritize
+
+290. What is determined during Validate?
+    • The final legal responsibility of the attacker
+    √ Whether the alert is real and security-related
+    • Which future training course employees require
+    • Which system to restore first after recovery
+    • The precise cost of every remedial control
+
+291. Why should analysts correlate an incoming report with existing cases?
+    • To bypass validation of new incoming alerts
+    • To guarantee that all related events are benign
+    • To avoid notifying the assigned incident owner
+    √ To merge related evidence instead of creating duplicates
+    • To replace every indicator with a fresh vulnerability score
+
+292. What is the main purpose of Categorize?
+    • Identify the attacker’s home country from an IP
+    √ Select an incident type and suitable playbook
+    • Estimate downtime before checking alert validity
+    • Choose a recovery image before any containment
+    • Assign a TLP code without analyzing the event
+
+293. Which factor drives Prioritize in the lecture's workflow?
+    • The time the incident report was submitted only
+    √ Impact together with urgency
+    • IT technician seniority alone
+    • Number of SIEM dashboards together with host age
+    • IoC age together with CVSS only
+
+294. What is done during Escalate?
+    • Remove the need for all future incident updates
+    √ Assign ownership, notify contacts and begin response timing
+    • Publish evidence to a public incident register
+    • Delete all preceding triage decisions
+    • Treat the event as a routine authorized change
+
+295. Which fields should appear in the output of triage?
+    • Asset owner, software inventory and backup window
+    • Alert type, file hash, port and public source IP
+    • Source severity, patch version and scan timestamp
+    √ Category, criticality, sensitivity, owner and next update
+    • Event type, confidence, source and log-retention period
+
+296. During alert validation, what does 'Is the data right?' ask?
+    • Whether the alert has the highest TLP restriction
+    • Whether an external legal notification is already due
+    √ Whether sensors, timestamps and collected data are reliable
+    • Whether full recovery has been completed
+    • Whether a new business playbook has been approved
+
+297. During validation, what does 'Is it explained?' ask?
+    • Whether a malicious domain was first seen last year
+    √ Whether approved work or known tools explain the event
+    • Whether multiple independent sensors confirm the alert
+    • Whether a manager approved the external press statement
+    • Whether the affected asset has an available backup
+
+298. During validation, what does 'Is it corroborated?' ask?
+    √ Whether independent sources support the suspicious finding
+    • Whether the attacker has publicly identified themselves
+    • Whether the team has issued its final case summary
+    • Whether a scheduled change provides an innocent explanation
+    • Whether the endpoint sensor clock uses the correct zone
+
+299. Which action belongs to the 'Is it explained?' validation check?
+    √ Review the change calendar and approved pen-tests
+    • Compute the estimated recovery cost of an outage
+    • Notify the regulator before validating the alert
+    • Compare EDR, proxy and identity events for agreement
+    • Verify the sensor's clock offset and health
+
+300. Which action belongs to 'Is the data right?' during validation?
+    • Determine whether the attacker used credential dumping
+    • Check whether the login was part of an approved pen-test
+    • Evaluate notification obligations from stolen data
+    √ Verify sensor health and clock synchronization
+    • Compare a network indicator with other EDR records
+
+301. Which action belongs to 'Is it corroborated?' during validation?
+    • Review the approved change schedule alone
+    √ Compare endpoint, proxy and identity logs
+    • Inspect whether the sensor clock is misconfigured
+    • Identify whether a maintenance job is documented
+    • Check the technician's permission for a planned scan
+
+302. A security alert is caused by known maintenance and independent logs show no threat. What might triage decide?
+    • Declare a critical data breach without corroboration
+    • Disable all sensors involved in the event permanently
+    • Report a confirmed nation-state intrusion to the media
+    • Rebuild every host in the affected department
+    √ Close it as a false alarm with the reason documented
+
+303. Which possible outcome is listed for preliminary assessment?
+    √ Ask for more information or forward to the responsible team
+    • Assign high criticality to every unusual login
+    • Permanently delete every event that was reviewed
+    • Automatically notify all customers and partners
+    • Always activate the full recovery stage immediately
+
+304. Which CSF 2.0 code refers to incident reports being triaged and validated?
+    √ RS.MA-02
+    • RS.MA-04
+    • RS.MA-03
+    • DE.AE-08
+    • RS.AN-08
+
+305. Which CSF 2.0 code covers categorizing and prioritizing incidents?
+    • RS.AN-08
+    • DE.AE-08
+    • RS.MA-02
+    • RS.MA-04
+    √ RS.MA-03
+
+306. Which CSF 2.0 code covers escalation or elevation as needed?
+    • RS.AN-08
+    • RS.MA-03
+    √ RS.MA-04
+    • RS.MA-02
+    • DE.AE-08
+
+307. Which CSF 2.0 code concerns estimating and validating an incident's magnitude?
+    • DE.AE-08
+    • RS.MA-03
+    √ RS.AN-08
+    • RS.MA-02
+    • RS.MA-04
+
+308. Which category best fits a volumetric DDoS attack?
+    • Compromised information
+    • E-mail
+    • Policy violation
+    √ Denial of service
+    • Malware
+
+309. Which category includes hosts under direct attacker control?
+    • E-mail
+    • Denial of service
+    • Policy violation
+    √ Compromised asset
+    • Malware
+
+310. Which category includes destruction or disclosure of sensitive records?
+    • Denial of service
+    • Internal hacking
+    • E-mail
+    • Malware
+    √ Compromised information
+
+311. Which enterprise category covers a worm affecting many devices without active attacker control?
+    • Compromised asset
+    • Compromised information
+    √ Malware
+    • Unlawful activity
+    • Policy violation
+
+312. Which category covers suspicious reconnaissance from outside a corporate network?
+    • Unlawful activity
+    • Denial of service
+    √ Internal or external hacking
+    • Malware
+    • Compromised information
+
+313. Which category covers spoofed e-mails and spam?
+    • Denial of service
+    √ E-mail
+    • Malware
+    • Unlawful activity
+    • Compromised information
+
+314. Which category describes deliberate misuse that breaks security policy?
+    √ Policy violation
+    • Denial of service
+    • E-mail
+    • Malware
+    • Compromised information
+
+315. Which category may include theft, fraud or crimes requiring law enforcement?
+    • Denial of service
+    • Compromised asset
+    √ Unlawful activity
+    • Malware
+    • E-mail
+
+316. Which distinction between Malware and Compromised asset appears in the FIRST taxonomy?
+    √ Compromised asset includes systems actively controlled by an attacker
+    • Malware always requires a confirmed data breach
+    • Both categories are reserved only for e-mail threats
+    • Malware includes every actively attacker-controlled system by definition
+    • Compromised asset applies only to fileless attacks
+
+317. A web shell lets an attacker issue commands to a server. Which category best fits?
+    • Non-active malware only
+    • Denial of service
+    √ Compromised asset
+    • Routine e-mail
+    • Inappropriate use only
+
+318. An employee deliberately uses unauthorized privileges in violation of policy. Which category best fits?
+    √ Policy violation
+    • Denial of service
+    • E-mail
+    • Malware
+    • Service availability
+
+319. What does impact measure in incident response?
+    • How quickly the attacker will escalate without action
+    • The number of triage analysts currently on shift
+    • The age of every compromised IoC in the case
+    • The strength of the vulnerability's CVSS base metric
+    √ Consequences for business services, data, money and safety
+
+320. What does urgency measure?
+    • The total number of affected records at the end
+    √ How quickly damage may grow if responders do nothing
+    • The sensitivity classification of a case
+    • The number of historical alerts linked to one user
+    • The business value of an intact backup archive
+
+321. What is priority mainly derived from in the lecture?
+    • CVSS alone
+    √ Impact multiplied by urgency
+    • Employee seniority alone
+    • Dwell time alone
+    • TLP label alone
+
+322. How does severity or criticality differ from urgency?
+    √ It is an incident rating derived from impact and relevant technical context
+    • It equals the file hash confidence score
+    • It is the same as the count of submitted help-desk tickets
+    • It is only the speed of attacker activity
+    • It is determined only by the source IP country
+
+323. What is incident scope?
+    √ The number of systems, users, records or sites affected
+    • The elapsed time from alert to first analyst response
+    • The hours left until annual staff training
+    • The total length of the incident report
+    • The number of controls listed in the IRP
+
+324. Which question best captures impact?
+    √ How bad are the consequences for the organization?
+    • Which source originally supplied the file hash?
+    • What is the first-seen time of the indicator?
+    • Which analyst received the ticket first?
+    • How quickly might harm increase without action?
+
+325. Which question best captures urgency?
+    • Which legal document contains the response plan?
+    • How much data has already been lost?
+    • Which department owns the affected database?
+    • How many months of historical logs are stored?
+    √ How fast is the situation getting worse?
+
+326. Which situation is normally high urgency?
+    • An isolated test host has a patch scheduled for next month
+    √ Ransomware is actively encrypting a file share
+    • A historical IoC has not been observed for several years
+    • A dormant unused account has an old weak password
+    • A closed incident is awaiting a lessons-learned review
+
+327. Which of the following is a functional impact?
+    • A backup restoration requires outside experts
+    √ A call center cannot use its customer database
+    • An attacker uses a newly registered domain
+    • A threat indicator has low source confidence
+    • Customer PII is secretly copied from a database
+
+328. Which of the following is an information impact?
+    √ Confidential customer files are exposed
+    • A scheduled business process runs slowly
+    • A security operations shift lacks personnel
+    • An incident requires four hours of response
+    • Recovery requires an additional disk array
+
+329. Which of the following represents recoverability?
+    • A supplier experiences a denial-of-service event
+    • A company loses the trust of its partners
+    • A service is unavailable during peak customer hours
+    √ The recovery team needs outside specialists and uncertain time
+    • An attacker accesses a privileged password
+
+330. What does Regular recoverability mean?
+    • Recovery is impossible because data is published
+    • Recovery cannot begin until public attribution
+    • Recovery needs unpredictable outside assistance
+    √ Recovery is predictable with existing resources
+    • Recovery requires additional unavailable specialists
+
+331. What does Supplemented recoverability mean?
+    • Recovery has no expected end date even with outside help
+    • Recovery is impossible because information has leaked
+    √ Recovery is predictable but requires added resources
+    • Recovery is routine using only the existing team
+    • Recovery can happen only after the final incident report
+
+332. What does Extended recoverability mean?
+    • Recovery is completed without any additional resources
+    • Recovery is predictable with only a few more staff
+    • Recovery is unnecessary because the incident was benign
+    √ Recovery is unpredictable and may need external assistance
+    • Recovery is immediate after an alert is acknowledged
+
+333. Which recoverability level fits already-publicly leaked stolen data?
+    √ Not recoverable
+    • Low urgency
+    • Supplemented
+    • Extended
+    • Regular
+
+334. Which information-impact category includes exposed personal information?
+    √ Privacy data breach (PII)
+    • No known information impact
+    • No functional disruption
+    • Regular recovery effort
+    • Destruction of non-critical systems
+
+335. Which information-impact category fits stolen domain-wide core credentials?
+    • Suspected but unidentified
+    √ Core credential compromise
+    • Routine service degradation
+    • Supplemented recovery
+    • No known impact
+
+336. Which functional-impact category is the most severe among the listed examples?
+    • No impact
+    • Minimal impact to non-critical services
+    • Minimal impact to critical services
+    √ Denial of critical services or loss of control
+    • Significant impact to non-critical services
+
+337. Which recoverability rating fits rebuilding a system with existing staff and backups?
+    • Supplemented
+    • Extended
+    √ Regular
+    • Unknown impact
+    • Not recoverable
+
+338. Which recoverability rating fits predictable restoration requiring temporary contractors?
+    √ Supplemented
+    • Extended
+    • Regular
+    • Not recoverable
+    • Functional-only
+
+339. Which recoverability rating fits a complex rebuild with unknown duration and third-party support?
+    • Regular
+    √ Extended
+    • Not recoverable
+    • No known impact
+    • Supplemented
+
+340. Why is a privacy breach an information impact?
+    • It guarantees that restoration will be impossible
+    • It is merely a measure of response staffing
+    √ It involves loss or exposure of protected information
+    • It always causes an immediate service outage
+    • It only affects the speed of attacker activity
+
+341. Which business impact dimension includes downtime costs and lost revenue?
+    • Reputational
+    • Safety
+    • Strategic
+    • Operational
+    √ Financial
+
+342. Which business dimension includes disruption of production or customer service?
+    • Financial
+    • Legal
+    • Strategic
+    • Reputational
+    √ Operational
+
+343. Which business dimension covers contracts, notification duties and sanctions?
+    • Strategic
+    • Reputational
+    • Financial
+    • Operational
+    √ Legal or regulatory
+
+344. Which business dimension covers loss of customer and partner trust?
+    • Safety
+    • Recoverability
+    • Financial
+    √ Reputational
+    • Operational
+
+345. Which business dimension covers risk to people or the environment in OT?
+    • Financial
+    • Reputational
+    √ Safety
+    • Legal
+    • Strategic
+
+346. Which business dimension includes loss of intellectual property and negotiating advantage?
+    • Safety
+    • Financial
+    • Operational
+    √ Strategic
+    • Reputational
+
+347. According to the lecture, which business impact takes top priority in OT environments?
+    √ Safety
+    • Operational
+    • Financial
+    • Reputational
+    • Strategic
+
+348. Who should help the SOC determine whether an affected process is business-critical?
+    • Only the last employee to report the case
+    • Only an external malware repository
+    • Only the initial alerting sensor
+    • Only the domain registrar
+    √ Business owners
+
+349. Why may two infections by the same malware have different severity?
+    • Threat intelligence source alone fixes all severity
+    √ The affected assets and business context can differ
+    • A CVSS score uniquely determines all incident impact
+    • Malware always becomes more dangerous on weekends
+    • Every server receives the same criticality rating
+
+350. What is the suggested severity for malware on an isolated test laptop with no sensitive data?
+    √ Low
+    • Emergency Black
+    • Always Level 1
+    • Critical
+    • High
+
+351. How is the same malware treated on a production payment server?
+    • Low regardless of circumstances
+    • Always S3 sensitivity only
+    • No incident if the host stays online
+    √ High or Critical
+    • Benign until a ransom note appears
+
+352. Why is malware on a supplier's software-build system considered Critical?
+    • It always means the supplier stores customer card numbers
+    • Its file hash necessarily changes more slowly than others
+    √ It might compromise downstream customers via the supply chain
+    • It always means the malware uses a high-severity CVE
+    • All build systems require the same annual backup schedule
+
+353. Which example best shows that severity depends on business context?
+    • An anomaly should be checked against a baseline
+    √ The same malware is low on a test laptop but critical on a payment server
+    • A TLP:GREEN item cannot be posted publicly
+    • An IP is atomic while its SHA-256 hash is computed
+    • A false negative means a missed malicious event
+
+354. What is the primary function of the CIA triad in the lecture's business-impact discussion?
+    • Determine all external contractual deadlines
+    • Select a permanent threat-intelligence confidence level
+    • Measure only the financial cost of a breach
+    • Calculate the number of required recovery staff
+    √ Describe what happened to confidentiality, integrity and availability
+
+355. In the FIRST example, which criticality level is highest?
+    • Level 3
+    • Level 5
+    • Level 2
+    √ Level 1
+    • Level 4
+
+356. What initial response time is given for FIRST Level 1?
+    • 24 hours
+    • 30 minutes
+    √ 60 minutes
+    • 48 hours
+    • 4 hours
+
+357. What initial response time is given for FIRST Level 2?
+    • 48 hours
+    • 2 hours
+    • 24 hours
+    • 60 minutes
+    √ 4 hours
+
+358. What initial response time is given for FIRST Level 3?
+    √ 48 hours
+    • 60 minutes
+    • 8 hours
+    • 24 hours
+    • 4 hours
+
+359. Which FIRST level generally covers critical systems or information with revenue or customer impact?
+    • Level 4
+    √ Level 1
+    • Level 5
+    • Level 2
+    • Level 3
+
+360. Which FIRST level generally covers non-critical systems without revenue or customer impact?
+    • Level 5
+    √ Level 2
+    • Level 4
+    • Level 1
+    • Level 3
+
+361. Which FIRST level generally covers a possible non-time-sensitive issue on a non-critical system?
+    • Level 1
+    • Level 5
+    • Level 2
+    • Level 4
+    √ Level 3
+
+362. Which ongoing handling is expected for FIRST Level 1?
+    • Business-hours-only response with monthly updates
+    √ Around-the-clock response and at least daily updates
+    • Weekly review without a defined initial response
+    • No communication until the final report
+    • One post-mortem after twelve months
+
+363. During recovery of a critical service, how often does the FIRST Level 1 example recommend updates?
+    • Every 24 hours
+    • Every 7 days
+    • Every 4 hours
+    √ Every 2 hours
+    • Every 30 minutes
+
+364. How are FIRST Level 2 updates described in the lecture?
+    • Not required once an owner has been assigned
+    • Every 2 hours during all low-risk investigations
+    √ Daily, with 24-hour response during the critical phase
+    • Weekly, with no critical-phase staffing
+    • Monthly, after restoration only
+
+365. Which update rhythm is given for FIRST Level 3?
+    • Every 4 hours without interruption
+    • Every 2 hours during routine spam review
+    √ Weekly updates as resources allow
+    • Every 15 minutes at all times
+    • Daily updates regardless of availability
+
+366. Which of these is a typical FIRST Level 3 example?
+    • Worm outbreak across critical services
+    √ Routine spam or spoofing
+    • Data theft from a privileged identity vault
+    • Live encryption of customer records
+    • Active attack on the payment system
+
+367. Which of these is a typical FIRST Level 1 example?
+    • A non-time-sensitive forensic information request
+    • A historical policy-review question
+    • An isolated test laptop with no sensitive data
+    • Routine e-mail spam without other impact
+    √ Active hacking of a critical production service
+
+368. Which CISA Cyber Incident Severity Schema color represents Emergency?
+    • Yellow
+    • Green
+    • Orange
+    • Red
+    √ Black
+
+369. Which CISA color represents Severe?
+    • Yellow
+    • Black
+    • Green
+    √ Red
+    • Orange
+
+370. Which CISA color represents High?
+    • Red
+    • Black
+    √ Orange
+    • Blue
+    • Yellow
+
+371. Which CISA color represents Medium?
+    • White
+    • Orange
+    • Blue
+    • Green
+    √ Yellow
+
+372. Which CISA color represents Low?
+    • White
+    • Blue
+    • Yellow
+    √ Green
+    • Orange
+
+373. Which CISA color represents Baseline — minor?
+    • Black
+    √ Blue
+    • Green
+    • Yellow
+    • White
+
+374. Which CISA color represents Baseline — negligible?
+    √ White
+    • Blue
+    • Green
+    • Red
+    • Yellow
+
+375. Which CISA severity level indicates imminent threat to lives or wide-scale critical infrastructure?
+    √ Emergency (Black)
+    • High (Orange)
+    • Severe (Red)
+    • Medium (Yellow)
+    • Low (Green)
+
+376. Which CISA level indicates likely significant effects on national security or public health?
+    • Low (Green)
+    √ Severe (Red)
+    • Medium (Yellow)
+    • High (Orange)
+    • Emergency (Black)
+
+377. Which CISA level indicates likely demonstrable effects on public confidence?
+    • Medium (Yellow)
+    • Baseline — minor (Blue)
+    √ High (Orange)
+    • Baseline — negligible (White)
+    • Low (Green)
+
+378. Which CISA level is an unsubstantiated or inconsequential event?
+    • Medium (Yellow)
+    • Low (Green)
+    • Baseline — minor (Blue)
+    • High (Orange)
+    √ Baseline — negligible (White)
+
+379. In the lecture's impact × urgency matrix, what is High impact plus High urgency?
+    • P5
+    √ P1
+    • P3
+    • P2
+    • P4
+
+380. In the lecture's impact × urgency matrix, what is High impact plus Medium urgency?
+    • P5
+    • P4
+    • P1
+    √ P2
+    • P3
+
+381. In the lecture's impact × urgency matrix, what is High impact plus Low urgency?
+    √ P3
+    • P1
+    • P4
+    • P5
+    • P2
+
+382. In the lecture's impact × urgency matrix, what is Medium impact plus High urgency?
+    • P1
+    √ P2
+    • P3
+    • P5
+    • P4
+
+383. In the lecture's impact × urgency matrix, what is Medium impact plus Medium urgency?
+    √ P3
+    • P2
+    • P4
+    • P5
+    • P1
+
+384. In the lecture's impact × urgency matrix, what is Medium impact plus Low urgency?
+    √ P4
+    • P5
+    • P1
+    • P3
+    • P2
+
+385. In the lecture's impact × urgency matrix, what is Low impact plus High urgency?
+    • P4
+    • P1
+    • P2
+    √ P3
+    • P5
+
+386. In the lecture's impact × urgency matrix, what is Low impact plus Medium urgency?
+    • P3
+    √ P4
+    • P5
+    • P1
+    • P2
+
+387. In the lecture's impact × urgency matrix, what is Low impact plus Low urgency?
+    √ P5
+    • P3
+    • P4
+    • P2
+    • P1
+
+388. Which conditions are specifically noted as high urgency?
+    • Completed maintenance, backup validation or test review
+    • Old unused accounts with no recent suspicious behavior
+    √ Active attack, spreading, data leaving or legal deadline
+    • Normal scheduled scans with approved change tickets
+    • Benign logins confirmed by multiple identity sources
+
+389. Which conditions are specifically noted as high impact?
+    • A single normal log event on a development laptop
+    • A sensor warning confirmed as a harmless test
+    √ Critical services, core credentials, sensitive data or safety
+    • A completed scheduled job with no business effect
+    • A stale public IP indicator without supporting context
+
+390. What should each P-level map to in an organization's IRP?
+    • A public sector ISAC and default TLP label
+    √ Response time and escalation contacts
+    • A fixed malware hash and destination IP
+    • A mandatory unique CVSS base score
+    • A particular user account and workstation hostname
+
+391. What does CVSS primarily measure?
+    • Urgency of an active data exfiltration case
+    • Sensitivity level for investigative reporting
+    √ Severity of a software or system vulnerability
+    • Severity of an incident in its business context
+    • Recoverability of lost proprietary information
+
+392. What does incident severity primarily measure?
+    • Only the intrinsic severity of a published CVE
+    • Only the likelihood a vulnerability will be exploited
+    • The technical danger of a flaw independent of any event
+    • The same base score for every affected organization
+    √ Seriousness of an actual or ongoing event for the organization
+
+393. Which CVSS version is referenced as current on the lecture slide?
+    • CVSS v2.0
+    • CVSS v3.1
+    • CVSS v5.0
+    • CVSS v3.0
+    √ CVSS v4.0
+
+394. What does CVSS help prioritize?
+    • TLP disclosure permission selection
+    • Internal incident-report acknowledgment only
+    • Forensic custody transfers
+    • Breach notifications to affected users
+    √ Vulnerability remediation and patching
+
+395. Which inputs are mentioned alongside CVSS for patch prioritization?
+    • Incident category and escalation contact list
+    • Risk acceptance and recovery timetable
+    • Sensor retention period and alert confidence
+    √ EPSS and exploitation status
+    • TLP restrictions and incident sensitivity
+
+396. A system has CVSS 9.8 but is unused and isolated. What is possible?
+    √ The related incident may still have low business severity
+    • The incident must always be declared Emergency Black
+    • Its recoverability is automatically Not recoverable
+    • The incident always has a 60-minute legal deadline
+    • Every affected employee must be notified publicly
+
+397. A medium-rated vulnerability is exploited on a production payment system. How may incident severity be assessed?
+    • Low because the vulnerability is not CVSS Critical
+    • Not an incident unless the flaw has a public exploit
+    • Benign because it is only a technical weakness
+    • Automatically Level 3 with a 48-hour response
+    √ Critical because of the affected business context
+
+398. Which statement accurately distinguishes CVSS from incident severity?
+    • Neither can influence prioritization decisions
+    • Both are fixed globally for identical malware families
+    √ CVSS scores a flaw; incident severity considers what happened to the business
+    • Both are solely based on the number of published IoCs
+    • CVSS scores an incident; incident severity scores only vulnerability age
+
+399. In the worked PowerShell case, what launches powershell.exe -enc?
+    √ winword.exe
+    • services.exe
+    • lsass.exe
+    • svchost.exe
+    • explorer.exe
+
+400. In the worked PowerShell case, why is the command judged malicious?
+    • It references a domain for which WHOIS data exists
+    • It appears during normal office hours on a finance workstation
+    • It runs under the same Windows account as the user
+    √ It downloads and runs a script with no approved change explanation
+    • It uses HTTPS, which is always malicious in Windows
+
+401. How many finance hosts were identified after correlating the PowerShell case?
+    • Two
+    • One
+    √ Three
+    • Five
+    • Four
+
+402. Which incident category was assigned to the worked PowerShell case?
+    • Policy violation only
+    √ Compromised asset
+    • Routine malware without attacker control
+    • E-mail only
+    • Denial of service
+
+403. Which criticality and priority were assigned to that case?
+    • Criticality 2 and P4
+    • Criticality 2 and P2
+    • Criticality 3 and P5
+    • Criticality 3 and P3
+    √ Criticality 1 and P1
+
+404. What made the PowerShell case especially urgent?
+    √ Active outbound C2 communication
+    • An approved administrator script recorded in the calendar
+    • A previously closed help-desk ticket
+    • A completed normal backup job
+    • A scheduled update for the finance application
+
+405. Which TLP label was assigned in the worked PowerShell escalation?
+    • TLP:CLEAR
+    • TLP:RED
+    • TLP:GREEN
+    • TLP:AMBER+STRICT
+    √ TLP:AMBER
+
+406. Which team was informed along with the IR lead in the worked PowerShell case?
+    • The external ISAC community
+    • The human resources team
+    √ IT Operations
+    • The internal legal department
+    • The privacy regulator
+
+407. In the final discussion, what defines an IT incident under ITIL 4?
+    √ Unplanned service interruption or quality degradation
+    • Only a confirmed ransomware attack
+    • Only unauthorized copying of sensitive data
+    • Any log entry from a production network
+    • Any activity that violates an information-security policy
+
+408. In the final discussion, what defines a cyber incident?
+    √ Jeopardized information or systems, or a security-policy violation
+    • Any delay in processing a routine payroll batch
+    • Only a public network outage during business hours
+    • Every hardware failure with no security implications
+    • Every planned service restart by IT Operations
+
+409. According to Lecture 2's final discussion, is every cyber incident also an IT incident?
+    • No, a ransomware outage can never be an IT incident
+    • No, cyber incidents cannot affect ordinary IT services
+    • Yes, ITIL 4 defines any security alert as a service outage
+    √ No, the categories overlap but neither fully contains the other
+    • Yes, every cyber incident necessarily disrupts a service
+
+410. A database is copied out secretly while all services operate normally. How is it classified in the lecture's test?
+    • A routine maintenance event
+    • IT incident only
+    • Both IT and cyber incident
+    • Neither incident
+    √ Cyber incident only
+
+411. A disk fails and takes the portal offline with no security compromise. How is it classified?
+    • Cyber incident only
+    √ IT incident only
+    • Both IT and cyber incident
+    • Neither incident
+    • A confirmed data breach
+
+412. Ransomware encrypts a file server and stops business operations. Which classification fits?
+    • IT incident only
+    • Cyber incident only
+    √ Both IT and cyber incident
+    • A harmless adverse event
+    • Neither incident
+
+413. A planned and successful maintenance change neither degrades service nor threatens security. Which classification fits?
+    • Cyber incident only
+    • Both IT and cyber incident
+    • IT incident only
+    √ Neither incident
+    • Always a major incident
+
+414. What is the two-question test in the final slides?
+    • Was the user remote, and did the incident occur overnight?
+    • Was malware installed, and was a ransom note published?
+    • Was a CVE assigned, and did the attacker use HTTPS?
+    • Were backup tapes present, and did legal approve an update?
+    √ Was service degraded, and was information or a system jeopardized?
+
+415. When is a cyber incident also an IT incident according to the final slide?
+    • Whenever a SIEM produces a high-level alert
+    • Only when a user has submitted an external complaint
+    √ When it interrupts or degrades an IT service
+    • When legal counsel assigns any TLP restriction
+    • Whenever an attacker uses a known malicious IP
