@@ -103,13 +103,7 @@ async function initializeQuizData() {
     allAnswersCorrectness = data.result;
 
     if (allQuestionsData && allQuestionsData.length) {
-      if (
-        !inputMax.value ||
-        parseFloat(inputMax.value) === 0 ||
-        parseFloat(inputMax.value) > allQuestionsData.length
-      ) {
-        inputMax.value = allQuestionsData.length;
-      }
+      inputMax.value = allQuestionsData.length;
       startButton.disabled = false;
     } else {
       inputMax.value = 0;
