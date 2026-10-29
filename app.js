@@ -6,6 +6,7 @@ const MODULE_SUBJECTS = {
     { file: "questions_ir_lecture1.txt", label: "Lecture 1" },
     { file: "questions_ir_lecture2.txt", label: "Lecture 2" },
     { file: "questions_ir_lecture3.txt", label: "Lecture 3" },
+    { file: "questions_ir_lecture4.txt", label: "Lecture 4 — Investigation and Analysis" },
   ],
   linux: [
     { file: "questions_linux_module1.txt", label: "Module 1" },
