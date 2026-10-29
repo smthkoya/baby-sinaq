@@ -1,0 +1,212 @@
+MODULE 14 — Threat Intelligence Integration
+35 Practice Questions
+
+1. What is threat intelligence in the module?
+    √ Evidence-based threat knowledge that adds context to defensive decisions
+    • Any unverified list of IPs without interpretation
+    • A guarantee that an IP identifies a person
+    • A replacement for local security evidence
+
+2. Which sequence matches the intelligence lifecycle?
+    • Collection → Blocking → Deletion → Certification
+    • Analysis → Collection → Requirements → Archive only
+    • Feedback → Deletion → Encryption → Detection
+    √ Requirements → Collection → Processing → Analysis → Dissemination → Feedback
+
+3. What is the purpose of the requirements stage?
+    • Block every indicator immediately
+    • Choose a chart color
+    √ Define the questions and decisions intelligence should support
+    • Create a new domain account
+
+4. Which activity belongs to processing?
+    • Attribute an attack solely from one IP
+    √ Normalize, deduplicate, and extract useful indicators from collected data
+    • Disable the SIEM's parsing
+    • Delete all source timestamps
+
+5. Which activity best fits analysis?
+    √ Assess relevance, reliability, confidence, and local context
+    • Copy every feed unchanged into a blocklist
+    • Count only the feed's filename length
+    • Assume paid intelligence is always correct
+
+6. Which audience and timeframe match strategic intelligence in the lecture?
+    • Tier 1 analysts checking one IP within minutes only
+    • A malware process receiving tasks every minute
+    • A firewall validating each packet
+    √ Executives or CISO, supporting decisions over months to years
+
+7. Which example best represents operational intelligence?
+    • A board budget spreadsheet without threat context
+    • A single file hash alone
+    √ A campaign report describing actor TTPs to guide hunts and playbook updates
+    • A server uptime counter
+
+8. Which example best represents tactical intelligence?
+    • A multiyear cybersecurity investment strategy only
+    √ An IP, domain, or file hash used in alert enrichment or detection
+    • A staffing plan without threat data
+    • A general annual business forecast
+
+9. How is the SOC analyst's role characterized in the lecture?
+    √ Primarily consuming and applying intelligence to investigations and detection
+    • Automatically accepting every feed entry as a confirmed attack
+    • Producing all intelligence alone without external sources
+    • Avoiding internal incident findings
+
+10. Which source is an example of internal threat intelligence?
+    • Only publicly advertised software prices
+    • Only an external social-media trend
+    • Only a national weather report
+    √ Indicators and behaviors validated during the organization's own incident investigations
+
+11. What does an industry ISAC or trusted sharing community provide?
+    • A guarantee that every shared indicator is current
+    • Automatic access to all companies' endpoints
+    √ Sector-relevant threat information and collaboration
+    • A replacement for incident documentation
+
+12. What does the Pyramid of Pain compare?
+    • The legal severity of every incident
+    √ How difficult different indicators and behaviors are for attackers to change
+    • The price of SIEM products
+    • The storage size of every log source
+
+13. Which indicator is generally easiest for an attacker to change?
+    √ A file hash by altering file content
+    • An entire operational technique set
+    • An established toolchain and workflow
+    • Every behavior required to achieve the objective
+
+14. Why prioritize TTP-informed detection alongside indicator matching?
+    • TTPs never change under any circumstances
+    • TTP mapping removes all false positives
+    • Behavior detection requires no telemetry
+    √ Behavior-focused coverage can remain useful after infrastructure or file hashes change
+
+15. Which Wazuh integration is presented as native in the module?
+    • Every possible third-party feed without configuration
+    • Every HR database automatically
+    √ VirusTotal via the integration framework
+    • All badge systems by default
+
+16. What is the basic VirusTotal enrichment flow described in the lecture?
+    • Wazuh necessarily uploads the entire file for every hash lookup
+    √ FIM captures a file hash, a lookup retrieves reputation, and Wazuh exposes the result for triage
+    • VirusTotal generates the endpoint's original file event
+    • The lookup replaces the need to inspect local execution
+
+17. A VirusTotal result reports 45 positives out of 72 engines. What is best?
+    √ Treat it as strong reputation evidence and correlate with local context
+    • Treat 45/72 as an exact probability of maliciousness
+    • Assume every engine is independent and always correct
+    • Ignore it because only unanimous results matter
+
+18. A hash is not found in VirusTotal. What does this establish?
+    • The file is guaranteed benign
+    • The file cannot execute
+    • The endpoint has never been compromised
+    √ The service lacks a known record for that lookup; the file still needs assessment
+
+19. What does AbuseIPDB primarily contribute?
+    • Full plaintext contents of encrypted sessions
+    • Every file's source code
+    √ IP abuse-reputation information and an abuse confidence score
+    • Verified physical identity of the remote operator
+
+20. What are AlienVault OTX pulses in the lecture?
+    • Windows kernel callbacks
+    √ Community-shared threat reports containing indicators and context
+    • A type of scheduled task
+    • Packets generated by an EDR heartbeat
+
+21. Which source-to-use mapping matches the examples?
+    √ VirusTotal for file reputation, AbuseIPDB for IP abuse scoring, OTX for broader IOC feeds
+    • AbuseIPDB for only file hashes and OTX for only passwords
+    • VirusTotal for employee badge records
+    • All three for direct memory capture
+
+22. When is per-alert API enrichment particularly suitable?
+    • Every noisy event regardless of quota
+    • Only events with no useful indicator
+    • Only once per year during audits
+    √ High-value, lower-volume events requiring fresh context
+
+23. What is a key advantage and limitation of local CDB matching?
+    • It automatically queries every external API on each match
+    • It decrypts payloads but cannot match IPs
+    √ Low per-event lookup overhead, but freshness depends on feed updates
+    • It needs no maintenance after creation
+
+24. When is a custom hybrid enrichment script useful?
+    • Avoiding all testing and maintenance
+    √ Combining multiple services and applying organization-specific scoring logic
+    • Automatically proving actor attribution
+    • Replacing all local telemetry with one feed
+
+25. Why limit integration triggers and cache or deduplicate repeated lookups?
+    √ Avoid exhausting API quotas and wasting resources on repeated low-value requests
+    • Make stale results permanently authoritative
+    • Prevent any future indicator match
+    • Ensure all malicious files share a hash
+
+26. What CDB format and organization are recommended in the module?
+    • Only screenshots pasted into a text file
+    • One list of plaintext user passwords
+    • Arbitrary binary packet captures without keys
+    √ key:value entries, with separate lists by indicator type and useful source labels
+
+27. Why retain indicator source and age information?
+    • Prove every old indicator is still active
+    • Eliminate the need for local context
+    √ Assess provenance, freshness, and how much confidence to place in a match
+    • Make every source equally reliable
+
+28. What should a robust IOC refresh pipeline do?
+    • Overwrite the working list with any failed or empty download
+    √ Fetch, validate, normalize, deduplicate, update safely, and verify matching behavior
+    • Ignore malformed entries and assume they work
+    • Delete all previous source attribution
+
+29. Which metrics help monitor threat-intelligence list health?
+    √ Last successful refresh, list size, and match behavior
+    • Only the dashboard's theme
+    • Only the list filename's character count
+    • Only the analyst's browser version
+
+30. Why implement indicator aging or review policies?
+    • Every IOC becomes harmless after the same universal number of days
+    • Hashes change ownership exactly like cloud IPs
+    • Old reports prove current malicious activity
+    √ IPs and infrastructure can change ownership, and stale matches can mislead investigations
+
+31. Why is shared cloud or CDN infrastructure a false-positive challenge?
+    • Every address from a major provider is automatically safe
+    • Cloud services cannot be abused
+    √ One address can support both legitimate and malicious activity
+    • An IP match identifies the exact hosted customer
+
+32. A single community feed flags a business application's IP. What is best?
+    • Block all related provider ranges immediately
+    √ Validate source quality, age, independent corroboration, and local behavior before disruptive action
+    • Declare the application compromised solely from the match
+    • Permanently trust every future connection after one false positive
+
+33. Which sequence matches the lecture's TI false-positive workflow?
+    √ Triage → Validate → Contextualize → Decide → Tune
+    • Block → Delete → Ignore → Close
+    • Tune → Guess → Archive without evidence
+    • Collect → Certify → Disable all rules
+
+34. What is retro-hunting after a new IOC is published?
+    • Assume adding a CDB entry automatically regenerates all old alerts
+    • Search only events after the feed update
+    • Delete old events because no rule matched at the time
+    √ Search retained historical telemetry to identify earlier matches and affected systems
+
+35. What limitation matters when planning a retro-hunt in Wazuh?
+    • All raw events are always indexed indefinitely by default
+    • A new IOC can reconstruct previously uncollected packets
+    √ Only telemetry actually collected, retained, and made searchable can be investigated; alert indexes may omit non-alerting events
+    • The absence of a prior alert proves no historical activity

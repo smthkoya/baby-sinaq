@@ -1,0 +1,242 @@
+MODULE 1 — SOC Structure and Defense Standards
+40 Practice Questions
+
+1. What is the primary purpose of a Security Operations Center (SOC)?
+    • Develop business applications and manage software licenses.
+    √ Continuously monitor, detect, analyze, and respond to cybersecurity threats.
+    • Replace all IT operations with annual security audits.
+    • Investigate incidents only after users report financial losses.
+
+2. Which combination forms the foundational triad of a modern SOC?
+    • Confidentiality, Integrity, and Availability.
+    • Firewalls, antivirus, and backups.
+    √ People, Process, and Technology.
+    • Detection, certification, and insurance.
+
+3. A SOC buys advanced tools, but analysts have no training or escalation procedures. What is the main weakness?
+    √ Technology cannot compensate for missing people skills and processes.
+    • A SOC needs technology only after its first confirmed breach.
+    • More collected logs automatically create effective incident response.
+    • Escalation procedures are useful only for external SOC providers.
+
+4. Which task is most appropriate for a Tier 1 SOC analyst?
+    • Define the organization's long-term security architecture.
+    • Reverse engineer an advanced malware family from scratch.
+    • Negotiate the SOC's annual vendor contracts.
+    √ Review alert context, classify activity, and escalate confirmed threats.
+
+5. Tier 1 confirms suspicious activity involving several hosts. Which responsibility best fits Tier 2?
+    • Replace the incident investigation with a compliance checklist.
+    √ Correlate evidence across systems and coordinate deeper investigation.
+    • Close the case because Tier 1 has already classified the alert.
+    • Review only the original alert without checking related activity.
+
+6. Which task best fits a Tier 3 analyst or threat hunter?
+    • Perform initial classification of every routine alert only.
+    • Approve employee leave and purchase office equipment.
+    √ Conduct advanced forensics, proactively hunt, and improve detection rules.
+    • Forward all suspicious events without analyzing them.
+
+7. Who primarily owns SOC staffing, strategy, KPIs, and reporting to security leadership?
+    √ SOC Manager.
+    • Tier 1 analyst.
+    • Endpoint user.
+    • External penetration tester.
+
+8. A company needs 24/7 monitoring but has limited resources for an internal team. Which model best fits?
+    • An in-house SOC requiring full internal staffing.
+    • A SOC that monitors systems only during annual audits.
+    • A dedicated internal malware research laboratory.
+    √ An MSSP/MDR service providing outsourced monitoring and response support.
+
+9. Which arrangement best represents a hybrid SOC?
+    • All security responsibilities are transferred to end users.
+    √ An external provider handles Tier 1 while internal staff handle Tier 2/3.
+    • Every SOC employee works in the same physical room.
+    • The organization uses cloud tools without any security analysts.
+
+10. What does Mean Time to Detect (MTTD) measure in this module?
+    • Time required to restore all services after containment.
+    • Time between analyst shift changes.
+    √ Average time from attack start to detection or alert generation.
+    • Percentage of alerts confirmed as malicious.
+
+11. An attack begins at 09:00, an alert is generated at 09:12 and acknowledged at 09:15, and containment is confirmed at 09:35. What are the detection and response times using the module's KPI definitions?
+    √ Detection: 12 minutes; response: 20 minutes.
+    • Detection: 15 minutes; response: 35 minutes.
+    • Detection: 20 minutes; response: 12 minutes.
+    • Detection: 35 minutes; response: 3 minutes.
+
+12. A SOC receives thousands of alerts caused by approved administrative activity. What is the best improvement?
+    • Disable all alerts from administrative accounts.
+    • Increase every alert to the highest severity.
+    • Ignore repeated alerts without reviewing their cause.
+    √ Validate normal activity and tune rules while preserving suspicious behavior detection.
+
+13. Which metric measures how much of the relevant MITRE ATT&CK technique set the SOC can detect?
+    • Mean Time to Respond.
+    √ Detection Coverage.
+    • Escalation Accuracy.
+    • Mean Time to Detect.
+
+14. Tier 2 confirms only a small proportion of Tier 1 escalations as true positives. Which metric most directly highlights this problem?
+    • Log retention duration.
+    • Endpoint uptime.
+    √ Escalation Accuracy.
+    • Number of installed agents.
+
+15. Which sequence best represents the alert lifecycle described in the module?
+    √ Raw logs → aggregation and correlation → analyst validation → response and remediation.
+    • Raw logs → automatic deletion → annual audit → detection.
+    • Containment → log generation → business approval → correlation.
+    • Alert generation → confirmed breach without investigation → recovery.
+
+16. A login alert is investigated and found to be an employee using an approved VPN. How should the alert be classified if it incorrectly indicated malicious activity?
+    • True positive, because every unusual login is an attack.
+    • False negative, because the alert was generated.
+    • Confirmed incident, because VPN traffic is encrypted.
+    √ False positive, because the suspected threat was not present.
+
+17. Spyware secretly reads a user's private messages without changing them. Which CIA pillar is primarily affected?
+    • Availability.
+    √ Confidentiality.
+    • Integrity.
+    • Recoverability.
+
+18. An attacker changes the bank account number in a legitimate invoice. Which CIA pillar is primarily affected?
+    • Confidentiality.
+    • Availability.
+    √ Integrity.
+    • Scalability.
+
+19. A DDoS attack prevents customers from accessing an online service. Which CIA pillar is primarily affected?
+    √ Availability.
+    • Integrity.
+    • Confidentiality.
+    • Authenticity of stored invoices.
+
+20. Which control most directly protects the confidentiality of stolen database contents?
+    • Load balancing across several servers.
+    • Recording only the database server's uptime.
+    • Comparing application file hashes.
+    √ Encrypting data and protecting the decryption keys.
+
+21. A configuration file changes unexpectedly. Which control best detects this integrity issue?
+    • A load balancer distributing client connections.
+    √ File Integrity Monitoring comparing the file with a trusted baseline.
+    • An increase in backup storage capacity only.
+    • A dashboard showing total successful logins.
+
+22. Ransomware makes business files unusable. Which measure best supports restoring availability?
+    • Retain the ransom note as the only recovery evidence.
+    • Increase the number of alerts without restoring systems.
+    √ Restore clean systems and data from tested, protected backups.
+    • Reuse compromised credentials to reconnect affected hosts.
+
+23. Which statement best expresses the Zero Trust principle discussed in the module?
+    √ Internal network location alone should not establish trust; access must be verified.
+    • Every internal connection should be accepted after one successful login.
+    • Encryption removes the need for access controls.
+    • Approved devices never require further security checks.
+
+24. Which list contains the six core functions of NIST CSF 2.0?
+    • Identify, Protect, Detect, Respond, Recover, Certify.
+    • Govern, Audit, Encrypt, Monitor, Isolate, Restore.
+    • Plan, Deploy, Investigate, Certify, Report, Retire.
+    √ Govern, Identify, Protect, Detect, Respond, Recover.
+
+25. A SIEM flags malicious activity, then the SOC isolates the affected host. Which NIST CSF functions do these actions most directly represent?
+    • Identify, then Govern.
+    √ Detect, then Respond.
+    • Recover, then Protect.
+    • Govern, then Recover.
+
+26. Which standard concerns an Information Security Management System (ISMS), risk assessment, controls, and audit evidence?
+    • MITRE ATT&CK.
+    • NetFlow/IPFIX.
+    √ ISO/IEC 27001.
+    • STIX/TAXII.
+
+27. Which standard is specifically relevant to organizations storing, processing, or transmitting payment card data?
+    √ PCI-DSS.
+    • MITRE ATT&CK Navigator.
+    • A SOC shift-handover checklist.
+    • A malware classification matrix.
+
+28. Which mapping of PCI-DSS requirements is presented in the module?
+    • Requirement 10: malware analysis; 11: staffing; 12: threat attribution.
+    • Requirement 10: encryption only; 11: hiring; 12: backups only.
+    • Requirement 10: payment processing; 11: marketing; 12: software licensing.
+    √ Requirement 10: logging and monitoring; 11: security testing; 12: policies.
+
+29. Which pairing correctly identifies two SOC-relevant CIS Controls v8?
+    • Control 8: payment processing; Control 17: software licensing.
+    √ Control 8: Audit Log Management; Control 17: Incident Response Management.
+    • Control 8: malware reverse engineering; Control 17: encryption algorithms.
+    • Control 8: staff scheduling; Control 17: customer billing.
+
+30. A Wazuh configuration assessment finds insecure SSH settings on Linux servers. What is the best response?
+    • Treat the finding as proof that data has already been stolen.
+    • Disable authentication logging to reduce alerts.
+    √ Compare with the hardening baseline and open a remediation task.
+    • Ignore the finding because no malware signature matched.
+
+31. What is MITRE ATT&CK primarily used for?
+    √ Describing observed adversary behavior through tactics and techniques.
+    • Certifying that an organization meets payment card requirements.
+    • Automatically preventing every technique in its knowledge base.
+    • Replacing incident evidence with attacker group names.
+
+32. Which statement correctly distinguishes a tactic, technique, and procedure?
+    • Tactic is a tool; technique is a business risk; procedure is an alert severity.
+    • Tactic is a file hash; technique is an IP address; procedure is a hostname.
+    • Tactic is an exact command; technique is the attacker's goal; procedure is a compliance rule.
+    √ Tactic is the goal; technique is the method; procedure is a specific implementation.
+
+33. A group sends a particular malicious attachment using a documented command sequence. In TTP terminology, what does this specific implementation represent?
+    • A tactic.
+    √ A procedure.
+    • A detection coverage score.
+    • A certification requirement.
+
+34. Malware adds a Registry Run key so that it starts after reboot. Which tactic best describes its goal?
+    • Collection.
+    • Exfiltration.
+    √ Persistence.
+    • Reconnaissance.
+
+35. An attacker uses SMB administrative shares to move from a compromised workstation to another host. Which tactic best fits?
+    √ Lateral Movement.
+    • Resource Development.
+    • Initial email delivery.
+    • Data destruction only.
+
+36. Which technique mapping matches the examples in the module?
+    • T1566: Registry Run Keys; T1486: Phishing.
+    • T1059.001: SMB Admin Shares; T1547.001: PowerShell.
+    • T1021.002: Data Encrypted for Impact; T1566: LSASS dumping.
+    √ T1059.001: PowerShell; T1547.001: Registry Run Keys.
+
+37. A SOC wants to visualize which adversary techniques have detection rules and where coverage is missing. Which tool best fits?
+    • A payment card authorization portal.
+    √ ATT&CK Navigator with coverage layers.
+    • A password manager's account list.
+    • An endpoint user's browser history alone.
+
+38. Which description correctly distinguishes SIEM, SOAR, XDR, and TIP?
+    • SIEM executes only backups; SOAR stores only passwords; XDR certifies controls; TIP routes packets.
+    • SIEM replaces all analysts; SOAR defines legal obligations; XDR handles only email; TIP restores files.
+    √ SIEM correlates logs; SOAR automates playbooks; XDR integrates detection and response across security domains; TIP supplies threat intelligence.
+    • SIEM is a certification; SOAR is a file format; XDR is a log retention policy; TIP is a malware hash.
+
+39. Automation enriches alerts and handles routine steps. What is the analyst's most appropriate role?
+    √ Investigate complex cases, validate context, and oversee response decisions.
+    • Assume every automated verdict is correct and stop reviewing incidents.
+    • Remove playbooks because automation and analysts cannot work together.
+    • Investigate only events for which no evidence was collected.
+
+40. After containing an incident, the SOC discovers a detection gap. What best completes the improvement cycle?
+    • Close the case without recording the timeline.
+    • Assume passing the next compliance audit will prevent recurrence.
+    • Increase every rule's sensitivity without checking normal behavior.
+    √ Document evidence and response steps, improve the detection, and validate it against normal activity.

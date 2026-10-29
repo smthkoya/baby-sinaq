@@ -1,0 +1,242 @@
+MODULE 8 — Search Language & Logic
+40 Practice Questions
+
+1. Which component executes indexed searches in the Wazuh architecture described in the module?
+    √ Wazuh Indexer, based on OpenSearch
+    • The endpoint's Task Scheduler
+    • The analyst's password manager
+    • The Windows KDC
+
+2. Which statement correctly distinguishes the Wazuh search interfaces?
+    • All three accept every SQL statement unchanged
+    • Only the manager's XML rules can be used for historical searches
+    • Dashboard queries automatically rewrite endpoint audit policies
+    √ DQL provides dashboard filtering, Lucene offers its own query syntax, and APIs support programmatic access
+
+3. Which Boolean operator requires both conditions to match?
+    • OR
+    • NOT
+    √ AND
+    • XOR
+
+4. Which Boolean operator matches either condition, including when both are true?
+    • AND
+    √ OR
+    • NOT
+    • EXCEPT
+
+5. What is the purpose of NOT in an investigation query?
+    √ Exclude events that match a specified condition
+    • Delete matching source logs
+    • Prevent the matching process from executing
+    • Change an alert's original rule severity
+
+6. Which expression requires A and either B or C?
+    • (A AND B) OR C
+    • A OR (B AND C)
+    • NOT A AND (B OR C)
+    √ A AND (B OR C)
+
+7. Using the precedence taught in the lecture, how is A AND B OR C evaluated?
+    • A AND (B OR C)
+    • A AND B AND C
+    √ (A AND B) OR C
+    • NOT (A OR B OR C)
+
+8. Which query finds SSH failures from either specified source, assuming the fields exist?
+    • event:ssh_failed AND src_ip:1.1.1.1 OR src_ip:2.2.2.2
+    √ event:ssh_failed AND (src_ip:1.1.1.1 OR src_ip:2.2.2.2)
+    • event:ssh_failed OR (src_ip:1.1.1.1 AND src_ip:2.2.2.2)
+    • NOT event:ssh_failed AND src_ip:1.1.1.1
+
+9. Which grouping restricts both rule IDs to the same agent?
+    √ (rule.id:5710 OR rule.id:5503) AND agent.name:"prod-web"
+    • rule.id:5710 OR (rule.id:5503 AND agent.name:"prod-web")
+    • rule.id:5710 AND rule.id:5503 AND agent.name:"prod-web"
+    • agent.name:"prod-web" OR rule.id:5710 OR rule.id:5503
+
+10. Which precedence order is taught in the module?
+    • OR, AND, NOT, parentheses
+    • AND, OR, parentheses, NOT
+    • NOT, OR, AND, parentheses
+    √ Parentheses, NOT, AND, OR
+
+11. What is the best way to develop a complex investigation query?
+    • Add every condition at once and trust an empty result
+    • Begin with broad exclusions of all internal hosts
+    √ Test smaller conditions independently, then combine them with explicit grouping
+    • Avoid testing the selected time range
+
+12. Which query finds Windows successful logons by Administrator using the fields from the midterm?
+    • data.win.system.eventID:"4625" AND data.win.eventdata.targetUserName:"Administrator"
+    √ data.win.system.eventID:"4624" AND data.win.eventdata.targetUserName:"Administrator"
+    • data.win.system.eventID:"4624" OR data.win.eventdata.targetUserName:"Administrator"
+    • data.win.system.eventID:"4624" AND NOT data.win.eventdata.targetUserName:"Administrator"
+
+13. Which query searches collected Windows command lines containing certutil?
+    √ data.win.eventdata.commandLine:*certutil*
+    • rule.description:"4624"
+    • data.win.system.eventID:"certutil"
+    • agent.name:"certutil"
+
+14. What does a wildcard search such as agent.name:prod-web-* aim to match?
+    • Only the exact literal name prod-web-*
+    • Only agents whose names end with prod-web
+    • Every agent except production web servers
+    √ Agent names beginning with prod-web-
+
+15. Which query tests whether the source-IP field has an indexed value?
+    • data.srcip:"exists"
+    • data.srcip:"null"
+    √ data.srcip:*
+    • data.srcip:>0
+
+16. Which query requires the Windows IP-address field to exist and excludes the placeholder '-'?
+    • data.win.eventdata.ipAddress:"-"
+    √ data.win.eventdata.ipAddress:* AND NOT data.win.eventdata.ipAddress:"-"
+    • NOT data.win.eventdata.ipAddress:*
+    • data.win.eventdata.ipAddress:"exists"
+
+17. What does this query return: data.win.system.eventID:"4688" AND NOT data.win.eventdata.newProcessName:*svchost.exe*?
+    √ Process-creation events excluding process names matching svchost.exe
+    • Only process creations for svchost.exe
+    • All Windows events except successful logons
+    • Only records whose process-name field is guaranteed to be absent
+
+18. Which query finds Windows Event ID 4688 with EXCEL.EXE as the parent using the midterm's field names?
+    • data.win.system.eventID:"4624" AND data.win.eventdata.parentProcessName:*EXCEL.EXE*
+    • data.win.system.eventID:"4688" OR data.win.eventdata.parentProcessName:*EXCEL.EXE*
+    • rule.id:"EXCEL.EXE"
+    √ data.win.system.eventID:"4688" AND data.win.eventdata.parentProcessName:*EXCEL.EXE*
+
+19. In Lucene range syntax, what does rule.level:[8 TO 15] request?
+    • Only rule IDs 8 and 15
+    • Alerts with exactly eight fields and fifteen events
+    √ Alerts with rule levels from 8 through 15, inclusive
+    • Alerts outside the interval from 8 to 15
+
+20. An analyst needs events from an exact historical two-day period. Which dashboard action is best?
+    • Keep Last 15 minutes and add the year as a keyword
+    √ Set an absolute start and end in the time picker, checking timezone and endpoints
+    • Use a saved query instead of a time filter
+    • Change the agent's hostname to the incident date
+
+21. A valid-looking query returns no events. What should be checked before concluding the activity never occurred?
+    √ Time range, field names, data availability, and each filter separately
+    • Only whether the query has enough OR operators
+    • Only whether the chart is a pie chart
+    • Nothing, because empty results prove absence of activity
+
+22. What is the main effect of a query-level exclusion?
+    • Stop collection at the endpoint
+    • Delete all previously generated alerts
+    • Disable the excluded account
+    √ Hide matching records from the current result set without changing the underlying detection rule
+
+23. How does a rule-level exclusion differ from an ad-hoc dashboard filter?
+    • It changes only the analyst's browser font
+    • It always removes historical documents from the Indexer
+    √ It can affect future alert generation rather than only the displayed search results
+    • It requires changing every endpoint hostname
+
+24. What is the intended effect of the lecture's level-0 child rule for a verified scanner?
+    • Prove all activity from that scanner is harmless forever
+    √ Suppress alert generation for events satisfying that specific rule
+    • Delete the scanner's source logs
+    • Disable every authentication rule
+
+25. Which use of a CDB list best fits persistent tuning?
+    √ Maintain verified indicator values and reference them in appropriately scoped rules
+    • Store screenshots of dashboard filters
+    • Decrypt PowerShell payloads
+    • Replace all event timestamps
+
+26. Why should scanner exclusions be carefully scoped and reviewed?
+    • Every approved scanner can never be compromised
+    • Any internal source should be permanently ignored
+    • Exclusions automatically expire when the owner changes
+    √ Trusted systems can change roles or be compromised, and broad exclusions can hide attacks
+
+27. What is an aggregation in a SIEM search?
+    • A command that terminates processes
+    • A substitute for collecting logs
+    √ A summary of events into groups or computed metrics
+    • An encryption algorithm
+
+28. Which configuration best identifies the top ten alert-generating source IPs?
+    • Date histogram on usernames ordered alphabetically
+    √ Terms aggregation on data.srcip, size 10, ordered by event count descending
+    • Sum of source-IP strings
+    • Terms aggregation on rule.description with no source-IP grouping
+
+29. In the lecture's OpenSearch aggregation request, what does top-level size:0 do?
+    √ Omit individual search hits while allowing aggregation results
+    • Return no aggregation buckets
+    • Disable all source-IP indexing
+    • Set every event's severity to zero
+
+30. Why can an IP at the top of an event-count chart warrant investigation without proving compromise?
+    • The highest count always identifies the attacker
+    • Legitimate systems cannot generate many alerts
+    • Event count identifies the exact malware family
+    √ High volume can reflect attacks, approved scanning, or misconfiguration
+
+31. What does cardinality or unique count summarize?
+    • The total bytes of every log message
+    • The maximum alert severity only
+    √ The number of distinct values in a field
+    • The number of characters in one username
+
+32. One account receives failures from many different IPs, each making few attempts. Which metric helps expose this distribution?
+    • Only the maximum attempts from one IP
+    √ Distinct source-IP count grouped by the target account over a suitable window
+    • Only the number of installed agents
+    • Average hostname length
+
+33. Which aggregation is appropriate for showing alert volume over five-minute buckets?
+    √ A date histogram on the correct event-time field
+    • A terms aggregation on the raw password
+    • A sum of agent names
+    • A maximum of source-IP strings
+
+34. Which visualization best compares the distribution of rule groups?
+    • A memory dump
+    • A raw packet replay
+    • A password-reset form
+    √ A pie or donut chart using a terms aggregation
+
+35. Which visualization is most suitable for a single KPI such as unique source-IP count?
+    • A process tree alone
+    • A file-signature report
+    √ A metric or gauge
+    • A registry editor
+
+36. Why investigate rare events as well as top talkers?
+    • Rare activity always proves malware
+    √ Low-frequency activity may reveal outliers hidden by high-volume routine events
+    • High-volume activity can never be malicious
+    • Rare events eliminate the need for baselines
+
+37. What does max_doc_count:5 mean in the lecture's rare_terms example?
+    √ Return rare-term buckets with document counts at or below five
+    • Return only the five highest-volume rules
+    • Search exactly five endpoints
+    • Assign a severity of five to every result
+
+38. A process runs once on a server after a restart. What is the best assessment?
+    • Block it solely because it is rare
+    • Ignore it solely because it happened once
+    • Declare persistence solely because a restart occurred
+    √ Review process, ancestry, timing, and baseline before deciding whether it is suspicious
+
+39. Which index pattern is used for Wazuh alert documents in the module?
+    • wazuh-statistics-*
+    • wazuh-monitoring-*
+    √ wazuh-alerts-*
+    • windows-passwords-*
+
+40. Which workflow best fits investigating suspicious SSH failures across production servers?
+    • Suppress all SSH alerts before checking scope
+    √ Set the time window, filter relevant events, exclude verified noise, group by source and host, then visualize timing
+    • Group all events by color without source filters
+    • Trust the loudest source and investigate only rare usernames

@@ -1,0 +1,242 @@
+MODULE 2 — Advanced Windows Telemetry
+40 Practice Questions
+
+1. Which sequence correctly describes the SIEM processing pipeline?
+    √ Collection → normalization → storage → detection → alerting
+    • Detection → collection → deletion → normalization
+    • Storage → response → collection → normalization
+    • Alerting → collection → certification → storage
+
+2. Which Wazuh component decodes incoming events and applies detection rules?
+    • Wazuh Dashboard
+    • Wazuh Indexer
+    • The analyst's browser
+    √ Wazuh Server
+
+3. Which Wazuh component stores and indexes alerts for historical searches?
+    • Wazuh Agent
+    • Windows Event Collector
+    √ Wazuh Indexer
+    • Sysmon driver
+
+4. Where should an analyst normally place custom Wazuh detection rules?
+    • /var/ossec/logs/ossec.log
+    √ /var/ossec/etc/rules/local_rules.xml
+    • /var/ossec/logs/alerts/alerts.json
+    • The built-in rules directory only
+
+5. What is the role of a Wazuh decoder?
+    √ Extract structured fields from raw events
+    • Assign every event the highest severity
+    • Replace endpoint audit policies
+    • Display dashboards to analysts
+
+6. Which Windows log channel primarily records logons and audited security activity?
+    • Application
+    • System
+    • Setup
+    √ Security
+
+7. Which event pair represents a successful and a failed Windows logon, respectively?
+    • 4625 and 4634
+    • 4688 and 4104
+    √ 4624 and 4625
+    • 4720 and 4726
+
+8. A user session ends. Which Windows Security Event ID records logoff?
+    • 4624
+    √ 4634
+    • 4672
+    • 4776
+
+9. What does Windows Security Event ID 4648 indicate?
+    √ An attempt to log on using explicit credentials
+    • A new local account was created
+    • A process created an outbound connection
+    • A PowerShell script block was logged
+
+10. What does Windows Security Event ID 4672 indicate?
+    • A user was deleted
+    • A file was downloaded
+    • A service crashed
+    √ Special privileges were assigned to a new logon
+
+11. Which event is associated with NTLM credential validation?
+    • 4103
+    • 4720
+    √ 4776
+    • Sysmon 22
+
+12. Which pair indicates account creation and account deletion, respectively?
+    • 4624 and 4625
+    √ 4720 and 4726
+    • 4688 and 4663
+    • 4103 and 4104
+
+13. An account is added to Domain Admins, a security-enabled global group. Which Event ID is most relevant?
+    √ 4728
+    • 4732
+    • 4634
+    • 4104
+
+14. An account is added to the local Administrators group. Which Event ID is most relevant?
+    • 4726
+    • 4776
+    • 4688
+    √ 4732
+
+15. Which mapping of Windows logon types is correct?
+    • 2 = RDP; 3 = Service; 10 = Interactive
+    • 2 = Network; 3 = RDP; 10 = Batch
+    √ 2 = Interactive; 3 = Network; 10 = RemoteInteractive/RDP
+    • 2 = Service; 3 = Unlock; 10 = Network
+
+16. Which logon types normally describe scheduled-task and service logons, respectively?
+    • 2 and 3
+    √ 4 and 5
+    • 7 and 10
+    • 10 and 11
+
+17. Which logon type indicates CachedInteractive authentication, such as an offline laptop using cached credentials?
+    √ 11
+    • 3
+    • 5
+    • 10
+
+18. Many 4625 events are followed by 4624 and 4672 for the same account and source. What is the best assessment?
+    • Proof that the activity is authorized because authentication succeeded
+    • Only a routine logoff sequence
+    • Evidence that no credentials were used
+    √ Possible successful brute force with a privileged logon; investigate context
+
+19. Why can a process-creation detection fail even when the SIEM is functioning?
+    • The Dashboard automatically disables Windows auditing
+    • Every process event is generated regardless of policy
+    √ The endpoint audit policy may not generate the required events
+    • The Indexer generates missing endpoint events retrospectively
+
+20. Which configuration provides useful command-line detail in Windows Security Event ID 4688?
+    • Enable only successful account-logon auditing
+    √ Enable Audit Process Creation and inclusion of command lines in process-creation events
+    • Increase Dashboard refresh frequency
+    • Enable only file-access auditing
+
+21. A SOC wants file-access events such as 4663 for a sensitive folder. What is required?
+    √ Appropriate object-access auditing and a matching SACL on the target
+    • Only a larger Security event log
+    • Only Sysmon DNS logging
+    • Only a successful network logon
+
+22. Which Sysmon Event ID records process creation with parent image, command line, and hashes?
+    • 3
+    • 11
+    • 22
+    √ 1
+
+23. Which Sysmon Event ID links a process to a network connection?
+    • 1
+    • 13
+    √ 3
+    • 5
+
+24. Which Sysmon Event ID records file creation, useful for investigating a dropped payload?
+    • 10
+    √ 11
+    • 7
+    • 22
+
+25. Which mapping of additional Sysmon events is correct?
+    √ 7 = ImageLoad; 8 = CreateRemoteThread; 10 = ProcessAccess
+    • 7 = DNSQuery; 8 = FileCreate; 10 = Logoff
+    • 7 = Logon; 8 = RegistryValueSet; 10 = AccountCreate
+    • 7 = ProcessTerminate; 8 = NetworkConnect; 10 = ScriptBlock
+
+26. Malware sets a Registry Run value. Which Sysmon Event ID best records this change?
+    • 3
+    • 22
+    • 5
+    √ 13
+
+27. Which Sysmon Event ID provides DNS query telemetry?
+    • 11
+    • 13
+    √ 22
+    • 10
+
+28. WINWORD.EXE launches PowerShell with encoded arguments. What is the strongest initial assessment?
+    • Any Office child process proves compromise
+    √ The process ancestry and arguments warrant investigation for document-based execution
+    • Microsoft-signed PowerShell guarantees legitimate activity
+    • Encoded arguments alone identify the exact malware family
+
+29. An attacker renames certutil.exe to svchost32.exe. Which evidence best supports detection?
+    √ OriginalFileName when available, suspicious command-line arguments, and network behavior
+    • Only an image path ending in certutil.exe
+    • Only the process's displayed filename
+    • Only whether the file has a Microsoft signature
+
+30. What do Sysmon XML filters onmatch="include" and onmatch="exclude" mean?
+    • Both settings disable the selected event category
+    • Include logs only errors; exclude logs only successes
+    • Both settings apply only to the Dashboard
+    √ Include logs matching events; exclude logs events other than the matches
+
+31. Sysmon process events arrive, but expected network events do not. What should be checked first?
+    • Whether all process events have severity 15
+    • Whether Security Event ID 4624 is disabled
+    √ Whether NetworkConnect collection and relevant filters are enabled
+    • Whether the analyst changed the browser theme
+
+32. Which PowerShell Event ID records Script Block Logging?
+    • 4103
+    √ 4104
+    • 4688
+    • 4625
+
+33. How do PowerShell Module Logging and Transcription differ?
+    √ 4103 records module/pipeline activity; transcription writes session text to files
+    • 4103 records DNS only; transcription records network packets
+    • Both are Windows Security logon events
+    • Transcription replaces all endpoint process telemetry
+
+34. PowerShell runs an encoded command. Why is Script Block Logging useful?
+    • It guarantees every form of obfuscation is completely removed
+    • It prevents the PowerShell process from starting
+    • It records only the executable's filename
+    √ It can expose decoded script content that is not readable in the process command line
+
+35. If the PowerShell V2 engine is installed and an attacker launches powershell.exe -version 2, what is the best defense?
+    • Rely only on Event ID 4104 from the V2 session
+    • Assume 4688 records the fully decoded script body
+    √ Remove the obsolete engine and detect downgrade attempts using process command lines
+    • Ignore it because older PowerShell cannot execute scripts
+
+36. Why correlate PowerShell 4104 with Sysmon 1 and 3?
+    • To replace all timestamps with ingestion times
+    √ To connect script content with process ancestry and network activity
+    • To prove every PowerShell session is malicious
+    • To avoid checking which host generated the events
+
+37. What is the purpose of a source-initiated Windows Event Forwarding subscription?
+    √ Endpoints forward selected events to a Windows Event Collector using WinRM
+    • The SIEM remotely executes every logged command
+    • Each endpoint stores all enterprise logs locally
+    • The collector creates events missing from endpoint audit logs
+
+38. In the lecture's WEF integration, which channel does the Wazuh agent on the collector read?
+    • ApplicationErrorsOnly
+    • WazuhRules
+    • NetFlow
+    √ ForwardedEvents
+
+39. A laptop remains offline until its local event log wraps. What is the main risk?
+    • WEF automatically recovers every overwritten event
+    • The Indexer can regenerate deleted endpoint records
+    √ Older events may be overwritten before they can be forwarded; increase suitable local log capacity
+    • Offline endpoints cannot generate security events
+
+40. Which combination best describes LOLBin abuse and a layered defense?
+    • A valid signature proves safety; exclude all signed binaries
+    √ Attackers misuse legitimate tools; detect behavior, apply suitable ASR controls, and adapt Sigma rules to the SIEM
+    • Only unsigned files can execute malicious commands; collect hashes only
+    • Sigma rules automatically block every signed binary without conversion

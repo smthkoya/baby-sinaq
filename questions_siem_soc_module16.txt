@@ -1,0 +1,242 @@
+MODULE 16 — Building SOAR Playbooks
+40 Practice Questions
+
+1. What is a SOC playbook?
+    √ A documented response plan defining triggers, investigation, decisions, actions, and records
+    • Only a list of malicious IP addresses
+    • Only a dashboard screenshot
+    • Only an API credential
+
+2. Which four architectural phases are used for phishing triage in the lecture?
+    • Identify → Encrypt → Certify → Archive
+    • Collect → Delete → Notify → Ignore
+    • Respond → Ingest → Recover → Parse
+    √ Ingest → Enrich → Decide → Respond
+
+3. What is the main purpose of the ingestion phase?
+    • Block every sender before inspecting the alert
+    • Calculate reputation without indicator values
+    √ Receive and validate the alert and extract relevant indicators
+    • Close the case before enrichment
+
+4. Which information is useful to extract from a phishing alert?
+    • Only the email's display color
+    √ Sender details, URLs, attachment hashes, and relevant IP addresses
+    • Only the analyst's browser history
+    • Only the total number of endpoints
+
+5. What does optional chaining in alert.data?.email_from help handle?
+    √ A missing data object without immediately throwing a property-access error
+    • An expired API key
+    • A malformed URL in every later operation
+    • Duplicate webhook deliveries
+
+6. Why deduplicate extracted URLs?
+    • Guarantee every remaining URL is malicious
+    • Automatically remove all tracking links safely
+    • Replace URL validation
+    √ Avoid redundant enrichment calls and duplicate work
+
+7. A script calls new URL(u) on a malformed string and then uses filter(Boolean). What is the limitation?
+    • filter(Boolean) catches all exceptions automatically
+    • new URL never throws
+    √ URL parsing may throw before filtering, so failures need explicit handling
+    • Malformed URLs always become empty strings
+
+8. Why distinguish an email sender's address from its underlying sending IP?
+    • They are always interchangeable
+    √ They represent different indicators and can require different enrichment and response decisions
+    • The address proves the exact physical source
+    • An IP lookup validates every part of the message
+
+9. What is the purpose of the nested iocs object in the lecture's extraction example?
+    √ Keep extracted indicators in a consistent structure for downstream nodes
+    • Replace all original alert evidence
+    • Store only the final decision
+    • Guarantee every field contains a valid indicator
+
+10. What should happen if an alert has no usable attachment hash?
+    • Submit an empty hash and interpret failure as benign
+    • Invent a hash from the sender name
+    • Automatically classify the entire email as clean
+    √ Skip the hash-specific lookup and record the missing evidence while processing other valid indicators
+
+11. Which source-to-indicator mapping matches the phishing playbook?
+    • VirusTotal for badge events and URLhaus for NTLM hashes only
+    • AbuseIPDB for attachment contents only
+    √ VirusTotal for file hashes, URLhaus for URLs, AbuseIPDB for IP reputation
+    • All three for plaintext password recovery
+
+12. What is the main benefit of independent enrichment branches?
+    • Guarantee external APIs never fail
+    √ Reduce total enrichment time when execution and service limits permit overlapping work
+    • Remove all need to associate results with their alerts
+    • Make missing indicators irrelevant
+
+13. An email has three distinct URLs, but the lookup uses only iocs.urls[0]. What is the coverage gap?
+    √ Only the first URL is checked unless the workflow explicitly processes the rest
+    • All three URLs are automatically checked by that expression
+    • The array expression checks attachment hashes instead
+    • Only the last URL is checked
+
+14. Why must enrichment branches retain a stable alert identifier when processing multiple alerts?
+    • Increase every score to 100
+    • Avoid using JSON entirely
+    • Make all API responses identical
+    √ Prevent results for different alerts from being merged into the wrong case
+
+15. Which node fits a simple confidence-threshold decision?
+    • Schedule Trigger
+    • Set only
+    √ IF
+    • Email only
+
+16. Which node fits malicious, suspicious, and clean routing?
+    • Wait alone
+    √ Switch
+    • Webhook alone
+    • Merge alone
+
+17. Using the lecture's decision matrix, what is a score of exactly 80?
+    √ Malicious
+    • Suspicious
+    • Clean
+    • Unclassified because 80 belongs to no branch
+
+18. Using the same matrix, what is a score of exactly 40?
+    • Malicious
+    • Clean
+    • Automatically discarded
+    √ Suspicious
+
+19. Using the same matrix, what is a score of 39 with complete valid enrichment?
+    • Suspicious
+    • Malicious
+    √ Clean under the example's policy
+    • An API authentication error
+
+20. What do the lecture's confidence thresholds represent?
+    • A guaranteed probability that the sender is an attacker
+    √ A playbook decision policy requiring validation, not universal proof of maliciousness
+    • A mandatory standard for every SOC
+    • A replacement for all local evidence
+
+21. In the example scoring code, how many points does VirusTotal contribute when vt_positives is 21?
+    √ 40
+    • 20
+    • 10
+    • 21
+
+22. In the same code, how many VirusTotal points are added when vt_positives is exactly 5?
+    • 20
+    • 40
+    • 0
+    √ 10
+
+23. What does Math.min(abuse_score * 0.3, 30) do?
+    • Guarantee every IP is malicious above a raw score of 30
+    • Multiply the total confidence by 30
+    √ Scale the AbuseIPDB score and cap its contribution at 30 points
+    • Replace every missing API response with 30
+
+24. With abuse_score 80, what is its contribution in that formula?
+    • 30
+    √ 24
+    • 80
+    • 8
+
+25. What is the contribution of Wazuh level 15 under Math.min(level / 15 * 10, 10)?
+    √ 10
+    • 15
+    • 30
+    • 100
+
+26. Under the lecture's formula, VT contributes 40, AbuseIPDB contributes 27, URL evidence contributes 20, and Wazuh severity contributes 10. What is the total?
+    • 87
+    • 80
+    • 107
+    √ 97
+
+27. Which action chain fits the malicious branch after scope and authorization checks?
+    • Close the case without evidence
+    • Wait indefinitely without ownership
+    √ Execute approved containment, create a high-priority ticket, notify analysts, and log results
+    • Notify only if a user complains
+
+28. Why should blocking an entire shared email domain require additional review?
+    • A domain block affects only one message by definition
+    √ One malicious sender can share the domain with many legitimate users and services
+    • Shared providers cannot host malicious accounts
+    • A high score guarantees no business impact
+
+29. What is the role of the suspicious branch?
+    √ Gather context, open an investigation, and pause for an analyst's decision
+    • Treat uncertainty as proof of safety
+    • Block all related infrastructure automatically
+    • Discard the alert because it is below 80
+
+30. How does the lecture implement human-in-the-loop approval conceptually?
+    • Assume posting to Slack constitutes approval
+    • Run both approve and reject branches
+    • Close every paused workflow after one minute
+    √ Notify the analyst, pause execution, then resume the relevant run with the approved decision
+
+31. What does an execution-specific resume URL help identify?
+    • Every incident ever handled by the platform
+    • The user's domain password
+    √ The particular paused workflow run to resume
+    • A universal approval for all later alerts
+
+32. Why should approval callbacks be authenticated and validated?
+    • Every request containing action=block is automatically trusted
+    √ A received action value alone does not prove an authorized analyst approved the response
+    • Unique URLs eliminate all need for authorization
+    • Query parameters cannot be modified
+
+33. What should happen when the suspicious branch reaches its four-hour example timeout without approval?
+    √ Escalate to the designated senior analyst or on-call owner
+    • Treat silence as approval to block
+    • Automatically mark the incident clean
+    • Delete the case and execution record
+
+34. What is the right treatment of a reputation API timeout?
+    • Treat the failed lookup as a clean verdict
+    • Retry forever without limits
+    • Discard the original alert
+    √ Retry with bounded backoff, record incomplete enrichment, and route unresolved uncertainty appropriately
+
+35. A failed VirusTotal request produces zero positives. Why must the playbook also track the error?
+    • Every zero proves the file is safe
+    • An error always means the file is malicious
+    √ Zero from missing evidence is not equivalent to a successful benign lookup
+    • A zero score automatically invalidates every other source
+
+36. An API credential stops working. What is the best response?
+    • Continue auto-closing every affected alert
+    √ Route the failure to an error workflow, alert the owner, and restore authorized access
+    • Hardcode a privileged key into notification text
+    • Suppress all errors permanently
+
+37. The ticketing API is unavailable after a blocking action. What should the playbook do?
+    √ Record the actual action, queue failed documentation for recovery, and alert on the failure
+    • Assume blocking also failed without checking
+    • Silently drop the incident
+    • Repeat the block indefinitely until a ticket appears
+
+38. How does the lesson define Mean Time to Triage for this playbook?
+    • Time from attack start to password reset
+    • Time between two IOC-feed updates
+    • Time from ticket closure to the next alert
+    √ Time from webhook receipt to classification decision
+
+39. Which metric compares paused approval timeouts with the total relevant approval cases?
+    • File entropy
+    • Unique destination count
+    √ Escalation Timeout Rate
+    • Mean Time to Detect
+
+40. Which practice supports safe playbook changes and ongoing improvement?
+    • Edit production only and keep no earlier version
+    √ Version exports, test normal/error/boundary cases in staging, track overrides and failures, and retain rollback options
+    • Judge quality only by the number of nodes
+    • Maximize auto-closure regardless of incomplete evidence

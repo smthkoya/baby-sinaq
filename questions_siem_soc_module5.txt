@@ -1,0 +1,242 @@
+MODULE 5 — Malware Behavior & Persistence
+40 Practice Questions
+
+1. Which malware category primarily denies availability through encryption or destruction?
+    √ Ransomware or wipers
+    • InfoStealers only
+    • Password managers
+    • Inventory agents
+
+2. Which category primarily establishes persistent interactive remote control?
+    • A file archiver
+    • A vulnerability database
+    • A log-forwarding agent by definition
+    √ A Remote Access Trojan (RAT)
+
+3. Which distinction between InfoStealers and rootkits is correct?
+    • InfoStealers only encrypt disks; rootkits only send phishing emails
+    • Both are backup mechanisms
+    √ InfoStealers steal credentials or cookies; rootkits conceal activity through system manipulation
+    • Rootkits only read browser history
+
+4. What distinguishes static from dynamic malware analysis?
+    • Static requires production execution
+    √ Static examines without execution; dynamic observes execution in an isolated monitored environment
+    • Dynamic only checks hashes
+    • Both require running samples on a normal workstation
+
+5. Which tools fit static triage in the lecture?
+    √ PEStudio and Strings/FLOSS
+    • Autoruns for packet decryption
+    • journalctl for Windows signatures
+    • Task Manager alone for offline strings
+
+6. A file has high entropy and unusual imports. What is best?
+    • Declare ransomware from entropy alone
+    • Assume compression cannot raise entropy
+    • Identify the attacker from imports alone
+    √ Investigate possible packing or obfuscation without treating these properties as proof
+
+7. What is malware persistence for?
+    • Guaranteeing unique hashes
+    • Encrypting all network metadata
+    √ Maintaining or regaining execution across reboot or user logon
+    • Eliminating the need for initial execution
+
+8. What distinguishes HKCU and HKLM Run keys?
+    • HKCU always applies to everyone
+    √ Users can commonly modify their own HKCU entries; HKLM changes generally require elevation
+    • Both always require Domain Admin
+    • Neither can launch programs at logon
+
+9. What is a typical purpose of RunOnce?
+    √ One-time execution at the next applicable logon
+    • Execution every second indefinitely
+    • Storage of a TGT
+    • Disabling process auditing
+
+10. A WindowsDefender Run value points to C:\Users\Public\svchost.exe. What is best?
+    • Trust the security-product name
+    • Delete all Run entries without evidence review
+    • Assume Users\Public is always safe
+    √ Validate the path, writer, signature, and business context
+
+11. Userinit contains the expected executable plus an unusual additional executable. Why investigate?
+    • Any comma alone proves compromise
+    • Userinit only changes routing
+    √ The added path may launch attacker code at logon
+    • It proves a password was cracked
+
+12. Which telemetry can reveal registry-value persistence changes?
+    • Sysmon 3 and Security 4634 only
+    √ Sysmon 13 and Security 4657 with appropriate auditing
+    • NetFlow only
+    • DNS responses only
+
+13. Which Sysmon field identifies the registry value modified in RegistryValueSet?
+    √ targetObject
+    • destinationIp
+    • parentCommandLine only
+    • serviceFileName
+
+14. Approved updaters repeatedly trigger a Run-key rule. What is best?
+    • Exclude all signed processes globally
+    • Stop monitoring HKCU
+    • Suppress every persistence alert
+    √ Validate normal updater behavior and correlate writes with paths and process context
+
+15. Which scheduled-task properties matter most during triage?
+    • Friendly name alone
+    • Dashboard appearance
+    √ Action, trigger, execution account, and privileges
+    • DNS server address alone
+
+16. A task runs a ProgramData binary every five minutes as SYSTEM. What is best?
+    • Trust it because ProgramData is standard
+    √ Investigate possible persistence using creator, binary, privileges, and automation context
+    • Assume creating it requires no special rights
+    • Treat it as a logoff event
+
+17. Which tool enumerates many Windows autostart locations?
+    √ Sysinternals Autoruns
+    • A NetFlow exporter
+    • Windows Event Collector only
+    • A checksum calculator
+
+18. Why use signature verification and Hide Windows Entries in Autoruns?
+    • Prove all remaining items are malicious
+    • Prove signed entries cannot be abused
+    • Restore all system files automatically
+    √ Reduce routine entries for review while still validating remaining items
+
+19. Which Windows System Event ID records new service installation?
+    • 4769
+    • 4104
+    √ 7045
+    • 4625
+
+20. A normal-looking service name points to C:\Windows\Temp\payload.exe. What matters most?
+    • Name alone proves Windows ownership
+    √ Binary path, execution account, creator, and change authorization
+    • Temp binaries cannot execute
+    • The description replaces binary inspection
+
+21. Which statement about service persistence is accurate?
+    √ An auto-start service can persist, potentially as SYSTEM depending on configuration
+    • Every service runs as an unprivileged user
+    • Service creation never needs elevation
+    • A reboot automatically removes service persistence
+
+22. What is DLL search-order hijacking?
+    • Replacing every process command line
+    • Changing an executable hash through DNS
+    • The SIEM executing DLLs during indexing
+    √ A vulnerable program loads an attacker DLL from a location considered during DLL resolution
+
+23. A signed app loads an unexpected unsigned DLL from a writable directory. What is best?
+    • Trust all code loaded by signed executables
+    • Assume unsigned DLLs cannot execute
+    √ Investigate hijacking or side-loading; the app signature does not prove DLL safety
+    • Identify malware conclusively from unsigned status alone
+
+24. Which telemetry best supports DLL-load investigation?
+    • Sysmon 22 with DNS response code only
+    √ Sysmon 7 with imageLoaded, image, and signature data
+    • Sysmon 13 with Run-key name only
+    • Sysmon 5 with termination time only
+
+25. An application requests a nonexistent DLL and an attacker supplies it. What is this?
+    √ Phantom DLL hijacking
+    • AS-REP Roasting
+    • Pass-the-Hash
+    • MFA fatigue
+
+26. Which controls reduce DLL hijacking risk?
+    • Allow every DLL beside a signed executable
+    • Disable DLL telemetry
+    • Trust Windows-like filenames
+    √ Restrict application-directory writes and apply suitable code-trust and DLL-loading controls
+
+27. How does Base64 differ from encryption?
+    • It provides AES-equivalent confidentiality
+    • It requires the victim's password
+    √ It is reversible formatting without a secret key
+    • It represents English text only
+
+28. PowerShell uses -EncodedCommand. What is best?
+    • Declare malware from Base64 alone
+    √ Decode safely and correlate content, ancestry, user, and execution context
+    • Ignore all encoding used by legitimate tools
+    • Execute it on the normal analyst workstation
+
+29. Which encoding is commonly expected after Base64-decoding Windows PowerShell -EncodedCommand?
+    √ UTF-16LE
+    • ASCII after mandatory AES decryption
+    • UTF-8 only with no Base64 step
+    • PCAP binary format
+
+30. Why do character casting and string concatenation challenge keyword rules?
+    • They stop all script execution
+    • They remove the need for a process
+    • They guarantee no telemetry exists
+    √ They can construct commands at runtime without preserving the same visible strings
+
+31. Why combine 4104 with process and network telemetry?
+    • 4104 reconstructs every possible obfuscation perfectly
+    • Only process filenames matter after logging is enabled
+    √ Script logging can expose additional content while other events show ancestry and behavior
+    • Network events always include full plaintext scripts
+
+32. What makes XOR convenient for simple payload scrambling?
+    • It requires distinct encryption and decryption keys
+    √ Applying XOR again with the same key restores the bytes
+    • One-byte XOR keys cannot be brute-forced
+    • It prevents memory inspection
+
+33. How can obfuscation weaken static signatures?
+    √ Stored bytes differ from recognizable patterns until decoding
+    • Encoded payloads cannot execute
+    • Encoded files are excluded from all memory monitoring
+    • The OS deletes all evidence before decoding
+
+34. Which combination strengthens an in-memory loader hypothesis?
+    • Entropy alone
+    • A routine unlock alone
+    • A successful DNS response alone
+    √ Unusual memory or cross-process activity correlated with suspicious ancestry and execution
+
+35. What is CyberChef useful for in suspicious-string analysis?
+    • Proving the author's identity
+    • Running decoded payloads safely on production hosts
+    √ Applying Base64 decoding and testing simple XOR transformations
+    • Replacing endpoint and network evidence
+
+36. What is a C2 beacon for?
+    • Certifying compliance
+    √ Contacting attacker infrastructure for tasks or status reporting
+    • Guaranteeing persistence without an autostart mechanism
+    • Keeping trusted Windows log backups
+
+37. What does jitter change?
+    √ Connection intervals vary around a configured timing pattern
+    • All traffic becomes plaintext
+    • Destination IPs become passwords
+    • Connections lose all timestamps
+
+38. Which combination supports possible HTTPS beaconing?
+    • Port 443 alone
+    • One HTTP 200 from a business site
+    • Browser connection count without time scope
+    √ Repeated low-volume connections to an unusual destination with suspicious process and timing context
+
+39. Long encoded-looking DNS names and unusual TXT requests appear repeatedly. What is best?
+    • Treat TXT alone as proof
+    • Assume DNS cannot carry attacker data
+    √ Investigate possible DNS C2 or tunneling against legitimate application baselines
+    • Treat every long subdomain as malicious
+
+40. Callbacks resume after logon despite terminating the original malware process. What is best?
+    • Keep killing the process without checking autostarts
+    √ Preserve evidence, investigate remaining persistence, remove validated malicious autostarts, and contain C2
+    • Assume blocking one IP permanently removes infection
+    • Close the incident after the original process terminates

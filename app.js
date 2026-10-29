@@ -2,6 +2,68 @@ import { loadQuizData } from "./data.js";
 import { t, applyStaticTranslations, toggleLang } from "./i18n.js";
 
 const MODULE_SUBJECTS = {
+  siem_soc: [
+    {
+      "file": "questions_siem_soc_module1.txt",
+      "label": "Module 1 — SOC Structure and Defense Standards"
+    },
+    {
+      "file": "questions_siem_soc_module2.txt",
+      "label": "Module 2 — Advanced Windows Telemetry"
+    },
+    {
+      "file": "questions_siem_soc_module3.txt",
+      "label": "Module 3 — Linux & Network Visibility"
+    },
+    {
+      "file": "questions_siem_soc_module4.txt",
+      "label": "Module 4 — Credential & Identity Attacks"
+    },
+    {
+      "file": "questions_siem_soc_module5.txt",
+      "label": "Module 5 — Malware Behavior & Persistence"
+    },
+    {
+      "file": "questions_siem_soc_module6.txt",
+      "label": "Module 6 — EDR Operation & Response"
+    },
+    {
+      "file": "questions_siem_soc_module7.txt",
+      "label": "Module 7 — Log Parsing & Normalization"
+    },
+    {
+      "file": "questions_siem_soc_module8.txt",
+      "label": "Module 8 — Search Language & Logic"
+    },
+    {
+      "file": "questions_siem_soc_module9.txt",
+      "label": "Module 9 — Advanced Correlation Logic"
+    },
+    {
+      "file": "questions_siem_soc_module11.txt",
+      "label": "Module 11 — Threat Hunting: Hypothesis Driven"
+    },
+    {
+      "file": "questions_siem_soc_module12.txt",
+      "label": "Module 12 — Hunting Web Shells & C2"
+    },
+    {
+      "file": "questions_siem_soc_module13.txt",
+      "label": "Module 13 — Hunting Lateral Movement"
+    },
+    {
+      "file": "questions_siem_soc_module14.txt",
+      "label": "Module 14 — Threat Intelligence Integration"
+    },
+    {
+      "file": "questions_siem_soc_module15.txt",
+      "label": "Module 15 — SOAR Basics with n8n"
+    },
+    {
+      "file": "questions_siem_soc_module16.txt",
+      "label": "Module 16 — Building SOAR Playbooks"
+    }
+  ],
   incident_response: [
     { file: "questions_ir_lecture1.txt", label: "Lecture 1" },
     { file: "questions_ir_lecture2.txt", label: "Lecture 2" },

@@ -1,0 +1,242 @@
+MODULE 6 — EDR Operation & Response
+40 Practice Questions
+
+1. What is the main detection philosophy shift from traditional signature-focused AV to EDR?
+    √ From identifying known file patterns toward continuously analyzing runtime behavior
+    • From collecting telemetry toward storing passwords
+    • From endpoint analysis toward annual audits only
+    • From containment toward disabling all endpoint controls
+
+2. Which distinction between EDR and XDR is correct?
+    • XDR eliminates the need for endpoint visibility
+    • EDR only scans email attachments
+    • XDR is simply a new filename for antivirus signatures
+    √ EDR focuses on endpoints; XDR correlates endpoint, identity, network, and cloud signals
+
+3. Why can behavioral endpoint monitoring detect attacks missed by file-hash matching?
+    • Every malicious action creates a unique known file
+    • Hash matching automatically reconstructs process ancestry
+    √ Legitimate tools and in-memory execution can produce suspicious behavior without a known malicious file hash
+    • EDR requires all payloads to be written to disk
+
+4. What is user-mode API hooking used for in the lecture's EDR architecture?
+    • Create Kerberos service tickets
+    √ Observe or intercept selected application API calls
+    • Normalize firewall field names
+    • Replace all kernel telemetry
+
+5. Why combine user-mode observation with kernel telemetry?
+    √ Multiple observation layers reduce dependence on one mechanism that an attacker might bypass
+    • Kernel observation guarantees every attack is prevented
+    • User-mode hooks automatically capture all cloud identity events
+    • Both layers exist only to scan downloaded file hashes
+
+6. Which EDR component is particularly relevant to observing file-system operations?
+    • A browser cookie store
+    • A Kerberos TGS
+    • An ATT&CK Navigator layer
+    √ A file-system minifilter driver
+
+7. What is ETW used for in endpoint visibility?
+    • Decrypting every TLS session
+    • Issuing MFA tokens
+    √ Providing Windows event telemetry that security tools can consume
+    • Storing every executable's plaintext source code
+
+8. How does the lecture distinguish Wazuh from a traditional inline-hooking commercial EDR?
+    • Wazuh automatically hooks every API in every process
+    √ Wazuh relies heavily on collected telemetry and uses configured Active Response scripts
+    • Wazuh requires no endpoint data source
+    • Wazuh can only display network packets
+
+9. Which Windows and Linux sources support the lecture's Wazuh endpoint coverage?
+    √ Sysmon and auditd
+    • Only browser history and DNS caches
+    • Only payment-card audit reports
+    • Only the SOC staffing calendar
+
+10. What does Wazuh File Integrity Monitoring primarily compare?
+    • Only the number of running browsers
+    • Only network destination countries
+    • Only an account's most recent MFA method
+    √ File hashes and relevant attributes against a recorded baseline
+
+11. Why is a trusted initial FIM baseline important?
+    • Any baseline automatically removes existing malware
+    • A baseline prevents every future modification
+    √ Later comparisons depend on whether the recorded starting state is legitimate
+    • FIM does not use previously recorded file state
+
+12. Which mechanisms support real-time directory-change monitoring in the lecture?
+    • WinRM on Linux and SSH on Windows
+    √ inotify on Linux and ReadDirectoryChangesW on Windows
+    • Only periodic manual screenshots
+    • Only DNS TXT lookups
+
+13. What is the purpose of Rootcheck in the module?
+    √ Look for rootkit indicators and system anomalies using consistency and signature checks
+    • Request Kerberos tickets
+    • Replace all malware sandboxing
+    • Encrypt the audit database
+
+14. Which finding best fits Security Configuration Assessment (SCA)?
+    • A process opens a TCP connection
+    • A user closes a browser tab
+    • A service ticket is issued using RC4
+    √ SSH settings violate an approved hardening baseline
+
+15. Which mapping correctly distinguishes Wazuh scanning functions?
+    • FIM checks MFA fatigue; Rootcheck stores PCAP; SCA issues tickets
+    • All three only check executable filenames
+    √ FIM checks integrity changes; Rootcheck checks anomalies; SCA checks configuration compliance
+    • All three are names for the same firewall script
+
+16. What is Wazuh Active Response?
+    • A guarantee that every alert is malicious
+    √ An engine that invokes configured response programs when matching alerts trigger
+    • A replacement for endpoint log collection
+    • A database containing every attacker IP
+
+17. What is the role of the command definition in Active Response configuration?
+    √ Identify the response executable and its relevant settings
+    • Define the source log's regex only
+    • Set the browser's default time picker
+    • Create a new domain account
+
+18. What does the active-response configuration block specify?
+    • Only the analyst's dashboard layout
+    • Only the endpoint's CPU model
+    • Only the threat-intelligence feed's author
+    √ Which command to trigger, under what alert conditions, and where it should run
+
+19. In the lecture's example, what does location local mean for a manager-triggered response?
+    • Run only on the analyst's laptop
+    • Run on every internet-facing server
+    √ Run on the agent associated with the triggering alert
+    • Run on the external attacker's host
+
+20. How does a response script receive the triggering alert in the described pipeline?
+    • As a screenshot pasted into a browser
+    √ As JSON through standard input
+    • Only as a plaintext password
+    • Only as a packet capture attachment
+
+21. What does the standard firewall-drop response principally do?
+    √ Block traffic associated with an IP using the host firewall
+    • Automatically implement complete host isolation in every environment
+    • Delete every malicious persistence entry
+    • Recover encrypted files from backup
+
+22. Why is an ordinary firewall-drop action not automatically equivalent to full host isolation?
+    • Blocking one IP disables every network interface
+    • The command always resets the whole firewall
+    • Full isolation means deleting all endpoint logs
+    √ An IP-specific block may leave other destinations and lateral paths reachable
+
+23. What is the purpose of a timeout in a suitable stateful Active Response?
+    • Guarantee the incident is resolved when the timer expires
+    • Delete evidence after a fixed interval
+    √ Allow a temporary action to be reversed through supported rollback logic
+    • Permanently disable the agent
+
+24. What must a custom Active Response script handle correctly?
+    • Only a friendly filename
+    √ The alert input, supported action protocol, execution permissions, and intended response logic
+    • Only the SOC manager's email address
+    • Only a new dashboard color
+
+25. A response alert says an IP was blocked. How should the analyst verify the outcome?
+    √ Check response logs, actual firewall state, and expected connectivity effects
+    • Assume the notification proves execution succeeded
+    • Wait for a user complaint as the only check
+    • Delete the original alert
+
+26. Which Linux agent log is useful for reviewing Active Response execution?
+    • /etc/ssh/authorized_keys
+    • /var/log/boot-only.pcap
+    • /home/analyst/dashboard.png
+    √ /var/ossec/logs/active-responses.log
+
+27. What is an important design requirement for host isolation?
+    • Block the agent first and assume remote control will remain available
+    • Allow every corporate destination without review
+    √ Retain the explicitly required management or forensic channel where the containment plan permits
+    • Avoid recording isolation actions
+
+28. Why does terminating one malicious process not complete remediation?
+    • Process termination automatically restores every modified file
+    √ Persistence, related processes, stolen credentials, or lateral movement may remain
+    • Killing a process invalidates all cloud sessions
+    • Process termination proves the initial alert was false
+
+29. What information best supports an IR handoff after endpoint containment?
+    √ Timeline, triggering rules, process ancestry, network activity, affected assets, and actions taken
+    • Only the alert's color
+    • Only the user's job title
+    • Only a screenshot of the dashboard homepage
+
+30. Why consider evidence preservation when selecting containment actions?
+    • Evidence preservation always requires delaying urgent containment indefinitely
+    • Isolation automatically creates a complete memory image
+    • A SIEM can regenerate any missing memory contents
+    √ Killing processes or cutting access can destroy volatile evidence or interrupt collection
+
+31. Which process chain most strongly warrants investigating document-based execution?
+    • explorer.exe → an expected browser
+    • services.exe → an expected service
+    √ WINWORD.EXE → cmd.exe → powershell.exe
+    • winlogon.exe → userinit.exe → explorer.exe
+
+32. A process named svchost.exe has an unusual parent and runs from a user-writable directory. What is best?
+    • Trust the familiar filename
+    √ Validate its full path, hash, ancestry, and related behavior
+    • Declare every svchost.exe instance malicious
+    • Ignore it if its process ID is low
+
+33. What is process hollowing in the lecture?
+    √ Starting a legitimate process suspended, replacing its in-memory code, and resuming execution
+    • Encoding a script as Base64 only
+    • Clearing a DNS cache
+    • Deleting a user account
+
+34. Which Sysmon pairing supports investigating injection and process tampering?
+    • Event 22 for service installation and Event 13 for logoff
+    • Event 3 for account creation and Event 5 for registry writes
+    • Event 11 for MFA approval and Event 1 for DNS only
+    √ Event 8 for CreateRemoteThread and Event 25 for ProcessTampering
+
+35. What is API unhooking intended to accomplish?
+    • Disable all kernel observations automatically
+    • Decrypt the domain's directory database
+    √ Remove or bypass monitoring modifications in user-mode code
+    • Replace the firewall's source-IP field
+
+36. What is the goal of direct syscalls in the EDR evasion examples?
+    • Guarantee invisibility to every kernel-based sensor
+    √ Bypass monitored user-mode API paths while invoking kernel services
+    • Avoid all operating-system interaction
+    • Prevent process execution from occurring
+
+37. What does BYOVD mean in the module?
+    √ Abuse a legitimately signed but vulnerable driver to gain powerful kernel capabilities
+    • Use a browser extension to parse JSON
+    • Forward logs to an external syslog server
+    • Install any unsigned text file as a task
+
+38. An EDR icon remains visible after suspected driver abuse. What should the SOC verify?
+    • Only whether the icon is the expected color
+    • Assume the icon proves all protections are functioning
+    • Ignore the host until the next annual audit
+    √ Actual sensor health, telemetry continuity, and tamper indicators
+
+39. An approved administrator uses PsExec during a verified maintenance window. The rule correctly detects the behavior. How is this described in the module?
+    • Confirmed malicious lateral movement solely because PsExec ran
+    • A false negative because the rule fired
+    √ A benign true positive requiring context-sensitive handling
+    • Proof that PsExec should never be monitored
+
+40. What is the best approach to repeated legitimate detections?
+    • Suppress the entire rule globally without review
+    √ Validate context and scope exceptions narrowly by host, user, path, or verified identity while retaining malicious-case coverage
+    • Trust every matching filename
+    • Treat a changed hash alone as conclusive proof of malware

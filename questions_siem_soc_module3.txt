@@ -1,0 +1,212 @@
+MODULE 3 — Linux & Network Visibility
+35 Practice Questions
+
+1. Which comparison between traditional Linux syslog files and the systemd journal is most accurate?
+    √ Syslog commonly routes messages to text files; journald stores structured binary journal data
+    • Both always store only packet payloads
+    • Journald is readable only with a web browser
+    • Syslog records only authentication and cannot route other facilities
+
+2. Which Linux files commonly contain SSH authentication and sudo messages?
+    • /etc/hosts or /etc/resolv.conf
+    • /proc/cpuinfo or /proc/meminfo
+    • /var/log/suricata/eve.json only
+    √ /var/log/auth.log or /var/log/secure
+
+3. Which command follows live journal messages for the sshd unit on a system using that unit name?
+    • cat /var/log/journal/*
+    • aureport -au
+    √ journalctl -u sshd -f
+    • tcpdump -u sshd
+
+4. Which journalctl option produces JSON output for structured processing?
+    • -f json
+    √ -o json
+    • -u json
+    • --pcap
+
+5. Which component provides Linux kernel auditing of system calls and watched file access?
+    √ auditd and the Linux Audit Framework
+    • The SSH known_hosts file
+    • A NetFlow collector alone
+    • The browser's certificate store
+
+6. Where are Linux audit records commonly written?
+    • /etc/ssh/known_hosts
+    • /var/log/wazuh-dashboard.log only
+    • /home/auditd/packets.pcap
+    √ /var/log/audit/audit.log
+
+7. Why must Linux audit rules be planned carefully?
+    • They automatically record every possible action without configuration
+    • They replace all authentication logs
+    √ They determine which relevant system calls and file activities are captured
+    • They control only the appearance of SIEM dashboards
+
+8. Which tool is best suited to finding detailed Linux audit events by key, user, or process?
+    • aureport only
+    √ ausearch
+    • Wireshark only
+    • wecutil
+
+9. Which tool is best suited to generating summaries from Linux audit records?
+    √ aureport
+    • journalctl -f only
+    • iptables-nft
+    • Get-WinEvent
+
+10. Which audit event data most directly supports investigating execution of whoami or id after an SSH login?
+    • Only total interface byte counters
+    • Only a list of DNS resolver addresses
+    • Only an unchanged file hash
+    √ System-call execution records such as execve with user and process context
+
+11. Which remote syslog port mapping is commonly used in the lecture?
+    • UDP 22 for syslog; TCP 443 for all audit records
+    • TCP 1514 for SSH; UDP 5985 for TLS syslog
+    √ UDP/TCP 514 for syslog; TCP 6514 for syslog over TLS
+    • TCP 3389 for syslog; UDP 53 for journald
+
+12. What distinguishes full packet capture from typical flow telemetry?
+    • Flow telemetry always contains full file contents
+    √ PCAP can retain packet bytes and payloads; flow telemetry summarizes communications
+    • PCAP records only source IP addresses
+    • Both necessarily decrypt HTTPS payloads
+
+13. A SOC investigates a possible transfer from four months ago. Which source is often more practical to retain for that period?
+    √ NetFlow/IPFIX because flow metadata usually requires much less storage than full PCAP
+    • A live packet capture started today
+    • Only the endpoint's current DNS cache
+    • Full PCAP because payloads are always cheaper to store
+
+14. Which fields form a typical network flow five-tuple?
+    • Username, password, file hash, process name, and hostname
+    • Timestamp, byte count, packet count, duration, and severity
+    • DNS name, certificate issuer, HTTP path, cookie, and user agent
+    √ Source IP, destination IP, source port, destination port, and protocol
+
+15. A SOC has full PCAP for an HTTPS connection but no session keys or decryption capability. What is the main limitation?
+    • All connection metadata is necessarily encrypted
+    • The capture automatically reveals the exact commands
+    √ Encrypted application payloads generally cannot be read directly
+    • The capture proves the destination is harmless
+
+16. Which telemetry best supports a hypothesis of large-volume data exfiltration?
+    • Only a count of local user accounts
+    √ An unusual outbound flow with high byte counts to an unexpected destination
+    • A routine service-start message alone
+    • The current system wallpaper
+
+17. An endpoint contacts one external destination at regular intervals. What should the analyst do?
+    √ Investigate possible beaconing and compare with scheduled legitimate activity
+    • Declare confirmed C2 based only on periodicity
+    • Ignore the pattern because HTTPS cannot carry C2
+    • Assume every periodic connection is a backup
+
+18. Which statement about flow timing is most important for correlation?
+    • The SIEM ingestion timestamp always equals connection start time
+    • Every flow is exported immediately with no buffering
+    • Flow timestamps cannot support any investigation
+    √ Flow export may be delayed, so use the underlying event timing and appropriate correlation windows
+
+19. Which sources in the module supply connection metadata and IDS alert data, respectively?
+    • Windows Security and PowerShell transcripts
+    • authorized_keys and known_hosts
+    √ Zeek conn.log and Suricata eve.json
+    • aureport and the Dashboard homepage
+
+20. What is a major advantage of nftables compared with traditional separate iptables tools?
+    • It automatically authenticates all SSH users
+    √ It supports unified IPv4/IPv6 filtering and efficient sets and maps
+    • It stores full packet payloads in every rule
+    • It replaces the need for network monitoring
+
+21. What is the role of iptables-nft?
+    √ Translate compatible iptables commands to the nftables backend
+    • Decrypt SSH sessions
+    • Forward Windows Event Logs
+    • Generate Linux audit summaries
+
+22. What does a default-deny host firewall policy mean?
+    • Allow all internal traffic regardless of host role
+    • Deny logging while allowing all connections
+    • Block only addresses already listed in threat intelligence
+    √ Allow explicitly required traffic and deny traffic that is not allowed
+
+23. A host log shows IN= OUT=eth0 SRC=10.0.5.50 DST=203.0.113.45 PROTO=TCP DPT=443 SYN. What does this suggest in the lecture's host-output context?
+    • An external user completed an RDP login
+    • A successful file transfer is confirmed
+    √ The local host attempted to initiate an outbound TCP connection to destination port 443
+    • The local host received a DNS response on port 53
+
+24. A firewall rule logs a packet and then drops it. What can the SOC conclude?
+    • The attacker successfully downloaded a file
+    √ That packet was blocked; the log alone does not prove successful application communication
+    • The destination executed the requested command
+    • Every packet from the source reached the application
+
+25. Why should analysts avoid relying only on firewall DROP logs?
+    √ Allowed malicious traffic may be absent; correlate with flow and endpoint telemetry
+    • DROP logs contain every successful connection and payload
+    • Blocked packets prove the host is uncompromised
+    • Firewall logs automatically include all process command lines
+
+26. Many dropped attempts from one source target numerous destination ports in a short window. Which hypothesis best fits?
+    • Confirmed successful SSH authentication
+    • A file integrity baseline update
+    • A routine PowerShell module import
+    √ Possible port scanning or reconnaissance
+
+27. What does an SSH log line beginning 'Accepted publickey for admin from 10.0.5.12' establish?
+    • The user necessarily typed an approved password
+    • The private key could not have been stolen
+    √ Public-key authentication succeeded; authorization and legitimacy still require context
+    • The source is safe because it has a private IP address
+
+28. An attacker steals id_rsa on a web server and uses it to access a payroll database. Which detection is strongest?
+    • Alert only on failed password authentication
+    √ Baseline host roles and investigate unexpected internal SSH from the web server
+    • Trust every successful public-key login
+    • Block all public-key authentication as the only possible defense
+
+29. Which SSH files serve different trust purposes?
+    √ known_hosts stores recognized server keys; authorized_keys lists keys accepted for user access
+    • known_hosts stores user passwords; authorized_keys stores packet captures
+    • Both files store only private keys
+    • authorized_keys is the central SIEM alert database
+
+30. Why is an unexpected addition to a user's authorized_keys important?
+    • It proves the system kernel has crashed
+    • It disables all existing authentication automatically
+    • It is only a cosmetic change to the terminal
+    √ It may provide persistent SSH access and should be correlated with change and login context
+
+31. What risk can SSH agent forwarding create on a compromised intermediate host?
+    • It necessarily reveals the plaintext private key in every auth.log entry
+    • It prevents all lateral movement
+    √ An attacker may abuse the forwarded agent to authenticate onward while it is accessible
+    • It forces every onward connection to use a password
+
+32. A SOC suspects SSH tunneling but sees no relevant forwarding detail in its logs. What is the best next step?
+    • Conclude that tunneling did not occur
+    √ Verify SSH logging configuration and available telemetry for that implementation
+    • Assume firewall drops contain the complete tunnel contents
+    • Disable all audit collection to reduce noise
+
+33. Many SSH failures are followed by a successful login from the same source. What is the best assessment?
+    √ A high-priority possible successful credential attack requiring correlation and validation
+    • Definitive proof the successful session is legitimate
+    • Only evidence of a network connectivity failure
+    • A reason to discard the earlier failures
+
+34. What is a Wazuh CDB list used for in the Linux/network examples?
+    • Reconstruct encrypted packet payloads
+    • Replace all auditd rules
+    • Store an interactive recording of every SSH session
+    √ Match decoded event fields against stored indicators such as suspicious IPs or key fingerprints
+
+35. Why can matching only known malicious IP addresses miss an intrusion?
+    • Every malicious destination is permanently listed before use
+    • IP reputation identifies the exact human attacker
+    √ Attackers may use new infrastructure or compromised trusted hosts, so behavioral detection is also needed
+    • Known-indicator matching cannot be combined with other telemetry

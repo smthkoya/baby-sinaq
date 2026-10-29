@@ -1,0 +1,242 @@
+MODULE 12 — Hunting Web Shells & C2
+40 Practice Questions
+
+1. What is a web shell?
+    √ A server-side script that provides unauthorized remote command capability through web requests
+    • A browser's normal command history
+    • A firewall rule allowing HTTPS
+    • A database of valid user passwords
+
+2. Why do web shells commonly use HTTP or HTTPS?
+    • Web protocols prevent all forensic analysis
+    • They automatically bypass every access control
+    • A SIEM cannot collect web access logs
+    √ Their requests can blend into ordinary web-server traffic
+
+3. Which sequence best describes a typical web-shell attack?
+    • Backup → patch → reboot → certify
+    • Authenticate → change password → close sessions
+    √ Exploit or upload → write script → request script → execute commands
+    • Capture packets → delete logs → install antivirus
+
+4. A server-side script passes a request parameter directly to an operating-system command function. What is the concern?
+    • The request changes only the user's local browser
+    √ Request-controlled input may cause command execution on the server
+    • The script can only return a static image
+    • The request automatically requires Domain Admin approval
+
+5. A command executed through a web shell returns www-data. What does this most directly indicate?
+    √ The command ran under that web-service account's context
+    • The attacker necessarily has root privileges
+    • The server is a Windows domain controller
+    • The request could not execute server-side code
+
+6. Which MITRE ATT&CK technique identifies web shells in the lecture?
+    • T1558.003
+    • T1003.006
+    • T1621
+    √ T1505.003
+
+7. Which monitoring capability best detects an unexpected PHP file written into a web root?
+    • Only RDP authentication logs
+    • Only workstation DNS cache entries
+    √ File Integrity Monitoring of the web directory
+    • Only an unrelated firewall's packet counters
+
+8. Which directories are web-root examples in the lecture?
+    • /etc/ssh and C:\Windows\NTDS
+    √ /var/www/html and C:\inetpub\wwwroot
+    • /var/log/audit and C:\PSTranscripts
+    • /proc and C:\Windows\System32\Tasks
+
+9. A short-named PHP script with obfuscated content appears unexpectedly. What is the strongest follow-up?
+    √ Review content, deployment context, HTTP access, and related process activity
+    • Check whether its filename is alphabetically first
+    • Check only whether the homepage is online
+    • Assume every short script name proves malware
+
+10. Why can legitimate deployments trigger web-root FIM alerts?
+    • FIM only detects malicious writes
+    • Deployment tools cannot write PHP files
+    • Every new file in a web root is a web shell
+    √ CMS updates and release tools also create or modify server-side files
+
+11. What is the best approach to deployment-related FIM noise?
+    • Exclude the entire web root permanently
+    • Trust every file written by the service account
+    √ Validate expected changes and use narrowly scoped exceptions while retaining suspicious-write coverage
+    • Disable all integrity monitoring on web servers
+
+12. Which process relationship most strongly warrants web-shell investigation?
+    • A browser spawning an expected renderer
+    √ A web-server worker spawning a command interpreter unexpectedly
+    • A backup agent running an approved copy operation
+    • A print service creating a spool file
+
+13. Which Windows telemetry best shows w3wp.exe launching cmd.exe?
+    √ Process-creation events containing parent and child images
+    • File hashes without execution context
+    • DNS response codes alone
+    • HTTP status codes without process telemetry
+
+14. Which Linux source is appropriate for investigating a web worker executing sh or bash?
+    • Windows-only Sysmon channel as the sole source
+    • Only DNS MX records
+    • Only a list of package repository names
+    √ auditd execution telemetry with process ancestry and user context
+
+15. Which combination gives stronger evidence of web-shell activity than either signal alone?
+    • Two routine successful logins
+    • A backup completion and certificate renewal
+    √ A new server-side script plus related web-worker command execution on the same host
+    • A static-image download and printer status event
+
+16. Which correlation key is essential when linking a FIM file write and a web-worker process event?
+    • Only the external client's source IP
+    √ The affected host or agent, with time and causal context
+    • Only the rule's severity
+    • Only the script's filename across the entire fleet
+
+17. Why must a claimed 'file creation then execution' correlation be checked beyond its description?
+    √ The implemented logic must actually enforce the earlier event, host linkage, and time window
+    • A description automatically enforces every named stage
+    • A timeframe alone proves both events occurred
+    • Any two critical alerts necessarily belong to one attack
+
+18. A POST to a strange PHP file has a scripted user agent and no cookie. What is best?
+    • Treat it as proof of a legitimate form submission
+    • Assume a scripted user agent is impossible to forge
+    • Conclude the server has no vulnerabilities
+    √ Correlate it with file and process events to assess possible command activity
+
+19. Why is a missing Referer header not proof of a web shell?
+    • POST cannot carry commands
+    • Every web shell must use GET
+    √ Legitimate APIs, clients, and privacy controls may omit it
+    • Web servers never record headers
+
+20. Which query selects POST requests lacking an indexed referrer field, using the lecture's fields?
+    • data.http_method:"GET" AND data.http_referrer:*
+    √ data.http_method:"POST" AND NOT data.http_referrer:*
+    • data.http_method:"POST" OR data.http_referrer:*
+    • NOT data.http_method:"POST" AND data.http_referrer:*
+
+21. What is the main purpose of a C2 channel?
+    √ Exchange attacker tasks, results, or status with a compromised system
+    • Certify a server's compliance
+    • Replace all persistence mechanisms automatically
+    • Store trusted software updates only
+
+22. Which evidence remains useful for suspected HTTPS C2 without payload decryption?
+    • The exact plaintext commands without keys
+    • The remote operator's keyboard input
+    • All encrypted response bodies in readable form
+    √ Connection timing, destinations, sizes, and available TLS metadata
+
+23. What is a Domain Generation Algorithm used for in the lecture?
+    • Guarantee all generated domains are registered
+    • Encrypt the host's entire disk
+    √ Generate changing candidate domains that malware may try for C2
+    • Create valid TLS certificates without a CA
+
+24. What does Shannon entropy measure in domain-name analysis?
+    • The domain owner's legal identity
+    √ Character-distribution uncertainty or apparent randomness
+    • The number of successful logons
+    • The source host's patch level
+
+25. Why is high domain entropy insufficient to prove DGA malware?
+    √ Legitimate service and CDN names may also look random
+    • Entropy can only be calculated for IPs
+    • Malicious domains never contain digits
+    • A SIEM cannot collect queried names
+
+26. One host queries many random-looking domains that return NXDOMAIN. What is a reasonable hypothesis?
+    • The host is definitely performing ordinary printer discovery
+    • A user necessarily changed a password
+    • Every failed lookup proves successful exfiltration
+    √ Malware may be trying algorithm-generated C2 domains
+
+27. Why should a DGA entropy threshold be tuned to the environment?
+    • One universal value proves malware on every network
+    • Entropy thresholds automatically identify all word-based DGAs
+    √ Domain length, legitimate naming patterns, and application behavior affect false positives
+    • Every domain above a threshold belongs to one attacker group
+
+28. What is jitter in C2 communication?
+    • A change in file ownership
+    √ Variation added around a configured callback interval
+    • Deletion of all timestamps
+    • Replacement of DNS with local authentication
+
+29. Which observations are used to calculate beacon inter-arrival intervals?
+    √ Chronologically ordered connection times for a relevant source-destination grouping
+    • Only the largest response payload
+    • Only the number of installed agents
+    • Only the source host's boot time
+
+30. Why is grouping only by destination potentially misleading for beacon analysis?
+    • Every destination is contacted by only one host
+    • Destination-only grouping decrypts C2
+    • All hosts share one process identity
+    √ Several hosts can mix into one timing series and obscure or create apparent patterns
+
+31. Which metric compares interval variability across different mean beacon frequencies?
+    • Total transferred bytes alone
+    • Maximum destination port
+    √ Coefficient of variation, standard deviation divided by mean interval
+    • Number of DNS record types
+
+32. A connection series has a mean interval of 60 seconds and standard deviation of 6 seconds. What is its coefficient of variation?
+    • 10, or 1000%
+    √ 0.10, or 10%
+    • 54 seconds
+    • 66 seconds
+
+33. Why is standard deviation of absolute event timestamps not equivalent to standard deviation of callback intervals?
+    √ Absolute-time spread describes the observation span; interval statistics describe gaps between successive callbacks
+    • The two calculations always produce identical values
+    • Timestamps cannot be sorted
+    • Interval analysis requires decrypting every payload
+
+34. A host contacts an external server exactly once per hour. Why avoid immediately declaring C2?
+    • Malware can never connect hourly
+    • C2 must use plaintext HTTP
+    • Periodic connections cannot carry attacker commands
+    √ Scheduled checks and legitimate automation can also be periodic
+
+35. Requests repeatedly target /pixel.gif or /submit.php. What is the best assessment?
+    • These paths uniquely identify Cobalt Strike in every case
+    • Image-like paths cannot carry C2
+    √ Investigate timing, headers, process attribution, and destination context; those paths alone are not decisive
+    • An HTTP 200 response proves the request is harmless
+
+36. What is a possible role of DNS TXT traffic in C2?
+    • Automatically decrypt every HTTPS connection
+    √ Carry encoded data or tasking associated with an attacker-controlled domain
+    • Disable endpoint logging by definition
+    • Guarantee all DNS lookups succeed
+
+37. Which Sysmon event pair records named-pipe creation and connection?
+    √ 17 and 18
+    • 1 and 3
+    • 11 and 13
+    • 22 and 25
+
+38. A hunt finds pipe names resembling MSSE-*-server or postex_*. What is best?
+    • Treat the name alone as proof of a particular operator
+    • Ignore all pipes because they are always local and harmless
+    • Assume attackers cannot customize pipe names
+    √ Investigate process and host context because these are useful but changeable framework indicators
+
+39. Why might an infected host show no direct internet C2 while still receiving attacker tasks?
+    • All implants must contact the public C2 directly
+    • No external flow proves no compromise
+    √ It may relay communication through another compromised host using a channel such as named pipes
+    • Named pipes automatically remove all process telemetry
+
+40. An unexpected rundll32.exe instance has unusual or empty arguments, injection telemetry, and network callbacks. What is the strongest conclusion?
+    • The Microsoft signature proves safety
+    √ The combined evidence warrants high-priority investigation of injected C2 activity
+    • Empty arguments alone identify the exact malware family
+    • Only the filename matters and the other evidence should be discarded

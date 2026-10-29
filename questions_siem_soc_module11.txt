@@ -1,0 +1,212 @@
+MODULE 11 — Threat Hunting: Hypothesis Driven
+35 Practice Questions
+
+1. What best defines threat hunting in this module?
+    √ A proactive, iterative search for threats that may evade existing automated detections
+    • Waiting for confirmed antivirus alerts only
+    • Running annual compliance checks without examining activity
+    • Automatically blocking every unfamiliar executable
+
+2. What primarily distinguishes a hunt-driven SOC from an alert-driven workflow?
+    • It stops responding to confirmed incidents
+    • It assumes all detection rules are complete
+    • It replaces evidence with guesses
+    √ It tests suspicions using telemetry even when no existing alert has fired
+
+3. Which benefit is most directly associated with discovering hidden attacker activity earlier?
+    • Guaranteed elimination of every security incident
+    • No further need for incident response
+    √ Reduced attacker dwell time and potential impact
+    • Automatic certification of all systems
+
+4. Which sequence matches the lecture's five-stage hunting loop?
+    • Data → Delete → Alert → Certify → Archive
+    √ Hypothesis → Data → Hunt → Findings → Automate
+    • Contain → Recover → Hypothesis → Ignore → Close
+    • Automate → Guess → Delete → Reboot → Report
+
+5. What should happen immediately after defining a testable hypothesis in the five-stage loop?
+    √ Identify the data sources and fields needed to test it
+    • Create a detection rule before checking available evidence
+    • Declare an incident
+    • Search every available log without a time scope
+
+6. Which statement is the strongest hunting hypothesis?
+    • Something bad might exist
+    • Check everything for anything unusual
+    • Our security tools might be imperfect
+    √ Unauthorized cron jobs may have been installed on Linux servers during the past week
+
+7. Why is 'Are we being hacked?' a weak hunting hypothesis?
+    • It requires too much knowledge of one malware hash
+    • It can only be answered using antivirus
+    √ It lacks specific behavior, scope, and a clear test
+    • It is too specific to one endpoint
+
+8. Which sources can provide a useful starting point for a hunting hypothesis?
+    • Only the analyst's preferred dashboard colors
+    √ Threat intelligence, ATT&CK gaps, baseline anomalies, and incident lessons
+    • Only a list of software licenses
+    • Only confirmed malware filenames
+
+9. How does MITRE ATT&CK help plan a hunt?
+    √ Translate relevant adversary techniques and coverage gaps into behaviors to investigate
+    • Guarantee the attacker follows one fixed sequence
+    • Replace the need for telemetry
+    • Certify that no intrusion is present
+
+10. A threat report describes a technique targeting software your organization does not run. What should guide hunt prioritization?
+    • The report's length alone
+    • Only the number of social-media shares
+    • Hunt every reported technique with equal urgency
+    √ Relevance to your assets, exposure, threat model, and available evidence
+
+11. Which hunt focuses on organization-specific risk?
+    • Searching random endpoints without a question
+    • Checking only the most common process name globally
+    √ Testing whether attackers are exploiting the organization's legacy VPN server
+    • Counting every alert without asset context
+
+12. A hypothesis concerns malicious Windows service creation. Which data is most relevant?
+    • Only DNS MX responses
+    √ Service-installation events, process-creation telemetry, and EDR context
+    • Only a list of successful browser downloads
+    • Only the server's CPU temperature
+
+13. A new service points to a binary in an unusual temporary directory. What is the strongest follow-up?
+    √ Review the binary, creator, command line, execution account, and change authorization
+    • Trust the service if its name resembles Windows
+    • Delete all services installed that day
+    • Assume every temporary file is malware
+
+14. Which evidence combination best tests exfiltration to cloud storage?
+    • Only successful workstation unlocks
+    • Only local printer events
+    • Only the cloud provider's homepage
+    √ Sensitive-file access correlated with unusual uploads and available cloud or DLP activity
+
+15. Why is contacting a legitimate cloud-storage domain insufficient to prove exfiltration?
+    • Legitimate domains cannot carry stolen data
+    • HTTPS transfers cannot be investigated at all
+    √ Business workflows can use the same service; file, user, volume, and timing context matter
+    • All cloud uploads are automatically authorized
+
+16. What does IOC sweeping primarily search for?
+    • Only previously unseen process relationships
+    √ Known indicators such as malicious hashes, IPs, domains, and URLs
+    • Only hardware failures
+    • Only a user's normal work schedule
+
+17. A report supplies a malicious file hash. Which approach is most direct?
+    √ Search relevant collected file hashes for a match
+    • Measure all users' working hours
+    • Calculate beacon interval variation
+    • Review only account deletion events
+
+18. What is a major limitation of searching only for known malicious IPs?
+    • IP searches cannot be combined with behavior
+    • Every matching IP identifies the human attacker
+    • IP matching only works on Windows
+    √ New or changed infrastructure may be missed
+
+19. Why can behavioral hunting detect threats missed by exact file-hash searches?
+    • Behavioral hunting eliminates false positives
+    • Every malicious behavior requires no telemetry
+    √ Attack methods can persist after attackers change files and hashes
+    • A hash uniquely describes every variant in a malware family
+
+20. Which ordering follows the lecture's Pyramid of Pain from easier to harder for attackers to change?
+    • TTPs → tools → artifacts → domains → IPs → hashes
+    √ Hashes → IPs → domains → artifacts → tools → TTPs
+    • Domains → TTPs → hashes → IPs → tools → artifacts
+    • Tools → hashes → TTPs → domains → artifacts → IPs
+
+21. Which combination best describes mature hunting coverage?
+    √ Use IOC sweeps for known indicators and behavioral hunts for relevant techniques
+    • Use hashes alone because all attackers reuse files
+    • Use behavioral hunting without collecting evidence
+    • Stop automated detections while a hunt runs
+
+22. Which methodology begins by examining deviations from established normal behavior?
+    • IOC matching only
+    • Signature updating only
+    • Compliance certification
+    √ Anomaly-based hunting
+
+23. Why are baselines important to threat hunting?
+    • They prove all common activity is legitimate
+    • They remove the need to investigate context
+    √ They help distinguish unusual activity from expected environmental behavior
+    • They automatically identify the exact attacker
+
+24. What is stacking in the module?
+    • Count only the number of distinct values without their frequencies
+    √ Group by a field, count each distinct value's occurrences, and sort by frequency
+    • Execute suspicious binaries in production
+    • Join all unrelated events into one incident
+
+25. Which visualization setup helps surface rarely executed processes?
+    √ Terms counts on process image, ordered from least frequent upward
+    • Only a total-alert counter
+    • A sum of all executable file sizes
+    • An average of source-IP strings
+
+26. Which field is most directly useful for unusual process-lineage hunting in the Windows examples?
+    • Only destinationPort
+    • Only the event's display color
+    • Only a user's email subject
+    √ parentImage together with image and commandLine
+
+27. Word launches PowerShell. What is the best interpretation?
+    • Proof that every Office document is malicious
+    • Proof of safety because PowerShell is legitimate
+    √ A suspicious relationship worth checking for document-based execution
+    • Evidence that no script could have run
+
+28. A print process appears rare immediately after a server restart. What does this demonstrate?
+    • All rare processes must be blocked
+    √ System context can explain rarity and prevent false conclusions
+    • Reboots prove persistence
+    • Process telemetry cannot support hunting
+
+29. A hunter wants to attribute an outbound connection to a suspicious process. What evidence is best?
+    √ Network telemetry linked to process identity on the relevant host
+    • A DNS summary without endpoint attribution
+    • An unchanged file hash alone
+    • A total login count without connection context
+
+30. No suspicious events are found, but the required process logging was disabled. What should the finding be?
+    • The hypothesis is definitively disproven
+    • The host is guaranteed clean
+    • All future hunts should avoid process telemetry
+    √ An evidence or coverage gap, rather than proof the activity did not occur
+
+31. A hunt finds no supporting evidence despite adequate coverage in the selected scope. What is best?
+    • Invent a true positive to justify the hunt
+    • Delete the queries because nothing was found
+    √ Document the result and limits, then refine the hypothesis or plan the next hunt
+    • Claim the entire organization is permanently safe
+
+32. An unrelated suspicious DNS pattern appears during a focused hunt. What should the analyst do?
+    • Expand the hunt to every DNS event automatically
+    √ Record it as a separate lead or future hypothesis and handle urgency appropriately
+    • Discard it because it is unrelated
+    • Replace the original hypothesis without documentation
+
+33. Which documentation best supports reproduction by another analyst?
+    √ Hypothesis, exact queries, sources, time scope, evidence, findings, and limitations
+    • Only a final verdict
+    • Only the dashboard homepage screenshot
+    • Only the analyst's name
+
+34. A hunt validates malicious use of a legitimate tool. What best closes the improvement loop?
+    • Archive evidence without updating monitoring
+    • Delete events to reduce noise
+    • Restrict every future hunt to that host
+    √ Respond to the threat and turn the validated pattern into a tested repeatable detection
+
+35. What should a new detection derived from a hunt be tested against?
+    • Only the one malicious event originally found
+    • Only an empty log file
+    √ Both relevant attack behavior and legitimate lookalike activity
+    • Only the rule's written description

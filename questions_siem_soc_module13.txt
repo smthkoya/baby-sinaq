@@ -1,0 +1,242 @@
+MODULE 13 — Hunting Lateral Movement
+40 Practice Questions
+
+1. What is lateral movement?
+    √ Moving from an initial compromised system to other systems or resources
+    • Sending the first phishing email
+    • Encrypting a single local file only
+    • Updating endpoint antivirus signatures
+
+2. Which investigation goal best fits hunting lateral movement?
+    • Count only internet-facing firewall drops
+    • Investigate only the initial phishing attachment
+    • Assume every host uses the same credentials
+    √ Reconstruct source-to-target activity and identify affected high-value systems
+
+3. Why is SMB/RPC activity difficult to classify from protocol use alone?
+    • SMB is used exclusively by malware
+    • RPC always bypasses authentication
+    √ Legitimate administrators and attackers can use the same protocols
+    • All internal SMB traffic is automatically authorized
+
+4. Which ports match the protocols described in the lecture?
+    • SMB uses UDP 53; RPC uses TCP 443 only
+    √ SMB commonly uses TCP 445; RPC endpoint mapping uses TCP 135 with additional dynamic ports
+    • SMB uses TCP 3389; RPC uses UDP 514
+    • Both use TCP 22 exclusively
+
+5. Which Windows logon-type mapping is correct?
+    √ Type 3 is Network; Type 10 is RemoteInteractive/RDP
+    • Type 3 is RDP; Type 10 is Service
+    • Type 3 is Interactive; Type 10 is Batch
+    • Both types always indicate local console logons
+
+6. Which event records an attempt using explicit credentials?
+    • 5140
+    • 7045
+    • 4634
+    √ 4648
+
+7. What does Event ID 4672 add to a remote-logon investigation?
+    • Proof the account was newly created
+    • The full contents of a copied file
+    √ Evidence that special privileges were assigned to the logon
+    • A record of DNS tunneling
+
+8. Which pair distinguishes share access from a detailed share-object access check?
+    • 4624 and 4634
+    √ 5140 and 5145
+    • 4103 and 4104
+    • 4720 and 4726
+
+9. No 5140 or 5145 events appear during a share-access hunt. What should be checked first?
+    √ Audit File Share and Detailed File Share policies, collection, and target-host coverage
+    • Assume there was no SMB activity
+    • Increase the chart's font size
+    • Disable all process logging
+
+10. Which command helps inspect effective Windows audit policy?
+    • journalctl
+    • nfdump
+    • Autoruns
+    √ auditpol
+
+11. Which SMB pattern particularly warrants review against a baseline?
+    • A known deployment server performing approved maintenance
+    • A user's routine access to an authorized file share
+    √ A normal workstation unexpectedly accessing administrative shares on several peers
+    • A verified print workflow during normal operation
+
+12. Why is TCP 445 traffic to a domain controller not automatically proof of attack?
+    • Domain controllers never use SMB legitimately
+    √ Normal domain functions also use SMB, so identity, direction, timing, and share context matter
+    • Every connection to a DC gives Domain Admin access
+    • Port 445 cannot carry malicious activity
+
+13. Which administrative-share mapping is correct?
+    √ C$ maps to the C drive; ADMIN$ usually maps to the Windows directory
+    • C$ maps only to the user's Downloads folder
+    • ADMIN$ maps only to the domain's DNS database
+    • Both shares are ordinary public anonymous upload folders
+
+14. What is IPC$ primarily associated with?
+    • A full copy of the C drive
+    • The PowerShell transcript folder
+    • A browser's cookie database
+    √ Interprocess communication, including named-pipe and related remote-management activity
+
+15. Why does observing access to IPC$ not alone prove a null session?
+    • All IPC$ access is anonymous by definition
+    • IPC$ cannot support authenticated activity
+    √ The share may be accessed with authenticated credentials; authentication context must be checked
+    • A share name reveals the password used
+
+16. What is PsExec's legitimate purpose?
+    • Generate forged Kerberos tickets
+    √ Execute commands on remote Windows systems without an interactive RDP desktop
+    • Decrypt NTDS.dit automatically
+    • Replace Windows audit policies
+
+17. Which sequence best describes the classic PsExec chain?
+    √ Authenticate over SMB → transfer service binary → create/start service → execute command
+    • Request DNS → create TGT → encrypt file → log off
+    • Start RDP → steal SMS → modify browser → reboot
+    • Create local Run key only → exit
+
+18. Which share is central to the lecture's classic PsExec deployment example?
+    • A public website's uploads folder
+    • Only a user's OneDrive folder
+    • Only NETLOGON in every case
+    √ ADMIN$
+
+19. Which event identifies the service-installation stage on the target?
+    • Security Event ID 4634
+    • PowerShell Event ID 4103
+    √ System Event ID 7045
+    • Sysmon Event ID 22
+
+20. Which Sysmon event best records the transferred PSEXESVC executable appearing on disk?
+    • 3, NetworkConnect
+    √ 11, FileCreate
+    • 13, RegistryValueSet
+    • 5, ProcessTerminate
+
+21. Which Sysmon pair helps investigate PsExec-related named pipes?
+    √ 17 and 18
+    • 1 and 22
+    • 7 and 25
+    • 10 and 13
+
+22. Why is matching only the filename PSEXESVC.exe insufficient?
+    • PsExec always uses an immutable filename
+    • A filename uniquely identifies malicious intent
+    • All renamed tools stop using network protocols
+    √ Attackers can rename components or use alternatives with different artifacts
+
+23. Which combination is stronger evidence of PsExec-like remote execution?
+    • A single successful login without context
+    • A routine DNS response
+    √ Related ADMIN$ access, service installation, named-pipe activity, and child execution
+    • An unchanged registry value
+
+24. An approved administrator uses PsExec from a jump box during maintenance. What is best?
+    • Declare malicious activity solely because PsExec ran
+    √ Validate the change and scope tuning to the verified workflow
+    • Exclude every future action from that account globally
+    • Stop collecting all remote-service events
+
+25. What is WMI in the context of this module?
+    √ Windows Management Instrumentation, used for management and potentially remote execution
+    • A packet encryption format
+    • A replacement for Kerberos authentication
+    • A malware family name
+
+26. Which process relationship is central to the WMI hunt?
+    • explorer.exe spawning an expected browser
+    • winlogon.exe spawning userinit.exe
+    • A backup agent launching an approved copy task
+    √ WmiPrvSE.exe unexpectedly spawning cmd.exe or powershell.exe
+
+27. Why can WMI execution evade a hunt based only on new service binaries?
+    • WMI cannot create processes
+    • WMI always disables the target's logging
+    √ It can launch commands through existing management infrastructure without a new service binary
+    • All WMI activity generates a PSEXESVC service
+
+28. Which source-host evidence supports a WMI remote-execution hypothesis?
+    • Only a file's extension
+    √ wmic with remote-node arguments or relevant Invoke-WmiMethod/Invoke-CimMethod commands
+    • Only the desktop background
+    • Only the number of browser tabs
+
+29. WmiPrvSE.exe launches a shell. What should an analyst do before declaring lateral movement confirmed?
+    √ Correlate command, user, source connection, target, and approved management activity
+    • Treat every WMI child process as malicious
+    • Ignore it because WMI is built in
+    • Assume the parent name reveals the exact attacker
+
+30. Which event query selects successful RDP logons using the lecture's fields?
+    • data.win.system.eventID:4625 AND data.win.eventdata.logonType:"3"
+    • data.win.system.eventID:7045 AND data.win.eventdata.logonType:"10"
+    • data.win.system.eventID:4624 AND data.win.eventdata.logonType:"5"
+    √ data.win.system.eventID:4624 AND data.win.eventdata.logonType:"10"
+
+31. Which tool is associated with RDP session switching or hijacking in the lecture?
+    • certutil.exe
+    • vssadmin.exe
+    √ tscon.exe
+    • ntdsutil.exe
+
+32. In the lecture's tscon hijacking scenario, which prior capability is important?
+    • Only unauthenticated access to a public webpage
+    √ High privileges such as SYSTEM on the target
+    • Only knowledge of the domain's name
+    • Only possession of a DNS cache entry
+
+33. Why can RDP session hijacking differ from an ordinary new RDP login?
+    √ It can take over an existing session without entering the victim's password again
+    • It always creates a new user account
+    • It requires cracking a service ticket first
+    • It cannot expose open applications
+
+34. Which utilities may reveal session enumeration before a hijack?
+    • Only calc.exe
+    • Only a DNS resolver
+    • Only an antivirus signature updater
+    √ query.exe or quser.exe with user/session queries
+
+35. A server runs tscon.exe. What is the best assessment?
+    • Assume every use proves malicious hijacking
+    • Trust it because it is signed
+    √ Investigate arguments, privileges, session changes, and administrative context
+    • Ignore it unless a password failure is logged
+
+36. A threshold counts ten share accesses from one source in two minutes. What does it not necessarily prove?
+    • That matching share-access events occurred
+    √ That ten distinct target hosts were accessed
+    • That the configured window is two minutes
+    • That the source grouping matters
+
+37. What additional measure helps distinguish repeated access to one host from multi-host scanning?
+    √ Distinct target-host count grouped by source within the time window
+    • Only the total number of matching events
+    • Only the highest alert severity
+    • Only the length of the source hostname
+
+38. Why should machine-account exclusions be applied with care?
+    • Accounts ending in $ can never be compromised
+    • Every machine-account logon is an attack
+    • Machine accounts cannot use SMB
+    √ They can reduce routine noise but can also hide abuse of compromised computer identities
+
+39. Which sources improve visibility into east-west SMB/RPC traffic alongside host events?
+    • Only the public website homepage
+    • Only a password complexity report
+    √ Zeek or Suricata network telemetry
+    • Only an employee contact list
+
+40. Which workflow best maps movement from a phished workstation?
+    • Investigate only the original workstation and ignore targets
+    √ Trace its source identity and connections, correlate target logons/shares/execution, then build a timeline and contain affected systems
+    • Block one filename and assume all movement ended
+    • Sort unrelated alerts by severity without host or time linkage

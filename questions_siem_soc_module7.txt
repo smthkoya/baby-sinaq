@@ -1,0 +1,242 @@
+MODULE 7 — Log Parsing & Normalization
+40 Practice Questions
+
+1. What does out-of-band placement mean for a traditional SIEM?
+    √ It analyzes collected telemetry rather than sitting inline to block every packet
+    • It must approve every packet before forwarding
+    • It replaces the host's operating system
+    • It generates every endpoint event itself
+
+2. Which list captures the five SIEM capabilities taught in the module?
+    • Encryption, payroll, backups, identity issuance, and routing
+    • Packet forwarding, printing, compilation, billing, and authentication
+    • Only storage, indexing, and file sharing
+    √ Aggregation and retention, parsing and normalization, correlation, visualization, and alerting/SOAR integration
+
+3. What does EPS measure in SIEM ingestion?
+    • Endpoints per subnet
+    • Encrypted packets stored
+    √ Events per second
+    • Escalations per shift
+
+4. Why use hot, warm, and cold storage tiers?
+    • Assign every event a different attack technique
+    √ Balance access speed, retention needs, and storage cost
+    • Automatically remove all false positives
+    • Avoid collecting older evidence
+
+5. What is log parsing?
+    √ Extracting meaningful structured fields from raw event content
+    • Mapping all vendors to one schema without first extracting data
+    • Deleting unrecognized events
+    • Displaying only severity icons
+
+6. What is field normalization?
+    • Encrypting every log with the same key
+    • Removing all timestamps
+    • Changing every source IP to the manager IP
+    √ Mapping equivalent vendor-specific data to consistent field names and meanings
+
+7. Which sequence best represents the lecture's Wazuh text-processing pipeline?
+    • Raw log → containment → deletion → decoding
+    • Rule matching → event generation → source authentication
+    √ Raw log → pre-decoding → decoding → structured fields → rule matching
+    • Dashboard → password reset → packet encryption
+
+8. What information can a syslog pre-decoder commonly extract from a recognizable header?
+    • The attacker's plaintext password
+    √ Timestamp, hostname, and program name
+    • Every application's complete memory
+    • The contents of encrypted network sessions
+
+9. Why can a broken decoder cause missed detections even though logs arrive?
+    √ Rules may not receive the expected fields or values
+    • Successful ingestion proves every field is parsed correctly
+    • The dashboard automatically repairs missing fields
+    • Decoders only change the font of raw logs
+
+10. A new source sends valid supported JSON events. What is the best initial approach?
+    • Write a complicated regex before checking built-in support
+    • Treat JSON as impossible to parse
+    • Rename every file to .evtx
+    √ Use appropriate JSON collection and built-in decoding, then verify extracted fields
+
+11. An unfamiliar source sends free-form login messages. What should the analyst do first?
+    • Disable all rules for the source permanently
+    • Assume ingestion automatically normalizes every field
+    √ Test whether a built-in decoder handles them before designing a custom decoder
+    • Rewrite the source application immediately
+
+12. Which tool name is used in the lecture to test Wazuh decoding and rule matching?
+    • wecutil
+    √ ossec-logtest
+    • Autoruns
+    • nfdump
+
+13. Why test a decoder with multiple representative examples?
+    √ Variations in whitespace, values, and event types can expose extraction errors
+    • One successful sample guarantees every future format
+    • Regex cannot match different usernames
+    • Only the first log from a source matters
+
+14. What does [abc] mean in a regular expression?
+    • Match the whole string abc only
+    • Match any three characters
+    • Match anything except a, b, and c
+    √ Match one character that is a, b, or c
+
+15. Which pattern matches the entire string cat, fat, or hat and no other string?
+    • ^[cfh]$
+    • ^catfat hat$
+    √ ^[cfh]at$
+    • ^at[cfh]$
+
+16. What does [^k] mean in a character class?
+    • Match only k at the beginning
+    √ Match one character other than k
+    • Match the literal string ^k only
+    • Repeat k zero or more times
+
+17. Under ordinary settings without dot-all mode, what does a dot represent?
+    √ Any single character except a newline
+    • Only a literal period
+    • Any number of digits
+    • Only whitespace
+
+18. Which regex matches the literal domain cat.xyz as a complete value?
+    • ^cat.xyz$
+    • ^[cat].xyz$
+    • ^cat\sxyz$
+    √ ^cat\.xyz$
+
+19. What does the question mark mean in the pattern ^cats?$?
+    • The entire word cat is optional
+    • Any number of s characters are required
+    √ The s is optional, so cat and cats match
+    • A literal question mark must follow cats
+
+20. Which pair correctly describes \d and \s?
+    • Non-digit and non-whitespace
+    √ Digit and whitespace
+    • Domain and source IP
+    • Directory and service name
+
+21. Which statement about \w is correct in common regex engines?
+    √ It includes word characters such as letters, digits, and underscore, with exact Unicode behavior depending on the engine
+    • It means only whitespace
+    • It matches only complete English words
+    • It excludes all digits
+
+22. What do ^ and $ commonly represent outside character classes?
+    • Literal caret and dollar in every position
+    • Encryption and decryption markers
+    • Mandatory digits
+    √ Start and end anchors, with line behavior affected by regex mode
+
+23. Which quantifier distinction is correct?
+    • * means exactly one; + means zero only
+    • Both mean exactly two
+    √ * means zero or more; + means one or more
+    • Both are literal punctuation in every context
+
+24. What does \d{2,5} require for the digit portion it matches?
+    • Exactly seven digits
+    √ Between two and five digits
+    • Only the digits 2 and 5
+    • Zero or one digit
+
+25. Which symbol provides alternation between grouped regex alternatives?
+    √ The vertical bar, also called pipe
+    • The underscore
+    • The comma alone
+    • The slash alone
+
+26. A username regex using .* captures 'root from 192.168.1.50' as one field. What is the best fix?
+    • Make every field use a larger greedy match
+    • Remove all separators from the source log
+    • Disable username extraction permanently
+    √ Use a suitable boundary, a constrained token such as \S+, or carefully designed non-greedy matching
+
+27. Which pattern is a useful simple extractor for an IPv4-shaped value but does not validate every octet's range?
+    • \d{4}
+    • [0-9.]+$ as a guarantee of valid IPv4
+    √ \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+    • \w+@\w+
+
+28. Why distinguish a regex search match from a full-string match?
+    • Every regex always consumes the entire log line
+    √ An unanchored pattern may match a substring inside a longer value
+    • Anchors affect only digits
+    • A substring match automatically validates the full input
+
+29. Why normalize event timestamps?
+    √ Put events from different formats and timezones on a comparable timeline
+    • Make all events have the same occurrence time
+    • Replace source time with analyst shift time
+    • Eliminate the need for clock synchronization
+
+30. A source event says 10:00:00+02:00. What is the equivalent UTC time on the same date?
+    • 10:00:00Z
+    • 12:00:00Z
+    • 02:00:00Z
+    √ 08:00:00Z
+
+31. What does Z indicate in an ISO 8601 timestamp?
+    • An unknown timezone
+    • The endpoint's local timezone in every case
+    √ UTC
+    • A failed timestamp parse
+
+32. Why is a traditional timestamp such as 'Mar 17 09:14:33' ambiguous?
+    • It includes a mandatory UTC offset
+    √ It omits the year and timezone
+    • It is always measured in milliseconds
+    • It contains a Windows FILETIME value
+
+33. Which timestamp distinction is correct?
+    √ Unix epoch may be seconds or milliseconds since 1970, so the unit must be interpreted correctly
+    • Every epoch number uses milliseconds
+    • Epoch timestamps encode the source's timezone name
+    • Windows FILETIME uses seconds since 1970
+
+34. What does Windows FILETIME represent?
+    • Milliseconds since 1970
+    • Days since the most recent reboot
+    • Seconds since the last user logon
+    √ 100-nanosecond intervals since the Windows epoch in 1601
+
+35. Lateral movement appears to precede initial compromise by 30 seconds. What should be checked?
+    • Only the attacker's malware family
+    • Whether every event has the same rule ID
+    √ Clock synchronization, timezones, timestamp parsing, and event-versus-ingestion time
+    • Whether the dashboard uses a dark theme
+
+36. Why use NTP or chrony alongside timezone normalization?
+    • UTC automatically synchronizes all hardware clocks
+    √ Timezone conversion does not correct clocks that are running ahead or behind
+    • NTP extracts usernames from logs
+    • Chrony replaces all SIEM decoders
+
+37. Which ECS field mapping is correct?
+    √ source.ip for source IP, user.name for username, and event.action for action
+    • source.ip for username and user.name for destination port
+    • event.action for the raw packet payload only
+    • destination.port for the event timestamp
+
+38. Which schema association matches the module?
+    • ECS is a malware family; CIM is a firewall; OCSF is an EDR agent
+    • All three are Windows event channels
+    • All three are names for the same regex engine
+    √ ECS relates to Elastic; CIM to Splunk; OCSF is vendor-agnostic
+
+39. A team adds schema mappings but its rules still reference removed old field paths. What is the likely result?
+    • Every rule automatically adapts without validation
+    • The SIEM restores the removed fields from memory
+    √ Rules can stop matching until references are updated and tested
+    • All incoming logs become malicious
+
+40. What is required before one normalized correlation rule reliably covers several vendors?
+    • Only installing an OCSF or ECS label
+    √ Correct field mappings, compatible types and semantics, suitable source coverage, and validation
+    • Assuming every Wazuh event is already fully ECS-normalized
+    • Renaming raw files without inspecting their contents

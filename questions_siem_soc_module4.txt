@@ -1,0 +1,242 @@
+MODULE 4 — Credential & Identity Attacks
+40 Practice Questions
+
+1. Which Kerberos component issues the initial TGT?
+    √ The Authentication Server within the KDC
+    • The target application
+    • The SIEM
+    • The DNS resolver
+
+2. What is the role of the Kerberos Ticket Granting Server?
+    • Generate every user's password
+    • Decrypt HTTPS
+    • Store endpoint audit logs
+    √ Issue service tickets based on a valid TGT
+
+3. Which distinction between TGT and service ticket is correct?
+    • Both are plaintext passwords
+    • A service ticket always grants domain-wide access
+    √ A TGT supports requests to the KDC; a service ticket is presented to a service
+    • Only the target service issues TGTs
+
+4. What does Kerberoasting target?
+    • SMS verification codes
+    √ Service-account password material protected in service tickets
+    • SSH host keys
+    • Local firewall rules
+
+5. Which sequence describes Kerberoasting?
+    √ Enumerate SPNs, request service tickets, attempt offline cracking
+    • Create a shadow copy and copy NTDS.dit
+    • Steal an MFA cookie and register a new device
+    • Modify a Run key and reboot
+
+6. What access is normally sufficient for Kerberoasting in the lecture's domain scenario?
+    • The krbtgt secret
+    • SYSTEM on every DC
+    • No domain authentication at all
+    √ A valid domain account without Domain Admin privileges
+
+7. Why is offline ticket cracking difficult to see directly in DC logs?
+    • Every guess produces a 4625 event
+    • Every guess triggers MFA
+    √ Cracking occurs on attacker-controlled systems after ticket collection
+    • The DC processes every offline guess
+
+8. Which Windows Event ID records Kerberos service-ticket requests?
+    • 4688
+    √ 4769
+    • 4720
+    • 4104
+
+9. What does ticketEncryptionType 0x17 in Event ID 4769 indicate?
+    √ RC4 use, which requires contextual review
+    • Confirmed Golden Ticket use
+    • Successful password cracking
+    • AES256 encryption
+
+10. An RC4 service-ticket rule mainly alerts on legacy applications. What is best?
+    • Disable all Kerberos monitoring
+    • Mark every RC4 request as confirmed compromise
+    • Monitor AES only
+    √ Baseline expected RC4 use and investigate unusual accounts or patterns
+
+11. Which account setting enables AS-REP Roasting?
+    • Password change is required at next logon
+    • The account has no SPN
+    √ Kerberos preauthentication is not required
+    • Interactive logon is disabled
+
+12. How does AS-REP Roasting differ from typical Kerberoasting?
+    • It always requires the krbtgt secret
+    √ It can obtain crackable material for accounts without preauthentication without valid domain credentials
+    • It targets browser cookies only
+    • It requires local SYSTEM on the DC
+
+13. Which pattern supports an AS-REP Roasting hypothesis?
+    √ 4768 with preAuthType 0
+    • 4634 after a routine logon
+    • 7045 for an approved service
+    • 4688 for an approved browser
+
+14. Which distinction between Golden and Silver Tickets is correct?
+    • Golden steals SMS; Silver steals browser passwords
+    • Both are the same cracking technique
+    • Silver grants broader domain access than Golden by definition
+    √ Golden forges a TGT; Silver forges a service ticket
+
+15. Which secret is central to Golden Ticket forgery?
+    • A public SSH key
+    • A public TLS certificate
+    √ The krbtgt account key material
+    • The SIEM API token
+
+16. Why is resetting only the impersonated user's password insufficient after krbtgt compromise?
+    • User resets change the domain SID
+    √ Forged TGTs rely on the krbtgt secret rather than that user's password
+    • Golden Tickets exist only in password managers
+    • Password resets disable auditing
+
+17. What is the key recovery principle for confirmed krbtgt compromise?
+    √ Reset krbtgt twice in a controlled process allowing for replication and ticket lifetimes
+    • Reset only one workstation password
+    • Delete every service account immediately
+    • Reset one ordinary user and assume all tickets are invalid
+
+18. What is central to forging a Silver Ticket?
+    • Only the server's public IP
+    • Only a user's MFA approval
+    • Only the SIEM configuration
+    √ The target service account's secret key material and relevant identity details
+
+19. Why can KDC-only monitoring miss Silver Ticket use?
+    • Silver Tickets always generate 4104 instead
+    • Silver Tickets never interact with services
+    √ A forged service ticket can be presented directly to a service without a new KDC request
+    • Every forged ticket is logged at creation by the DC
+
+20. Service access has no matching TGS request in available logs. What is best?
+    • Declare Silver Ticket compromise from that absence alone
+    √ Investigate possible forged or reused tickets while checking caches, timing, and log coverage
+    • Ignore all successful service access
+    • Assume every service logon must be interactive
+
+21. Why is lsass.exe a credential-theft target?
+    √ It handles security functions and can hold hashes or Kerberos tickets in memory
+    • It stores enterprise PCAP
+    • It alone creates files
+    • It contains public certificates only
+
+22. Which telemetry directly records a process accessing LSASS?
+    • Sysmon 22, DNSQuery
+    • Security 4726, account deletion
+    • Security 4634, logoff
+    √ Sysmon 10, ProcessAccess
+
+23. A process accesses LSASS with a high-risk access mask. What is best?
+    • Use the mask as the exact malware family name
+    • Ignore signed tools
+    √ Review source process, privileges, baseline, and related activity
+    • Assume every handle proves credential extraction
+
+24. Why avoid LSASS rules based on one fixed grantedAccess value?
+    • Masks identify all attacks permanently
+    √ Tools and access methods vary, so source and target behavior also matter
+    • Only 0x1010 can access sensitive memory
+    • Every other mask is harmless
+
+25. Which legitimate components can be abused for LSASS dumps in the lecture?
+    √ ProcDump, Task Manager, and rundll32 with comsvcs.dll
+    • Only unsigned Mimikatz binaries
+    • Only journalctl and ausearch
+    • Only an external flow collector
+
+26. An unusual process accesses LSASS, then a .dmp file appears in Temp. What does correlation provide?
+    • Proof the dump contains only harmless logs
+    • A reason to discard ProcessAccess events
+    • Proof no credentials were accessed
+    √ Stronger evidence of possible credential dumping
+
+27. How does DCSync differ from local LSASS dumping?
+    • It requires a memory dumper on every DC
+    • It reads browser cookies only
+    √ It abuses directory replication to request credential data from a DC
+    • It restarts LSASS through scheduled tasks
+
+28. Which permissions are especially relevant to DCSync?
+    • Desktop customization rights
+    √ Directory replication permissions
+    • Public website access
+    • Read access to Downloads only
+
+29. Which combination best detects possible DCSync?
+    √ 4662 directory-service auditing and unexpected replication from a non-DC host
+    • Only file creation on the analyst PC
+    • Only failed RDP counts
+    • Only a known Mimikatz filename
+
+30. Why can an LSASS-only rule miss DCSync?
+    • DCSync generates no network traffic
+    • DCSync cannot originate on a workstation
+    • DCSync only affects Linux
+    √ Replication-based credential theft may occur without local LSASS dumping on the DC
+
+31. What is NTDS.dit?
+    • A PowerShell transcript
+    • A malicious-IP list
+    √ The Active Directory database containing domain objects and protected credential data
+    • A Sysmon configuration file
+
+32. Why seek the SYSTEM hive alongside NTDS.dit?
+    • It contains every domain user's plaintext password
+    √ It supplies boot-key material needed for offline decryption of protected secrets
+    • It stores MFA pushes
+    • It creates a valid user certificate automatically
+
+33. Why investigate shadow-copy or IFM commands on a DC?
+    √ They may facilitate directory database extraction despite live-file restrictions
+    • They prove every backup is malicious
+    • They eliminate the need for decryption material
+    • They modify DNS logs only
+
+34. Which combination supports an NTDS.dit extraction hypothesis?
+    • Routine browser launch and workstation unlock
+    • One internal DNS query
+    • The number of enabled users alone
+    √ Suspicious ntdsutil or shadow-copy commands and .dit files in unusual directories
+
+35. What is the key session-theft mechanism in AiTM phishing?
+    • MFA must first be disabled globally
+    • A browser sends its private passkey to any login page
+    √ A reverse proxy relays real authentication and captures an authenticated session cookie
+    • Every OTP must first be cracked offline
+
+36. Why can MFA success coexist with account takeover?
+    • MFA proves all subsequent activity legitimate
+    √ A session cookie or token may be stolen after authentication and replayed
+    • All tokens require a new OTP for every request
+    • MFA prevents all security-method changes
+
+37. Which evidence supports investigating token replay?
+    √ Unexpected IP or device changes tied to the same session
+    • Desktop language changes alone
+    • An unchanged configuration file
+    • Routine DC replication
+
+38. An impossible-travel alert follows MFA success. What is best?
+    • Declare compromise based solely on geolocation
+    • Ignore it because MFA succeeded
+    • Delete logs after a password change
+    √ Correlate session, device, VPN/proxy context, and subsequent activity
+
+39. Which pairing of MFA attacks and mechanisms is correct?
+    • MFA fatigue cracks tickets; SIM swapping copies NTDS.dit
+    • Both require LSASS access
+    √ MFA fatigue uses repeated pushes; SIM swapping redirects SMS codes
+    • Both are stopped merely by hiding usernames
+
+40. A stolen session is followed by unauthorized MFA registration. What is best?
+    • Change the password only and assume all tokens are invalid
+    √ Validate urgently, revoke sessions, and remove unauthorized methods as part of identity response
+    • Trust the new method because MFA occurred earlier
+    • Block one IP and close the case

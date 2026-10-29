@@ -1,0 +1,212 @@
+MODULE 15 — SOAR Basics with n8n
+35 Practice Questions
+
+1. What does SOAR stand for?
+    √ Security Orchestration, Automation, and Response
+    • Security Observation, Analysis, and Reporting
+    • System Operations, Auditing, and Recovery
+    • Security Optimization, Authentication, and Routing
+
+2. What is orchestration in a SOC workflow?
+    • Only executing one isolated script repeatedly
+    • Only storing alerts for retention
+    • Only assigning severity to a raw event
+    √ Connecting tools and coordinating actions across them
+
+3. Which task is a good candidate for SOC automation?
+    • Every ambiguous business-impact decision without review
+    • Determining malicious intent from one filename
+    √ Repetitive indicator enrichment and consistent ticket creation
+    • Replacing all incident-response judgment
+
+4. How should SOAR support analysts?
+    • Eliminate the need for analysts to review uncertainty
+    √ Handle repetitive work so analysts can focus on complex investigations
+    • Guarantee all enriched alerts are true positives
+    • Replace collection and detection entirely
+
+5. What is a workflow in n8n?
+    √ Connected steps that process data and perform actions
+    • One specific threat-intelligence indicator
+    • Only an endpoint's process tree
+    • Only a ticket's final status
+
+6. What is a node in an n8n workflow?
+    • An entire organization-wide incident plan by definition
+    • A unique malware hash
+    • Only a monitored endpoint
+    √ An individual processing, logic, trigger, or action step
+
+7. What is a trigger?
+    • The final ticket summary
+    • Only the highest confidence score
+    √ The event or condition that starts a workflow execution
+    • Only the workflow's error message
+
+8. How does a webhook differ from polling?
+    • A webhook always queries the source every minute
+    √ A source pushes data to an endpoint when an event occurs instead of repeated checks for new data
+    • Polling cannot use HTTP
+    • A webhook automatically validates all submitted data
+
+9. Which method is used to send Wazuh alert data to the n8n webhook in the lecture?
+    √ HTTP POST
+    • DNS TXT
+    • SMB file copy
+    • Kerberos AS-REQ
+
+10. Which HTTP part contains the actual alert JSON?
+    • Only the response status code
+    • Only the TLS certificate
+    • Only the URL's hostname
+    √ The request body
+
+11. What is the purpose of Content-Type: application/json?
+    • Authenticate the sending Wazuh manager by itself
+    • Encrypt the webhook connection
+    √ Describe the format of the submitted body
+    • Specify the alert's severity
+
+12. Which node receives the incoming Wazuh alert in the lecture's workflow?
+    • Merge
+    √ Webhook
+    • Slack
+    • Wait
+
+13. Which node is used to query a reputation service through a REST API?
+    √ HTTP Request
+    • Set only
+    • Schedule Trigger only
+    • Email only
+
+14. Which node best fits a true-or-false severity check?
+    • Merge
+    • Schedule Trigger
+    • Webhook
+    √ IF
+
+15. Which node best routes several rule IDs to different playbooks?
+    • Wait
+    • Email
+    √ Switch
+    • Set only
+
+16. Which node is used to create or rename fields for a concise alert summary?
+    • Schedule Trigger
+    √ Set
+    • Slack only
+    • Webhook only
+
+17. When is a Code node useful?
+    √ Complex transformations or custom scoring beyond simple built-in conditions
+    • Only receiving the first HTTP request
+    • Only choosing a saved credential
+    • Only pausing until approval
+
+18. Which node combines related results from enrichment branches?
+    • IF alone
+    • Email
+    • Schedule Trigger
+    √ Merge
+
+19. Which trigger fits periodic feed ingestion or daily alert summaries?
+    • An incoming-alert webhook only
+    • Slack Send Message
+    √ Schedule Trigger
+    • Set
+
+20. What is a Wait node useful for?
+    • Calculating file hashes automatically in every case
+    √ Pausing execution for timing or a later resume event
+    • Replacing all exception handling
+    • Guaranteeing an analyst has approved a block
+
+21. Which order matches a basic SOAR pipeline?
+    √ Trigger → Enrich → Decide → Act → Notify
+    • Act → Notify → Trigger → Delete
+    • Enrich → Block every IP → Ignore results
+    • Notify → Archive → Trigger → Guess
+
+22. What is JSON?
+    • A programming language used only to execute response scripts
+    • An encrypted binary packet format
+    • A vendor-specific firewall protocol
+    √ A structured data format with objects, arrays, and typed values
+
+23. Which JSON syntax is valid?
+    • {'level':14,'critical':True}
+    • {"level":14,"critical":true,}
+    √ {"level":14,"critical":true}
+    • {level:14,critical:true}
+
+24. Assuming the current item contains the alert directly, which expression accesses its rule ID?
+    • {{ $json.agent.id.rule }}
+    √ {{ $json.rule.id }}
+    • {{ $json.rule.level }}
+    • {{ $json.data.srcip }}
+
+25. Assuming the lecture's alert structure, which expression accesses the agent name?
+    √ {{ $json.agent.name }}
+    • {{ $json.rule.name }}
+    • {{ $json.data.agentName.id }}
+    • {{ $json.timestamp.agent }}
+
+26. Which expression accesses the first MITRE technique ID in the lecture's array?
+    • {{ $json.rule.mitre.id[1] }} as the first element
+    • {{ $json.rule.mitre.first }}
+    • {{ $json.agent.mitre }}
+    √ {{ $json.rule.mitre.id[0] }}
+
+27. A webhook output wraps the submitted alert under body. What should be checked before reusing {{ $json.rule.level }}?
+    • Only the original PDF's example expression
+    • Only the HTTP method
+    √ The actual node output and whether the correct path is $json.body.rule.level or requires reshaping
+    • Only the workflow's display name
+
+28. An IF node checks numeric rule.level >= 12. Which levels satisfy it?
+    • Only 13, 14, and 15
+    √ 12, 13, 14, and 15
+    • Only 12
+    • Every level greater than 8
+
+29. After an API lookup, the current item contains the API response instead of the original alert. How should the workflow retain alert context?
+    √ Preserve or reference the source item and merge results using the correct alert identity
+    • Assume every HTTP response includes the original agent name
+    • Replace the original alert with the score only
+    • Retrieve an unrelated recent alert
+
+30. Which purpose best fits the Wazuh custom-n8n integration script?
+    • Generate every endpoint event itself
+    • Replace the Wazuh rule engine
+    • Block all source IPs before enrichment
+    √ Read the alert supplied by integratord and forward its JSON to the webhook
+
+31. Why route selected high-value Wazuh rules to enrichment rather than every alert?
+    • Ensure low-severity evidence can never be retained
+    • Make external APIs unlimited
+    √ Reduce unnecessary API usage, workflow load, and notification noise
+    • Prevent any workflow from failing
+
+32. What is the purpose of Header Auth on a webhook?
+    • Encrypt traffic without TLS
+    √ Require a matching authentication secret before accepting the request
+    • Guarantee the alert's contents are accurate
+    • Assign confidence 100 to every sender
+
+33. Which deployment measures best protect the SOAR platform?
+    √ Authenticated TLS endpoints, restricted network access, and least-privilege credentials
+    • Public unauthenticated webhooks for easy testing
+    • Hardcoded administrator keys in exported workflows
+    • Disabling all execution logs
+
+34. Where should API secrets normally be stored?
+    • Inside messages sent to the SOC channel
+    • In the workflow name
+    • In a public Git repository
+    √ The platform's credential facility or approved secret-management configuration
+
+35. A workflow sends hundreds of low-priority Slack messages daily. What is the best improvement?
+    • Add more channels containing identical messages
+    • Disable all incident documentation
+    √ Filter actionable alerts and summarize or batch lower-priority results
+    • Raise every alert to critical without context

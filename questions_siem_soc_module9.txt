@@ -1,0 +1,212 @@
+MODULE 9 — Advanced Correlation Logic
+35 Practice Questions
+
+1. What is the main benefit of correlation compared with reviewing isolated events?
+    √ Connect related signals into a contextual attack hypothesis
+    • Guarantee that every unusual event is malicious
+    • Remove the need to collect endpoint logs
+    • Make every alert have the same severity
+
+2. Which pattern is stronger evidence of possible credential compromise than one failed login?
+    • One unrelated application crash
+    • A routine logoff on another host
+    • An unchanged file baseline
+    √ Repeated failures followed by success for a related account and source within a suitable window
+
+3. What does identity-centric Zero Trust change in the lecture's model?
+    • A VPN connection grants permanent trust
+    • Every internal IP should be excluded from detection
+    √ Internal location alone does not establish trust; identity, context, and behavior require ongoing validation
+    • Successful authentication guarantees all later actions are authorized
+
+4. Which combination gives a fuller view of suspected identity abuse?
+    • Only a successful MFA prompt
+    √ Authentication, network flows, and data-access activity tied to the same identity
+    • Only a list of installed applications
+    • Only the account's display name
+
+5. A user logs in from an unusual location, accesses a finance database, and downloads a large dataset within minutes. What is best?
+    √ Correlate the activity and evaluate role, device, timing, and transfer context
+    • Assess each event independently and discard the sequence
+    • Trust the download because login succeeded
+    • Declare compromise solely from the country name
+
+6. What distinction should an analyst preserve between a trust score and a risk score?
+    • Both always increase when behavior becomes safer
+    • Both are universally limited to 15
+    • Neither depends on entity behavior
+    √ In the lecture's examples, falling trust indicates greater concern, while rising risk indicates greater concern
+
+7. What does a dynamic entity score add to fixed alert severity?
+    • A guarantee that no analyst review is needed
+    • An automatic replacement for event evidence
+    √ A changing view of accumulated behavior for a user, host, or other entity
+    • An exact probability that the user is an attacker
+
+8. Which Wazuh processing order is correct?
+    • Correlation → event generation → decoding → ingestion
+    √ Ingestion → decoding → rule matching/correlation → alert
+    • Alert → deletion → endpoint audit policy
+    • Dashboard → memory dump → authentication
+
+9. What is the important distinction between if_sid and if_matched_sid when reviewing Wazuh logic?
+    √ if_sid builds on a rule match for the current event; if_matched_sid supports correlation with earlier matching events
+    • Both automatically enforce any sequence named in a description
+    • if_sid always means a separate prior event occurred
+    • if_matched_sid only changes the dashboard filter
+
+10. Why is adding timeframe alone insufficient to prove an ordered attack sequence?
+    • A timeframe automatically searches every historical log
+    • Every rule description is executable logic
+    • An hour-long window implies all attack stages occurred
+    √ The rule must explicitly track and relate the required earlier events and final event
+
+11. A rule matches only a web-shell upload but its description says 'recon + SQLi + webshell.' What does it actually prove?
+    • All three stages occurred in order
+    • The attacker used one fixed source IP throughout
+    √ Only the implemented matching conditions, unless earlier stages are explicitly enforced
+    • The database was successfully exfiltrated
+
+12. Which fields help avoid correlating unrelated failed and successful logins?
+    • Only a shared alert color
+    √ Relevant source, account or session identity, and a bounded event-time window
+    • Only the same calendar month
+    • Only the manager's hostname
+
+13. For 'new account created, then added to administrators,' what must correlation identify?
+    √ The same target account across the creation and membership events
+    • Only the administrator who opened the dashboard
+    • Only two events with severity above zero
+    • Any account creation and any group change anywhere
+
+14. What is a threshold rule intended to detect?
+    • Any one event regardless of time or context
+    • A malware family from its filename alone
+    • A packet's exact plaintext payload
+    √ A defined number of relevant events within a specified period and grouping
+
+15. What do frequency and timeframe represent conceptually in the lecture's threshold model?
+    • Alert severity and retention in days
+    • Number of endpoints and destination port
+    √ Required occurrence count and the counting window in seconds
+    • Number of usernames and password length
+
+16. In the lecture's threshold example, frequency 10 and timeframe 120 express what intended behavior?
+    • 120 occurrences within ten minutes
+    √ Ten relevant occurrences within two minutes
+    • Ten events over 120 days
+    • A severity of ten on every event
+
+17. Why group a brute-force threshold by source IP?
+    √ Avoid combining unrelated sources into one supposed source's attempt count
+    • Guarantee all activity behind that IP belongs to one person
+    • Identify the exact attacker by name
+    • Exclude all successful authentication
+
+18. Why group bulk file-access detection by user?
+    • Prove every file read is exfiltration
+    • Exclude service accounts automatically
+    • Ignore the time window
+    √ Associate the access volume with the relevant account rather than all users combined
+
+19. What happens if a threshold is too low for normal environmental activity?
+    • All slow attacks become impossible
+    • Collection automatically stops
+    √ False positives can increase and overwhelm analysts
+    • The SIEM encrypts all matching events
+
+20. What is the risk of an excessively high threshold in a short window?
+    • All normal activity becomes malicious
+    √ Real attacks may finish or remain below the threshold without an alert
+    • Every alert is automatically more accurate
+    • It guarantees detection of low-and-slow attacks
+
+21. How should a SOC choose useful thresholds?
+    √ Baseline activity, account for roles and sources, validate attack cases, and adjust using observed results
+    • Copy one universal number for every user and host
+    • Set every threshold to one
+    • Increase thresholds until all alerts disappear
+
+22. Why can low-and-slow or distributed attacks evade a per-IP short-window threshold?
+    • They generate no authentication events at all
+    • They always bypass identity correlation
+    • A short window automatically aggregates every source forever
+    √ Each source may stay below the count even when broader activity is suspicious
+
+23. Which join best links an endpoint process to an IDS alert?
+    • Match only the process's friendly name
+    • Match only dashboard severity
+    √ Correlate host and connection identifiers, time, addresses, and ports with process telemetry
+    • Assume all events on one date are related
+
+24. A VPN login appears abroad while badge records place the user at headquarters. What is best?
+    • Declare compromise solely from the two location labels
+    √ Investigate a location inconsistency while validating VPN, proxy, geolocation, and badge context
+    • Ignore it because badge logs are not security data
+    • Trust whichever event was ingested last
+
+25. Which cross-source join can reveal access after an employee leaves?
+    √ HR termination records joined with subsequent authentication activity
+    • DNS replies joined with browser font settings
+    • Only process file sizes
+    • Only the list of enabled firewall rules
+
+26. What is event enrichment?
+    • Replacing original evidence with a threat-intelligence verdict
+    • Deleting all benign events before parsing
+    • Changing every event timestamp to the enrichment time
+    √ Adding context such as GeoIP, reputation, asset criticality, and identity role
+
+27. Why should GeoIP or reputation data not be treated as definitive proof of compromise?
+    • Reputation services know every attacker before an attack
+    • IP location always equals the user's physical location
+    √ Mappings can be imperfect or stale, and legitimate VPNs or shared infrastructure affect interpretation
+    • Every hosting-provider IP is malicious
+
+28. In the lecture's integration example, what does VirusTotal enrichment contribute?
+    • A guaranteed verdict on every new file
+    √ Additional reputation context for relevant file indicators
+    • The plaintext content of every encrypted connection
+    • Automatic validation of an employee's physical location
+
+29. Which formula matches the lecture's cumulative risk model?
+    √ Sum of Alert_Level × Context_Weight × Recency_Factor across relevant signals
+    • Alert_Level divided only by the number of agents
+    • Maximum source port multiplied by username length
+    • Count of dashboard tabs plus file size
+
+30. An alert has level 5, context weight 3, and recency factor 0.5. What is its risk contribution in that model?
+    • 15
+    • 8.5
+    • 30
+    √ 7.5
+
+31. Why weight a critical database more heavily than a low-impact test host?
+    • Critical assets cannot generate false positives
+    • Test hosts never need monitoring
+    √ The same suspicious behavior may carry different business consequences
+    • Weighting proves malicious intent
+
+32. Why apply time-based decay to entity risk?
+    • Erase the incident's original evidence
+    √ Prevent old inactive signals from making every entity permanently critical
+    • Guarantee that recent activity is legitimate
+    • Make critical assets invisible
+
+33. An example assigns +30 for a VPN anomaly, +40 for a location inconsistency, and +60 for bulk access. What is the total?
+    √ 130
+    • 100
+    • 70
+    • 90
+
+34. What is the best approach to stale CDB whitelists and contextual mappings?
+    • Assume a trusted IP stays trusted forever
+    • Delete every list after one alert
+    • Use old values to avoid changing detection behavior
+    √ Review and update them on a cadence suited to how often the data changes
+
+35. How should a SOC validate a new multi-event correlation before deployment?
+    • Test only the final event and assume earlier stages work
+    • Rely only on the rule description
+    √ Test matching and nonmatching sequences, grouping, ordering, and time boundaries using appropriate replay or test tools
+    • Deploy without testing if a MITRE ID is present
