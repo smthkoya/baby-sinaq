@@ -1,0 +1,727 @@
+1. In NIST SP 800-86, what are the four phases of the forensic process, in order?
+    • Identification, Containment, Eradication, Recovery
+    • Collection, Analysis, Examination, Reporting
+    √ Collection, Examination, Analysis, Reporting
+    • Acquisition, Hashing, Imaging, Reporting
+    • Collection, Preservation, Containment, Eradication
+
+2. Following the order of volatility, which of these sources should normally be collected first from a live system?
+    √ Contents of system memory (RAM)
+    • Data on the hard disk
+    • Archival backup media
+    • Data held on a remote log server
+    • A forensic image already verified and stored offline
+
+3. How does the textbook distinguish alerting from investigation?
+    • Alerting gathers as much data as possible; investigation looks for one specific indicator
+    • Both consist only of matching indicators of compromise
+    • Investigation begins only after eradication is complete
+    √ Alerting reduces data to the most specific signal; investigation expands to gather context, then reduces again into analysis
+    • Alerting only applies after a breach is confirmed
+
+4. What is live response?
+    • Imaging a disk after the system has been powered off
+    √ Analysing a potentially compromised system without taking it offline, by dynamically collecting state information
+    • Running a malware sample in an isolated sandbox
+    • Reverse engineering malware with a disassembler
+    • Collecting forensic disk data only after shutdown
+
+5. What is the main purpose of the chain of custody?
+    • To encrypt evidence so attackers cannot read it
+    √ To document who handled the evidence, when, and why, so its integrity can be demonstrated
+    • To rank evidence from most to least volatile
+    • To share indicators of compromise with partner organisations
+    • To determine the vulnerability severity score
+
+6. In network flow data, frequent, regular, short-duration, low-byte connections from an internal host most likely indicate:
+    • Data exfiltration
+    • Internet-wide scanning by research services
+    • SMB-based data collection
+    √ Malware beaconing to a command-and-control server
+    • An approved overnight backup to a cloud destination
+
+7. Which network analysis technique allows analysts to re-run newly created signatures against traffic captured in the past?
+    √ Full content analysis
+    • Traffic (flow) analysis
+    • Signature-based analysis performed only in real time
+    • Geolocation of IP addresses
+    • DNS query metadata without captured payload bytes
+
+8. Why does the textbook recommend fuzzy hashes (such as SSDeep) in addition to SHA-256?
+    • Fuzzy hashes are faster to calculate than SHA-256
+    • Fuzzy hashes can decrypt packed malware
+    √ A small edit changes the SHA-256 completely, but the fuzzy hash stays similar, which helps link variants and track campaigns
+    • VirusTotal accepts only fuzzy hashes
+    • A fuzzy hash guarantees a unique file identity
+
+9. What is basic dynamic malware analysis?
+    • Reading the disassembled machine code of the sample
+    • Recording the sample's hashes, size, file type and strings
+    • Carving deleted files from unallocated disk space
+    √ Running the sample in a controlled, heavily monitored environment to observe its behaviour
+    • Matching a sample against a known SHA-256 hash
+
+10. According to the Pyramid of Pain, which type of information is the hardest for an adversary to change?
+    • File hashes
+    √ Tactics, techniques and procedures (TTPs)
+    • IP addresses
+    • Domain names
+    • The server's current DNS resolver address
+
+11. In the kill chain, which phase begins when the adversary gains control of code execution on the target system?
+    √ Exploitation
+    • Delivery
+    • Reconnaissance
+    • Actions on Objective
+    • Only the final incident case report
+
+12. What are the four vertices of the Diamond Model of intrusion analysis?
+    • Threat, Vulnerability, Impact, Likelihood
+    • Tactics, Techniques, Procedures, Groups
+    √ Adversary, Capability, Infrastructure, Victim
+    • Identify, Protect, Detect, Respond
+    • Attacker, Risk, Detection, Impact
+
+13. In MITRE ATT&CK, what does a tactic represent?
+    • A specific malware tool used by a group
+    √ The adversary's tactical goal: the 'why' behind an action
+    • The exact way an action is performed: the 'how'
+    • A named cluster of intrusion activity
+    • The specific event timestamp of the attack
+
+14. What initial access vector did the Colonial Pipeline (2021) and Change Healthcare (2024) attacks have in common?
+    • A zero-day vulnerability in a web browser
+    • Malware delivered on USB drives
+    • A trojanized software update from a supplier
+    √ Compromised credentials for a remote-access service without multi-factor authentication
+    • An exploited vulnerability in a public web application
+
+15. In the textbook, what does scoping an incident mean?
+    • Attributing the attack to a nation-state
+    • Writing IDS signatures for the attacker's C2
+    √ Determining which victim resources (systems, services, credentials, data, users) are affected
+    • Restoring systems from backup
+    • Determining which security tool generated the first alert
+
+16. Which prerequisite is most important for building an accurate timeline from several log sources?
+    √ Consistent, synchronised time, with all timestamps converted to one reference such as UTC
+    • Deleting duplicate log entries before analysis
+    • Keeping logs only on the endpoints that produced them
+    • Reducing log verbosity to save storage
+    • A single local timestamp with no timezone information
+
+17. What does Windows Security event ID 4624 record?
+    • A failed logon attempt
+    • The audit log being cleared
+    • A new service being installed
+    √ A successful logon
+    • A new Windows service installation
+
+18. How was the Storm-0558 intrusion into Microsoft cloud email first detected in 2023?
+    √ Through enhanced mailbox audit logging (the MailItemsAccessed event) used by a US federal agency
+    • Through an antivirus signature on an employee laptop
+    • Through a user reporting a phishing email
+    • Through a ransom note left by the attackers
+    • Through a failed RDP logon on a domain controller
+
+19. Under GDPR Article 33, when must a controller notify the supervisory authority of a personal data breach?
+    • Within 24 hours of the first alert
+    √ Without undue delay and, where feasible, not later than 72 hours after becoming aware of it
+    • Within 30 days of the end of the investigation
+    • Only after the full investigation is complete
+    • No later than 72 hours after the forensic case is closed
+
+20. At the start of an investigation an analyst is told “we think it was Russia” and then interprets every clue against that idea. Which bias is this?
+    • Bandwagon effect
+    • Availability bias
+    √ Anchoring bias
+    • Mirroring
+    • Confirmation bias
+
+21. Which NIST CSF 2.0 category covers incident analysis?
+    • PR.AA
+    √ RS.AN
+    • RC.RP
+    • GV.RR
+    • DE.AE
+
+22. What is the first forensic phase in NIST SP 800-86?
+    √ Collection
+    • Recovery
+    • Examination
+    • Reporting
+    • Analysis
+
+23. What is the main purpose of forensic examination?
+    • Contain a malicious process
+    • Rebuild all compromised endpoints
+    √ Extract data of investigative interest from collected material
+    • Decide the legal notification deadline
+    • Attribute the intrusion to a named group
+
+24. Which forensic phase turns examined material into findings that answer investigation questions?
+    • Acquisition
+    • Triage
+    √ Analysis
+    • Preservation
+    • Reporting
+
+25. What should the forensic reporting phase document?
+    • Only IP addresses on a blocklist
+    • Only the malware family name
+    • Only public statements
+    • Only the number of infected devices
+    √ Methods, tools, findings, next steps and recommended improvements
+
+26. Which evidence-handling action best preserves the original disk?
+    √ Analyze a bit-for-bit copy created using a write-blocker
+    • Run an installer on the affected drive
+    • Disable all hashing during collection
+    • Open and edit suspicious files directly on the original
+    • Reformat the disk before acquisition
+
+27. Why record SHA-256 hashes when acquiring evidence?
+    • To identify an attacker by nationality
+    • To guarantee data confidentiality
+    • To reconstruct deleted passwords automatically
+    √ To verify evidence integrity after collection and analysis
+    • To compress a memory image
+
+28. What should chain-of-custody records include?
+    • Only the examiner’s conclusions
+    • Only a final incident severity
+    √ Handlers, dates and times, transfers, and reasons
+    • Only the filename and file size
+    • Only the suspected threat actor
+
+29. Which evidence source is generally the most volatile?
+    • Archival backup tapes
+    • Printed incident reports
+    • Offline disk images
+    √ CPU registers and cache
+    • Physical topology diagrams
+
+30. Why should responders consider collecting memory before powering off a host?
+    • Shutdown always preserves RAM exactly
+    √ Shutdown can destroy running processes, connections and encryption keys
+    • Memory cannot contain malware
+    • Power-off permanently changes every disk hash
+    • Archival backups are lost immediately
+
+31. What is a typical advantage of network isolation over an immediate shutdown?
+    • It automatically eliminates malware persistence
+    • It creates a forensic disk image
+    • It prevents all future incident recurrence
+    • It guarantees the user account is uncompromised
+    √ It can preserve volatile memory while limiting network access
+
+32. What is the primary goal of live response in large incidents?
+    • Publish every IoC to the internet
+    √ Quickly determine which systems need deeper analysis using scalable collection
+    • Replace the incident commander
+    • Collect only archival media
+    • Restore all systems before collecting evidence
+
+33. Which tool is an open-source framework for analyzing acquired memory images?
+    • INetSim
+    • Wireshark
+    √ Volatility
+    • Autopsy
+    • Snort
+
+34. What is a likely finding from memory analysis?
+    • A signed change request
+    √ Injected code inside a legitimate process
+    • The expiration date of a vendor contract
+    • An archived paper receipt
+    • The complete physical layout of the data center
+
+35. What is Mandiant Redline described as supporting?
+    • Only network cable testing
+    • Only DNS hosting
+    √ Collection and analysis with OpenIOC indicators
+    • Only legal breach notification
+    • Only filesystem formatting
+
+36. Which forensic method is most suitable for recovering hidden files and unallocated-space artifacts?
+    • Regulatory reporting
+    √ Disk analysis
+    • Annual budgeting
+    • Mailing-list review
+    • Physical access auditing
+
+37. Which group consists of common disk-forensic tools in the lecture?
+    • YARA, Sigma and TAXII
+    • Snort, Suricata and Zeek
+    √ EnCase, FTK and Autopsy
+    • JIRA, Slack and Teams
+    • NTP, SMTP and DNS
+
+38. What complicates offline disk analysis in modern enterprise systems?
+    • Inability to hash a disk image
+    • Prohibition on working with copies
+    • Absence of disk file systems
+    √ Full-disk encryption often tied to hardware
+    • No way to identify file metadata
+
+39. Which network approach records endpoints, ports, byte counts and session times without payload content?
+    • Memory acquisition
+    • Full packet content analysis
+    √ Traffic or flow analysis
+    • Advanced static malware analysis
+    • File carving
+
+40. Which pair of tools is used for signature-based network detection?
+    • EnCase and FTK
+    • Plaso and Timesketch
+    √ Snort and Suricata
+    • IDA Pro and Ghidra
+    • Volatility and Redline
+
+41. What is a principal limitation of retaining full packet content?
+    • No visibility into any packet headers
+    • No ability to reanalyze historical captures
+    • Only one packet per flow can be stored
+    • It cannot support incident investigations
+    √ High storage demand and encrypted traffic
+
+42. What does a large outbound transfer to a newly observed domain potentially indicate?
+    • A new local user account
+    • A disk write-blocker failure
+    • A local logon session
+    √ Data exfiltration
+    • A scheduled task creation
+
+43. Connections over TCP port 445 from one compromised host to many internal hosts may indicate what?
+    √ SMB-based collection or lateral movement
+    • Certificate revocation only
+    • Remote clock synchronization
+    • Cloud billing activity
+    • Email delivery confirmation
+
+44. In a Snort signature, what does the msg field specify?
+    • The cryptographic file hash
+    • The IDS operating system
+    • The destination MAC address
+    √ The alert name or message
+    • The evidence custodian
+
+45. In a Snort rule, what is the purpose of pcre?
+    √ Match a regular-expression pattern
+    • Preserve disk integrity
+    • Encrypt the inspected connection
+    • Assign incident severity automatically
+    • Store the entire packet capture
+
+46. Which set of functions can an EDR platform combine?
+    • Only physical surveillance
+    √ Detection, host investigation, response and remote tasks
+    • Only perimeter routing and DNS registration
+    • Only data privacy notification
+    • Only employee payroll and asset purchasing
+
+47. Which analysis examines hashes, file type, size and strings without executing malware?
+    • Full reverse engineering
+    • Live incident communication
+    • Basic dynamic malware analysis
+    √ Basic static malware analysis
+    • Memory-only analysis
+
+48. What is the main risk of running a suspicious sample for dynamic analysis?
+    √ Malware may escape or detect the sandbox
+    • It always modifies the original evidence image
+    • It automatically erases all IOCs
+    • It cannot produce network traffic
+    • It prevents observing created processes
+
+49. Which tools are named as disassemblers for advanced static analysis?
+    • Kansa and OSXCollector
+    • Plaso and Timesketch
+    √ IDA Pro and Ghidra
+    • Snort and Suricata
+    • Zeek and NetFlow
+
+50. What magic bytes commonly mark the beginning of a Windows executable?
+    • 7F 45 4C 46 (ELF)
+    • 50 4B (PK)
+    • 25 50 44 46 (%PDF)
+    √ 4D 5A (MZ)
+    • FF D8 FF (JPEG)
+
+51. What should an analyst use to check a file’s real type rather than trusting its extension?
+    • The remote IP address only
+    • The Windows desktop wallpaper
+    √ Magic bytes or the file/libmagic utility
+    • The file creation username only
+    • The filename alone
+
+52. What does an SSDeep fuzzy hash help analysts discover?
+    • The exact date of credential theft
+    • A guaranteed unique exact match for every variant
+    • The attacker’s physical location
+    • Whether a TLS certificate has expired
+    √ Similarity among slightly modified malware samples
+
+53. Which YARA condition in the slide requires the MZ bytes at offset zero and a suspicious string?
+    • $mz or $fake
+    • all of them at entry_point
+    • $fake at 0 and not $mz
+    √ $mz at 0 and $fake
+    • filesize == 0
+
+54. What term describes all potential entry points an attacker could attempt?
+    • Blast radius
+    • Root cause
+    √ Attack surface
+    • Attack vector
+    • Dwell time
+
+55. What term describes the route actually used to gain initial access?
+    • Risk appetite
+    • Chain of custody
+    • Breach magnitude
+    √ Attack vector
+    • Attack surface
+
+56. What is the root cause of an intrusion?
+    • The final backup location
+    • The first public press release
+    • The total number of alerts
+    √ The underlying weakness that enabled the entry route
+    • The cost of the forensic license
+
+57. Which ATT&CK technique represents exploitation of a public-facing application?
+    • T1195
+    √ T1190
+    • T1189
+    • T1078
+    • T1566
+
+58. Which ATT&CK technique represents use of valid accounts?
+    • T1566
+    √ T1078
+    • T1190
+    • T1189
+    • T1199
+
+59. What does watering-hole initial access involve?
+    • Abusing an existing backup archive
+    • Installing a scheduled task on every workstation
+    √ Compromising a site likely to be visited by a targeted group
+    • Changing the victim’s passwords remotely
+    • Sending malware only by USB
+
+60. What does supply-chain compromise (T1195) involve?
+    • Clearing a Windows audit log
+    √ Tampering with software or hardware before it reaches a victim
+    • Pivoting through an RDP session after access
+    • Reading forensic disk images
+    • Abusing only a user’s local browser history
+
+61. Which evidence is most useful for investigating a suspected phishing entry point?
+    • Only procurement invoices
+    • Only the employee vacation roster
+    • Only network topology diagrams
+    √ Mail trace, headers and the endpoint process tree
+    • Only backup tape serial numbers
+
+62. Which evidence can support exploitation of a public-facing application?
+    • Only desktop wallpaper changes
+    • Only USB insertion records
+    √ WAF logs, unusual web requests and new web-shell files
+    • Only phishing email subject lines
+    • Only local printer events
+
+63. What is patient zero in the context of an intrusion?
+    • The most recent SIEM alert
+    • The final host to be restored
+    √ The first compromised host or account
+    • The system with most available storage
+    • The attacker’s command server
+
+64. Which phase in the eight-stage kill chain is associated with installing persistence?
+    • Weaponization
+    • Reconnaissance
+    • Targeting
+    • Delivery
+    √ Installation
+
+65. In ATT&CK terminology, what does a technique explain?
+    • When the case must close
+    • How much data was lost
+    • Who owns the victim asset
+    • Why the adversary wants an outcome
+    √ How an adversary performs an action
+
+66. According to the lecture, how many Enterprise ATT&CK tactics were listed after the v19 update?
+    • 18
+    • 10
+    • 12
+    • 13
+    √ 15
+
+67. Which two tactics replaced Defense Evasion in the lecture’s ATT&CK v19 description?
+    • Collection and Exfiltration
+    √ Stealth and Defense Impairment
+    • Execution and Persistence
+    • Reconnaissance and Resource Development
+    • Discovery and Lateral Movement
+
+68. In the Diamond Model, which vertex is a C2 domain?
+    • Adversary
+    • Impact
+    • Victim
+    • Capability
+    √ Infrastructure
+
+69. In the Diamond Model, which vertex represents attacker malware?
+    • Adversary
+    √ Capability
+    • Infrastructure
+    • Victim
+    • Recovery
+
+70. Windows event 4624 with logon type 10 most directly suggests which activity?
+    • Audit log clearing
+    • New account creation
+    • Scheduled task creation
+    √ Remote Desktop logon
+    • Service installation
+
+71. Which Windows Security event indicates creation of a scheduled task?
+    √ 4698
+    • 4720
+    • 4625
+    • 1102
+    • 4672
+
+72. Which event ID indicates a Windows account was created?
+    • 4624
+    • 7045
+    • 4698
+    √ 4720
+    • 4648
+
+73. Which event ID indicates the Windows Security audit log was cleared?
+    √ 1102
+    • 4672
+    • 4732
+    • 4625
+    • 4688
+
+74. Which Windows event is typically associated with new process creation?
+    • 4672
+    • 1102
+    • 4697
+    √ 4688
+    • 4624
+
+75. Which Windows event indicates explicit credentials were used in a logon attempt?
+    √ 4648
+    • 4698
+    • 4720
+    • 1102
+    • 4688
+
+76. Which Sysmon event ID commonly represents a DNS query?
+    • 1
+    √ 22
+    • 10
+    • 3
+    • 7
+
+77. Which tool pair is associated with creating and viewing a super timeline?
+    • EnCase and INetSim
+    • FTK and CrowdStrike
+    √ Plaso/log2timeline and Timesketch
+    • Volatility and YARA
+    • Snort and Suricata
+
+78. Why normalize event timestamps into UTC?
+    • To delete false-positive alerts automatically
+    • To prevent all log tampering
+    • To eliminate the need for retention
+    • To reverse encrypted packet payloads
+    √ To place events from different systems in the correct order
+
+79. What does incident scoping determine?
+    • Only the total cost of storage
+    √ Affected systems, services, credentials, data and users
+    • Only the number of incident meetings
+    • Only the most recent antivirus version
+    • Only the suspect’s country
+
+80. What is a victim-centric investigation starting point?
+    √ Investigate affected users and systems and reconstruct their activity
+    • Start only from IP ownership
+    • Start only from a threat group’s TTPs
+    • Start only with a news report
+    • Start only with a known malware family
+
+81. What is an infrastructure-centric pivot based on?
+    • Financial disclosure deadlines
+    √ Domains, IP addresses and certificates
+    • Only local backup jobs
+    • Employee training records
+    • Hardware warranty claims
+
+82. What is the core function of SIEM correlation?
+    • Replace forensic acquisition with backups
+    • Automatically declare every alert malicious
+    • Remove the need to preserve source logs
+    • Make synchronized clocks unnecessary
+    √ Join activity across identity, endpoint, network and other data sources
+
+83. Which source is most appropriate for suspicious mailbox rule changes?
+    • Network cable inventories
+    • Physical access badge logs only
+    • BIOS configuration history
+    √ Cloud or SaaS audit logs
+    • Disk S.M.A.R.T. reports
+
+84. Why can a 90-day log retention period be insufficient?
+    • Every incident is always discovered in one day
+    • All event logs are guaranteed to be in memory
+    • Only recent events are relevant to the entry vector
+    • Forensic timelines never need historical records
+    √ Some intrusions persist for far longer before detection
+
+85. What is a principal purpose of hypothesis-driven threat hunting?
+    • Attribute every intrusion to one known actor
+    • Stop investigating after the first alert
+    • Discard conflicting logs
+    √ Test possible explanations against evidence, including evidence against them
+    • Rely entirely on media reports
+
+86. What is the purpose of Analysis of Competing Hypotheses (ACH)?
+    • Encrypt every incident report
+    √ Compare plausible explanations with supporting and contradictory evidence
+    • Classify file types by magic bytes
+    • Measure disk utilization only
+    • Assign a country based on one IP
+
+87. Which bias means seeking evidence mainly to support an existing belief?
+    • Bandwagon effect
+    √ Confirmation bias
+    • Selection of UTC
+    • Anchoring bias
+    • Availability bias
+
+88. Which bias is relying excessively on recent or vivid examples?
+    √ Availability bias
+    • Survivorship of log records
+    • Anchoring bias
+    • Confirmation bias
+    • Bandwagon effect
+
+89. Which bias is believing a claim largely because many people repeat it?
+    • Availability bias
+    √ Bandwagon effect
+    • Confirmation bias
+    • Anchoring bias
+    • Volatility bias
+
+90. Which of the following is a confidentiality breach of personal data?
+    • Loss of access to an encrypted patient database only
+    √ Unauthorized access to customer records
+    • A planned system update
+    • A firewall performance alert
+    • Accidental corruption of payroll values only
+
+91. Which of the following is an integrity breach of personal data?
+    • A routine export to an approved backup
+    • A benign port scan in a test network
+    • A scheduled database migration
+    • A blocked phishing email with no data accessed
+    √ Unauthorized alteration of payroll bank-account details
+
+92. Which of the following is an availability breach of personal data?
+    • A scheduled network performance report
+    • An approved application upgrade
+    • A legitimate password rotation
+    • A successful user login
+    √ Ransomware prevents access to a patient database
+
+93. What is a sign of possible data staging before exfiltration?
+    • A routine screen lock
+    • Normal login from a known office
+    √ Large archives assembled on an internal host
+    • An unchanged application binary
+    • A successful weekly backup to an approved destination
+
+94. Why can network byte counts help detect exfiltration despite TLS encryption?
+    √ Transfer volume and destinations remain observable even when content is encrypted
+    • Outbound flows contain decrypted passwords
+    • TLS encryption completely hides packet sizes
+    • Network metadata automatically identifies data owners
+    • Bytes out always prove a confirmed breach
+
+95. What does the CRUD acronym stand for in system activity analysis?
+    • Collect, Review, Upload, Detect
+    • Contain, Recover, Update, Disclose
+    √ Create, Read, Update, Delete
+    • Copy, Rename, Undo, Download
+    • Control, Route, Unpack, Deliver
+
+96. Which step should precede estimating how many people are affected by a breach?
+    • Assume every employee is affected
+    • Delete duplicate user accounts without review
+    • Immediately announce a final victim count
+    √ Identify and classify affected data stores and review access evidence
+    • Ignore data classification
+
+97. Which NIST CSF 2.0 outcome covers validating the magnitude of an incident?
+    • RS.AN-06
+    √ RS.AN-08
+    • DE.AE-03
+    • GV.OC-01
+    • PR.DS-02
+
+98. Under GDPR Article 34, when may affected individuals need to be informed?
+    √ When a personal data breach is likely to result in high risk to them
+    • Only when the attacker is identified
+    • Whenever an unrelated IT outage occurs
+    • Only after every forensic artifact is published
+    • Whenever any system is patched
+
+99. According to the lecture, what is HIPAA’s outer notification time limit for affected individuals after discovery?
+    • 14 days
+    • 72 hours
+    • 180 days
+    √ 60 days
+    • 24 hours
+
+100. What must an incident investigator clearly record for notification analysis?
+    • Only the attacker’s supposed nationality
+    √ When the organization became aware and which findings are confirmed or estimated
+    • Only the length of the incident report
+    • Only the number of analysts assigned
+    • Only the estimated cloud hosting fees
+
+101. What is the final stage of the seven-step investigation workflow on the summary slide?
+    • Assess breach
+    • Correlate
+    √ Report
+    • Preserve and collect
+    • Examine
+
+102. In the lecture workflow, what should happen when new evidence appears during analysis?
+    • Continue only forward regardless of new evidence
+    • Automatically close the case
+    • Stop correlating logs permanently
+    • Discard the old timeline
+    √ Return to earlier steps as needed and document the additional collection
+
+103. What made the Microsoft Storm-0558 case a lesson about log visibility?
+    • A leaked source-code archive was the only evidence
+    • Only a workstation antivirus signature found the intrusion
+    • No cloud audit data was available
+    √ Enhanced mailbox audit events exposed anomalous access
+    • The attackers immediately issued a ransom note
+
+104. What is the key lesson about breach magnitude from the Change Healthcare case?
+    • No need to deduplicate affected people
+    • Only outbound bandwidth matters, never records
+    √ Estimates can change significantly as stolen-data analysis progresses
+    • The first count is always exact
+    • Scope can only decrease over time
